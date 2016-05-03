@@ -2,7 +2,8 @@
 package [% c.service %]::[% method_name %];
   use Moose;
 
-  [%- FOREACH property = method.parameters %]
+  [%- FOREACH p = method.parameters %]
+  [% property = c.resolve_parameter_ref(p) %]
   has [% property.name %] => (is => 'ro'[% IF (property.required) %], required => 1[% END %]);
   [%- END %]
 

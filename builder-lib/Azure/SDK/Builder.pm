@@ -102,6 +102,28 @@ package Azure::SDK::Builder;
     }
   );
 
+  sub resolve_parameter_ref {
+    my ($self, $parameter) = @_;
+
+    if ($parameter->isa('Swagger::Schema::RefParameter')) {
+      # We want to serve the consumer the referenced parameter
+      #
+      # parameter has a property called $ref
+
+      my $att_name = '$ref';
+      my $pref = $parameter->$att_name;
+
+      # we want ApiVersionParameter from strings like "#/parameters/ApiVersionParameter"
+      $pref = pop [ split /\//, $pref ];
+
+      $parameter = $self->schema->parameters->{ $pref };
+
+      die "Can't find a parameter called $pref" if (not defined $parameter);
+    }
+
+    return $parameter;
+  }
+
   sub build {
     my $self = shift;
 
