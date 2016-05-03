@@ -1,0 +1,12 @@
+package [% c.service %];
+  use Moose;
+
+  [%- FOREACH method_name = c.methods.keys.sort %]
+  sub [% method_name %] {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('[% c.service %]::[% method_name %]', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  [%- END %]
+
+1;

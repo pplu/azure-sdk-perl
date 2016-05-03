@@ -1,0 +1,12 @@
+#!/usr/bin/perl
+
+use v5.10;
+use Azure::SDK::Builder;
+
+my $file = $ARGV[0] or die "No file specified";
+
+say "Processing $file";
+my $builder = Azure::SDK::Builder->new(
+  schema_file => $file
+);
+$builder->build;
