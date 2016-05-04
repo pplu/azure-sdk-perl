@@ -6,6 +6,7 @@ package Azure::SDK::Builder;
   use File::Slurp;
   use FindBin;
   use Path::Class;
+  use Azure::SDK::Builder::Method;
 
   has schema_file => (
     is => 'ro',
@@ -82,7 +83,11 @@ package Azure::SDK::Builder;
         foreach my $http_verb (keys %{ $self->schema->paths->{ $path } }) {
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
           my $operationId = $operation->operationId;
-          $methods{ $operationId } = $operation;
+          $methods{ $operationId } =
+            Azure::SDK::Builder::Method->meta->rebless_instance(
+              $operation,
+              path => $path,
+            );
         }
       }
       return \%methods;
