@@ -110,8 +110,7 @@ package Azure::SDK::Builder;
       #
       # parameter has a property called $ref
 
-      my $att_name = '$ref';
-      my $pref = $parameter->$att_name;
+      my $pref = $parameter->ref;
 
       # we want ApiVersionParameter from strings like "#/parameters/ApiVersionParameter"
       $pref = pop [ split /\//, $pref ];
