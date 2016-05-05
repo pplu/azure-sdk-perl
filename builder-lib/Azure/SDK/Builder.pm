@@ -87,6 +87,7 @@ package Azure::SDK::Builder;
             Azure::SDK::Builder::Method->meta->rebless_instance(
               $operation,
               path => $path,
+              schema => $self,
             );
         }
       }
@@ -107,25 +108,17 @@ package Azure::SDK::Builder;
     }
   );
 
-  sub resolve_parameter_ref {
-    my ($self, $parameter) = @_;
+  sub resolve_path {
+    my ($self, $path) = @_;
 
-    if ($parameter->isa('Swagger::Schema::RefParameter')) {
-      # We want to serve the consumer the referenced parameter
-      #
-      # parameter has a property called $ref
+    my @parts = split /\//, $path;
 
-      my $pref = $parameter->ref;
+    die "Cannot resolve a path that starts with #" if ($parts[0] ne '#');
 
-      # we want ApiVersionParameter from strings like "#/parameters/ApiVersionParameter"
-      $pref = pop [ split /\//, $pref ];
+    my $first = $parts[1];
+    my $second = $parts[2];
 
-      $parameter = $self->schema->parameters->{ $pref };
-
-      die "Can't find a parameter called $pref" if (not defined $parameter);
-    }
-
-    return $parameter;
+    return $self->schema->$first->{ $second };
   }
 
   sub build {
