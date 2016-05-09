@@ -19,9 +19,12 @@ package Azure::SDK::Builder::Return;
       my $atts = [];
       foreach my $prop_name (sort keys %{ $self->properties }){
         my $prop = $self->properties->{ $prop_name };
+
+        my $args = defined $prop->ref ? $self->schema->resolve_path($prop->ref) : $prop;
+
         push @$atts, Azure::SDK::Builder::Property->new(
           name => $prop_name,
-          %$prop,
+          %$args,
         );
       }
       return $atts;
