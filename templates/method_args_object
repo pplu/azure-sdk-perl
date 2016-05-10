@@ -1,5 +1,6 @@
 package [% c.service %]::[% method_name %];
   use Moose;
+  use MooseX::ClassAttribute;
 
   [%- FOREACH property = method.arguments %]
   has [% property.name %] => (is => 'ro'
