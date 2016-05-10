@@ -6,6 +6,7 @@ package Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::Return;
 
   has path => (is => 'ro', isa => 'Str', required => 1);
+  has method => (is => 'ro', isa => 'Str', required => 1);
 
   has schema => (
     is => 'ro',

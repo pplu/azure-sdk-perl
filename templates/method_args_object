@@ -11,5 +11,5 @@ package [% c.service %]::[% method_name %];
 
   class_has path => (is => 'ro', default => '[% method.path %]');
   class_has _returns => (is => 'ro', default => '[% c.service %]::[% method_name %]Result');
-
+  class_has _api_method => (is => 'ro', default => '[% method.method %]');
 1;

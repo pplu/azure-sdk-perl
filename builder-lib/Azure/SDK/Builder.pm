@@ -88,6 +88,7 @@ package Azure::SDK::Builder;
               $operation,
               path => $path,
               schema => $self,
+              method => uc($http_verb),
             );
         }
       }
