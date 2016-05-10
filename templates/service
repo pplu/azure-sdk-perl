@@ -1,6 +1,8 @@
 package [% c.service %];
   use Moose;
 
+  with 'Azure::API::Caller', 'Azure::API::JsonCaller';
+
   [%- FOREACH method_name = c.methods.keys.sort %]
   sub [% method_name %] {
     my $self = shift;
