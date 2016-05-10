@@ -1,7 +1,7 @@
 package [% c.service %];
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller';
+  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
   [%- FOREACH method_name = c.methods.keys.sort %]
   sub [% method_name %] {

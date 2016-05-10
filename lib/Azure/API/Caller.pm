@@ -18,6 +18,13 @@ package Azure::API::Caller;
     default => 'management.azure.com',
   );
 
+  #TODO: this is to be loaded at runtime
+  use Azure::Credentials::AzureADClientCredentials;
+  has credentials => (
+    is => 'ro',
+    required => 1,
+  );
+
   sub new_with_coercions {
     my ($self, $class, %params) = @_;
 
