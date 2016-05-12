@@ -4,7 +4,7 @@ package Azure::API::BearerAuth;
   sub sign {
     my ($self, $request) = @_;
 
-    $request->header( Bearer => $self->credentials->access_token );
+    $request->header( Authorization => 'Bearer ' . $self->credentials->access_token );
   }
 
 1;
