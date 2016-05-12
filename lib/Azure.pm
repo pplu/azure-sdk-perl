@@ -2,6 +2,8 @@ package Azure;
 
   use Module::Runtime qw/require_module/;
 
+  use Azure::Exception;
+
   our $VERSION = '0.01';
 
   sub load_class {
