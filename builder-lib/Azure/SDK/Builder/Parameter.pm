@@ -16,6 +16,19 @@ package Azure::SDK::Builder::Parameter;
     }
   );
 
+  has in_trait => (
+    is => 'ro',
+    isa => 'Str',
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      my $in = $self->in;
+      # Upper case first letter
+      substr($in,0,1) = uc(substr($in,0,1));
+      return "ParamIn$in"
+    }
+  );
+
   has type => (is => 'ro', isa => 'Str');
 
   has perl_type => (

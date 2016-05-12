@@ -5,11 +5,12 @@ package [% c.service %]::[% method_name %];
   [%- FOREACH property = method.arguments %]
   has '[% property.name %]' => (is => 'ro'
     [%- IF (property.required) %], required => 1[% END -%]
-    [%- IF (property.perl_type) %], isa => '[% property.perl_type %]'[% END -%]
+    [%- IF (property.perl_type) %], isa => '[% property.perl_type %]'[% END -%],
+    traits => [ '[% property.in_trait %]' ],
   );
   [%- END %]
 
-  class_has path => (is => 'ro', default => '[% method.path %]');
+  class_has _api_uri => (is => 'ro', default => '[% method.path %]');
   class_has _returns => (is => 'ro', default => '[% c.service %]::[% method_name %]Result');
   class_has _api_method => (is => 'ro', default => '[% method.method %]');
 1;
