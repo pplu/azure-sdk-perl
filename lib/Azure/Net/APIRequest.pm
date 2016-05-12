@@ -3,8 +3,9 @@ package Azure::Net::APIRequest;
   use HTTP::Headers;
   use URI;
 
-  has parameters => (is => 'rw', isa => 'HashRef', default => sub { {} });
+  has query      => (is => 'rw', isa => 'HashRef', default => sub { {} });
   has headers    => (is => 'rw', isa => 'HTTP::Headers', default => sub { HTTP::Headers->new });
+  has path       => (is => 'rw', isa => 'HashRef', default => sub { {} });
   has content    => (is => 'rw', isa => 'Str');
   has method     => (is => 'rw', isa => 'Str');
   has uri        => (is => 'rw', isa => 'Str');

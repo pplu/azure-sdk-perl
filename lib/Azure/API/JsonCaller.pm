@@ -1,6 +1,7 @@
 package Azure::API::JsonCaller;
   use Moose::Role;
   use JSON::MaybeXS;
+  use URI::Template;
   use POSIX qw(strftime);
 
   sub _is_internal_type {
@@ -43,19 +44,45 @@ package Azure::API::JsonCaller;
     return \%p;
   }
 
+  sub _call_uri {
+    my ($self, $call, $request) = @_;
+    my $uri_template = $call->meta->name->_api_uri;
+    my $t = URI::Template->new( $uri_template );
+    my $uri = $t->process($request->path);
+    return $uri;
+  }
+
   sub prepare_request_for_call {
     my ($self, $call) = @_;
 
     my $request = Azure::Net::APIRequest->new();
 
-    $request->url($self->_api_endpoint . '/');
-    $request->uri('/');
-    $request->method('POST');
+    $request->method($call->_api_method);
 
-    $request->header( Host => $self->endpoint_host );
+    foreach my $attribute ($call->meta->get_all_attributes) {
+      next if (not $attribute->has_value($call));
 
-    my $data = $self->_to_jsoncaller_params($call);
-    $request->content(encode_json($data));
+      if ($attribute->does('Azure::API::Attribute::Trait::ParamInHeader')) {
+        $request->headers->header( $attribute->header_name => $attribute->get_value($call) );
+      } elsif ($attribute->does('Azure::API::Attribute::Trait::ParamInPath')) {
+        $request->path->{ $attribute->name } = $attribute->get_value($call);
+      } elsif ($attribute->does('Azure::API::Attribute::Trait::ParamInQuery')) {
+        $request->query->{ $attribute->name } = $attribute->get_value($call);
+      } else {
+        use Data::Dumper;
+        print Dumper($attribute);
+        die "Don't know what to do with the " . $attribute->name . " parameter";
+      }
+    }
+
+    my $uri = $self->_call_uri($call, $request);
+    $uri->query_form($request->query);
+
+    $request->uri($uri->as_string);
+    $request->url($self->_api_endpoint . $uri);
+
+    #my $data = $self->_to_jsoncaller_params($call);
+    #$request->content(encode_json($data));
 
     $self->sign($request);
 
