@@ -9,4 +9,16 @@ package Azure;
     require_module $class;
   }
 
+package Azure::API::Attribute::Trait::ParamInHeader;
+  use Moose::Role;
+  use Moose::Util;
+  Moose::Util::meta_attribute_alias('ParamInHeader');
+package Azure::API::Attribute::Trait::ParamInPath;
+  use Moose::Role;
+  use Moose::Util;
+  Moose::Util::meta_attribute_alias('ParamInPath');
+package Azure::API::Attribute::Trait::ParamInQuery;
+  use Moose::Role;
+  use Moose::Util;
+  Moose::Util::meta_attribute_alias('ParamInQuery');
 1;
