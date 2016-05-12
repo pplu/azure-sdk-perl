@@ -72,6 +72,16 @@ package Azure::SDK::Builder;
     write_file($f, $output);
   }
 
+  sub operationId_to_methodname {
+    my $id = shift;
+    if (my ($p1, $p2) = ($id =~ m/(.*)_(.*)/)) {
+      return "$p2$p1";
+    } else {
+      die "Cannot make sense out of operationId $id";
+    }
+  }
+
+
   has methods => (
     is => 'ro',
     isa => 'HashRef',
@@ -82,7 +92,8 @@ package Azure::SDK::Builder;
       foreach my $path (keys %{ $self->schema->paths }){
         foreach my $http_verb (keys %{ $self->schema->paths->{ $path } }) {
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
-          my $operationId = $operation->operationId;
+          my $operationId = operationId_to_methodname($operation->operationId);
+
           $methods{ $operationId } =
             Azure::SDK::Builder::Method->meta->rebless_instance(
               $operation,
