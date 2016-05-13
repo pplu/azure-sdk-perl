@@ -35,21 +35,26 @@ package Azure::SDK::Builder::Method;
 
   has return => (
     is => 'ro',
-    isa => 'Azure::SDK::Builder::Return',
+    isa => 'Azure::SDK::Builder::Return|Undef',
     lazy => 1,
     default => sub {
       my $self = shift;
-      die "Can't find a 200 response for " . $self->name if (not defined $self->responses->{200});
+      if (defined $self->responses->{200}) {
+        my $response = $self->responses->{200};
+        die 'Can\'t find a 200 response for ' . $self->method . ' on ' . $self->path if (not defined $self->responses->{200});
 
-      my $ref = $self->responses->{200}->schema->ref;
-      my $definition = $self->schema->resolve_path($ref);
+        return undef if (not defined $response->schema);
+        my $ref = $response->schema->ref;
+        my $definition = $self->schema->resolve_path($ref);
 
-      my $return = Azure::SDK::Builder::Return->new(
-        schema => $self->schema,
-        %$definition,
-      );
-
-      return $return;
+        my $return = Azure::SDK::Builder::Return->new(
+          schema => $self->schema,
+          %$definition,
+        );
+        return $return;
+      } else {
+        die 'Can\'t find a valid response for ' . $self->method . ' on ' . $self->path;
+      }
     }
   );
 
