@@ -89,8 +89,8 @@ package Azure::SDK::Builder;
     default => sub {
       my $self = shift;
       my %methods = ();
-      foreach my $path (keys %{ $self->schema->paths }){
-        foreach my $http_verb (keys %{ $self->schema->paths->{ $path } }) {
+      foreach my $path (sort keys %{ $self->schema->paths }){
+        foreach my $http_verb (sort keys %{ $self->schema->paths->{ $path } }) {
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
           my $operationId = operationId_to_methodname($operation->operationId);
 
