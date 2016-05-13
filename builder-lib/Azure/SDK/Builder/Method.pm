@@ -39,8 +39,8 @@ package Azure::SDK::Builder::Method;
     lazy => 1,
     default => sub {
       my $self = shift;
-      if (defined $self->responses->{200} or defined $self->responses->{204}) {
-        my $response = $self->responses->{200} || $self->responses->{204};
+      if (defined $self->responses->{200} or defined $self->responses->{204} or defined $self->responses->{202}) {
+        my $response = $self->responses->{200} || $self->responses->{204} || $self->responses->{202};
 
         die "Error finding the 20X response" if (not defined $response);
 
