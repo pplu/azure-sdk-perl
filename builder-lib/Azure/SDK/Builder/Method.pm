@@ -39,9 +39,10 @@ package Azure::SDK::Builder::Method;
     lazy => 1,
     default => sub {
       my $self = shift;
-      if (defined $self->responses->{200}) {
-        my $response = $self->responses->{200};
-        die 'Can\'t find a 200 response for ' . $self->method . ' on ' . $self->path if (not defined $self->responses->{200});
+      if (defined $self->responses->{200} or defined $self->responses->{204}) {
+        my $response = $self->responses->{200} || $self->responses->{204};
+
+        die "Error finding the 20X response" if (not defined $response);
 
         return undef if (not defined $response->schema);
         my $ref = $response->schema->ref;
