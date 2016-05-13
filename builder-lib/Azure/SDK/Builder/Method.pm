@@ -45,8 +45,14 @@ package Azure::SDK::Builder::Method;
         die "Error finding the 20X response" if (not defined $response);
 
         return undef if (not defined $response->schema);
-        my $ref = $response->schema->ref;
-        my $definition = $self->schema->resolve_path($ref);
+
+        my $definition;
+        if ($response->schema->isa('Swagger::Schema::RefParameter')) {
+          my $ref = $response->schema->ref;
+          $definition = $self->schema->resolve_path($ref);
+        } else {
+          $definition = $response->schema;
+        }
 
         my $return = Azure::SDK::Builder::Return->new(
           schema => $self->schema,
