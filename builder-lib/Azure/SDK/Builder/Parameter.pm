@@ -49,6 +49,10 @@ package Azure::SDK::Builder::Parameter;
       } elsif ($self->type eq 'array') {
         #TODO: find out about the inner type for the array
         return 'ArrayRef';
+      } elsif ($self->type eq 'object') {
+        #TODO: additionalProperties->type should contain the
+        # type of the values of the hashref
+        return 'HashRef';
       } else {
         use Data::Dumper;
         print Dumper($self);
