@@ -7,6 +7,7 @@ package Azure::SDK::Builder;
   use FindBin;
   use Path::Class;
   use Azure::SDK::Builder::Method;
+  use Azure::SDK::Builder::Object;
 
   has schema_file => (
     is => 'ro',
@@ -107,6 +108,28 @@ package Azure::SDK::Builder;
     }
   );
 
+  has objects => (
+    is => 'ro',
+    isa => 'HashRef',
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      my %objects => ();
+
+
+      foreach my $object (sort keys %{ $self->schema->definitions }) {
+        $objects{ $object } = 
+          Azure::SDK::Builder::Object->meta->rebless_instance(
+            $self->schema->definitions->{ $object },
+            root_schema => $self,
+            name => $object,
+          );
+      }
+
+      return \%objects;
+    },
+  );
+
   has service => (
     is => 'ro', 
     isa => 'Str',
@@ -140,7 +163,14 @@ package Azure::SDK::Builder;
       'service',
     );
 
-    foreach my $method (keys %{ $self->methods }){
+    foreach my $object (sort keys %{ $self->objects }){
+      $self->process_template(
+        'object',
+        { object_name => $object, object => $self->objects->{ $object } },
+      );
+    }
+
+    foreach my $method (sort keys %{ $self->methods }){
       $self->process_template(
         'method_args_object',
         { method_name => $method, method => $self->methods->{ $method } },
