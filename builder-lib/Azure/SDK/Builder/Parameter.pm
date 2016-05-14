@@ -55,7 +55,7 @@ package Azure::SDK::Builder::Parameter;
         return 'HashRef';
       } else {
         use Data::Dumper;
-        print Dumper($self);
+        print Dumper({ %$self, root_schema => undef });
         warn 'Can\'t find a Perl type for ' . $self->type;
         return 'Any'
       }
