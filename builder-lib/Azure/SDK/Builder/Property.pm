@@ -4,6 +4,12 @@ package Azure::SDK::Builder::Property;
 
   has name => (is => 'ro', isa => 'Str');
 
+  has root_schema => (
+    is => 'ro',
+    isa => 'Azure::SDK::Builder',
+    weak_ref => 1,
+    required => 1,
+  );
 
   has perl_type => (
     is => 'ro',

@@ -98,7 +98,7 @@ package Azure::SDK::Builder;
             Azure::SDK::Builder::Method->meta->rebless_instance(
               $operation,
               path => $path,
-              schema => $self,
+              root_schema => $self,
               method => uc($http_verb),
             );
         }

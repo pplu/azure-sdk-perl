@@ -2,6 +2,13 @@ package Azure::SDK::Builder::Parameter;
   use Moose;
   extends 'Swagger::Schema::Parameter';
 
+  has root_schema => (
+    is => 'ro',
+    isa => 'Azure::SDK::Builder',
+    weak_ref => 1,
+    required => 1,
+  );
+
   has parameter_name => (
     is => 'ro',
     isa => 'Str',

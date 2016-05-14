@@ -4,10 +4,11 @@ package Azure::SDK::Builder::Return;
 
   use Azure::SDK::Builder::Property;
 
-  has schema => (
+  has root_schema => (
     is => 'ro',
     isa => 'Azure::SDK::Builder',
     weak_ref => 1,
+    required => 1,
   );
 
   has attributes => (
@@ -20,11 +21,15 @@ package Azure::SDK::Builder::Return;
       foreach my $prop_name (sort keys %{ $self->properties }){
         my $prop = $self->properties->{ $prop_name };
 
-        my $args = defined $prop->ref ? $self->schema->resolve_path($prop->ref) : $prop;
+        my $args = defined $prop->ref ? $self->root_schema->resolve_path($prop->ref) : $prop;
+
+#use Data::Dumper;
+#print Dumper({ %$self, $args);
 
         push @$atts, Azure::SDK::Builder::Property->new(
-          name => $prop_name,
           %$args,
+          root_schema => $self->root_schema,
+          name => $prop_name,
         );
       }
       return $atts;
