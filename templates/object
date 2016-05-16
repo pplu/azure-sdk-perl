@@ -1,0 +1,10 @@
+package [% c.service %]::[% object_name %];
+  use Moose;
+
+  [%- FOREACH property = object.attributes %]
+  has '[% property.name %]' => (is => 'ro'
+    [%- IF (property.required) %], required => 1[% END -%]
+    [%- IF (property.perl_type) %], isa => '[% property.perl_type %]'[% END -%]
+  );
+  [%- END %]
+1;
