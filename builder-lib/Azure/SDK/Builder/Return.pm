@@ -22,17 +22,15 @@ package Azure::SDK::Builder::Return;
     isa => 'ArrayRef[Azure::SDK::Builder::Property]',
     default => sub {
       my $self = shift;
+
+      return [] if (not defined $self->properties);
+
       my $atts = [];
       foreach my $prop_name (sort keys %{ $self->properties }){
-        my $prop = $self->properties->{ $prop_name };
-
-        my $args = defined $prop->ref ? $self->root_schema->resolve_path($prop->ref) : $prop;
-
-#use Data::Dumper;
-#print Dumper({ %$self, $args);
+        my $props = $self->properties->{ $prop_name };
 
         push @$atts, Azure::SDK::Builder::Property->new(
-          %$args,
+          %$props,
           root_schema => $self->root_schema,
           name => $prop_name,
         );
