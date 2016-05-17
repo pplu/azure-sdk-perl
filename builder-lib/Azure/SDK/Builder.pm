@@ -96,8 +96,8 @@ package Azure::SDK::Builder;
           my $operationId = operationId_to_methodname($operation->operationId);
 
           $methods{ $operationId } =
-            Azure::SDK::Builder::Method->meta->rebless_instance(
-              $operation,
+            Azure::SDK::Builder::Method->new(
+              %$operation,
               path => $path,
               root_schema => $self,
               method => uc($http_verb),
@@ -119,8 +119,8 @@ package Azure::SDK::Builder;
 
       foreach my $object (sort keys %{ $self->schema->definitions }) {
         $objects{ $object } = 
-          Azure::SDK::Builder::Object->meta->rebless_instance(
-            $self->schema->definitions->{ $object },
+          Azure::SDK::Builder::Object->new(
+            %{ $self->schema->definitions->{ $object } },
             root_schema => $self,
             name => $object,
           );
