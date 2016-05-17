@@ -46,6 +46,8 @@ package Azure::SDK::Builder::Parameter;
       my $self = shift;
       if      ($self->type eq 'string') {
         return 'Str';
+      } elsif ($self->type eq 'integer') {
+        return 'Int';
       } elsif ($self->type eq 'array') {
         #TODO: find out about the inner type for the array
         return 'ArrayRef';
