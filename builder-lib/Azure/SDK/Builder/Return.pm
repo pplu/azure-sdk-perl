@@ -6,6 +6,9 @@ package Azure::SDK::Builder::Return;
 
   use Azure::SDK::Builder::Property;
 
+  has type => (is => 'ro', isa => 'Str');
+  has ref => (is => 'ro', isa => 'Str');
+
   has root_schema => (
     is => 'ro',
     isa => 'Azure::SDK::Builder',
