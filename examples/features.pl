@@ -5,7 +5,6 @@ use strict;
 
 use Azure;
 use Feature;
-use ResourceManagement;
 
 use Azure::Net::Caller;
 
