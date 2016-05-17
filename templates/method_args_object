@@ -1,4 +1,4 @@
-package [% c.service %]::[% method_name %];
+package [% method.name %];
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -11,6 +11,6 @@ package [% c.service %]::[% method_name %];
   [%- END %]
 
   class_has _api_uri => (is => 'ro', default => '[% method.path %]');
-  class_has _returns => (is => 'ro', default => '[% c.service %]::[% method_name %]Result');
+  class_has _returns => (is => 'ro', default => '[% method.return.name %]');
   class_has _api_method => (is => 'ro', default => '[% method.method %]');
 1;

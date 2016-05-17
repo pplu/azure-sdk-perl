@@ -2,6 +2,8 @@ package Azure::SDK::Builder::Return;
   use Moose;
   extends 'Swagger::Schema::Schema';
 
+  has name => (is => 'ro', isa => 'Str', required => 1);
+
   use Azure::SDK::Builder::Property;
 
   has root_schema => (

@@ -5,6 +5,7 @@ package Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::Parameter;
   use Azure::SDK::Builder::Return;
 
+  has name => (is => 'ro', isa => 'Str', required => 1);
   has path => (is => 'ro', isa => 'Str', required => 1);
   has method => (is => 'ro', isa => 'Str', required => 1);
 
@@ -60,6 +61,7 @@ package Azure::SDK::Builder::Method;
 
         my $return = Azure::SDK::Builder::Return->new(
           %$definition,
+          name => $self->name . 'Result',
           root_schema => $self->root_schema,
         );
         return $return;

@@ -82,6 +82,10 @@ package Azure::SDK::Builder;
     }
   }
 
+  sub namespace {
+    my ($self, $thing) = @_;
+    return $self->service . '::' . $thing;
+  }
 
   has methods => (
     is => 'ro',
@@ -101,6 +105,7 @@ package Azure::SDK::Builder;
               path => $path,
               root_schema => $self,
               method => uc($http_verb),
+              name => $self->namespace($operationId),
             );
         }
       }
@@ -122,7 +127,7 @@ package Azure::SDK::Builder;
           Azure::SDK::Builder::Object->new(
             %{ $self->schema->definitions->{ $object } },
             root_schema => $self,
-            name => $object,
+            name => $self->namespace($object),
           );
       }
 
@@ -166,18 +171,18 @@ package Azure::SDK::Builder;
     foreach my $object (sort keys %{ $self->objects }){
       $self->process_template(
         'object',
-        { object_name => $object, object => $self->objects->{ $object } },
+        { object => $self->objects->{ $object } },
       );
     }
 
     foreach my $method (sort keys %{ $self->methods }){
       $self->process_template(
         'method_args_object',
-        { method_name => $method, method => $self->methods->{ $method } },
+        { method => $self->methods->{ $method } },
       );
       $self->process_template(
         'method_return_object',
-        { method_name => $method, method => $self->methods->{ $method } },
+        { method => $self->methods->{ $method } },
       );
     }
   }
