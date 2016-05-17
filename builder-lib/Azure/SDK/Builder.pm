@@ -148,15 +148,17 @@ package Azure::SDK::Builder;
     }
   );
 
+  sub path_parts {
+    my ($self, $path) = @_;
+    my @parts = split /\//, $path;
+    die "Cannot resolve a path that starts with #" if ($parts[0] ne '#');
+    return ($parts[1], $parts[2]);
+  }
+
   sub resolve_path {
     my ($self, $path) = @_;
 
-    my @parts = split /\//, $path;
-
-    die "Cannot resolve a path that starts with #" if ($parts[0] ne '#');
-
-    my $first = $parts[1];
-    my $second = $parts[2];
+    my ($first, $second) = $self->path_parts($path);
 
     return $self->schema->$first->{ $second };
   }
