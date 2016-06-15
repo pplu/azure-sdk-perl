@@ -7,6 +7,7 @@ requires 'Throwable::Error';
 requires 'URI::Template';
 
 on develop => sub {
+  requires 'MooseX::StrictConstructor';
   requires 'MooseX::DataModel';
   requires 'Swagger::Schema';
 };
