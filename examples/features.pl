@@ -10,11 +10,7 @@ use Azure::Net::Caller;
 
 my $f = Feature->new(
   caller => Azure::Net::Caller->new,
-  credentials => Azure::Credentials::AzureADClientCredentials->new(
-    tenant_id => $ENV{AZURE_TENANT_ID},
-    client_id => $ENV{AZURE_CLIENT_ID},
-    secret_id => $ENV{AZURE_SECRET_ID},
-  ),
+  credentials => Azure::Credentials::AzureADClientCredentials->new(),
 );
 
 my $ret = $f->ListAllFeatures(

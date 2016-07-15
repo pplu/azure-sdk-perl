@@ -32,18 +32,27 @@ package Azure::Credentials::AzureADClientCredentials;
     is => 'ro',
     isa => 'Str',
     required => 1,
+    default => sub {
+      $ENV{AZURE_TENANT_ID}
+    }
   );
 
   has client_id => (
     is => 'ro',
     isa => 'Str',
     required => 1,
+    default => sub {
+      $ENV{AZURE_CLIENT_ID}
+    }
   );
 
   has secret_id => (
     is => 'ro',
     isa => 'Str',
     required => 1,
+    default => sub {
+      $ENV{AZURE_SECRET_ID}
+    }
   );
 
   has token_endpoint => (
