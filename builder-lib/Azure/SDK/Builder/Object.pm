@@ -21,7 +21,9 @@ package Azure::SDK::Builder::Object;
     default => sub {
       my $self = shift;
 
-      my $params = [ map {
+      my $params = [];
+      if (defined $self->properties) {
+        push @$params, map {
           my $param = $self->properties->{ $_ };
 
           my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
@@ -31,9 +33,8 @@ package Azure::SDK::Builder::Object;
             name => $_,
             %$args
           );
-        } sort keys %{ $self->properties }
-      ];
-
+        } sort keys %{ $self->properties };
+      }
       if (defined $self->allOf) {
         foreach my $extra_object_properties (@{ $self->allOf }) {
           my $object = defined $extra_object_properties->ref ? $self->root_schema->resolve_path($extra_object_properties->ref) : $extra_object_properties;

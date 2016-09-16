@@ -8,6 +8,7 @@ package Azure::SDK::Builder;
   use Path::Class;
   use Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::Object;
+  use Data::Printer;
 
   has schema_file => (
     is => 'ro',
@@ -59,6 +60,8 @@ package Azure::SDK::Builder;
     #TODO: detect the class name from output, and save to it
     my ($outfile) = ($output =~ m/package (\S+)(?:\s*;|\s*{)/);
 
+    die "Didn't find package name" if (not defined $outfile or $outfile eq '');
+
     $self->log->info("Detected package $outfile in output");
 
     $outfile =~ s/\:\:/\//g;
@@ -78,6 +81,11 @@ package Azure::SDK::Builder;
     if (my ($p1, $p2) = ($id =~ m/(.*)_(.*)/)) {
       return "$p2$p1";
     } else {
+      return $id if ($id eq 'CheckDnsNameAvailability');
+      return $id if ($id eq 'GetLocations');
+
+      return 'GetAvailableOperations' if ($id eq 'getAvailableOperations');
+
       die "Cannot make sense out of operationId $id";
     }
   }
@@ -144,6 +152,12 @@ package Azure::SDK::Builder;
       my $title = $self->schema->info->title;
       # ./src/ResourceManagement/Compute/ComputeManagement/ComputeManagementClient.json
       my ($service) = ($title =~ m/^(.*)Client$/);
+
+      return $title if ($title eq 'ServerManagement');
+      return $title if ($title eq 'BatchService');
+      return $title if ($title eq 'BatchManagement');
+
+      die "Can't derive service from $title" if (not defined $service);
       return $service;
     }
   );
@@ -177,15 +191,16 @@ package Azure::SDK::Builder;
       );
     }
 
-    foreach my $method (sort keys %{ $self->methods }){
+    foreach my $method_name (sort keys %{ $self->methods }){
+      my $method = $self->methods->{ $method_name };
       $self->process_template(
         'method_args_object',
-        { method => $self->methods->{ $method } },
+        { method => $method },
       );
       $self->process_template(
         'method_return_object',
-        { method => $self->methods->{ $method } },
-      );
+        { method => $method },
+      ) if (defined $method->return);
     }
   }
 
