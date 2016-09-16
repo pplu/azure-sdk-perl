@@ -6,4 +6,5 @@ package SchedulerManagement::ClientCertAuthentication;
   has 'certificateThumbprint' => (is => 'ro', isa => 'Str'  );
   has 'password' => (is => 'ro', isa => 'Str'  );
   has 'pfx' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

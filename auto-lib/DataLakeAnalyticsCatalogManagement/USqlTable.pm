@@ -9,4 +9,6 @@ package DataLakeAnalyticsCatalogManagement::USqlTable;
   has 'partitionKeyList' => (is => 'ro', isa => 'ArrayRef'  );
   has 'schemaName' => (is => 'ro', isa => 'Str'  );
   has 'tableName' => (is => 'ro', isa => 'Str'  );
+  has 'computeAccountName' => (is => 'ro', isa => 'Str'  );
+  has 'version' => (is => 'ro', isa => 'Str'  );
 1;

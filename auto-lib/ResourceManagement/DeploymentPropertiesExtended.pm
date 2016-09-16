@@ -2,6 +2,7 @@ package ResourceManagement::DeploymentPropertiesExtended;
   use Moose;
 
   has 'correlationId' => (is => 'ro', isa => 'Str'  );
+  has 'debugSetting' => (is => 'ro', isa => 'Any'  );
   has 'dependencies' => (is => 'ro', isa => 'ArrayRef'  );
   has 'mode' => (is => 'ro', isa => 'Str'  );
   has 'outputs' => (is => 'ro', isa => 'HashRef'  );

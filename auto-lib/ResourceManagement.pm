@@ -23,19 +23,9 @@ package ResourceManagement;
     my $call_object = $self->new_with_coercions('ResourceManagement::CheckExistenceResources', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateByIdPolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CreateByIdPolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub CreateOrUpdateDeployments {
     my $self = shift;
     my $call_object = $self->new_with_coercions('ResourceManagement::CreateOrUpdateDeployments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub CreateOrUpdatePolicyDefinitions {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CreateOrUpdatePolicyDefinitions', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateResourceGroups {
@@ -58,29 +48,9 @@ package ResourceManagement;
     my $call_object = $self->new_with_coercions('ResourceManagement::CreateOrUpdateValueTags', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreatePolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CreatePolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DeleteByIdPolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::DeleteByIdPolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub DeleteDeployments {
     my $self = shift;
     my $call_object = $self->new_with_coercions('ResourceManagement::DeleteDeployments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DeletePolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::DeletePolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DeletePolicyDefinitions {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::DeletePolicyDefinitions', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteResourceGroups {
@@ -103,9 +73,14 @@ package ResourceManagement;
     my $call_object = $self->new_with_coercions('ResourceManagement::DeleteValueTags', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetByIdPolicyAssignments {
+  sub ExportTemplateDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::GetByIdPolicyAssignments', @_);
+    my $call_object = $self->new_with_coercions('ResourceManagement::ExportTemplateDeployments', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ExportTemplateResourceGroups {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('ResourceManagement::ExportTemplateResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetDeploymentOperations {
@@ -116,16 +91,6 @@ package ResourceManagement;
   sub GetDeployments {
     my $self = shift;
     my $call_object = $self->new_with_coercions('ResourceManagement::GetDeployments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetPolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::GetPolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetPolicyDefinitions {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::GetPolicyDefinitions', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetProviders {
@@ -153,26 +118,6 @@ package ResourceManagement;
     my $call_object = $self->new_with_coercions('ResourceManagement::ListDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListForResourceGroupPolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListForResourceGroupPolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListForResourcePolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListForResourcePolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListForScopePolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListForScopePolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListPolicyAssignments {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListPolicyAssignments', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub ListProviders {
     my $self = shift;
     my $call_object = $self->new_with_coercions('ResourceManagement::ListProviders', @_);
@@ -181,11 +126,6 @@ package ResourceManagement;
   sub ListResourceGroups {
     my $self = shift;
     my $call_object = $self->new_with_coercions('ResourceManagement::ListResourceGroups', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListResourceProviderOperationDetails {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListResourceProviderOperationDetails', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListResources {

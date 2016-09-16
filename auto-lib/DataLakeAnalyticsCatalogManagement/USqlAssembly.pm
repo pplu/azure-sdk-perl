@@ -8,4 +8,6 @@ package DataLakeAnalyticsCatalogManagement::USqlAssembly;
   has 'files' => (is => 'ro', isa => 'ArrayRef'  );
   has 'isUserDefined' => (is => 'ro', isa => 'Any'  );
   has 'isVisible' => (is => 'ro', isa => 'Any'  );
+  has 'computeAccountName' => (is => 'ro', isa => 'Str'  );
+  has 'version' => (is => 'ro', isa => 'Str'  );
 1;

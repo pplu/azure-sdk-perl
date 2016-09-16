@@ -18,9 +18,9 @@ package ContainerService;
     my $call_object = $self->new_with_coercions('ContainerService::GetContainerService', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListContainerService {
+  sub ListByResourceGroupContainerService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ContainerService::ListContainerService', @_);
+    my $call_object = $self->new_with_coercions('ContainerService::ListByResourceGroupContainerService', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

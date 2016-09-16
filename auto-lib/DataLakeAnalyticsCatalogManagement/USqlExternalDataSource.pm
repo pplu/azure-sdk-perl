@@ -6,4 +6,6 @@ package DataLakeAnalyticsCatalogManagement::USqlExternalDataSource;
   has 'provider' => (is => 'ro', isa => 'Str'  );
   has 'providerString' => (is => 'ro', isa => 'Str'  );
   has 'pushdownTypes' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'computeAccountName' => (is => 'ro', isa => 'Str'  );
+  has 'version' => (is => 'ro', isa => 'Str'  );
 1;
