@@ -1,0 +1,21 @@
+package BatchService::PoolAddParameter;
+  use Moose;
+
+  has 'applicationPackageReferences' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'autoScaleEvaluationInterval' => (is => 'ro', isa => 'Str'  );
+  has 'autoScaleFormula' => (is => 'ro', isa => 'Str'  );
+  has 'certificateReferences' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'cloudServiceConfiguration' => (is => 'ro', isa => 'Any'  );
+  has 'displayName' => (is => 'ro', isa => 'Str'  );
+  has 'enableAutoScale' => (is => 'ro', isa => 'Any'  );
+  has 'enableInterNodeCommunication' => (is => 'ro', isa => 'Any'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'maxTasksPerNode' => (is => 'ro', isa => 'Int'  );
+  has 'metadata' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'resizeTimeout' => (is => 'ro', isa => 'Str'  );
+  has 'startTask' => (is => 'ro', isa => 'Any'  );
+  has 'targetDedicated' => (is => 'ro', isa => 'Int'  );
+  has 'taskSchedulingPolicy' => (is => 'ro', isa => 'Any'  );
+  has 'virtualMachineConfiguration' => (is => 'ro', isa => 'Any'  );
+  has 'vmSize' => (is => 'ro', isa => 'Str'  );
+1;

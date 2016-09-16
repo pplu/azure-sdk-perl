@@ -63,6 +63,11 @@ package NotificationHubsManagement;
     my $call_object = $self->new_with_coercions('NotificationHubsManagement::GetAuthorizationRuleNotificationHubs', @_);
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetLongRunningOperationStatusNamespaces {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('NotificationHubsManagement::GetLongRunningOperationStatusNamespaces', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetNamespaces {
     my $self = shift;
     my $call_object = $self->new_with_coercions('NotificationHubsManagement::GetNamespaces', @_);
@@ -111,16 +116,6 @@ package NotificationHubsManagement;
   sub ListNotificationHubs {
     my $self = shift;
     my $call_object = $self->new_with_coercions('NotificationHubsManagement::ListNotificationHubs', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub RegenerateKeysNamespaces {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('NotificationHubsManagement::RegenerateKeysNamespaces', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub RegenerateKeysNotificationHubs {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('NotificationHubsManagement::RegenerateKeysNotificationHubs', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

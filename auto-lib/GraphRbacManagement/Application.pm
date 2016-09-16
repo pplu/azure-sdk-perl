@@ -5,7 +5,6 @@ package GraphRbacManagement::Application;
   has 'appPermissions' => (is => 'ro', isa => 'ArrayRef'  );
   has 'availableToOtherTenants' => (is => 'ro', isa => 'Any'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
-  has 'homepage' => (is => 'ro', isa => 'Str'  );
   has 'identifierUris' => (is => 'ro', isa => 'ArrayRef'  );
   has 'objectId' => (is => 'ro', isa => 'Str'  );
   has 'objectType' => (is => 'ro', isa => 'Str'  );

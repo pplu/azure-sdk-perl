@@ -3,9 +3,9 @@ package SearchIndex;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CountDocumentsProxy {
+  sub CountDocuments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('SearchIndex::CountDocumentsProxy', @_);
+    my $call_object = $self->new_with_coercions('SearchIndex::CountDocuments', @_);
     return $self->caller->do_call($self, $call_object);
   }
 
