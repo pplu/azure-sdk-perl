@@ -53,6 +53,11 @@ package GraphRbacManagement;
     my $call_object = $self->new_with_coercions('GraphRbacManagement::GetApplications', @_);
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetCurrentUserObjects {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::GetCurrentUserObjects', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetGroupMembersGroups {
     my $self = shift;
     my $call_object = $self->new_with_coercions('GraphRbacManagement::GetGroupMembersGroups', @_);
@@ -98,6 +103,26 @@ package GraphRbacManagement;
     my $call_object = $self->new_with_coercions('GraphRbacManagement::ListGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListKeyCredentialsApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::ListKeyCredentialsApplications', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListKeyCredentialsServicePrincipals {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::ListKeyCredentialsServicePrincipals', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListPasswordCredentialsApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::ListPasswordCredentialsApplications', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListPasswordCredentialsServicePrincipals {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::ListPasswordCredentialsServicePrincipals', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListServicePrincipals {
     my $self = shift;
     my $call_object = $self->new_with_coercions('GraphRbacManagement::ListServicePrincipals', @_);
@@ -116,6 +141,26 @@ package GraphRbacManagement;
   sub RemoveMemberGroups {
     my $self = shift;
     my $call_object = $self->new_with_coercions('GraphRbacManagement::RemoveMemberGroups', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateKeyCredentialsApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::UpdateKeyCredentialsApplications', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateKeyCredentialsServicePrincipals {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::UpdateKeyCredentialsServicePrincipals', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdatePasswordCredentialsApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::UpdatePasswordCredentialsApplications', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdatePasswordCredentialsServicePrincipals {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('GraphRbacManagement::UpdatePasswordCredentialsServicePrincipals', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateUsers {

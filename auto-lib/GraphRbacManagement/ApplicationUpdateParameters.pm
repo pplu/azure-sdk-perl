@@ -1,6 +1,7 @@
 package GraphRbacManagement::ApplicationUpdateParameters;
   use Moose;
 
+  has 'availableToOtherTenants' => (is => 'ro', isa => 'Any'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'homepage' => (is => 'ro', isa => 'Str'  );
   has 'identifierUris' => (is => 'ro', isa => 'ArrayRef'  );

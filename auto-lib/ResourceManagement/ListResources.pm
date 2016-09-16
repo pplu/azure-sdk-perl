@@ -5,6 +5,9 @@ package ResourceManagement::ListResources;
   has '$filter' => (is => 'ro', isa => 'Str',
     traits => [ 'ParamInQuery' ],
   );
+  has '$expand' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInQuery' ],
+  );
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'ParamInQuery' ],
   );

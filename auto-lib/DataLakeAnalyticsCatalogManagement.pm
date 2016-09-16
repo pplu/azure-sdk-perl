@@ -3,6 +3,11 @@ package DataLakeAnalyticsCatalogManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
+  sub CreateCredentialCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::CreateCredentialCatalog', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateSecretCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::CreateSecretCatalog', @_);
@@ -11,6 +16,11 @@ package DataLakeAnalyticsCatalogManagement;
   sub DeleteAllSecretsCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::DeleteAllSecretsCatalog', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteCredentialCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::DeleteCredentialCatalog', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteSecretCatalog {
@@ -88,11 +98,6 @@ package DataLakeAnalyticsCatalogManagement;
     my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::ListAssembliesCatalog', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListCredentialsCatalog {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::ListCredentialsCatalog', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub ListDatabasesCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::ListDatabasesCatalog', @_);
@@ -146,6 +151,11 @@ package DataLakeAnalyticsCatalogManagement;
   sub ListViewsCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::ListViewsCatalog', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateCredentialCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('DataLakeAnalyticsCatalogManagement::UpdateCredentialCatalog', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateSecretCatalog {

@@ -5,6 +5,9 @@ package ResourceManagement::ListProviders;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'ParamInQuery' ],
   );
+  has '$expand' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInQuery' ],
+  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInQuery' ],
   );

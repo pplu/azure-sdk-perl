@@ -16,6 +16,6 @@ package KeyVaultManagement::DeleteVaults;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults/{vaultName}');
-  class_has _returns => (is => 'ro', default => 'KeyVaultManagement::DeleteVaultsResult');
+  class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

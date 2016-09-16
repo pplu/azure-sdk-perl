@@ -23,6 +23,11 @@ package DataLakeStoreAccountManagement;
     my $call_object = $self->new_with_coercions('DataLakeStoreAccountManagement::DeleteFirewallRuleAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
+  sub EnableKeyVaultAccount {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('DataLakeStoreAccountManagement::EnableKeyVaultAccount', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetAccount {
     my $self = shift;
     my $call_object = $self->new_with_coercions('DataLakeStoreAccountManagement::GetAccount', @_);

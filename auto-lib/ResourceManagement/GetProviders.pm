@@ -2,6 +2,9 @@ package ResourceManagement::GetProviders;
   use Moose;
   use MooseX::ClassAttribute;
 
+  has '$expand' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInQuery' ],
+  );
   has 'resourceProviderNamespace' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInPath' ],
   );

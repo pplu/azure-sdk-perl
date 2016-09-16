@@ -3,139 +3,119 @@ package LogicManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CreateOrUpdateIntegrationAccountAgreements {
+  sub CancelWorkflowRuns {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::CreateOrUpdateIntegrationAccountAgreements', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::CancelWorkflowRuns', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateIntegrationAccountCertificates {
+  sub CreateOrUpdateWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::CreateOrUpdateIntegrationAccountCertificates', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::CreateOrUpdateWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateIntegrationAccountMaps {
+  sub DeleteWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::CreateOrUpdateIntegrationAccountMaps', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::DeleteWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateIntegrationAccountPartners {
+  sub DisableWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::CreateOrUpdateIntegrationAccountPartners', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::DisableWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateIntegrationAccounts {
+  sub EnableWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::CreateOrUpdateIntegrationAccounts', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::EnableWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateIntegrationAccountSchemas {
+  sub GenerateUpgradedDefinitionWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::CreateOrUpdateIntegrationAccountSchemas', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::GenerateUpgradedDefinitionWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIntegrationAccountAgreements {
+  sub GetWorkflowRunActions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::DeleteIntegrationAccountAgreements', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::GetWorkflowRunActions', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIntegrationAccountCertificates {
+  sub GetWorkflowRuns {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::DeleteIntegrationAccountCertificates', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::GetWorkflowRuns', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIntegrationAccountMaps {
+  sub GetWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::DeleteIntegrationAccountMaps', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::GetWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIntegrationAccountPartners {
+  sub GetWorkflowTriggerHistories {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::DeleteIntegrationAccountPartners', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::GetWorkflowTriggerHistories', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIntegrationAccounts {
+  sub GetWorkflowTriggers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::DeleteIntegrationAccounts', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::GetWorkflowTriggers', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIntegrationAccountSchemas {
+  sub GetWorkflowVersions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::DeleteIntegrationAccountSchemas', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::GetWorkflowVersions', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetIntegrationAccountAgreements {
+  sub ListByResourceGroupWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::GetIntegrationAccountAgreements', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ListByResourceGroupWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetIntegrationAccountCertificates {
+  sub ListBySubscriptionWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::GetIntegrationAccountCertificates', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ListBySubscriptionWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetIntegrationAccountMaps {
+  sub ListCallbackUrlWorkflowTriggers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::GetIntegrationAccountMaps', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ListCallbackUrlWorkflowTriggers', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetIntegrationAccountPartners {
+  sub ListWorkflowRunActions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::GetIntegrationAccountPartners', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ListWorkflowRunActions', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetIntegrationAccounts {
+  sub ListWorkflowRuns {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::GetIntegrationAccounts', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ListWorkflowRuns', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetIntegrationAccountSchemas {
+  sub ListWorkflowTriggerHistories {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::GetIntegrationAccountSchemas', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ListWorkflowTriggerHistories', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByResourceGroupIntegrationAccounts {
+  sub ListWorkflowTriggers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::ListByResourceGroupIntegrationAccounts', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ListWorkflowTriggers', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListBySubscriptionIntegrationAccounts {
+  sub ListWorkflowVersions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::ListBySubscriptionIntegrationAccounts', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ListWorkflowVersions', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListCallbackUrlIntegrationAccounts {
+  sub RunWorkflowTriggers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::ListCallbackUrlIntegrationAccounts', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::RunWorkflowTriggers', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListIntegrationAccountAgreements {
+  sub UpdateWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::ListIntegrationAccountAgreements', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::UpdateWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListIntegrationAccountCertificates {
+  sub ValidateWorkflows {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::ListIntegrationAccountCertificates', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListIntegrationAccountMaps {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::ListIntegrationAccountMaps', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListIntegrationAccountPartners {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::ListIntegrationAccountPartners', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListIntegrationAccountSchemas {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::ListIntegrationAccountSchemas', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateIntegrationAccounts {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('LogicManagement::UpdateIntegrationAccounts', @_);
+    my $call_object = $self->new_with_coercions('LogicManagement::ValidateWorkflows', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

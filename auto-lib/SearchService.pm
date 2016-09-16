@@ -3,6 +3,11 @@ package SearchService;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
+  sub AnalyzeIndexes {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('SearchService::AnalyzeIndexes', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateDataSources {
     my $self = shift;
     my $call_object = $self->new_with_coercions('SearchService::CreateDataSources', @_);
