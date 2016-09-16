@@ -11,6 +11,7 @@ on develop => sub {
   requires 'MooseX::DataModel';
   requires 'Swagger::Schema', '> 0.01';
   requires 'Template';
+  requires 'Data::Printer';
 };
 
 on test => sub {
