@@ -5,7 +5,13 @@ use Azure::SDK::Builder;
 
 my $file = $ARGV[0] or die "No file specified";
 
+if ($file =~ m/\/composite\w+\.json$/) {
+  say "Skipping $file because i don't know how to generate 'composite clients' (yet)";
+  exit 1;
+}
+
 say "Processing $file";
+
 my $builder = Azure::SDK::Builder->new(
   schema_file => $file
 );
