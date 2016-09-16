@@ -9,7 +9,8 @@ requires 'URI::Template';
 on develop => sub {
   requires 'MooseX::StrictConstructor';
   requires 'MooseX::DataModel';
-  requires 'Swagger::Schema';
+  requires 'Swagger::Schema', '> 0.01';
+  requires 'Template';
 };
 
 on test => sub {

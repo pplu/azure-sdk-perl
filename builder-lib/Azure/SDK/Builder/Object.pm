@@ -33,6 +33,20 @@ package Azure::SDK::Builder::Object;
           );
         } sort keys %{ $self->properties }
       ];
+
+      if (defined $self->allOf) {
+        foreach my $extra_object_properties (@{ $self->allOf }) {
+          my $object = defined $extra_object_properties->ref ? $self->root_schema->resolve_path($extra_object_properties->ref) : $extra_object_properties;
+          foreach my $property (sort keys %{ $object->properties }){
+            push @$params, Azure::SDK::Builder::Parameter->new(
+              root_schema => $self->root_schema,
+              name => $property,
+              %{ $object->properties->{ $property } }
+            );
+          }
+        }
+      }
+
       return $params;
     }
   );
