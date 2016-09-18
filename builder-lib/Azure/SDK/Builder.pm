@@ -165,7 +165,7 @@ package Azure::SDK::Builder;
   sub path_parts {
     my ($self, $path) = @_;
     my @parts = split /\//, $path;
-    die "Cannot resolve a path that starts with #" if ($parts[0] ne '#');
+    die "Cannot resolve a path doesn't start with #: $path" if ($parts[0] ne '#');
     return ($parts[1], $parts[2]);
   }
 
