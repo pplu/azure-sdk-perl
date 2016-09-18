@@ -3,6 +3,9 @@ package NetworkManagement::ApplicationGatewayUrlPathMap;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'defaultBackendAddressPool' => (is => 'ro', isa => 'Any'  );
+  has 'defaultBackendHttpSettings' => (is => 'ro', isa => 'Any'  );
+  has 'pathRules' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
 1;

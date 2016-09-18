@@ -1,7 +1,6 @@
 package ServerManagement::SessionResource;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'HashRef'  );
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

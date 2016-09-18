@@ -3,6 +3,8 @@ package Policy::PolicyAssignment;
 
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'displayName' => (is => 'ro', isa => 'Str'  );
+  has 'policyDefinitionId' => (is => 'ro', isa => 'Str'  );
+  has 'scope' => (is => 'ro', isa => 'Str'  );
 1;

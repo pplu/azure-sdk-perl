@@ -3,6 +3,7 @@ package NetworkManagement::ApplicationGatewayFrontendPort;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'port' => (is => 'ro', isa => 'Int'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
 1;

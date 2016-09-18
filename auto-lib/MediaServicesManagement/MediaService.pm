@@ -1,7 +1,8 @@
 package MediaServicesManagement::MediaService;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'apiEndpoints' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'storageAccounts' => (is => 'ro', isa => 'ArrayRef'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'tags' => (is => 'ro', isa => 'HashRef'  );
 1;

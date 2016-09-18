@@ -2,6 +2,12 @@ package ComputeManagement::VirtualMachineScaleSetExtension;
   use Moose;
 
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'autoUpgradeMinorVersion' => (is => 'ro', isa => 'Any'  );
+  has 'protectedSettings' => (is => 'ro', isa => 'HashRef'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'publisher' => (is => 'ro', isa => 'Str'  );
+  has 'settings' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'typeHandlerVersion' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
 1;

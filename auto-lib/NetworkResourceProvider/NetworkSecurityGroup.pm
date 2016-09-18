@@ -2,7 +2,12 @@ package NetworkResourceProvider::NetworkSecurityGroup;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'defaultSecurityRules' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'networkInterfaces' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'resourceGuid' => (is => 'ro', isa => 'Str'  );
+  has 'securityRules' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'subnets' => (is => 'ro', isa => 'ArrayRef'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

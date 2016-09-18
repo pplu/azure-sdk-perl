@@ -23,17 +23,47 @@ package Azure::SDK::Builder::Object;
 
       my $params = [];
       if (defined $self->properties) {
-        push @$params, map {
-          my $param = $self->properties->{ $_ };
+        my @to_flatten = ();
+        foreach my $property (sort keys %{ $self->properties }) {
+          my $param = $self->properties->{ $property };
 
           my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
 
-          Azure::SDK::Builder::Parameter->new(
+          if ($args->x_ms_client_flatten) {
+            push @to_flatten, $args;
+            next;
+          }
+
+          push @$params, Azure::SDK::Builder::Parameter->new(
             root_schema => $self->root_schema,
-            name => $_,
+            name => $property,
             %$args
           );
-        } sort keys %{ $self->properties };
+        }
+
+        foreach my $flatten_ref (@to_flatten) {
+          my $flatten;
+          if (defined $flatten_ref->ref) {
+            $flatten = $self->root_schema->resolve_path($flatten_ref->ref);
+          } else {
+            warn "Need to decide how to manage non-ref flattens";
+            next;
+          }
+
+          next if (not defined $flatten->properties);
+
+          push @$params, map {
+            my $param = $flatten->properties->{ $_ };
+
+            my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
+
+            Azure::SDK::Builder::Parameter->new(
+              root_schema => $self->root_schema,
+              name => $_,
+              %$args
+            );
+          } sort keys %{ $flatten->properties };
+        }
       }
       if (defined $self->allOf) {
         foreach my $extra_object_properties (@{ $self->allOf }) {

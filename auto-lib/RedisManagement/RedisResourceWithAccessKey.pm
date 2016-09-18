@@ -1,7 +1,7 @@
 package RedisManagement::RedisResourceWithAccessKey;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'accessKeys' => (is => 'ro', isa => 'Any'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

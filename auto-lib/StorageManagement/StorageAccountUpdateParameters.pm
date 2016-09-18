@@ -1,7 +1,8 @@
 package StorageManagement::StorageAccountUpdateParameters;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'accountType' => (is => 'ro', isa => 'Str'  );
+  has 'customDomain' => (is => 'ro', isa => 'Any'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

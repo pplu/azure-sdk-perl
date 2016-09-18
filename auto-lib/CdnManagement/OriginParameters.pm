@@ -1,5 +1,7 @@
 package CdnManagement::OriginParameters;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'hostName' => (is => 'ro', isa => 'Str'  );
+  has 'httpPort' => (is => 'ro', isa => 'Int'  );
+  has 'httpsPort' => (is => 'ro', isa => 'Int'  );
 1;

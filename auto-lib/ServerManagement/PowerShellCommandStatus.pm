@@ -1,7 +1,10 @@
 package ServerManagement::PowerShellCommandStatus;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'command' => (is => 'ro', isa => 'Str'  );
+  has 'completed' => (is => 'ro', isa => 'Any'  );
+  has 'pssession' => (is => 'ro', isa => 'Str'  );
+  has 'results' => (is => 'ro', isa => 'ArrayRef'  );
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

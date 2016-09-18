@@ -1,5 +1,6 @@
 package GraphRbacManagement::GraphError;
   use Moose;
 
-  has 'odata.error' => (is => 'ro', isa => 'HashRef'  );
+  has 'code' => (is => 'ro', isa => 'Str'  );
+  has 'message' => (is => 'ro', isa => 'HashRef'  );
 1;

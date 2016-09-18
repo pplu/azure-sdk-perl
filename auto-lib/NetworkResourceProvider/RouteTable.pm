@@ -2,7 +2,9 @@ package NetworkResourceProvider::RouteTable;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'routes' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'subnets' => (is => 'ro', isa => 'ArrayRef'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

@@ -1,7 +1,11 @@
 package LogicManagement::IntegrationAccountCertificate;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'changedTime' => (is => 'ro', isa => 'Str'  );
+  has 'createdTime' => (is => 'ro', isa => 'Str'  );
+  has 'key' => (is => 'ro', isa => 'Any'  );
+  has 'metadata' => (is => 'ro', isa => 'HashRef'  );
+  has 'publicCertificate' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
