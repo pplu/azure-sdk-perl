@@ -1,19 +1,21 @@
-package Azure::SDK::Builder::Parameter;
+package Azure::SDK::Builder::BodyMethodArgument;
   use Moose;
 
-  extends 'Swagger::Schema::Schema';
+  extends 'Swagger::Schema::BodyParameter';
+
+  has x_ms_client_flatten => (is => 'ro');
+  has x_ms_skip_url_encoding => (is => 'ro');
+  has x_ms_enum => (is => 'ro');
+  has x_ms_parameter_grouping => (is => 'ro');
+  has x_ms_client_request_id  => (is => 'ro');
+  has x_ms_client_name => (is => 'ro');
+  has x_ms_parameter_location => (is => 'ro');
 
   has root_schema => (
     is => 'ro',
     isa => 'Azure::SDK::Builder',
     weak_ref => 1,
     required => 1,
-  );
-
-  has name => (
-    is => 'ro',
-    isa => 'Str',
-    required => 1
   );
 
   has parameter_name => (
@@ -51,6 +53,8 @@ package Azure::SDK::Builder::Parameter;
     lazy => 1,
     default => sub {
       my $self = shift;
+      use Data::Printer;
+      p $self if (not defined $self->type);
       if      ($self->type eq 'string') {
         return 'Str';
       } elsif ($self->type eq 'integer') {

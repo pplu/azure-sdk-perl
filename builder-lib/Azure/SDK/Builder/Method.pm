@@ -2,7 +2,8 @@ package Azure::SDK::Builder::Method;
   use Moose;
   extends 'Swagger::Schema::Operation';
 
-  use Azure::SDK::Builder::Parameter;
+  use Azure::SDK::Builder::BodyMethodArgument;
+  use Azure::SDK::Builder::OtherMethodArgument;
   use Azure::SDK::Builder::Return;
 
   has name => (is => 'ro', isa => 'Str', required => 1);
@@ -18,7 +19,7 @@ package Azure::SDK::Builder::Method;
 
   has arguments => (
     is => 'ro',
-    isa => 'ArrayRef[Azure::SDK::Builder::Parameter]',
+    isa => 'ArrayRef[Azure::SDK::Builder::BodyMethodArgument|Azure::SDK::Builder::OtherMethodArgument]',
     lazy => 1,
     default => sub {
       my $self = shift;
@@ -28,7 +29,17 @@ package Azure::SDK::Builder::Method;
 
           my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
 
-          Azure::SDK::Builder::Parameter->new(
+          my $method_argument_class;
+          
+          if ($args->isa('Swagger::Schema::BodyParameter')) {
+            $method_argument_class = 'Azure::SDK::Builder::BodyMethodArgument';
+          } elsif ($args->isa('Swagger::Schema::OtherParameter')) {
+            $method_argument_class = 'Azure::SDK::Builder::OtherMethodArgument';
+          } else {
+            die "Found a strange Parameter type in self->parameters: $args";
+          }
+
+          $method_argument_class->new(
             root_schema => $self->root_schema,
             %$args
           );
