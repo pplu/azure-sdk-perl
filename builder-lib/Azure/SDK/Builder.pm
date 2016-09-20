@@ -153,9 +153,13 @@ package Azure::SDK::Builder;
       # ./src/ResourceManagement/Compute/ComputeManagement/ComputeManagementClient.json
       my ($service) = ($title =~ m/^(.*)Client$/);
 
+      return 'MLCommitmentPlansManagement' if ($title eq 'Azure ML Commitment Plans Management Client');
+      return 'PowerBIEmbeddedManagement' if ($title eq 'Power BI Embedded Management Client');
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
       return $title if ($title eq 'BatchManagement');
+
+      die "Service has spaces in it's name. Please correct" if ($title =~ m/ /);
 
       die "Can't derive service from $title" if (not defined $service);
       return $service;
