@@ -2,6 +2,7 @@ package NetworkManagement::VirtualNetworkGateway;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
+  has 'activeActive' => (is => 'ro', isa => 'Any'  );
   has 'bgpSettings' => (is => 'ro', isa => 'Any'  );
   has 'enableBgp' => (is => 'ro', isa => 'Any'  );
   has 'gatewayDefaultSite' => (is => 'ro', isa => 'Any'  );

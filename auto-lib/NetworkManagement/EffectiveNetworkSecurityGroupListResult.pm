@@ -1,4 +1,4 @@
-package NetworkManagement::UsagesListResult;
+package NetworkManagement::EffectiveNetworkSecurityGroupListResult;
   use Moose;
 
   has 'nextLink' => (is => 'ro', isa => 'Str'  );

@@ -2,6 +2,7 @@ package NetworkManagement::ApplicationGateway;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
+  has 'authenticationCertificates' => (is => 'ro', isa => 'ArrayRef'  );
   has 'backendAddressPools' => (is => 'ro', isa => 'ArrayRef'  );
   has 'backendHttpSettingsCollection' => (is => 'ro', isa => 'ArrayRef'  );
   has 'frontendIPConfigurations' => (is => 'ro', isa => 'ArrayRef'  );
@@ -15,7 +16,9 @@ package NetworkManagement::ApplicationGateway;
   has 'resourceGuid' => (is => 'ro', isa => 'Str'  );
   has 'sku' => (is => 'ro', isa => 'Any'  );
   has 'sslCertificates' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'sslPolicy' => (is => 'ro', isa => 'Any'  );
   has 'urlPathMaps' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'webApplicationFirewallConfiguration' => (is => 'ro', isa => 'Any'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

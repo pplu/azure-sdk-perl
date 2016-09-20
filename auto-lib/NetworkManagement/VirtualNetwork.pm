@@ -2,6 +2,7 @@ package NetworkManagement::VirtualNetwork;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
+  has 'VirtualNetworkPeerings' => (is => 'ro', isa => 'ArrayRef'  );
   has 'addressSpace' => (is => 'ro', isa => 'Any'  );
   has 'dhcpOptions' => (is => 'ro', isa => 'Any'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
