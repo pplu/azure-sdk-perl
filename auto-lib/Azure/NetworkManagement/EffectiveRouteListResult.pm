@@ -1,4 +1,4 @@
-package Azure::NetworkManagement::UsagesListResult;
+package Azure::NetworkManagement::EffectiveRouteListResult;
   use Moose;
 
   has 'nextLink' => (is => 'ro', isa => 'Str'  );
