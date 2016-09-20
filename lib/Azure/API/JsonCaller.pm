@@ -56,6 +56,7 @@ package Azure::API::JsonCaller;
     my ($self, $call) = @_;
 
     my $request = Azure::Net::APIRequest->new();
+    my $content = {};
 
     $request->method($call->_api_method);
 
@@ -68,11 +69,20 @@ package Azure::API::JsonCaller;
         $request->path->{ $attribute->name } = $attribute->get_value($call);
       } elsif ($attribute->does('Azure::API::Attribute::Trait::ParamInQuery')) {
         $request->query->{ $attribute->name } = $attribute->get_value($call);
+      } elsif ($attribute->does('Azure::API::Attribute::Trait::ParamInBody')) {
+        $content->{ $attribute->name } = $attribute->get_value($call);
       } else {
         use Data::Dumper;
         print Dumper($attribute);
         die "Don't know what to do with the " . $attribute->name . " parameter";
       }
+    }
+
+    use JSON;
+    if (keys %$content) {
+      my $serialized_content = encode_json($content);
+      $request->content( $serialized_content );
+      $request->headers->header('Content-Type' => 'application/json');
     }
 
     my $uri = $self->_call_uri($call, $request);
