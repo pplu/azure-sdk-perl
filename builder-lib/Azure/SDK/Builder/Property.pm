@@ -24,13 +24,19 @@ package Azure::SDK::Builder::Property;
         return $self->root_schema->namespace($second);
       } elsif ($self->type eq 'string') {
         return 'Str';
+      } elsif ($self->type eq 'boolean') {
+        return 'Bool';
       } elsif ($self->type eq 'array' or defined $self->items) {
         #TODO: find out about the inner type for the array
         my $inner;
         if (defined $self->items->ref) {
           my (undef, $second) = $self->root_schema->path_parts($self->items->ref);
           $inner = $self->root_schema->namespace($second);
+        } elsif (defined $self->items->type) {
+          $inner = $self->items->type;
         } else {
+          use Data::Dumper;
+          print Dumper($self);
           die "Here we should be detecting a native type";
         }
 
