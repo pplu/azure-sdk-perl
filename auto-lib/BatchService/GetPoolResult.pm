@@ -1,0 +1,34 @@
+package BatchService::GetPoolResult;
+  use Moose;
+
+  has allocationState => (is => 'ro', isa => 'Str'  );
+  has allocationStateTransitionTime => (is => 'ro', isa => 'Str'  );
+  has applicationPackageReferences => (is => 'ro', isa => 'ArrayRef[BatchService::ApplicationPackageReference]'  );
+  has autoScaleEvaluationInterval => (is => 'ro', isa => 'Str'  );
+  has autoScaleFormula => (is => 'ro', isa => 'Str'  );
+  has autoScaleRun => (is => 'ro', isa => 'BatchService::AutoScaleRun'  );
+  has certificateReferences => (is => 'ro', isa => 'ArrayRef[BatchService::CertificateReference]'  );
+  has cloudServiceConfiguration => (is => 'ro', isa => 'BatchService::CloudServiceConfiguration'  );
+  has creationTime => (is => 'ro', isa => 'Str'  );
+  has currentDedicated => (is => 'ro', isa => 'Any'  );
+  has displayName => (is => 'ro', isa => 'Str'  );
+  has eTag => (is => 'ro', isa => 'Str'  );
+  has enableAutoScale => (is => 'ro', isa => 'Any'  );
+  has enableInterNodeCommunication => (is => 'ro', isa => 'Any'  );
+  has id => (is => 'ro', isa => 'Str'  );
+  has lastModified => (is => 'ro', isa => 'Str'  );
+  has maxTasksPerNode => (is => 'ro', isa => 'Any'  );
+  has metadata => (is => 'ro', isa => 'ArrayRef[BatchService::MetadataItem]'  );
+  has resizeError => (is => 'ro', isa => 'BatchService::ResizeError'  );
+  has resizeTimeout => (is => 'ro', isa => 'Str'  );
+  has startTask => (is => 'ro', isa => 'BatchService::StartTask'  );
+  has state => (is => 'ro', isa => 'Str'  );
+  has stateTransitionTime => (is => 'ro', isa => 'Str'  );
+  has stats => (is => 'ro', isa => 'BatchService::PoolStatistics'  );
+  has targetDedicated => (is => 'ro', isa => 'Any'  );
+  has taskSchedulingPolicy => (is => 'ro', isa => 'BatchService::TaskSchedulingPolicy'  );
+  has url => (is => 'ro', isa => 'Str'  );
+  has virtualMachineConfiguration => (is => 'ro', isa => 'BatchService::VirtualMachineConfiguration'  );
+  has vmSize => (is => 'ro', isa => 'Str'  );
+
+1;

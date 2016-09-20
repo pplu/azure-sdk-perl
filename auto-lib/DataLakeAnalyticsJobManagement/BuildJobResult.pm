@@ -5,6 +5,8 @@ package DataLakeAnalyticsJobManagement::BuildJobResult;
   has endTime => (is => 'ro', isa => 'Str'  );
   has errorMessage => (is => 'ro', isa => 'ArrayRef[DataLakeAnalyticsJobManagement::JobErrorDetails]'  );
   has jobId => (is => 'ro', isa => 'Str'  );
+  has logFilePatterns => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has logFolder => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has priority => (is => 'ro', isa => 'Any'  );
   has properties => (is => 'ro', isa => 'DataLakeAnalyticsJobManagement::JobProperties'  );
