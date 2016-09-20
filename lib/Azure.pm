@@ -189,4 +189,8 @@ package Azure::API::Attribute::Trait::ParamInQuery;
   use Moose::Role;
   use Moose::Util;
   Moose::Util::meta_attribute_alias('ParamInQuery');
+package Azure::API::Attribute::Trait::ParamInBody;
+  use Moose::Role;
+  use Moose::Util;
+  Moose::Util::meta_attribute_alias('ParamInBody');
 1;

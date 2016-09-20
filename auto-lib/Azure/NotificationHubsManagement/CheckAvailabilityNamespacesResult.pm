@@ -2,7 +2,7 @@ package Azure::NotificationHubsManagement::CheckAvailabilityNamespacesResult;
   use Moose;
 
   has id => (is => 'ro', isa => 'Str'  );
-  has isAvailiable => (is => 'ro', isa => 'Any'  );
+  has isAvailiable => (is => 'ro', isa => 'Bool'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has tags => (is => 'ro', isa => 'Any'  );

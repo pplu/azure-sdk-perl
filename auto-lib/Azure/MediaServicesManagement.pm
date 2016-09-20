@@ -3,9 +3,9 @@ package Azure::MediaServicesManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CheckNameAvailabiltyMediaService {
+  sub CheckNameAvailabilityMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('MediaServicesManagement::CheckNameAvailabiltyMediaService', @_);
+    my $call_object = $self->new_with_coercions('MediaServicesManagement::CheckNameAvailabilityMediaService', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateMediaService {

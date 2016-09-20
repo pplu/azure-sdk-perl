@@ -3,64 +3,64 @@ package Azure::BatchManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub ActivateApplicationPackageApplication {
+  sub ActivateApplicationPackage {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::ActivateApplicationPackageApplication', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::ActivateApplicationPackage', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub AddApplicationApplication {
+  sub CreateApplication {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::AddApplicationApplication', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::CreateApplication', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub AddApplicationPackageApplication {
+  sub CreateApplicationPackage {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::AddApplicationPackageApplication', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::CreateApplicationPackage', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateAccount {
+  sub CreateBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::CreateAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::CreateBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteAccount {
+  sub DeleteApplication {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::DeleteAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::DeleteApplication', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteApplicationApplication {
+  sub DeleteApplicationPackage {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::DeleteApplicationApplication', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::DeleteApplicationPackage', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteApplicationPackageApplication {
+  sub DeleteBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::DeleteApplicationPackageApplication', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::DeleteBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetAccount {
+  sub GetApplication {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::GetAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::GetApplication', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetApplicationApplication {
+  sub GetApplicationPackage {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::GetApplicationApplication', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::GetApplicationPackage', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetApplicationPackageApplication {
+  sub GetBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::GetApplicationPackageApplication', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::GetBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetSubscriptionQuotasSubscription {
+  sub GetKeysBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::GetSubscriptionQuotasSubscription', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::GetKeysBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListAccount {
+  sub GetQuotasLocation {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::ListAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::GetQuotasLocation', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListApplication {
@@ -68,34 +68,34 @@ package Azure::BatchManagement;
     my $call_object = $self->new_with_coercions('BatchManagement::ListApplication', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByResourceGroupAccount {
+  sub ListBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::ListByResourceGroupAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::ListBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListKeysAccount {
+  sub ListByResourceGroupBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::ListKeysAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::ListByResourceGroupBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub RegenerateKeyAccount {
+  sub RegenerateKeyBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::RegenerateKeyAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::RegenerateKeyBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub SynchronizeAutoStorageKeysAccount {
+  sub SynchronizeAutoStorageKeysBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::SynchronizeAutoStorageKeysAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::SynchronizeAutoStorageKeysBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub UpdateAccount {
+  sub UpdateApplication {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::UpdateAccount', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::UpdateApplication', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub UpdateApplicationApplication {
+  sub UpdateBatchAccount {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('BatchManagement::UpdateApplicationApplication', @_);
+    my $call_object = $self->new_with_coercions('BatchManagement::UpdateBatchAccount', @_);
     return $self->caller->do_call($self, $call_object);
   }
 
