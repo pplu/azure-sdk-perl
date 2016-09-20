@@ -1,5 +1,5 @@
 package Azure;
-
+  # ABSTRACT: Azure SDK for Perl
   use Module::Runtime qw/require_module/;
 
   use Azure::Exception;
