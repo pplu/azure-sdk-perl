@@ -31,7 +31,12 @@ package Azure::SDK::Builder::Property;
           my (undef, $second) = $self->root_schema->path_parts($self->items->ref);
           $inner = $self->root_schema->namespace($second);
         } else {
-          die "Here we should be detecting a native type";
+          my $type = $self->items->type;
+          if ($type eq 'string'){
+            $inner = 'Str';
+          } else {
+            die "Find out what Moose native type for $type";
+          }
         }
 
         return "ArrayRef[$inner]";
