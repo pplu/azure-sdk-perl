@@ -1,0 +1,25 @@
+package Azure::DevTestLabs::LabVirtualMachineProperties;
+  use Moose;
+
+  has 'artifactDeploymentStatus' => (is => 'ro', isa => 'Any'  );
+  has 'artifacts' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'computeId' => (is => 'ro', isa => 'Str'  );
+  has 'createdByUser' => (is => 'ro', isa => 'Str'  );
+  has 'createdByUserId' => (is => 'ro', isa => 'Str'  );
+  has 'customImageId' => (is => 'ro', isa => 'Str'  );
+  has 'disallowPublicIpAddress' => (is => 'ro', isa => 'Any'  );
+  has 'fqdn' => (is => 'ro', isa => 'Str'  );
+  has 'galleryImageReference' => (is => 'ro', isa => 'Any'  );
+  has 'isAuthenticationWithSshKey' => (is => 'ro', isa => 'Any'  );
+  has 'labSubnetName' => (is => 'ro', isa => 'Str'  );
+  has 'labVirtualNetworkId' => (is => 'ro', isa => 'Str'  );
+  has 'notes' => (is => 'ro', isa => 'Str'  );
+  has 'osType' => (is => 'ro', isa => 'Str'  );
+  has 'ownerObjectId' => (is => 'ro', isa => 'Str'  );
+  has 'password' => (is => 'ro', isa => 'Str'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'size' => (is => 'ro', isa => 'Str'  );
+  has 'sshKey' => (is => 'ro', isa => 'Str'  );
+  has 'uniqueIdentifier' => (is => 'ro', isa => 'Str'  );
+  has 'userName' => (is => 'ro', isa => 'Str'  );
+1;

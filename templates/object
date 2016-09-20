@@ -1,4 +1,4 @@
-package [% object.name %];
+package Azure::[% object.name %];
   use Moose;
 
   [%- FOREACH property = object.attributes %]

@@ -1,0 +1,24 @@
+package Azure::DataLakeAnalyticsJobManagement::JobStatisticsVertexStage;
+  use Moose;
+
+  has 'dataRead' => (is => 'ro', isa => 'Int'  );
+  has 'dataReadCrossPod' => (is => 'ro', isa => 'Int'  );
+  has 'dataReadIntraPod' => (is => 'ro', isa => 'Int'  );
+  has 'dataToRead' => (is => 'ro', isa => 'Int'  );
+  has 'dataWritten' => (is => 'ro', isa => 'Int'  );
+  has 'duplicateDiscardCount' => (is => 'ro', isa => 'Int'  );
+  has 'failedCount' => (is => 'ro', isa => 'Int'  );
+  has 'maxVertexDataRead' => (is => 'ro', isa => 'Int'  );
+  has 'minVertexDataRead' => (is => 'ro', isa => 'Int'  );
+  has 'readFailureCount' => (is => 'ro', isa => 'Int'  );
+  has 'revocationCount' => (is => 'ro', isa => 'Int'  );
+  has 'runningCount' => (is => 'ro', isa => 'Int'  );
+  has 'scheduledCount' => (is => 'ro', isa => 'Int'  );
+  has 'stageName' => (is => 'ro', isa => 'Str'  );
+  has 'succeededCount' => (is => 'ro', isa => 'Int'  );
+  has 'tempDataWritten' => (is => 'ro', isa => 'Int'  );
+  has 'totalCount' => (is => 'ro', isa => 'Int'  );
+  has 'totalFailedTime' => (is => 'ro', isa => 'Str'  );
+  has 'totalProgress' => (is => 'ro', isa => 'Int'  );
+  has 'totalSucceededTime' => (is => 'ro', isa => 'Str'  );
+1;

@@ -1,4 +1,4 @@
-package [% method.name %];
+package Azure::[% method.name %];
   use Moose;
   use MooseX::ClassAttribute;
 
