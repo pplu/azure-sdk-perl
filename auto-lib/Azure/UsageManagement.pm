@@ -5,12 +5,12 @@ package Azure::UsageManagement;
 
   sub GetRateCard {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('UsageManagement::GetRateCard', @_);
+    my $call_object = $self->new_with_coercions('Azure::UsageManagement::GetRateCard', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListUsageAggregates {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('UsageManagement::ListUsageAggregates', @_);
+    my $call_object = $self->new_with_coercions('Azure::UsageManagement::ListUsageAggregates', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

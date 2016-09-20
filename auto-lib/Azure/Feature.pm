@@ -5,22 +5,22 @@ package Azure::Feature;
 
   sub GetFeatures {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Feature::GetFeatures', @_);
+    my $call_object = $self->new_with_coercions('Azure::Feature::GetFeatures', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAllFeatures {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Feature::ListAllFeatures', @_);
+    my $call_object = $self->new_with_coercions('Azure::Feature::ListAllFeatures', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListFeatures {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Feature::ListFeatures', @_);
+    my $call_object = $self->new_with_coercions('Azure::Feature::ListFeatures', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub RegisterFeatures {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Feature::RegisterFeatures', @_);
+    my $call_object = $self->new_with_coercions('Azure::Feature::RegisterFeatures', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

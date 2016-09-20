@@ -5,7 +5,7 @@ package Azure::SearchIndex;
 
   sub CountDocuments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('SearchIndex::CountDocuments', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchIndex::CountDocuments', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

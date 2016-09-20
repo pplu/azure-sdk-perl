@@ -5,7 +5,7 @@ package Azure::GraphRbacManagement;
 
   sub GetObjectsByObjectIdsObjects {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('GraphRbacManagement::GetObjectsByObjectIdsObjects', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetObjectsByObjectIdsObjects', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

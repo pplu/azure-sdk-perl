@@ -5,27 +5,27 @@ package Azure::SearchManagement;
 
   sub CreateOrUpdateServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('SearchManagement::CreateOrUpdateServices', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CreateOrUpdateServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('SearchManagement::DeleteServices', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::DeleteServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAdminKeys {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('SearchManagement::ListAdminKeys', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListAdminKeys', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListQueryKeys {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('SearchManagement::ListQueryKeys', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListQueryKeys', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('SearchManagement::ListServices', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

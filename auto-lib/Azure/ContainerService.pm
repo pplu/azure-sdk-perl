@@ -5,22 +5,22 @@ package Azure::ContainerService;
 
   sub CreateOrUpdateContainerService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ContainerService::CreateOrUpdateContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::CreateOrUpdateContainerService', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteContainerService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ContainerService::DeleteContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::DeleteContainerService', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetContainerService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ContainerService::GetContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::GetContainerService', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListContainerService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ContainerService::ListContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListContainerService', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

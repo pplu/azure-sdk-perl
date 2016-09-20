@@ -5,27 +5,27 @@ package Azure::KeyVaultManagement;
 
   sub CreateOrUpdateVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('KeyVaultManagement::CreateOrUpdateVaults', @_);
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::CreateOrUpdateVaults', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('KeyVaultManagement::DeleteVaults', @_);
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::DeleteVaults', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('KeyVaultManagement::GetVaults', @_);
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::GetVaults', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('KeyVaultManagement::ListByResourceGroupVaults', @_);
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListByResourceGroupVaults', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('KeyVaultManagement::ListVaults', @_);
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListVaults', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

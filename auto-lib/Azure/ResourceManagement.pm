@@ -5,167 +5,167 @@ package Azure::ResourceManagement;
 
   sub CancelDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CancelDeployments', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CancelDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CheckExistenceDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CheckExistenceDeployments', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CheckExistenceDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CheckExistenceResourceGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CheckExistenceResourceGroups', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CheckExistenceResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CheckExistenceResources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CheckExistenceResources', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CheckExistenceResources', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CreateOrUpdateDeployments', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CreateOrUpdateDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateResourceGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CreateOrUpdateResourceGroups', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CreateOrUpdateResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateResources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CreateOrUpdateResources', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CreateOrUpdateResources', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateTags {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CreateOrUpdateTags', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CreateOrUpdateTags', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateValueTags {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::CreateOrUpdateValueTags', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CreateOrUpdateValueTags', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::DeleteDeployments', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::DeleteDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteResourceGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::DeleteResourceGroups', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::DeleteResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteResources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::DeleteResources', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::DeleteResources', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteTags {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::DeleteTags', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::DeleteTags', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteValueTags {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::DeleteValueTags', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::DeleteValueTags', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ExportTemplateDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ExportTemplateDeployments', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ExportTemplateDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ExportTemplateResourceGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ExportTemplateResourceGroups', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ExportTemplateResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetDeploymentOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::GetDeploymentOperations', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::GetDeploymentOperations', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::GetDeployments', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::GetDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetProviders {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::GetProviders', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::GetProviders', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetResourceGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::GetResourceGroups', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::GetResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetResources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::GetResources', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::GetResources', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListDeploymentOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListDeploymentOperations', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListDeploymentOperations', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListDeployments', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListProviders {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListProviders', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListProviders', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListResourceGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListResourceGroups', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListResources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListResources', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListResources', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListResourcesResourceGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListResourcesResourceGroups', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListResourcesResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListTags {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ListTags', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListTags', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub MoveResourcesResources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::MoveResourcesResources', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::MoveResourcesResources', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub PatchResourceGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::PatchResourceGroups', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::PatchResourceGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub RegisterProviders {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::RegisterProviders', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::RegisterProviders', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub UnregisterProviders {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::UnregisterProviders', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::UnregisterProviders', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ValidateDeployments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('ResourceManagement::ValidateDeployments', @_);
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ValidateDeployments', @_);
     return $self->caller->do_call($self, $call_object);
   }
 
