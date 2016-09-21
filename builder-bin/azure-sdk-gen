@@ -19,8 +19,8 @@ if (@files == 0) {
     use Data::Dumper;
     print Dumper(\@jsons);
     my @sorted = sort { 
-      my ($ya, $ym, $yd) = ($a =~ m/(201[5-9])-(\d{2})-(\d{2})/);
-      my ($yb, $yb, $yb) = ($b =~ m/(201[5-9])-(\d{2})-(\d{2})/);
+      my ($ya, $ym, $yd) = ($a =~ m/(201[4-9])-(\d{2})-(\d{2})/);
+      my ($yb, $yb, $yb) = ($b =~ m/(201[4-9])-(\d{2})-(\d{2})/);
       my $vala = $ya * 366 + $ym * 30 + $yd;
       my $valb = $yb * 366 + $yb * 30 + $yb;
       $vala <=> $valb
