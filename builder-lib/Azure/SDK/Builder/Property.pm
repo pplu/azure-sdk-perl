@@ -35,9 +35,12 @@ package Azure::SDK::Builder::Property;
         } elsif (defined $self->items->type) {
           $inner = $self->items->type;
         } else {
-          use Data::Dumper;
-          print Dumper($self);
-          die "Here we should be detecting a native type";
+          my $type = $self->items->type;
+          if ($type eq 'string'){
+            $inner = 'Str';
+          } else {
+            die "Find out what Moose native type for $type";
+          }
         }
 
         return "ArrayRef[$inner]";

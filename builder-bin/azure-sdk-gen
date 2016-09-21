@@ -1,18 +1,39 @@
 #!/usr/bin/perl
 
 use v5.10;
+
+use FindBin;
+use lib "$FindBin::Bin/../builder-lib";
+
+use strict;
+use warnings;
 use Azure::SDK::Builder;
 
-my $file = $ARGV[0] or die "No file specified";
+my @files = @ARGV;
 
-if ($file =~ m/\/composite\w+\.json$/) {
-  say "Skipping $file because i don't know how to generate 'composite clients' (yet)";
-  exit 1;
+if (@files == 0) {
+  my @apis = sort keys %{ { map { $_ => 1 } grep { -d $_ } glob("azure-rest-api-specs/*") } };
+  
+  foreach my $api_dir (@apis) {
+    my @jsons = glob("$api_dir/*/swagger/*.json");
+    my @sorted = sort { 
+      my ($ya, $ym, $yd) = ($a =~ m/(201[4-9])-(\d{2})-(\d{2})/);
+      my ($yb, $yb, $yb) = ($b =~ m/(201[4-9])-(\d{2})-(\d{2})/);
+      my $vala = $ya * 366 + $ym * 30 + $yd;
+      my $valb = $yb * 366 + $yb * 30 + $yb;
+      $vala <=> $valb
+    } @jsons;
+
+    my $selected = shift @sorted;
+    push @files, $selected if (defined $selected);
+  }
 }
 
-say "Processing $file";
+foreach my $file (@files){
+  say "Processing $file";
 
-my $builder = Azure::SDK::Builder->new(
-  schema_file => $file
-);
-$builder->build;
+  my $builder = Azure::SDK::Builder->new(
+    schema_file => $file
+  );
+  $builder->build;
+}

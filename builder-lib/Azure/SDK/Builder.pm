@@ -162,6 +162,8 @@ package Azure::SDK::Builder;
       return $title if ($title eq 'BatchService');
       return $title if ($title eq 'BatchManagement');
 
+      die "Service has spaces in it's name. Please correct" if ($title =~ m/ /);
+
       die "Can't derive service from $title" if (not defined $service);
       return $service;
     }
