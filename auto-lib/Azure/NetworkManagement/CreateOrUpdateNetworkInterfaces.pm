@@ -8,10 +8,7 @@ package Azure::NetworkManagement::CreateOrUpdateNetworkInterfaces;
   has 'networkInterfaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInPath' ],
   );
-  has 'properties' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
-  );
-  has 'location' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

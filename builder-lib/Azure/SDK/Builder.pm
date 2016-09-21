@@ -105,6 +105,8 @@ package Azure::SDK::Builder;
       foreach my $path (sort keys %{ $self->schema->paths }){
         foreach my $http_verb (sort keys %{ $self->schema->paths->{ $path } }) {
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
+          use Data::Dumper;
+          print Dumper($operation);
           my $operationId = operationId_to_methodname($operation->operationId);
 
           $methods{ $operationId } =
@@ -153,6 +155,9 @@ package Azure::SDK::Builder;
       # ./src/ResourceManagement/Compute/ComputeManagement/ComputeManagementClient.json
       my ($service) = ($title =~ m/^(.*)Client$/);
 
+      return 'MLWebServicesManagement' if ($title eq 'Azure ML Web Services Management Client');
+      return 'MLCommitmentPlansManagement' if ($title eq 'Azure ML Commitment Plans Management Client');
+      return 'PowerBIEmbeddedManagement' if ($title eq 'Power BI Embedded Management Client');
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
       return $title if ($title eq 'BatchManagement');

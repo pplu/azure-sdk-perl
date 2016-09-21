@@ -4,8 +4,6 @@ package Azure::NetworkManagement::ExpressRouteCircuitPeering;
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'azureASN' => (is => 'ro', isa => 'Int'  );
-  has 'gatewayManagerEtag' => (is => 'ro', isa => 'Str'  );
-  has 'lastModifiedBy' => (is => 'ro', isa => 'Str'  );
   has 'microsoftPeeringConfig' => (is => 'ro', isa => 'Any'  );
   has 'peerASN' => (is => 'ro', isa => 'Int'  );
   has 'peeringType' => (is => 'ro', isa => 'Str'  );

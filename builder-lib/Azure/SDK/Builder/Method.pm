@@ -55,8 +55,15 @@ package Azure::SDK::Builder::Method;
     lazy => 1,
     default => sub {
       my $self = shift;
-      if (defined $self->responses->{200} or defined $self->responses->{204} or defined $self->responses->{202}) {
-        my $response = $self->responses->{200} || $self->responses->{204} || $self->responses->{202};
+      if (   defined $self->responses->{200}
+          or defined $self->responses->{201}
+          or defined $self->responses->{204} 
+          or defined $self->responses->{202}
+         ) {
+        my $response = $self->responses->{200} 
+                    || $self->responses->{201} 
+                    || $self->responses->{204} 
+                    || $self->responses->{202};
 
         die "Error finding the 20X response" if (not defined $response);
 
@@ -77,7 +84,12 @@ package Azure::SDK::Builder::Method;
         );
         return $return;
       } else {
-        die 'Can\'t find a valid response for ' . $self->method . ' on ' . $self->path;
+        # some APIs have just a default response that resolves to an error object
+        if (scalar(keys %{ $self->responses }) == 1 and defined $self->responses->{ default }) {
+          return undef;
+        } else {
+          die 'Can\'t find a valid response for ' . $self->method . ' on ' . $self->path;
+        }
       }
     }
   );

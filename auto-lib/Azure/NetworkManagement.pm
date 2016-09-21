@@ -8,11 +8,6 @@ package Azure::NetworkManagement;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CheckDnsNameAvailability', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CheckIPAddressAvailabilityVirtualNetworks {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CheckIPAddressAvailabilityVirtualNetworks', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub CreateOrUpdateApplicationGateways {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateApplicationGateways', @_);
@@ -86,11 +81,6 @@ package Azure::NetworkManagement;
   sub CreateOrUpdateVirtualNetworkGateways {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateVirtualNetworkGateways', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub CreateOrUpdateVirtualNetworkPeerings {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateVirtualNetworkPeerings', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateVirtualNetworks {
@@ -173,11 +163,6 @@ package Azure::NetworkManagement;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteVirtualNetworkGateways', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteVirtualNetworkPeerings {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteVirtualNetworkPeerings', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub DeleteVirtualNetworks {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteVirtualNetworks', @_);
@@ -191,11 +176,6 @@ package Azure::NetworkManagement;
   sub GetApplicationGateways {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetApplicationGateways', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetEffectiveRouteTableNetworkInterfaces {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetEffectiveRouteTableNetworkInterfaces', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetExpressRouteCircuitAuthorizations {
@@ -288,11 +268,6 @@ package Azure::NetworkManagement;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualNetworkGateways', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetVirtualNetworkPeerings {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualNetworkPeerings', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub GetVirtualNetworks {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualNetworks', @_);
@@ -346,11 +321,6 @@ package Azure::NetworkManagement;
   sub ListArpTableExpressRouteCircuits {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListArpTableExpressRouteCircuits', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListEffectiveNetworkSecurityGroupsNetworkInterfaces {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListEffectiveNetworkSecurityGroupsNetworkInterfaces', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListExpressRouteCircuitAuthorizations {
@@ -451,11 +421,6 @@ package Azure::NetworkManagement;
   sub ListVirtualNetworkGateways {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualNetworkGateways', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListVirtualNetworkPeerings {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualNetworkPeerings', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListVirtualNetworks {

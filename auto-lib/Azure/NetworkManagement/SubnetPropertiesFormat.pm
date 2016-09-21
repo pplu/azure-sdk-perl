@@ -5,6 +5,5 @@ package Azure::NetworkManagement::SubnetPropertiesFormat;
   has 'ipConfigurations' => (is => 'ro', isa => 'ArrayRef'  );
   has 'networkSecurityGroup' => (is => 'ro', isa => 'Any'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
-  has 'resourceNavigationLinks' => (is => 'ro', isa => 'ArrayRef'  );
   has 'routeTable' => (is => 'ro', isa => 'Any'  );
 1;

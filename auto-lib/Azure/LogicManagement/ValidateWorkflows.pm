@@ -8,6 +8,9 @@ package Azure::LogicManagement::ValidateWorkflows;
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInPath' ],
   );
+  has 'location' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'ParamInPath' ],
+  );
   has 'workflowName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInPath' ],
   );
@@ -18,7 +21,7 @@ package Azure::LogicManagement::ValidateWorkflows;
     traits => [ 'ParamInBody' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/validate');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/locations/{location}/workflows/{workflowName}/validate');
   class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;
