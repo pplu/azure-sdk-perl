@@ -18,8 +18,8 @@ has credentials => (
   #does => 'Paws::Credential',
   lazy => 1,
   default => sub {
-    Azure->load_class('Azure::Credential::AzureADClientCredentials');
-    Azure::Credential::AzureADClientCredentials->new
+    Azure->load_class('Azure::Credentials::AzureADClientCredentials');
+    Azure::Credentials::AzureADClientCredentials->new
   },
   #coerce => 1
 );
