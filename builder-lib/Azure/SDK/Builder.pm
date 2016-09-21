@@ -83,6 +83,16 @@ package Azure::SDK::Builder;
     } else {
       return $id if ($id eq 'CheckDnsNameAvailability');
       return $id if ($id eq 'GetLocations');
+      return $id if ($id eq 'GetLocationByHostName');
+      return $id if ($id eq 'GetApps');
+      return $id if ($id eq 'GetMAMFlaggedUsers');
+      return $id if ($id eq 'GetMAMFlaggedUserByName');
+      return $id if ($id eq 'GetMAMUserFlaggedEnrolledApps');
+      return $id if ($id eq 'GetOperationResults');
+      return $id if ($id eq 'GetMAMStatuses');
+      return $id if ($id eq 'GetMAMUserDevices');
+      return $id if ($id eq 'GetMAMUserDeviceByDeviceName');
+      return $id if ($id eq 'WipeMAMUserDevice');
 
       return 'GetAvailableOperations' if ($id eq 'getAvailableOperations');
 
