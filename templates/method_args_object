@@ -11,6 +11,6 @@ package Azure::[% method.name %];
   [%- END %]
 
   class_has _api_uri => (is => 'ro', default => '[% method.path %]');
-  class_has _returns => (is => 'ro', default => '[% method.return.name %]');
+  class_has _returns => (is => 'ro', default => 'Azure::[% method.return.name %]');
   class_has _api_method => (is => 'ro', default => '[% method.method %]');
 1;
