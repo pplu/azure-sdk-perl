@@ -31,7 +31,7 @@ package Azure::SDK::Builder::Property;
         my $inner;
         if (defined $self->items->ref) {
           my (undef, $second) = $self->root_schema->path_parts($self->items->ref);
-          $inner = $self->root_schema->namespace($second);
+          $inner = sprintf("Azure::%s", $self->root_schema->namespace($second));
         } elsif (defined $self->items->type) {
           $inner = $self->items->type;
         } else {
