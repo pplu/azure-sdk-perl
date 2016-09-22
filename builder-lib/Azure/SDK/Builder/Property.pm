@@ -19,9 +19,9 @@ package Azure::SDK::Builder::Property;
     default => sub {
       my $self = shift;
 
-      if      (not defined $self->type){
+      if (not defined $self->type and defined $self->ref){
         my (undef, $second) = $self->root_schema->path_parts($self->ref);
-        return $self->root_schema->namespace($second);
+        return "Azure::" . $self->root_schema->namespace($second);
       } elsif ($self->type eq 'string') {
         return 'Str';
       } elsif ($self->type eq 'boolean') {
