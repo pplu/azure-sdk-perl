@@ -3,10 +3,8 @@ use warnings;
 use strict;
 
 use Azure;
-use Azure::NetworkResourceProvider;
+use Azure::NetworkManagement;
 use Azure::Credentials::AzureADClientCredentials;
-
-use Azure::Net::Caller;
 
 my $azure = Azure->new(
   credentials => Azure::Credentials::AzureADClientCredentials->new(
@@ -16,7 +14,7 @@ my $azure = Azure->new(
   ),
 );
 
-my $nw  = $azure->service('NetworkResourceProvider');
+my $nw  = $azure->service('NetworkManagement');
 my $ret = $nw->ListNetworkInterfaces(
   'api-version'  => '2016-03-30',
   subscriptionId => $ENV{AZURE_SUBSCRIPTION_ID},
