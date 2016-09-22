@@ -8,7 +8,10 @@ package Azure::NetworkManagement::CreateOrUpdatePublicIPAddresses;
   has 'publicIpAddressName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'properties' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'ParamInBody' ],
+  );
+  has 'location' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
@@ -19,6 +22,6 @@ package Azure::NetworkManagement::CreateOrUpdatePublicIPAddresses;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/publicIPAddresses/{publicIpAddressName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::CreateOrUpdatePublicIPAddressesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdatePublicIPAddressesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;
