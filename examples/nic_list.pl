@@ -3,8 +3,9 @@ use warnings;
 use strict;
 
 use Azure;
-use Azure::NetworkManagement;
 use Azure::Credentials::AzureADClientCredentials;
+
+
 
 my $azure = Azure->new(
   credentials => Azure::Credentials::AzureADClientCredentials->new(
