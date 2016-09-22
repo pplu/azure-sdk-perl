@@ -33,7 +33,11 @@ my $ret = $nw->CreateOrUpdateNetworkInterfaces(
   'subscriptionId'       => $ENV{AZURE_SUBSCRIPTION_ID},
   'resourceGroupName'    => 'ENZIMETEST',
   'networkInterfaceName' => 'AzureSDKTest',
-  'location'             => 'westeurope',
+  'location'             => 'westeurope',,
+  tags => {
+      'tag1' => 'lala',
+      'tag2' => 'alal',
+  },
   'properties'           => {
     'networkSecurityGroup' => {
       'id' => $sgroup_id,

@@ -22,6 +22,10 @@ my $ret = $nw->CreateOrUpdatePublicIPAddresses(
   resourceGroupName => 'ENZIMETEST',
   publicIpAddressName => 'AzureSDKTest',
   location => "westeurope",
+  tags => {
+      'tag1' => 'lala',
+      'tag2' => 'alal',
+  },
   properties => {
     publicIPAllocationMethod => 'static',
   },

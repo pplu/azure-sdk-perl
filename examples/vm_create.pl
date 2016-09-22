@@ -36,8 +36,12 @@ my $ret = $c->CreateOrUpdateVirtualMachines(
   'resourceGroupName' => 'ENZIMETEST',
   'vmName'     => $vmname,
   'location'   => 'westeurope',
+  'tags' => {
+    'tag1' => 'lala',
+    'tag2' => 'alal',
+  },
   'properties' => {
-    'hardwareProfile' => {
+        'hardwareProfile' => {
       'vmSize' => 'Standard_A2',
     },
     'osProfile' => {
