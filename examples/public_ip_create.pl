@@ -1,15 +1,13 @@
 #!/usr/bin/env perl
-
 use warnings;
 use strict;
 
 use Azure;
-use NetworkManagement;
+use Azure::Credentials::AzureADClientCredentials;
 
-use Azure::Net::Caller;
 
-my $r = NetworkManagement->new(
-  caller => Azure::Net::Caller->new,
+
+my $azure = Azure->new(
   credentials => Azure::Credentials::AzureADClientCredentials->new(
     tenant_id => $ENV{AZURE_TENANT_ID},
     client_id => $ENV{AZURE_CLIENT_ID},
@@ -17,7 +15,8 @@ my $r = NetworkManagement->new(
   ),
 );
 
-my $ret = $r->CreateOrUpdatePublicIPAddresses(
+my $nw  = $azure->service('NetworkManagement');
+my $ret = $nw->CreateOrUpdatePublicIPAddresses(
   'api-version'  => '2016-09-01',
   subscriptionId => $ENV{AZURE_SUBSCRIPTION_ID},
   resourceGroupName => 'ENZIMETEST',
