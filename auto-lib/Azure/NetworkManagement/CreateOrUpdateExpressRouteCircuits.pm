@@ -18,7 +18,7 @@ package Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuits;
     traits => [ 'ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}');
   class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

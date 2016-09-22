@@ -12,6 +12,7 @@ package Azure::ComputeManagement::VirtualMachine;
   has 'osProfile' => (is => 'ro', isa => 'Any'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'storageProfile' => (is => 'ro', isa => 'Any'  );
+  has 'vmId' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

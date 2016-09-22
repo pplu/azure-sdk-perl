@@ -12,7 +12,7 @@ package Azure::NetworkManagement::ListVirtualNetworks;
     traits => [ 'ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualnetworks');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks');
   class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListVirtualNetworksResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

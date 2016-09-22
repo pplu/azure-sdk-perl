@@ -1,6 +1,8 @@
 package Azure::NetworkManagement::ExpressRouteCircuitStats;
   use Moose;
 
-  has 'bytesIn' => (is => 'ro', isa => 'Int'  );
-  has 'bytesOut' => (is => 'ro', isa => 'Int'  );
+  has 'primarybytesIn' => (is => 'ro', isa => 'Int'  );
+  has 'primarybytesOut' => (is => 'ro', isa => 'Int'  );
+  has 'secondarybytesIn' => (is => 'ro', isa => 'Int'  );
+  has 'secondarybytesOut' => (is => 'ro', isa => 'Int'  );
 1;

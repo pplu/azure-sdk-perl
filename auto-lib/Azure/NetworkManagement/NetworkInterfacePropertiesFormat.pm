@@ -2,6 +2,7 @@ package Azure::NetworkManagement::NetworkInterfacePropertiesFormat;
   use Moose;
 
   has 'dnsSettings' => (is => 'ro', isa => 'Any'  );
+  has 'enableAcceleratedNetworking' => (is => 'ro', isa => 'Any'  );
   has 'enableIPForwarding' => (is => 'ro', isa => 'Any'  );
   has 'ipConfigurations' => (is => 'ro', isa => 'ArrayRef'  );
   has 'macAddress' => (is => 'ro', isa => 'Str'  );

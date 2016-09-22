@@ -8,6 +8,12 @@ package Azure::NetworkManagement::ListArpTableExpressRouteCircuits;
   has 'circuitName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInPath' ],
   );
+  has 'peeringName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'ParamInPath' ],
+  );
+  has 'devicePath' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'ParamInPath' ],
+  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInQuery' ],
   );
@@ -15,7 +21,7 @@ package Azure::NetworkManagement::ListArpTableExpressRouteCircuits;
     traits => [ 'ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/arpTable');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/peerings/{peeringName}/arpTables/{devicePath}');
   class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListArpTableExpressRouteCircuitsResult');
-  class_has _api_method => (is => 'ro', default => 'GET');
+  class_has _api_method => (is => 'ro', default => 'POST');
 1;

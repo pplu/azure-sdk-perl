@@ -18,7 +18,7 @@ package Azure::NetworkManagement::ResetVirtualNetworkGateways;
     traits => [ 'ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualnetworkgateways/{virtualNetworkGatewayName}/reset');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/reset');
   class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ResetVirtualNetworkGatewaysResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

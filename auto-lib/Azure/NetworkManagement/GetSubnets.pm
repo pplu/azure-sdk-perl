@@ -21,7 +21,7 @@ package Azure::NetworkManagement::GetSubnets;
     traits => [ 'ParamInQuery' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualnetworks/{virtualNetworkName}/subnets/{subnetName}');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/subnets/{subnetName}');
   class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetSubnetsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -18,7 +18,7 @@ package Azure::NetworkManagement::GeneratevpnclientpackageVirtualNetworkGateways
     traits => [ 'ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualnetworkgateways/{virtualNetworkGatewayName}/generatevpnclientpackage');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/generatevpnclientpackage');
   class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GeneratevpnclientpackageVirtualNetworkGatewaysResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

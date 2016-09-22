@@ -8,7 +8,10 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachines;
   has 'vmName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'properties' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'ParamInBody' ],
+  );
+  has 'location' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
