@@ -40,6 +40,6 @@ package Azure::DataLakeAnalyticsAccountManagement::ListByResourceGroupAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeAnalytics/accounts');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsAccountManagement::ListByResourceGroupAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::ListByResourceGroupAccountResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

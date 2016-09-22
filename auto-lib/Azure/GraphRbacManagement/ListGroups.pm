@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::ListGroups;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/groups');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::ListGroupsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::ListGroupsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

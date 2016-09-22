@@ -22,6 +22,6 @@ package Azure::LogicManagement::RegenerateSecretKeyWorkflowAccessKeys;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/accessKeys/{accessKeyName}/regenerate');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::RegenerateSecretKeyWorkflowAccessKeysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::RegenerateSecretKeyWorkflowAccessKeysResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

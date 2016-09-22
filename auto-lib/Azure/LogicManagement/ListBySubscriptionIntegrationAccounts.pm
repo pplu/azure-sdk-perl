@@ -13,6 +13,6 @@ package Azure::LogicManagement::ListBySubscriptionIntegrationAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Logic/integrationAccounts');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::ListBySubscriptionIntegrationAccountsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::ListBySubscriptionIntegrationAccountsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

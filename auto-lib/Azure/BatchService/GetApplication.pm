@@ -22,6 +22,6 @@ package Azure::BatchService::GetApplication;
   );
 
   class_has _api_uri => (is => 'ro', default => '/applications/{applicationId}');
-  class_has _returns => (is => 'ro', default => 'BatchService::GetApplicationResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetApplicationResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -1,8 +1,8 @@
 package Azure::ComputeManagement::GetVirtualMachinesResult;
   use Moose;
 
-  has plan => (is => 'ro', isa => 'ComputeManagement::Plan'  );
-  has properties => (is => 'ro', isa => 'ComputeManagement::VirtualMachineProperties'  );
-  has resources => (is => 'ro', isa => 'ArrayRef[ComputeManagement::VirtualMachineExtension]'  );
+  has plan => (is => 'ro', isa => 'Azure::ComputeManagement::Plan'  );
+  has properties => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineProperties'  );
+  has resources => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VirtualMachineExtension]'  );
 
 1;

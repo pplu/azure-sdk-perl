@@ -25,6 +25,6 @@ package Azure::ResourceManagement::GetResources;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::GetResourcesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::GetResourcesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

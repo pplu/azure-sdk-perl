@@ -22,6 +22,6 @@ package Azure::ServerManagement::CancelCommandPowerShell;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServerManagement/nodes/{nodeName}/sessions/{session}/features/powerShellConsole/pssessions/{pssession}/cancel');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::CancelCommandPowerShellResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::CancelCommandPowerShellResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -19,6 +19,6 @@ package Azure::ServerManagement::UpdateGateway;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServerManagement/gateways/{gatewayName}');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::UpdateGatewayResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::UpdateGatewayResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

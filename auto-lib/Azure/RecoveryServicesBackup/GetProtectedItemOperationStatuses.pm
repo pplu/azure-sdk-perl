@@ -28,6 +28,6 @@ package Azure::RecoveryServicesBackup::GetProtectedItemOperationStatuses;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/operationsStatus/{operationId}');
-  class_has _returns => (is => 'ro', default => 'RecoveryServicesBackup::GetProtectedItemOperationStatusesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::GetProtectedItemOperationStatusesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

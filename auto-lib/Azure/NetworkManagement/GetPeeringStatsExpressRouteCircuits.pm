@@ -19,6 +19,6 @@ package Azure::NetworkManagement::GetPeeringStatsExpressRouteCircuits;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/peerings/{peeringName}/stats');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::GetPeeringStatsExpressRouteCircuitsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetPeeringStatsExpressRouteCircuitsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

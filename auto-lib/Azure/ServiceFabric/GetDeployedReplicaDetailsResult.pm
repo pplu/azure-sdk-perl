@@ -9,7 +9,7 @@ package Azure::ServiceFabric::GetDeployedReplicaDetailsResult;
   has ReadStatus => (is => 'ro', isa => 'Any'  );
   has ReplicaId => (is => 'ro', isa => 'Str'  );
   has ReplicatorStatus => (is => 'ro', isa => 'Any'  );
-  has ServiceKind => (is => 'ro', isa => 'ServiceFabric::ServiceKind'  );
+  has ServiceKind => (is => 'ro', isa => 'Azure::ServiceFabric::ServiceKind'  );
   has ServiceName => (is => 'ro', isa => 'Str'  );
   has WriteStatus => (is => 'ro', isa => 'Any'  );
 

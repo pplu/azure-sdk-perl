@@ -19,6 +19,6 @@ package Azure::LogicManagement::RunWorkflows;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/run');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::RunWorkflowsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::RunWorkflowsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

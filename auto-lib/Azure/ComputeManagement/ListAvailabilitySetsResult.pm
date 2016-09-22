@@ -1,6 +1,6 @@
 package Azure::ComputeManagement::ListAvailabilitySetsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[ComputeManagement::AvailabilitySet]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::AvailabilitySet]'  );
 
 1;

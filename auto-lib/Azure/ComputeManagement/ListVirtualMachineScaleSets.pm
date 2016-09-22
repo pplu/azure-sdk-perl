@@ -13,6 +13,6 @@ package Azure::ComputeManagement::ListVirtualMachineScaleSets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::ListVirtualMachineScaleSetsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::ListVirtualMachineScaleSetsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

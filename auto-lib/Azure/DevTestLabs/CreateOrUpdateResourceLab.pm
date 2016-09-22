@@ -19,6 +19,6 @@ package Azure::DevTestLabs::CreateOrUpdateResourceLab;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{name}');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::CreateOrUpdateResourceLabResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::CreateOrUpdateResourceLabResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

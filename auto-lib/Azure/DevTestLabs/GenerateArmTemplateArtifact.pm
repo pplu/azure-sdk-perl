@@ -25,6 +25,6 @@ package Azure::DevTestLabs::GenerateArmTemplateArtifact;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/artifactsources/{artifactSourceName}/artifacts/{name}/generateArmTemplate');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::GenerateArmTemplateArtifactResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::GenerateArmTemplateArtifactResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

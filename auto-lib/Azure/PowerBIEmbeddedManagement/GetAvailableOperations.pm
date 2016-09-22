@@ -7,6 +7,6 @@ package Azure::PowerBIEmbeddedManagement::GetAvailableOperations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.PowerBI/operations');
-  class_has _returns => (is => 'ro', default => 'PowerBIEmbeddedManagement::GetAvailableOperationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::PowerBIEmbeddedManagement::GetAvailableOperationsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

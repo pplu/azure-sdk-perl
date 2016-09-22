@@ -16,6 +16,6 @@ package Azure::CognitiveServicesManagement::ListKeysCognitiveServicesAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/listKeys');
-  class_has _returns => (is => 'ro', default => 'CognitiveServicesManagement::ListKeysCognitiveServicesAccountsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::ListKeysCognitiveServicesAccountsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

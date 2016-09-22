@@ -16,6 +16,6 @@ package Azure::DataLakeStoreFileSystemManagement::GetFileInfoFileSystem;
   );
 
   class_has _api_uri => (is => 'ro', default => '/WebHdfsExt/{filePath}');
-  class_has _returns => (is => 'ro', default => 'DataLakeStoreFileSystemManagement::GetFileInfoFileSystemResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeStoreFileSystemManagement::GetFileInfoFileSystemResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -6,8 +6,8 @@ package Azure::CognitiveServicesManagement::CreateCognitiveServicesAccountsResul
   has kind => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'CognitiveServicesManagement::CognitiveServicesAccountProperties'  );
-  has sku => (is => 'ro', isa => 'CognitiveServicesManagement::Sku'  );
+  has properties => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::CognitiveServicesAccountProperties'  );
+  has sku => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::Sku'  );
   has tags => (is => 'ro', isa => 'Any'  );
   has type => (is => 'ro', isa => 'Str'  );
 

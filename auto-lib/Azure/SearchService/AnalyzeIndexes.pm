@@ -16,6 +16,6 @@ package Azure::SearchService::AnalyzeIndexes;
   );
 
   class_has _api_uri => (is => 'ro', default => '/indexes('{indexName}')/search.analyze');
-  class_has _returns => (is => 'ro', default => 'SearchService::AnalyzeIndexesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::AnalyzeIndexesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

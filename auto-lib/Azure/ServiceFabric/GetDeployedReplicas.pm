@@ -13,6 +13,6 @@ package Azure::ServiceFabric::GetDeployedReplicas;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}/$/GetApplications/{applicationName}/$/GetReplicas');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetDeployedReplicasResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetDeployedReplicasResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

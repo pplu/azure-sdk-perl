@@ -13,6 +13,6 @@ package Azure::AuthorizationManagement::ListRoleAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/roleAssignments');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::ListRoleAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::ListRoleAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -28,6 +28,6 @@ package Azure::DevTestLabs::ListArtifact;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/artifactsources/{artifactSourceName}/artifacts');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::ListArtifactResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::ListArtifactResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

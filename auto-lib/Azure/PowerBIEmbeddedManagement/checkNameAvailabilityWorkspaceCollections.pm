@@ -16,6 +16,6 @@ package Azure::PowerBIEmbeddedManagement::checkNameAvailabilityWorkspaceCollecti
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.PowerBI/locations/{location}/checkNameAvailability');
-  class_has _returns => (is => 'ro', default => 'PowerBIEmbeddedManagement::checkNameAvailabilityWorkspaceCollectionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::PowerBIEmbeddedManagement::checkNameAvailabilityWorkspaceCollectionsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

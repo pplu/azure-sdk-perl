@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::ListServicePrincipal;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/servicePrincipals');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::ListServicePrincipalResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::ListServicePrincipalResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

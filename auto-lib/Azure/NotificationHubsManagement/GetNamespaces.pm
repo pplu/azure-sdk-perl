@@ -16,6 +16,6 @@ package Azure::NotificationHubsManagement::GetNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}');
-  class_has _returns => (is => 'ro', default => 'NotificationHubsManagement::GetNamespacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NotificationHubsManagement::GetNamespacesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

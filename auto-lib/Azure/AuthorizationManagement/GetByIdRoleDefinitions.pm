@@ -10,6 +10,6 @@ package Azure::AuthorizationManagement::GetByIdRoleDefinitions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{roleDefinitionId}');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::GetByIdRoleDefinitionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::GetByIdRoleDefinitionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

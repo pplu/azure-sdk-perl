@@ -1,5 +1,6 @@
 package Azure::NotificationHubsManagement::GcmCredential;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'gcmEndpoint' => (is => 'ro', isa => 'Str'  );
+  has 'googleApiKey' => (is => 'ro', isa => 'Str'  );
 1;

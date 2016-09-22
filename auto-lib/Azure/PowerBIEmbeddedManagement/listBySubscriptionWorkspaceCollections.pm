@@ -10,6 +10,6 @@ package Azure::PowerBIEmbeddedManagement::listBySubscriptionWorkspaceCollections
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.PowerBI/workspaceCollections');
-  class_has _returns => (is => 'ro', default => 'PowerBIEmbeddedManagement::listBySubscriptionWorkspaceCollectionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::PowerBIEmbeddedManagement::listBySubscriptionWorkspaceCollectionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

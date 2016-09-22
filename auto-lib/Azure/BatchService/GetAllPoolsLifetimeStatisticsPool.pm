@@ -19,6 +19,6 @@ package Azure::BatchService::GetAllPoolsLifetimeStatisticsPool;
   );
 
   class_has _api_uri => (is => 'ro', default => '/lifetimepoolstats');
-  class_has _returns => (is => 'ro', default => 'BatchService::GetAllPoolsLifetimeStatisticsPoolResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetAllPoolsLifetimeStatisticsPoolResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

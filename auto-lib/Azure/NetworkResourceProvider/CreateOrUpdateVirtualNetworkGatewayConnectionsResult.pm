@@ -2,6 +2,6 @@ package Azure::NetworkResourceProvider::CreateOrUpdateVirtualNetworkGatewayConne
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'NetworkResourceProvider::VirtualNetworkGatewayConnectionPropertiesFormat'  );
+  has properties => (is => 'ro', isa => 'Azure::NetworkResourceProvider::VirtualNetworkGatewayConnectionPropertiesFormat'  );
 
 1;

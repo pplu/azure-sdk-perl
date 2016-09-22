@@ -19,6 +19,6 @@ package Azure::NetworkManagement::GetVirtualNetworkPeerings;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::GetVirtualNetworkPeeringsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetVirtualNetworkPeeringsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

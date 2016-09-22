@@ -22,6 +22,6 @@ package Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitAuthorization
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/authorizations/{authorizationName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::CreateOrUpdateExpressRouteCircuitAuthorizationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitAuthorizationsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

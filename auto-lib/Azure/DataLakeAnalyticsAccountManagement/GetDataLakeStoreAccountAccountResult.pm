@@ -2,6 +2,6 @@ package Azure::DataLakeAnalyticsAccountManagement::GetDataLakeStoreAccountAccoun
   use Moose;
 
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'DataLakeAnalyticsAccountManagement::DataLakeStoreAccountInfoProperties'  );
+  has properties => (is => 'ro', isa => 'Azure::DataLakeAnalyticsAccountManagement::DataLakeStoreAccountInfoProperties'  );
 
 1;

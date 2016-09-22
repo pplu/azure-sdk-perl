@@ -16,6 +16,6 @@ package Azure::SearchManagement::ListQueryKeys;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search/searchServices/{serviceName}/listQueryKeys');
-  class_has _returns => (is => 'ro', default => 'SearchManagement::ListQueryKeysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchManagement::ListQueryKeysResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

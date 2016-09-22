@@ -7,6 +7,6 @@ package Azure::ServiceFabric::GetUpgradeProgresses;
   );
 
   class_has _api_uri => (is => 'ro', default => '/$/GetUpgradeProgress');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetUpgradeProgressesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetUpgradeProgressesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -10,6 +10,6 @@ package Azure::Subscription::GetSubscriptions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}');
-  class_has _returns => (is => 'ro', default => 'Subscription::GetSubscriptionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Subscription::GetSubscriptionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

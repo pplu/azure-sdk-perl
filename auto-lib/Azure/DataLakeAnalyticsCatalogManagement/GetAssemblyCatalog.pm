@@ -13,6 +13,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::GetAssemblyCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/assemblies/{assemblyName}');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::GetAssemblyCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::GetAssemblyCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

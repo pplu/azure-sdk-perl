@@ -19,6 +19,6 @@ package Azure::ResourceManagement::ValidateDeployments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/validate');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::ValidateDeploymentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ValidateDeploymentsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

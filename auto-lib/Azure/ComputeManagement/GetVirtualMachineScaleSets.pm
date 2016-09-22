@@ -16,6 +16,6 @@ package Azure::ComputeManagement::GetVirtualMachineScaleSets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::GetVirtualMachineScaleSetsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::GetVirtualMachineScaleSetsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -16,6 +16,6 @@ package Azure::IntuneResourceManagement::PatchMAMPolicyAndroid;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/androidPolicies/{policyName}');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::PatchMAMPolicyAndroidResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::PatchMAMPolicyAndroidResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

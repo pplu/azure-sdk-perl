@@ -7,6 +7,6 @@ package Azure::CdnManagement::ListOperations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Cdn/operations');
-  class_has _returns => (is => 'ro', default => 'CdnManagement::ListOperationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::ListOperationsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

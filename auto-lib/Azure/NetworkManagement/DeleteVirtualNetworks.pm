@@ -15,7 +15,7 @@ package Azure::NetworkManagement::DeleteVirtualNetworks;
     traits => [ 'ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualnetworks/{virtualNetworkName}');
   class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

@@ -13,6 +13,6 @@ package Azure::NotificationHubsManagement::CheckAvailabilityNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.NotificationHubs/checkNamespaceAvailability');
-  class_has _returns => (is => 'ro', default => 'NotificationHubsManagement::CheckAvailabilityNamespacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NotificationHubsManagement::CheckAvailabilityNamespacesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

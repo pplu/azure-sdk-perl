@@ -25,6 +25,6 @@ package Azure::DevTestLabs::ListCostInsight;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/costinsights');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::ListCostInsightResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::ListCostInsightResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

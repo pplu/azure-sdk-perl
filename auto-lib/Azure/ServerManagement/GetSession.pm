@@ -19,6 +19,6 @@ package Azure::ServerManagement::GetSession;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServerManagement/nodes/{nodeName}/sessions/{session}');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::GetSessionResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::GetSessionResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

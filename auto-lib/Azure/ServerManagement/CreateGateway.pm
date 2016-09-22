@@ -19,6 +19,6 @@ package Azure::ServerManagement::CreateGateway;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServerManagement/gateways/{gatewayName}');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::CreateGatewayResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::CreateGatewayResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

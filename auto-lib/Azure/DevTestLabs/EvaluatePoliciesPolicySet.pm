@@ -22,6 +22,6 @@ package Azure::DevTestLabs::EvaluatePoliciesPolicySet;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/policysets/{name}/evaluatePolicies');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::EvaluatePoliciesPolicySetResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::EvaluatePoliciesPolicySetResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

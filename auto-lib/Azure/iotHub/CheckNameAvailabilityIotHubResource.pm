@@ -13,6 +13,6 @@ package Azure::iotHub::CheckNameAvailabilityIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Devices/checkNameAvailability');
-  class_has _returns => (is => 'ro', default => 'iotHub::CheckNameAvailabilityIotHubResourceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::iotHub::CheckNameAvailabilityIotHubResourceResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

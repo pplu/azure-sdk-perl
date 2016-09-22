@@ -31,6 +31,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListCredentialsCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/credentials');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::ListCredentialsCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::ListCredentialsCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

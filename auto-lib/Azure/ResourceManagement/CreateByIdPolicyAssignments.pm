@@ -16,6 +16,6 @@ package Azure::ResourceManagement::CreateByIdPolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{policyAssignmentId}');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::CreateByIdPolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::CreateByIdPolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

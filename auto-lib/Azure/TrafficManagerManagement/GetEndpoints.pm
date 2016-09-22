@@ -22,6 +22,6 @@ package Azure::TrafficManagerManagement::GetEndpoints;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}/{endpointType}/{endpointName}');
-  class_has _returns => (is => 'ro', default => 'TrafficManagerManagement::GetEndpointsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::GetEndpointsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

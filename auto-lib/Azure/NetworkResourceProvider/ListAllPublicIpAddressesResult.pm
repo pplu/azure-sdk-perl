@@ -2,6 +2,6 @@ package Azure::NetworkResourceProvider::ListAllPublicIpAddressesResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[NetworkResourceProvider::PublicIpAddress]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::NetworkResourceProvider::PublicIpAddress]'  );
 
 1;

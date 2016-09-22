@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::GetApplication;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/applications/{applicationObjectId}');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::GetApplicationResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::GetApplicationResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -16,6 +16,6 @@ package Azure::Policy::CreateOrUpdatePolicyDefinitions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policydefinitions/{policyDefinitionName}');
-  class_has _returns => (is => 'ro', default => 'Policy::CreateOrUpdatePolicyDefinitionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Policy::CreateOrUpdatePolicyDefinitionsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

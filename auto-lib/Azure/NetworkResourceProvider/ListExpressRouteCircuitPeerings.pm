@@ -16,6 +16,6 @@ package Azure::NetworkResourceProvider::ListExpressRouteCircuitPeerings;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/peerings');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::ListExpressRouteCircuitPeeringsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::ListExpressRouteCircuitPeeringsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

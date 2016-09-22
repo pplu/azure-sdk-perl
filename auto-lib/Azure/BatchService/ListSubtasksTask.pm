@@ -28,6 +28,6 @@ package Azure::BatchService::ListSubtasksTask;
   );
 
   class_has _api_uri => (is => 'ro', default => '/jobs/{jobId}/tasks/{taskId}/subtasksinfo');
-  class_has _returns => (is => 'ro', default => 'BatchService::ListSubtasksTaskResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListSubtasksTaskResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

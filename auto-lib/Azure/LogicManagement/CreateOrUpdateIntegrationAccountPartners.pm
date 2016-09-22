@@ -22,6 +22,6 @@ package Azure::LogicManagement::CreateOrUpdateIntegrationAccountPartners;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationAccounts/{integrationAccountName}/partners/{partnerName}');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::CreateOrUpdateIntegrationAccountPartnersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::CreateOrUpdateIntegrationAccountPartnersResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

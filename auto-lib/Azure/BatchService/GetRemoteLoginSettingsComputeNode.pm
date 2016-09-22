@@ -25,6 +25,6 @@ package Azure::BatchService::GetRemoteLoginSettingsComputeNode;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools/{poolId}/nodes/{nodeId}/remoteloginsettings');
-  class_has _returns => (is => 'ro', default => 'BatchService::GetRemoteLoginSettingsComputeNodeResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetRemoteLoginSettingsComputeNodeResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

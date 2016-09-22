@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::GetUser;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/users/{upnOrObjectId}');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::GetUserResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::GetUserResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

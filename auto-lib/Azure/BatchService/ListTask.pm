@@ -34,6 +34,6 @@ package Azure::BatchService::ListTask;
   );
 
   class_has _api_uri => (is => 'ro', default => '/jobs/{jobId}/tasks');
-  class_has _returns => (is => 'ro', default => 'BatchService::ListTaskResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListTaskResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

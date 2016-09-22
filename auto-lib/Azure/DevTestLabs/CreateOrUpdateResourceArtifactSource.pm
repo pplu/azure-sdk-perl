@@ -22,6 +22,6 @@ package Azure::DevTestLabs::CreateOrUpdateResourceArtifactSource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/artifactsources/{name}');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::CreateOrUpdateResourceArtifactSourceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::CreateOrUpdateResourceArtifactSourceResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

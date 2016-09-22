@@ -16,6 +16,6 @@ package Azure::LogicManagement::ListBySubscriptionWorkflows;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Logic/workflows');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::ListBySubscriptionWorkflowsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::ListBySubscriptionWorkflowsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

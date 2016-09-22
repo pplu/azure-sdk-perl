@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::IsMemberOfGroups;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/isMemberOf');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::IsMemberOfGroupsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::IsMemberOfGroupsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

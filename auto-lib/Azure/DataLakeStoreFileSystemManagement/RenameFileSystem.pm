@@ -19,6 +19,6 @@ package Azure::DataLakeStoreFileSystemManagement::RenameFileSystem;
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{renameFilePath}');
-  class_has _returns => (is => 'ro', default => 'DataLakeStoreFileSystemManagement::RenameFileSystemResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeStoreFileSystemManagement::RenameFileSystemResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

@@ -1,6 +1,6 @@
 package Azure::DataLakeStoreFileSystemManagement::ListFileStatusFileSystemResult;
   use Moose;
 
-  has FileStatuses => (is => 'ro', isa => 'DataLakeStoreFileSystemManagement::FileStatuses'  );
+  has FileStatuses => (is => 'ro', isa => 'Azure::DataLakeStoreFileSystemManagement::FileStatuses'  );
 
 1;

@@ -10,6 +10,6 @@ package Azure::ServiceFabric::ListDeployedApplications;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}/$/GetApplications');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::ListDeployedApplicationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::ListDeployedApplicationsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -3,6 +3,6 @@ package Azure::NetworkResourceProvider::CreateOrUpdateRoutesResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'NetworkResourceProvider::RoutePropertiesFormat'  );
+  has properties => (is => 'ro', isa => 'Azure::NetworkResourceProvider::RoutePropertiesFormat'  );
 
 1;

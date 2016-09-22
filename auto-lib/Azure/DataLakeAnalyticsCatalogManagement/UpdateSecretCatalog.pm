@@ -16,6 +16,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::UpdateSecretCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/secrets/{secretName}');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::UpdateSecretCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::UpdateSecretCatalogResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

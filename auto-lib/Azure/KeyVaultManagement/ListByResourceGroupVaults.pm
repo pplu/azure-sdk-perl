@@ -16,6 +16,6 @@ package Azure::KeyVaultManagement::ListByResourceGroupVaults;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.KeyVault/vaults');
-  class_has _returns => (is => 'ro', default => 'KeyVaultManagement::ListByResourceGroupVaultsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::KeyVaultManagement::ListByResourceGroupVaultsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

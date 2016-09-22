@@ -13,6 +13,6 @@ package Azure::SearchService::GetStatusIndexers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/indexers('{indexerName}')/search.status');
-  class_has _returns => (is => 'ro', default => 'SearchService::GetStatusIndexersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::GetStatusIndexersResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

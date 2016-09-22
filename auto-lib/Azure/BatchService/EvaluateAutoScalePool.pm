@@ -25,6 +25,6 @@ package Azure::BatchService::EvaluateAutoScalePool;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools/{poolId}/evaluateautoscale');
-  class_has _returns => (is => 'ro', default => 'BatchService::EvaluateAutoScalePoolResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::EvaluateAutoScalePoolResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

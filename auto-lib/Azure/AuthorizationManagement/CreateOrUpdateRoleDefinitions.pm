@@ -16,6 +16,6 @@ package Azure::AuthorizationManagement::CreateOrUpdateRoleDefinitions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId}');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::CreateOrUpdateRoleDefinitionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::CreateOrUpdateRoleDefinitionsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

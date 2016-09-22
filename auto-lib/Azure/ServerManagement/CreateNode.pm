@@ -19,6 +19,6 @@ package Azure::ServerManagement::CreateNode;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServerManagement/nodes/{nodeName}');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::CreateNodeResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::CreateNodeResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

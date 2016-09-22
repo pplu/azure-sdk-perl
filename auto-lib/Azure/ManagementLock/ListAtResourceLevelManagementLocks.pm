@@ -28,6 +28,6 @@ package Azure::ManagementLock::ListAtResourceLevelManagementLocks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks');
-  class_has _returns => (is => 'ro', default => 'ManagementLock::ListAtResourceLevelManagementLocksResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ManagementLock::ListAtResourceLevelManagementLocksResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

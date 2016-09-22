@@ -16,6 +16,6 @@ package Azure::iotHub::ListJobsIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/jobs');
-  class_has _returns => (is => 'ro', default => 'iotHub::ListJobsIotHubResourceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::iotHub::ListJobsIotHubResourceResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

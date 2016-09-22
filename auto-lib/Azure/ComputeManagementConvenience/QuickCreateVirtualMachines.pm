@@ -19,6 +19,6 @@ package Azure::ComputeManagementConvenience::QuickCreateVirtualMachines;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}');
-  class_has _returns => (is => 'ro', default => 'ComputeManagementConvenience::QuickCreateVirtualMachinesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagementConvenience::QuickCreateVirtualMachinesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

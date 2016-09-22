@@ -16,6 +16,6 @@ package Azure::ServerManagement::GetProfileGateway;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServerManagement/gateways/{gatewayName}/profile');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::GetProfileGatewayResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::GetProfileGatewayResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

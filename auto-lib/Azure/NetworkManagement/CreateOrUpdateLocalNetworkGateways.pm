@@ -19,6 +19,6 @@ package Azure::NetworkManagement::CreateOrUpdateLocalNetworkGateways;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/localNetworkGateways/{localNetworkGatewayName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::CreateOrUpdateLocalNetworkGatewaysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdateLocalNetworkGatewaysResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

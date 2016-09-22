@@ -37,6 +37,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListTablePartitionsCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}/partitions');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::ListTablePartitionsCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::ListTablePartitionsCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

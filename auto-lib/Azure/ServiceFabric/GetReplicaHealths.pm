@@ -16,6 +16,6 @@ package Azure::ServiceFabric::GetReplicaHealths;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Partitions/{partitionId}/$/GetReplicas/{replicaId}/$/GetHealth');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetReplicaHealthsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetReplicaHealthsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

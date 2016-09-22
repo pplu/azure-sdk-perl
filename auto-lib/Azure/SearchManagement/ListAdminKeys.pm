@@ -16,6 +16,6 @@ package Azure::SearchManagement::ListAdminKeys;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search/searchServices/{serviceName}/listAdminKeys');
-  class_has _returns => (is => 'ro', default => 'SearchManagement::ListAdminKeysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchManagement::ListAdminKeysResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

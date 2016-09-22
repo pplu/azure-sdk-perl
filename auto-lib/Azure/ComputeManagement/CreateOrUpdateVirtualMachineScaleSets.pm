@@ -19,6 +19,6 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachineScaleSets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{name}');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::CreateOrUpdateVirtualMachineScaleSetsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::CreateOrUpdateVirtualMachineScaleSetsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

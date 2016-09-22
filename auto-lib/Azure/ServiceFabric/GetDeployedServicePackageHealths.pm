@@ -19,6 +19,6 @@ package Azure::ServiceFabric::GetDeployedServicePackageHealths;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}/$/GetApplications/{applicationName}/$/GetServicePackages/{servicePackageName}/$/GetHealth');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetDeployedServicePackageHealthsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetDeployedServicePackageHealthsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

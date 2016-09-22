@@ -13,6 +13,6 @@ package Azure::ServiceFabric::UpdateServices;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Services/{serviceName}/$/Update');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::UpdateServicesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::UpdateServicesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

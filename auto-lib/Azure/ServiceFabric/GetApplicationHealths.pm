@@ -16,6 +16,6 @@ package Azure::ServiceFabric::GetApplicationHealths;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetHealth');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetApplicationHealthsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetApplicationHealthsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

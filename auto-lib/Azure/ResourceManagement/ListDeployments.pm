@@ -19,6 +19,6 @@ package Azure::ResourceManagement::ListDeployments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::ListDeploymentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ListDeploymentsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

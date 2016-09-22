@@ -2,6 +2,6 @@ package Azure::NetworkManagement::ListExpressRouteCircuitAuthorizationsResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[NetworkManagement::ExpressRouteCircuitAuthorization]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ExpressRouteCircuitAuthorization]'  );
 
 1;

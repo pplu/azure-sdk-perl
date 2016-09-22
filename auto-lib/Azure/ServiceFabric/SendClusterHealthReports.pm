@@ -10,6 +10,6 @@ package Azure::ServiceFabric::SendClusterHealthReports;
   );
 
   class_has _api_uri => (is => 'ro', default => '/$/ReportClusterHealth');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::SendClusterHealthReportsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::SendClusterHealthReportsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

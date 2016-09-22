@@ -19,6 +19,6 @@ package Azure::RecoveryServicesBackup::ListProtectionContainers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupProtectionContainers');
-  class_has _returns => (is => 'ro', default => 'RecoveryServicesBackup::ListProtectionContainersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::ListProtectionContainersResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

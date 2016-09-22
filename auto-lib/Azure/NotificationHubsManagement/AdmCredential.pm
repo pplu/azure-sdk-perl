@@ -1,5 +1,7 @@
 package Azure::NotificationHubsManagement::AdmCredential;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'authTokenUrl' => (is => 'ro', isa => 'Str'  );
+  has 'clientId' => (is => 'ro', isa => 'Str'  );
+  has 'clientSecret' => (is => 'ro', isa => 'Str'  );
 1;

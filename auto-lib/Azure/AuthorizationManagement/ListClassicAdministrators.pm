@@ -10,6 +10,6 @@ package Azure::AuthorizationManagement::ListClassicAdministrators;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/classicAdministrators');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::ListClassicAdministratorsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::ListClassicAdministratorsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

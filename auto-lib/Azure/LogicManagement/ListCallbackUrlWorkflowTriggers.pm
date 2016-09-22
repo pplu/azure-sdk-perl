@@ -19,6 +19,6 @@ package Azure::LogicManagement::ListCallbackUrlWorkflowTriggers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/triggers/{triggerName}/listCallbackUrl');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::ListCallbackUrlWorkflowTriggersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::ListCallbackUrlWorkflowTriggersResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

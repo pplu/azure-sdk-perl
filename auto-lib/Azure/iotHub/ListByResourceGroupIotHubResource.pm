@@ -13,6 +13,6 @@ package Azure::iotHub::ListByResourceGroupIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs');
-  class_has _returns => (is => 'ro', default => 'iotHub::ListByResourceGroupIotHubResourceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::iotHub::ListByResourceGroupIotHubResourceResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

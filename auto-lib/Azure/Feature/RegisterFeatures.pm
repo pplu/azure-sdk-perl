@@ -16,6 +16,6 @@ package Azure::Feature::RegisterFeatures;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/{resourceProviderNamespace}/features/{featureName}/register');
-  class_has _returns => (is => 'ro', default => 'Feature::RegisterFeaturesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Feature::RegisterFeaturesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

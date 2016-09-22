@@ -2,6 +2,6 @@ package Azure::NotificationHubsManagement::ListAuthorizationRulesNamespacesResul
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[NotificationHubsManagement::SharedAccessAuthorizationRuleResource]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::NotificationHubsManagement::SharedAccessAuthorizationRuleResource]'  );
 
 1;

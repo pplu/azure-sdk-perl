@@ -2,6 +2,6 @@ package Azure::NetworkResourceProvider::ListAllApplicationGatewaysResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[NetworkResourceProvider::ApplicationGateway]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::NetworkResourceProvider::ApplicationGateway]'  );
 
 1;

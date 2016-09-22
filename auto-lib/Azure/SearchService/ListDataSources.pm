@@ -10,6 +10,6 @@ package Azure::SearchService::ListDataSources;
   );
 
   class_has _api_uri => (is => 'ro', default => '/datasources');
-  class_has _returns => (is => 'ro', default => 'SearchService::ListDataSourcesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::ListDataSourcesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

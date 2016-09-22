@@ -1,11 +1,6 @@
 package Azure::NotificationHubsManagement::GetNamespacesResult;
   use Moose;
 
-  has id => (is => 'ro', isa => 'Str'  );
-  has location => (is => 'ro', isa => 'Str'  );
-  has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'NotificationHubsManagement::NamespaceProperties'  );
-  has tags => (is => 'ro', isa => 'Any'  );
-  has type => (is => 'ro', isa => 'Str'  );
+  has properties => (is => 'ro', isa => 'Azure::NotificationHubsManagement::NamespaceProperties'  );
 
 1;

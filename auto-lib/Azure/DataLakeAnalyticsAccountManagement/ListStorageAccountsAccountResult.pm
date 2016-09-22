@@ -3,6 +3,6 @@ package Azure::DataLakeAnalyticsAccountManagement::ListStorageAccountsAccountRes
 
   has count => (is => 'ro', isa => 'Any'  );
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[DataLakeAnalyticsAccountManagement::StorageAccountInfo]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::StorageAccountInfo]'  );
 
 1;

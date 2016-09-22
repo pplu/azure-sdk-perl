@@ -13,6 +13,6 @@ package Azure::MediaServicesManagement::CheckNameAvailabilityMediaService;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Media/CheckNameAvailability');
-  class_has _returns => (is => 'ro', default => 'MediaServicesManagement::CheckNameAvailabilityMediaServiceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::MediaServicesManagement::CheckNameAvailabilityMediaServiceResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

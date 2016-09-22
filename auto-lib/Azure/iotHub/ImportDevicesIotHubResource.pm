@@ -19,6 +19,6 @@ package Azure::iotHub::ImportDevicesIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/importDevices');
-  class_has _returns => (is => 'ro', default => 'iotHub::ImportDevicesIotHubResourceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::iotHub::ImportDevicesIotHubResourceResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

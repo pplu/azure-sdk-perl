@@ -22,6 +22,6 @@ package Azure::BatchManagement::CreateApplicationPackage;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationId}/versions/{version}');
-  class_has _returns => (is => 'ro', default => 'BatchManagement::CreateApplicationPackageResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchManagement::CreateApplicationPackageResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

@@ -19,6 +19,6 @@ package Azure::LogicAppsManagement::ConfirmConsentCodeConnections;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/connections/{connectionName}/confirmConsentCode');
-  class_has _returns => (is => 'ro', default => 'LogicAppsManagement::ConfirmConsentCodeConnectionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicAppsManagement::ConfirmConsentCodeConnectionsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -19,6 +19,6 @@ package Azure::NotificationHubsManagement::CheckAvailabilityNotificationHubs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/checkNotificationHubAvailability');
-  class_has _returns => (is => 'ro', default => 'NotificationHubsManagement::CheckAvailabilityNotificationHubsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NotificationHubsManagement::CheckAvailabilityNotificationHubsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

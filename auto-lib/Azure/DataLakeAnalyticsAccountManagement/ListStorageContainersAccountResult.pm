@@ -2,6 +2,6 @@ package Azure::DataLakeAnalyticsAccountManagement::ListStorageContainersAccountR
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[DataLakeAnalyticsAccountManagement::BlobContainer]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::BlobContainer]'  );
 
 1;

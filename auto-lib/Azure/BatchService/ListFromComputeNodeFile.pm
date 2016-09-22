@@ -34,6 +34,6 @@ package Azure::BatchService::ListFromComputeNodeFile;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools/{poolId}/nodes/{nodeId}/files');
-  class_has _returns => (is => 'ro', default => 'BatchService::ListFromComputeNodeFileResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListFromComputeNodeFileResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -22,6 +22,6 @@ package Azure::EventHubManagement::CreateOrUpdateAuthorizationRuleNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}');
-  class_has _returns => (is => 'ro', default => 'EventHubManagement::CreateOrUpdateAuthorizationRuleNamespacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::CreateOrUpdateAuthorizationRuleNamespacesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

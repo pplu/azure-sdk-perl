@@ -2,6 +2,6 @@ package Azure::NetworkResourceProvider::ListVirtualNetworkGatewayConnectionsResu
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[NetworkResourceProvider::VirtualNetworkGatewayConnection]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::NetworkResourceProvider::VirtualNetworkGatewayConnection]'  );
 
 1;

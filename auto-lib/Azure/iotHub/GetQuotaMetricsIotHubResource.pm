@@ -16,6 +16,6 @@ package Azure::iotHub::GetQuotaMetricsIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/quotaMetrics');
-  class_has _returns => (is => 'ro', default => 'iotHub::GetQuotaMetricsIotHubResourceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::iotHub::GetQuotaMetricsIotHubResourceResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

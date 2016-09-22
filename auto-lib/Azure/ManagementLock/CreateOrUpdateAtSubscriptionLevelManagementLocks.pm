@@ -16,6 +16,6 @@ package Azure::ManagementLock::CreateOrUpdateAtSubscriptionLevelManagementLocks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/locks/{lockName}');
-  class_has _returns => (is => 'ro', default => 'ManagementLock::CreateOrUpdateAtSubscriptionLevelManagementLocksResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ManagementLock::CreateOrUpdateAtSubscriptionLevelManagementLocksResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

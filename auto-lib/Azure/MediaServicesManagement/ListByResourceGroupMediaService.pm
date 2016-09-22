@@ -13,6 +13,6 @@ package Azure::MediaServicesManagement::ListByResourceGroupMediaService;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaservices');
-  class_has _returns => (is => 'ro', default => 'MediaServicesManagement::ListByResourceGroupMediaServiceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::MediaServicesManagement::ListByResourceGroupMediaServiceResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

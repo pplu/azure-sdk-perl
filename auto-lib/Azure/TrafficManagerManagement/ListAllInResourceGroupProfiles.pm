@@ -13,6 +13,6 @@ package Azure::TrafficManagerManagement::ListAllInResourceGroupProfiles;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles');
-  class_has _returns => (is => 'ro', default => 'TrafficManagerManagement::ListAllInResourceGroupProfilesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::ListAllInResourceGroupProfilesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -22,6 +22,6 @@ package Azure::NetworkManagement::CreateOrUpdateVirtualNetworkPeerings;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{virtualNetworkName}/virtualNetworkPeerings/{virtualNetworkPeeringName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::CreateOrUpdateVirtualNetworkPeeringsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdateVirtualNetworkPeeringsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

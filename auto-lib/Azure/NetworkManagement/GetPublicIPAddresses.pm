@@ -19,6 +19,6 @@ package Azure::NetworkManagement::GetPublicIPAddresses;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/publicIPAddresses/{publicIpAddressName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::GetPublicIPAddressesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetPublicIPAddressesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

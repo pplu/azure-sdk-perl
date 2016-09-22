@@ -13,6 +13,6 @@ package Azure::SearchManagement::ListServices;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Search/searchServices');
-  class_has _returns => (is => 'ro', default => 'SearchManagement::ListServicesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchManagement::ListServicesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

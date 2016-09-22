@@ -16,6 +16,6 @@ package Azure::NetworkResourceProvider::ListVirtualMachineScaleSetNetworkInterfa
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/networkInterfaces');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfacesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

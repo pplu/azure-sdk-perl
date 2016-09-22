@@ -1,6 +1,6 @@
 package Azure::IntuneResourceManagement::PatchMAMPolicyAndroidResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'IntuneResourceManagement::AndroidMAMPolicyProperties'  );
+  has properties => (is => 'ro', isa => 'Azure::IntuneResourceManagement::AndroidMAMPolicyProperties'  );
 
 1;

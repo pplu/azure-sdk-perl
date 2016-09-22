@@ -1,6 +1,6 @@
 package Azure::RecoveryServicesBackup::ListProtectableItemsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[RecoveryServicesBackup::WorkloadProtectableItem]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServicesBackup::WorkloadProtectableItem]'  );
 
 1;

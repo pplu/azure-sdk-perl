@@ -3,6 +3,6 @@ package Azure::NetworkManagement::GetExpressRouteCircuitAuthorizationsResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'NetworkManagement::AuthorizationPropertiesFormat'  );
+  has properties => (is => 'ro', isa => 'Azure::NetworkManagement::AuthorizationPropertiesFormat'  );
 
 1;

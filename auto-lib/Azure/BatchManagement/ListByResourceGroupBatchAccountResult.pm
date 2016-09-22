@@ -2,6 +2,6 @@ package Azure::BatchManagement::ListByResourceGroupBatchAccountResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[BatchManagement::BatchAccount]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::BatchManagement::BatchAccount]'  );
 
 1;

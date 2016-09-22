@@ -13,6 +13,6 @@ package Azure::AuthorizationManagement::ListRoleDefinitions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/roleDefinitions');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::ListRoleDefinitionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::ListRoleDefinitionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

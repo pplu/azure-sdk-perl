@@ -16,6 +16,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::CreateSecretCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/secrets/{secretName}');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::CreateSecretCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::CreateSecretCatalogResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

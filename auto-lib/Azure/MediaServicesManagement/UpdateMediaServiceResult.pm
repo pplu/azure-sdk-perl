@@ -1,6 +1,6 @@
 package Azure::MediaServicesManagement::UpdateMediaServiceResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'MediaServicesManagement::MediaServiceProperties'  );
+  has properties => (is => 'ro', isa => 'Azure::MediaServicesManagement::MediaServiceProperties'  );
 
 1;

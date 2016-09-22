@@ -16,6 +16,6 @@ package Azure::Policy::GetPolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/policyassignments/{policyAssignmentName}');
-  class_has _returns => (is => 'ro', default => 'Policy::GetPolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Policy::GetPolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

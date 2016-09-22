@@ -16,6 +16,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::GetTableCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::GetTableCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::GetTableCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -34,6 +34,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsCatal
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/schemas/{schemaName}/tablevaluedfunctions');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -16,6 +16,6 @@ package Azure::RedisManagement::ListKeysRedis;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{name}/listKeys');
-  class_has _returns => (is => 'ro', default => 'RedisManagement::ListKeysRedisResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RedisManagement::ListKeysRedisResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

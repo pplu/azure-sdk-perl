@@ -16,6 +16,6 @@ package Azure::DevTestLabs::ListVhdsLab;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{name}/listVhds');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::ListVhdsLabResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::ListVhdsLabResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

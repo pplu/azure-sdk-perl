@@ -16,6 +16,6 @@ package Azure::Policy::CreateByIdPolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{policyAssignmentId}');
-  class_has _returns => (is => 'ro', default => 'Policy::CreateByIdPolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Policy::CreateByIdPolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

@@ -10,6 +10,6 @@ package Azure::SearchIndex::CountDocuments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/docs/$count');
-  class_has _returns => (is => 'ro', default => 'SearchIndex::CountDocumentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchIndex::CountDocumentsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -1,6 +1,6 @@
 package Azure::PowerBIEmbeddedManagement::listBySubscriptionWorkspaceCollectionsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[PowerBIEmbeddedManagement::WorkspaceCollection]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::PowerBIEmbeddedManagement::WorkspaceCollection]'  );
 
 1;

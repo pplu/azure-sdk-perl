@@ -16,6 +16,6 @@ package Azure::IntuneResourceManagement::GetMAMPolicyByNameAndroid;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/androidPolicies/{policyName}');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::GetMAMPolicyByNameAndroidResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::GetMAMPolicyByNameAndroidResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

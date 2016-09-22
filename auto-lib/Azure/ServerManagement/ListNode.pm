@@ -10,6 +10,6 @@ package Azure::ServerManagement::ListNode;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.ServerManagement/nodes');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::ListNodeResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::ListNodeResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

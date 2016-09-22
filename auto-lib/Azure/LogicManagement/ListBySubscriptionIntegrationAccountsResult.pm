@@ -2,6 +2,6 @@ package Azure::LogicManagement::ListBySubscriptionIntegrationAccountsResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[LogicManagement::IntegrationAccount]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::LogicManagement::IntegrationAccount]'  );
 
 1;

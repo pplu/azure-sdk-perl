@@ -13,6 +13,6 @@ package Azure::Policy::ListPolicyDefinitions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policydefinitions');
-  class_has _returns => (is => 'ro', default => 'Policy::ListPolicyDefinitionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Policy::ListPolicyDefinitionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

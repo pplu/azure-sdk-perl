@@ -13,6 +13,6 @@ package Azure::ServiceFabric::GetReplicaLoadInformations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Partitions/{partitionId}/$/GetReplicas/{replicaId}/$/GetLoadInformation');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetReplicaLoadInformationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetReplicaLoadInformationsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

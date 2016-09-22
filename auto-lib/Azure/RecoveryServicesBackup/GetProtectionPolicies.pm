@@ -19,6 +19,6 @@ package Azure::RecoveryServicesBackup::GetProtectionPolicies;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}');
-  class_has _returns => (is => 'ro', default => 'RecoveryServicesBackup::GetProtectionPoliciesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::GetProtectionPoliciesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

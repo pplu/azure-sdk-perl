@@ -16,6 +16,6 @@ package Azure::NetworkManagement::ListStatsExpressRouteCircuits;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/stats');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::ListStatsExpressRouteCircuitsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListStatsExpressRouteCircuitsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

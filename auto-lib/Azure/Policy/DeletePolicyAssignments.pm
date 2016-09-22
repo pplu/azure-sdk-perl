@@ -16,6 +16,6 @@ package Azure::Policy::DeletePolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/policyassignments/{policyAssignmentName}');
-  class_has _returns => (is => 'ro', default => 'Policy::DeletePolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Policy::DeletePolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

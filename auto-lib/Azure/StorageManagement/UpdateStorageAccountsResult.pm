@@ -1,6 +1,6 @@
 package Azure::StorageManagement::UpdateStorageAccountsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'StorageManagement::StorageAccountProperties'  );
+  has properties => (is => 'ro', isa => 'Azure::StorageManagement::StorageAccountProperties'  );
 
 1;

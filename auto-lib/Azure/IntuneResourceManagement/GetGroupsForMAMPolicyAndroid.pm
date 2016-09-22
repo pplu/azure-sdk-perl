@@ -13,6 +13,6 @@ package Azure::IntuneResourceManagement::GetGroupsForMAMPolicyAndroid;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/androidPolicies/{policyName}/groups');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::GetGroupsForMAMPolicyAndroidResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::GetGroupsForMAMPolicyAndroidResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

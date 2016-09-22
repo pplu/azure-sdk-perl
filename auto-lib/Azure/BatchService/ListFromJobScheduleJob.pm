@@ -34,6 +34,6 @@ package Azure::BatchService::ListFromJobScheduleJob;
   );
 
   class_has _api_uri => (is => 'ro', default => '/jobschedules/{jobScheduleId}/jobs');
-  class_has _returns => (is => 'ro', default => 'BatchService::ListFromJobScheduleJobResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListFromJobScheduleJobResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

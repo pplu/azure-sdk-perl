@@ -19,6 +19,6 @@ package Azure::SchedulerManagement::GetJobs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}');
-  class_has _returns => (is => 'ro', default => 'SchedulerManagement::GetJobsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SchedulerManagement::GetJobsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

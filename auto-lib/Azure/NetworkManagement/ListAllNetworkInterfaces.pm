@@ -10,6 +10,6 @@ package Azure::NetworkManagement::ListAllNetworkInterfaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkInterfaces');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::ListAllNetworkInterfacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListAllNetworkInterfacesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

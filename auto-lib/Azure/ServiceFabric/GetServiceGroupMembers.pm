@@ -13,6 +13,6 @@ package Azure::ServiceFabric::GetServiceGroupMembers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServices/{serviceName}/$/GetServiceGroupMembers');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetServiceGroupMembersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetServiceGroupMembersResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

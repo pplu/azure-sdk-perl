@@ -10,6 +10,6 @@ package Azure::StorageManagement::ListUsage;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Storage/usages');
-  class_has _returns => (is => 'ro', default => 'StorageManagement::ListUsageResult');
+  class_has _returns => (is => 'ro', default => 'Azure::StorageManagement::ListUsageResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

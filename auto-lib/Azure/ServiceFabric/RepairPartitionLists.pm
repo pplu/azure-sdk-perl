@@ -10,6 +10,6 @@ package Azure::ServiceFabric::RepairPartitionLists;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Services/{serviceName}/$/GetPartitions/$/Recover');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::RepairPartitionListsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::RepairPartitionListsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

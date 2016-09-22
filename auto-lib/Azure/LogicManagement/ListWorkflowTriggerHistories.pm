@@ -25,6 +25,6 @@ package Azure::LogicManagement::ListWorkflowTriggerHistories;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/triggers/{triggerName}/histories');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::ListWorkflowTriggerHistoriesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::ListWorkflowTriggerHistoriesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

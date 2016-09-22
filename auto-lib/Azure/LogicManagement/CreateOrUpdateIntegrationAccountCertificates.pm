@@ -22,6 +22,6 @@ package Azure::LogicManagement::CreateOrUpdateIntegrationAccountCertificates;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationAccounts/{integrationAccountName}/certificates/{certificateName}');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::CreateOrUpdateIntegrationAccountCertificatesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::CreateOrUpdateIntegrationAccountCertificatesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

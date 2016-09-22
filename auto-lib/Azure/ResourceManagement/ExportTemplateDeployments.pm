@@ -16,6 +16,6 @@ package Azure::ResourceManagement::ExportTemplateDeployments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::ExportTemplateDeploymentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ExportTemplateDeploymentsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

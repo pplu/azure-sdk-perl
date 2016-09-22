@@ -13,6 +13,6 @@ package Azure::ContainerService::ListByResourceGroupContainerService;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/containerServices');
-  class_has _returns => (is => 'ro', default => 'ContainerService::ListByResourceGroupContainerServiceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ContainerService::ListByResourceGroupContainerServiceResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

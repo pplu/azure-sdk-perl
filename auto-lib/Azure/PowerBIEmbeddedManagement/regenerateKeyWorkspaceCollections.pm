@@ -19,6 +19,6 @@ package Azure::PowerBIEmbeddedManagement::regenerateKeyWorkspaceCollections;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBI/workspaceCollections/{workspaceCollectionName}/regenerateKey');
-  class_has _returns => (is => 'ro', default => 'PowerBIEmbeddedManagement::regenerateKeyWorkspaceCollectionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::PowerBIEmbeddedManagement::regenerateKeyWorkspaceCollectionsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

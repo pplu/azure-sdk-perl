@@ -19,6 +19,6 @@ package Azure::NetworkManagement::CreateOrUpdateApplicationGateways;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/applicationGateways/{applicationGatewayName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::CreateOrUpdateApplicationGatewaysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdateApplicationGatewaysResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

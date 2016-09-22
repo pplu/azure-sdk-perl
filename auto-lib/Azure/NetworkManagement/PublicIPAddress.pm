@@ -7,7 +7,6 @@ package Azure::NetworkManagement::PublicIPAddress;
   has 'ipAddress' => (is => 'ro', isa => 'Str'  );
   has 'ipConfiguration' => (is => 'ro', isa => 'Any'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
-  has 'publicIPAddressVersion' => (is => 'ro', isa => 'Str'  );
   has 'publicIPAllocationMethod' => (is => 'ro', isa => 'Str'  );
   has 'resourceGuid' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );

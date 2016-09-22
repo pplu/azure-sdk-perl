@@ -19,6 +19,6 @@ package Azure::NetworkResourceProvider::CreateOrUpdatePublicIpAddresses;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/publicIPAddresses/{publicIpAddressName}/');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::CreateOrUpdatePublicIpAddressesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::CreateOrUpdatePublicIpAddressesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

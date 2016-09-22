@@ -16,6 +16,6 @@ package Azure::IntuneResourceManagement::CreateOrUpdateMAMPolicyIos;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/iosPolicies/{policyName}');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::CreateOrUpdateMAMPolicyIosResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::CreateOrUpdateMAMPolicyIosResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

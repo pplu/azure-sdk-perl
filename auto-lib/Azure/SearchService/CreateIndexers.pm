@@ -13,6 +13,6 @@ package Azure::SearchService::CreateIndexers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/indexers');
-  class_has _returns => (is => 'ro', default => 'SearchService::CreateIndexersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::CreateIndexersResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

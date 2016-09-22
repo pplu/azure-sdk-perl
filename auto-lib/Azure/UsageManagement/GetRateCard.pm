@@ -13,6 +13,6 @@ package Azure::UsageManagement::GetRateCard;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Commerce/RateCard');
-  class_has _returns => (is => 'ro', default => 'UsageManagement::GetRateCardResult');
+  class_has _returns => (is => 'ro', default => 'Azure::UsageManagement::GetRateCardResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

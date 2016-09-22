@@ -2,6 +2,6 @@ package Azure::NetworkResourceProvider::ListRoutesTableExpressRouteCircuitsResul
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[NetworkResourceProvider::ExpressRouteCircuitRoutesTable]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::NetworkResourceProvider::ExpressRouteCircuitRoutesTable]'  );
 
 1;

@@ -2,6 +2,6 @@ package Azure::NetworkManagement::ListEffectiveNetworkSecurityGroupsNetworkInter
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[NetworkManagement::EffectiveNetworkSecurityGroup]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::EffectiveNetworkSecurityGroup]'  );
 
 1;

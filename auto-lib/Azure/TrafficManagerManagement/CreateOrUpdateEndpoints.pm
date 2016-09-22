@@ -25,6 +25,6 @@ package Azure::TrafficManagerManagement::CreateOrUpdateEndpoints;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}/{endpointType}/{endpointName}');
-  class_has _returns => (is => 'ro', default => 'TrafficManagerManagement::CreateOrUpdateEndpointsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::CreateOrUpdateEndpointsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

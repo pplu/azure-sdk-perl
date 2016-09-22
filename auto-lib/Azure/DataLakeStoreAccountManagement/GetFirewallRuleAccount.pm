@@ -19,6 +19,6 @@ package Azure::DataLakeStoreAccountManagement::GetFirewallRuleAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeStore/accounts/{accountName}/firewallRules/{firewallRuleName}');
-  class_has _returns => (is => 'ro', default => 'DataLakeStoreAccountManagement::GetFirewallRuleAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeStoreAccountManagement::GetFirewallRuleAccountResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

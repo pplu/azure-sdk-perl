@@ -19,6 +19,6 @@ package Azure::LogicManagement::GetWorkflowVersions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/versions/{versionId}');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::GetWorkflowVersionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::GetWorkflowVersionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

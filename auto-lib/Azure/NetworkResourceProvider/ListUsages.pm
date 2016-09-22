@@ -13,6 +13,6 @@ package Azure::NetworkResourceProvider::ListUsages;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/usages');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::ListUsagesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::ListUsagesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

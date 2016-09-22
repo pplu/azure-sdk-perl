@@ -19,6 +19,6 @@ package Azure::IntuneResourceManagement::GetMAMFlaggedUsers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/flaggedUsers');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::GetMAMFlaggedUsersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::GetMAMFlaggedUsersResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

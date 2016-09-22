@@ -16,6 +16,6 @@ package Azure::CdnManagement::GenerateSsoUriProfiles;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/generateSsoUri');
-  class_has _returns => (is => 'ro', default => 'CdnManagement::GenerateSsoUriProfilesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::GenerateSsoUriProfilesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

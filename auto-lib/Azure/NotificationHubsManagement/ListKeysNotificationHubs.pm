@@ -22,6 +22,6 @@ package Azure::NotificationHubsManagement::ListKeysNotificationHubs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/AuthorizationRules/{authorizationRuleName}/listKeys');
-  class_has _returns => (is => 'ro', default => 'NotificationHubsManagement::ListKeysNotificationHubsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NotificationHubsManagement::ListKeysNotificationHubsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

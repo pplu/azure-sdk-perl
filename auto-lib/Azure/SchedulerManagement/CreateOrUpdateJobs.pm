@@ -22,6 +22,6 @@ package Azure::SchedulerManagement::CreateOrUpdateJobs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}');
-  class_has _returns => (is => 'ro', default => 'SchedulerManagement::CreateOrUpdateJobsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SchedulerManagement::CreateOrUpdateJobsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

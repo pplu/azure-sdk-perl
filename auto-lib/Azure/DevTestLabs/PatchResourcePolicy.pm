@@ -25,6 +25,6 @@ package Azure::DevTestLabs::PatchResourcePolicy;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/policysets/{policySetName}/policies/{name}');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::PatchResourcePolicyResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::PatchResourcePolicyResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

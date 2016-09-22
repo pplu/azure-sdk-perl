@@ -16,6 +16,6 @@ package Azure::GraphRbacManagement::GetMemberGroupsUsers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/users/{objectId}/getMemberGroups');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::GetMemberGroupsUsersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::GetMemberGroupsUsersResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -25,6 +25,6 @@ package Azure::CdnManagement::UpdateOrigins;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/endpoints/{endpointName}/origins/{originName}');
-  class_has _returns => (is => 'ro', default => 'CdnManagement::UpdateOriginsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::UpdateOriginsResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

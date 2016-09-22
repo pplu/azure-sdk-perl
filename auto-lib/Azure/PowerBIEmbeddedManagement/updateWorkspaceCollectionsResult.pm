@@ -5,7 +5,7 @@ package Azure::PowerBIEmbeddedManagement::updateWorkspaceCollectionsResult;
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has properties => (is => 'ro', isa => 'Any'  );
-  has sku => (is => 'ro', isa => 'PowerBIEmbeddedManagement::AzureSku'  );
+  has sku => (is => 'ro', isa => 'Azure::PowerBIEmbeddedManagement::AzureSku'  );
   has tags => (is => 'ro', isa => 'Any'  );
   has type => (is => 'ro', isa => 'Str'  );
 

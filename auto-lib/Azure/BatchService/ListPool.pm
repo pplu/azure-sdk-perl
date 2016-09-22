@@ -31,6 +31,6 @@ package Azure::BatchService::ListPool;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools');
-  class_has _returns => (is => 'ro', default => 'BatchService::ListPoolResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListPoolResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

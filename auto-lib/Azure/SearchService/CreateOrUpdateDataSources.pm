@@ -11,11 +11,17 @@ package Azure::SearchService::CreateOrUpdateDataSources;
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'ParamInHeader' ],
   );
+  has 'If-Match' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInHeader' ],
+  );
+  has 'If-None-Match' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInHeader' ],
+  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/datasources('{dataSourceName}')');
-  class_has _returns => (is => 'ro', default => 'SearchService::CreateOrUpdateDataSourcesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::CreateOrUpdateDataSourcesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

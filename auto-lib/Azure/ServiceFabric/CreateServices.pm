@@ -13,6 +13,6 @@ package Azure::ServiceFabric::CreateServices;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServices/$/Create');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::CreateServicesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::CreateServicesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

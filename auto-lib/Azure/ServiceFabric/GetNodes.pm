@@ -10,6 +10,6 @@ package Azure::ServiceFabric::GetNodes;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetNodesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetNodesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

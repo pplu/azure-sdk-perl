@@ -22,6 +22,6 @@ package Azure::RecoveryServicesBackup::GetBackupEngines;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupEngines');
-  class_has _returns => (is => 'ro', default => 'RecoveryServicesBackup::GetBackupEnginesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::GetBackupEnginesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -13,6 +13,6 @@ package Azure::ResourceManagement::ListPolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyAssignments');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::ListPolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ListPolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -19,6 +19,6 @@ package Azure::RedisManagement::RegenerateKeyRedis;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{name}/regenerateKey');
-  class_has _returns => (is => 'ro', default => 'RedisManagement::RegenerateKeyRedisResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RedisManagement::RegenerateKeyRedisResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

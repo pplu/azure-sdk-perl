@@ -10,6 +10,6 @@ package Azure::ServiceFabric::RemoveNodeStates;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}/$/RemoveNodeState');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::RemoveNodeStatesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::RemoveNodeStatesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -13,6 +13,6 @@ package Azure::TrafficManagerManagement::CheckTrafficManagerRelativeDnsNameAvail
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Network/checkTrafficManagerNameAvailability');
-  class_has _returns => (is => 'ro', default => 'TrafficManagerManagement::CheckTrafficManagerRelativeDnsNameAvailabilityProfilesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::CheckTrafficManagerRelativeDnsNameAvailabilityProfilesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

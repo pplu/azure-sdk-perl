@@ -25,6 +25,6 @@ package Azure::RecoveryServicesBackup::GetProtectionContainerOperationResults;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/operationResults/{operationId}');
-  class_has _returns => (is => 'ro', default => 'RecoveryServicesBackup::GetProtectionContainerOperationResultsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::GetProtectionContainerOperationResultsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

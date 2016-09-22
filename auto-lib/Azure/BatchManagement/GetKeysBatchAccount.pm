@@ -16,6 +16,6 @@ package Azure::BatchManagement::GetKeysBatchAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/listKeys');
-  class_has _returns => (is => 'ro', default => 'BatchManagement::GetKeysBatchAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchManagement::GetKeysBatchAccountResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

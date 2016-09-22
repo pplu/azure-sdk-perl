@@ -16,6 +16,6 @@ package Azure::Feature::GetFeatures;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Features/providers/{resourceProviderNamespace}/features/{featureName}');
-  class_has _returns => (is => 'ro', default => 'Feature::GetFeaturesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Feature::GetFeaturesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

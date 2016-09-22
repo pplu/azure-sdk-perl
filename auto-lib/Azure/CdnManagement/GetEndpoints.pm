@@ -19,6 +19,6 @@ package Azure::CdnManagement::GetEndpoints;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/endpoints/{endpointName}');
-  class_has _returns => (is => 'ro', default => 'CdnManagement::GetEndpointsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::GetEndpointsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

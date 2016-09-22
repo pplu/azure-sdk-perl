@@ -10,6 +10,6 @@ package Azure::CdnManagement::CheckNameAvailabilityNameAvailability;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Cdn/checkNameAvailability');
-  class_has _returns => (is => 'ro', default => 'CdnManagement::CheckNameAvailabilityNameAvailabilityResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::CheckNameAvailabilityNameAvailabilityResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

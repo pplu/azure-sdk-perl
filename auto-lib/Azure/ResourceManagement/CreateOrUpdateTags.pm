@@ -13,6 +13,6 @@ package Azure::ResourceManagement::CreateOrUpdateTags;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/tagNames/{tagName}');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::CreateOrUpdateTagsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::CreateOrUpdateTagsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

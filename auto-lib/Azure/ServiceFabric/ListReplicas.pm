@@ -10,6 +10,6 @@ package Azure::ServiceFabric::ListReplicas;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Partitions/{partitionId}/$/GetReplicas');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::ListReplicasResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::ListReplicasResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

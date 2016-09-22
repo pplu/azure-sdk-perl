@@ -13,6 +13,6 @@ package Azure::ServiceFabric::GetPartitions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Services/{serviceName}/$/GetPartitions/{partitionId}');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetPartitionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetPartitionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

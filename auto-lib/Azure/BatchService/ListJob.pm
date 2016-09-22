@@ -31,6 +31,6 @@ package Azure::BatchService::ListJob;
   );
 
   class_has _api_uri => (is => 'ro', default => '/jobs');
-  class_has _returns => (is => 'ro', default => 'BatchService::ListJobResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListJobResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

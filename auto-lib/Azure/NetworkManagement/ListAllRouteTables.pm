@@ -10,6 +10,6 @@ package Azure::NetworkManagement::ListAllRouteTables;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Network/routeTables');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::ListAllRouteTablesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListAllRouteTablesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

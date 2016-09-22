@@ -19,6 +19,6 @@ package Azure::RedisManagement::CreateOrUpdateRedis;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{name}');
-  class_has _returns => (is => 'ro', default => 'RedisManagement::CreateOrUpdateRedisResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RedisManagement::CreateOrUpdateRedisResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

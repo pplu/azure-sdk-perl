@@ -19,6 +19,6 @@ package Azure::ServiceFabric::ResolveServices;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Services/{serviceName}/$/ResolvePartition');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::ResolveServicesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::ResolveServicesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

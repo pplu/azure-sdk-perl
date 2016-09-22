@@ -16,6 +16,6 @@ package Azure::EventHubManagement::GetNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}');
-  class_has _returns => (is => 'ro', default => 'EventHubManagement::GetNamespacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::GetNamespacesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

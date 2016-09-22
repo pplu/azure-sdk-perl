@@ -4,7 +4,6 @@ package Azure::DataLakeAnalyticsJobManagement::USqlJobProperties;
   has 'algebraFilePath' => (is => 'ro', isa => 'Str'  );
   has 'compileMode' => (is => 'ro', isa => 'Str'  );
   has 'debugData' => (is => 'ro', isa => 'Any'  );
-  has 'diagnostics' => (is => 'ro', isa => 'ArrayRef'  );
   has 'resources' => (is => 'ro', isa => 'ArrayRef'  );
   has 'rootProcessNodeId' => (is => 'ro', isa => 'Str'  );
   has 'statistics' => (is => 'ro', isa => 'Any'  );

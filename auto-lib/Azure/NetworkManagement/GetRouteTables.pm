@@ -19,6 +19,6 @@ package Azure::NetworkManagement::GetRouteTables;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/routeTables/{routeTableName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::GetRouteTablesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetRouteTablesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

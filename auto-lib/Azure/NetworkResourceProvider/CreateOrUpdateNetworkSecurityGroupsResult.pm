@@ -2,6 +2,6 @@ package Azure::NetworkResourceProvider::CreateOrUpdateNetworkSecurityGroupsResul
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'NetworkResourceProvider::NetworkSecurityGroupPropertiesFormat'  );
+  has properties => (is => 'ro', isa => 'Azure::NetworkResourceProvider::NetworkSecurityGroupPropertiesFormat'  );
 
 1;

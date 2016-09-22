@@ -13,6 +13,6 @@ package Azure::ServiceFabric::CreateServiceGroupFromTemplates;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServiceGroups/$/CreateServiceGroupFromTemplate');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::CreateServiceGroupFromTemplatesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::CreateServiceGroupFromTemplatesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

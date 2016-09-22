@@ -4,7 +4,7 @@ package Azure::ServiceFabric::GetNodesResult;
   has CodeVersion => (is => 'ro', isa => 'Str'  );
   has ConfigVersion => (is => 'ro', isa => 'Str'  );
   has FaultDomain => (is => 'ro', isa => 'Str'  );
-  has HealthState => (is => 'ro', isa => 'ServiceFabric::HealthState'  );
+  has HealthState => (is => 'ro', isa => 'Azure::ServiceFabric::HealthState'  );
   has Id => (is => 'ro', isa => 'Any'  );
   has InstanceId => (is => 'ro', isa => 'Str'  );
   has IpAddressOrFQDN => (is => 'ro', isa => 'Str'  );

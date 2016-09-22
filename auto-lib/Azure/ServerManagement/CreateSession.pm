@@ -22,6 +22,6 @@ package Azure::ServerManagement::CreateSession;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServerManagement/nodes/{nodeName}/sessions/{session}');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::CreateSessionResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::CreateSessionResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

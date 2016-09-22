@@ -10,6 +10,6 @@ package Azure::RedisManagement::ListRedis;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Cache/Redis/');
-  class_has _returns => (is => 'ro', default => 'RedisManagement::ListRedisResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RedisManagement::ListRedisResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

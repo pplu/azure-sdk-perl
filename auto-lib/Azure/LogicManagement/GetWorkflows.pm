@@ -16,6 +16,6 @@ package Azure::LogicManagement::GetWorkflows;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::GetWorkflowsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::GetWorkflowsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -19,6 +19,6 @@ package Azure::DataLakeAnalyticsAccountManagement::CreateAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeAnalytics/accounts/{name}');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsAccountManagement::CreateAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::CreateAccountResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

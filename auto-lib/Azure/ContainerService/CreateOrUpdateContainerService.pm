@@ -19,6 +19,6 @@ package Azure::ContainerService::CreateOrUpdateContainerService;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerService/containerServices/{containerServiceName}');
-  class_has _returns => (is => 'ro', default => 'ContainerService::CreateOrUpdateContainerServiceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ContainerService::CreateOrUpdateContainerServiceResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

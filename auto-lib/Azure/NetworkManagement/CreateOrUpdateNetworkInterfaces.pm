@@ -19,6 +19,6 @@ package Azure::NetworkManagement::CreateOrUpdateNetworkInterfaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{networkInterfaceName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::CreateOrUpdateNetworkInterfacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdateNetworkInterfacesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

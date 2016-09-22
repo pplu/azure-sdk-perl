@@ -13,6 +13,6 @@ package Azure::ResourceManagement::GetByIdPolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{policyAssignmentId}');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::GetByIdPolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::GetByIdPolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

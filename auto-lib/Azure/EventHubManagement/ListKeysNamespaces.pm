@@ -19,6 +19,6 @@ package Azure::EventHubManagement::ListKeysNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}/listKeys');
-  class_has _returns => (is => 'ro', default => 'EventHubManagement::ListKeysNamespacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::ListKeysNamespacesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

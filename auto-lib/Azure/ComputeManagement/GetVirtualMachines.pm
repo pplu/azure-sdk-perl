@@ -19,6 +19,6 @@ package Azure::ComputeManagement::GetVirtualMachines;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::GetVirtualMachinesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::GetVirtualMachinesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

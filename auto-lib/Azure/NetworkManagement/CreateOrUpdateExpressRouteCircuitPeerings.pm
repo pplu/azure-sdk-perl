@@ -22,6 +22,6 @@ package Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitPeerings;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/peerings/{peeringName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::CreateOrUpdateExpressRouteCircuitPeeringsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitPeeringsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

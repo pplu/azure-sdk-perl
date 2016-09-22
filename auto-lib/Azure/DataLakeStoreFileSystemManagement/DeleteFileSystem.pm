@@ -19,6 +19,6 @@ package Azure::DataLakeStoreFileSystemManagement::DeleteFileSystem;
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{filePath}');
-  class_has _returns => (is => 'ro', default => 'DataLakeStoreFileSystemManagement::DeleteFileSystemResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeStoreFileSystemManagement::DeleteFileSystemResult');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

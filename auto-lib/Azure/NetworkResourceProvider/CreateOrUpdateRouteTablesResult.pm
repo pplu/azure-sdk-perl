@@ -2,6 +2,6 @@ package Azure::NetworkResourceProvider::CreateOrUpdateRouteTablesResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'NetworkResourceProvider::RouteTablePropertiesFormat'  );
+  has properties => (is => 'ro', isa => 'Azure::NetworkResourceProvider::RouteTablePropertiesFormat'  );
 
 1;

@@ -16,6 +16,6 @@ package Azure::IntuneResourceManagement::PatchMAMPolicyIos;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/iosPolicies/{policyName}');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::PatchMAMPolicyIosResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::PatchMAMPolicyIosResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

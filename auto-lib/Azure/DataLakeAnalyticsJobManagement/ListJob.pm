@@ -34,6 +34,6 @@ package Azure::DataLakeAnalyticsJobManagement::ListJob;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Jobs');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsJobManagement::ListJobResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsJobManagement::ListJobResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

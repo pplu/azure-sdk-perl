@@ -31,6 +31,6 @@ package Azure::ComputeManagement::ListVirtualMachineImages;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/publishers/{publisherName}/artifacttypes/vmimage/offers/{offer}/skus/{skus}/versions');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::ListVirtualMachineImagesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::ListVirtualMachineImagesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

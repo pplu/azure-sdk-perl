@@ -13,6 +13,6 @@ package Azure::DataLakeStoreFileSystemManagement::GetHomeDirectoryFileSystem;
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/');
-  class_has _returns => (is => 'ro', default => 'DataLakeStoreFileSystemManagement::GetHomeDirectoryFileSystemResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeStoreFileSystemManagement::GetHomeDirectoryFileSystemResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

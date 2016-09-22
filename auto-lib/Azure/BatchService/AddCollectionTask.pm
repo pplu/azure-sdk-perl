@@ -25,6 +25,6 @@ package Azure::BatchService::AddCollectionTask;
   );
 
   class_has _api_uri => (is => 'ro', default => '/jobs/{jobId}/addtaskcollection');
-  class_has _returns => (is => 'ro', default => 'BatchService::AddCollectionTaskResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::AddCollectionTaskResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

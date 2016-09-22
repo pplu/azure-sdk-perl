@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::ListKeyCredentialsApplications;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/applications/{applicationObjectId}/keyCredentials');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::ListKeyCredentialsApplicationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::ListKeyCredentialsApplicationsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

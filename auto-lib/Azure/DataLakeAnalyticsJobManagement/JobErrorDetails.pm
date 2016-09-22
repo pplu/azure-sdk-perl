@@ -1,13 +1,13 @@
 package Azure::DataLakeAnalyticsJobManagement::JobErrorDetails;
   use Moose;
 
+  has 'InnerError' => (is => 'ro', isa => 'Any'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'details' => (is => 'ro', isa => 'Str'  );
   has 'endOffset' => (is => 'ro', isa => 'Int'  );
   has 'errorId' => (is => 'ro', isa => 'Str'  );
   has 'filePath' => (is => 'ro', isa => 'Str'  );
   has 'helpLink' => (is => 'ro', isa => 'Str'  );
-  has 'innerError' => (is => 'ro', isa => 'Any'  );
   has 'internalDiagnostics' => (is => 'ro', isa => 'Str'  );
   has 'lineNumber' => (is => 'ro', isa => 'Int'  );
   has 'message' => (is => 'ro', isa => 'Str'  );

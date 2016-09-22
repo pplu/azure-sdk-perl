@@ -22,6 +22,6 @@ package Azure::NotificationHubsManagement::RegenerateKeysNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/AuthorizationRules/{authorizationRuleName}/regenerateKeys');
-  class_has _returns => (is => 'ro', default => 'NotificationHubsManagement::RegenerateKeysNamespacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NotificationHubsManagement::RegenerateKeysNamespacesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

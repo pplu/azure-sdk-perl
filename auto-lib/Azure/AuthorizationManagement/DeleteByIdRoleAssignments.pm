@@ -10,6 +10,6 @@ package Azure::AuthorizationManagement::DeleteByIdRoleAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{roleAssignmentId}');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::DeleteByIdRoleAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::DeleteByIdRoleAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

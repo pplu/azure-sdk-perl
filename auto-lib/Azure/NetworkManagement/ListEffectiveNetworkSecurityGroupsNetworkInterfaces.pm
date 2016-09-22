@@ -16,6 +16,6 @@ package Azure::NetworkManagement::ListEffectiveNetworkSecurityGroupsNetworkInter
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkInterfaces/{networkInterfaceName}/effectiveNetworkSecurityGroups');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::ListEffectiveNetworkSecurityGroupsNetworkInterfacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListEffectiveNetworkSecurityGroupsNetworkInterfacesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

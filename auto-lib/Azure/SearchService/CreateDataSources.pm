@@ -13,6 +13,6 @@ package Azure::SearchService::CreateDataSources;
   );
 
   class_has _api_uri => (is => 'ro', default => '/datasources');
-  class_has _returns => (is => 'ro', default => 'SearchService::CreateDataSourcesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::CreateDataSourcesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -10,6 +10,6 @@ package Azure::ServerManagement::ListGateway;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.ServerManagement/gateways');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::ListGatewayResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::ListGatewayResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

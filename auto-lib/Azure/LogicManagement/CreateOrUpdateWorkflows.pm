@@ -19,6 +19,6 @@ package Azure::LogicManagement::CreateOrUpdateWorkflows;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::CreateOrUpdateWorkflowsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::CreateOrUpdateWorkflowsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

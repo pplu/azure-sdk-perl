@@ -37,6 +37,6 @@ package Azure::DataLakeAnalyticsAccountManagement::ListAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.DataLakeAnalytics/accounts');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsAccountManagement::ListAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::ListAccountResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

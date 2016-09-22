@@ -3,7 +3,6 @@ package Azure::NetworkManagement::ExpressRouteCircuit;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'sku' => (is => 'ro', isa => 'Any'  );
-  has 'allowClassicOperations' => (is => 'ro', isa => 'Any'  );
   has 'authorizations' => (is => 'ro', isa => 'ArrayRef'  );
   has 'circuitProvisioningState' => (is => 'ro', isa => 'Str'  );
   has 'peerings' => (is => 'ro', isa => 'ArrayRef'  );

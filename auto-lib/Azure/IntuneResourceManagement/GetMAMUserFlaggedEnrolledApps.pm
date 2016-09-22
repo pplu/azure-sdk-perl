@@ -22,6 +22,6 @@ package Azure::IntuneResourceManagement::GetMAMUserFlaggedEnrolledApps;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/flaggedUsers/{userName}/flaggedEnrolledApps');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::GetMAMUserFlaggedEnrolledAppsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::GetMAMUserFlaggedEnrolledAppsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

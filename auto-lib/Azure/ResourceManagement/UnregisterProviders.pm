@@ -13,6 +13,6 @@ package Azure::ResourceManagement::UnregisterProviders;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/unregister');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::UnregisterProvidersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::UnregisterProvidersResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

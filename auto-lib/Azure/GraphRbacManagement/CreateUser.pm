@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::CreateUser;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/users');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::CreateUserResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::CreateUserResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

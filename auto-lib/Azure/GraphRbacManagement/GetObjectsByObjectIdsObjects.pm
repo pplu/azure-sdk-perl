@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::GetObjectsByObjectIdsObjects;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/getObjectsByObjectIds');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::GetObjectsByObjectIdsObjectsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::GetObjectsByObjectIdsObjectsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

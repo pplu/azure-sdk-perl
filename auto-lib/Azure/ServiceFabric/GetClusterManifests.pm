@@ -7,6 +7,6 @@ package Azure::ServiceFabric::GetClusterManifests;
   );
 
   class_has _api_uri => (is => 'ro', default => '/$/GetClusterManifest');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetClusterManifestsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetClusterManifestsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

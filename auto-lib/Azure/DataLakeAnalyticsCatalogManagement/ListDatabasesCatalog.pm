@@ -28,6 +28,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListDatabasesCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::ListDatabasesCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::ListDatabasesCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

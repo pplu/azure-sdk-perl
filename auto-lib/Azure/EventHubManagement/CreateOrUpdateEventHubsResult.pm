@@ -1,6 +1,6 @@
 package Azure::EventHubManagement::CreateOrUpdateEventHubsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'EventHubManagement::EventHubProperties'  );
+  has properties => (is => 'ro', isa => 'Azure::EventHubManagement::EventHubProperties'  );
 
 1;

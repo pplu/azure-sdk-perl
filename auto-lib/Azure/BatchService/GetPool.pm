@@ -40,6 +40,6 @@ package Azure::BatchService::GetPool;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools/{poolId}');
-  class_has _returns => (is => 'ro', default => 'BatchService::GetPoolResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetPoolResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

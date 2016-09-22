@@ -16,6 +16,6 @@ package Azure::ServiceFabric::SendDeployedApplicationHealthReports;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}/$/GetApplications/{applicationName}/$/ReportHealth');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::SendDeployedApplicationHealthReportsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::SendDeployedApplicationHealthReportsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

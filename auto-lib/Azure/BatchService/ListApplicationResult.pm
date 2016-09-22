@@ -2,6 +2,6 @@ package Azure::BatchService::ListApplicationResult;
   use Moose;
 
   has odata.nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[BatchService::ApplicationSummary]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ApplicationSummary]'  );
 
 1;

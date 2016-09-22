@@ -3,6 +3,6 @@ package Azure::NetworkResourceProvider::CreateOrUpdateExpressRouteCircuitPeering
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'NetworkResourceProvider::ExpressRouteCircuitPeeringPropertiesFormat'  );
+  has properties => (is => 'ro', isa => 'Azure::NetworkResourceProvider::ExpressRouteCircuitPeeringPropertiesFormat'  );
 
 1;

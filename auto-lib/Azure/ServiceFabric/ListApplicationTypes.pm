@@ -7,6 +7,6 @@ package Azure::ServiceFabric::ListApplicationTypes;
   );
 
   class_has _api_uri => (is => 'ro', default => '/ApplicationTypes');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::ListApplicationTypesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::ListApplicationTypesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

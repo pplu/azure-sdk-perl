@@ -16,6 +16,6 @@ package Azure::NetworkResourceProvider::ListArpTableExpressRouteCircuits;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}arpTable');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::ListArpTableExpressRouteCircuitsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::ListArpTableExpressRouteCircuitsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

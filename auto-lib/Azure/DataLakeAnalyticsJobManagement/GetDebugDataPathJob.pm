@@ -10,6 +10,6 @@ package Azure::DataLakeAnalyticsJobManagement::GetDebugDataPathJob;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Jobs/{jobIdentity}/GetDebugDataPath');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsJobManagement::GetDebugDataPathJobResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsJobManagement::GetDebugDataPathJobResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

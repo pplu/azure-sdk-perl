@@ -16,6 +16,6 @@ package Azure::PowerBIEmbeddedManagement::getAccessKeysWorkspaceCollections;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.PowerBI/workspaceCollections/{workspaceCollectionName}/listKeys');
-  class_has _returns => (is => 'ro', default => 'PowerBIEmbeddedManagement::getAccessKeysWorkspaceCollectionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::PowerBIEmbeddedManagement::getAccessKeysWorkspaceCollectionsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

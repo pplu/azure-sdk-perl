@@ -19,6 +19,6 @@ package Azure::ResourceManagement::CreatePolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/policyAssignments/{policyAssignmentName}');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::CreatePolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::CreatePolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

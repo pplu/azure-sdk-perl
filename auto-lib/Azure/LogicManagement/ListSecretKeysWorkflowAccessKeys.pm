@@ -19,6 +19,6 @@ package Azure::LogicManagement::ListSecretKeysWorkflowAccessKeys;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/accessKeys/{accessKeyName}/list');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::ListSecretKeysWorkflowAccessKeysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::ListSecretKeysWorkflowAccessKeysResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

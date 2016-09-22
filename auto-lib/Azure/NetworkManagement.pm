@@ -213,11 +213,6 @@ package Azure::NetworkManagement;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetNetworkSecurityGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetPeeringStatsExpressRouteCircuits {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetPeeringStatsExpressRouteCircuits', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub GetPublicIPAddresses {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetPublicIPAddresses', @_);
@@ -241,11 +236,6 @@ package Azure::NetworkManagement;
   sub GetSharedKeyVirtualNetworkGatewayConnections {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetSharedKeyVirtualNetworkGatewayConnections', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetStatsExpressRouteCircuits {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetStatsExpressRouteCircuits', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetSubnets {
@@ -378,11 +368,6 @@ package Azure::NetworkManagement;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListRoutesTableExpressRouteCircuits', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListRoutesTableSummaryExpressRouteCircuits {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListRoutesTableSummaryExpressRouteCircuits', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub ListRouteTables {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListRouteTables', @_);
@@ -391,6 +376,11 @@ package Azure::NetworkManagement;
   sub ListSecurityRules {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListSecurityRules', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListStatsExpressRouteCircuits {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListStatsExpressRouteCircuits', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListSubnets {

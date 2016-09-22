@@ -22,6 +22,6 @@ package Azure::DevTestLabs::GetResourcePolicy;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/policysets/{policySetName}/policies/{name}');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::GetResourcePolicyResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::GetResourcePolicyResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

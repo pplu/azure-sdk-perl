@@ -25,6 +25,6 @@ package Azure::CdnManagement::CreateOrigins;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/endpoints/{endpointName}/origins/{originName}');
-  class_has _returns => (is => 'ro', default => 'CdnManagement::CreateOriginsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::CreateOriginsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

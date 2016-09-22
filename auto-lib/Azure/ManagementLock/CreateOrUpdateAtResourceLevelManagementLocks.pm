@@ -31,6 +31,6 @@ package Azure::ManagementLock::CreateOrUpdateAtResourceLevelManagementLocks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks/{lockName}');
-  class_has _returns => (is => 'ro', default => 'ManagementLock::CreateOrUpdateAtResourceLevelManagementLocksResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ManagementLock::CreateOrUpdateAtResourceLevelManagementLocksResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

@@ -10,6 +10,6 @@ package Azure::Subscription::ListLocationsSubscriptions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/locations');
-  class_has _returns => (is => 'ro', default => 'Subscription::ListLocationsSubscriptionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Subscription::ListLocationsSubscriptionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

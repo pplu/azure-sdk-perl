@@ -1,6 +1,6 @@
 package Azure::CdnManagement::ListByEndpointCustomDomainsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[CdnManagement::CustomDomain]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::CdnManagement::CustomDomain]'  );
 
 1;

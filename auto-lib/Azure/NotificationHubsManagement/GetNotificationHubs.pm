@@ -19,6 +19,6 @@ package Azure::NotificationHubsManagement::GetNotificationHubs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}');
-  class_has _returns => (is => 'ro', default => 'NotificationHubsManagement::GetNotificationHubsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NotificationHubsManagement::GetNotificationHubsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

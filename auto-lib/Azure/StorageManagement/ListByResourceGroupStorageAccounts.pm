@@ -13,6 +13,6 @@ package Azure::StorageManagement::ListByResourceGroupStorageAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts');
-  class_has _returns => (is => 'ro', default => 'StorageManagement::ListByResourceGroupStorageAccountsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::StorageManagement::ListByResourceGroupStorageAccountsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

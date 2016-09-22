@@ -19,6 +19,6 @@ package Azure::LogicManagement::GetWorkflowAccessKeys;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/accessKeys/{accessKeyName}');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::GetWorkflowAccessKeysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::GetWorkflowAccessKeysResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

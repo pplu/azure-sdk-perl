@@ -13,6 +13,6 @@ package Azure::Policy::DeleteByIdPolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{policyAssignmentId}');
-  class_has _returns => (is => 'ro', default => 'Policy::DeleteByIdPolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Policy::DeleteByIdPolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

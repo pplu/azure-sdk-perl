@@ -16,6 +16,6 @@ package Azure::TrafficManagerManagement::GetProfiles;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}');
-  class_has _returns => (is => 'ro', default => 'TrafficManagerManagement::GetProfilesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::GetProfilesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

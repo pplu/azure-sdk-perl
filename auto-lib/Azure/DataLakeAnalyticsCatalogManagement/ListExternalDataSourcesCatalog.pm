@@ -31,6 +31,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListExternalDataSourcesCatalo
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/externaldatasources');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::ListExternalDataSourcesCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::ListExternalDataSourcesCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

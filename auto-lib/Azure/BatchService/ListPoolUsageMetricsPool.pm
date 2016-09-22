@@ -31,6 +31,6 @@ package Azure::BatchService::ListPoolUsageMetricsPool;
   );
 
   class_has _api_uri => (is => 'ro', default => '/poolusagemetrics');
-  class_has _returns => (is => 'ro', default => 'BatchService::ListPoolUsageMetricsPoolResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListPoolUsageMetricsPoolResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

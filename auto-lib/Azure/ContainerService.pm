@@ -18,9 +18,9 @@ package Azure::ContainerService;
     my $call_object = $self->new_with_coercions('Azure::ContainerService::GetContainerService', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListContainerService {
+  sub ListByResourceGroupContainerService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListByResourceGroupContainerService', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

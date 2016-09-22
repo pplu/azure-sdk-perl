@@ -25,6 +25,6 @@ package Azure::EventHubManagement::RegenerateKeysEventHubs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/eventhubs/{eventHubName}/authorizationRules/{authorizationRuleName}/regenerateKeys');
-  class_has _returns => (is => 'ro', default => 'EventHubManagement::RegenerateKeysEventHubsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::RegenerateKeysEventHubsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

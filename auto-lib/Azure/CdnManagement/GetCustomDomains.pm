@@ -22,6 +22,6 @@ package Azure::CdnManagement::GetCustomDomains;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/endpoints/{endpointName}/customDomains/{customDomainName}');
-  class_has _returns => (is => 'ro', default => 'CdnManagement::GetCustomDomainsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::GetCustomDomainsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

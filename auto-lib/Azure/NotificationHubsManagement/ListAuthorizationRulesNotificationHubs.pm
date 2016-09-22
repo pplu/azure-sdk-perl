@@ -19,6 +19,6 @@ package Azure::NotificationHubsManagement::ListAuthorizationRulesNotificationHub
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NotificationHubs/namespaces/{namespaceName}/notificationHubs/{notificationHubName}/AuthorizationRules');
-  class_has _returns => (is => 'ro', default => 'NotificationHubsManagement::ListAuthorizationRulesNotificationHubsResult');
-  class_has _api_method => (is => 'ro', default => 'POST');
+  class_has _returns => (is => 'ro', default => 'Azure::NotificationHubsManagement::ListAuthorizationRulesNotificationHubsResult');
+  class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -16,6 +16,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::GetProcedureCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/schemas/{schemaName}/procedures/{procedureName}');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::GetProcedureCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::GetProcedureCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

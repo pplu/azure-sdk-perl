@@ -10,6 +10,6 @@ package Azure::AuthorizationManagement::ListProviderOperationsMetadata;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Authorization/providerOperations');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::ListProviderOperationsMetadataResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::ListProviderOperationsMetadataResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -16,6 +16,6 @@ package Azure::IntuneResourceManagement::GetMAMPolicyByNameIos;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/iosPolicies/{policyName}');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::GetMAMPolicyByNameIosResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::GetMAMPolicyByNameIosResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

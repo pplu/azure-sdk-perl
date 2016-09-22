@@ -19,6 +19,6 @@ package Azure::RecoveryServicesBackup::GetExportJobsOperationResults;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupJobs/operationResults/{operationId}');
-  class_has _returns => (is => 'ro', default => 'RecoveryServicesBackup::GetExportJobsOperationResultsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::GetExportJobsOperationResultsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

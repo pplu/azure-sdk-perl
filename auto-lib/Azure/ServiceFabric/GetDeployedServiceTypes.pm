@@ -13,6 +13,6 @@ package Azure::ServiceFabric::GetDeployedServiceTypes;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}/$/GetApplications/{applicationName}/$/GetServiceTypes');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetDeployedServiceTypesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetDeployedServiceTypesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

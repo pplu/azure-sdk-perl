@@ -16,6 +16,6 @@ package Azure::SqlManagement::GetSecurityAlertPolicy;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/securityAlertPolicies/Default');
-  class_has _returns => (is => 'ro', default => 'SqlManagement::GetSecurityAlertPolicyResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::GetSecurityAlertPolicyResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

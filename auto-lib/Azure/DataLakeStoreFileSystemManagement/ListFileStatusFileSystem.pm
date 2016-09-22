@@ -25,6 +25,6 @@ package Azure::DataLakeStoreFileSystemManagement::ListFileStatusFileSystem;
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{listFilePath}');
-  class_has _returns => (is => 'ro', default => 'DataLakeStoreFileSystemManagement::ListFileStatusFileSystemResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeStoreFileSystemManagement::ListFileStatusFileSystemResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

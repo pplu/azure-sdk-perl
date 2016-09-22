@@ -7,6 +7,6 @@ package Azure::Subscription::ListTenants;
   );
 
   class_has _api_uri => (is => 'ro', default => '/tenants');
-  class_has _returns => (is => 'ro', default => 'Subscription::ListTenantsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::Subscription::ListTenantsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

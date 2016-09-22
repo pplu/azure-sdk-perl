@@ -16,6 +16,6 @@ package Azure::NetworkManagement::ListExpressRouteCircuitAuthorizations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/authorizations');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::ListExpressRouteCircuitAuthorizationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListExpressRouteCircuitAuthorizationsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -10,6 +10,6 @@ package Azure::SearchService::ListIndexers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/indexers');
-  class_has _returns => (is => 'ro', default => 'SearchService::ListIndexersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::ListIndexersResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

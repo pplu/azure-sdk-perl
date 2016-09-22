@@ -28,6 +28,6 @@ package Azure::ResourceManagement::CreateOrUpdateResources;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::CreateOrUpdateResourcesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::CreateOrUpdateResourcesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

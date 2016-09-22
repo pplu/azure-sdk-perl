@@ -3,7 +3,7 @@ package Azure::ServiceFabric::ResolveServicesResult;
 
   has Endpoints => (is => 'ro', isa => 'ArrayRef[object]'  );
   has Name => (is => 'ro', isa => 'Str'  );
-  has PartitionInformation => (is => 'ro', isa => 'ServiceFabric::PartitionInformation'  );
+  has PartitionInformation => (is => 'ro', isa => 'Azure::ServiceFabric::PartitionInformation'  );
   has Version => (is => 'ro', isa => 'Str'  );
 
 1;

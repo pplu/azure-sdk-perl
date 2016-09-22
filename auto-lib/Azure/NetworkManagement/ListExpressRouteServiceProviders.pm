@@ -10,6 +10,6 @@ package Azure::NetworkManagement::ListExpressRouteServiceProviders;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Network/expressRouteServiceProviders');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::ListExpressRouteServiceProvidersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListExpressRouteServiceProvidersResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

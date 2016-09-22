@@ -10,6 +10,6 @@ package Azure::NetworkResourceProvider::ListAllVirtualNetworks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Network/virtualnetworks');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::ListAllVirtualNetworksResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::ListAllVirtualNetworksResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

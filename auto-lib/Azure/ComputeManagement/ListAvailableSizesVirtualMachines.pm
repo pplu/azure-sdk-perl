@@ -16,6 +16,6 @@ package Azure::ComputeManagement::ListAvailableSizesVirtualMachines;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/vmSizes');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::ListAvailableSizesVirtualMachinesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::ListAvailableSizesVirtualMachinesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

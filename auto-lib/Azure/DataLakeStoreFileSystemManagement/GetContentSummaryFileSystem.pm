@@ -16,6 +16,6 @@ package Azure::DataLakeStoreFileSystemManagement::GetContentSummaryFileSystem;
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/va/{getContentSummaryFilePath}');
-  class_has _returns => (is => 'ro', default => 'DataLakeStoreFileSystemManagement::GetContentSummaryFileSystemResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeStoreFileSystemManagement::GetContentSummaryFileSystemResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

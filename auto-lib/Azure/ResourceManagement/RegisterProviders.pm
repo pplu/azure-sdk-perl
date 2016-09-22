@@ -13,6 +13,6 @@ package Azure::ResourceManagement::RegisterProviders;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/{resourceProviderNamespace}/register');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::RegisterProvidersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::RegisterProvidersResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

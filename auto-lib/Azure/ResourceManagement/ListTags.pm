@@ -10,6 +10,6 @@ package Azure::ResourceManagement::ListTags;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/tagNames');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::ListTagsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ListTagsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

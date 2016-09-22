@@ -19,6 +19,6 @@ package Azure::LogicManagement::GenerateUpgradedDefinitionWorkflows;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/workflows/{workflowName}/generateUpgradedDefinition');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::GenerateUpgradedDefinitionWorkflowsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::GenerateUpgradedDefinitionWorkflowsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

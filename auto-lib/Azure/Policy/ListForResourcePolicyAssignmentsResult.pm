@@ -2,6 +2,6 @@ package Azure::Policy::ListForResourcePolicyAssignmentsResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Policy::PolicyAssignment]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::Policy::PolicyAssignment]'  );
 
 1;

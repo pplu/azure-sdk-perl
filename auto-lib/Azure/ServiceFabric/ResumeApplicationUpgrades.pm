@@ -13,6 +13,6 @@ package Azure::ServiceFabric::ResumeApplicationUpgrades;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/MoveNextUpgradeDomain');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::ResumeApplicationUpgradesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::ResumeApplicationUpgradesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -10,6 +10,6 @@ package Azure::NetworkResourceProvider::ListAllNetworkSecurityGroups;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Network/networkSecurityGroups');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::ListAllNetworkSecurityGroupsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::ListAllNetworkSecurityGroupsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

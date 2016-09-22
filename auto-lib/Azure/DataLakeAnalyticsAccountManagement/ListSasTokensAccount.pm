@@ -22,6 +22,6 @@ package Azure::DataLakeAnalyticsAccountManagement::ListSasTokensAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeAnalytics/accounts/{accountName}/StorageAccounts/{storageAccountName}/Containers/{containerName}/listSasTokens');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsAccountManagement::ListSasTokensAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::ListSasTokensAccountResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

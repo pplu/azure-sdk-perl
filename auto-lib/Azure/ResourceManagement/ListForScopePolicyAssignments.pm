@@ -16,6 +16,6 @@ package Azure::ResourceManagement::ListForScopePolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/policyAssignments');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::ListForScopePolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ListForScopePolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -19,6 +19,6 @@ package Azure::BatchManagement::ListApplication;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications');
-  class_has _returns => (is => 'ro', default => 'BatchManagement::ListApplicationResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchManagement::ListApplicationResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

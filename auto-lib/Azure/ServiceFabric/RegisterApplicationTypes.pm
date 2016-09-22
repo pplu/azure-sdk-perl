@@ -10,6 +10,6 @@ package Azure::ServiceFabric::RegisterApplicationTypes;
   );
 
   class_has _api_uri => (is => 'ro', default => '/ApplicationTypes/$/Provision');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::RegisterApplicationTypesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::RegisterApplicationTypesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

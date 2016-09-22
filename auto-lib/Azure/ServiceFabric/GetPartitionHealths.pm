@@ -16,6 +16,6 @@ package Azure::ServiceFabric::GetPartitionHealths;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Partitions/{partitionId}/$/GetHealth');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetPartitionHealthsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetPartitionHealthsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

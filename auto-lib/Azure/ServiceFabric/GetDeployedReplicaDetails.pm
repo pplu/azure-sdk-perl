@@ -16,6 +16,6 @@ package Azure::ServiceFabric::GetDeployedReplicaDetails;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}/$/GetPartitions/{partitionName}/$/GetReplicas/{replicaId}/$/GetDetail');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetDeployedReplicaDetailsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetDeployedReplicaDetailsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

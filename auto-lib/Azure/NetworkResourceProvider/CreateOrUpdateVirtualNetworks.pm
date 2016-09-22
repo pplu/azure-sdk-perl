@@ -19,6 +19,6 @@ package Azure::NetworkResourceProvider::CreateOrUpdateVirtualNetworks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualnetworks/{virtualNetworkName}');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::CreateOrUpdateVirtualNetworksResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::CreateOrUpdateVirtualNetworksResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

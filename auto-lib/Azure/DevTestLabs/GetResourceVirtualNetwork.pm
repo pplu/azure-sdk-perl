@@ -19,6 +19,6 @@ package Azure::DevTestLabs::GetResourceVirtualNetwork;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/virtualnetworks/{name}');
-  class_has _returns => (is => 'ro', default => 'DevTestLabs::GetResourceVirtualNetworkResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::GetResourceVirtualNetworkResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -19,6 +19,6 @@ package Azure::StorageManagement::RegenerateKeyStorageAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/regenerateKey');
-  class_has _returns => (is => 'ro', default => 'StorageManagement::RegenerateKeyStorageAccountsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::StorageManagement::RegenerateKeyStorageAccountsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -19,6 +19,6 @@ package Azure::iotHub::GetKeysForKeyNameIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/IotHubKeys/{keyName}/listkeys');
-  class_has _returns => (is => 'ro', default => 'iotHub::GetKeysForKeyNameIotHubResourceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::iotHub::GetKeysForKeyNameIotHubResourceResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

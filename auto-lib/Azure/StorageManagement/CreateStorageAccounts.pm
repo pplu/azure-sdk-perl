@@ -19,6 +19,6 @@ package Azure::StorageManagement::CreateStorageAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}');
-  class_has _returns => (is => 'ro', default => 'StorageManagement::CreateStorageAccountsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::StorageManagement::CreateStorageAccountsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

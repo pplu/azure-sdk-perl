@@ -34,6 +34,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListViewsCatalog;
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/schemas/{schemaName}/views');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsCatalogManagement::ListViewsCatalogResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsCatalogManagement::ListViewsCatalogResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

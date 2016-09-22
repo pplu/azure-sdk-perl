@@ -16,6 +16,6 @@ package Azure::ServiceFabric::GetServiceManifests;
   );
 
   class_has _api_uri => (is => 'ro', default => '/ApplicationTypes/{applicationTypeName}/$/GetServiceManifest');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetServiceManifestsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetServiceManifestsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

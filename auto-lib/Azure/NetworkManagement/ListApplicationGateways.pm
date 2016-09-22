@@ -13,6 +13,6 @@ package Azure::NetworkManagement::ListApplicationGateways;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/applicationGateways');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::ListApplicationGatewaysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListApplicationGatewaysResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

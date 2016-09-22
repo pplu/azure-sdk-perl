@@ -31,6 +31,6 @@ package Azure::DnsManagement::UpdateRecordSets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnszones/{zoneName}/{recordType}/{relativeRecordSetName}');
-  class_has _returns => (is => 'ro', default => 'DnsManagement::UpdateRecordSetsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DnsManagement::UpdateRecordSetsResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

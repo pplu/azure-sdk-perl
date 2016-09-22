@@ -13,6 +13,6 @@ package Azure::ServiceFabric::DisableNodes;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Nodes/{nodeName}/$/Deactivate');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::DisableNodesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::DisableNodesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

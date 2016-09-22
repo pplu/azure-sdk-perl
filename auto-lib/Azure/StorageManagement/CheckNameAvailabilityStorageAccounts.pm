@@ -13,6 +13,6 @@ package Azure::StorageManagement::CheckNameAvailabilityStorageAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Storage/checkNameAvailability');
-  class_has _returns => (is => 'ro', default => 'StorageManagement::CheckNameAvailabilityStorageAccountsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::StorageManagement::CheckNameAvailabilityStorageAccountsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

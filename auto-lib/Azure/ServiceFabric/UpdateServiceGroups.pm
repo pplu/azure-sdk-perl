@@ -16,6 +16,6 @@ package Azure::ServiceFabric::UpdateServiceGroups;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServices/{serviceName}/$/UpdateServiceGroup');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::UpdateServiceGroupsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::UpdateServiceGroupsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

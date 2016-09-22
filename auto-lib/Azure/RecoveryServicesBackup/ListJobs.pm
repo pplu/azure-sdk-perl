@@ -22,6 +22,6 @@ package Azure::RecoveryServicesBackup::ListJobs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupJobs');
-  class_has _returns => (is => 'ro', default => 'RecoveryServicesBackup::ListJobsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::ListJobsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

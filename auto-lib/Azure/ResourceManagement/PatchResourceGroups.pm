@@ -16,6 +16,6 @@ package Azure::ResourceManagement::PatchResourceGroups;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::PatchResourceGroupsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::PatchResourceGroupsResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

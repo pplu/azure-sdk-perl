@@ -22,6 +22,6 @@ package Azure::LogicManagement::ListIntegrationAccountSchemas;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationAccounts/{integrationAccountName}/schemas');
-  class_has _returns => (is => 'ro', default => 'LogicManagement::ListIntegrationAccountSchemasResult');
+  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::ListIntegrationAccountSchemasResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -19,6 +19,6 @@ package Azure::NetworkManagement::GetLoadBalancers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/loadBalancers/{loadBalancerName}');
-  class_has _returns => (is => 'ro', default => 'NetworkManagement::GetLoadBalancersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetLoadBalancersResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

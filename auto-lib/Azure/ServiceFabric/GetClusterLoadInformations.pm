@@ -7,6 +7,6 @@ package Azure::ServiceFabric::GetClusterLoadInformations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/$/GetLoadInformation');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetClusterLoadInformationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetClusterLoadInformationsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

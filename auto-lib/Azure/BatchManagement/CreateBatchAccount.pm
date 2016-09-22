@@ -19,6 +19,6 @@ package Azure::BatchManagement::CreateBatchAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}');
-  class_has _returns => (is => 'ro', default => 'BatchManagement::CreateBatchAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchManagement::CreateBatchAccountResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

@@ -19,6 +19,6 @@ package Azure::ComputeManagement::CreateOrUpdateAvailabilitySets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/availabilitySets/{name}');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::CreateOrUpdateAvailabilitySetsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::CreateOrUpdateAvailabilitySetsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

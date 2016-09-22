@@ -1,6 +1,6 @@
 package Azure::ComputeManagement::GetVirtualMachineImagesResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'ComputeManagement::VirtualMachineImageProperties'  );
+  has properties => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineImageProperties'  );
 
 1;

@@ -22,6 +22,6 @@ package Azure::DnsManagement::DeleteZones;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnszones/{zoneName}');
-  class_has _returns => (is => 'ro', default => 'DnsManagement::DeleteZonesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DnsManagement::DeleteZonesResult');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

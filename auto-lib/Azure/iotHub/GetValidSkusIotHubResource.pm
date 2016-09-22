@@ -16,6 +16,6 @@ package Azure::iotHub::GetValidSkusIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/skus');
-  class_has _returns => (is => 'ro', default => 'iotHub::GetValidSkusIotHubResourceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::iotHub::GetValidSkusIotHubResourceResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

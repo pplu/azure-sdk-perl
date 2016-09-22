@@ -10,6 +10,6 @@ package Azure::BatchManagement::ListBatchAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Batch/batchAccounts');
-  class_has _returns => (is => 'ro', default => 'BatchManagement::ListBatchAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchManagement::ListBatchAccountResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

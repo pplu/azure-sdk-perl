@@ -22,6 +22,6 @@ package Azure::ComputeManagement::GetVirtualMachineExtensionImages;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/publishers/{publisherName}/artifacttypes/vmextension/types/{type}/versions/{version}');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::GetVirtualMachineExtensionImagesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::GetVirtualMachineExtensionImagesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

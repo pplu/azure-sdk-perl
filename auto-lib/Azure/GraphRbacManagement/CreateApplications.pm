@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::CreateApplications;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/applications');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::CreateApplicationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::CreateApplicationsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

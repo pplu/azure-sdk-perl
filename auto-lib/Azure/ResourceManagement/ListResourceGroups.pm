@@ -16,6 +16,6 @@ package Azure::ResourceManagement::ListResourceGroups;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups');
-  class_has _returns => (is => 'ro', default => 'ResourceManagement::ListResourceGroupsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ListResourceGroupsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

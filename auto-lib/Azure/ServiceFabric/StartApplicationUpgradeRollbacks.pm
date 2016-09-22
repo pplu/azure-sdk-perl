@@ -10,6 +10,6 @@ package Azure::ServiceFabric::StartApplicationUpgradeRollbacks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/RollbackUpgrade');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::StartApplicationUpgradeRollbacksResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::StartApplicationUpgradeRollbacksResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

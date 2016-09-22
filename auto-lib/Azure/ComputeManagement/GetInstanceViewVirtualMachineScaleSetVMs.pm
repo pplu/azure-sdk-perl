@@ -19,6 +19,6 @@ package Azure::ComputeManagement::GetInstanceViewVirtualMachineScaleSetVMs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/virtualmachines/{instanceId}/instanceView');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::GetInstanceViewVirtualMachineScaleSetVMsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::GetInstanceViewVirtualMachineScaleSetVMsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

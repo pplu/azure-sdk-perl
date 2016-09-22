@@ -19,6 +19,6 @@ package Azure::DataLakeAnalyticsAccountManagement::GetStorageAccountAccount;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeAnalytics/accounts/{accountName}/StorageAccounts/{storageAccountName}');
-  class_has _returns => (is => 'ro', default => 'DataLakeAnalyticsAccountManagement::GetStorageAccountAccountResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::GetStorageAccountAccountResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

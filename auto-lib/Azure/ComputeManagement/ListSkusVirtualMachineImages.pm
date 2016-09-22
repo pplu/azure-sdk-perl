@@ -19,6 +19,6 @@ package Azure::ComputeManagement::ListSkusVirtualMachineImages;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/publishers/{publisherName}/artifacttypes/vmimage/offers/{offer}/skus');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::ListSkusVirtualMachineImagesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::ListSkusVirtualMachineImagesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

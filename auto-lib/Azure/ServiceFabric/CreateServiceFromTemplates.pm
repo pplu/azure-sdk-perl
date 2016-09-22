@@ -13,6 +13,6 @@ package Azure::ServiceFabric::CreateServiceFromTemplates;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServices/$/CreateFromTemplate');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::CreateServiceFromTemplatesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::CreateServiceFromTemplatesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

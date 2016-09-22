@@ -16,6 +16,6 @@ package Azure::IntuneResourceManagement::WipeMAMUserDevice;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/users/{userName}/devices/{deviceName}/wipe');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::WipeMAMUserDeviceResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::WipeMAMUserDeviceResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

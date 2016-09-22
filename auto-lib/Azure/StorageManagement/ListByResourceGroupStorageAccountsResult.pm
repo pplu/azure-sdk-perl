@@ -1,7 +1,6 @@
 package Azure::StorageManagement::ListByResourceGroupStorageAccountsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[StorageManagement::StorageAccount]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::StorageManagement::StorageAccount]'  );
 
 1;

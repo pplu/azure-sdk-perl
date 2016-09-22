@@ -19,6 +19,6 @@ package Azure::RedisManagement::CreateOrUpdatePatchSchedules;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{name}/patchSchedules/default');
-  class_has _returns => (is => 'ro', default => 'RedisManagement::CreateOrUpdatePatchSchedulesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RedisManagement::CreateOrUpdatePatchSchedulesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

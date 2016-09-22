@@ -13,6 +13,6 @@ package Azure::ServiceFabric::GetServices;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServices/{serviceName}');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetServicesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetServicesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -10,6 +10,6 @@ package Azure::ServiceFabric::CreateApplications;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/$/Create');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::CreateApplicationsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::CreateApplicationsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

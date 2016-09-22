@@ -16,6 +16,6 @@ package Azure::ComputeManagement::ListSkusVirtualMachineScaleSets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/skus');
-  class_has _returns => (is => 'ro', default => 'ComputeManagement::ListSkusVirtualMachineScaleSetsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::ListSkusVirtualMachineScaleSetsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

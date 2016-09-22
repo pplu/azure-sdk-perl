@@ -13,6 +13,6 @@ package Azure::AuthorizationManagement::CreateByIdRoleAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{roleAssignmentId}');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::CreateByIdRoleAssignmentsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::CreateByIdRoleAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

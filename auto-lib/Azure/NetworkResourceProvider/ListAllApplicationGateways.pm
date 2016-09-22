@@ -10,6 +10,6 @@ package Azure::NetworkResourceProvider::ListAllApplicationGateways;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Network/applicationGateways');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::ListAllApplicationGatewaysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::ListAllApplicationGatewaysResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

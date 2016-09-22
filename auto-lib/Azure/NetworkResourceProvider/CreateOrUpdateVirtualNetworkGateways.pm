@@ -19,6 +19,6 @@ package Azure::NetworkResourceProvider::CreateOrUpdateVirtualNetworkGateways;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualnetworkgateways/{virtualNetworkGatewayName}');
-  class_has _returns => (is => 'ro', default => 'NetworkResourceProvider::CreateOrUpdateVirtualNetworkGatewaysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkResourceProvider::CreateOrUpdateVirtualNetworkGatewaysResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

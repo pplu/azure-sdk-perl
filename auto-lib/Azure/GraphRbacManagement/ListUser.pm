@@ -13,6 +13,6 @@ package Azure::GraphRbacManagement::ListUser;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{tenantID}/users');
-  class_has _returns => (is => 'ro', default => 'GraphRbacManagement::ListUserResult');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::ListUserResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

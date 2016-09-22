@@ -16,6 +16,6 @@ package Azure::KeyVaultManagement::ListVaults;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resources');
-  class_has _returns => (is => 'ro', default => 'KeyVaultManagement::ListVaultsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::KeyVaultManagement::ListVaultsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

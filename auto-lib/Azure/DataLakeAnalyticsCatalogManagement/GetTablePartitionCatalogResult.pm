@@ -5,7 +5,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::GetTablePartitionCatalogResul
   has databaseName => (is => 'ro', isa => 'Str'  );
   has indexId => (is => 'ro', isa => 'Any'  );
   has label => (is => 'ro', isa => 'ArrayRef[string]'  );
-  has parentName => (is => 'ro', isa => 'DataLakeAnalyticsCatalogManagement::DdlName'  );
+  has parentName => (is => 'ro', isa => 'Azure::DataLakeAnalyticsCatalogManagement::DdlName'  );
   has partitionName => (is => 'ro', isa => 'Str'  );
   has schemaName => (is => 'ro', isa => 'Str'  );
 

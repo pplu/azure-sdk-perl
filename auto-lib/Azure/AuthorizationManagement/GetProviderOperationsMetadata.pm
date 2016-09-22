@@ -13,6 +13,6 @@ package Azure::AuthorizationManagement::GetProviderOperationsMetadata;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Authorization/providerOperations/{resourceProviderNamespace}');
-  class_has _returns => (is => 'ro', default => 'AuthorizationManagement::GetProviderOperationsMetadataResult');
+  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::GetProviderOperationsMetadataResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

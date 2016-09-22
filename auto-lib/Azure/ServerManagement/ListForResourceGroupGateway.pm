@@ -13,6 +13,6 @@ package Azure::ServerManagement::ListForResourceGroupGateway;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServerManagement/gateways');
-  class_has _returns => (is => 'ro', default => 'ServerManagement::ListForResourceGroupGatewayResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServerManagement::ListForResourceGroupGatewayResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

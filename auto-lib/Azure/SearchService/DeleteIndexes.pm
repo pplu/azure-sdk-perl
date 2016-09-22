@@ -8,6 +8,12 @@ package Azure::SearchService::DeleteIndexes;
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'ParamInHeader' ],
   );
+  has 'If-Match' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInHeader' ],
+  );
+  has 'If-None-Match' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInHeader' ],
+  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInQuery' ],
   );

@@ -8,7 +8,16 @@ package Azure::SearchService::CreateOrUpdateIndexes;
   has 'index' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'ParamInBody' ],
   );
+  has 'allowIndexDowntime' => (is => 'ro', isa => 'Any',
+    traits => [ 'ParamInQuery' ],
+  );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInHeader' ],
+  );
+  has 'If-Match' => (is => 'ro', isa => 'Str',
+    traits => [ 'ParamInHeader' ],
+  );
+  has 'If-None-Match' => (is => 'ro', isa => 'Str',
     traits => [ 'ParamInHeader' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
@@ -16,6 +25,6 @@ package Azure::SearchService::CreateOrUpdateIndexes;
   );
 
   class_has _api_uri => (is => 'ro', default => '/indexes('{indexName}')');
-  class_has _returns => (is => 'ro', default => 'SearchService::CreateOrUpdateIndexesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::CreateOrUpdateIndexesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

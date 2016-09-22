@@ -19,6 +19,6 @@ package Azure::CognitiveServicesManagement::CreateCognitiveServicesAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}');
-  class_has _returns => (is => 'ro', default => 'CognitiveServicesManagement::CreateCognitiveServicesAccountsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::CreateCognitiveServicesAccountsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

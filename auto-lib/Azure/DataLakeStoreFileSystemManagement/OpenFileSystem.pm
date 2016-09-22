@@ -25,6 +25,6 @@ package Azure::DataLakeStoreFileSystemManagement::OpenFileSystem;
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{directFilePath}');
-  class_has _returns => (is => 'ro', default => 'DataLakeStoreFileSystemManagement::OpenFileSystemResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeStoreFileSystemManagement::OpenFileSystemResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

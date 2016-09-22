@@ -13,6 +13,6 @@ package Azure::SearchService::ListIndexes;
   );
 
   class_has _api_uri => (is => 'ro', default => '/indexes');
-  class_has _returns => (is => 'ro', default => 'SearchService::ListIndexesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SearchService::ListIndexesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

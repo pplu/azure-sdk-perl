@@ -3,54 +3,54 @@ package Azure::GraphRbacManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub AddMemberGroup {
+  sub AddMemberGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::AddMemberGroup', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::AddMemberGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateApplication {
+  sub CreateApplications {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateApplication', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateApplications', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateGroup {
+  sub CreateGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateGroup', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateServicePrincipal {
+  sub CreateServicePrincipals {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateServicePrincipal', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateServicePrincipals', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateUser {
+  sub CreateUsers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateUser', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateUsers', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteApplication {
+  sub DeleteApplications {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::DeleteApplication', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::DeleteApplications', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteGroup {
+  sub DeleteGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::DeleteGroup', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::DeleteGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteServicePrincipal {
+  sub DeleteServicePrincipals {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::DeleteServicePrincipal', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::DeleteServicePrincipals', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteUser {
+  sub DeleteUsers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::DeleteUser', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::DeleteUsers', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetApplication {
+  sub GetApplications {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetApplication', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetApplications', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub GetCurrentUserObjects {
@@ -58,69 +58,114 @@ package Azure::GraphRbacManagement;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetCurrentUserObjects', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetGroup {
+  sub GetGroupMembersGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetGroup', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetGroupMembersGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetGroupMembersGroup {
+  sub GetGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetGroupMembersGroup', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetMemberGroupsGroup {
+  sub GetMemberGroupsGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetMemberGroupsGroup', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetMemberGroupsGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetMemberGroupsUser {
+  sub GetMemberGroupsUsers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetMemberGroupsUser', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetMemberGroupsUsers', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetObjectsByObjectIdsObjects {
+  sub GetServicePrincipals {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetObjectsByObjectIdsObjects', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetServicePrincipals', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetServicePrincipal {
+  sub GetUsers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetServicePrincipal', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetUsers', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetUser {
+  sub IsMemberOfGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetUser', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::IsMemberOfGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListApplication {
+  sub ListApplications {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListApplication', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListApplications', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListGroup {
+  sub ListGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListGroup', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListGroups', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListServicePrincipal {
+  sub ListKeyCredentialsApplications {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListServicePrincipal', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListKeyCredentialsApplications', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListUser {
+  sub ListKeyCredentialsServicePrincipals {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListUser', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListKeyCredentialsServicePrincipals', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub RemoveMemberGroup {
+  sub ListPasswordCredentialsApplications {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::RemoveMemberGroup', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListPasswordCredentialsApplications', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub UpdateApplication {
+  sub ListPasswordCredentialsServicePrincipals {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::UpdateApplication', @_);
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListPasswordCredentialsServicePrincipals', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListServicePrincipals {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListServicePrincipals', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListUsers {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListUsers', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub PatchApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::PatchApplications', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RemoveMemberGroups {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::RemoveMemberGroups', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateKeyCredentialsApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::UpdateKeyCredentialsApplications', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateKeyCredentialsServicePrincipals {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::UpdateKeyCredentialsServicePrincipals', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdatePasswordCredentialsApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::UpdatePasswordCredentialsApplications', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdatePasswordCredentialsServicePrincipals {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::UpdatePasswordCredentialsServicePrincipals', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateUsers {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::UpdateUsers', @_);
     return $self->caller->do_call($self, $call_object);
   }
 

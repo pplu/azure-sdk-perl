@@ -1,7 +1,7 @@
 package Azure::ServiceFabric::GetApplicationsResult;
   use Moose;
 
-  has HealthState => (is => 'ro', isa => 'ServiceFabric::HealthState'  );
+  has HealthState => (is => 'ro', isa => 'Azure::ServiceFabric::HealthState'  );
   has Id => (is => 'ro', isa => 'Str'  );
   has Name => (is => 'ro', isa => 'Str'  );
   has Parameters => (is => 'ro', isa => 'ArrayRef[object]'  );

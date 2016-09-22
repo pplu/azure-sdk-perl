@@ -1,5 +1,7 @@
 package Azure::NotificationHubsManagement::MpnsCredential;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'certificateKey' => (is => 'ro', isa => 'Str'  );
+  has 'mpnsCertificate' => (is => 'ro', isa => 'Str'  );
+  has 'thumbprint' => (is => 'ro', isa => 'Str'  );
 1;

@@ -19,6 +19,6 @@ package Azure::IntuneResourceManagement::GetMAMUserDeviceByDeviceName;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/users/{userName}/devices/{deviceName}');
-  class_has _returns => (is => 'ro', default => 'IntuneResourceManagement::GetMAMUserDeviceByDeviceNameResult');
+  class_has _returns => (is => 'ro', default => 'Azure::IntuneResourceManagement::GetMAMUserDeviceByDeviceNameResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

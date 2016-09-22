@@ -13,6 +13,6 @@ package Azure::ServiceFabric::UpdateApplicationUpgrades;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/UpdateUpgrade');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::UpdateApplicationUpgradesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::UpdateApplicationUpgradesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -28,6 +28,6 @@ package Azure::RecoveryServicesBackup::GetProtectedItems;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}');
-  class_has _returns => (is => 'ro', default => 'RecoveryServicesBackup::GetProtectedItemsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::GetProtectedItemsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

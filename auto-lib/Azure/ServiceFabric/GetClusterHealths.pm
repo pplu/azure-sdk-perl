@@ -16,6 +16,6 @@ package Azure::ServiceFabric::GetClusterHealths;
   );
 
   class_has _api_uri => (is => 'ro', default => '/$/GetClusterHealth');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::GetClusterHealthsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetClusterHealthsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

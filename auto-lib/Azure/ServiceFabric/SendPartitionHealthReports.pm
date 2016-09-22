@@ -13,6 +13,6 @@ package Azure::ServiceFabric::SendPartitionHealthReports;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Partitions/{partitionId}/$/ReportHealth');
-  class_has _returns => (is => 'ro', default => 'ServiceFabric::SendPartitionHealthReportsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::SendPartitionHealthReportsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;
