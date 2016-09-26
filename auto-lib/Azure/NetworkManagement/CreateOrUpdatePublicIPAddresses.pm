@@ -11,6 +11,9 @@ package Azure::NetworkManagement::CreateOrUpdatePublicIPAddresses;
   has 'properties' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'ParamInBody' ],
   );
+  has 'tags' => (is => 'ro', isa => 'Any',
+    traits => [ 'ParamInBody' ],
+  );
   has 'location' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'ParamInBody' ],
   );
