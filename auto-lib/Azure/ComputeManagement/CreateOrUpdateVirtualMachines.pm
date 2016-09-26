@@ -14,6 +14,9 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachines;
   has 'location' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'ParamInBody' ],
   );
+  has 'tags' => (is => 'ro', isa => 'Any',
+    traits => [ 'ParamInBody' ],
+  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'ParamInQuery' ],
   );
