@@ -78,7 +78,6 @@ package Azure::API::JsonCaller;
       }
     }
 
-    use JSON;
     if (keys %$content) {
       my $serialized_content = encode_json($content);
       $request->content( $serialized_content );
