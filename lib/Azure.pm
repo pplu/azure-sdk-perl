@@ -108,6 +108,8 @@ package Azure;
   
     my $skip_list = {
       Exception => 1,
+      API => 1,
+      Net => 1,
     };
     require Module::Find;
     my $class_prefix = $self->_class_prefix;
