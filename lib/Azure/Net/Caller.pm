@@ -36,7 +36,7 @@ package Azure::Net::Caller;
   sub caller_to_response {
     my ($self, $service, $call_object, $status, $content, $headers) = @_;
     if ($status == 599){
-      return Paws::Exception->new(message => $content, code => 'ConnectionError', request_id => '');
+      return Paws::Exception->throw(message => $content, code => 'ConnectionError', request_id => '');
     } else {
       return $service->handle_response($call_object, $status, $content, $headers);
     }

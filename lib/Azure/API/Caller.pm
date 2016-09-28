@@ -67,7 +67,7 @@ package Azure::API::Caller;
   sub error_to_exception {
     my ($self, $struct, $call_object, $http_status, $content, $headers) = @_;
 
-    Azure::Exception->new(
+    Azure::Exception->throw(
       code    => $struct->{ error }->{ code },
       message => $struct->{ error }->{ message }
     );
