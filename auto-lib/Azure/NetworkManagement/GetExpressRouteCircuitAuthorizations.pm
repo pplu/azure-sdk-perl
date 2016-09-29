@@ -3,19 +3,19 @@ package Azure::NetworkManagement::GetExpressRouteCircuitAuthorizations;
   use MooseX::ClassAttribute;
 
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'circuitName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'authorizationName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/expressRouteCircuits/{circuitName}/authorizations/{authorizationName}');

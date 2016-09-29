@@ -3,22 +3,22 @@ package Azure::NetworkManagement::CreateOrUpdateSecurityRules;
   use MooseX::ClassAttribute;
 
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'networkSecurityGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'securityRuleName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'securityRuleParameters' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkSecurityGroups/{networkSecurityGroupName}/securityRules/{securityRuleName}');

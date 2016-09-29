@@ -3,19 +3,19 @@ package Azure::ComputeManagement::ListSkusVirtualMachineImages;
   use MooseX::ClassAttribute;
 
   has 'location' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'publisherName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'offer' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/publishers/{publisherName}/artifacttypes/vmimage/offers/{offer}/skus');

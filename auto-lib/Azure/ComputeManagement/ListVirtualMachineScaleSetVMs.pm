@@ -3,25 +3,25 @@ package Azure::ComputeManagement::ListVirtualMachineScaleSetVMs;
   use MooseX::ClassAttribute;
 
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'virtualMachineScaleSetName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has '$filter' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$select' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$expand' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines');

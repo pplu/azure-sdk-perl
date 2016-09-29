@@ -3,31 +3,31 @@ package Azure::ComputeManagement::ListVirtualMachineImages;
   use MooseX::ClassAttribute;
 
   has 'location' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'publisherName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'offer' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'skus' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has '$filter' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$top' => (is => 'ro', isa => 'Int',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$orderby' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Compute/locations/{location}/publishers/{publisherName}/artifacttypes/vmimage/offers/{offer}/skus/{skus}/versions');
