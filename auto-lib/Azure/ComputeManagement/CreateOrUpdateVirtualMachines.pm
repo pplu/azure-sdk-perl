@@ -3,25 +3,25 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachines;
   use MooseX::ClassAttribute;
 
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'vmName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'properties' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'location' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'tags' => (is => 'ro', isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}');
