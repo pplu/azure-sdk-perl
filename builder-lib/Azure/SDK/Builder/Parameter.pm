@@ -39,7 +39,7 @@ package Azure::SDK::Builder::Parameter;
       my $in = $self->in;
       # Upper case first letter
       substr($in,0,1) = uc(substr($in,0,1));
-      return "ParamIn$in"
+      return "Azure::ParamIn$in"
     }
   );
 
