@@ -2,7 +2,6 @@ package Azure::SDK::Builder::BodyMethodArgument;
   use Moose;
 
   extends 'Swagger::Schema::BodyParameter';
-  with 'Azure::SDK::Builder::PerlTypeInferer';
 
   has x_ms_client_flatten => (is => 'ro');
   has x_ms_skip_url_encoding => (is => 'ro');
@@ -45,5 +44,7 @@ package Azure::SDK::Builder::BodyMethodArgument;
       return "Azure::ParamIn$in"
     }
   );
+
+  with 'Azure::SDK::Builder::PerlTypeInferer';
 
 1;

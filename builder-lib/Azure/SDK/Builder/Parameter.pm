@@ -2,7 +2,6 @@ package Azure::SDK::Builder::Parameter;
   use Moose;
 
   extends 'Swagger::Schema::Schema';
-  with 'Azure::SDK::Builder::PerlTypeInferer';
 
   has root_schema => (
     is => 'ro',
@@ -43,5 +42,7 @@ package Azure::SDK::Builder::Parameter;
       return "Azure::ParamIn$in"
     }
   );
+
+  with 'Azure::SDK::Builder::PerlTypeInferer';
 
 1;

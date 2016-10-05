@@ -46,8 +46,8 @@ package Azure::SDK::Builder::Property;
         return "ArrayRef[$inner]";
       } else {
         use Data::Dumper;
-        print Dumper({ %$self, root_schema => undef });
-        warn 'Can\'t find a Perl type for ' . $self->type;
+        $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
+        $self->root_schema->log->warn('Can\'t find a Perl type for ' . $self->type);
         return 'Any'
       }
     }

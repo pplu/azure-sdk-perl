@@ -1,5 +1,8 @@
 package Azure::SDK::Builder::PerlTypeInferer;
   use Moose::Role;
+  use Data::Dumper;
+
+  requires 'root_schema';
 
   has type => (is => 'ro', isa => 'Str');
 
@@ -23,15 +26,13 @@ package Azure::SDK::Builder::PerlTypeInferer;
           # type of the values of the hashref
           return 'HashRef';
         } else {
-          use Data::Dumper;
-          print Dumper({ %$self, root_schema => undef });
-          warn 'Can\'t find a Perl type for ' . $self->type . ' in ' . $self->parameter_name;
+          $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
+          $self->root_schema->log->warn('Can\'t find a Perl type for ' . $self->type . ' in ' . $self->parameter_name);
           return 'Any'
         }
       } else {
-        use Data::Dumper;
-        print Dumper({ %$self, root_schema => undef });
-        warn 'Can\'t find a Perl type because self->type is undefined in ' . $self->parameter_name;
+        $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
+        $self->root_schema->log->warn('Can\'t find a Perl type because self->type is undefined in ' . $self->parameter_name);
         return 'Any'
       }
     }
