@@ -23,13 +23,3 @@ pull-other-sdks:
 	git submodule init
 	git submodule update
 
-gen-network-classes:
-	rm -rf auto-lib/Azure/NetworkManag*
-	perl -pi -nle 's/^\xEF\xBB\xBF//' azure-rest-api-specs/arm-network/2016-09-01/swagger/network.json
-	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-network/2016-09-01/swagger/network.json
-
-gen-compute-classes:
-	rm -rf auto-lib/Azure/ComputeManag*
-	perl -pi -nle 's/^\xEF\xBB\xBF//' azure-rest-api-specs/arm-compute/2016-03-30/swagger/compute.json
-	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-compute/2016-03-30/swagger/compute.json
-
