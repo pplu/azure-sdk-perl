@@ -20,6 +20,9 @@ package Azure::NetworkManagement::CreateOrUpdatePublicIPAddresses;
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
+  has 'tags' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
+  );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/publicIPAddresses/{publicIpAddressName}');
   class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::CreateOrUpdatePublicIPAddressesResult');

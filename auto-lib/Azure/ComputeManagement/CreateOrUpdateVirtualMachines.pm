@@ -17,6 +17,9 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachines;
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
+  has 'tags' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
+  );
   has 'vmName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
