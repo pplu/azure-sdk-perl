@@ -1,6 +1,7 @@
 package Azure::SDK::Builder::Object;
   use Moose;
   use MooseX::StrictConstructor;
+  use Data::Dumper;
 
   extends 'Swagger::Schema::Schema';
   use Azure::SDK::Builder::Parameter;
@@ -46,7 +47,8 @@ package Azure::SDK::Builder::Object;
           if (defined $flatten_ref->ref) {
             $flatten = $self->root_schema->resolve_path($flatten_ref->ref);
           } else {
-            warn "Need to decide how to manage non-ref flattens";
+            $self->root_schama->log->debug(Dumper($flatten_ref));
+            $self->root_schema->log->warn("Need to decide how to manage non-ref flattens");
             next;
           }
 
