@@ -2,20 +2,17 @@ package Azure::DataLakeStoreFileSystemManagement::ModifyAclEntriesFileSystem;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'modifyAclFilePath' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
   has 'aclspec' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'op' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+  has 'modifyAclFilePath' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'op' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{modifyAclFilePath}');

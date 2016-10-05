@@ -2,17 +2,14 @@ package Azure::DataLakeStoreFileSystemManagement::MkdirsFileSystem;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'path' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'op' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+  has 'path' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{path}');

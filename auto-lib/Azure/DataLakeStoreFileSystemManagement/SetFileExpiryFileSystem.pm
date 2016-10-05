@@ -2,23 +2,20 @@ package Azure::DataLakeStoreFileSystemManagement::SetFileExpiryFileSystem;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'filePath' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
-  has 'expiryOption' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'expireTime' => (is => 'ro', isa => 'Int',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'expiryOption' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'filePath' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'op' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/WebHdfsExt/{filePath}');

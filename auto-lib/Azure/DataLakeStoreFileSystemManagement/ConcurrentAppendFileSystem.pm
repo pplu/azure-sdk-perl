@@ -2,23 +2,23 @@ package Azure::DataLakeStoreFileSystemManagement::ConcurrentAppendFileSystem;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'filePath' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
-  has 'streamContents' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
-  );
-  has 'appendMode' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'op' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+  has 'Transfer-Encoding' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+  has 'appendMode' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'filePath' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'op' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'streamContents' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/WebHdfsExt/{filePath}');

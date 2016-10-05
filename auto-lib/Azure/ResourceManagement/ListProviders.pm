@@ -2,17 +2,17 @@ package Azure::ResourceManagement::ListProviders;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has '$top' => (is => 'ro', isa => 'Int',
-    traits => [ 'ParamInQuery' ],
-  );
   has '$expand' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has '$top' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers');

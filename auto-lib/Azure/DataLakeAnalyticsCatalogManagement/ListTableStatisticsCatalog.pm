@@ -2,38 +2,38 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsCatalog;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
-  has 'schemaName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
-  has 'tableName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
-  has '$filter' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
-  );
-  has '$top' => (is => 'ro', isa => 'Int',
-    traits => [ 'ParamInQuery' ],
-  );
-  has '$skip' => (is => 'ro', isa => 'Int',
-    traits => [ 'ParamInQuery' ],
+  has '$count' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$expand' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has '$select' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+  has '$filter' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$orderby' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has '$count' => (is => 'ro', isa => 'Any',
-    traits => [ 'ParamInQuery' ],
+  has '$select' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has '$skip' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has '$top' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'schemaName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'tableName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases/{databaseName}/schemas/{schemaName}/tables/{tableName}/statistics');

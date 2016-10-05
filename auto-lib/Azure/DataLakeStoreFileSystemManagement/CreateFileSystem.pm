@@ -2,26 +2,26 @@ package Azure::DataLakeStoreFileSystemManagement::CreateFileSystem;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'directFilePath' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
-  has 'streamContents' => (is => 'ro', isa => 'Any',
-    traits => [ 'ParamInBody' ],
-  );
-  has 'overwrite' => (is => 'ro', isa => 'Any',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'op' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'write' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+  has 'Transfer-Encoding' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+  has 'directFilePath' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'op' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'overwrite' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'streamContents' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
+  );
+  has 'write' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{directFilePath}');

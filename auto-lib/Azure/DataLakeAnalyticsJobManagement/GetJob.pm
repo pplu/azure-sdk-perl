@@ -2,11 +2,11 @@ package Azure::DataLakeAnalyticsJobManagement::GetJob;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'jobIdentity' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'jobIdentity' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/Jobs/{jobIdentity}');

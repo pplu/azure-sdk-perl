@@ -43,19 +43,9 @@ package Azure::DataLakeStoreFileSystemManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::GetContentSummaryFileSystem', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetFileInfoFileSystem {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::GetFileInfoFileSystem', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
   sub GetFileStatusFileSystem {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::GetFileStatusFileSystem', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetHomeDirectoryFileSystem {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::GetHomeDirectoryFileSystem', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListFileStatusFileSystem {
@@ -91,6 +81,11 @@ package Azure::DataLakeStoreFileSystemManagement;
   sub RemoveAclFileSystem {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::RemoveAclFileSystem', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RemoveDefaultAclFileSystem {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::RemoveDefaultAclFileSystem', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub RenameFileSystem {

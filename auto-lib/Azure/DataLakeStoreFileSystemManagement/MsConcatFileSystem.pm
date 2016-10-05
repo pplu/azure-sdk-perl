@@ -2,23 +2,20 @@ package Azure::DataLakeStoreFileSystemManagement::MsConcatFileSystem;
   use Moose;
   use MooseX::ClassAttribute;
 
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'deleteSourceDirectory' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
   has 'msConcatDestinationPath' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
-  );
-  has 'deletesourcedirectory' => (is => 'ro', isa => 'Any',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'streamContents' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'op' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
-  );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+  has 'streamContents' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{msConcatDestinationPath}');

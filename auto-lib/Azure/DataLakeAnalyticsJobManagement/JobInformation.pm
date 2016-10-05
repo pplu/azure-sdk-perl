@@ -5,6 +5,8 @@ package Azure::DataLakeAnalyticsJobManagement::JobInformation;
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'errorMessage' => (is => 'ro', isa => 'ArrayRef'  );
   has 'jobId' => (is => 'ro', isa => 'Str'  );
+  has 'logFilePatterns' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'logFolder' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'priority' => (is => 'ro', isa => 'Int'  );
   has 'properties' => (is => 'ro', isa => 'Any'  );
