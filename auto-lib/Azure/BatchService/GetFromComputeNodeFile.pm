@@ -2,30 +2,6 @@ package Azure::BatchService::GetFromComputeNodeFile;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'nodeId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'fileName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'timeout' => (is => 'ro', isa => 'Int',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
-  has 'ocp-date' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
-  has 'ocp-range' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
   has 'If-Modified-Since' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
@@ -33,6 +9,30 @@ package Azure::BatchService::GetFromComputeNodeFile;
     traits => [ 'Azure::ParamInHeader' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'client-request-id' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'fileName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'nodeId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'ocp-date' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'ocp-range' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'timeout' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

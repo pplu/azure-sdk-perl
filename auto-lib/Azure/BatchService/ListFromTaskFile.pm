@@ -2,34 +2,34 @@ package Azure::BatchService::ListFromTaskFile;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'jobId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'taskId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
   has '$filter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'recursive' => (is => 'ro', isa => 'Any',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'maxresults' => (is => 'ro', isa => 'Int',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'timeout' => (is => 'ro', isa => 'Int',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'jobId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'maxresults' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'recursive' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'taskId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'timeout' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

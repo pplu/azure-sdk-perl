@@ -2,11 +2,8 @@ package Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitAuthorization
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'circuitName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'authorizationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -14,8 +11,11 @@ package Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitAuthorization
   has 'authorizationParameters' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'circuitName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

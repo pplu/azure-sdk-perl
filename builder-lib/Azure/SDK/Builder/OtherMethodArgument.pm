@@ -11,6 +11,8 @@ package Azure::SDK::Builder::OtherMethodArgument;
   has x_ms_client_name => (is => 'ro');
   has x_ms_parameter_location => (is => 'ro');
 
+  has location => (is => 'ro', isa => 'Str', lazy => 1, default => sub { shift->in });
+
   has root_schema => (
     is => 'ro',
     isa => 'Azure::SDK::Builder',

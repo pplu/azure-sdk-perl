@@ -2,11 +2,8 @@ package Azure::ComputeManagement::ListVirtualMachineScaleSetVMs;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'virtualMachineScaleSetName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has '$expand' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$filter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
@@ -14,13 +11,16 @@ package Azure::ComputeManagement::ListVirtualMachineScaleSetVMs;
   has '$select' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has '$expand' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
+  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'virtualMachineScaleSetName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
 

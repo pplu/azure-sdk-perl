@@ -2,17 +2,17 @@ package Azure::NotificationHubsManagement::ListKeysNamespaces;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'authorizationRuleName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'authorizationRuleName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

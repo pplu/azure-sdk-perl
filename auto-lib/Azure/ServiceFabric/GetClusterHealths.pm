@@ -2,13 +2,13 @@ package Azure::ServiceFabric::GetClusterHealths;
   use Moose;
   use MooseX::ClassAttribute;
 
+  has 'ApplicationsHealthStateFilter' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
   has 'EventsHealthStateFilter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'NodesHealthStateFilter' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'ApplicationsHealthStateFilter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

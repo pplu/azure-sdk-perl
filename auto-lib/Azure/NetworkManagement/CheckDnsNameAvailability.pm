@@ -2,14 +2,14 @@ package Azure::NetworkManagement::CheckDnsNameAvailability;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'location' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'domainNameLabel' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'location' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

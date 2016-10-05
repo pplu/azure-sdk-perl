@@ -2,10 +2,10 @@ package Azure::NetworkManagement::CreateOrUpdateRoutes;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'routeTableName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'routeName' => (is => 'ro', required => 1, isa => 'Str',
@@ -14,8 +14,8 @@ package Azure::NetworkManagement::CreateOrUpdateRoutes;
   has 'routeParameters' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'routeTableName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

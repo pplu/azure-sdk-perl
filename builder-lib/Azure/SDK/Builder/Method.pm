@@ -17,6 +17,10 @@ package Azure::SDK::Builder::Method;
     required => 1,
   );
 
+  has common_parameters => (
+    is => 'ro',
+  );
+
   has arguments => (
     is => 'ro',
     isa => 'ArrayRef[Azure::SDK::Builder::BodyMethodArgument|Azure::SDK::Builder::OtherMethodArgument]',
@@ -24,30 +28,47 @@ package Azure::SDK::Builder::Method;
     default => sub {
       my $self = shift;
 
-      my $params = [ map {
-          my $param = $_;
+      my $common_args = $self->parameters_to_arguments($self->common_parameters);
+      my $args = $self->parameters_to_arguments($self->parameters);
+      #TODO: resolve overrides (name and location pairs)
+      my $method_args = { };
+      $method_args->{ $_->name . '/' . $_->location } = $_ for (@$common_args);
+      $method_args->{ $_->name . '/' . $_->location } = $_ for (@$args);
 
-          my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
-
-          my $method_argument_class;
-          
-          if ($args->isa('Swagger::Schema::BodyParameter')) {
-            $method_argument_class = 'Azure::SDK::Builder::BodyMethodArgument';
-          } elsif ($args->isa('Swagger::Schema::OtherParameter')) {
-            $method_argument_class = 'Azure::SDK::Builder::OtherMethodArgument';
-          } else {
-            die "Found a strange Parameter type in self->parameters: $args";
-          }
-
-          $method_argument_class->new(
-            root_schema => $self->root_schema,
-            %$args
-          );
-        } @{ $self->parameters }
-      ];
-      return $params;
+      my $resolved_args = [];
+      foreach my $key (sort keys %$method_args) {
+        push @$resolved_args, $method_args->{ $key };
+      }
+      return $resolved_args;
     }
   );
+
+  sub parameters_to_arguments {
+    my ($self, $list) = @_;
+
+    return [] if (not defined $list);
+
+    return [ map {
+      my $param = $_;
+
+      my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
+
+      my $method_argument_class;
+          
+      if ($args->isa('Swagger::Schema::BodyParameter')) {
+        $method_argument_class = 'Azure::SDK::Builder::BodyMethodArgument';
+      } elsif ($args->isa('Swagger::Schema::OtherParameter')) {
+        $method_argument_class = 'Azure::SDK::Builder::OtherMethodArgument';
+      } else {
+        die "Found a strange Parameter type in self->parameters: $args";
+      }
+
+      $method_argument_class->new(
+        root_schema => $self->root_schema,
+        %$args
+      );
+    } @$list ];
+  }
 
   has return => (
     is => 'ro',

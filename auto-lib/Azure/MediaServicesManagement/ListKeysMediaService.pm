@@ -2,16 +2,16 @@ package Azure::MediaServicesManagement::ListKeysMediaService;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'mediaServiceName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'mediaServiceName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
 

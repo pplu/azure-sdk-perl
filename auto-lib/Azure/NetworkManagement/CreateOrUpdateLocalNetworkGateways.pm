@@ -2,8 +2,8 @@ package Azure::NetworkManagement::CreateOrUpdateLocalNetworkGateways;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'localNetworkGatewayName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -11,8 +11,8 @@ package Azure::NetworkManagement::CreateOrUpdateLocalNetworkGateways;
   has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

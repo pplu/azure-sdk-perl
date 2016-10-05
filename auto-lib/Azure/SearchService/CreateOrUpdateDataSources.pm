@@ -2,15 +2,6 @@ package Azure::SearchService::CreateOrUpdateDataSources;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'dataSourceName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'dataSource' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'Azure::ParamInBody' ],
-  );
-  has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
   has 'If-Match' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
@@ -19,6 +10,15 @@ package Azure::SearchService::CreateOrUpdateDataSources;
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'client-request-id' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'dataSource' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
+  );
+  has 'dataSourceName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/datasources('{dataSourceName}')');

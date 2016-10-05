@@ -2,22 +2,22 @@ package Azure::UsageManagement::ListUsageAggregates;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'reportedstartTime' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'reportedEndTime' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'showDetails' => (is => 'ro', isa => 'Any',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
   has 'aggregationGranularity' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'continuationToken' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'reportedEndTime' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'reportedstartTime' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'showDetails' => (is => 'ro', isa => 'Any',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

@@ -2,8 +2,8 @@ package Azure::LogicAppsManagement::GetManagedApis;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'location' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'apiName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -11,11 +11,11 @@ package Azure::LogicAppsManagement::GetManagedApis;
   has 'export' => (is => 'ro', isa => 'Any',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
+  has 'location' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Web/locations/{location}/managedApis/{apiName}');

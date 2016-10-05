@@ -2,17 +2,17 @@ package Azure::NetworkManagement::CreateOrUpdateRouteTables;
   use Moose;
   use MooseX::ClassAttribute;
 
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
+  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'routeTableName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'Azure::ParamInBody' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

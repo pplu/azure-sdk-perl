@@ -5,7 +5,7 @@ package Azure::RecoveryServicesBackup::GetJobDetails;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'vaultName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'jobName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -14,7 +14,7 @@ package Azure::RecoveryServicesBackup::GetJobDetails;
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'jobName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'vaultName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
 

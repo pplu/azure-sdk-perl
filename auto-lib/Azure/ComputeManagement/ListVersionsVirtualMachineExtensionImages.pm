@@ -2,28 +2,28 @@ package Azure::ComputeManagement::ListVersionsVirtualMachineExtensionImages;
   use Moose;
   use MooseX::ClassAttribute;
 
+  has '$filter' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has '$orderby' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has '$top' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
   has 'location' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'publisherName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'type' => (is => 'ro', required => 1, isa => 'Str',
+  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has '$filter' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has '$top' => (is => 'ro', isa => 'Int',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has '$orderby' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
+  has 'type' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
 

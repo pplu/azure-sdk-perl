@@ -2,6 +2,9 @@ package Azure::SqlManagement::CreateOrUpdateSecurityAlertPolicy;
   use Moose;
   use MooseX::ClassAttribute;
 
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'Azure::ParamInBody' ],
   );
@@ -10,9 +13,6 @@ package Azure::SqlManagement::CreateOrUpdateSecurityAlertPolicy;
   );
   has 'serverName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

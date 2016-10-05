@@ -2,10 +2,10 @@ package Azure::AuthorizationManagement::ListProviderOperationsMetadata;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has '$expand' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has '$expand' => (is => 'ro', isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

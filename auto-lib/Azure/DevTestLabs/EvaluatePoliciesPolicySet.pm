@@ -2,11 +2,11 @@ package Azure::DevTestLabs::EvaluatePoliciesPolicySet;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'evaluatePoliciesRequest' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'labName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -14,11 +14,11 @@ package Azure::DevTestLabs::EvaluatePoliciesPolicySet;
   has 'name' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'evaluatePoliciesRequest' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'Azure::ParamInBody' ],
+  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/policysets/{name}/evaluatePolicies');

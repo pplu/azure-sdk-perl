@@ -2,11 +2,11 @@ package Azure::ServiceFabric::CreateApplications;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'applicationDescription' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'applicationDescription' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/$/Create');

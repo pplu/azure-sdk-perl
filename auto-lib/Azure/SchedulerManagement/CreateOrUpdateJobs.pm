@@ -2,11 +2,11 @@ package Azure::SchedulerManagement::CreateOrUpdateJobs;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'job' => (is => 'ro', required => 1, isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'jobCollectionName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -14,11 +14,11 @@ package Azure::SchedulerManagement::CreateOrUpdateJobs;
   has 'jobName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
-  has 'job' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'Azure::ParamInBody' ],
+  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Scheduler/jobCollections/{jobCollectionName}/jobs/{jobName}');

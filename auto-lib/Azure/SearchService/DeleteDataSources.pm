@@ -2,12 +2,6 @@ package Azure::SearchService::DeleteDataSources;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'dataSourceName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
   has 'If-Match' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
@@ -16,6 +10,12 @@ package Azure::SearchService::DeleteDataSources;
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'client-request-id' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'dataSourceName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/datasources('{dataSourceName}')');

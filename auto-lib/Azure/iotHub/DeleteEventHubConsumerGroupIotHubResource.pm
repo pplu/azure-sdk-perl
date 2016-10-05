@@ -5,7 +5,10 @@ package Azure::iotHub::DeleteEventHubConsumerGroupIotHubResource;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
+  has 'eventHubEndpointName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'name' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -14,10 +17,7 @@ package Azure::iotHub::DeleteEventHubConsumerGroupIotHubResource;
   has 'resourceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'eventHubEndpointName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'name' => (is => 'ro', required => 1, isa => 'Str',
+  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
 

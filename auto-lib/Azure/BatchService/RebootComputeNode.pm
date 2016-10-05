@@ -2,8 +2,11 @@ package Azure::BatchService::RebootComputeNode;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'client-request-id' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'nodeId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -11,19 +14,16 @@ package Azure::BatchService::RebootComputeNode;
   has 'nodeRebootParameter' => (is => 'ro', isa => 'Any',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'timeout' => (is => 'ro', isa => 'Int',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'client-request-id' => (is => 'ro', isa => 'Str',
+  has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'return-client-request-id' => (is => 'ro', isa => 'Any',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'ocp-date' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'timeout' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

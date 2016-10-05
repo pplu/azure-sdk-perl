@@ -5,7 +5,7 @@ package Azure::iotHub::GetKeysForKeyNameIotHubResource;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
+  has 'keyName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -14,7 +14,7 @@ package Azure::iotHub::GetKeysForKeyNameIotHubResource;
   has 'resourceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'keyName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
 

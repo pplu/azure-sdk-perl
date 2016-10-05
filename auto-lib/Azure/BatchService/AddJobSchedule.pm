@@ -2,22 +2,22 @@ package Azure::BatchService::AddJobSchedule;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'timeout' => (is => 'ro', isa => 'Int',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
   has 'CloudJobSchedule' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+  has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'timeout' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

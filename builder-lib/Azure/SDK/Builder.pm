@@ -8,7 +8,6 @@ package Azure::SDK::Builder;
   use Path::Class;
   use Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::Object;
-  use Data::Printer;
 
   has schema_file => (
     is => 'ro',
@@ -113,10 +112,10 @@ package Azure::SDK::Builder;
       my $self = shift;
       my %methods = ();
       foreach my $path (sort keys %{ $self->schema->paths }){
+        my $common_parameters = delete $self->schema->paths->{ $path }->{ parameters };
+
         foreach my $http_verb (sort keys %{ $self->schema->paths->{ $path } }) {
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
-          use Data::Dumper;
-          print Dumper($operation);
           my $operationId = operationId_to_methodname($operation->operationId);
 
           $methods{ $operationId } =
@@ -126,6 +125,7 @@ package Azure::SDK::Builder;
               root_schema => $self,
               method => uc($http_verb),
               name => $self->namespace($operationId),
+              common_parameters => $common_parameters,
             );
         }
       }
@@ -229,7 +229,7 @@ package Azure::SDK::Builder;
 1;
 package Logger {
   use Moose;
-  has log_level => (is => 'ro', default => 3);
+  has log_level => (is => 'ro', default => 5);
   sub debug { if (shift->log_level > 4) { say '[DEBUG] ', $_ for @_ } }
   sub info  { if (shift->log_level > 3) { say '[INFO ] ', $_ for @_ } }
   sub warn  { if (shift->log_level > 2) { say '[WARN ] ', $_ for @_ } }

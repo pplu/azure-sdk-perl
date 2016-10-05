@@ -11,6 +11,8 @@ package Azure::SDK::Builder::BodyMethodArgument;
   has x_ms_client_name => (is => 'ro');
   has x_ms_parameter_location => (is => 'ro');
 
+  has location => (is => 'ro', isa => 'Str', default => 'body');
+
   has root_schema => (
     is => 'ro',
     isa => 'Azure::SDK::Builder',

@@ -2,7 +2,19 @@ package Azure::NetworkManagement::GetVirtualMachineScaleSetNetworkInterfaceNetwo
   use Moose;
   use MooseX::ClassAttribute;
 
+  has '$expand' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'networkInterfaceName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'virtualMachineScaleSetName' => (is => 'ro', required => 1, isa => 'Str',
@@ -10,18 +22,6 @@ package Azure::NetworkManagement::GetVirtualMachineScaleSetNetworkInterfaceNetwo
   );
   has 'virtualmachineIndex' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'networkInterfaceName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has '$expand' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.Compute/virtualMachineScaleSets/{virtualMachineScaleSetName}/virtualMachines/{virtualmachineIndex}/networkInterfaces/{networkInterfaceName}');

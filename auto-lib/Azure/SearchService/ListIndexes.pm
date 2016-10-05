@@ -5,11 +5,11 @@ package Azure::SearchService::ListIndexes;
   has '$select' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'client-request-id' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/indexes');

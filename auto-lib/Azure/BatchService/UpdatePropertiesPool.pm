@@ -2,25 +2,25 @@ package Azure::BatchService::UpdatePropertiesPool;
   use Moose;
   use MooseX::ClassAttribute;
 
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'client-request-id' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'ocp-date' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader' ],
+  );
   has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'poolUpdatePropertiesParameter' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'timeout' => (is => 'ro', isa => 'Int',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
   has 'return-client-request-id' => (is => 'ro', isa => 'Any',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'ocp-date' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'timeout' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
 
