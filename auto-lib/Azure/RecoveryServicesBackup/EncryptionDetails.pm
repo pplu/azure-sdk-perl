@@ -1,7 +1,7 @@
 package Azure::RecoveryServicesBackup::EncryptionDetails;
   use Moose;
 
-  has 'encryptionEnabled' => (is => 'ro', isa => 'Any'  );
+  has 'encryptionEnabled' => (is => 'ro', isa => 'Bool'  );
   has 'kekUrl' => (is => 'ro', isa => 'Str'  );
   has 'kekVaultId' => (is => 'ro', isa => 'Str'  );
   has 'secretKeyUrl' => (is => 'ro', isa => 'Str'  );

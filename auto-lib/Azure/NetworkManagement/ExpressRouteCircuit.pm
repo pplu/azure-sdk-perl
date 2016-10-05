@@ -3,7 +3,7 @@ package Azure::NetworkManagement::ExpressRouteCircuit;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'sku' => (is => 'ro', isa => 'Any'  );
-  has 'allowClassicOperations' => (is => 'ro', isa => 'Any'  );
+  has 'allowClassicOperations' => (is => 'ro', isa => 'Bool'  );
   has 'authorizations' => (is => 'ro', isa => 'ArrayRef'  );
   has 'circuitProvisioningState' => (is => 'ro', isa => 'Str'  );
   has 'gatewayManagerEtag' => (is => 'ro', isa => 'Str'  );

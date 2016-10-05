@@ -5,7 +5,7 @@ package Azure::LogicManagement::WorkflowTriggerHistoryProperties;
   has 'correlation' => (is => 'ro', isa => 'Any'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'error' => (is => 'ro', isa => 'Any'  );
-  has 'fired' => (is => 'ro', isa => 'Any'  );
+  has 'fired' => (is => 'ro', isa => 'Bool'  );
   has 'inputsLink' => (is => 'ro', isa => 'Any'  );
   has 'outputsLink' => (is => 'ro', isa => 'Any'  );
   has 'run' => (is => 'ro', isa => 'Any'  );

@@ -11,7 +11,7 @@ package Azure::DataLakeStoreFileSystemManagement::DeleteFileSystem;
   has 'op' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'recursive' => (is => 'ro', isa => 'Any',
+  has 'recursive' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

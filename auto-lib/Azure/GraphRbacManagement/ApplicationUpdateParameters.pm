@@ -1,7 +1,7 @@
 package Azure::GraphRbacManagement::ApplicationUpdateParameters;
   use Moose;
 
-  has 'availableToOtherTenants' => (is => 'ro', isa => 'Any'  );
+  has 'availableToOtherTenants' => (is => 'ro', isa => 'Bool'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'homepage' => (is => 'ro', isa => 'Str'  );
   has 'identifierUris' => (is => 'ro', isa => 'ArrayRef'  );

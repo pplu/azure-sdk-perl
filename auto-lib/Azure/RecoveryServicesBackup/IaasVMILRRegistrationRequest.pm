@@ -3,7 +3,7 @@ package Azure::RecoveryServicesBackup::IaasVMILRRegistrationRequest;
 
   has 'initiatorName' => (is => 'ro', isa => 'Str'  );
   has 'recoveryPointId' => (is => 'ro', isa => 'Str'  );
-  has 'renewExistingRegistration' => (is => 'ro', isa => 'Any'  );
+  has 'renewExistingRegistration' => (is => 'ro', isa => 'Bool'  );
   has 'virtualMachineId' => (is => 'ro', isa => 'Str'  );
   has 'objectType' => (is => 'ro', isa => 'Str'  );
 1;

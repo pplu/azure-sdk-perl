@@ -2,8 +2,8 @@ package Azure::NotificationHubsManagement::NamespaceCreateOrUpdateParameters;
   use Moose;
 
   has 'createdAt' => (is => 'ro', isa => 'Str'  );
-  has 'critical' => (is => 'ro', isa => 'Any'  );
-  has 'enabled' => (is => 'ro', isa => 'Any'  );
+  has 'critical' => (is => 'ro', isa => 'Bool'  );
+  has 'enabled' => (is => 'ro', isa => 'Bool'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'namespaceType' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );

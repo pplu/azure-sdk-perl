@@ -2,5 +2,5 @@ package Azure::ComputeManagement::VirtualMachineScaleSetNetworkConfigurationProp
   use Moose;
 
   has 'ipConfigurations' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'primary' => (is => 'ro', isa => 'Any'  );
+  has 'primary' => (is => 'ro', isa => 'Bool'  );
 1;

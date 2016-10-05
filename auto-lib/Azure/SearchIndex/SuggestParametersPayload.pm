@@ -2,7 +2,7 @@ package Azure::SearchIndex::SuggestParametersPayload;
   use Moose;
 
   has 'filter' => (is => 'ro', isa => 'Str'  );
-  has 'fuzzy' => (is => 'ro', isa => 'Any'  );
+  has 'fuzzy' => (is => 'ro', isa => 'Bool'  );
   has 'highlightPostTag' => (is => 'ro', isa => 'Str'  );
   has 'highlightPreTag' => (is => 'ro', isa => 'Str'  );
   has 'minimumCoverage' => (is => 'ro', isa => 'Any'  );

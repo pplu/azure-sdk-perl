@@ -1,7 +1,7 @@
 package Azure::SearchIndex::SearchParametersPayload;
   use Moose;
 
-  has 'count' => (is => 'ro', isa => 'Any'  );
+  has 'count' => (is => 'ro', isa => 'Bool'  );
   has 'facets' => (is => 'ro', isa => 'ArrayRef'  );
   has 'filter' => (is => 'ro', isa => 'Str'  );
   has 'highlight' => (is => 'ro', isa => 'Str'  );

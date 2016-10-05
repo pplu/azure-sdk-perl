@@ -2,7 +2,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListTablesCatalog;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has '$count' => (is => 'ro', isa => 'Any',
+  has '$count' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has '$expand' => (is => 'ro', isa => 'Str',

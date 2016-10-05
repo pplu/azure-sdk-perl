@@ -23,5 +23,5 @@ package Azure::BatchService::CloudJob;
   has 'stateTransitionTime' => (is => 'ro', isa => 'Str'  );
   has 'stats' => (is => 'ro', isa => 'Any'  );
   has 'url' => (is => 'ro', isa => 'Str'  );
-  has 'usesTaskDependencies' => (is => 'ro', isa => 'Any'  );
+  has 'usesTaskDependencies' => (is => 'ro', isa => 'Bool'  );
 1;

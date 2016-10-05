@@ -1,6 +1,6 @@
 package Azure::NetworkManagement::IPAddressAvailabilityResult;
   use Moose;
 
-  has 'available' => (is => 'ro', isa => 'Any'  );
+  has 'available' => (is => 'ro', isa => 'Bool'  );
   has 'availableIPAddresses' => (is => 'ro', isa => 'ArrayRef'  );
 1;

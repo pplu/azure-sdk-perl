@@ -17,7 +17,7 @@ package Azure::BatchService::DeleteUserComputeNode;
   has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+  has 'return-client-request-id' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInHeader' ],
   );
   has 'timeout' => (is => 'ro', isa => 'Int',

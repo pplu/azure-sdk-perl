@@ -5,7 +5,7 @@ package Azure::DataLakeStoreFileSystemManagement::MsConcatFileSystem;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'deleteSourceDirectory' => (is => 'ro', isa => 'Any',
+  has 'deleteSourceDirectory' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'msConcatDestinationPath' => (is => 'ro', required => 1, isa => 'Str',

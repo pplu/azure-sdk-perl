@@ -3,5 +3,5 @@ package Azure::EngagementManagement::BooleanTagCriterion;
 
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'value' => (is => 'ro', isa => 'Any'  );
+  has 'value' => (is => 'ro', isa => 'Bool'  );
 1;

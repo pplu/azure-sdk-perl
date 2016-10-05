@@ -20,10 +20,10 @@ package Azure::BatchService::ListFromTaskFile;
   has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'recursive' => (is => 'ro', isa => 'Any',
+  has 'recursive' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+  has 'return-client-request-id' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInHeader' ],
   );
   has 'taskId' => (is => 'ro', required => 1, isa => 'Str',

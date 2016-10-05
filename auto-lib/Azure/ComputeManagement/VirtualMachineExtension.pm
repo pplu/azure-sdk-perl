@@ -1,7 +1,7 @@
 package Azure::ComputeManagement::VirtualMachineExtension;
   use Moose;
 
-  has 'autoUpgradeMinorVersion' => (is => 'ro', isa => 'Any'  );
+  has 'autoUpgradeMinorVersion' => (is => 'ro', isa => 'Bool'  );
   has 'forceUpdateTag' => (is => 'ro', isa => 'Str'  );
   has 'instanceView' => (is => 'ro', isa => 'Any'  );
   has 'protectedSettings' => (is => 'ro', isa => 'HashRef'  );

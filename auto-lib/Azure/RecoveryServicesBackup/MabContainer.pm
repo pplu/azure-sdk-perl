@@ -2,7 +2,7 @@ package Azure::RecoveryServicesBackup::MabContainer;
   use Moose;
 
   has 'agentVersion' => (is => 'ro', isa => 'Str'  );
-  has 'canReRegister' => (is => 'ro', isa => 'Any'  );
+  has 'canReRegister' => (is => 'ro', isa => 'Bool'  );
   has 'containerId' => (is => 'ro', isa => 'Int'  );
   has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
   has 'protectedItemCount' => (is => 'ro', isa => 'Int'  );

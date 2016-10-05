@@ -4,7 +4,7 @@ package Azure::SearchService::Indexer;
   has '@odata.etag' => (is => 'ro', isa => 'Str'  );
   has 'dataSourceName' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
-  has 'disabled' => (is => 'ro', isa => 'Any'  );
+  has 'disabled' => (is => 'ro', isa => 'Bool'  );
   has 'fieldMappings' => (is => 'ro', isa => 'ArrayRef'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'parameters' => (is => 'ro', isa => 'Any'  );

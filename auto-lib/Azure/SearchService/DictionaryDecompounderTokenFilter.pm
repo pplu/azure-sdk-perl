@@ -4,7 +4,7 @@ package Azure::SearchService::DictionaryDecompounderTokenFilter;
   has 'maxSubwordSize' => (is => 'ro', isa => 'Int'  );
   has 'minSubwordSize' => (is => 'ro', isa => 'Int'  );
   has 'minWordSize' => (is => 'ro', isa => 'Int'  );
-  has 'onlyLongestMatch' => (is => 'ro', isa => 'Any'  );
+  has 'onlyLongestMatch' => (is => 'ro', isa => 'Bool'  );
   has 'wordList' => (is => 'ro', isa => 'ArrayRef'  );
   has '@odata.type' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

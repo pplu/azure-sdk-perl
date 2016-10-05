@@ -17,7 +17,7 @@ package Azure::BatchService::UpdatePropertiesPool;
   has 'poolUpdatePropertiesParameter' => (is => 'ro', required => 1, isa => 'Any',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+  has 'return-client-request-id' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInHeader' ],
   );
   has 'timeout' => (is => 'ro', isa => 'Int',

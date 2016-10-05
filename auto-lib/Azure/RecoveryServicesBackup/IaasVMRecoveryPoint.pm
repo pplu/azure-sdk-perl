@@ -1,8 +1,8 @@
 package Azure::RecoveryServicesBackup::IaasVMRecoveryPoint;
   use Moose;
 
-  has 'isInstantILRSessionActive' => (is => 'ro', isa => 'Any'  );
-  has 'isSourceVMEncrypted' => (is => 'ro', isa => 'Any'  );
+  has 'isInstantILRSessionActive' => (is => 'ro', isa => 'Bool'  );
+  has 'isSourceVMEncrypted' => (is => 'ro', isa => 'Bool'  );
   has 'keyAndSecret' => (is => 'ro', isa => 'Any'  );
   has 'recoveryPointAdditionalInfo' => (is => 'ro', isa => 'Str'  );
   has 'recoveryPointTime' => (is => 'ro', isa => 'Str'  );

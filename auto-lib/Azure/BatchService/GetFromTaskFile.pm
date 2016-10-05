@@ -26,7 +26,7 @@ package Azure::BatchService::GetFromTaskFile;
   has 'ocp-range' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+  has 'return-client-request-id' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInHeader' ],
   );
   has 'taskId' => (is => 'ro', required => 1, isa => 'Str',

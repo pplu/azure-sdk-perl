@@ -1,5 +1,5 @@
 package Azure::ComputeManagement::NetworkInterfaceReferenceProperties;
   use Moose;
 
-  has 'primary' => (is => 'ro', isa => 'Any'  );
+  has 'primary' => (is => 'ro', isa => 'Bool'  );
 1;

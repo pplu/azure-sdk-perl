@@ -1,5 +1,5 @@
 package Azure::GraphRbacManagement::CheckGroupMembershipResult;
   use Moose;
 
-  has 'value' => (is => 'ro', isa => 'Any'  );
+  has 'value' => (is => 'ro', isa => 'Bool'  );
 1;

@@ -4,7 +4,7 @@ package Azure::RecoveryServicesBackup::MabFileFolderProtectedItem;
   has 'computerName' => (is => 'ro', isa => 'Str'  );
   has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
   has 'friendlyName' => (is => 'ro', isa => 'Str'  );
-  has 'isScheduledForDeferredDelete' => (is => 'ro', isa => 'Any'  );
+  has 'isScheduledForDeferredDelete' => (is => 'ro', isa => 'Bool'  );
   has 'lastBackupStatus' => (is => 'ro', isa => 'Str'  );
   has 'protectionState' => (is => 'ro', isa => 'Str'  );
   has 'backupManagementType' => (is => 'ro', isa => 'Str'  );

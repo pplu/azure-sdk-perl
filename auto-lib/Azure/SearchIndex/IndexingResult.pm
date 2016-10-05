@@ -3,6 +3,6 @@ package Azure::SearchIndex::IndexingResult;
 
   has 'errorMessage' => (is => 'ro', isa => 'Str'  );
   has 'key' => (is => 'ro', isa => 'Str'  );
-  has 'status' => (is => 'ro', isa => 'Any'  );
+  has 'status' => (is => 'ro', isa => 'Bool'  );
   has 'statusCode' => (is => 'ro', isa => 'Int'  );
 1;

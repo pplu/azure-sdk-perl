@@ -5,7 +5,7 @@ package Azure::NetworkManagement::LoadBalancingRule;
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'backendAddressPool' => (is => 'ro', isa => 'Any'  );
   has 'backendPort' => (is => 'ro', isa => 'Int'  );
-  has 'enableFloatingIP' => (is => 'ro', isa => 'Any'  );
+  has 'enableFloatingIP' => (is => 'ro', isa => 'Bool'  );
   has 'frontendIPConfiguration' => (is => 'ro', isa => 'Any'  );
   has 'frontendPort' => (is => 'ro', isa => 'Int'  );
   has 'idleTimeoutInMinutes' => (is => 'ro', isa => 'Int'  );

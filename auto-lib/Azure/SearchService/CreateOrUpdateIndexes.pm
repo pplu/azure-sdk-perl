@@ -8,7 +8,7 @@ package Azure::SearchService::CreateOrUpdateIndexes;
   has 'If-None-Match' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'allowIndexDowntime' => (is => 'ro', isa => 'Any',
+  has 'allowIndexDowntime' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

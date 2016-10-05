@@ -14,7 +14,7 @@ package Azure::DataLakeStoreFileSystemManagement::CreateFileSystem;
   has 'op' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'overwrite' => (is => 'ro', isa => 'Any',
+  has 'overwrite' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'streamContents' => (is => 'ro', isa => 'Any',

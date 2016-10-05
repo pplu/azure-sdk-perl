@@ -8,7 +8,7 @@ package Azure::ServiceFabric::Node;
   has 'Id' => (is => 'ro', isa => 'HashRef'  );
   has 'InstanceId' => (is => 'ro', isa => 'Str'  );
   has 'IpAddressOrFQDN' => (is => 'ro', isa => 'Str'  );
-  has 'IsSeedNode' => (is => 'ro', isa => 'Any'  );
+  has 'IsSeedNode' => (is => 'ro', isa => 'Bool'  );
   has 'Name' => (is => 'ro', isa => 'Str'  );
   has 'NodeDeactivationInfo' => (is => 'ro', isa => 'HashRef'  );
   has 'NodeStatus' => (is => 'ro', isa => 'Str'  );

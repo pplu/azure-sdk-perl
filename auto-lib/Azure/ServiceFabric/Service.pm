@@ -1,10 +1,10 @@
 package Azure::ServiceFabric::Service;
   use Moose;
 
-  has 'HasPersistedState' => (is => 'ro', isa => 'Any'  );
+  has 'HasPersistedState' => (is => 'ro', isa => 'Bool'  );
   has 'HealthState' => (is => 'ro', isa => 'Any'  );
   has 'Id' => (is => 'ro', isa => 'Str'  );
-  has 'IsServiceGroup' => (is => 'ro', isa => 'Any'  );
+  has 'IsServiceGroup' => (is => 'ro', isa => 'Bool'  );
   has 'ManifestVersion' => (is => 'ro', isa => 'Str'  );
   has 'Name' => (is => 'ro', isa => 'Str'  );
   has 'ServiceKind' => (is => 'ro', isa => 'Any'  );

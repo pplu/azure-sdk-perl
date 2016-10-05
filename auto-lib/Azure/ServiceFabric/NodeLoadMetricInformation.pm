@@ -1,7 +1,7 @@
 package Azure::ServiceFabric::NodeLoadMetricInformation;
   use Moose;
 
-  has 'IsCapacityViolation' => (is => 'ro', isa => 'Any'  );
+  has 'IsCapacityViolation' => (is => 'ro', isa => 'Bool'  );
   has 'Name' => (is => 'ro', isa => 'Str'  );
   has 'NodeBufferedCapacity' => (is => 'ro', isa => 'Str'  );
   has 'NodeCapacity' => (is => 'ro', isa => 'Str'  );

@@ -3,7 +3,7 @@ package Azure::TrafficManagerManagement::TrafficManagerNameAvailability;
 
   has 'message' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'nameAvailable' => (is => 'ro', isa => 'Any'  );
+  has 'nameAvailable' => (is => 'ro', isa => 'Bool'  );
   has 'reason' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;

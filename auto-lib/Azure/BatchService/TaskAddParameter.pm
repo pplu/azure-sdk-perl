@@ -12,5 +12,5 @@ package Azure::BatchService::TaskAddParameter;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'multiInstanceSettings' => (is => 'ro', isa => 'Any'  );
   has 'resourceFiles' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'runElevated' => (is => 'ro', isa => 'Any'  );
+  has 'runElevated' => (is => 'ro', isa => 'Bool'  );
 1;

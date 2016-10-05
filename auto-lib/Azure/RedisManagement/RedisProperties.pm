@@ -1,7 +1,7 @@
 package Azure::RedisManagement::RedisProperties;
   use Moose;
 
-  has 'enableNonSslPort' => (is => 'ro', isa => 'Any'  );
+  has 'enableNonSslPort' => (is => 'ro', isa => 'Bool'  );
   has 'redisConfiguration' => (is => 'ro', isa => 'HashRef'  );
   has 'redisVersion' => (is => 'ro', isa => 'Str'  );
   has 'shardCount' => (is => 'ro', isa => 'Int'  );

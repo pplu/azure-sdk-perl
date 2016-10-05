@@ -19,7 +19,7 @@ package Azure::BatchService::CloudTask;
   has 'previousState' => (is => 'ro', isa => 'Str'  );
   has 'previousStateTransitionTime' => (is => 'ro', isa => 'Str'  );
   has 'resourceFiles' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'runElevated' => (is => 'ro', isa => 'Any'  );
+  has 'runElevated' => (is => 'ro', isa => 'Bool'  );
   has 'state' => (is => 'ro', isa => 'Str'  );
   has 'stateTransitionTime' => (is => 'ro', isa => 'Str'  );
   has 'stats' => (is => 'ro', isa => 'Any'  );

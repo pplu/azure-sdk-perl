@@ -9,7 +9,7 @@ package Azure::DevTestLabs::GalleryImage;
   has 'author' => (is => 'ro', isa => 'Str'  );
   has 'createdDate' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
-  has 'enabled' => (is => 'ro', isa => 'Any'  );
+  has 'enabled' => (is => 'ro', isa => 'Bool'  );
   has 'icon' => (is => 'ro', isa => 'Str'  );
   has 'imageReference' => (is => 'ro', isa => 'Any'  );
 1;

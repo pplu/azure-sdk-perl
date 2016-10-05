@@ -4,7 +4,7 @@ package Azure::NetworkManagement::NetworkInterfaceIPConfigurationPropertiesForma
   has 'applicationGatewayBackendAddressPools' => (is => 'ro', isa => 'ArrayRef'  );
   has 'loadBalancerBackendAddressPools' => (is => 'ro', isa => 'ArrayRef'  );
   has 'loadBalancerInboundNatRules' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'primary' => (is => 'ro', isa => 'Any'  );
+  has 'primary' => (is => 'ro', isa => 'Bool'  );
   has 'privateIPAddress' => (is => 'ro', isa => 'Str'  );
   has 'privateIPAddressVersion' => (is => 'ro', isa => 'Str'  );
   has 'privateIPAllocationMethod' => (is => 'ro', isa => 'Str'  );

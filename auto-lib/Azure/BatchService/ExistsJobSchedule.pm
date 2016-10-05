@@ -26,7 +26,7 @@ package Azure::BatchService::ExistsJobSchedule;
   has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+  has 'return-client-request-id' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInHeader' ],
   );
   has 'timeout' => (is => 'ro', isa => 'Int',

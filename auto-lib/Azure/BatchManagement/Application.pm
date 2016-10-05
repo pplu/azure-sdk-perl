@@ -1,7 +1,7 @@
 package Azure::BatchManagement::Application;
   use Moose;
 
-  has 'allowUpdates' => (is => 'ro', isa => 'Any'  );
+  has 'allowUpdates' => (is => 'ro', isa => 'Bool'  );
   has 'defaultVersion' => (is => 'ro', isa => 'Str'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );

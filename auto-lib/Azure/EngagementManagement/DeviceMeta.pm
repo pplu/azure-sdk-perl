@@ -5,5 +5,5 @@ package Azure::EngagementManagement::DeviceMeta;
   has 'lastInfo' => (is => 'ro', isa => 'Int'  );
   has 'lastLocation' => (is => 'ro', isa => 'Int'  );
   has 'lastSeen' => (is => 'ro', isa => 'Int'  );
-  has 'nativePushEnabled' => (is => 'ro', isa => 'Any'  );
+  has 'nativePushEnabled' => (is => 'ro', isa => 'Bool'  );
 1;

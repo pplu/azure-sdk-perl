@@ -5,5 +5,5 @@ package Azure::DataLakeStoreFileSystemManagement::AclStatus;
   has 'group' => (is => 'ro', isa => 'Str'  );
   has 'owner' => (is => 'ro', isa => 'Str'  );
   has 'permission' => (is => 'ro', isa => 'Int'  );
-  has 'stickyBit' => (is => 'ro', isa => 'Any'  );
+  has 'stickyBit' => (is => 'ro', isa => 'Bool'  );
 1;

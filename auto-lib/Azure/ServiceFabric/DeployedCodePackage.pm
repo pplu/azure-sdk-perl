@@ -1,7 +1,7 @@
 package Azure::ServiceFabric::DeployedCodePackage;
   use Moose;
 
-  has 'HasSetupEntryPoint' => (is => 'ro', isa => 'Any'  );
+  has 'HasSetupEntryPoint' => (is => 'ro', isa => 'Bool'  );
   has 'MainEntryPoint' => (is => 'ro', isa => 'Any'  );
   has 'Name' => (is => 'ro', isa => 'Str'  );
   has 'RunFrequencyInterval' => (is => 'ro', isa => 'Str'  );

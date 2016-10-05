@@ -5,7 +5,7 @@ package Azure::NetworkManagement::VirtualNetworkGatewayConnectionPropertiesForma
   has 'connectionStatus' => (is => 'ro', isa => 'Str'  );
   has 'connectionType' => (is => 'ro', isa => 'Str'  );
   has 'egressBytesTransferred' => (is => 'ro', isa => 'Int'  );
-  has 'enableBgp' => (is => 'ro', isa => 'Any'  );
+  has 'enableBgp' => (is => 'ro', isa => 'Bool'  );
   has 'ingressBytesTransferred' => (is => 'ro', isa => 'Int'  );
   has 'localNetworkGateway2' => (is => 'ro', isa => 'Any'  );
   has 'peer' => (is => 'ro', isa => 'Any'  );

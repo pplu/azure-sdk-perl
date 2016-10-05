@@ -1,7 +1,7 @@
 package Azure::GraphRbacManagement::UserCreateParameters;
   use Moose;
 
-  has 'accountEnabled' => (is => 'ro', isa => 'Any'  );
+  has 'accountEnabled' => (is => 'ro', isa => 'Bool'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'immutableId' => (is => 'ro', isa => 'Str'  );
   has 'mailNickname' => (is => 'ro', isa => 'Str'  );

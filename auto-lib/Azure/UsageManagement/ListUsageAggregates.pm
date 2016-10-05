@@ -17,7 +17,7 @@ package Azure::UsageManagement::ListUsageAggregates;
   has 'reportedstartTime' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'showDetails' => (is => 'ro', isa => 'Any',
+  has 'showDetails' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

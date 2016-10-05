@@ -1,9 +1,9 @@
 package Azure::NetworkManagement::VirtualNetworkGatewayPropertiesFormat;
   use Moose;
 
-  has 'activeActive' => (is => 'ro', isa => 'Any'  );
+  has 'activeActive' => (is => 'ro', isa => 'Bool'  );
   has 'bgpSettings' => (is => 'ro', isa => 'Any'  );
-  has 'enableBgp' => (is => 'ro', isa => 'Any'  );
+  has 'enableBgp' => (is => 'ro', isa => 'Bool'  );
   has 'gatewayDefaultSite' => (is => 'ro', isa => 'Any'  );
   has 'gatewayType' => (is => 'ro', isa => 'Str'  );
   has 'ipConfigurations' => (is => 'ro', isa => 'ArrayRef'  );

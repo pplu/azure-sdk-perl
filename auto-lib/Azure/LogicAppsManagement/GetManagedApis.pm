@@ -8,7 +8,7 @@ package Azure::LogicAppsManagement::GetManagedApis;
   has 'apiName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'export' => (is => 'ro', isa => 'Any',
+  has 'export' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'location' => (is => 'ro', required => 1, isa => 'Str',

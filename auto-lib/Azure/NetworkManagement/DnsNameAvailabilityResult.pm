@@ -1,5 +1,5 @@
 package Azure::NetworkManagement::DnsNameAvailabilityResult;
   use Moose;
 
-  has 'available' => (is => 'ro', isa => 'Any'  );
+  has 'available' => (is => 'ro', isa => 'Bool'  );
 1;

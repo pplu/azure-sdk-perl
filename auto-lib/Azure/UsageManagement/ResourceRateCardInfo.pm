@@ -2,7 +2,7 @@ package Azure::UsageManagement::ResourceRateCardInfo;
   use Moose;
 
   has 'Currency' => (is => 'ro', isa => 'Str'  );
-  has 'IsTaxIncluded' => (is => 'ro', isa => 'Any'  );
+  has 'IsTaxIncluded' => (is => 'ro', isa => 'Bool'  );
   has 'Locale' => (is => 'ro', isa => 'Str'  );
   has 'MeterRegion' => (is => 'ro', isa => 'Str'  );
   has 'Meters' => (is => 'ro', isa => 'ArrayRef'  );

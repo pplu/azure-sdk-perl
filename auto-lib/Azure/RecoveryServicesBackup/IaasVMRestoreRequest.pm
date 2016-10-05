@@ -2,7 +2,7 @@ package Azure::RecoveryServicesBackup::IaasVMRestoreRequest;
   use Moose;
 
   has 'affinityGroup' => (is => 'ro', isa => 'Str'  );
-  has 'createNewCloudService' => (is => 'ro', isa => 'Any'  );
+  has 'createNewCloudService' => (is => 'ro', isa => 'Bool'  );
   has 'encryptionDetails' => (is => 'ro', isa => 'Any'  );
   has 'recoveryPointId' => (is => 'ro', isa => 'Str'  );
   has 'recoveryType' => (is => 'ro', isa => 'Str'  );

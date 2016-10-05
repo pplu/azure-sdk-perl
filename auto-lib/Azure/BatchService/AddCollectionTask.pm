@@ -14,7 +14,7 @@ package Azure::BatchService::AddCollectionTask;
   has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'return-client-request-id' => (is => 'ro', isa => 'Any',
+  has 'return-client-request-id' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInHeader' ],
   );
   has 'taskCollection' => (is => 'ro', required => 1, isa => 'Any',

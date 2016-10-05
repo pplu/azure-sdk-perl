@@ -18,6 +18,8 @@ package Azure::SDK::Builder::PerlTypeInferer;
           return 'Str';
         } elsif ($self->type eq 'integer') {
           return 'Int';
+        } elsif ($self->type eq 'boolean') {
+          return 'Bool';
         } elsif ($self->type eq 'array') {
           #TODO: find out about the inner type for the array
           return 'ArrayRef';

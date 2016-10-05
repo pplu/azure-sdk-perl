@@ -13,5 +13,5 @@ package Azure::BatchService::JobAddParameter;
   has 'onTaskFailure' => (is => 'ro', isa => 'Str'  );
   has 'poolInfo' => (is => 'ro', isa => 'Any'  );
   has 'priority' => (is => 'ro', isa => 'Int'  );
-  has 'usesTaskDependencies' => (is => 'ro', isa => 'Any'  );
+  has 'usesTaskDependencies' => (is => 'ro', isa => 'Bool'  );
 1;

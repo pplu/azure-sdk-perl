@@ -1,7 +1,7 @@
 package Azure::NotificationHubsManagement::CheckAvailabilityParameters;
   use Moose;
 
-  has 'isAvailiable' => (is => 'ro', isa => 'Any'  );
+  has 'isAvailiable' => (is => 'ro', isa => 'Bool'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

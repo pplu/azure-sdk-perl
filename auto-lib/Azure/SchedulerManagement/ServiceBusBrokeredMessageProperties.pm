@@ -3,7 +3,7 @@ package Azure::SchedulerManagement::ServiceBusBrokeredMessageProperties;
 
   has 'contentType' => (is => 'ro', isa => 'Str'  );
   has 'correlationId' => (is => 'ro', isa => 'Str'  );
-  has 'forcePersistence' => (is => 'ro', isa => 'Any'  );
+  has 'forcePersistence' => (is => 'ro', isa => 'Bool'  );
   has 'label' => (is => 'ro', isa => 'Str'  );
   has 'messageId' => (is => 'ro', isa => 'Str'  );
   has 'partitionKey' => (is => 'ro', isa => 'Str'  );

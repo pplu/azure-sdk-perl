@@ -2,8 +2,8 @@ package Azure::ServiceFabric::StatefulServiceDescription;
   use Moose;
 
   has 'DefaultMoveCost' => (is => 'ro', isa => 'Any'  );
-  has 'HasPersistedState' => (is => 'ro', isa => 'Any'  );
-  has 'IsDefaultMoveCostSpecified' => (is => 'ro', isa => 'Any'  );
+  has 'HasPersistedState' => (is => 'ro', isa => 'Bool'  );
+  has 'IsDefaultMoveCostSpecified' => (is => 'ro', isa => 'Bool'  );
   has 'MinReplicaSetSize' => (is => 'ro', isa => 'Int'  );
   has 'QuorumLossWaitDurationSeconds' => (is => 'ro', isa => 'Int'  );
   has 'ReplicaRestartWaitDurationSeconds' => (is => 'ro', isa => 'Int'  );

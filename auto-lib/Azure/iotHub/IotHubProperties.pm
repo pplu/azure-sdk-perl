@@ -4,7 +4,7 @@ package Azure::iotHub::IotHubProperties;
   has 'authorizationPolicies' => (is => 'ro', isa => 'ArrayRef'  );
   has 'cloudToDevice' => (is => 'ro', isa => 'Any'  );
   has 'comments' => (is => 'ro', isa => 'Str'  );
-  has 'enableFileUploadNotifications' => (is => 'ro', isa => 'Any'  );
+  has 'enableFileUploadNotifications' => (is => 'ro', isa => 'Bool'  );
   has 'eventHubEndpoints' => (is => 'ro', isa => 'HashRef'  );
   has 'features' => (is => 'ro', isa => 'Str'  );
   has 'hostName' => (is => 'ro', isa => 'Str'  );
