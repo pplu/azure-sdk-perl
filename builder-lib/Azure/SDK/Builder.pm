@@ -142,12 +142,15 @@ package Azure::SDK::Builder;
       my %objects => ();
 
 
-      foreach my $object (sort keys %{ $self->schema->definitions }) {
-        $objects{ $object } = 
+      foreach my $ob_name (sort keys %{ $self->schema->definitions }) {
+        my $object = $self->schema->definitions->{ $ob_name };
+        $object = $self->resolve_path($object->ref) if (defined $object->ref);
+
+        $objects{ $ob_name } = 
           Azure::SDK::Builder::Object->new(
-            %{ $self->schema->definitions->{ $object } },
+            %$object,
             root_schema => $self,
-            name => $self->namespace($object),
+            name => $self->namespace($ob_name),
           );
       }
 
