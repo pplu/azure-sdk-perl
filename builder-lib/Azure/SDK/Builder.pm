@@ -168,6 +168,7 @@ package Azure::SDK::Builder;
       # ./src/ResourceManagement/Compute/ComputeManagement/ComputeManagementClient.json
       my ($service) = ($title =~ m/^(.*)Client$/);
 
+      return 'EngagementManagement' if ($title eq 'Engagement.ManagementClient'); 
       return 'MLWebServicesManagement' if ($title eq 'Azure ML Web Services Management Client');
       return 'MLCommitmentPlansManagement' if ($title eq 'Azure ML Commitment Plans Management Client');
       return 'PowerBIEmbeddedManagement' if ($title eq 'Power BI Embedded Management Client');

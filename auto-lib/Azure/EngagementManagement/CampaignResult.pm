@@ -1,0 +1,26 @@
+package Azure::EngagementManagement::CampaignResult;
+  use Moose;
+
+  has 'activatedDate' => (is => 'ro', isa => 'Str'  );
+  has 'finishedDate' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Int'  );
+  has 'state' => (is => 'ro', isa => 'Str'  );
+  has 'audience' => (is => 'ro', isa => 'HashRef'  );
+  has 'category' => (is => 'ro', isa => 'Str'  );
+  has 'deliveryActivities' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'deliveryTime' => (is => 'ro', isa => 'Str'  );
+  has 'endTime' => (is => 'ro', isa => 'Str'  );
+  has 'localization' => (is => 'ro', isa => 'HashRef'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'notificationBadge' => (is => 'ro', isa => 'Any'  );
+  has 'notificationCloseable' => (is => 'ro', isa => 'Any'  );
+  has 'notificationIcon' => (is => 'ro', isa => 'Any'  );
+  has 'notificationSound' => (is => 'ro', isa => 'Any'  );
+  has 'notificationType' => (is => 'ro', isa => 'Str'  );
+  has 'notificationVibrate' => (is => 'ro', isa => 'Any'  );
+  has 'pushMode' => (is => 'ro', isa => 'Str'  );
+  has 'questions' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'startTime' => (is => 'ro', isa => 'Str'  );
+  has 'timezone' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+1;
