@@ -197,27 +197,32 @@ package Azure::SDK::Builder;
   sub build {
     my $self = shift;
 
-    $self->process_template(
-      'service',
-    );
-
-    foreach my $object (sort keys %{ $self->objects }){
+    eval {
       $self->process_template(
-        'object',
-        { object => $self->objects->{ $object } },
+        'service',
       );
-    }
 
-    foreach my $method_name (sort keys %{ $self->methods }){
-      my $method = $self->methods->{ $method_name };
-      $self->process_template(
-        'method_args_object',
-        { method => $method },
-      );
-      $self->process_template(
-        'method_return_object',
-        { method => $method },
-      ) if (defined $method->return);
+      foreach my $object (sort keys %{ $self->objects }){
+        $self->process_template(
+          'object',
+          { object => $self->objects->{ $object } },
+        );
+      }
+  
+      foreach my $method_name (sort keys %{ $self->methods }){
+        my $method = $self->methods->{ $method_name };
+        $self->process_template(
+          'method_args_object',
+          { method => $method },
+        );
+        $self->process_template(
+          'method_return_object',
+          { method => $method },
+        ) if (defined $method->return);
+      }
+    };
+    if ($@){
+      $self->log->error("Failed building " . $self->service . ": $@");
     }
   }
 
