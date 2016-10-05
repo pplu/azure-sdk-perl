@@ -13,6 +13,8 @@ package Azure::BatchService::GetJobResult;
   has jobReleaseTask => (is => 'ro', isa => 'Azure::BatchService::JobReleaseTask'  );
   has lastModified => (is => 'ro', isa => 'Str'  );
   has metadata => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::MetadataItem]'  );
+  has onAllTasksComplete => (is => 'ro', isa => 'Str'  );
+  has onTaskFailure => (is => 'ro', isa => 'Str'  );
   has poolInfo => (is => 'ro', isa => 'Azure::BatchService::PoolInformation'  );
   has previousState => (is => 'ro', isa => 'Str'  );
   has previousStateTransitionTime => (is => 'ro', isa => 'Str'  );

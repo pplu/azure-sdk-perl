@@ -19,6 +19,7 @@ package Azure::BatchService::GetPoolResult;
   has lastModified => (is => 'ro', isa => 'Str'  );
   has maxTasksPerNode => (is => 'ro', isa => 'Any'  );
   has metadata => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::MetadataItem]'  );
+  has networkConfiguration => (is => 'ro', isa => 'Azure::BatchService::NetworkConfiguration'  );
   has resizeError => (is => 'ro', isa => 'Azure::BatchService::ResizeError'  );
   has resizeTimeout => (is => 'ro', isa => 'Str'  );
   has startTask => (is => 'ro', isa => 'Azure::BatchService::StartTask'  );

@@ -2,6 +2,7 @@ package Azure::BatchService::CloudTask;
   use Moose;
 
   has 'affinityInfo' => (is => 'ro', isa => 'Any'  );
+  has 'applicationPackageReferences' => (is => 'ro', isa => 'ArrayRef'  );
   has 'commandLine' => (is => 'ro', isa => 'Str'  );
   has 'constraints' => (is => 'ro', isa => 'Any'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
@@ -10,6 +11,7 @@ package Azure::BatchService::CloudTask;
   has 'eTag' => (is => 'ro', isa => 'Str'  );
   has 'environmentSettings' => (is => 'ro', isa => 'ArrayRef'  );
   has 'executionInfo' => (is => 'ro', isa => 'Any'  );
+  has 'exitConditions' => (is => 'ro', isa => 'Any'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'lastModified' => (is => 'ro', isa => 'Str'  );
   has 'multiInstanceSettings' => (is => 'ro', isa => 'Any'  );

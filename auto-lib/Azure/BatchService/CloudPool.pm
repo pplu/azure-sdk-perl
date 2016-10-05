@@ -19,6 +19,7 @@ package Azure::BatchService::CloudPool;
   has 'lastModified' => (is => 'ro', isa => 'Str'  );
   has 'maxTasksPerNode' => (is => 'ro', isa => 'Int'  );
   has 'metadata' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'networkConfiguration' => (is => 'ro', isa => 'Any'  );
   has 'resizeError' => (is => 'ro', isa => 'Any'  );
   has 'resizeTimeout' => (is => 'ro', isa => 'Str'  );
   has 'startTask' => (is => 'ro', isa => 'Any'  );

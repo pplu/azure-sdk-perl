@@ -1,6 +1,7 @@
 package Azure::BatchService::JobManagerTask;
   use Moose;
 
+  has 'applicationPackageReferences' => (is => 'ro', isa => 'ArrayRef'  );
   has 'commandLine' => (is => 'ro', isa => 'Str'  );
   has 'constraints' => (is => 'ro', isa => 'Any'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );

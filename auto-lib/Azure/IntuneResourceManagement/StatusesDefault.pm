@@ -1,7 +1,6 @@
 package Azure::IntuneResourceManagement::StatusesDefault;
   use Moose;
 
-  has 'nextlink' => (is => 'ro', isa => 'Str'  );
   has 'deployedPolicies' => (is => 'ro', isa => 'Int'  );
   has 'enrolledUsers' => (is => 'ro', isa => 'Int'  );
   has 'flaggedUsers' => (is => 'ro', isa => 'Int'  );

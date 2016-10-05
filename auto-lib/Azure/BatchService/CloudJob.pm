@@ -13,6 +13,8 @@ package Azure::BatchService::CloudJob;
   has 'jobReleaseTask' => (is => 'ro', isa => 'Any'  );
   has 'lastModified' => (is => 'ro', isa => 'Str'  );
   has 'metadata' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'onAllTasksComplete' => (is => 'ro', isa => 'Str'  );
+  has 'onTaskFailure' => (is => 'ro', isa => 'Str'  );
   has 'poolInfo' => (is => 'ro', isa => 'Any'  );
   has 'previousState' => (is => 'ro', isa => 'Str'  );
   has 'previousStateTransitionTime' => (is => 'ro', isa => 'Str'  );

@@ -298,6 +298,11 @@ package Azure::BatchService;
     my $call_object = $self->new_with_coercions('Azure::BatchService::PatchPool', @_);
     return $self->caller->do_call($self, $call_object);
   }
+  sub ReactivateTask {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::BatchService::ReactivateTask', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RebootComputeNode {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::BatchService::RebootComputeNode', @_);

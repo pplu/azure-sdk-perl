@@ -2,6 +2,7 @@ package Azure::BatchService::GetTaskResult;
   use Moose;
 
   has affinityInfo => (is => 'ro', isa => 'Azure::BatchService::AffinityInformation'  );
+  has applicationPackageReferences => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ApplicationPackageReference]'  );
   has commandLine => (is => 'ro', isa => 'Str'  );
   has constraints => (is => 'ro', isa => 'Azure::BatchService::TaskConstraints'  );
   has creationTime => (is => 'ro', isa => 'Str'  );
@@ -10,6 +11,7 @@ package Azure::BatchService::GetTaskResult;
   has eTag => (is => 'ro', isa => 'Str'  );
   has environmentSettings => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::EnvironmentSetting]'  );
   has executionInfo => (is => 'ro', isa => 'Azure::BatchService::TaskExecutionInformation'  );
+  has exitConditions => (is => 'ro', isa => 'Azure::BatchService::ExitConditions'  );
   has id => (is => 'ro', isa => 'Str'  );
   has lastModified => (is => 'ro', isa => 'Str'  );
   has multiInstanceSettings => (is => 'ro', isa => 'Azure::BatchService::MultiInstanceSettings'  );

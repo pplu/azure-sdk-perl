@@ -1,9 +1,12 @@
 package Azure::StorageManagement::StorageAccount;
   use Moose;
 
-  has 'accountType' => (is => 'ro', isa => 'Str'  );
+  has 'kind' => (is => 'ro', isa => 'Str'  );
+  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'accessTier' => (is => 'ro', isa => 'Str'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'customDomain' => (is => 'ro', isa => 'Any'  );
+  has 'encryption' => (is => 'ro', isa => 'Any'  );
   has 'lastGeoFailoverTime' => (is => 'ro', isa => 'Str'  );
   has 'primaryEndpoints' => (is => 'ro', isa => 'Any'  );
   has 'primaryLocation' => (is => 'ro', isa => 'Str'  );
