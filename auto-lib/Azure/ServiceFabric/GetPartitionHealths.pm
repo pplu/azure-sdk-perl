@@ -3,16 +3,16 @@ package Azure::ServiceFabric::GetPartitionHealths;
   use MooseX::ClassAttribute;
 
   has 'partitionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'EventsHealthStateFilter' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'ReplicasHealthStateFilter' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/Partitions/{partitionId}/$/GetHealth');

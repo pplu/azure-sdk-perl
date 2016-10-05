@@ -3,16 +3,16 @@ package Azure::AuthorizationManagement::CreateRoleAssignments;
   use MooseX::ClassAttribute;
 
   has 'scope' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'roleAssignmentName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentName}');

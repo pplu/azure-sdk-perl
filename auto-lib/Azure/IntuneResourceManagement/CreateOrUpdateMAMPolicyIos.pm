@@ -3,16 +3,16 @@ package Azure::IntuneResourceManagement::CreateOrUpdateMAMPolicyIos;
   use MooseX::ClassAttribute;
 
   has 'hostName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'policyName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Intune/locations/{hostName}/iosPolicies/{policyName}');

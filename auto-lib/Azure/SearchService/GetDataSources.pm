@@ -3,13 +3,13 @@ package Azure::SearchService::GetDataSources;
   use MooseX::ClassAttribute;
 
   has 'dataSourceName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/datasources('{dataSourceName}')');

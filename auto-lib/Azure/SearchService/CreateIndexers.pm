@@ -3,13 +3,13 @@ package Azure::SearchService::CreateIndexers;
   use MooseX::ClassAttribute;
 
   has 'indexer' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/indexers');

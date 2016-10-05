@@ -3,22 +3,22 @@ package Azure::BatchService::AddCertificate;
   use MooseX::ClassAttribute;
 
   has 'Certificate' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'timeout' => (is => 'ro', isa => 'Int',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'return-client-request-id' => (is => 'ro', isa => 'Any',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/certificates');

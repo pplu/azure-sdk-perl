@@ -3,13 +3,13 @@ package Azure::ServiceFabric::CreateServiceGroups;
   use MooseX::ClassAttribute;
 
   has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInPath' ],
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'createServiceGroupDescription' => (is => 'ro', required => 1, isa => 'Any',
-    traits => [ 'ParamInBody' ],
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServices/$/CreateServiceGroup');

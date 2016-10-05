@@ -3,31 +3,31 @@ package Azure::BatchService::ListPool;
   use MooseX::ClassAttribute;
 
   has '$filter' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$select' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has '$expand' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'maxresults' => (is => 'ro', isa => 'Int',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'timeout' => (is => 'ro', isa => 'Int',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'return-client-request-id' => (is => 'ro', isa => 'Any',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',
-    traits => [ 'ParamInHeader' ],
+    traits => [ 'Azure::ParamInHeader' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'ParamInQuery' ],
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools');
