@@ -2,7 +2,7 @@ package Azure::UsageManagement::MeterInfo;
   use Moose;
 
   has 'EffectiveDate' => (is => 'ro', isa => 'Str'  );
-  has 'IncludedQuantity' => (is => 'ro', isa => 'Any'  );
+  has 'IncludedQuantity' => (is => 'ro', isa => 'Num'  );
   has 'MeterCategory' => (is => 'ro', isa => 'Str'  );
   has 'MeterId' => (is => 'ro', isa => 'Str'  );
   has 'MeterName' => (is => 'ro', isa => 'Str'  );

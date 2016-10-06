@@ -7,7 +7,7 @@ package Azure::SearchIndex::SearchParametersPayload;
   has 'highlight' => (is => 'ro', isa => 'Str'  );
   has 'highlightPostTag' => (is => 'ro', isa => 'Str'  );
   has 'highlightPreTag' => (is => 'ro', isa => 'Str'  );
-  has 'minimumCoverage' => (is => 'ro', isa => 'Any'  );
+  has 'minimumCoverage' => (is => 'ro', isa => 'Num'  );
   has 'orderby' => (is => 'ro', isa => 'Str'  );
   has 'queryType' => (is => 'ro', isa => 'Any'  );
   has 'scoringParameters' => (is => 'ro', isa => 'ArrayRef[Str]'  );

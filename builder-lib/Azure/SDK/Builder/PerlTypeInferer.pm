@@ -23,6 +23,8 @@ package Azure::SDK::Builder::PerlTypeInferer;
           return 'Int';
         } elsif ($self->type eq 'boolean') {
           return 'Bool';
+        } elsif ($self->type eq 'number') {
+          return 'Num';
         } elsif ($self->type eq 'array') {
           my $inner;
           if (not blessed($self->items) or defined $self->items->type) {

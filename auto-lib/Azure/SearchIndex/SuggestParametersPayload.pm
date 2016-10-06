@@ -5,7 +5,7 @@ package Azure::SearchIndex::SuggestParametersPayload;
   has 'fuzzy' => (is => 'ro', isa => 'Bool'  );
   has 'highlightPostTag' => (is => 'ro', isa => 'Str'  );
   has 'highlightPreTag' => (is => 'ro', isa => 'Str'  );
-  has 'minimumCoverage' => (is => 'ro', isa => 'Any'  );
+  has 'minimumCoverage' => (is => 'ro', isa => 'Num'  );
   has 'orderby' => (is => 'ro', isa => 'Str'  );
   has 'search' => (is => 'ro', isa => 'Str'  );
   has 'searchFields' => (is => 'ro', isa => 'Str'  );
