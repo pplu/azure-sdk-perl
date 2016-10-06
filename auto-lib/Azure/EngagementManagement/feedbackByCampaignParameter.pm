@@ -1,7 +1,7 @@
 package Azure::EngagementManagement::feedbackByCampaignParameter;
   use Moose;
 
-  has 'campaignIds' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'campaignIds' => (is => 'ro', isa => 'ArrayRef[Int]'  );
   has 'campaignType' => (is => 'ro', isa => 'Any'  );
   has 'containerUrl' => (is => 'ro', isa => 'Any'  );
   has 'description' => (is => 'ro', isa => 'Str'  );

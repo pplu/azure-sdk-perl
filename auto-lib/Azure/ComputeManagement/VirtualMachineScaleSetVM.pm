@@ -3,7 +3,7 @@ package Azure::ComputeManagement::VirtualMachineScaleSetVM;
 
   has 'instanceId' => (is => 'ro', isa => 'Str'  );
   has 'plan' => (is => 'ro', isa => 'Any'  );
-  has 'resources' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'resources' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VirtualMachineExtension]'  );
   has 'sku' => (is => 'ro', isa => 'Any'  );
   has 'availabilitySet' => (is => 'ro', isa => 'Any'  );
   has 'diagnosticsProfile' => (is => 'ro', isa => 'Any'  );

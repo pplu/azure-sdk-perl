@@ -3,5 +3,5 @@ package Azure::BatchService::NodeAgentSku;
 
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'osType' => (is => 'ro', isa => 'Str'  );
-  has 'verifiedImageReferences' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'verifiedImageReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ImageReference]'  );
 1;

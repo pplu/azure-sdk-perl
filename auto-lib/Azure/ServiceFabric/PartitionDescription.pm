@@ -4,6 +4,6 @@ package Azure::ServiceFabric::PartitionDescription;
   has 'Count' => (is => 'ro', isa => 'Int'  );
   has 'HighKey' => (is => 'ro', isa => 'Str'  );
   has 'LowKey' => (is => 'ro', isa => 'Str'  );
-  has 'Names' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'Names' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'PartitionScheme' => (is => 'ro', isa => 'Any'  );
 1;

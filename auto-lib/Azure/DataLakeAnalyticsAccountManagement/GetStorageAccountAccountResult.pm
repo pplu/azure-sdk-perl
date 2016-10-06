@@ -2,6 +2,6 @@ package Azure::DataLakeAnalyticsAccountManagement::GetStorageAccountAccountResul
   use Moose;
 
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Azure::DataLakeAnalyticsAccountManagement::StorageAccountProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

@@ -1,7 +1,7 @@
 package Azure::KeyVaultManagement::VaultProperties;
   use Moose;
 
-  has 'accessPolicies' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'accessPolicies' => (is => 'ro', isa => 'ArrayRef[Azure::KeyVaultManagement::AccessPolicyEntry]'  );
   has 'enabledForDeployment' => (is => 'ro', isa => 'Bool'  );
   has 'enabledForDiskEncryption' => (is => 'ro', isa => 'Bool'  );
   has 'enabledForTemplateDeployment' => (is => 'ro', isa => 'Bool'  );

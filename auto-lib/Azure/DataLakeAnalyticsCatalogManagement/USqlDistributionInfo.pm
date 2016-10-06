@@ -3,6 +3,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::USqlDistributionInfo;
 
   has 'count' => (is => 'ro', isa => 'Int'  );
   has 'dynamicCount' => (is => 'ro', isa => 'Int'  );
-  has 'keys' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'keys' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsCatalogManagement::USqlDirectedColumn]'  );
   has 'type' => (is => 'ro', isa => 'Int'  );
 1;

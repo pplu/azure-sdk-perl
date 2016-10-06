@@ -2,6 +2,6 @@ package Azure::NetworkManagement::GetVirtualMachineScaleSetNetworkInterfaceNetwo
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Azure::NetworkManagement::NetworkInterfacePropertiesFormat'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

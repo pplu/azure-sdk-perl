@@ -3,5 +3,5 @@ package Azure::DataLakeStoreAccountManagement::DataLakeStoreAccountListResult;
 
   has 'count' => (is => 'ro', isa => 'Int'  );
   has 'nextLink' => (is => 'ro', isa => 'Str'  );
-  has 'value' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'value' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeStoreAccountManagement::DataLakeStoreAccount]'  );
 1;

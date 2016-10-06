@@ -3,7 +3,7 @@ package Azure::NetworkManagement::ApplicationGatewayBackendHttpSettings;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'authenticationCertificates' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'authenticationCertificates' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::SubResource]'  );
   has 'cookieBasedAffinity' => (is => 'ro', isa => 'Str'  );
   has 'port' => (is => 'ro', isa => 'Int'  );
   has 'probe' => (is => 'ro', isa => 'Any'  );

@@ -1,7 +1,7 @@
 package Azure::DataLakeAnalyticsCatalogManagement::USqlTableType;
   use Moose;
 
-  has 'columns' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'columns' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsCatalogManagement::TypeFieldInfo]'  );
   has 'cSharpName' => (is => 'ro', isa => 'Str'  );
   has 'databaseName' => (is => 'ro', isa => 'Str'  );
   has 'fullCSharpName' => (is => 'ro', isa => 'Str'  );

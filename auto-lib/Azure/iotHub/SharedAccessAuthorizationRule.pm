@@ -9,6 +9,6 @@ package Azure::iotHub::SharedAccessAuthorizationRule;
   has 'ModifiedTime' => (is => 'ro', isa => 'Str'  );
   has 'PrimaryKey' => (is => 'ro', isa => 'Str'  );
   has 'Revision' => (is => 'ro', isa => 'Int'  );
-  has 'Rights' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'Rights' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'SecondaryKey' => (is => 'ro', isa => 'Str'  );
 1;

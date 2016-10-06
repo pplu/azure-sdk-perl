@@ -1,6 +1,6 @@
 package Azure::ComputeManagement::GetVirtualMachineExtensionImagesResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineExtensionImageProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

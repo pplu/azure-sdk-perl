@@ -3,5 +3,5 @@ package Azure::DataLakeAnalyticsJobManagement::JobDataPath;
 
   has 'command' => (is => 'ro', isa => 'Str'  );
   has 'jobId' => (is => 'ro', isa => 'Str'  );
-  has 'paths' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'paths' => (is => 'ro', isa => 'ArrayRef[Str]'  );
 1;

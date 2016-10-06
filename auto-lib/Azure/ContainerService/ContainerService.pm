@@ -1,7 +1,7 @@
 package Azure::ContainerService::ContainerService;
   use Moose;
 
-  has 'agentPoolProfiles' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'agentPoolProfiles' => (is => 'ro', isa => 'ArrayRef[Azure::ContainerService::ContainerServiceAgentPoolProfile]'  );
   has 'diagnosticsProfile' => (is => 'ro', isa => 'Any'  );
   has 'linuxProfile' => (is => 'ro', isa => 'Any'  );
   has 'masterProfile' => (is => 'ro', isa => 'Any'  );

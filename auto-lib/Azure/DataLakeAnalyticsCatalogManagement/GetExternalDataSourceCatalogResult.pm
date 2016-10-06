@@ -5,6 +5,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::GetExternalDataSourceCatalogR
   has externalDataSourceName => (is => 'ro', isa => 'Str'  );
   has provider => (is => 'ro', isa => 'Str'  );
   has providerString => (is => 'ro', isa => 'Str'  );
-  has pushdownTypes => (is => 'ro', isa => 'ArrayRef[string]'  );
+  has pushdownTypes => (is => 'ro', isa => 'ArrayRef[Str]'  );
 
 1;

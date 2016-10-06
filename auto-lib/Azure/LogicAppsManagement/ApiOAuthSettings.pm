@@ -7,5 +7,5 @@ package Azure::LogicAppsManagement::ApiOAuthSettings;
   has 'identityProvider' => (is => 'ro', isa => 'Str'  );
   has 'properties' => (is => 'ro', isa => 'Any'  );
   has 'redirectUrl' => (is => 'ro', isa => 'Str'  );
-  has 'scopes' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'scopes' => (is => 'ro', isa => 'ArrayRef[Str]'  );
 1;

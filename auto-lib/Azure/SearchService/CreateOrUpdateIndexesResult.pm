@@ -4,7 +4,7 @@ package Azure::SearchService::CreateOrUpdateIndexesResult;
   has @odata.etag => (is => 'ro', isa => 'Str'  );
   has analyzers => (is => 'ro', isa => 'ArrayRef[Azure::SearchService::Analyzer]'  );
   has charFilters => (is => 'ro', isa => 'ArrayRef[Azure::SearchService::CharFilter]'  );
-  has corsOptions => (is => 'ro', isa => 'Azure::SearchService::CorsOptions'  );
+  has corsOptions => (is => 'ro', isa => 'Any'  );
   has defaultScoringProfile => (is => 'ro', isa => 'Str'  );
   has fields => (is => 'ro', isa => 'ArrayRef[Azure::SearchService::Field]'  );
   has name => (is => 'ro', isa => 'Str'  );

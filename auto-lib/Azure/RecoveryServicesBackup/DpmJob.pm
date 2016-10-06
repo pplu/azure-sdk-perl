@@ -1,12 +1,12 @@
 package Azure::RecoveryServicesBackup::DpmJob;
   use Moose;
 
-  has 'actionsInfo' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'actionsInfo' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'containerName' => (is => 'ro', isa => 'Str'  );
   has 'containerType' => (is => 'ro', isa => 'Str'  );
   has 'dpmServerName' => (is => 'ro', isa => 'Str'  );
   has 'duration' => (is => 'ro', isa => 'Str'  );
-  has 'errorDetails' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'errorDetails' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServicesBackup::DpmErrorInfo]'  );
   has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
   has 'workloadType' => (is => 'ro', isa => 'Str'  );
   has 'activityId' => (is => 'ro', isa => 'Str'  );

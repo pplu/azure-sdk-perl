@@ -3,10 +3,10 @@ package Azure::DataLakeAnalyticsCatalogManagement::GetTableCatalogResult;
 
   has columnList => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsCatalogManagement::USqlTableColumn]'  );
   has databaseName => (is => 'ro', isa => 'Str'  );
-  has distributionInfo => (is => 'ro', isa => 'Azure::DataLakeAnalyticsCatalogManagement::USqlDistributionInfo'  );
-  has externalTable => (is => 'ro', isa => 'Azure::DataLakeAnalyticsCatalogManagement::ExternalTable'  );
+  has distributionInfo => (is => 'ro', isa => 'Any'  );
+  has externalTable => (is => 'ro', isa => 'Any'  );
   has indexList => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsCatalogManagement::USqlIndex]'  );
-  has partitionKeyList => (is => 'ro', isa => 'ArrayRef[string]'  );
+  has partitionKeyList => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has schemaName => (is => 'ro', isa => 'Str'  );
   has tableName => (is => 'ro', isa => 'Str'  );
 

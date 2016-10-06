@@ -2,7 +2,7 @@ package Azure::NetworkManagement::ProbePropertiesFormat;
   use Moose;
 
   has 'intervalInSeconds' => (is => 'ro', isa => 'Int'  );
-  has 'loadBalancingRules' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'loadBalancingRules' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::SubResource]'  );
   has 'numberOfProbes' => (is => 'ro', isa => 'Int'  );
   has 'port' => (is => 'ro', isa => 'Int'  );
   has 'protocol' => (is => 'ro', isa => 'Str'  );

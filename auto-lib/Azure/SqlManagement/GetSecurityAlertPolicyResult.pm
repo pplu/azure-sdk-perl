@@ -1,6 +1,6 @@
 package Azure::SqlManagement::GetSecurityAlertPolicyResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Azure::SqlManagement::ServerSecurityAlertPolicyProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

@@ -7,6 +7,6 @@ package Azure::UsageManagement::GetRateCardResult;
   has MeterRegion => (is => 'ro', isa => 'Str'  );
   has Meters => (is => 'ro', isa => 'ArrayRef[Azure::UsageManagement::MeterInfo]'  );
   has OfferTerms => (is => 'ro', isa => 'ArrayRef[Azure::UsageManagement::OfferTermInfo]'  );
-  has Tags => (is => 'ro', isa => 'ArrayRef[string]'  );
+  has Tags => (is => 'ro', isa => 'ArrayRef[Str]'  );
 
 1;

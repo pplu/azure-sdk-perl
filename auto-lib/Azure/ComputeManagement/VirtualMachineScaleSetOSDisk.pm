@@ -6,5 +6,5 @@ package Azure::ComputeManagement::VirtualMachineScaleSetOSDisk;
   has 'image' => (is => 'ro', isa => 'Any'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'osType' => (is => 'ro', isa => 'Str'  );
-  has 'vhdContainers' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'vhdContainers' => (is => 'ro', isa => 'ArrayRef[Str]'  );
 1;

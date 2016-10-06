@@ -1,6 +1,6 @@
 package Azure::KeyVaultManagement::GetVaultsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Azure::KeyVaultManagement::VaultProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

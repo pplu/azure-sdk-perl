@@ -3,5 +3,5 @@ package Azure::DataLakeAnalyticsJobManagement::JobStatistics;
 
   has 'finalizingTimeUtc' => (is => 'ro', isa => 'Str'  );
   has 'lastUpdateTimeUtc' => (is => 'ro', isa => 'Str'  );
-  has 'stages' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'stages' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsJobManagement::JobStatisticsVertexStage]'  );
 1;

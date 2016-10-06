@@ -1,7 +1,7 @@
 package Azure::NotificationHubsManagement::SharedAccessAuthorizationRuleResource;
   use Moose;
 
-  has 'rights' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'rights' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

@@ -3,7 +3,7 @@ package Azure::EngagementManagement::Campaign;
 
   has 'audience' => (is => 'ro', isa => 'HashRef'  );
   has 'category' => (is => 'ro', isa => 'Str'  );
-  has 'deliveryActivities' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'deliveryActivities' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'deliveryTime' => (is => 'ro', isa => 'Str'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'localization' => (is => 'ro', isa => 'HashRef'  );
@@ -15,7 +15,7 @@ package Azure::EngagementManagement::Campaign;
   has 'notificationType' => (is => 'ro', isa => 'Str'  );
   has 'notificationVibrate' => (is => 'ro', isa => 'Bool'  );
   has 'pushMode' => (is => 'ro', isa => 'Str'  );
-  has 'questions' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'questions' => (is => 'ro', isa => 'ArrayRef[Azure::EngagementManagement::PollQuestion]'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'timezone' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );

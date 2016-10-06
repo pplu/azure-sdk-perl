@@ -7,7 +7,7 @@ package Azure::NetworkManagement::VirtualNetworkGateway;
   has 'enableBgp' => (is => 'ro', isa => 'Bool'  );
   has 'gatewayDefaultSite' => (is => 'ro', isa => 'Any'  );
   has 'gatewayType' => (is => 'ro', isa => 'Str'  );
-  has 'ipConfigurations' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'ipConfigurations' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::VirtualNetworkGatewayIPConfiguration]'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'resourceGuid' => (is => 'ro', isa => 'Str'  );
   has 'sku' => (is => 'ro', isa => 'Any'  );

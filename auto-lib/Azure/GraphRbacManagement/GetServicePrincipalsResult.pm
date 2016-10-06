@@ -5,6 +5,6 @@ package Azure::GraphRbacManagement::GetServicePrincipalsResult;
   has displayName => (is => 'ro', isa => 'Str'  );
   has objectId => (is => 'ro', isa => 'Str'  );
   has objectType => (is => 'ro', isa => 'Str'  );
-  has servicePrincipalNames => (is => 'ro', isa => 'ArrayRef[string]'  );
+  has servicePrincipalNames => (is => 'ro', isa => 'ArrayRef[Str]'  );
 
 1;

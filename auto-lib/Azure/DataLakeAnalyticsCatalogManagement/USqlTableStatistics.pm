@@ -1,7 +1,7 @@
 package Azure::DataLakeAnalyticsCatalogManagement::USqlTableStatistics;
   use Moose;
 
-  has 'colNames' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'colNames' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'createTime' => (is => 'ro', isa => 'Str'  );
   has 'databaseName' => (is => 'ro', isa => 'Str'  );
   has 'filterDefinition' => (is => 'ro', isa => 'Str'  );

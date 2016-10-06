@@ -2,7 +2,7 @@ package Azure::DataLakeStoreAccountManagement::Error;
   use Moose;
 
   has 'code' => (is => 'ro', isa => 'Str'  );
-  has 'details' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'details' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeStoreAccountManagement::ErrorDetails]'  );
   has 'innerError' => (is => 'ro', isa => 'Any'  );
   has 'message' => (is => 'ro', isa => 'Str'  );
   has 'target' => (is => 'ro', isa => 'Str'  );

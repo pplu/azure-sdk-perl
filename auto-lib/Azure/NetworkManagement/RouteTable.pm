@@ -3,8 +3,8 @@ package Azure::NetworkManagement::RouteTable;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
-  has 'routes' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'subnets' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'routes' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::Route]'  );
+  has 'subnets' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::Subnet]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

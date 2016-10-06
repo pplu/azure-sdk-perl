@@ -5,5 +5,5 @@ package Azure::BatchService::CertificateReference;
   has 'storeName' => (is => 'ro', isa => 'Str'  );
   has 'thumbprint' => (is => 'ro', isa => 'Str'  );
   has 'thumbprintAlgorithm' => (is => 'ro', isa => 'Str'  );
-  has 'visibility' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'visibility' => (is => 'ro', isa => 'ArrayRef[Str]'  );
 1;

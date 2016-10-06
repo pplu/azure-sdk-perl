@@ -3,7 +3,7 @@ package Azure::TrafficManagerManagement::GetEndpointsResult;
 
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Azure::TrafficManagerManagement::EndpointProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
   has type => (is => 'ro', isa => 'Str'  );
 
 1;

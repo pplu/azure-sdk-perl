@@ -3,5 +3,5 @@ package Azure::RecoveryServicesBackup::DpmJobExtendedInfo;
 
   has 'dynamicErrorMessage' => (is => 'ro', isa => 'Str'  );
   has 'propertyBag' => (is => 'ro', isa => 'HashRef'  );
-  has 'tasksList' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'tasksList' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServicesBackup::DpmJobTaskDetails]'  );
 1;

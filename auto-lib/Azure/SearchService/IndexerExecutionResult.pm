@@ -3,7 +3,7 @@ package Azure::SearchService::IndexerExecutionResult;
 
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'errorMessage' => (is => 'ro', isa => 'Str'  );
-  has 'errors' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'errors' => (is => 'ro', isa => 'ArrayRef[Azure::SearchService::ItemError]'  );
   has 'finalTrackingState' => (is => 'ro', isa => 'Str'  );
   has 'initialTrackingState' => (is => 'ro', isa => 'Str'  );
   has 'itemsFailed' => (is => 'ro', isa => 'Int'  );

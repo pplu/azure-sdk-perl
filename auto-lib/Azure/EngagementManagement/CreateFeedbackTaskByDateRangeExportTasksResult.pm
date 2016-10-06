@@ -5,8 +5,8 @@ package Azure::EngagementManagement::CreateFeedbackTaskByDateRangeExportTasksRes
   has dateCreated => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'Str'  );
   has errorDetails => (is => 'ro', isa => 'Str'  );
-  has exportType => (is => 'ro', isa => 'Azure::EngagementManagement::exportType'  );
+  has exportType => (is => 'ro', isa => 'Any'  );
   has id => (is => 'ro', isa => 'Str'  );
-  has state => (is => 'ro', isa => 'Azure::EngagementManagement::exportState'  );
+  has state => (is => 'ro', isa => 'Any'  );
 
 1;

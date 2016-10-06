@@ -2,7 +2,7 @@ package Azure::StorageManagement::UpdateStorageAccountsResult;
   use Moose;
 
   has kind => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Azure::StorageManagement::StorageAccountProperties'  );
-  has sku => (is => 'ro', isa => 'Azure::StorageManagement::Sku'  );
+  has properties => (is => 'ro', isa => 'Any'  );
+  has sku => (is => 'ro', isa => 'Any'  );
 
 1;

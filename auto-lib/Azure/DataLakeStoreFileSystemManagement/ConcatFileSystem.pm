@@ -11,7 +11,7 @@ package Azure::DataLakeStoreFileSystemManagement::ConcatFileSystem;
   has 'op' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'sources' => (is => 'ro', required => 1, isa => 'ArrayRef',
+  has 'sources' => (is => 'ro', required => 1, isa => 'ArrayRef[Str]',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

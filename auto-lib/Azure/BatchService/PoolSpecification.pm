@@ -1,16 +1,16 @@
 package Azure::BatchService::PoolSpecification;
   use Moose;
 
-  has 'applicationPackageReferences' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'applicationPackageReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ApplicationPackageReference]'  );
   has 'autoScaleEvaluationInterval' => (is => 'ro', isa => 'Str'  );
   has 'autoScaleFormula' => (is => 'ro', isa => 'Str'  );
-  has 'certificateReferences' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'certificateReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::CertificateReference]'  );
   has 'cloudServiceConfiguration' => (is => 'ro', isa => 'Any'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'enableAutoScale' => (is => 'ro', isa => 'Bool'  );
   has 'enableInterNodeCommunication' => (is => 'ro', isa => 'Bool'  );
   has 'maxTasksPerNode' => (is => 'ro', isa => 'Int'  );
-  has 'metadata' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'metadata' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::MetadataItem]'  );
   has 'networkConfiguration' => (is => 'ro', isa => 'Any'  );
   has 'resizeTimeout' => (is => 'ro', isa => 'Str'  );
   has 'startTask' => (is => 'ro', isa => 'Any'  );

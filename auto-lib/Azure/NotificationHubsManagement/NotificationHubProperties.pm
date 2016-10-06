@@ -3,7 +3,7 @@ package Azure::NotificationHubsManagement::NotificationHubProperties;
 
   has 'admCredential' => (is => 'ro', isa => 'Any'  );
   has 'apnsCredential' => (is => 'ro', isa => 'Any'  );
-  has 'authorizationRules' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'authorizationRules' => (is => 'ro', isa => 'ArrayRef[Azure::NotificationHubsManagement::SharedAccessAuthorizationRuleProperties]'  );
   has 'baiduCredential' => (is => 'ro', isa => 'Any'  );
   has 'gcmCredential' => (is => 'ro', isa => 'Any'  );
   has 'mpnsCredential' => (is => 'ro', isa => 'Any'  );

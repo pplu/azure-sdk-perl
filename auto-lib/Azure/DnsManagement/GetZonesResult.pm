@@ -2,6 +2,6 @@ package Azure::DnsManagement::GetZonesResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Azure::DnsManagement::ZoneProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

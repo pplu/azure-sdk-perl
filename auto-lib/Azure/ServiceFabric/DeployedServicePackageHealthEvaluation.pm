@@ -4,7 +4,7 @@ package Azure::ServiceFabric::DeployedServicePackageHealthEvaluation;
   has 'ApplicationName' => (is => 'ro', isa => 'Str'  );
   has 'NodeName' => (is => 'ro', isa => 'Str'  );
   has 'ServiceManifestName' => (is => 'ro', isa => 'Str'  );
-  has 'UnhealthyEvaluations' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'UnhealthyEvaluations' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabric::UnhealthyEvaluation]'  );
   has 'AggregatedHealthState' => (is => 'ro', isa => 'Any'  );
   has 'Description' => (is => 'ro', isa => 'Str'  );
   has 'Kind' => (is => 'ro', isa => 'Str'  );

@@ -3,7 +3,7 @@ package Azure::EngagementManagement::GetCampaignsResult;
 
   has activatedDate => (is => 'ro', isa => 'Str'  );
   has finishedDate => (is => 'ro', isa => 'Str'  );
-  has id => (is => 'ro', isa => 'Any'  );
+  has id => (is => 'ro', isa => 'Int'  );
   has state => (is => 'ro', isa => 'Str'  );
 
 1;

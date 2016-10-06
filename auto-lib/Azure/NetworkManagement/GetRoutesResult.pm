@@ -3,6 +3,6 @@ package Azure::NetworkManagement::GetRoutesResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Azure::NetworkManagement::RoutePropertiesFormat'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

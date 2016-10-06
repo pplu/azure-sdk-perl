@@ -1,7 +1,7 @@
 package Azure::BatchService::CloudJob;
   use Moose;
 
-  has 'commonEnvironmentSettings' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'commonEnvironmentSettings' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::EnvironmentSetting]'  );
   has 'constraints' => (is => 'ro', isa => 'Any'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
@@ -12,7 +12,7 @@ package Azure::BatchService::CloudJob;
   has 'jobPreparationTask' => (is => 'ro', isa => 'Any'  );
   has 'jobReleaseTask' => (is => 'ro', isa => 'Any'  );
   has 'lastModified' => (is => 'ro', isa => 'Str'  );
-  has 'metadata' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'metadata' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::MetadataItem]'  );
   has 'onAllTasksComplete' => (is => 'ro', isa => 'Str'  );
   has 'onTaskFailure' => (is => 'ro', isa => 'Str'  );
   has 'poolInfo' => (is => 'ro', isa => 'Any'  );

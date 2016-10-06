@@ -1,9 +1,9 @@
 package Azure::RecoveryServicesBackup::MabJob;
   use Moose;
 
-  has 'actionsInfo' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'actionsInfo' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'duration' => (is => 'ro', isa => 'Str'  );
-  has 'errorDetails' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'errorDetails' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServicesBackup::MabErrorInfo]'  );
   has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
   has 'mabServerName' => (is => 'ro', isa => 'Str'  );
   has 'mabServerType' => (is => 'ro', isa => 'Str'  );

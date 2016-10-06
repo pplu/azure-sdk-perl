@@ -2,7 +2,7 @@ package Azure::DevTestLabs::LabVirtualMachineProperties;
   use Moose;
 
   has 'artifactDeploymentStatus' => (is => 'ro', isa => 'Any'  );
-  has 'artifacts' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'artifacts' => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLabs::ArtifactInstallProperties]'  );
   has 'computeId' => (is => 'ro', isa => 'Str'  );
   has 'createdByUser' => (is => 'ro', isa => 'Str'  );
   has 'createdByUserId' => (is => 'ro', isa => 'Str'  );

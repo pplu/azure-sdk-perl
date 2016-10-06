@@ -8,7 +8,7 @@ package Azure::BatchService::CloudJobSchedule;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'jobSpecification' => (is => 'ro', isa => 'Any'  );
   has 'lastModified' => (is => 'ro', isa => 'Str'  );
-  has 'metadata' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'metadata' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::MetadataItem]'  );
   has 'previousState' => (is => 'ro', isa => 'Str'  );
   has 'previousStateTransitionTime' => (is => 'ro', isa => 'Str'  );
   has 'schedule' => (is => 'ro', isa => 'Any'  );

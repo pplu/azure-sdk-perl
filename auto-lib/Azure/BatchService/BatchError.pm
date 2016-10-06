@@ -3,5 +3,5 @@ package Azure::BatchService::BatchError;
 
   has 'code' => (is => 'ro', isa => 'Str'  );
   has 'message' => (is => 'ro', isa => 'Any'  );
-  has 'values' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'values' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::BatchErrorDetail]'  );
 1;

@@ -3,12 +3,12 @@ package Azure::BatchService::ComputeNode;
 
   has 'affinityId' => (is => 'ro', isa => 'Str'  );
   has 'allocationTime' => (is => 'ro', isa => 'Str'  );
-  has 'certificateReferences' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'errors' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'certificateReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::CertificateReference]'  );
+  has 'errors' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ComputeNodeError]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'ipAddress' => (is => 'ro', isa => 'Str'  );
   has 'lastBootTime' => (is => 'ro', isa => 'Str'  );
-  has 'recentTasks' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'recentTasks' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::TaskInformation]'  );
   has 'runningTasksCount' => (is => 'ro', isa => 'Int'  );
   has 'schedulingState' => (is => 'ro', isa => 'Str'  );
   has 'startTask' => (is => 'ro', isa => 'Any'  );

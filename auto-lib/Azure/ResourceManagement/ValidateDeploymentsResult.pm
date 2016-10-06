@@ -1,7 +1,7 @@
 package Azure::ResourceManagement::ValidateDeploymentsResult;
   use Moose;
 
-  has error => (is => 'ro', isa => 'Azure::ResourceManagement::ResourceManagementErrorWithDetails'  );
-  has properties => (is => 'ro', isa => 'Azure::ResourceManagement::DeploymentPropertiesExtended'  );
+  has error => (is => 'ro', isa => 'Any'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

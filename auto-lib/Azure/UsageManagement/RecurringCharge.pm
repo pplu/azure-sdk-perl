@@ -3,6 +3,6 @@ package Azure::UsageManagement::RecurringCharge;
 
   has 'RecurringCharge' => (is => 'ro', isa => 'Int'  );
   has 'EffectiveDate' => (is => 'ro', isa => 'Str'  );
-  has 'ExcludedMeterIds' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'ExcludedMeterIds' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'Name' => (is => 'ro', isa => 'Str'  );
 1;

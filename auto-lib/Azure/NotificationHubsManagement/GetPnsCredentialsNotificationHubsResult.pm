@@ -1,6 +1,6 @@
 package Azure::NotificationHubsManagement::GetPnsCredentialsNotificationHubsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Azure::NotificationHubsManagement::PnsCredentialsProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

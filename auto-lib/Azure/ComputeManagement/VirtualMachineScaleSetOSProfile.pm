@@ -6,6 +6,6 @@ package Azure::ComputeManagement::VirtualMachineScaleSetOSProfile;
   has 'computerNamePrefix' => (is => 'ro', isa => 'Str'  );
   has 'customData' => (is => 'ro', isa => 'Str'  );
   has 'linuxConfiguration' => (is => 'ro', isa => 'Any'  );
-  has 'secrets' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'secrets' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VaultSecretGroup]'  );
   has 'windowsConfiguration' => (is => 'ro', isa => 'Any'  );
 1;

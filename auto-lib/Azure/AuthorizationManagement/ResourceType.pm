@@ -3,5 +3,5 @@ package Azure::AuthorizationManagement::ResourceType;
 
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'operations' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'operations' => (is => 'ro', isa => 'ArrayRef[Azure::AuthorizationManagement::ProviderOperation]'  );
 1;

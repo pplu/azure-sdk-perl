@@ -3,7 +3,7 @@ package Azure::SearchService::StopwordsTokenFilter;
 
   has 'ignoreCase' => (is => 'ro', isa => 'Bool'  );
   has 'removeTrailing' => (is => 'ro', isa => 'Bool'  );
-  has 'stopwords' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'stopwords' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'stopwordsList' => (is => 'ro', isa => 'Any'  );
   has '@odata.type' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

@@ -1,6 +1,6 @@
 package Azure::CdnManagement::CreateEndpointsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Azure::CdnManagement::EndpointProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

@@ -1,9 +1,9 @@
 package Azure::NetworkManagement::NetworkInterfaceIPConfigurationPropertiesFormat;
   use Moose;
 
-  has 'applicationGatewayBackendAddressPools' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'loadBalancerBackendAddressPools' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'loadBalancerInboundNatRules' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'applicationGatewayBackendAddressPools' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ApplicationGatewayBackendAddressPool]'  );
+  has 'loadBalancerBackendAddressPools' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::BackendAddressPool]'  );
+  has 'loadBalancerInboundNatRules' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::InboundNatRule]'  );
   has 'primary' => (is => 'ro', isa => 'Bool'  );
   has 'privateIPAddress' => (is => 'ro', isa => 'Str'  );
   has 'privateIPAddressVersion' => (is => 'ro', isa => 'Str'  );

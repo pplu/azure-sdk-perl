@@ -1,6 +1,6 @@
 package Azure::BatchManagement::GetQuotasLocationResult;
   use Moose;
 
-  has accountQuota => (is => 'ro', isa => 'Any'  );
+  has accountQuota => (is => 'ro', isa => 'Int'  );
 
 1;

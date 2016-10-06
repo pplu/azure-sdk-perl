@@ -1,6 +1,6 @@
 package Azure::DataLakeStoreFileSystemManagement::GetAclStatusFileSystemResult;
   use Moose;
 
-  has AclStatus => (is => 'ro', isa => 'Azure::DataLakeStoreFileSystemManagement::AclStatus'  );
+  has AclStatus => (is => 'ro', isa => 'Any'  );
 
 1;

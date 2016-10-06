@@ -1,7 +1,7 @@
 package Azure::DataLakeStoreFileSystemManagement::AclStatus;
   use Moose;
 
-  has 'entries' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'entries' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'group' => (is => 'ro', isa => 'Str'  );
   has 'owner' => (is => 'ro', isa => 'Str'  );
   has 'permission' => (is => 'ro', isa => 'Int'  );

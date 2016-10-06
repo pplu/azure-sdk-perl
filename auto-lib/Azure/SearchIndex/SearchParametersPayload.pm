@@ -2,7 +2,7 @@ package Azure::SearchIndex::SearchParametersPayload;
   use Moose;
 
   has 'count' => (is => 'ro', isa => 'Bool'  );
-  has 'facets' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'facets' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'filter' => (is => 'ro', isa => 'Str'  );
   has 'highlight' => (is => 'ro', isa => 'Str'  );
   has 'highlightPostTag' => (is => 'ro', isa => 'Str'  );
@@ -10,7 +10,7 @@ package Azure::SearchIndex::SearchParametersPayload;
   has 'minimumCoverage' => (is => 'ro', isa => 'Any'  );
   has 'orderby' => (is => 'ro', isa => 'Str'  );
   has 'queryType' => (is => 'ro', isa => 'Any'  );
-  has 'scoringParameters' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'scoringParameters' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'scoringProfile' => (is => 'ro', isa => 'Str'  );
   has 'search' => (is => 'ro', isa => 'Str'  );
   has 'searchFields' => (is => 'ro', isa => 'Str'  );

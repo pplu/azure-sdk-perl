@@ -1,13 +1,13 @@
 package Azure::ServiceFabric::GetApplicationUpgradesResult;
   use Moose;
 
-  has CurrentUpgradeDomainProgress => (is => 'ro', isa => 'Any'  );
-  has DeployedApplicationHealthStates => (is => 'ro', isa => 'Any'  );
-  has FailureReason => (is => 'ro', isa => 'Azure::ServiceFabric::FailureReason'  );
+  has CurrentUpgradeDomainProgress => (is => 'ro', isa => 'HashRef'  );
+  has DeployedApplicationHealthStates => (is => 'ro', isa => 'HashRef'  );
+  has FailureReason => (is => 'ro', isa => 'Any'  );
   has FailureTimestampUtc => (is => 'ro', isa => 'Str'  );
   has Name => (is => 'ro', isa => 'Str'  );
   has NextUpgradeDomain => (is => 'ro', isa => 'Str'  );
-  has RollingUpgradeMode => (is => 'ro', isa => 'Azure::ServiceFabric::RollingUpgradeMode'  );
+  has RollingUpgradeMode => (is => 'ro', isa => 'Any'  );
   has StartTimestampUtc => (is => 'ro', isa => 'Str'  );
   has TargetApplicationTypeVersion => (is => 'ro', isa => 'Str'  );
   has TypeName => (is => 'ro', isa => 'Str'  );
@@ -15,6 +15,6 @@ package Azure::ServiceFabric::GetApplicationUpgradesResult;
   has UpgradeDomainDurationInMilliseconds => (is => 'ro', isa => 'Str'  );
   has UpgradeDomains => (is => 'ro', isa => 'Str'  );
   has UpgradeDurationInMilliseconds => (is => 'ro', isa => 'Str'  );
-  has UpgradeState => (is => 'ro', isa => 'Azure::ServiceFabric::UpgradeState'  );
+  has UpgradeState => (is => 'ro', isa => 'Any'  );
 
 1;

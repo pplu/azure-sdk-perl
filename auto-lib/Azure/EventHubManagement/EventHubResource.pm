@@ -4,7 +4,7 @@ package Azure::EventHubManagement::EventHubResource;
   has 'createdAt' => (is => 'ro', isa => 'Str'  );
   has 'messageRetentionInDays' => (is => 'ro', isa => 'Int'  );
   has 'partitionCount' => (is => 'ro', isa => 'Int'  );
-  has 'partitionIds' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'partitionIds' => (is => 'ro', isa => 'ArrayRef[Int]'  );
   has 'status' => (is => 'ro', isa => 'Str'  );
   has 'updatedAt' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );

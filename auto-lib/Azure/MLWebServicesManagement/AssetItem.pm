@@ -7,6 +7,6 @@ package Azure::MLWebServicesManagement::AssetItem;
   has 'metadata' => (is => 'ro', isa => 'HashRef'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'outputPorts' => (is => 'ro', isa => 'HashRef'  );
-  has 'parameters' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'parameters' => (is => 'ro', isa => 'ArrayRef[Azure::MLWebServicesManagement::ModuleAssetParameter]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;

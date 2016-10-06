@@ -3,6 +3,6 @@ package Azure::iotHub::GetEventHubConsumerGroupIotHubResourceResult;
 
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has tags => (is => 'ro', isa => 'Any'  );
+  has tags => (is => 'ro', isa => 'HashRef'  );
 
 1;

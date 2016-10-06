@@ -3,7 +3,7 @@ package Azure::DnsManagement::Zone;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'maxNumberOfRecordSets' => (is => 'ro', isa => 'Int'  );
-  has 'nameServers' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'nameServers' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'numberOfRecordSets' => (is => 'ro', isa => 'Int'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

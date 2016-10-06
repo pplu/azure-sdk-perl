@@ -3,8 +3,8 @@ package Azure::ComputeManagement::AvailabilitySet;
 
   has 'platformFaultDomainCount' => (is => 'ro', isa => 'Int'  );
   has 'platformUpdateDomainCount' => (is => 'ro', isa => 'Int'  );
-  has 'statuses' => (is => 'ro', isa => 'ArrayRef'  );
-  has 'virtualMachines' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'statuses' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::InstanceViewStatus]'  );
+  has 'virtualMachines' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::SubResource]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

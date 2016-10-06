@@ -3,5 +3,5 @@ package Azure::SearchService::Suggester;
 
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'searchMode' => (is => 'ro', isa => 'Any'  );
-  has 'sourceFields' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'sourceFields' => (is => 'ro', isa => 'ArrayRef[Str]'  );
 1;

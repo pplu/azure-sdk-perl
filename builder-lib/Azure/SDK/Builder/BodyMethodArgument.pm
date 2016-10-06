@@ -3,6 +3,8 @@ package Azure::SDK::Builder::BodyMethodArgument;
 
   extends 'Swagger::Schema::BodyParameter';
 
+  has type => (is => 'ro', isa => 'Str');
+
   has x_ms_client_flatten => (is => 'ro');
   has x_ms_skip_url_encoding => (is => 'ro');
   has x_ms_enum => (is => 'ro');

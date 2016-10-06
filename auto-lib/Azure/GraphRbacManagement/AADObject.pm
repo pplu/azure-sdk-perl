@@ -7,7 +7,7 @@ package Azure::GraphRbacManagement::AADObject;
   has 'objectId' => (is => 'ro', isa => 'Str'  );
   has 'objectType' => (is => 'ro', isa => 'Str'  );
   has 'securityEnabled' => (is => 'ro', isa => 'Bool'  );
-  has 'servicePrincipalNames' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'servicePrincipalNames' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'signInName' => (is => 'ro', isa => 'Str'  );
   has 'userPrincipalName' => (is => 'ro', isa => 'Str'  );
   has 'userType' => (is => 'ro', isa => 'Str'  );

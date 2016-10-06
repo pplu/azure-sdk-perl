@@ -7,7 +7,7 @@ package Azure::SearchService::WordDelimiterTokenFilter;
   has 'generateNumberParts' => (is => 'ro', isa => 'Bool'  );
   has 'generateWordParts' => (is => 'ro', isa => 'Bool'  );
   has 'preserveOriginal' => (is => 'ro', isa => 'Bool'  );
-  has 'protectedWords' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'protectedWords' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'splitOnCaseChange' => (is => 'ro', isa => 'Bool'  );
   has 'splitOnNumerics' => (is => 'ro', isa => 'Bool'  );
   has 'stemEnglishPossessive' => (is => 'ro', isa => 'Bool'  );

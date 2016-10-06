@@ -2,9 +2,9 @@ package Azure::iotHub::CreateOrUpdateIotHubResourceResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Azure::iotHub::IotHubProperties'  );
+  has properties => (is => 'ro', isa => 'Any'  );
   has resourcegroup => (is => 'ro', isa => 'Str'  );
-  has sku => (is => 'ro', isa => 'Azure::iotHub::IotHubSkuInfo'  );
+  has sku => (is => 'ro', isa => 'Any'  );
   has subscriptionid => (is => 'ro', isa => 'Str'  );
 
 1;

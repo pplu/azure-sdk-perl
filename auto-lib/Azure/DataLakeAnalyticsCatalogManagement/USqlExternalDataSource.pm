@@ -5,7 +5,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::USqlExternalDataSource;
   has 'externalDataSourceName' => (is => 'ro', isa => 'Str'  );
   has 'provider' => (is => 'ro', isa => 'Str'  );
   has 'providerString' => (is => 'ro', isa => 'Str'  );
-  has 'pushdownTypes' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'pushdownTypes' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'computeAccountName' => (is => 'ro', isa => 'Str'  );
   has 'version' => (is => 'ro', isa => 'Str'  );
 1;
