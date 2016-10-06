@@ -39,6 +39,8 @@ package Azure::SDK::Builder::PerlTypeInferer;
             } elsif ($type eq 'integer'){
               $inner = 'Int';
             } else {
+              $inner = 'Any';
+              $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
               $self->root_schema->log->warn("Find out what Moose native type for $type");
             }
           } elsif (defined $self->items->ref) {
