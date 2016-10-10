@@ -8,7 +8,7 @@ package Azure::SearchService::CreateDataSources;
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'dataSource' => (is => 'ro', required => 1, isa => 'Any',
+  has 'dataSource' => (is => 'ro', required => 1, isa => 'Azure::SearchService::DataSource',
     traits => [ 'Azure::ParamInBody' ],
   );
 

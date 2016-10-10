@@ -5,7 +5,7 @@ package Azure::MLWebServicesManagement::PatchWebServices;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'patchPayload' => (is => 'ro', required => 1, isa => 'Any',
+  has 'patchPayload' => (is => 'ro', required => 1, isa => 'Azure::MLWebServicesManagement::WebService',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

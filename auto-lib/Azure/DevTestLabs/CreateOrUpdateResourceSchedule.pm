@@ -14,7 +14,7 @@ package Azure::DevTestLabs::CreateOrUpdateResourceSchedule;
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'schedule' => (is => 'ro', required => 1, isa => 'Any',
+  has 'schedule' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::Schedule',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

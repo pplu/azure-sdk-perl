@@ -5,10 +5,10 @@ package Azure::NetworkManagement::CreateOrUpdatePublicIPAddresses;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'location' => (is => 'ro', required => 1, isa => 'Any',
+  has 'location' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'properties' => (is => 'ro', required => 1, isa => 'Any',
+  has 'properties' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::PublicIPAddress',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'publicIpAddressName' => (is => 'ro', required => 1, isa => 'Str',

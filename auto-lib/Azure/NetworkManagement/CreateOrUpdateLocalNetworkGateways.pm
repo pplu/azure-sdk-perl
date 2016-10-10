@@ -8,7 +8,7 @@ package Azure::NetworkManagement::CreateOrUpdateLocalNetworkGateways;
   has 'localNetworkGatewayName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::LocalNetworkGateway',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

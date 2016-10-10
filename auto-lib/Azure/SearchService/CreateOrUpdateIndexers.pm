@@ -14,7 +14,7 @@ package Azure::SearchService::CreateOrUpdateIndexers;
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'indexer' => (is => 'ro', required => 1, isa => 'Any',
+  has 'indexer' => (is => 'ro', required => 1, isa => 'Azure::SearchService::Indexer',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'indexerName' => (is => 'ro', required => 1, isa => 'Str',

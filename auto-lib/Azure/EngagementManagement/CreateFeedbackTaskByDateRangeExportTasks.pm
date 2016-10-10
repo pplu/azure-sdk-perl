@@ -11,7 +11,7 @@ package Azure::EngagementManagement::CreateFeedbackTaskByDateRangeExportTasks;
   has 'appName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::EngagementManagement::feedbackByDateRangeParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

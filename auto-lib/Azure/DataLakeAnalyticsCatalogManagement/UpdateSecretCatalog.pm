@@ -8,7 +8,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::UpdateSecretCatalog;
   has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::DataLakeAnalyticsCatalogManagement::DataLakeAnalyticsCatalogSecretCreateOrUpdateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'secretName' => (is => 'ro', required => 1, isa => 'Str',

@@ -11,7 +11,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::DeleteCredentialCatalog;
   has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::DataLakeAnalyticsCatalogManagement::DataLakeAnalyticsCatalogCredentialDeleteParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
 

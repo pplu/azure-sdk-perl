@@ -8,7 +8,7 @@ package Azure::ServiceFabric::SendDeployedServicePackageHealthReports;
   has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'deployedServicePackageHealthReport' => (is => 'ro', required => 1, isa => 'Any',
+  has 'deployedServicePackageHealthReport' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::DeployedServiceHealthReport',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'nodeName' => (is => 'ro', required => 1, isa => 'Str',

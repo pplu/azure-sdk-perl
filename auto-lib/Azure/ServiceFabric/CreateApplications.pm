@@ -5,7 +5,7 @@ package Azure::ServiceFabric::CreateApplications;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'applicationDescription' => (is => 'ro', required => 1, isa => 'Any',
+  has 'applicationDescription' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::ApplicationDescription',
     traits => [ 'Azure::ParamInBody' ],
   );
 

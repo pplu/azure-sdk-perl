@@ -5,7 +5,7 @@ package Azure::AuthorizationManagement::CreateOrUpdateRoleDefinitions;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'roleDefinition' => (is => 'ro', required => 1, isa => 'Any',
+  has 'roleDefinition' => (is => 'ro', required => 1, isa => 'Azure::AuthorizationManagement::RoleDefinition',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'roleDefinitionId' => (is => 'ro', required => 1, isa => 'Str',

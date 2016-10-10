@@ -8,7 +8,7 @@ package Azure::ManagementLock::CreateOrUpdateAtSubscriptionLevelManagementLocks;
   has 'lockName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ManagementLock::ManagementLockObject',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

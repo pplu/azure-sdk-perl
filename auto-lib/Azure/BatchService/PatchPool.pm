@@ -26,7 +26,7 @@ package Azure::BatchService::PatchPool;
   has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'poolPatchParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'poolPatchParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::PoolPatchParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'return-client-request-id' => (is => 'ro', isa => 'Bool',

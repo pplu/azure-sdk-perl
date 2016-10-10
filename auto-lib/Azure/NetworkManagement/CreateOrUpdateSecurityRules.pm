@@ -14,7 +14,7 @@ package Azure::NetworkManagement::CreateOrUpdateSecurityRules;
   has 'securityRuleName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'securityRuleParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'securityRuleParameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::SecurityRule',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

@@ -5,7 +5,7 @@ package Azure::DevTestLabs::CreateOrUpdateResourceLab;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'lab' => (is => 'ro', required => 1, isa => 'Any',
+  has 'lab' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::Lab',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'name' => (is => 'ro', required => 1, isa => 'Str',

@@ -5,7 +5,7 @@ package Azure::SchedulerManagement::CreateOrUpdateJobCollections;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'jobCollection' => (is => 'ro', required => 1, isa => 'Any',
+  has 'jobCollection' => (is => 'ro', required => 1, isa => 'Azure::SchedulerManagement::JobCollectionDefinition',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'jobCollectionName' => (is => 'ro', required => 1, isa => 'Str',

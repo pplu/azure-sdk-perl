@@ -2,7 +2,7 @@ package Azure::BatchService::AddJobSchedule;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'CloudJobSchedule' => (is => 'ro', required => 1, isa => 'Any',
+  has 'CloudJobSchedule' => (is => 'ro', required => 1, isa => 'Azure::BatchService::JobScheduleAddParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

@@ -2,7 +2,7 @@ package Azure::ServerManagement::CreateSession;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'SessionParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'SessionParameters' => (is => 'ro', required => 1, isa => 'Azure::ServerManagement::SessionParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

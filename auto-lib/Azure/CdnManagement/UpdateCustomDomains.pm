@@ -8,7 +8,7 @@ package Azure::CdnManagement::UpdateCustomDomains;
   has 'customDomainName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'customDomainProperties' => (is => 'ro', required => 1, isa => 'Any',
+  has 'customDomainProperties' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::CustomDomainParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'endpointName' => (is => 'ro', required => 1, isa => 'Str',

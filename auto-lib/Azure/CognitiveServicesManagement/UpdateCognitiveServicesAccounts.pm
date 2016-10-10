@@ -8,7 +8,7 @@ package Azure::CognitiveServicesManagement::UpdateCognitiveServicesAccounts;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'body' => (is => 'ro', required => 1, isa => 'Any',
+  has 'body' => (is => 'ro', required => 1, isa => 'Azure::CognitiveServicesManagement::CognitiveServicesAccountUpdateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

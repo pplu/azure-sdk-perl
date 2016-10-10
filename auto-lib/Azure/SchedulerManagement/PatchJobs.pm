@@ -5,7 +5,7 @@ package Azure::SchedulerManagement::PatchJobs;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'job' => (is => 'ro', required => 1, isa => 'Any',
+  has 'job' => (is => 'ro', required => 1, isa => 'Azure::SchedulerManagement::JobDefinition',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'jobCollectionName' => (is => 'ro', required => 1, isa => 'Str',

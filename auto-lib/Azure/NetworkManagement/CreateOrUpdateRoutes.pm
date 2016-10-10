@@ -11,7 +11,7 @@ package Azure::NetworkManagement::CreateOrUpdateRoutes;
   has 'routeName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'routeParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'routeParameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::Route',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'routeTableName' => (is => 'ro', required => 1, isa => 'Str',

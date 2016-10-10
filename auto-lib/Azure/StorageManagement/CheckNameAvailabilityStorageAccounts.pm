@@ -2,7 +2,7 @@ package Azure::StorageManagement::CheckNameAvailabilityStorageAccounts;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'accountName' => (is => 'ro', required => 1, isa => 'Any',
+  has 'accountName' => (is => 'ro', required => 1, isa => 'Azure::StorageManagement::StorageAccountCheckNameAvailabilityParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

@@ -11,7 +11,7 @@ package Azure::BatchService::RebootComputeNode;
   has 'nodeId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'nodeRebootParameter' => (is => 'ro', isa => 'Any',
+  has 'nodeRebootParameter' => (is => 'ro', isa => 'Azure::BatchService::NodeRebootParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',

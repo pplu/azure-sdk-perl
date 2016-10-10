@@ -2,7 +2,7 @@ package Azure::MediaServicesManagement::RegenerateKeyMediaService;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'RegenerateKeyInput' => (is => 'ro', required => 1, isa => 'Any',
+  has 'RegenerateKeyInput' => (is => 'ro', required => 1, isa => 'Azure::MediaServicesManagement::RegenerateKeyInput',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

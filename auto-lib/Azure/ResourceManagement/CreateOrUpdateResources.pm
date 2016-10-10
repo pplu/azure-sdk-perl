@@ -5,7 +5,7 @@ package Azure::ResourceManagement::CreateOrUpdateResources;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ResourceManagement::GenericResource',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'parentResourcePath' => (is => 'ro', required => 1, isa => 'Str',

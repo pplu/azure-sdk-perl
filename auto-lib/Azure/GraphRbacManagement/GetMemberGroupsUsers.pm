@@ -8,7 +8,7 @@ package Azure::GraphRbacManagement::GetMemberGroupsUsers;
   has 'objectId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::GraphRbacManagement::UserGetMemberGroupsParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'tenantID' => (is => 'ro', required => 1, isa => 'Str',

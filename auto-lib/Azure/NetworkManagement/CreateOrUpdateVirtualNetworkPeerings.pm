@@ -2,7 +2,7 @@ package Azure::NetworkManagement::CreateOrUpdateVirtualNetworkPeerings;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'VirtualNetworkPeeringParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'VirtualNetworkPeeringParameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::VirtualNetworkPeering',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

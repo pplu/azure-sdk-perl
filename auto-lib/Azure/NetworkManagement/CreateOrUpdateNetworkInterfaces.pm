@@ -5,13 +5,13 @@ package Azure::NetworkManagement::CreateOrUpdateNetworkInterfaces;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'location' => (is => 'ro', required => 1, isa => 'Any',
+  has 'location' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'networkInterfaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'properties' => (is => 'ro', required => 1, isa => 'Any',
+  has 'properties' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::NetworkInterface',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

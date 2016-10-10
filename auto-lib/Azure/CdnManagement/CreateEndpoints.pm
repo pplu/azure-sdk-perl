@@ -8,7 +8,7 @@ package Azure::CdnManagement::CreateEndpoints;
   has 'endpointName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'endpointProperties' => (is => 'ro', required => 1, isa => 'Any',
+  has 'endpointProperties' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::EndpointCreateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'profileName' => (is => 'ro', required => 1, isa => 'Str',

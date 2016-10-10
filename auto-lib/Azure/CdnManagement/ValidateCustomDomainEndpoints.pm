@@ -5,7 +5,7 @@ package Azure::CdnManagement::ValidateCustomDomainEndpoints;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'customDomainProperties' => (is => 'ro', required => 1, isa => 'Any',
+  has 'customDomainProperties' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::ValidateCustomDomainInput',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'endpointName' => (is => 'ro', required => 1, isa => 'Str',

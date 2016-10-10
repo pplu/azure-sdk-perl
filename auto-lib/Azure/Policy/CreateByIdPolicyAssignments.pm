@@ -5,7 +5,7 @@ package Azure::Policy::CreateByIdPolicyAssignments;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::Policy::PolicyAssignment',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'policyAssignmentId' => (is => 'ro', required => 1, isa => 'Str',

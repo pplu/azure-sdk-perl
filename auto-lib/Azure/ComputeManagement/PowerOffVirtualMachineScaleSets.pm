@@ -11,7 +11,7 @@ package Azure::ComputeManagement::PowerOffVirtualMachineScaleSets;
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'vmInstanceIDs' => (is => 'ro', isa => 'Any',
+  has 'vmInstanceIDs' => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineScaleSetVMInstanceIDs',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'vmScaleSetName' => (is => 'ro', required => 1, isa => 'Str',

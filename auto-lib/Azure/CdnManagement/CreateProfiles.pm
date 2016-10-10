@@ -8,7 +8,7 @@ package Azure::CdnManagement::CreateProfiles;
   has 'profileName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'profileProperties' => (is => 'ro', required => 1, isa => 'Any',
+  has 'profileProperties' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::ProfileCreateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

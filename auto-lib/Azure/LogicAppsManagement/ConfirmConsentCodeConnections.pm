@@ -8,7 +8,7 @@ package Azure::LogicAppsManagement::ConfirmConsentCodeConnections;
   has 'connectionName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'content' => (is => 'ro', required => 1, isa => 'Any',
+  has 'content' => (is => 'ro', required => 1, isa => 'Azure::LogicAppsManagement::ConfirmConsentCodeInput',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

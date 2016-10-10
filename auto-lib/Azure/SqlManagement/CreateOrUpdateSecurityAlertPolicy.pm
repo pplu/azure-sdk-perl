@@ -5,7 +5,7 @@ package Azure::SqlManagement::CreateOrUpdateSecurityAlertPolicy;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::SqlManagement::ServerSecurityAlertPolicyCreateOrUpdateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

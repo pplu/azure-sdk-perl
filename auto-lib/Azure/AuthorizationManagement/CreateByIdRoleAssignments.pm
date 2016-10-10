@@ -5,7 +5,7 @@ package Azure::AuthorizationManagement::CreateByIdRoleAssignments;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::AuthorizationManagement::RoleAssignmentCreateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'roleAssignmentId' => (is => 'ro', required => 1, isa => 'Str',

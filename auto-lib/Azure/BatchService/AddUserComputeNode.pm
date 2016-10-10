@@ -2,7 +2,7 @@ package Azure::BatchService::AddUserComputeNode;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'User' => (is => 'ro', required => 1, isa => 'Any',
+  has 'User' => (is => 'ro', required => 1, isa => 'Azure::BatchService::ComputeNodeUser',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

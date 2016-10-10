@@ -11,7 +11,7 @@ package Azure::TrafficManagerManagement::CreateOrUpdateEndpoints;
   has 'endpointType' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::TrafficManagerManagement::Endpoint',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'profileName' => (is => 'ro', required => 1, isa => 'Str',

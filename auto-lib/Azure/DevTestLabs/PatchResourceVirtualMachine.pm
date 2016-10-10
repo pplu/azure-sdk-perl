@@ -8,7 +8,7 @@ package Azure::DevTestLabs::PatchResourceVirtualMachine;
   has 'labName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'labVirtualMachine' => (is => 'ro', required => 1, isa => 'Any',
+  has 'labVirtualMachine' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::LabVirtualMachine',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'name' => (is => 'ro', required => 1, isa => 'Str',

@@ -20,7 +20,7 @@ package Azure::BatchService::RemoveNodesPool;
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'nodeRemoveParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'nodeRemoveParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::NodeRemoveParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',

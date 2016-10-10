@@ -5,7 +5,7 @@ package Azure::ServiceFabric::DisableNodes;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'disableNode' => (is => 'ro', required => 1, isa => 'Any',
+  has 'disableNode' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::DisableNode',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'nodeName' => (is => 'ro', required => 1, isa => 'Str',

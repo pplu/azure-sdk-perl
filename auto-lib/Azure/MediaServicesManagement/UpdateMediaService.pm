@@ -2,7 +2,7 @@ package Azure::MediaServicesManagement::UpdateMediaService;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'MediaService' => (is => 'ro', required => 1, isa => 'Any',
+  has 'MediaService' => (is => 'ro', required => 1, isa => 'Azure::MediaServicesManagement::MediaService',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

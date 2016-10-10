@@ -2,7 +2,7 @@ package Azure::MediaServicesManagement::SyncStorageKeysMediaService;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'SyncStorageKeysInput' => (is => 'ro', required => 1, isa => 'Any',
+  has 'SyncStorageKeysInput' => (is => 'ro', required => 1, isa => 'Azure::MediaServicesManagement::SyncStorageKeysInput',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

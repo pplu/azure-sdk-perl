@@ -5,7 +5,7 @@ package Azure::ServiceFabric::SendPartitionHealthReports;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'partitionHealthReport' => (is => 'ro', required => 1, isa => 'Any',
+  has 'partitionHealthReport' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::PartitionHealthReport',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'partitionId' => (is => 'ro', required => 1, isa => 'Str',

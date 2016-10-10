@@ -11,7 +11,7 @@ package Azure::ComputeManagement::DeleteInstancesVirtualMachineScaleSets;
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'vmInstanceIDs' => (is => 'ro', required => 1, isa => 'Any',
+  has 'vmInstanceIDs' => (is => 'ro', required => 1, isa => 'Azure::ComputeManagement::VirtualMachineScaleSetVMInstanceRequiredIDs',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'vmScaleSetName' => (is => 'ro', required => 1, isa => 'Str',

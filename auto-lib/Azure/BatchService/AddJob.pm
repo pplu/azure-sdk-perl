@@ -2,7 +2,7 @@ package Azure::BatchService::AddJob;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Job' => (is => 'ro', required => 1, isa => 'Any',
+  has 'Job' => (is => 'ro', required => 1, isa => 'Azure::BatchService::JobAddParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

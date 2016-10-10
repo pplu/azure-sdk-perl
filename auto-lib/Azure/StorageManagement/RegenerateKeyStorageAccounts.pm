@@ -8,7 +8,7 @@ package Azure::StorageManagement::RegenerateKeyStorageAccounts;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'regenerateKey' => (is => 'ro', required => 1, isa => 'Any',
+  has 'regenerateKey' => (is => 'ro', required => 1, isa => 'Azure::StorageManagement::StorageAccountRegenerateKeyParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

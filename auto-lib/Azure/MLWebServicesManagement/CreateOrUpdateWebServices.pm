@@ -5,7 +5,7 @@ package Azure::MLWebServicesManagement::CreateOrUpdateWebServices;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'createOrUpdatePayload' => (is => 'ro', required => 1, isa => 'Any',
+  has 'createOrUpdatePayload' => (is => 'ro', required => 1, isa => 'Azure::MLWebServicesManagement::WebService',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

@@ -8,7 +8,7 @@ package Azure::ServiceFabric::UpdateServices;
   has 'serviceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'updateServiceDescription' => (is => 'ro', required => 1, isa => 'Any',
+  has 'updateServiceDescription' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::UpdateServiceDescription',
     traits => [ 'Azure::ParamInBody' ],
   );
 

@@ -8,7 +8,7 @@ package Azure::MLCommitmentPlansManagement::CreateOrUpdateCommitmentPlans;
   has 'commitmentPlanName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'createOrUpdatePayload' => (is => 'ro', required => 1, isa => 'Any',
+  has 'createOrUpdatePayload' => (is => 'ro', required => 1, isa => 'Azure::MLCommitmentPlansManagement::CommitmentPlan',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

@@ -11,7 +11,7 @@ package Azure::BatchService::ReimageComputeNode;
   has 'nodeId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'nodeReimageParameter' => (is => 'ro', isa => 'Any',
+  has 'nodeReimageParameter' => (is => 'ro', isa => 'Azure::BatchService::NodeReimageParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',

@@ -11,7 +11,7 @@ package Azure::SearchService::AnalyzeIndexes;
   has 'indexName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'request' => (is => 'ro', required => 1, isa => 'Any',
+  has 'request' => (is => 'ro', required => 1, isa => 'Azure::SearchService::AnalyzeRequest',
     traits => [ 'Azure::ParamInBody' ],
   );
 

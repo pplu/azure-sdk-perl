@@ -2,7 +2,7 @@ package Azure::ServerManagement::UpdateNode;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'NodeParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'NodeParameters' => (is => 'ro', required => 1, isa => 'Azure::ServerManagement::NodeParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

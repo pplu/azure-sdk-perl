@@ -5,7 +5,7 @@ package Azure::PowerBIEmbeddedManagement::checkNameAvailabilityWorkspaceCollecti
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'body' => (is => 'ro', required => 1, isa => 'Any',
+  has 'body' => (is => 'ro', required => 1, isa => 'Azure::PowerBIEmbeddedManagement::CheckNameRequest',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'location' => (is => 'ro', required => 1, isa => 'Str',

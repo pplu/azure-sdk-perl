@@ -11,7 +11,7 @@ package Azure::DevTestLabs::CreateOrUpdateResourcePolicy;
   has 'name' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'policy' => (is => 'ro', required => 1, isa => 'Any',
+  has 'policy' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::Policy',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'policySetName' => (is => 'ro', required => 1, isa => 'Str',

@@ -11,7 +11,7 @@ package Azure::DnsManagement::CreateOrUpdateRecordSets;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::DnsManagement::RecordSet',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'recordType' => (is => 'ro', required => 1, isa => 'Str',

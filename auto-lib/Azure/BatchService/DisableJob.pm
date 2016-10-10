@@ -20,7 +20,7 @@ package Azure::BatchService::DisableJob;
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'jobDisableParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'jobDisableParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::JobDisableParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'jobId' => (is => 'ro', required => 1, isa => 'Str',

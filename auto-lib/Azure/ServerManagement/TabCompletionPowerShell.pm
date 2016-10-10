@@ -2,7 +2,7 @@ package Azure::ServerManagement::TabCompletionPowerShell;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'PowerShellTabCompletionParamters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'PowerShellTabCompletionParamters' => (is => 'ro', required => 1, isa => 'Azure::ServerManagement::PowerShellTabCompletionParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

@@ -8,7 +8,7 @@ package Azure::ServiceFabric::CreateServiceGroupFromTemplates;
   has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'serviceDescriptionTemplate' => (is => 'ro', required => 1, isa => 'Any',
+  has 'serviceDescriptionTemplate' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::ServiceDescriptionTemplate',
     traits => [ 'Azure::ParamInBody' ],
   );
 

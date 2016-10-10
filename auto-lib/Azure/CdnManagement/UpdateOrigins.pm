@@ -11,7 +11,7 @@ package Azure::CdnManagement::UpdateOrigins;
   has 'originName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'originProperties' => (is => 'ro', required => 1, isa => 'Any',
+  has 'originProperties' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::OriginParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'profileName' => (is => 'ro', required => 1, isa => 'Str',

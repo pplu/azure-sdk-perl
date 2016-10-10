@@ -14,7 +14,7 @@ package Azure::LogicManagement::ValidateWorkflows;
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'workflow' => (is => 'ro', required => 1, isa => 'Any',
+  has 'workflow' => (is => 'ro', required => 1, isa => 'Azure::LogicManagement::Workflow',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'workflowName' => (is => 'ro', required => 1, isa => 'Str',

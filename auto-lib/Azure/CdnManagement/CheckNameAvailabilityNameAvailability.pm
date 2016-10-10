@@ -5,7 +5,7 @@ package Azure::CdnManagement::CheckNameAvailabilityNameAvailability;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'checkNameAvailabilityInput' => (is => 'ro', required => 1, isa => 'Any',
+  has 'checkNameAvailabilityInput' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::CheckNameAvailabilityInput',
     traits => [ 'Azure::ParamInBody' ],
   );
 

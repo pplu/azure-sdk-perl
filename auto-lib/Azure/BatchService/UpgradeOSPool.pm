@@ -26,7 +26,7 @@ package Azure::BatchService::UpgradeOSPool;
   has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'poolUpgradeOSParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'poolUpgradeOSParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::PoolUpgradeOSParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'return-client-request-id' => (is => 'ro', isa => 'Bool',

@@ -23,7 +23,7 @@ package Azure::BatchService::UpdateJob;
   has 'jobId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'jobUpdateParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'jobUpdateParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::JobUpdateParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',

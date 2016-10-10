@@ -2,7 +2,7 @@ package Azure::ServerManagement::CreateGateway;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'GatewayParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'GatewayParameters' => (is => 'ro', required => 1, isa => 'Azure::ServerManagement::GatewayParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

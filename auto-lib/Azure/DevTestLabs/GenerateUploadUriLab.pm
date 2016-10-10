@@ -5,7 +5,7 @@ package Azure::DevTestLabs::GenerateUploadUriLab;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'generateUploadUriParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'generateUploadUriParameter' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::GenerateUploadUriParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'name' => (is => 'ro', required => 1, isa => 'Str',

@@ -20,7 +20,7 @@ package Azure::RecoveryServicesBackup::ProvisionItemLevelRecoveryConnections;
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'resourceILRRequest' => (is => 'ro', required => 1, isa => 'Any',
+  has 'resourceILRRequest' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::ILRRequest',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

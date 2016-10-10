@@ -5,7 +5,7 @@ package Azure::iotHub::CreateOrUpdateIotHubResource;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'iotHubDescription' => (is => 'ro', required => 1, isa => 'Any',
+  has 'iotHubDescription' => (is => 'ro', required => 1, isa => 'Azure::iotHub::IotHubDescription',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

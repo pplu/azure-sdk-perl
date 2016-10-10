@@ -23,7 +23,7 @@ package Azure::BatchService::PatchJobSchedule;
   has 'jobScheduleId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'jobSchedulePatchParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'jobSchedulePatchParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::JobSchedulePatchParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',

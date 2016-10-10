@@ -5,7 +5,7 @@ package Azure::DevTestLabs::CreateOrUpdateResourceCustomImage;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'customImage' => (is => 'ro', required => 1, isa => 'Any',
+  has 'customImage' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::CustomImage',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'labName' => (is => 'ro', required => 1, isa => 'Str',

@@ -11,7 +11,7 @@ package Azure::NetworkManagement::CreateOrUpdateSubnets;
   has 'subnetName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'subnetParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'subnetParameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::Subnet',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

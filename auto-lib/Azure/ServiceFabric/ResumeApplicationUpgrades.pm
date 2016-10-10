@@ -8,7 +8,7 @@ package Azure::ServiceFabric::ResumeApplicationUpgrades;
   has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'resumeApplicationUpgrade' => (is => 'ro', required => 1, isa => 'Any',
+  has 'resumeApplicationUpgrade' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::ResumeApplicationUpgrade',
     traits => [ 'Azure::ParamInBody' ],
   );
 

@@ -8,7 +8,7 @@ package Azure::DevTestLabs::GenerateArmTemplateArtifact;
   has 'artifactSourceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'generateArmTemplateRequest' => (is => 'ro', required => 1, isa => 'Any',
+  has 'generateArmTemplateRequest' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::GenerateArmTemplateRequest',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'labName' => (is => 'ro', required => 1, isa => 'Str',

@@ -5,7 +5,7 @@ package Azure::iotHub::CheckNameAvailabilityIotHubResource;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'operationInputs' => (is => 'ro', required => 1, isa => 'Any',
+  has 'operationInputs' => (is => 'ro', required => 1, isa => 'Azure::iotHub::OperationInputs',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

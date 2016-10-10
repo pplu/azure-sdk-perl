@@ -5,7 +5,7 @@ package Azure::ResourceManagement::MoveResourcesResources;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ResourceManagement::ResourcesMoveInfo',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'sourceResourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

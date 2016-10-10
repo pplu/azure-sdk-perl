@@ -5,7 +5,7 @@ package Azure::ServiceFabric::SendClusterHealthReports;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'clusterHealthReport' => (is => 'ro', required => 1, isa => 'Any',
+  has 'clusterHealthReport' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::ClusterHealthReport',
     traits => [ 'Azure::ParamInBody' ],
   );
 

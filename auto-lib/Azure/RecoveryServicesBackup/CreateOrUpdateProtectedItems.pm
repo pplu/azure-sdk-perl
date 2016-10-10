@@ -17,7 +17,7 @@ package Azure::RecoveryServicesBackup::CreateOrUpdateProtectedItems;
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'resourceProtectedItem' => (is => 'ro', required => 1, isa => 'Any',
+  has 'resourceProtectedItem' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::ProtectedItem',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

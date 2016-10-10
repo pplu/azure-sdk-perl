@@ -5,7 +5,7 @@ package Azure::DevTestLabs::CreateOrUpdateResourceFormula;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'formula' => (is => 'ro', required => 1, isa => 'Any',
+  has 'formula' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::Formula',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'labName' => (is => 'ro', required => 1, isa => 'Str',

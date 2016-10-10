@@ -8,7 +8,7 @@ package Azure::GraphRbacManagement::AddMemberGroups;
   has 'groupObjectId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::GraphRbacManagement::GroupAddMemberParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'tenantID' => (is => 'ro', required => 1, isa => 'Str',

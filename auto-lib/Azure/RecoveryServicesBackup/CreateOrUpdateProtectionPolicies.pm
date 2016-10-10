@@ -11,7 +11,7 @@ package Azure::RecoveryServicesBackup::CreateOrUpdateProtectionPolicies;
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'resourceProtectionPolicy' => (is => 'ro', required => 1, isa => 'Any',
+  has 'resourceProtectionPolicy' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::ProtectionPolicy',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

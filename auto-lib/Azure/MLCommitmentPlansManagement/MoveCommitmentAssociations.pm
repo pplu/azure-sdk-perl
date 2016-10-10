@@ -11,7 +11,7 @@ package Azure::MLCommitmentPlansManagement::MoveCommitmentAssociations;
   has 'commitmentPlanName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'movePayload' => (is => 'ro', required => 1, isa => 'Any',
+  has 'movePayload' => (is => 'ro', required => 1, isa => 'Azure::MLCommitmentPlansManagement::MoveCommitmentAssociationRequest',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

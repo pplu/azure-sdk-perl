@@ -5,7 +5,7 @@ package Azure::CdnManagement::LoadContentEndpoints;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'contentFilePaths' => (is => 'ro', required => 1, isa => 'Any',
+  has 'contentFilePaths' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::LoadParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'endpointName' => (is => 'ro', required => 1, isa => 'Str',

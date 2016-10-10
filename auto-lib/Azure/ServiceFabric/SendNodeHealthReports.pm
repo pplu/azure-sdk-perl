@@ -5,7 +5,7 @@ package Azure::ServiceFabric::SendNodeHealthReports;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'nodeHealthReport' => (is => 'ro', required => 1, isa => 'Any',
+  has 'nodeHealthReport' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::NodeHealthReport',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'nodeName' => (is => 'ro', required => 1, isa => 'Str',

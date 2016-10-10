@@ -5,7 +5,7 @@ package Azure::LogicAppsManagement::CreateOrUpdateConnections;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'connection' => (is => 'ro', required => 1, isa => 'Any',
+  has 'connection' => (is => 'ro', required => 1, isa => 'Azure::LogicAppsManagement::Connection',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'connectionName' => (is => 'ro', required => 1, isa => 'Str',

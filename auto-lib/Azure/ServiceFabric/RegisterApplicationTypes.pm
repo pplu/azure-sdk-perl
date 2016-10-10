@@ -5,7 +5,7 @@ package Azure::ServiceFabric::RegisterApplicationTypes;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'registerApplicationType' => (is => 'ro', required => 1, isa => 'Any',
+  has 'registerApplicationType' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::RegisterApplicationType',
     traits => [ 'Azure::ParamInBody' ],
   );
 

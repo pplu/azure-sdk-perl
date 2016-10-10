@@ -17,7 +17,7 @@ package Azure::DevTestLabs::CreateOrUpdateResourceVirtualNetwork;
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'virtualNetwork' => (is => 'ro', required => 1, isa => 'Any',
+  has 'virtualNetwork' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::VirtualNetwork',
     traits => [ 'Azure::ParamInBody' ],
   );
 

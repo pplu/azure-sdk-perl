@@ -11,7 +11,7 @@ package Azure::BatchService::UpdateUserComputeNode;
   has 'nodeId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'nodeUpdateUserParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'nodeUpdateUserParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::NodeUpdateUserParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',

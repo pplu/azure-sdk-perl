@@ -5,7 +5,7 @@ package Azure::GraphRbacManagement::IsMemberOfGroups;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::GraphRbacManagement::CheckGroupMembershipParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'tenantID' => (is => 'ro', required => 1, isa => 'Str',

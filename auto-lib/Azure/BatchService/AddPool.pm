@@ -2,7 +2,7 @@ package Azure::BatchService::AddPool;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Pool' => (is => 'ro', required => 1, isa => 'Any',
+  has 'Pool' => (is => 'ro', required => 1, isa => 'Azure::BatchService::PoolAddParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

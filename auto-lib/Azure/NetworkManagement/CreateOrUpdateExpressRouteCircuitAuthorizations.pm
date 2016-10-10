@@ -8,7 +8,7 @@ package Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitAuthorization
   has 'authorizationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'authorizationParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'authorizationParameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::ExpressRouteCircuitAuthorization',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'circuitName' => (is => 'ro', required => 1, isa => 'Str',

@@ -5,7 +5,7 @@ package Azure::iotHub::ImportDevicesIotHubResource;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'importDevicesParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'importDevicesParameters' => (is => 'ro', required => 1, isa => 'Azure::iotHub::ImportDevicesRequest',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

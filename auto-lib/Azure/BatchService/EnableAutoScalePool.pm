@@ -23,7 +23,7 @@ package Azure::BatchService::EnableAutoScalePool;
   has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'poolEnableAutoScaleParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'poolEnableAutoScaleParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::PoolEnableAutoScaleParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'poolId' => (is => 'ro', required => 1, isa => 'Str',

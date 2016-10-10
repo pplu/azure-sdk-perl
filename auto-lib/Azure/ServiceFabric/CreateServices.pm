@@ -8,7 +8,7 @@ package Azure::ServiceFabric::CreateServices;
   has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'createServiceDescription' => (is => 'ro', required => 1, isa => 'Any',
+  has 'createServiceDescription' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::CreateServiceDescription',
     traits => [ 'Azure::ParamInBody' ],
   );
 

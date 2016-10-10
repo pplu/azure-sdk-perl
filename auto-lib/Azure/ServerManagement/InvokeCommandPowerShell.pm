@@ -2,7 +2,7 @@ package Azure::ServerManagement::InvokeCommandPowerShell;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'PowerShellCommandParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'PowerShellCommandParameters' => (is => 'ro', required => 1, isa => 'Azure::ServerManagement::PowerShellCommandParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',

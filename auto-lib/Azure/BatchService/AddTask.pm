@@ -17,7 +17,7 @@ package Azure::BatchService::AddTask;
   has 'return-client-request-id' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'task' => (is => 'ro', required => 1, isa => 'Any',
+  has 'task' => (is => 'ro', required => 1, isa => 'Azure::BatchService::TaskAddParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'timeout' => (is => 'ro', isa => 'Int',

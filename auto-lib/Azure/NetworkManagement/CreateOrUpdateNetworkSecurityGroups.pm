@@ -8,7 +8,7 @@ package Azure::NetworkManagement::CreateOrUpdateNetworkSecurityGroups;
   has 'networkSecurityGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::NetworkSecurityGroup',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

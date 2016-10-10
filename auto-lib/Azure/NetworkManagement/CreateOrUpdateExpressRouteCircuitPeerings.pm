@@ -11,7 +11,7 @@ package Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitPeerings;
   has 'peeringName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'peeringParameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'peeringParameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::ExpressRouteCircuitPeering',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

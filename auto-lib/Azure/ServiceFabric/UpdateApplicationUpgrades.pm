@@ -8,7 +8,7 @@ package Azure::ServiceFabric::UpdateApplicationUpgrades;
   has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'updateApplicationUpgradeDescription' => (is => 'ro', required => 1, isa => 'Any',
+  has 'updateApplicationUpgradeDescription' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::UpdateApplicationUpgradeDescription',
     traits => [ 'Azure::ParamInBody' ],
   );
 

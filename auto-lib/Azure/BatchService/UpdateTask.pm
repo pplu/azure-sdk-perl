@@ -32,7 +32,7 @@ package Azure::BatchService::UpdateTask;
   has 'taskId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'taskUpdateParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'taskUpdateParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::TaskUpdateParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'timeout' => (is => 'ro', isa => 'Int',

@@ -5,7 +5,7 @@ package Azure::ServiceFabric::SendServiceHealths;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'serviceHealthReport' => (is => 'ro', required => 1, isa => 'Any',
+  has 'serviceHealthReport' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::ServiceHealthReport',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'serviceName' => (is => 'ro', required => 1, isa => 'Str',

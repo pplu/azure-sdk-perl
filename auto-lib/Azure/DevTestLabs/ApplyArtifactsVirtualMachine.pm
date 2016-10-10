@@ -5,7 +5,7 @@ package Azure::DevTestLabs::ApplyArtifactsVirtualMachine;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'applyArtifactsRequest' => (is => 'ro', required => 1, isa => 'Any',
+  has 'applyArtifactsRequest' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::ApplyArtifactsRequest',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'labName' => (is => 'ro', required => 1, isa => 'Str',

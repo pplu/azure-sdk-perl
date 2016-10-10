@@ -11,7 +11,7 @@ package Azure::NotificationHubsManagement::CreateOrUpdateNotificationHubs;
   has 'notificationHubName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::NotificationHubsManagement::NotificationHubCreateOrUpdateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

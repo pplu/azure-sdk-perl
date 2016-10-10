@@ -26,7 +26,7 @@ package Azure::BatchService::ResizePool;
   has 'poolId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'poolResizeParameter' => (is => 'ro', required => 1, isa => 'Any',
+  has 'poolResizeParameter' => (is => 'ro', required => 1, isa => 'Azure::BatchService::PoolResizeParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'return-client-request-id' => (is => 'ro', isa => 'Bool',

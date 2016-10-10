@@ -8,7 +8,7 @@ package Azure::IntuneResourceManagement::CreateOrUpdateMAMPolicyIos;
   has 'hostName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Any',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::IntuneResourceManagement::iOSMAMPolicy',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'policyName' => (is => 'ro', required => 1, isa => 'Str',

@@ -59,9 +59,28 @@ package Azure::SDK::Builder::PerlTypeInferer;
           $self->root_schema->log->warn('Can\'t find a Perl type for ' . $self->type);
           return 'Any'
         }
+      } elsif ($self->can('schema') and defined $self->schema) {
+        if (defined $self->schema->ref) {
+          my $obj = $self->root_schema->object_for_ref($self->schema);
+          return 'Azure::' . $obj->name;
+        } elsif (defined $self->schema->type) {
+          my $type = $self->schema->type;
+          my $inner;
+
+          if      ($type eq 'string'){
+            $inner = 'Str';
+          } elsif ($type eq 'integer'){
+            $inner = 'Int';
+          } else {
+            $inner = 'Any';
+            $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
+            $self->root_schema->log->warn("Find out what Moose type for $type");
+          }
+          return $inner;
+        }
       } else {
         $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
-        $self->root_schema->log->warn('Can\'t find a Perl type because self->type is undefined');
+        $self->root_schema->log->warn('Can\'t find a Perl type because self->type and self->schema is undefined');
         return 'Any'
       }
     }

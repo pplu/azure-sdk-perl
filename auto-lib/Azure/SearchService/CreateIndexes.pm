@@ -8,7 +8,7 @@ package Azure::SearchService::CreateIndexes;
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'index' => (is => 'ro', required => 1, isa => 'Any',
+  has 'index' => (is => 'ro', required => 1, isa => 'Azure::SearchService::Index',
     traits => [ 'Azure::ParamInBody' ],
   );
 

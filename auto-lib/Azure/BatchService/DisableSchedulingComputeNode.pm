@@ -8,7 +8,7 @@ package Azure::BatchService::DisableSchedulingComputeNode;
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'nodeDisableSchedulingParameter' => (is => 'ro', isa => 'Any',
+  has 'nodeDisableSchedulingParameter' => (is => 'ro', isa => 'Azure::BatchService::NodeDisableSchedulingParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'nodeId' => (is => 'ro', required => 1, isa => 'Str',
