@@ -6,6 +6,6 @@ package Azure::Subscription::Subscription;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );
   has 'subscriptionId' => (is => 'ro', isa => 'Str'  );
-  has 'subscriptionPolicies' => (is => 'ro', isa => 'Any'  );
+  has 'subscriptionPolicies' => (is => 'ro', isa => 'Azure::Subscription::SubscriptionPolicies'  );
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
 1;

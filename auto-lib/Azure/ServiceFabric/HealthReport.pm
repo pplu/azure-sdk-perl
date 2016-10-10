@@ -2,7 +2,7 @@ package Azure::ServiceFabric::HealthReport;
   use Moose;
 
   has 'Description' => (is => 'ro', isa => 'Str'  );
-  has 'HealthState' => (is => 'ro', isa => 'Any'  );
+  has 'HealthState' => (is => 'ro', isa => 'Azure::ServiceFabric::HealthState'  );
   has 'Property' => (is => 'ro', isa => 'Str'  );
   has 'RemoveWhenExpired' => (is => 'ro', isa => 'Bool'  );
   has 'SequenceNumber' => (is => 'ro', isa => 'Str'  );

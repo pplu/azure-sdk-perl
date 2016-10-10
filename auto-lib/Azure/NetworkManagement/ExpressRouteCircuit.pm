@@ -2,7 +2,7 @@ package Azure::NetworkManagement::ExpressRouteCircuit;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
-  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::NetworkManagement::ExpressRouteCircuitSku'  );
   has 'allowClassicOperations' => (is => 'ro', isa => 'Bool'  );
   has 'authorizations' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ExpressRouteCircuitAuthorization]'  );
   has 'circuitProvisioningState' => (is => 'ro', isa => 'Str'  );

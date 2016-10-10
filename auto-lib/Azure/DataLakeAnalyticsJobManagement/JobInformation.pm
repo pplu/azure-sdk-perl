@@ -9,7 +9,7 @@ package Azure::DataLakeAnalyticsJobManagement::JobInformation;
   has 'logFolder' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'priority' => (is => 'ro', isa => 'Int'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'properties' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsJobManagement::JobProperties'  );
   has 'result' => (is => 'ro', isa => 'Str'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );

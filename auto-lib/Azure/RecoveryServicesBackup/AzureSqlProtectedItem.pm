@@ -1,7 +1,7 @@
 package Azure::RecoveryServicesBackup::AzureSqlProtectedItem;
   use Moose;
 
-  has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
+  has 'extendedInfo' => (is => 'ro', isa => 'Azure::RecoveryServicesBackup::AzureSqlProtectedItemExtendedInfo'  );
   has 'protectedItemDataId' => (is => 'ro', isa => 'Str'  );
   has 'protectionState' => (is => 'ro', isa => 'Str'  );
   has 'backupManagementType' => (is => 'ro', isa => 'Str'  );

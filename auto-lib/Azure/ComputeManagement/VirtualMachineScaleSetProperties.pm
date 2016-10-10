@@ -3,6 +3,6 @@ package Azure::ComputeManagement::VirtualMachineScaleSetProperties;
 
   has 'overProvision' => (is => 'ro', isa => 'Bool'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
-  has 'upgradePolicy' => (is => 'ro', isa => 'Any'  );
-  has 'virtualMachineProfile' => (is => 'ro', isa => 'Any'  );
+  has 'upgradePolicy' => (is => 'ro', isa => 'Azure::ComputeManagement::UpgradePolicy'  );
+  has 'virtualMachineProfile' => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineScaleSetVMProfile'  );
 1;

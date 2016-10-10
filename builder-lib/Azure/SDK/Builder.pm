@@ -190,6 +190,14 @@ package Azure::SDK::Builder;
     return ($parts[1], $parts[2]);
   }
 
+  sub object_for_ref {
+    my ($self, $ref) = @_;
+
+    my ($first, $second) = $self->path_parts($ref->ref);
+
+    return $self->objects->{ $second };
+  }
+
   sub resolve_path {
     my ($self, $path) = @_;
 

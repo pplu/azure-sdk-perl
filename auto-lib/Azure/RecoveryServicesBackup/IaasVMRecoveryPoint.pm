@@ -3,7 +3,7 @@ package Azure::RecoveryServicesBackup::IaasVMRecoveryPoint;
 
   has 'isInstantILRSessionActive' => (is => 'ro', isa => 'Bool'  );
   has 'isSourceVMEncrypted' => (is => 'ro', isa => 'Bool'  );
-  has 'keyAndSecret' => (is => 'ro', isa => 'Any'  );
+  has 'keyAndSecret' => (is => 'ro', isa => 'Azure::RecoveryServicesBackup::KeyAndSecretDetails'  );
   has 'recoveryPointAdditionalInfo' => (is => 'ro', isa => 'Str'  );
   has 'recoveryPointTime' => (is => 'ro', isa => 'Str'  );
   has 'recoveryPointType' => (is => 'ro', isa => 'Str'  );

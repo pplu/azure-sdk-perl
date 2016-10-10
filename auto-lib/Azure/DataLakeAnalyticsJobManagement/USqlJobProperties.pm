@@ -3,11 +3,11 @@ package Azure::DataLakeAnalyticsJobManagement::USqlJobProperties;
 
   has 'algebraFilePath' => (is => 'ro', isa => 'Str'  );
   has 'compileMode' => (is => 'ro', isa => 'Str'  );
-  has 'debugData' => (is => 'ro', isa => 'Any'  );
+  has 'debugData' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsJobManagement::JobDataPath'  );
   has 'diagnostics' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsJobManagement::Diagnostics]'  );
   has 'resources' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsJobManagement::JobResource]'  );
   has 'rootProcessNodeId' => (is => 'ro', isa => 'Str'  );
-  has 'statistics' => (is => 'ro', isa => 'Any'  );
+  has 'statistics' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsJobManagement::JobStatistics'  );
   has 'totalCompilationTime' => (is => 'ro', isa => 'Str'  );
   has 'totalPauseTime' => (is => 'ro', isa => 'Str'  );
   has 'totalQueuedTime' => (is => 'ro', isa => 'Str'  );

@@ -9,6 +9,6 @@ package Azure::NetworkManagement::NetworkInterfaceIPConfigurationPropertiesForma
   has 'privateIPAddressVersion' => (is => 'ro', isa => 'Str'  );
   has 'privateIPAllocationMethod' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
-  has 'publicIPAddress' => (is => 'ro', isa => 'Any'  );
-  has 'subnet' => (is => 'ro', isa => 'Any'  );
+  has 'publicIPAddress' => (is => 'ro', isa => 'Azure::NetworkManagement::PublicIPAddress'  );
+  has 'subnet' => (is => 'ro', isa => 'Azure::NetworkManagement::Subnet'  );
 1;

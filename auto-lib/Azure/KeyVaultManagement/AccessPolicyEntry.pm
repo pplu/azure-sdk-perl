@@ -3,6 +3,6 @@ package Azure::KeyVaultManagement::AccessPolicyEntry;
 
   has 'applicationId' => (is => 'ro', isa => 'Str'  );
   has 'objectId' => (is => 'ro', isa => 'Str'  );
-  has 'permissions' => (is => 'ro', isa => 'Any'  );
+  has 'permissions' => (is => 'ro', isa => 'Azure::KeyVaultManagement::Permissions'  );
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
 1;

@@ -3,6 +3,7 @@ package Azure::SDK::Builder::Parameter;
 
   extends 'Swagger::Schema::Schema';
 
+  has ref => (is => 'ro', isa => 'Str');
   has type => (is => 'ro', isa => 'Str');
 
   has root_schema => (

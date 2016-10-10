@@ -1,7 +1,7 @@
 package Azure::ComputeManagement::VirtualMachine;
   use Moose;
 
-  has 'plan' => (is => 'ro', isa => 'Any'  );
+  has 'plan' => (is => 'ro', isa => 'Azure::ComputeManagement::Plan'  );
   has 'resources' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VirtualMachineExtension]'  );
   has 'availabilitySet' => (is => 'ro', isa => 'Any'  );
   has 'diagnosticsProfile' => (is => 'ro', isa => 'Any'  );

@@ -2,7 +2,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::USqlIndex;
   use Moose;
 
   has 'columns' => (is => 'ro', isa => 'ArrayRef[Str]'  );
-  has 'distributionInfo' => (is => 'ro', isa => 'Any'  );
+  has 'distributionInfo' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsCatalogManagement::USqlDistributionInfo'  );
   has 'indexId' => (is => 'ro', isa => 'Int'  );
   has 'indexKeys' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsCatalogManagement::USqlDirectedColumn]'  );
   has 'isColumnstore' => (is => 'ro', isa => 'Bool'  );

@@ -1,7 +1,7 @@
 package Azure::DevTestLabs::LabVirtualMachineProperties;
   use Moose;
 
-  has 'artifactDeploymentStatus' => (is => 'ro', isa => 'Any'  );
+  has 'artifactDeploymentStatus' => (is => 'ro', isa => 'Azure::DevTestLabs::ArtifactDeploymentStatusProperties'  );
   has 'artifacts' => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLabs::ArtifactInstallProperties]'  );
   has 'computeId' => (is => 'ro', isa => 'Str'  );
   has 'createdByUser' => (is => 'ro', isa => 'Str'  );
@@ -9,7 +9,7 @@ package Azure::DevTestLabs::LabVirtualMachineProperties;
   has 'customImageId' => (is => 'ro', isa => 'Str'  );
   has 'disallowPublicIpAddress' => (is => 'ro', isa => 'Bool'  );
   has 'fqdn' => (is => 'ro', isa => 'Str'  );
-  has 'galleryImageReference' => (is => 'ro', isa => 'Any'  );
+  has 'galleryImageReference' => (is => 'ro', isa => 'Azure::DevTestLabs::GalleryImageReference'  );
   has 'isAuthenticationWithSshKey' => (is => 'ro', isa => 'Bool'  );
   has 'labSubnetName' => (is => 'ro', isa => 'Str'  );
   has 'labVirtualNetworkId' => (is => 'ro', isa => 'Str'  );

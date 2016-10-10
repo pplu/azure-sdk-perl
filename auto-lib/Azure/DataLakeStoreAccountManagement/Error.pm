@@ -3,7 +3,7 @@ package Azure::DataLakeStoreAccountManagement::Error;
 
   has 'code' => (is => 'ro', isa => 'Str'  );
   has 'details' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeStoreAccountManagement::ErrorDetails]'  );
-  has 'innerError' => (is => 'ro', isa => 'Any'  );
+  has 'innerError' => (is => 'ro', isa => 'Azure::DataLakeStoreAccountManagement::InnerError'  );
   has 'message' => (is => 'ro', isa => 'Str'  );
   has 'target' => (is => 'ro', isa => 'Str'  );
 1;

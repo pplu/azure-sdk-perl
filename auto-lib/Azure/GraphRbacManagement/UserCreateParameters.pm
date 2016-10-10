@@ -5,6 +5,6 @@ package Azure::GraphRbacManagement::UserCreateParameters;
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'immutableId' => (is => 'ro', isa => 'Str'  );
   has 'mailNickname' => (is => 'ro', isa => 'Str'  );
-  has 'passwordProfile' => (is => 'ro', isa => 'Any'  );
+  has 'passwordProfile' => (is => 'ro', isa => 'Azure::GraphRbacManagement::PasswordProfile'  );
   has 'userPrincipalName' => (is => 'ro', isa => 'Str'  );
 1;

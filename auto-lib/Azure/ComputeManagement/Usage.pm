@@ -3,6 +3,6 @@ package Azure::ComputeManagement::Usage;
 
   has 'currentValue' => (is => 'ro', isa => 'Int'  );
   has 'limit' => (is => 'ro', isa => 'Int'  );
-  has 'name' => (is => 'ro', isa => 'Any'  );
+  has 'name' => (is => 'ro', isa => 'Azure::ComputeManagement::UsageName'  );
   has 'unit' => (is => 'ro', isa => 'Str'  );
 1;

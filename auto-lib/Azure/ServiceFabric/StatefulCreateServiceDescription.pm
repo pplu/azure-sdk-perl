@@ -1,7 +1,7 @@
 package Azure::ServiceFabric::StatefulCreateServiceDescription;
   use Moose;
 
-  has 'DefaultMoveCost' => (is => 'ro', isa => 'Any'  );
+  has 'DefaultMoveCost' => (is => 'ro', isa => 'Azure::ServiceFabric::DefaultMoveCost'  );
   has 'HasPersistedState' => (is => 'ro', isa => 'Bool'  );
   has 'IsDefaultMoveCostSpecified' => (is => 'ro', isa => 'Bool'  );
   has 'MinReplicaSetSize' => (is => 'ro', isa => 'Int'  );

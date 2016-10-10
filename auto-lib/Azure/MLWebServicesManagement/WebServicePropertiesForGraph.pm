@@ -1,7 +1,7 @@
 package Azure::MLWebServicesManagement::WebServicePropertiesForGraph;
   use Moose;
 
-  has 'package' => (is => 'ro', isa => 'Any'  );
+  has 'package' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::GraphPackage'  );
   has 'assets' => (is => 'ro', isa => 'HashRef'  );
   has 'commitmentPlan' => (is => 'ro', isa => 'Any'  );
   has 'createdOn' => (is => 'ro', isa => 'Str'  );

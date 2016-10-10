@@ -2,7 +2,7 @@ package Azure::BatchService::JobPreparationTask;
   use Moose;
 
   has 'commandLine' => (is => 'ro', isa => 'Str'  );
-  has 'constraints' => (is => 'ro', isa => 'Any'  );
+  has 'constraints' => (is => 'ro', isa => 'Azure::BatchService::TaskConstraints'  );
   has 'environmentSettings' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::EnvironmentSetting]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'rerunOnNodeRebootAfterSuccess' => (is => 'ro', isa => 'Bool'  );

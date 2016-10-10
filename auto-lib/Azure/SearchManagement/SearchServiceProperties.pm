@@ -3,5 +3,5 @@ package Azure::SearchManagement::SearchServiceProperties;
 
   has 'partitionCount' => (is => 'ro', isa => 'Int'  );
   has 'replicaCount' => (is => 'ro', isa => 'Int'  );
-  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::SearchManagement::Sku'  );
 1;

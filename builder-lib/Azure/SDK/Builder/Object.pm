@@ -28,17 +28,25 @@ package Azure::SDK::Builder::Object;
         foreach my $property (sort keys %{ $self->properties }) {
           my $param = $self->properties->{ $property };
 
-          my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
-
-          if ($args->x_ms_client_flatten) {
-            push @to_flatten, $args;
+          if ($param->x_ms_client_flatten) {
+            push @to_flatten, $param;
             next;
           }
 
+          my $type;
+          my $args;
+          if (defined $param->ref) {
+            $args = $self->root_schema->object_for_ref($param);
+            $type = $args->name;
+          } else {
+            $args = $param;
+          }
+
           push @$params, Azure::SDK::Builder::Parameter->new(
+            %$args,
             root_schema => $self->root_schema,
             name => $property,
-            %$args
+            (defined $type) ? (type => $type) : (),
           );
         }
 

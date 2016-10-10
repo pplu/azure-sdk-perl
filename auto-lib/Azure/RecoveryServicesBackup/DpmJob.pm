@@ -7,7 +7,7 @@ package Azure::RecoveryServicesBackup::DpmJob;
   has 'dpmServerName' => (is => 'ro', isa => 'Str'  );
   has 'duration' => (is => 'ro', isa => 'Str'  );
   has 'errorDetails' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServicesBackup::DpmErrorInfo]'  );
-  has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
+  has 'extendedInfo' => (is => 'ro', isa => 'Azure::RecoveryServicesBackup::DpmJobExtendedInfo'  );
   has 'workloadType' => (is => 'ro', isa => 'Str'  );
   has 'activityId' => (is => 'ro', isa => 'Str'  );
   has 'backupManagementType' => (is => 'ro', isa => 'Str'  );

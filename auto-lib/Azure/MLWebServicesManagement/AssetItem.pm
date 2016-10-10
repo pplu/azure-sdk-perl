@@ -3,7 +3,7 @@ package Azure::MLWebServicesManagement::AssetItem;
 
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'inputPorts' => (is => 'ro', isa => 'HashRef'  );
-  has 'locationInfo' => (is => 'ro', isa => 'Any'  );
+  has 'locationInfo' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::AssetLocation'  );
   has 'metadata' => (is => 'ro', isa => 'HashRef'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'outputPorts' => (is => 'ro', isa => 'HashRef'  );

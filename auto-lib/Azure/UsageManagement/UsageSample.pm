@@ -1,7 +1,7 @@
 package Azure::UsageManagement::UsageSample;
   use Moose;
 
-  has 'infoFields' => (is => 'ro', isa => 'Any'  );
+  has 'infoFields' => (is => 'ro', isa => 'Azure::UsageManagement::InfoField'  );
   has 'instanceData' => (is => 'ro', isa => 'Str'  );
   has 'meterCategory' => (is => 'ro', isa => 'Str'  );
   has 'meterId' => (is => 'ro', isa => 'Str'  );

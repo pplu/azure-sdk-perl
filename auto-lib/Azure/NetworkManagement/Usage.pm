@@ -3,6 +3,6 @@ package Azure::NetworkManagement::Usage;
 
   has 'currentValue' => (is => 'ro', isa => 'Int'  );
   has 'limit' => (is => 'ro', isa => 'Int'  );
-  has 'name' => (is => 'ro', isa => 'Any'  );
+  has 'name' => (is => 'ro', isa => 'Azure::NetworkManagement::UsageName'  );
   has 'unit' => (is => 'ro', isa => 'Str'  );
 1;

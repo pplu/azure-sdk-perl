@@ -1,5 +1,5 @@
 package Azure::SchedulerManagement::JobHistoryFilter;
   use Moose;
 
-  has 'status' => (is => 'ro', isa => 'Any'  );
+  has 'status' => (is => 'ro', isa => 'Azure::SchedulerManagement::JobExecutionStatus'  );
 1;

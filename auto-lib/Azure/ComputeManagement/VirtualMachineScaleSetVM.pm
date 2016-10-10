@@ -2,9 +2,9 @@ package Azure::ComputeManagement::VirtualMachineScaleSetVM;
   use Moose;
 
   has 'instanceId' => (is => 'ro', isa => 'Str'  );
-  has 'plan' => (is => 'ro', isa => 'Any'  );
+  has 'plan' => (is => 'ro', isa => 'Azure::ComputeManagement::Plan'  );
   has 'resources' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VirtualMachineExtension]'  );
-  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::ComputeManagement::Sku'  );
   has 'availabilitySet' => (is => 'ro', isa => 'Any'  );
   has 'diagnosticsProfile' => (is => 'ro', isa => 'Any'  );
   has 'hardwareProfile' => (is => 'ro', isa => 'Any'  );

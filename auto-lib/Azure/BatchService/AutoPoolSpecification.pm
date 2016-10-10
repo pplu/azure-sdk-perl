@@ -3,6 +3,6 @@ package Azure::BatchService::AutoPoolSpecification;
 
   has 'autoPoolIdPrefix' => (is => 'ro', isa => 'Str'  );
   has 'keepAlive' => (is => 'ro', isa => 'Bool'  );
-  has 'pool' => (is => 'ro', isa => 'Any'  );
+  has 'pool' => (is => 'ro', isa => 'Azure::BatchService::PoolSpecification'  );
   has 'poolLifetimeOption' => (is => 'ro', isa => 'Str'  );
 1;

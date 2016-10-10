@@ -3,7 +3,7 @@ package Azure::BatchService::JobManagerTask;
 
   has 'applicationPackageReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ApplicationPackageReference]'  );
   has 'commandLine' => (is => 'ro', isa => 'Str'  );
-  has 'constraints' => (is => 'ro', isa => 'Any'  );
+  has 'constraints' => (is => 'ro', isa => 'Azure::BatchService::TaskConstraints'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'environmentSettings' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::EnvironmentSetting]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );

@@ -7,5 +7,5 @@ package Azure::CdnManagement::EndpointPropertiesUpdateParameters;
   has 'isHttpsAllowed' => (is => 'ro', isa => 'Bool'  );
   has 'originHostHeader' => (is => 'ro', isa => 'Str'  );
   has 'originPath' => (is => 'ro', isa => 'Str'  );
-  has 'queryStringCachingBehavior' => (is => 'ro', isa => 'Any'  );
+  has 'queryStringCachingBehavior' => (is => 'ro', isa => 'Azure::CdnManagement::QueryStringCachingBehavior'  );
 1;

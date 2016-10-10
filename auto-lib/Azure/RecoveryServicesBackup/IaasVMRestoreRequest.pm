@@ -3,7 +3,7 @@ package Azure::RecoveryServicesBackup::IaasVMRestoreRequest;
 
   has 'affinityGroup' => (is => 'ro', isa => 'Str'  );
   has 'createNewCloudService' => (is => 'ro', isa => 'Bool'  );
-  has 'encryptionDetails' => (is => 'ro', isa => 'Any'  );
+  has 'encryptionDetails' => (is => 'ro', isa => 'Azure::RecoveryServicesBackup::EncryptionDetails'  );
   has 'recoveryPointId' => (is => 'ro', isa => 'Str'  );
   has 'recoveryType' => (is => 'ro', isa => 'Str'  );
   has 'region' => (is => 'ro', isa => 'Str'  );

@@ -5,5 +5,5 @@ package Azure::ComputeManagement::WindowsConfiguration;
   has 'enableAutomaticUpdates' => (is => 'ro', isa => 'Bool'  );
   has 'provisionVMAgent' => (is => 'ro', isa => 'Bool'  );
   has 'timeZone' => (is => 'ro', isa => 'Str'  );
-  has 'winRM' => (is => 'ro', isa => 'Any'  );
+  has 'winRM' => (is => 'ro', isa => 'Azure::ComputeManagement::WinRMConfiguration'  );
 1;

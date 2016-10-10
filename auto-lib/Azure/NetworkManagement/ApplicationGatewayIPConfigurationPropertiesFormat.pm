@@ -2,5 +2,5 @@ package Azure::NetworkManagement::ApplicationGatewayIPConfigurationPropertiesFor
   use Moose;
 
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
-  has 'subnet' => (is => 'ro', isa => 'Any'  );
+  has 'subnet' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
 1;

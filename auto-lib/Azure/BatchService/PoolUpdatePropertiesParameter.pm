@@ -4,5 +4,5 @@ package Azure::BatchService::PoolUpdatePropertiesParameter;
   has 'applicationPackageReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ApplicationPackageReference]'  );
   has 'certificateReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::CertificateReference]'  );
   has 'metadata' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::MetadataItem]'  );
-  has 'startTask' => (is => 'ro', isa => 'Any'  );
+  has 'startTask' => (is => 'ro', isa => 'Azure::BatchService::StartTask'  );
 1;

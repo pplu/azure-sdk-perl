@@ -5,5 +5,5 @@ package Azure::ServiceFabric::PartitionDescription;
   has 'HighKey' => (is => 'ro', isa => 'Str'  );
   has 'LowKey' => (is => 'ro', isa => 'Str'  );
   has 'Names' => (is => 'ro', isa => 'ArrayRef[Str]'  );
-  has 'PartitionScheme' => (is => 'ro', isa => 'Any'  );
+  has 'PartitionScheme' => (is => 'ro', isa => 'Azure::ServiceFabric::PartitionScheme'  );
 1;

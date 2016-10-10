@@ -8,5 +8,5 @@ package Azure::CdnManagement::EndpointPropertiesCreateParameters;
   has 'originHostHeader' => (is => 'ro', isa => 'Str'  );
   has 'originPath' => (is => 'ro', isa => 'Str'  );
   has 'origins' => (is => 'ro', isa => 'ArrayRef[Azure::CdnManagement::DeepCreatedOrigin]'  );
-  has 'queryStringCachingBehavior' => (is => 'ro', isa => 'Any'  );
+  has 'queryStringCachingBehavior' => (is => 'ro', isa => 'Azure::CdnManagement::QueryStringCachingBehavior'  );
 1;

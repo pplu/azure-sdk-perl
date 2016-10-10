@@ -4,7 +4,7 @@ package Azure::RecoveryServicesBackup::MabJob;
   has 'actionsInfo' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'duration' => (is => 'ro', isa => 'Str'  );
   has 'errorDetails' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServicesBackup::MabErrorInfo]'  );
-  has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
+  has 'extendedInfo' => (is => 'ro', isa => 'Azure::RecoveryServicesBackup::MabJobExtendedInfo'  );
   has 'mabServerName' => (is => 'ro', isa => 'Str'  );
   has 'mabServerType' => (is => 'ro', isa => 'Str'  );
   has 'workloadType' => (is => 'ro', isa => 'Str'  );

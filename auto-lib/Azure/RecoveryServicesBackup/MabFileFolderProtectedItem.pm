@@ -2,7 +2,7 @@ package Azure::RecoveryServicesBackup::MabFileFolderProtectedItem;
   use Moose;
 
   has 'computerName' => (is => 'ro', isa => 'Str'  );
-  has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
+  has 'extendedInfo' => (is => 'ro', isa => 'Azure::RecoveryServicesBackup::MabFileFolderProtectedItemExtendedInfo'  );
   has 'friendlyName' => (is => 'ro', isa => 'Str'  );
   has 'isScheduledForDeferredDelete' => (is => 'ro', isa => 'Bool'  );
   has 'lastBackupStatus' => (is => 'ro', isa => 'Str'  );

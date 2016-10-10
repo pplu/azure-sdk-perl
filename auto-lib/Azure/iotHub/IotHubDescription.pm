@@ -2,9 +2,9 @@ package Azure::iotHub::IotHubDescription;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'properties' => (is => 'ro', isa => 'Azure::iotHub::IotHubProperties'  );
   has 'resourcegroup' => (is => 'ro', isa => 'Str'  );
-  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::iotHub::IotHubSkuInfo'  );
   has 'subscriptionid' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

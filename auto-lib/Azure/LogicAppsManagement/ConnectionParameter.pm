@@ -1,8 +1,8 @@
 package Azure::LogicAppsManagement::ConnectionParameter;
   use Moose;
 
-  has 'defaultValue' => (is => 'ro', isa => 'Any'  );
-  has 'oAuthSettings' => (is => 'ro', isa => 'Any'  );
+  has 'defaultValue' => (is => 'ro', isa => 'Azure::LogicAppsManagement::Object'  );
+  has 'oAuthSettings' => (is => 'ro', isa => 'Azure::LogicAppsManagement::ApiOAuthSettings'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
-  has 'uiDefinition' => (is => 'ro', isa => 'Any'  );
+  has 'uiDefinition' => (is => 'ro', isa => 'Azure::LogicAppsManagement::Object'  );
 1;

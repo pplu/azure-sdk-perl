@@ -1,7 +1,7 @@
 package Azure::EventHubManagement::NamespaceResource;
   use Moose;
 
-  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::EventHubManagement::Sku'  );
   has 'createACSNamespace' => (is => 'ro', isa => 'Bool'  );
   has 'createdAt' => (is => 'ro', isa => 'Str'  );
   has 'enabled' => (is => 'ro', isa => 'Bool'  );

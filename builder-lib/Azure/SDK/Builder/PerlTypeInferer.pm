@@ -52,6 +52,8 @@ package Azure::SDK::Builder::PerlTypeInferer;
           #TODO: additionalProperties->type should contain the
           # type of the values of the hashref
           return 'HashRef';
+        } elsif ($self->type =~ m/\:\:/) {
+          return 'Azure::' . $self->type;
         } else {
           $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
           $self->root_schema->log->warn('Can\'t find a Perl type for ' . $self->type);

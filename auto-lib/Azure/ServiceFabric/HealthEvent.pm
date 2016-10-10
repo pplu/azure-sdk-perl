@@ -2,7 +2,7 @@ package Azure::ServiceFabric::HealthEvent;
   use Moose;
 
   has 'Description' => (is => 'ro', isa => 'Str'  );
-  has 'HealthState' => (is => 'ro', isa => 'Any'  );
+  has 'HealthState' => (is => 'ro', isa => 'Azure::ServiceFabric::HealthState'  );
   has 'IsExpired' => (is => 'ro', isa => 'Bool'  );
   has 'LastErrorTransitionAt' => (is => 'ro', isa => 'Str'  );
   has 'LastModifiedUtcTimestamp' => (is => 'ro', isa => 'Str'  );

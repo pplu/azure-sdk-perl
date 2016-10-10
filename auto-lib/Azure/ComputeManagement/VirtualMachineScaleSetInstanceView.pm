@@ -3,5 +3,5 @@ package Azure::ComputeManagement::VirtualMachineScaleSetInstanceView;
 
   has 'extensions' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VirtualMachineScaleSetVMExtensionsSummary]'  );
   has 'statuses' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::InstanceViewStatus]'  );
-  has 'virtualMachine' => (is => 'ro', isa => 'Any'  );
+  has 'virtualMachine' => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineScaleSetInstanceViewStatusesSummary'  );
 1;

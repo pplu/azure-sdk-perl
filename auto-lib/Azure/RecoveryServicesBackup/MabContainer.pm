@@ -4,7 +4,7 @@ package Azure::RecoveryServicesBackup::MabContainer;
   has 'agentVersion' => (is => 'ro', isa => 'Str'  );
   has 'canReRegister' => (is => 'ro', isa => 'Bool'  );
   has 'containerId' => (is => 'ro', isa => 'Int'  );
-  has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
+  has 'extendedInfo' => (is => 'ro', isa => 'Azure::RecoveryServicesBackup::MabContainerExtendedInfo'  );
   has 'protectedItemCount' => (is => 'ro', isa => 'Int'  );
   has 'backupManagementType' => (is => 'ro', isa => 'Str'  );
   has 'containerType' => (is => 'ro', isa => 'Str'  );

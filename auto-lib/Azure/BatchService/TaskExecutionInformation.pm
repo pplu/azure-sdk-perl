@@ -7,6 +7,6 @@ package Azure::BatchService::TaskExecutionInformation;
   has 'lastRetryTime' => (is => 'ro', isa => 'Str'  );
   has 'requeueCount' => (is => 'ro', isa => 'Int'  );
   has 'retryCount' => (is => 'ro', isa => 'Int'  );
-  has 'schedulingError' => (is => 'ro', isa => 'Any'  );
+  has 'schedulingError' => (is => 'ro', isa => 'Azure::BatchService::TaskSchedulingError'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
 1;

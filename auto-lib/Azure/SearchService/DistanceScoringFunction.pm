@@ -1,7 +1,7 @@
 package Azure::SearchService::DistanceScoringFunction;
   use Moose;
 
-  has 'distance' => (is => 'ro', isa => 'Any'  );
+  has 'distance' => (is => 'ro', isa => 'Azure::SearchService::DistanceScoringParameters'  );
   has 'boost' => (is => 'ro', isa => 'Num'  );
   has 'fieldName' => (is => 'ro', isa => 'Str'  );
   has 'interpolation' => (is => 'ro', isa => 'Any'  );

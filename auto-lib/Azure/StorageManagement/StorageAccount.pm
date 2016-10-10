@@ -2,7 +2,7 @@ package Azure::StorageManagement::StorageAccount;
   use Moose;
 
   has 'kind' => (is => 'ro', isa => 'Str'  );
-  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::StorageManagement::Sku'  );
   has 'accessTier' => (is => 'ro', isa => 'Str'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'customDomain' => (is => 'ro', isa => 'Any'  );

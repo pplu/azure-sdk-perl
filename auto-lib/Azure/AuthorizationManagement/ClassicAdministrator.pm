@@ -3,6 +3,6 @@ package Azure::AuthorizationManagement::ClassicAdministrator;
 
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'properties' => (is => 'ro', isa => 'Azure::AuthorizationManagement::ClassicAdministratorProperties'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;

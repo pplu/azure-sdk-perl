@@ -1,9 +1,9 @@
 package Azure::SchedulerManagement::JobProperties;
   use Moose;
 
-  has 'action' => (is => 'ro', isa => 'Any'  );
-  has 'recurrence' => (is => 'ro', isa => 'Any'  );
+  has 'action' => (is => 'ro', isa => 'Azure::SchedulerManagement::JobAction'  );
+  has 'recurrence' => (is => 'ro', isa => 'Azure::SchedulerManagement::JobRecurrence'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
-  has 'state' => (is => 'ro', isa => 'Any'  );
-  has 'status' => (is => 'ro', isa => 'Any'  );
+  has 'state' => (is => 'ro', isa => 'Azure::SchedulerManagement::JobState'  );
+  has 'status' => (is => 'ro', isa => 'Azure::SchedulerManagement::JobStatus'  );
 1;
