@@ -1,6 +1,7 @@
 package Azure::LogicAppsManagement::ParameterCustomLoginSettingValues;
   use Moose;
 
+  has 'customParameters' => (is => 'ro', isa => 'HashRef'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

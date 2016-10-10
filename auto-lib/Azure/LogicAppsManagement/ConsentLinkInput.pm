@@ -1,6 +1,7 @@
 package Azure::LogicAppsManagement::ConsentLinkInput;
   use Moose;
 
+  has 'parameters' => (is => 'ro', isa => 'ArrayRef[Azure::LogicAppsManagement::ConsentLinkInputParameter]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

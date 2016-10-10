@@ -1,6 +1,8 @@
 package Azure::LogicAppsManagement::ExpandedParent[ApiEntity];
   use Moose;
 
+  has 'entity' => (is => 'ro', isa => 'Any'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

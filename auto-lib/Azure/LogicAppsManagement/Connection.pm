@@ -1,6 +1,19 @@
 package Azure::LogicAppsManagement::Connection;
   use Moose;
 
+  has 'api' => (is => 'ro', isa => 'Any'  );
+  has 'changedTime' => (is => 'ro', isa => 'Str'  );
+  has 'createdTime' => (is => 'ro', isa => 'Str'  );
+  has 'customParameterValues' => (is => 'ro', isa => 'HashRef'  );
+  has 'displayName' => (is => 'ro', isa => 'Str'  );
+  has 'firstExpirationTime' => (is => 'ro', isa => 'Str'  );
+  has 'keywords' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'metadata' => (is => 'ro', isa => 'Any'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'nonSecretParameterValues' => (is => 'ro', isa => 'HashRef'  );
+  has 'parameterValues' => (is => 'ro', isa => 'HashRef'  );
+  has 'statuses' => (is => 'ro', isa => 'ArrayRef[Azure::LogicAppsManagement::ConnectionStatus]'  );
+  has 'tenantId' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
