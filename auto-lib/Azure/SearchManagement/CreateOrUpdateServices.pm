@@ -2,7 +2,7 @@ package Azure::SearchManagement::CreateOrUpdateServices;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-02-28',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::SearchManagement::SearchServiceCreateOrUpdateParameters',

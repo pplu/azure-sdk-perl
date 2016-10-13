@@ -29,7 +29,7 @@ package Azure::DataLakeAnalyticsJobManagement::ListJob;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-03-20-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

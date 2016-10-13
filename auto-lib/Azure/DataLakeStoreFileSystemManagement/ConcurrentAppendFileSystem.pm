@@ -5,7 +5,7 @@ package Azure::DataLakeStoreFileSystemManagement::ConcurrentAppendFileSystem;
   has 'Transfer-Encoding' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-10-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'appendMode' => (is => 'ro', isa => 'Str',

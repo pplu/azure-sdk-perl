@@ -2,7 +2,7 @@ package Azure::DevTestLabs::EvaluatePoliciesPolicySet;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-05-15',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'evaluatePoliciesRequest' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::EvaluatePoliciesRequest',

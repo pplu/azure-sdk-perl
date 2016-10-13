@@ -5,7 +5,7 @@ package Azure::RecoveryServicesBackup::ListRecoveryPoints;
   has '$filter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'containerName' => (is => 'ro', required => 1, isa => 'Str',

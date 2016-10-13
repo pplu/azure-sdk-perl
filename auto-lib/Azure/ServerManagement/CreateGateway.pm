@@ -5,7 +5,7 @@ package Azure::ServerManagement::CreateGateway;
   has 'GatewayParameters' => (is => 'ro', required => 1, isa => 'Azure::ServerManagement::GatewayParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-07-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'gatewayName' => (is => 'ro', required => 1, isa => 'Str',

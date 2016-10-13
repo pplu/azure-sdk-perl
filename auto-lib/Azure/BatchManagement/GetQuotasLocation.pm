@@ -2,7 +2,7 @@ package Azure::BatchManagement::GetQuotasLocation;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-12-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'locationName' => (is => 'ro', required => 1, isa => 'Str',

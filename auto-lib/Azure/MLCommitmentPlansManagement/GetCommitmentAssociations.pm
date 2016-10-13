@@ -2,7 +2,7 @@ package Azure::MLCommitmentPlansManagement::GetCommitmentAssociations;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-05-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'commitmentAssociationName' => (is => 'ro', required => 1, isa => 'Str',

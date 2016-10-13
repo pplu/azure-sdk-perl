@@ -2,7 +2,7 @@ package Azure::CdnManagement::GetOrigins;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-02',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'endpointName' => (is => 'ro', required => 1, isa => 'Str',

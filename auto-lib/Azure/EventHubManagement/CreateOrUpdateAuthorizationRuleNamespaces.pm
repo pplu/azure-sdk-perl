@@ -2,7 +2,7 @@ package Azure::EventHubManagement::CreateOrUpdateAuthorizationRuleNamespaces;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-08-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'authorizationRuleName' => (is => 'ro', required => 1, isa => 'Str',

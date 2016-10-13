@@ -11,7 +11,7 @@ package Azure::DevTestLabs::ListVirtualNetwork;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-05-15',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'labName' => (is => 'ro', required => 1, isa => 'Str',

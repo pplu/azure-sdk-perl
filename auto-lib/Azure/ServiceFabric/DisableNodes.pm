@@ -2,7 +2,7 @@ package Azure::ServiceFabric::DisableNodes;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '1.0.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'disableNode' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::DisableNode',

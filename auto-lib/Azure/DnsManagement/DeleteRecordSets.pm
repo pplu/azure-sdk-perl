@@ -8,7 +8,7 @@ package Azure::DnsManagement::DeleteRecordSets;
   has 'If-None-Match' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'recordType' => (is => 'ro', required => 1, isa => 'Str',

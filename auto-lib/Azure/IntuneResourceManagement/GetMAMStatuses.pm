@@ -2,7 +2,7 @@ package Azure::IntuneResourceManagement::GetMAMStatuses;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-01-14-privatepreview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'hostName' => (is => 'ro', required => 1, isa => 'Str',

@@ -2,7 +2,7 @@ package Azure::iotHub::ImportDevicesIotHubResource;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-02-03',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'importDevicesParameters' => (is => 'ro', required => 1, isa => 'Azure::iotHub::ImportDevicesRequest',

@@ -2,7 +2,7 @@ package Azure::ComputeManagement::ListSkusVirtualMachineImages;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-03-30',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'location' => (is => 'ro', required => 1, isa => 'Str',

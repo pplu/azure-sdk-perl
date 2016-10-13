@@ -22,6 +22,16 @@ package Azure::SDK::Builder::BodyMethodArgument;
     required => 1,
   );
 
+  has default_value => (
+    is => 'ro',
+    isa => 'Str|Undef',
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      return $self->name eq 'api-version' ? $self->root_schema->schema->info->version : undef;
+    }
+  );
+
   has parameter_name => (
     is => 'ro',
     isa => 'Str',

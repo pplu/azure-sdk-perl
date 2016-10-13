@@ -8,7 +8,7 @@ package Azure::ServiceFabric::GetPartitionHealths;
   has 'ReplicasHealthStateFilter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '1.0.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'partitionId' => (is => 'ro', required => 1, isa => 'Str',

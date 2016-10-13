@@ -2,7 +2,7 @@ package Azure::ServiceFabric::RemoveServiceGroups;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '1.0.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',

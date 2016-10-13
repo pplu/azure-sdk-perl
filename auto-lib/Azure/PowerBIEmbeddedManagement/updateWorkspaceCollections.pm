@@ -2,7 +2,7 @@ package Azure::PowerBIEmbeddedManagement::updateWorkspaceCollections;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-01-29',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'body' => (is => 'ro', required => 1, isa => 'Azure::PowerBIEmbeddedManagement::UpdateWorkspaceCollectionRequest',

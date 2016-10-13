@@ -2,7 +2,7 @@ package Azure::AuthorizationManagement::GetRoleAssignments;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-07-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'roleAssignmentName' => (is => 'ro', required => 1, isa => 'Str',

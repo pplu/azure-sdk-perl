@@ -2,7 +2,7 @@ package Azure::LogicManagement::GenerateUpgradedDefinitionWorkflows;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::LogicManagement::GenerateUpgradedDefinitionParameters',

@@ -5,7 +5,7 @@ package Azure::CognitiveServicesManagement::CreateCognitiveServicesAccounts;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-02-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::CognitiveServicesManagement::CognitiveServicesAccountCreateParameters',

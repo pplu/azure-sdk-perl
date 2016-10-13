@@ -2,7 +2,7 @@ package Azure::NetworkManagement::DeleteLoadBalancers;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'loadBalancerName' => (is => 'ro', required => 1, isa => 'Str',

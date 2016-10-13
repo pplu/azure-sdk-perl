@@ -5,7 +5,7 @@ package Azure::ServerManagement::GetCommandStatusPowerShell;
   has '$expand' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-07-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'nodeName' => (is => 'ro', required => 1, isa => 'Str',

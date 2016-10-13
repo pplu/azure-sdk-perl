@@ -5,7 +5,7 @@ package Azure::ServerManagement::InvokeCommandPowerShell;
   has 'PowerShellCommandParameters' => (is => 'ro', required => 1, isa => 'Azure::ServerManagement::PowerShellCommandParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-07-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'nodeName' => (is => 'ro', required => 1, isa => 'Str',

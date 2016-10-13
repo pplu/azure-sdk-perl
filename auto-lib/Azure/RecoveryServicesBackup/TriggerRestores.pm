@@ -2,7 +2,7 @@ package Azure::RecoveryServicesBackup::TriggerRestores;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'containerName' => (is => 'ro', required => 1, isa => 'Str',

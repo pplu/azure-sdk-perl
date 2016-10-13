@@ -5,7 +5,7 @@ package Azure::MediaServicesManagement::SyncStorageKeysMediaService;
   has 'SyncStorageKeysInput' => (is => 'ro', required => 1, isa => 'Azure::MediaServicesManagement::SyncStorageKeysInput',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-10-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'mediaServiceName' => (is => 'ro', required => 1, isa => 'Str',

@@ -2,7 +2,7 @@ package Azure::ResourceManagement::DeleteResources;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-02-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parentResourcePath' => (is => 'ro', required => 1, isa => 'Str',
