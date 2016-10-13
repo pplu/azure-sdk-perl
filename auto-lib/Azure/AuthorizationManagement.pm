@@ -104,4 +104,6 @@ package Azure::AuthorizationManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateByIdRoleAssignments CreateOrUpdateRoleDefinitions CreateRoleAssignments DeleteByIdRoleAssignments DeleteRoleAssignments DeleteRoleDefinitions GetByIdRoleAssignments GetByIdRoleDefinitions GetProviderOperationsMetadata GetRoleAssignments GetRoleDefinitions ListClassicAdministrators ListForResourceGroupPermissions ListForResourceGroupRoleAssignments ListForResourcePermissions ListForResourceRoleAssignments ListForScopeRoleAssignments ListProviderOperationsMetadata ListRoleAssignments ListRoleDefinitions / }
+
 1;

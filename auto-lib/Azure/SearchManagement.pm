@@ -29,4 +29,6 @@ package Azure::SearchManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateServices DeleteServices ListAdminKeys ListQueryKeys ListServices / }
+
 1;

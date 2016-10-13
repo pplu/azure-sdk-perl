@@ -39,4 +39,6 @@ package Azure::MLWebServicesManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateWebServices GetWebServices ListInResourceGroupWebServices ListKeysWebServices ListWebServices PatchWebServices RemoveWebServices / }
+
 1;

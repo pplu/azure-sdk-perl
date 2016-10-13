@@ -94,4 +94,6 @@ package Azure::DataLakeAnalyticsAccountManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/AddDataLakeStoreAccountAccount AddStorageAccountAccount CreateAccount DeleteAccount DeleteDataLakeStoreAccountAccount DeleteStorageAccountAccount GetAccount GetDataLakeStoreAccountAccount GetStorageAccountAccount GetStorageContainerAccount ListAccount ListByResourceGroupAccount ListDataLakeStoreAccountsAccount ListSasTokensAccount ListStorageAccountsAccount ListStorageContainersAccount UpdateAccount UpdateStorageAccountAccount / }
+
 1;

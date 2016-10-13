@@ -169,4 +169,6 @@ package Azure::ResourceManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CancelDeployments CheckExistenceDeployments CheckExistenceResourceGroups CheckExistenceResources CreateOrUpdateDeployments CreateOrUpdateResourceGroups CreateOrUpdateResources CreateOrUpdateTags CreateOrUpdateValueTags DeleteDeployments DeleteResourceGroups DeleteResources DeleteTags DeleteValueTags ExportTemplateDeployments ExportTemplateResourceGroups GetDeploymentOperations GetDeployments GetProviders GetResourceGroups GetResources ListDeploymentOperations ListDeployments ListProviders ListResourceGroups ListResources ListResourcesResourceGroups ListTags MoveResourcesResources PatchResourceGroups RegisterProviders UnregisterProviders ValidateDeployments / }
+
 1;

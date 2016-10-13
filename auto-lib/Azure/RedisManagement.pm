@@ -69,4 +69,6 @@ package Azure::RedisManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdatePatchSchedules CreateOrUpdateRedis DeletePatchSchedules DeleteRedis exportRedis ForceRebootRedis GetPatchSchedules GetRedis importRedis ListByResourceGroupRedis ListKeysRedis ListRedis RegenerateKeyRedis / }
+
 1;

@@ -29,4 +29,6 @@ package Azure::KeyVaultManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateVaults DeleteVaults GetVaults ListByResourceGroupVaults ListVaults / }
+
 1;

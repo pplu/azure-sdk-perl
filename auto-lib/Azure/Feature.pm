@@ -24,4 +24,6 @@ package Azure::Feature;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/GetFeatures ListAllFeatures ListFeatures RegisterFeatures / }
+
 1;

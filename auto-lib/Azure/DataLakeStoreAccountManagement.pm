@@ -59,4 +59,6 @@ package Azure::DataLakeStoreAccountManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateAccount CreateOrUpdateFirewallRuleAccount DeleteAccount DeleteFirewallRuleAccount EnableKeyVaultAccount GetAccount GetFirewallRuleAccount ListAccount ListByResourceGroupAccount ListFirewallRulesAccount UpdateAccount / }
+
 1;

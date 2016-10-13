@@ -24,4 +24,6 @@ package Azure::Subscription;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/GetSubscriptions ListLocationsSubscriptions ListSubscriptions ListTenants / }
+
 1;

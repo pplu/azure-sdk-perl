@@ -9,4 +9,6 @@ package Azure::SearchIndex;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CountDocumentsProxy / }
+
 1;

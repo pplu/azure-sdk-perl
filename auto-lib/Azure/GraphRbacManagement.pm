@@ -169,4 +169,6 @@ package Azure::GraphRbacManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/AddMemberGroups CreateApplications CreateGroups CreateServicePrincipals CreateUsers DeleteApplications DeleteGroups DeleteServicePrincipals DeleteUsers GetApplications GetCurrentUserObjects GetGroupMembersGroups GetGroups GetMemberGroupsGroups GetMemberGroupsUsers GetServicePrincipals GetUsers IsMemberOfGroups ListApplications ListGroups ListKeyCredentialsApplications ListKeyCredentialsServicePrincipals ListPasswordCredentialsApplications ListPasswordCredentialsServicePrincipals ListServicePrincipals ListUsers PatchApplications RemoveMemberGroups UpdateKeyCredentialsApplications UpdateKeyCredentialsServicePrincipals UpdatePasswordCredentialsApplications UpdatePasswordCredentialsServicePrincipals UpdateUsers / }
+
 1;

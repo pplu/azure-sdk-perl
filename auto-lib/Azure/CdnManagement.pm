@@ -149,4 +149,6 @@ package Azure::CdnManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CheckNameAvailabilityNameAvailability CreateCustomDomains CreateEndpoints CreateOrigins CreateProfiles DeleteIfExistsCustomDomains DeleteIfExistsEndpoints DeleteIfExistsOrigins DeleteIfExistsProfiles GenerateSsoUriProfiles GetCustomDomains GetEndpoints GetOrigins GetProfiles ListByEndpointCustomDomains ListByEndpointOrigins ListByProfileEndpoints ListByResourceGroupProfiles ListBySubscriptionIdProfiles ListOperations LoadContentEndpoints PurgeContentEndpoints StartEndpoints StopEndpoints UpdateCustomDomains UpdateEndpoints UpdateOrigins UpdateProfiles ValidateCustomDomainEndpoints / }
+
 1;

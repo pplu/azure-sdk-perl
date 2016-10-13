@@ -59,4 +59,6 @@ package Azure::TrafficManagerManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CheckTrafficManagerRelativeDnsNameAvailabilityProfiles CreateOrUpdateEndpoints CreateOrUpdateProfiles DeleteEndpoints DeleteProfiles GetEndpoints GetProfiles ListAllInResourceGroupProfiles ListAllProfiles UpdateEndpoints UpdateProfiles / }
+
 1;

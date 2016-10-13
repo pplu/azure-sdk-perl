@@ -129,4 +129,6 @@ package Azure::ServerManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CancelCommandPowerShell CreateGateway CreateNode CreateSession CreateSessionPowerShell DeleteGateway DeleteNode DeleteSession GetCommandStatusPowerShell GetGateway GetNode GetProfileGateway GetSession InvokeCommandPowerShell ListForResourceGroupGateway ListForResourceGroupNode ListGateway ListNode ListSessionPowerShell RegenerateProfileGateway TabCompletionPowerShell UpdateCommandPowerShell UpdateGateway UpdateNode UpgradeGateway / }
+
 1;

@@ -114,4 +114,6 @@ package Azure::DataLakeStoreFileSystemManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/AppendFileSystem CheckAccessFileSystem ConcatFileSystem ConcurrentAppendFileSystem CreateFileSystem DeleteFileSystem GetAclStatusFileSystem GetContentSummaryFileSystem GetFileStatusFileSystem ListFileStatusFileSystem MkdirsFileSystem ModifyAclEntriesFileSystem MsConcatFileSystem OpenFileSystem RemoveAclEntriesFileSystem RemoveAclFileSystem RemoveDefaultAclFileSystem RenameFileSystem SetAclFileSystem SetFileExpiryFileSystem SetOwnerFileSystem SetPermissionFileSystem / }
+
 1;

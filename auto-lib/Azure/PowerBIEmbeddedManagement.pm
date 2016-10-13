@@ -64,4 +64,6 @@ package Azure::PowerBIEmbeddedManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/checkNameAvailabilityWorkspaceCollections createWorkspaceCollections deleteWorkspaceCollections getAccessKeysWorkspaceCollections GetAvailableOperations getByNameWorkspaceCollections listByResourceGroupWorkspaceCollections listBySubscriptionWorkspaceCollections ListWorkspaces migrateWorkspaceCollections regenerateKeyWorkspaceCollections updateWorkspaceCollections / }
+
 1;

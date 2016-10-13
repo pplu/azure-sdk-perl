@@ -99,4 +99,6 @@ package Azure::iotHub;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CheckNameAvailabilityIotHubResource CreateEventHubConsumerGroupIotHubResource CreateOrUpdateIotHubResource DeleteEventHubConsumerGroupIotHubResource DeleteIotHubResource ExportDevicesIotHubResource GetEventHubConsumerGroupIotHubResource GetIotHubResource GetJobIotHubResource GetKeysForKeyNameIotHubResource GetQuotaMetricsIotHubResource GetStatsIotHubResource GetValidSkusIotHubResource ImportDevicesIotHubResource ListByResourceGroupIotHubResource ListBySubscriptionIotHubResource ListEventHubConsumerGroupsIotHubResource ListJobsIotHubResource ListKeysIotHubResource / }
+
 1;

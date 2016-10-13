@@ -14,4 +14,6 @@ package Azure::SqlManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateSecurityAlertPolicy GetSecurityAlertPolicy / }
+
 1;

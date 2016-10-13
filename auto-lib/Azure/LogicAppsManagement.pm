@@ -49,4 +49,6 @@ package Azure::LogicAppsManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/ConfirmConsentCodeConnections CreateOrUpdateConnections DeleteConnections GetConnections GetManagedApis ListConnectionKeysConnections ListConnections ListConsentLinksConnections ListManagedApis / }
+
 1;

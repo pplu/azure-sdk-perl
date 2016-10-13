@@ -14,4 +14,6 @@ package Azure::UsageManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/GetRateCard ListUsageAggregates / }
+
 1;

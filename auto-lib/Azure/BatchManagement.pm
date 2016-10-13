@@ -99,4 +99,6 @@ package Azure::BatchManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/ActivateApplicationPackage CreateApplication CreateApplicationPackage CreateBatchAccount DeleteApplication DeleteApplicationPackage DeleteBatchAccount GetApplication GetApplicationPackage GetBatchAccount GetKeysBatchAccount GetQuotasLocation ListApplication ListBatchAccount ListByResourceGroupBatchAccount RegenerateKeyBatchAccount SynchronizeAutoStorageKeysBatchAccount UpdateApplication UpdateBatchAccount / }
+
 1;

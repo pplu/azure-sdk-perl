@@ -54,4 +54,6 @@ package Azure::MLCommitmentPlansManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateCommitmentPlans GetCommitmentAssociations GetCommitmentPlans ListCommitmentAssociations ListCommitmentPlans ListInResourceGroupCommitmentPlans ListUsageHistory MoveCommitmentAssociations PatchCommitmentPlans RemoveCommitmentPlans / }
+
 1;

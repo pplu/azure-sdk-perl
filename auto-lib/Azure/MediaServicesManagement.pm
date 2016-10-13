@@ -49,4 +49,6 @@ package Azure::MediaServicesManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CheckNameAvailabilityMediaService CreateMediaService DeleteMediaService GetMediaService ListByResourceGroupMediaService ListKeysMediaService RegenerateKeyMediaService SyncStorageKeysMediaService UpdateMediaService / }
+
 1;

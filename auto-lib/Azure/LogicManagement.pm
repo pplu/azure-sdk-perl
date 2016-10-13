@@ -119,4 +119,6 @@ package Azure::LogicManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CancelWorkflowRuns CreateOrUpdateWorkflows DeleteWorkflows DisableWorkflows EnableWorkflows GenerateUpgradedDefinitionWorkflows GetWorkflowRunActions GetWorkflowRuns GetWorkflows GetWorkflowTriggerHistories GetWorkflowTriggers GetWorkflowVersions ListByResourceGroupWorkflows ListBySubscriptionWorkflows ListCallbackUrlWorkflowTriggers ListWorkflowRunActions ListWorkflowRuns ListWorkflowTriggerHistories ListWorkflowTriggers ListWorkflowVersions RunWorkflowTriggers UpdateWorkflows ValidateWorkflows / }
+
 1;

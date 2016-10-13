@@ -49,4 +49,6 @@ package Azure::CognitiveServicesManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateCognitiveServicesAccounts DeleteCognitiveServicesAccounts GetPropertiesCognitiveServicesAccounts ListByResourceGroupCognitiveServicesAccounts ListCognitiveServicesAccounts ListKeysCognitiveServicesAccounts ListSkusCognitiveServicesAccounts RegenerateKeyCognitiveServicesAccounts UpdateCognitiveServicesAccounts / }
+
 1;

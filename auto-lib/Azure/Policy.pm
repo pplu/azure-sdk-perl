@@ -69,4 +69,6 @@ package Azure::Policy;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateByIdPolicyAssignments CreateOrUpdatePolicyDefinitions CreatePolicyAssignments DeleteByIdPolicyAssignments DeletePolicyAssignments DeletePolicyDefinitions GetByIdPolicyAssignments GetPolicyAssignments GetPolicyDefinitions ListForResourceGroupPolicyAssignments ListForResourcePolicyAssignments ListPolicyAssignments ListPolicyDefinitions / }
+
 1;

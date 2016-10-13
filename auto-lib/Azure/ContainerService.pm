@@ -24,4 +24,6 @@ package Azure::ContainerService;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateContainerService DeleteContainerService GetContainerService ListContainerService / }
+
 1;

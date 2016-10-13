@@ -189,4 +189,6 @@ package Azure::EngagementManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/ActivateCampaigns CheckNameAvailabilityAppCollections CreateActivitiesTaskExportTasks CreateCampaigns CreateCrashesTaskExportTasks CreateErrorsTaskExportTasks CreateEventsTaskExportTasks CreateFeedbackTaskByCampaignExportTasks CreateFeedbackTaskByDateRangeExportTasks CreateImportTasks CreateJobsTaskExportTasks CreateSessionsTaskExportTasks CreateTagsTaskExportTasks CreateTokensTaskExportTasks DeleteCampaigns FinishCampaigns GetByDeviceIdDevices GetByNameCampaigns GetByUserIdDevices GetCampaigns GetExportTasks GetImportTasks GetStatisticsCampaigns ListAppCollections ListApps ListCampaigns ListDevices ListExportTasks ListImportTasks ListSupportedPlatforms PushCampaigns SuspendCampaigns TagByDeviceIdDevices TagByUserIdDevices TestNewCampaigns TestSavedCampaigns UpdateCampaigns / }
+
 1;

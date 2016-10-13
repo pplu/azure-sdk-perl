@@ -39,4 +39,6 @@ package Azure::DataLakeAnalyticsJobManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/BuildJob CancelJob CreateJob GetDebugDataPathJob GetJob GetStatisticsJob ListJob / }
+
 1;

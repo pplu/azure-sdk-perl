@@ -169,4 +169,6 @@ package Azure::IntuneResourceManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/AddAppForMAMPolicyAndroid AddAppForMAMPolicyIos AddGroupForMAMPolicyAndroid AddGroupForMAMPolicyIos CreateOrUpdateMAMPolicyAndroid CreateOrUpdateMAMPolicyIos DeleteAppForMAMPolicyAndroid DeleteAppForMAMPolicyIos DeleteGroupForMAMPolicyAndroid DeleteGroupForMAMPolicyIos DeleteMAMPolicyAndroid DeleteMAMPolicyIos GetAppForMAMPolicyAndroid GetAppForMAMPolicyIos GetApps GetGroupsForMAMPolicyAndroid GetGroupsForMAMPolicyIos GetLocationByHostName GetLocations GetMAMFlaggedUserByName GetMAMFlaggedUsers GetMAMPoliciesAndroid GetMAMPoliciesIos GetMAMPolicyByNameAndroid GetMAMPolicyByNameIos GetMAMStatuses GetMAMUserDeviceByDeviceName GetMAMUserDevices GetMAMUserFlaggedEnrolledApps GetOperationResults PatchMAMPolicyAndroid PatchMAMPolicyIos WipeMAMUserDevice / }
+
 1;

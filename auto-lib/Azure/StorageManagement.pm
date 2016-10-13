@@ -54,4 +54,6 @@ package Azure::StorageManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CheckNameAvailabilityStorageAccounts CreateStorageAccounts DeleteStorageAccounts GetPropertiesStorageAccounts ListByResourceGroupStorageAccounts ListKeysStorageAccounts ListStorageAccounts ListUsage RegenerateKeyStorageAccounts UpdateStorageAccounts / }
+
 1;

@@ -129,4 +129,6 @@ package Azure::EventHubManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateAuthorizationRuleEventHubs CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateConsumerGroups CreateOrUpdateEventHubs CreateOrUpdateNamespaces DeleteAuthorizationRuleEventHubs DeleteAuthorizationRuleNamespaces DeleteConsumerGroups DeleteEventHubs DeleteNamespaces GetAuthorizationRuleEventHubs GetAuthorizationRuleNamespaces GetConsumerGroups GetEventHubs GetNamespaces ListAllConsumerGroups ListAllEventHubs ListAuthorizationRulesEventHubs ListAuthorizationRulesNamespaces ListByResourceGroupNamespaces ListBySubscriptionNamespaces ListKeysEventHubs ListKeysNamespaces RegenerateKeysEventHubs RegenerateKeysNamespaces / }
+
 1;

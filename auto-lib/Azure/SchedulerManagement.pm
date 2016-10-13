@@ -79,4 +79,6 @@ package Azure::SchedulerManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateJobCollections CreateOrUpdateJobs DeleteJobCollections DeleteJobs DisableJobCollections EnableJobCollections GetJobCollections GetJobs ListByResourceGroupJobCollections ListBySubscriptionJobCollections ListJobHistoryJobs ListJobs PatchJobCollections PatchJobs RunJobs / }
+
 1;

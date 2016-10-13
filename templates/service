@@ -11,4 +11,6 @@ package Azure::[% c.service %];
   }
   [%- END %]
 
+  sub operations { qw/[% FOR method IN c.methods.keys.sort; method _ ' '; END %]/ }
+
 1;

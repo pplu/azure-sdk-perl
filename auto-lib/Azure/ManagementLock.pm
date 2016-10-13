@@ -59,4 +59,6 @@ package Azure::ManagementLock;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateAtResourceGroupLevelManagementLocks CreateOrUpdateAtResourceLevelManagementLocks CreateOrUpdateAtSubscriptionLevelManagementLocks DeleteAtResourceGroupLevelManagementLocks DeleteAtResourceLevelManagementLocks DeleteAtSubscriptionLevelManagementLocks GetManagementLocks ListAtResourceGroupLevelManagementLocks ListAtResourceLevelManagementLocks ListAtSubscriptionLevelManagementLocks ListNextManagementLocks / }
+
 1;

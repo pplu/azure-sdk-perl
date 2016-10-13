@@ -104,4 +104,6 @@ package Azure::SearchService;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/AnalyzeIndexes CreateDataSources CreateIndexers CreateIndexes CreateOrUpdateDataSources CreateOrUpdateIndexers CreateOrUpdateIndexes DeleteDataSources DeleteIndexers DeleteIndexes GetDataSources GetIndexers GetIndexes GetStatisticsIndexes GetStatusIndexers ListDataSources ListIndexers ListIndexes ResetIndexers RunIndexers / }
+
 1;

@@ -59,4 +59,6 @@ package Azure::DnsManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
+  sub operations { qw/CreateOrUpdateRecordSets CreateOrUpdateZones DeleteRecordSets DeleteZones GetRecordSets GetZones ListAllInResourceGroupRecordSets ListByTypeRecordSets ListInResourceGroupZones ListInSubscriptionZones UpdateRecordSets / }
+
 1;
