@@ -3,9 +3,10 @@ package Azure::[% ret.name %];
   use Moose;
 
   [%- FOREACH property = ret.attributes %]
-  has [% property.name %] => (is => 'ro'
+  has [% property.property_name %] => (is => 'ro'
     [%- IF (property.required) %], required => 1[% END -%]
     [%- IF (property.perl_type) %], isa => '[% property.perl_type %]'[% END -%]
+    [%- IF (property.property_location.defined) %], traits => [ 'Azure::LocationInResponse' ], location => '[% property.property_location %]'[% END -%]
   );
   [%- END %]
 
