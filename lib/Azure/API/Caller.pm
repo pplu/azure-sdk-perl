@@ -4,7 +4,7 @@ package Azure::API::Caller;
 
   has caller => (
     is => 'ro',
-    isa => 'Azure::Net::Caller',
+    does => 'Azure::Net::CallerRole',
     required => 1,
   );
 

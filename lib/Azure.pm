@@ -5,7 +5,7 @@ use Moose::Util::TypeConstraints;
 
 has caller => (
   is => 'rw',
-  #does => 'Azure::Net::CallerRole',
+  does => 'Azure::Net::CallerRole',
   lazy => 1,
   default => sub {
     Azure->load_class('Azure::Net::Caller');
