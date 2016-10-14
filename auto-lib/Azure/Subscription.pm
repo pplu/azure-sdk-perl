@@ -5,22 +5,28 @@ package Azure::Subscription;
 
   sub GetSubscriptions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Subscription::GetSubscriptions', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::Subscription::GetSubscriptions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListLocationsSubscriptions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Subscription::ListLocationsSubscriptions', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::Subscription::ListLocationsSubscriptions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListSubscriptions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Subscription::ListSubscriptions', @_);
+    my $call_object = $self->new_with_coercions('Azure::Subscription::ListSubscriptions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListTenants {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Subscription::ListTenants', @_);
+    my $call_object = $self->new_with_coercions('Azure::Subscription::ListTenants', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

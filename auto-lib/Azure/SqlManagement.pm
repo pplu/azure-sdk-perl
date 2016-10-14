@@ -5,12 +5,18 @@ package Azure::SqlManagement;
 
   sub CreateOrUpdateSecurityAlertPolicy {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SqlManagement::CreateOrUpdateSecurityAlertPolicy', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SqlManagement::CreateOrUpdateSecurityAlertPolicy', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetSecurityAlertPolicy {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SqlManagement::GetSecurityAlertPolicy', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SqlManagement::GetSecurityAlertPolicy', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

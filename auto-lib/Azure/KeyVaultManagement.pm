@@ -5,27 +5,42 @@ package Azure::KeyVaultManagement;
 
   sub CreateOrUpdateVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::CreateOrUpdateVaults', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::CreateOrUpdateVaults', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::DeleteVaults', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::DeleteVaults', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::GetVaults', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::GetVaults', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListByResourceGroupVaults', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListByResourceGroupVaults', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListVaults {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListVaults', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListVaults', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

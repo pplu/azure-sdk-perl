@@ -5,7 +5,7 @@ package Azure::SearchIndex;
 
   sub CountDocumentsProxy {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchIndex::CountDocumentsProxy', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchIndex::CountDocumentsProxy', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

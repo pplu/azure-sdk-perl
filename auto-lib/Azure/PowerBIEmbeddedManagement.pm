@@ -5,62 +5,95 @@ package Azure::PowerBIEmbeddedManagement;
 
   sub checkNameAvailabilityWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::checkNameAvailabilityWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::checkNameAvailabilityWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub createWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::createWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::createWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub deleteWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::deleteWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::deleteWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub getAccessKeysWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::getAccessKeysWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::getAccessKeysWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetAvailableOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::GetAvailableOperations', @_);
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::GetAvailableOperations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub getByNameWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::getByNameWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::getByNameWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub listByResourceGroupWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::listByResourceGroupWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::listByResourceGroupWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub listBySubscriptionWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::listBySubscriptionWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::listBySubscriptionWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListWorkspaces {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::ListWorkspaces', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::ListWorkspaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub migrateWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::migrateWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::migrateWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub regenerateKeyWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::regenerateKeyWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::regenerateKeyWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub updateWorkspaceCollections {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::updateWorkspaceCollections', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::PowerBIEmbeddedManagement::updateWorkspaceCollections', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
