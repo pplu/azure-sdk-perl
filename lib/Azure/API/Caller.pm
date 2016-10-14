@@ -8,6 +8,11 @@ package Azure::API::Caller;
     required => 1,
   );
 
+  has subscription_id => (
+    is => 'ro',
+    isa => 'Str|Undef',
+  );
+
   has _api_endpoint => (
     is => 'ro',
     default => 'https://management.azure.com/'
