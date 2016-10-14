@@ -15,7 +15,7 @@ has caller => (
 );
 has credentials => (
   is => 'rw',
-  #does => 'Paws::Credential',
+  does => 'Azure::Credential',
   lazy => 1,
   default => sub {
     Azure->load_class('Azure::Credentials::AzureADClientCredentials');

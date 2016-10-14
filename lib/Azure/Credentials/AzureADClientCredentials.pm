@@ -86,4 +86,5 @@ package Azure::Credentials::AzureADClientCredentials;
     }
   );
 
+  with 'Azure::Credential';
 1;
