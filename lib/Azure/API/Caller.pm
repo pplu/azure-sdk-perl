@@ -1,6 +1,7 @@
 package Azure::API::Caller;
   use Moose::Role;
   use Azure::Net::APIRequest;
+  use Moose::Util qw/find_meta/;
 
   has caller => (
     is => 'ro',
@@ -31,14 +32,24 @@ package Azure::API::Caller;
   );
 
   sub new_with_coercions {
-    my ($self, $class, %params) = @_;
+    my ($self, $class, $params) = @_;
 
     Azure->load_class($class);
 
     my %args;
-    foreach my $key (keys %params) {
-      $args{ $key } = $params{ $key };
 
+    my $class_meta = find_meta $class;
+
+    foreach my $class_att ($class_meta->get_all_attributes) {
+      my $att_name = $class_att->name;
+
+      next if (not exists $params->{ $att_name });
+
+      if ($class_att->type_constraint->is_a_type_of('Object')){
+        $args{ $att_name } = $self->new_with_coercions($class_att->type_constraint->class, $params->{ $att_name });
+      } else {
+        $args{ $att_name } = $params->{ $att_name };
+      }
     }
 
     return $class->new(%args);
