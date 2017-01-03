@@ -18,7 +18,7 @@ package Azure::RecoveryServicesBackup::DeleteProtectionPolicies;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}');
+  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}');
   class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

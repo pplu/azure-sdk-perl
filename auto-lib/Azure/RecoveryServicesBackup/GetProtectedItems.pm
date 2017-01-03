@@ -27,7 +27,7 @@ package Azure::RecoveryServicesBackup::GetProtectedItems;
     traits => [ 'Azure::ParamInQuery' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}');
+  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}');
   class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::GetProtectedItemsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -1,0 +1,25 @@
+package Azure::MLWebServicesManagement::WebServicePropertiesForGraph;
+  use Moose;
+
+  has 'package' => (is => 'ro', isa => 'Any'  );
+  has 'assets' => (is => 'ro', isa => 'HashRef'  );
+  has 'commitmentPlan' => (is => 'ro', isa => 'Any'  );
+  has 'createdOn' => (is => 'ro', isa => 'Str'  );
+  has 'description' => (is => 'ro', isa => 'Str'  );
+  has 'diagnostics' => (is => 'ro', isa => 'Any'  );
+  has 'exampleRequest' => (is => 'ro', isa => 'Any'  );
+  has 'exposeSampleData' => (is => 'ro', isa => 'Any'  );
+  has 'input' => (is => 'ro', isa => 'Any'  );
+  has 'keys' => (is => 'ro', isa => 'Any'  );
+  has 'machineLearningWorkspace' => (is => 'ro', isa => 'Any'  );
+  has 'modifiedOn' => (is => 'ro', isa => 'Str'  );
+  has 'output' => (is => 'ro', isa => 'Any'  );
+  has 'packageType' => (is => 'ro', isa => 'Str'  );
+  has 'parameters' => (is => 'ro', isa => 'HashRef'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'readOnly' => (is => 'ro', isa => 'Any'  );
+  has 'realtimeConfiguration' => (is => 'ro', isa => 'Any'  );
+  has 'storageAccount' => (is => 'ro', isa => 'Any'  );
+  has 'swaggerLocation' => (is => 'ro', isa => 'Str'  );
+  has 'title' => (is => 'ro', isa => 'Str'  );
+1;

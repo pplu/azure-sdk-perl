@@ -1,0 +1,23 @@
+package Azure::AzureSQLDatabase::ServiceTierAdvisorProperties;
+  use Moose;
+
+  has 'activeTimeRatio' => (is => 'ro', isa => 'Any'  );
+  has 'avgDtu' => (is => 'ro', isa => 'Any'  );
+  has 'confidence' => (is => 'ro', isa => 'Any'  );
+  has 'currentServiceLevelObjective' => (is => 'ro', isa => 'Str'  );
+  has 'currentServiceLevelObjectiveId' => (is => 'ro', isa => 'Str'  );
+  has 'databaseSizeBasedRecommendationServiceLevelObjective' => (is => 'ro', isa => 'Str'  );
+  has 'databaseSizeBasedRecommendationServiceLevelObjectiveId' => (is => 'ro', isa => 'Str'  );
+  has 'disasterPlanBasedRecommendationServiceLevelObjective' => (is => 'ro', isa => 'Str'  );
+  has 'disasterPlanBasedRecommendationServiceLevelObjectiveId' => (is => 'ro', isa => 'Str'  );
+  has 'maxDtu' => (is => 'ro', isa => 'Any'  );
+  has 'maxSizeInGB' => (is => 'ro', isa => 'Any'  );
+  has 'minDtu' => (is => 'ro', isa => 'Any'  );
+  has 'observationPeriodEnd' => (is => 'ro', isa => 'Str'  );
+  has 'observationPeriodStart' => (is => 'ro', isa => 'Str'  );
+  has 'overallRecommendationServiceLevelObjective' => (is => 'ro', isa => 'Str'  );
+  has 'overallRecommendationServiceLevelObjectiveId' => (is => 'ro', isa => 'Str'  );
+  has 'serviceLevelObjectiveUsageMetrics' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'usageBasedRecommendationServiceLevelObjective' => (is => 'ro', isa => 'Str'  );
+  has 'usageBasedRecommendationServiceLevelObjectiveId' => (is => 'ro', isa => 'Str'  );
+1;

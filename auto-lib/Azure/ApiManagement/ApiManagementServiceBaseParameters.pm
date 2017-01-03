@@ -1,0 +1,22 @@
+package Azure::ApiManagement::ApiManagementServiceBaseParameters;
+  use Moose;
+
+  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'additionalLocations' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'addresserEmail' => (is => 'ro', isa => 'Str'  );
+  has 'createdAtUtc' => (is => 'ro', isa => 'Str'  );
+  has 'customProperties' => (is => 'ro', isa => 'HashRef'  );
+  has 'hostnameConfigurations' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'managementApiUrl' => (is => 'ro', isa => 'Str'  );
+  has 'portalUrl' => (is => 'ro', isa => 'Str'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'publisherEmail' => (is => 'ro', isa => 'Str'  );
+  has 'publisherName' => (is => 'ro', isa => 'Str'  );
+  has 'runtimeUrl' => (is => 'ro', isa => 'Str'  );
+  has 'scmUrl' => (is => 'ro', isa => 'Str'  );
+  has 'staticIPs' => (is => 'ro', isa => 'ArrayRef'  );
+  has 'targetProvisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'vpnType' => (is => 'ro', isa => 'Str'  );
+  has 'vpnconfiguration' => (is => 'ro', isa => 'Any'  );
+1;
