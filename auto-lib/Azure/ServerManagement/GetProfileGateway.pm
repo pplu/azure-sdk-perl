@@ -2,7 +2,7 @@ package Azure::ServerManagement::GetProfileGateway;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-07-01-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'gatewayName' => (is => 'ro', required => 1, isa => 'Str',

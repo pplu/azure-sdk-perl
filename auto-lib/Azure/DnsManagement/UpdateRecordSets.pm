@@ -5,9 +5,6 @@ package Azure::DnsManagement::UpdateRecordSets;
   has 'If-Match' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'If-None-Match' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
@@ -30,7 +27,7 @@ package Azure::DnsManagement::UpdateRecordSets;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnszones/{zoneName}/{recordType}/{relativeRecordSetName}');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}/{recordType}/{relativeRecordSetName}');
   class_has _returns => (is => 'ro', default => 'Azure::DnsManagement::UpdateRecordSetsResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

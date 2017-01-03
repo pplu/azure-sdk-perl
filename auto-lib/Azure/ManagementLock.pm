@@ -33,6 +33,11 @@ package Azure::ManagementLock;
     my $call_object = $self->new_with_coercions('Azure::ManagementLock::DeleteAtSubscriptionLevelManagementLocks', @_);
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetAtResourceGroupLevelManagementLocks {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ManagementLock::GetAtResourceGroupLevelManagementLocks', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetManagementLocks {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::ManagementLock::GetManagementLocks', @_);
@@ -53,12 +58,7 @@ package Azure::ManagementLock;
     my $call_object = $self->new_with_coercions('Azure::ManagementLock::ListAtSubscriptionLevelManagementLocks', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListNextManagementLocks {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagementLock::ListNextManagementLocks', @_);
-    return $self->caller->do_call($self, $call_object);
-  }
 
-  sub operations { qw/CreateOrUpdateAtResourceGroupLevelManagementLocks CreateOrUpdateAtResourceLevelManagementLocks CreateOrUpdateAtSubscriptionLevelManagementLocks DeleteAtResourceGroupLevelManagementLocks DeleteAtResourceLevelManagementLocks DeleteAtSubscriptionLevelManagementLocks GetManagementLocks ListAtResourceGroupLevelManagementLocks ListAtResourceLevelManagementLocks ListAtSubscriptionLevelManagementLocks ListNextManagementLocks / }
+  sub operations { qw/CreateOrUpdateAtResourceGroupLevelManagementLocks CreateOrUpdateAtResourceLevelManagementLocks CreateOrUpdateAtSubscriptionLevelManagementLocks DeleteAtResourceGroupLevelManagementLocks DeleteAtResourceLevelManagementLocks DeleteAtSubscriptionLevelManagementLocks GetAtResourceGroupLevelManagementLocks GetManagementLocks ListAtResourceGroupLevelManagementLocks ListAtResourceLevelManagementLocks ListAtSubscriptionLevelManagementLocks / }
 
 1;

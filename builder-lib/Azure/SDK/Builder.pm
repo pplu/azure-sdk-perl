@@ -92,6 +92,8 @@ package Azure::SDK::Builder;
       return $id if ($id eq 'GetMAMUserDevices');
       return $id if ($id eq 'GetMAMUserDeviceByDeviceName');
       return $id if ($id eq 'WipeMAMUserDevice');
+      return $id if ($id eq 'GetCertificates');
+      return $id if ($id eq 'DeleteCertificateContacts');
 
       return 'GetAvailableOperations' if ($id eq 'getAvailableOperations');
 
@@ -172,11 +174,18 @@ package Azure::SDK::Builder;
       return 'MLWebServicesManagement' if ($title eq 'Azure ML Web Services Management Client');
       return 'MLCommitmentPlansManagement' if ($title eq 'Azure ML Commitment Plans Management Client');
       return 'PowerBIEmbeddedManagement' if ($title eq 'Power BI Embedded Management Client');
+      return 'ServerFirewall' if ($title eq 'Server Firewall Rule APIs');
+      return 'AzureSQLReplicationLink' if ($title eq 'Azure SQL Replication Link API spec');
+      return 'AzureSQLDatabase' if ($title eq 'Azure SQL Database API spec');
+      return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
       return $title if ($title eq 'BatchManagement');
+      return $title if ($title eq 'DocumentDB');
+      return $title if ($title eq 'StorageImportExport');
+      return $title if ($title eq 'StorageManagement');
 
-      die "Service has spaces in it's name. Please correct" if ($title =~ m/ /);
+      die "Service '$title' has spaces in it's name. Please correct" if ($title =~ m/ /);
 
       die "Can't derive service from $title" if (not defined $service);
       return $service;

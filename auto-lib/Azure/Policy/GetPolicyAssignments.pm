@@ -11,9 +11,6 @@ package Azure::Policy::GetPolicyAssignments;
   has 'scope' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/policyassignments/{policyAssignmentName}');
   class_has _returns => (is => 'ro', default => 'Azure::Policy::GetPolicyAssignmentsResult');

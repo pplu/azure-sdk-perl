@@ -40,7 +40,7 @@ package Azure;
 
   use Azure::Exception;
 
-  our $VERSION = '0.01';
+  our $VERSION = '0.02';
 
   has _class_prefix => (is => 'ro', default => 'Azure::');
 

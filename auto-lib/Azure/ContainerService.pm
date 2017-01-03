@@ -3,27 +3,32 @@ package Azure::ContainerService;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CreateOrUpdateContainerService {
+  sub CreateOrUpdateContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::CreateOrUpdateContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::CreateOrUpdateContainerServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteContainerService {
+  sub DeleteContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::DeleteContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::DeleteContainerServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetContainerService {
+  sub GetContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::GetContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::GetContainerServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListContainerService {
+  sub ListByResourceGroupContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListContainerService', @_);
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListByResourceGroupContainerServices', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListContainerServices {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListContainerServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateContainerService DeleteContainerService GetContainerService ListContainerService / }
+  sub operations { qw/CreateOrUpdateContainerServices DeleteContainerServices GetContainerServices ListByResourceGroupContainerServices ListContainerServices / }
 
 1;

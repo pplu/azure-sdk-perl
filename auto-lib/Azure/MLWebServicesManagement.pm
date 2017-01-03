@@ -13,9 +13,9 @@ package Azure::MLWebServicesManagement;
     my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::GetWebServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListInResourceGroupWebServices {
+  sub ListByResourceGroupWebServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListInResourceGroupWebServices', @_);
+    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListByResourceGroupWebServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub ListKeysWebServices {
@@ -39,6 +39,6 @@ package Azure::MLWebServicesManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateWebServices GetWebServices ListInResourceGroupWebServices ListKeysWebServices ListWebServices PatchWebServices RemoveWebServices / }
+  sub operations { qw/CreateOrUpdateWebServices GetWebServices ListByResourceGroupWebServices ListKeysWebServices ListWebServices PatchWebServices RemoveWebServices / }
 
 1;

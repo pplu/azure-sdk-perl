@@ -1,15 +1,25 @@
 package Azure::ServerManagement::GatewayStatus;
   use Moose;
 
+  has 'activeMessageCount' => (is => 'ro', isa => 'Int'  );
+  has 'allowGatewayGroupPolicyStatus' => (is => 'ro', isa => 'Bool'  );
   has 'availableMemoryMByte' => (is => 'ro', isa => 'Num'  );
+  has 'encryptionCertificateThumbprint' => (is => 'ro', isa => 'Str'  );
+  has 'encryptionJwk' => (is => 'ro', isa => 'Azure::ServerManagement::EncryptionJwkResource'  );
   has 'friendlyOsName' => (is => 'ro', isa => 'Str'  );
   has 'gatewayCpuUtilizationPercent' => (is => 'ro', isa => 'Num'  );
   has 'gatewayId' => (is => 'ro', isa => 'Str'  );
   has 'gatewayVersion' => (is => 'ro', isa => 'Str'  );
   has 'gatewayWorkingSetMByte' => (is => 'ro', isa => 'Num'  );
+  has 'groupPolicyError' => (is => 'ro', isa => 'Str'  );
   has 'installedDate' => (is => 'ro', isa => 'Str'  );
+  has 'latestPublishedMsiVersion' => (is => 'ro', isa => 'Str'  );
   has 'logicalProcessorCount' => (is => 'ro', isa => 'Int'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'publishedTimeUtc' => (is => 'ro', isa => 'Str'  );
+  has 'requireMfaGroupPolicyStatus' => (is => 'ro', isa => 'Bool'  );
+  has 'secondaryEncryptionCertificateThumbprint' => (is => 'ro', isa => 'Str'  );
+  has 'secondaryEncryptionJwk' => (is => 'ro', isa => 'Azure::ServerManagement::EncryptionJwkResource'  );
   has 'statusUpdated' => (is => 'ro', isa => 'Str'  );
   has 'totalCpuUtilizationPercent' => (is => 'ro', isa => 'Num'  );
 1;

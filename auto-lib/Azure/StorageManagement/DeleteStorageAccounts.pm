@@ -5,7 +5,7 @@ package Azure::StorageManagement::DeleteStorageAccounts;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-01-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-05-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

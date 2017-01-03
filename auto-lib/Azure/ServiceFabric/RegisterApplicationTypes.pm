@@ -8,6 +8,9 @@ package Azure::ServiceFabric::RegisterApplicationTypes;
   has 'registerApplicationType' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::RegisterApplicationType',
     traits => [ 'Azure::ParamInBody' ],
   );
+  has 'timeout' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
 
   class_has _api_uri => (is => 'ro', default => '/ApplicationTypes/$/Provision');
   class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::RegisterApplicationTypesResult');

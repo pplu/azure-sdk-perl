@@ -2,7 +2,7 @@ package Azure::DnsManagement::ListByTypeRecordSets;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has '$top' => (is => 'ro', isa => 'Str',
+  has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
@@ -21,7 +21,7 @@ package Azure::DnsManagement::ListByTypeRecordSets;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnszones/{zoneName}/{recordType}');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}/{recordType}');
   class_has _returns => (is => 'ro', default => 'Azure::DnsManagement::ListByTypeRecordSetsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

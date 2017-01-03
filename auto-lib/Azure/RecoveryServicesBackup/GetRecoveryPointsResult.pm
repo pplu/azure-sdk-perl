@@ -1,6 +1,6 @@
 package Azure::RecoveryServicesBackup::GetRecoveryPointsResult;
   use Moose;
 
-  has objectType => (is => 'ro', isa => 'Str'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

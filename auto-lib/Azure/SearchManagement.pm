@@ -3,9 +3,24 @@ package Azure::SearchManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
+  sub CheckNameAvailabilityServices {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CheckNameAvailabilityServices', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateOrUpdateServices {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::SearchManagement::CreateOrUpdateServices', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateQueryKeys {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CreateQueryKeys', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteQueryKeys {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::DeleteQueryKeys', @_);
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteServices {
@@ -13,22 +28,32 @@ package Azure::SearchManagement;
     my $call_object = $self->new_with_coercions('Azure::SearchManagement::DeleteServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListAdminKeys {
+  sub GetAdminKeys {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListAdminKeys', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::GetAdminKeys', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListQueryKeys {
+  sub GetServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListQueryKeys', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::GetServices', @_);
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListServices {
+  sub ListByResourceGroupServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListServices', @_);
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListByResourceGroupServices', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListBySearchServiceQueryKeys {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListBySearchServiceQueryKeys', @_);
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RegenerateAdminKeys {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::RegenerateAdminKeys', @_);
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateServices DeleteServices ListAdminKeys ListQueryKeys ListServices / }
+  sub operations { qw/CheckNameAvailabilityServices CreateOrUpdateServices CreateQueryKeys DeleteQueryKeys DeleteServices GetAdminKeys GetServices ListByResourceGroupServices ListBySearchServiceQueryKeys RegenerateAdminKeys / }
 
 1;

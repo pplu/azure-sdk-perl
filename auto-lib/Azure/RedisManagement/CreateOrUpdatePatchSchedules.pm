@@ -8,7 +8,7 @@ package Azure::RedisManagement::CreateOrUpdatePatchSchedules;
   has 'name' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::RedisManagement::RedisPatchSchedulesRequest',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::RedisManagement::RedisPatchSchedule',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

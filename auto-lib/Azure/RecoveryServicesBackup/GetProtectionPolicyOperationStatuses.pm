@@ -21,7 +21,7 @@ package Azure::RecoveryServicesBackup::GetProtectionPolicyOperationStatuses;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}/operations/{operationId}');
+  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupPolicies/{policyName}/operations/{operationId}');
   class_has _returns => (is => 'ro', default => 'Azure::RecoveryServicesBackup::GetProtectionPolicyOperationStatusesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;
