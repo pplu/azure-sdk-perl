@@ -81,6 +81,10 @@ package Azure::SDK::Builder;
       return "$p2$p1";
     } else {
       return $id if ($id eq 'CheckDnsNameAvailability');
+      # Cdn
+      return $id if ($id eq 'CheckNameAvailability');
+      return $id if ($id eq 'ListOperations');
+      return $id if ($id eq 'CheckResourceUsage');
       return $id if ($id eq 'GetLocations');
       return $id if ($id eq 'GetLocationByHostName');
       return $id if ($id eq 'GetApps');
