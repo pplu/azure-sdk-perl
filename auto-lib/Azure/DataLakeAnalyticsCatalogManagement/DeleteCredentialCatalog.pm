@@ -2,7 +2,10 @@ package Azure::DataLakeAnalyticsCatalogManagement::DeleteCredentialCatalog;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'cascade' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'credentialName' => (is => 'ro', required => 1, isa => 'Str',
@@ -11,7 +14,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::DeleteCredentialCatalog;
   has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::DataLakeAnalyticsCatalogManagement::DataLakeAnalyticsCatalogCredentialDeleteParameters',
+  has 'parameters' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsCatalogManagement::DataLakeAnalyticsCatalogCredentialDeleteParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
 

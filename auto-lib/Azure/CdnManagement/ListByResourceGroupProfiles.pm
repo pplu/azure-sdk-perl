@@ -2,7 +2,7 @@ package Azure::CdnManagement::ListByResourceGroupProfiles;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-02',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-02',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

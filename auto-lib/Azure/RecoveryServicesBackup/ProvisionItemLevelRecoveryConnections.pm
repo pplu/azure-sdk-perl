@@ -20,7 +20,7 @@ package Azure::RecoveryServicesBackup::ProvisionItemLevelRecoveryConnections;
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'resourceILRRequest' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::ILRRequest',
+  has 'resourceILRRequest' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::ILRRequestResource',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
@@ -30,7 +30,7 @@ package Azure::RecoveryServicesBackup::ProvisionItemLevelRecoveryConnections;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/provisionInstantItemRecovery');
+  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}/recoveryPoints/{recoveryPointId}/provisionInstantItemRecovery');
   class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

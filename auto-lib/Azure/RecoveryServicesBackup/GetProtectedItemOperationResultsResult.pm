@@ -1,11 +1,6 @@
 package Azure::RecoveryServicesBackup::GetProtectedItemOperationResultsResult;
   use Moose;
 
-  has backupManagementType => (is => 'ro', isa => 'Str'  );
-  has lastRecoveryPoint => (is => 'ro', isa => 'Str'  );
-  has policyId => (is => 'ro', isa => 'Str'  );
-  has protectedItemType => (is => 'ro', isa => 'Str'  );
-  has sourceResourceId => (is => 'ro', isa => 'Str'  );
-  has workloadType => (is => 'ro', isa => 'Str'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

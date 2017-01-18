@@ -3,20 +3,20 @@ package Azure::DataLakeAnalyticsAccountManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub AddDataLakeStoreAccountAccount {
+  sub AddDataLakeStoreAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::AddDataLakeStoreAccountAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::AddDataLakeStoreAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub AddStorageAccountAccount {
+  sub AddStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::AddStorageAccountAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::AddStorageAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateAccount {
@@ -35,20 +35,20 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteDataLakeStoreAccountAccount {
+  sub DeleteDataLakeStoreAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteDataLakeStoreAccountAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteDataLakeStoreAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteStorageAccountAccount {
+  sub DeleteStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteStorageAccountAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteStorageAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetAccount {
@@ -59,28 +59,28 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetDataLakeStoreAccountAccount {
+  sub GetDataLakeStoreAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetDataLakeStoreAccountAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetDataLakeStoreAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetStorageAccountAccount {
+  sub GetStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetStorageAccountAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetStorageAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetStorageContainerAccount {
+  sub GetStorageContainerStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetStorageContainerAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetStorageContainerStorageAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAccount {
@@ -91,6 +91,22 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByAccountDataLakeStoreAccounts {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListByAccountDataLakeStoreAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByAccountStorageAccounts {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListByAccountStorageAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListByResourceGroupAccount {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -99,36 +115,20 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListByResourceGroupAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListDataLakeStoreAccountsAccount {
+  sub ListSasTokensStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListDataLakeStoreAccountsAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListSasTokensStorageAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListSasTokensAccount {
+  sub ListStorageContainersStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListSasTokensAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListStorageAccountsAccount {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListStorageAccountsAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListStorageContainersAccount {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListStorageContainersAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListStorageContainersStorageAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateAccount {
@@ -139,15 +139,15 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::UpdateAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub UpdateStorageAccountAccount {
+  sub UpdateStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::UpdateStorageAccountAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::UpdateStorageAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AddDataLakeStoreAccountAccount AddStorageAccountAccount CreateAccount DeleteAccount DeleteDataLakeStoreAccountAccount DeleteStorageAccountAccount GetAccount GetDataLakeStoreAccountAccount GetStorageAccountAccount GetStorageContainerAccount ListAccount ListByResourceGroupAccount ListDataLakeStoreAccountsAccount ListSasTokensAccount ListStorageAccountsAccount ListStorageContainersAccount UpdateAccount UpdateStorageAccountAccount / }
+  sub operations { qw/AddDataLakeStoreAccounts AddStorageAccounts CreateAccount DeleteAccount DeleteDataLakeStoreAccounts DeleteStorageAccounts GetAccount GetDataLakeStoreAccounts GetStorageAccounts GetStorageContainerStorageAccounts ListAccount ListByAccountDataLakeStoreAccounts ListByAccountStorageAccounts ListByResourceGroupAccount ListSasTokensStorageAccounts ListStorageContainersStorageAccounts UpdateAccount UpdateStorageAccounts / }
 
 1;

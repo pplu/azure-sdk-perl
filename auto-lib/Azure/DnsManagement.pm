@@ -51,12 +51,20 @@ package Azure::DnsManagement;
     my $call_object = $self->new_with_coercions('Azure::DnsManagement::GetZones', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListAllInResourceGroupRecordSets {
+  sub ListByDnsZoneRecordSets {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListAllInResourceGroupRecordSets', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListByDnsZoneRecordSets', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByResourceGroupZones {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListByResourceGroupZones', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByTypeRecordSets {
@@ -67,20 +75,12 @@ package Azure::DnsManagement;
     my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListByTypeRecordSets', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListInResourceGroupZones {
+  sub ListZones {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListInResourceGroupZones', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListInSubscriptionZones {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListInSubscriptionZones', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListZones', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateRecordSets {
@@ -92,6 +92,6 @@ package Azure::DnsManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateRecordSets CreateOrUpdateZones DeleteRecordSets DeleteZones GetRecordSets GetZones ListAllInResourceGroupRecordSets ListByTypeRecordSets ListInResourceGroupZones ListInSubscriptionZones UpdateRecordSets / }
+  sub operations { qw/CreateOrUpdateRecordSets CreateOrUpdateZones DeleteRecordSets DeleteZones GetRecordSets GetZones ListByDnsZoneRecordSets ListByResourceGroupZones ListByTypeRecordSets ListZones UpdateRecordSets / }
 
 1;

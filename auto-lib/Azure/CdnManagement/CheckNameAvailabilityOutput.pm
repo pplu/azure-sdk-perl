@@ -1,7 +1,7 @@
 package Azure::CdnManagement::CheckNameAvailabilityOutput;
   use Moose;
 
-  has 'Message' => (is => 'ro', isa => 'Str'  );
-  has 'NameAvailable' => (is => 'ro', isa => 'Bool'  );
-  has 'Reason' => (is => 'ro', isa => 'Str'  );
+  has 'message' => (is => 'ro', isa => 'Str'  );
+  has 'nameAvailable' => (is => 'ro', isa => 'Bool'  );
+  has 'reason' => (is => 'ro', isa => 'Str'  );
 1;

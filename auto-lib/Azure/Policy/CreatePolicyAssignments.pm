@@ -2,7 +2,7 @@ package Azure::Policy::CreatePolicyAssignments;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::Policy::PolicyAssignment',
@@ -12,9 +12,6 @@ package Azure::Policy::CreatePolicyAssignments;
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'scope' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
 

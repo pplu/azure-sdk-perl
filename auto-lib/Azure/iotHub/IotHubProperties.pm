@@ -11,5 +11,6 @@ package Azure::iotHub::IotHubProperties;
   has 'ipFilterRules' => (is => 'ro', isa => 'ArrayRef[Azure::iotHub::IpFilterRule]'  );
   has 'messagingEndpoints' => (is => 'ro', isa => 'HashRef'  );
   has 'operationsMonitoringProperties' => (is => 'ro', isa => 'Azure::iotHub::OperationsMonitoringProperties'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'storageEndpoints' => (is => 'ro', isa => 'HashRef'  );
 1;

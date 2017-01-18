@@ -5,9 +5,6 @@ package Azure::Policy;
 
   sub CreateByIdPolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
     my $call_object = $self->new_with_coercions('Azure::Policy::CreateByIdPolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
@@ -21,25 +18,16 @@ package Azure::Policy;
   }
   sub CreatePolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
     my $call_object = $self->new_with_coercions('Azure::Policy::CreatePolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteByIdPolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
     my $call_object = $self->new_with_coercions('Azure::Policy::DeleteByIdPolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeletePolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
     my $call_object = $self->new_with_coercions('Azure::Policy::DeletePolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
@@ -53,17 +41,11 @@ package Azure::Policy;
   }
   sub GetByIdPolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
     my $call_object = $self->new_with_coercions('Azure::Policy::GetByIdPolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetPolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
     my $call_object = $self->new_with_coercions('Azure::Policy::GetPolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }

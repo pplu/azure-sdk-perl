@@ -2,7 +2,7 @@ package Azure::ComputeManagement::VirtualMachineScaleSet;
   use Moose;
 
   has 'sku' => (is => 'ro', isa => 'Azure::ComputeManagement::Sku'  );
-  has 'overProvision' => (is => 'ro', isa => 'Bool'  );
+  has 'overprovision' => (is => 'ro', isa => 'Bool'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'upgradePolicy' => (is => 'ro', isa => 'Any'  );
   has 'virtualMachineProfile' => (is => 'ro', isa => 'Any'  );

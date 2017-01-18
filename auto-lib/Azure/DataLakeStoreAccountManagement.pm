@@ -11,12 +11,20 @@ package Azure::DataLakeStoreAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::CreateAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateFirewallRuleAccount {
+  sub CreateOrUpdateFirewallRules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::CreateOrUpdateFirewallRuleAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::CreateOrUpdateFirewallRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateOrUpdateTrustedIdProviders {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::CreateOrUpdateTrustedIdProviders', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteAccount {
@@ -27,12 +35,20 @@ package Azure::DataLakeStoreAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::DeleteAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteFirewallRuleAccount {
+  sub DeleteFirewallRules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::DeleteFirewallRuleAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::DeleteFirewallRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteTrustedIdProviders {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::DeleteTrustedIdProviders', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub EnableKeyVaultAccount {
@@ -51,12 +67,20 @@ package Azure::DataLakeStoreAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::GetAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetFirewallRuleAccount {
+  sub GetFirewallRules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::GetFirewallRuleAccount', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::GetFirewallRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetTrustedIdProviders {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::GetTrustedIdProviders', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAccount {
@@ -67,20 +91,28 @@ package Azure::DataLakeStoreAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::ListAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByAccountFirewallRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::ListByAccountFirewallRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByAccountTrustedIdProviders {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::ListByAccountTrustedIdProviders', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListByResourceGroupAccount {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::ListByResourceGroupAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListFirewallRulesAccount {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreAccountManagement::ListFirewallRulesAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateAccount {
@@ -92,6 +124,6 @@ package Azure::DataLakeStoreAccountManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateAccount CreateOrUpdateFirewallRuleAccount DeleteAccount DeleteFirewallRuleAccount EnableKeyVaultAccount GetAccount GetFirewallRuleAccount ListAccount ListByResourceGroupAccount ListFirewallRulesAccount UpdateAccount / }
+  sub operations { qw/CreateAccount CreateOrUpdateFirewallRules CreateOrUpdateTrustedIdProviders DeleteAccount DeleteFirewallRules DeleteTrustedIdProviders EnableKeyVaultAccount GetAccount GetFirewallRules GetTrustedIdProviders ListAccount ListByAccountFirewallRules ListByAccountTrustedIdProviders ListByResourceGroupAccount UpdateAccount / }
 
 1;

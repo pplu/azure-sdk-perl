@@ -11,6 +11,11 @@ package Azure::ResourceManagement;
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CancelDeployments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CheckExistenceByIdResources {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CheckExistenceByIdResources', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CheckExistenceDeployments {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -33,6 +38,11 @@ package Azure::ResourceManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CheckExistenceResources', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateOrUpdateByIdResources {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CreateOrUpdateByIdResources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateDeployments {
@@ -73,6 +83,11 @@ package Azure::ResourceManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::CreateOrUpdateValueTags', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteByIdResources {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::DeleteByIdResources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteDeployments {
@@ -129,6 +144,11 @@ package Azure::ResourceManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ExportTemplateResourceGroups', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetByIdResources {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::GetByIdResources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetDeploymentOperations {
@@ -268,6 +288,6 @@ package Azure::ResourceManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CancelDeployments CheckExistenceDeployments CheckExistenceResourceGroups CheckExistenceResources CreateOrUpdateDeployments CreateOrUpdateResourceGroups CreateOrUpdateResources CreateOrUpdateTags CreateOrUpdateValueTags DeleteDeployments DeleteResourceGroups DeleteResources DeleteTags DeleteValueTags ExportTemplateDeployments ExportTemplateResourceGroups GetDeploymentOperations GetDeployments GetProviders GetResourceGroups GetResources ListDeploymentOperations ListDeployments ListProviders ListResourceGroups ListResources ListResourcesResourceGroups ListTags MoveResourcesResources PatchResourceGroups RegisterProviders UnregisterProviders ValidateDeployments / }
+  sub operations { qw/CancelDeployments CheckExistenceByIdResources CheckExistenceDeployments CheckExistenceResourceGroups CheckExistenceResources CreateOrUpdateByIdResources CreateOrUpdateDeployments CreateOrUpdateResourceGroups CreateOrUpdateResources CreateOrUpdateTags CreateOrUpdateValueTags DeleteByIdResources DeleteDeployments DeleteResourceGroups DeleteResources DeleteTags DeleteValueTags ExportTemplateDeployments ExportTemplateResourceGroups GetByIdResources GetDeploymentOperations GetDeployments GetProviders GetResourceGroups GetResources ListDeploymentOperations ListDeployments ListProviders ListResourceGroups ListResources ListResourcesResourceGroups ListTags MoveResourcesResources PatchResourceGroups RegisterProviders UnregisterProviders ValidateDeployments / }
 
 1;

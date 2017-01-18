@@ -17,7 +17,7 @@ package Azure::RecoveryServicesBackup::CreateOrUpdateProtectedItems;
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'resourceProtectedItem' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::ProtectedItem',
+  has 'resourceProtectedItem' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::ProtectedItemResource',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
@@ -27,7 +27,7 @@ package Azure::RecoveryServicesBackup::CreateOrUpdateProtectedItems;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}');
+  class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{vaultName}/backupFabrics/{fabricName}/protectionContainers/{containerName}/protectedItems/{protectedItemName}');
   class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

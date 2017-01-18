@@ -2,14 +2,14 @@ package Azure::CdnManagement::CreateEndpoints;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-02',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-02',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'endpoint' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::Endpoint',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'endpointName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'endpointProperties' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::EndpointCreateParameters',
-    traits => [ 'Azure::ParamInBody' ],
   );
   has 'profileName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

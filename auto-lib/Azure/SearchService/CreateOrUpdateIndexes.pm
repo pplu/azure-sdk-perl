@@ -11,7 +11,7 @@ package Azure::SearchService::CreateOrUpdateIndexes;
   has 'allowIndexDowntime' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-02-28-Preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',

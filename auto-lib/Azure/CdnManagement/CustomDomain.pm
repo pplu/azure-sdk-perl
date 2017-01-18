@@ -2,9 +2,12 @@ package Azure::CdnManagement::CustomDomain;
   use Moose;
 
   has 'hostName' => (is => 'ro', isa => 'Str'  );
-  has 'provisioningState' => (is => 'ro', isa => 'Any'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'resourceState' => (is => 'ro', isa => 'Str'  );
+  has 'validationData' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;

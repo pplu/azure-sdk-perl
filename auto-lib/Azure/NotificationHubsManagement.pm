@@ -179,6 +179,14 @@ package Azure::NotificationHubsManagement;
     my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::ListNotificationHubs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub PatchNamespaces {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::PatchNamespaces', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RegenerateKeysNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -196,6 +204,6 @@ package Azure::NotificationHubsManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckAvailabilityNamespaces CheckAvailabilityNotificationHubs CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleNotificationHubs CreateOrUpdateNamespaces CreateOrUpdateNotificationHubs DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleNotificationHubs DeleteNamespaces DeleteNotificationHubs GetAuthorizationRuleNamespaces GetAuthorizationRuleNotificationHubs GetNamespaces GetNotificationHubs GetPnsCredentialsNotificationHubs ListAllNamespaces ListAuthorizationRulesNamespaces ListAuthorizationRulesNotificationHubs ListKeysNamespaces ListKeysNotificationHubs ListNamespaces ListNotificationHubs RegenerateKeysNamespaces RegenerateKeysNotificationHubs / }
+  sub operations { qw/CheckAvailabilityNamespaces CheckAvailabilityNotificationHubs CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleNotificationHubs CreateOrUpdateNamespaces CreateOrUpdateNotificationHubs DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleNotificationHubs DeleteNamespaces DeleteNotificationHubs GetAuthorizationRuleNamespaces GetAuthorizationRuleNotificationHubs GetNamespaces GetNotificationHubs GetPnsCredentialsNotificationHubs ListAllNamespaces ListAuthorizationRulesNamespaces ListAuthorizationRulesNotificationHubs ListKeysNamespaces ListKeysNotificationHubs ListNamespaces ListNotificationHubs PatchNamespaces RegenerateKeysNamespaces RegenerateKeysNotificationHubs / }
 
 1;

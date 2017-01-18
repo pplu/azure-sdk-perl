@@ -5,9 +5,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListTablePartitionsCatalog;
   has '$count' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has '$expand' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
   has '$filter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
@@ -23,7 +20,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListTablePartitionsCatalog;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',

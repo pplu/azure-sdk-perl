@@ -11,12 +11,12 @@ package Azure::RedisManagement;
     my $call_object = $self->new_with_coercions('Azure::RedisManagement::CreateOrUpdatePatchSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateRedis {
+  sub CreateRedis {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::CreateOrUpdateRedis', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::CreateRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeletePatchSchedules {
@@ -35,12 +35,12 @@ package Azure::RedisManagement;
     my $call_object = $self->new_with_coercions('Azure::RedisManagement::DeleteRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub exportRedis {
+  sub ExportDataRedis {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::exportRedis', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ExportDataRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ForceRebootRedis {
@@ -67,12 +67,12 @@ package Azure::RedisManagement;
     my $call_object = $self->new_with_coercions('Azure::RedisManagement::GetRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub importRedis {
+  sub ImportDataRedis {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::importRedis', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ImportDataRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupRedis {
@@ -107,7 +107,15 @@ package Azure::RedisManagement;
     my $call_object = $self->new_with_coercions('Azure::RedisManagement::RegenerateKeyRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateRedis {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::UpdateRedis', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
 
-  sub operations { qw/CreateOrUpdatePatchSchedules CreateOrUpdateRedis DeletePatchSchedules DeleteRedis exportRedis ForceRebootRedis GetPatchSchedules GetRedis importRedis ListByResourceGroupRedis ListKeysRedis ListRedis RegenerateKeyRedis / }
+  sub operations { qw/CreateOrUpdatePatchSchedules CreateRedis DeletePatchSchedules DeleteRedis ExportDataRedis ForceRebootRedis GetPatchSchedules GetRedis ImportDataRedis ListByResourceGroupRedis ListKeysRedis ListRedis RegenerateKeyRedis UpdateRedis / }
 
 1;

@@ -5,7 +5,7 @@ package Azure::ResourceManagement::ListDeploymentOperations;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-02-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'deploymentName' => (is => 'ro', required => 1, isa => 'Str',

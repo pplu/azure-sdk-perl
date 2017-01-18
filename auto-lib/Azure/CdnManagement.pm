@@ -3,9 +3,17 @@ package Azure::CdnManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CheckNameAvailabilityNameAvailability {
+  sub CheckNameAvailability {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CheckNameAvailabilityNameAvailability', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CheckNameAvailability', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CheckResourceUsage {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CheckResourceUsage', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateCustomDomains {
@@ -24,14 +32,6 @@ package Azure::CdnManagement;
     my $call_object = $self->new_with_coercions('Azure::CdnManagement::CreateEndpoints', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrigins {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CreateOrigins', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub CreateProfiles {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -40,36 +40,28 @@ package Azure::CdnManagement;
     my $call_object = $self->new_with_coercions('Azure::CdnManagement::CreateProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIfExistsCustomDomains {
+  sub DeleteCustomDomains {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteIfExistsCustomDomains', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteCustomDomains', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIfExistsEndpoints {
+  sub DeleteEndpoints {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteIfExistsEndpoints', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteEndpoints', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteIfExistsOrigins {
+  sub DeleteProfiles {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteIfExistsOrigins', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DeleteIfExistsProfiles {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteIfExistsProfiles', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GenerateSsoUriProfiles {
@@ -144,17 +136,38 @@ package Azure::CdnManagement;
     my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListByResourceGroupProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListBySubscriptionIdProfiles {
+  sub ListEdgeNodes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListBySubscriptionIdProfiles', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListEdgeNodes', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListOperations {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListOperations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListProfiles {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListProfiles', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListResourceUsageEndpoints {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListResourceUsageEndpoints', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListResourceUsageProfiles {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListResourceUsageProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub LoadContentEndpoints {
@@ -187,14 +200,6 @@ package Azure::CdnManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::CdnManagement::StopEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateCustomDomains {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::UpdateCustomDomains', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateEndpoints {
@@ -230,6 +235,6 @@ package Azure::CdnManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityNameAvailability CreateCustomDomains CreateEndpoints CreateOrigins CreateProfiles DeleteIfExistsCustomDomains DeleteIfExistsEndpoints DeleteIfExistsOrigins DeleteIfExistsProfiles GenerateSsoUriProfiles GetCustomDomains GetEndpoints GetOrigins GetProfiles ListByEndpointCustomDomains ListByEndpointOrigins ListByProfileEndpoints ListByResourceGroupProfiles ListBySubscriptionIdProfiles ListOperations LoadContentEndpoints PurgeContentEndpoints StartEndpoints StopEndpoints UpdateCustomDomains UpdateEndpoints UpdateOrigins UpdateProfiles ValidateCustomDomainEndpoints / }
+  sub operations { qw/CheckNameAvailability CheckResourceUsage CreateCustomDomains CreateEndpoints CreateProfiles DeleteCustomDomains DeleteEndpoints DeleteProfiles GenerateSsoUriProfiles GetCustomDomains GetEndpoints GetOrigins GetProfiles ListByEndpointCustomDomains ListByEndpointOrigins ListByProfileEndpoints ListByResourceGroupProfiles ListEdgeNodes ListOperations ListProfiles ListResourceUsageEndpoints ListResourceUsageProfiles LoadContentEndpoints PurgeContentEndpoints StartEndpoints StopEndpoints UpdateEndpoints UpdateOrigins UpdateProfiles ValidateCustomDomainEndpoints / }
 
 1;

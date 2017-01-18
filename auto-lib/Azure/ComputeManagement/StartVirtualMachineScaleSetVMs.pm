@@ -19,6 +19,6 @@ package Azure::ComputeManagement::StartVirtualMachineScaleSetVMs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/virtualmachines/{instanceId}/start');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::StartVirtualMachineScaleSetVMsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

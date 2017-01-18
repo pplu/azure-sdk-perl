@@ -15,7 +15,7 @@ package Azure::DnsManagement::GetZones;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnszones/{zoneName}');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones/{zoneName}');
   class_has _returns => (is => 'ro', default => 'Azure::DnsManagement::GetZonesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

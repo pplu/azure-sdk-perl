@@ -4,6 +4,8 @@ package Azure::RedisManagement::RedisResource;
   has 'hostName' => (is => 'ro', isa => 'Str'  );
   has 'port' => (is => 'ro', isa => 'Int'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'redisVersion' => (is => 'ro', isa => 'Str'  );
+  has 'sku' => (is => 'ro', isa => 'Any'  );
   has 'sslPort' => (is => 'ro', isa => 'Int'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

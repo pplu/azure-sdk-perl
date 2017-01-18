@@ -98,6 +98,11 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListAssembliesCatalog', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListCredentialsCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListCredentialsCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListDatabasesCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListDatabasesCatalog', { @_ });
@@ -164,6 +169,6 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateCredentialCatalog CreateSecretCatalog DeleteAllSecretsCatalog DeleteCredentialCatalog DeleteSecretCatalog GetAssemblyCatalog GetCredentialCatalog GetDatabaseCatalog GetExternalDataSourceCatalog GetProcedureCatalog GetSchemaCatalog GetSecretCatalog GetTableCatalog GetTablePartitionCatalog GetTableStatisticCatalog GetTableTypeCatalog GetTableValuedFunctionCatalog GetViewCatalog ListAssembliesCatalog ListDatabasesCatalog ListExternalDataSourcesCatalog ListProceduresCatalog ListSchemasCatalog ListTablePartitionsCatalog ListTablesCatalog ListTableStatisticsCatalog ListTableTypesCatalog ListTableValuedFunctionsCatalog ListTypesCatalog ListViewsCatalog UpdateCredentialCatalog UpdateSecretCatalog / }
+  sub operations { qw/CreateCredentialCatalog CreateSecretCatalog DeleteAllSecretsCatalog DeleteCredentialCatalog DeleteSecretCatalog GetAssemblyCatalog GetCredentialCatalog GetDatabaseCatalog GetExternalDataSourceCatalog GetProcedureCatalog GetSchemaCatalog GetSecretCatalog GetTableCatalog GetTablePartitionCatalog GetTableStatisticCatalog GetTableTypeCatalog GetTableValuedFunctionCatalog GetViewCatalog ListAssembliesCatalog ListCredentialsCatalog ListDatabasesCatalog ListExternalDataSourcesCatalog ListProceduresCatalog ListSchemasCatalog ListTablePartitionsCatalog ListTablesCatalog ListTableStatisticsCatalog ListTableTypesCatalog ListTableValuedFunctionsCatalog ListTypesCatalog ListViewsCatalog UpdateCredentialCatalog UpdateSecretCatalog / }
 
 1;

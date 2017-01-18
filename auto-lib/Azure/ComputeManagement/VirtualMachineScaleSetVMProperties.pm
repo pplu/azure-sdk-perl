@@ -11,4 +11,5 @@ package Azure::ComputeManagement::VirtualMachineScaleSetVMProperties;
   has 'osProfile' => (is => 'ro', isa => 'Azure::ComputeManagement::OSProfile'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'storageProfile' => (is => 'ro', isa => 'Azure::ComputeManagement::StorageProfile'  );
+  has 'vmId' => (is => 'ro', isa => 'Str'  );
 1;

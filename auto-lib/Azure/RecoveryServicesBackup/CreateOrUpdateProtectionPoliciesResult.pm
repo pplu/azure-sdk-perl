@@ -1,7 +1,6 @@
 package Azure::RecoveryServicesBackup::CreateOrUpdateProtectionPoliciesResult;
   use Moose;
 
-  has backupManagementType => (is => 'ro', isa => 'Str'  );
-  has protectedItemsCount => (is => 'ro', isa => 'Int'  );
+  has properties => (is => 'ro', isa => 'Any'  );
 
 1;

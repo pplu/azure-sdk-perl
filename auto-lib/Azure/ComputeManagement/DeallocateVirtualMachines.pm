@@ -16,6 +16,6 @@ package Azure::ComputeManagement::DeallocateVirtualMachines;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/deallocate');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::DeallocateVirtualMachinesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;
