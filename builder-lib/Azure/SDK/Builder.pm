@@ -76,7 +76,7 @@ package Azure::SDK::Builder;
   }
 
   sub operationId_to_methodname {
-    my $id = shift;
+    my ($self, $id) = @_;
     if (my ($p1, $p2) = ($id =~ m/(.*)_(.*)/)) {
       return "$p2$p1";
     } else {
@@ -92,6 +92,8 @@ package Azure::SDK::Builder;
       return $id if ($id eq 'GetMAMUserDevices');
       return $id if ($id eq 'GetMAMUserDeviceByDeviceName');
       return $id if ($id eq 'WipeMAMUserDevice');
+      # KeyVault names don't have to be transformed
+      return $id if ($self->schema->info->title eq 'KeyVaultClient');
 
       return 'GetAvailableOperations' if ($id eq 'getAvailableOperations');
 
@@ -116,7 +118,7 @@ package Azure::SDK::Builder;
 
         foreach my $http_verb (sort keys %{ $self->schema->paths->{ $path } }) {
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
-          my $operationId = operationId_to_methodname($operation->operationId);
+          my $operationId = $self->operationId_to_methodname($operation->operationId);
 
           $methods{ $operationId } =
             Azure::SDK::Builder::Method->new(
