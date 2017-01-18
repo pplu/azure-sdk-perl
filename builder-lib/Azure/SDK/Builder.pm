@@ -147,8 +147,9 @@ package Azure::SDK::Builder;
       my $self = shift;
       my %objects => ();
 
+      my $definitions = (defined $self->schema->definitions) ? $self->schema->definitions : {};
 
-      foreach my $ob_name (sort keys %{ $self->schema->definitions }) {
+      foreach my $ob_name (sort keys %$definitions) {
         my $object = $self->schema->definitions->{ $ob_name };
         $object = $self->resolve_path($object->ref) if (defined $object->ref);
 
