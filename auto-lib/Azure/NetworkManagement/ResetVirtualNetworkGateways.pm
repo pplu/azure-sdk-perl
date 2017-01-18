@@ -5,8 +5,8 @@ package Azure::NetworkManagement::ResetVirtualNetworkGateways;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::VirtualNetworkGateway',
-    traits => [ 'Azure::ParamInBody' ],
+  has 'gatewayVip' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

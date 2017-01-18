@@ -7,6 +7,7 @@ requires 'Throwable::Error';
 requires 'URI::Template';
 requires 'Module::Runtime';
 requires 'Module::Find';
+requires 'Path::Class';
 
 on develop => sub {
   requires 'MooseX::StrictConstructor';

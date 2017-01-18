@@ -200,17 +200,48 @@ package Azure::SDK::Builder;
   sub object_for_ref {
     my ($self, $ref) = @_;
 
-    my ($first, $second) = $self->path_parts($ref->ref);
+    my $final_path = $ref->ref;
+    my $final_objects = $self->objects;
 
-    return $self->objects->{ $second };
+    # When the path is './network.json#/objects/Resource' we have to look in
+    # network.json
+    if (my ($find_path_in_file, $rest_of_path) = ($final_path =~ m/^\.\/(.*?)#(.*)/)) {
+      # Strip file off the end, so we can concatenate the file in the path
+      my $def_file = file($self->schema_file);
+      $def_file = $def_file->dir;
+      $def_file .= "/$find_path_in_file";
+
+      $final_path = "#$rest_of_path";
+      $final_objects = Azure::SDK::Builder->new(schema_file => $def_file)->objects;
+    }
+
+    my ($first, $second) = $self->path_parts($final_path);
+    #die "Can't find $final_path in objects" if ($first ne 'objects');
+
+    return $final_objects->{ $second };
   }
 
   sub resolve_path {
     my ($self, $path) = @_;
 
-    my ($first, $second) = $self->path_parts($path);
+    my $final_path = $path;
+    my $final_schema = $self->schema;
 
-    return $self->schema->$first->{ $second };
+    # When the path is './network.json#/definitions/Resource' we have to look in
+    # network.json
+    if (my ($find_path_in_file, $rest_of_path) = ($path =~ m/^\.\/(.*?)#(.*)/)) {
+      # Strip file off the end, so we can concatenate the file in the path
+      my $def_file = file($self->schema_file);
+      $def_file = $def_file->dir;
+      $def_file .= "/$find_path_in_file";
+
+      $final_path = "#$rest_of_path";
+      $final_schema = Azure::SDK::Builder->new(schema_file => $def_file)->schema;
+    }
+
+    my ($first, $second) = $self->path_parts($final_path);
+
+    return $final_schema->$first->{ $second };
   }
 
   sub build {

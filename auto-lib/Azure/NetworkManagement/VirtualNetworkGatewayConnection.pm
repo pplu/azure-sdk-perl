@@ -14,6 +14,7 @@ package Azure::NetworkManagement::VirtualNetworkGatewayConnection;
   has 'resourceGuid' => (is => 'ro', isa => 'Str'  );
   has 'routingWeight' => (is => 'ro', isa => 'Int'  );
   has 'sharedKey' => (is => 'ro', isa => 'Str'  );
+  has 'tunnelConnectionStatus' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::TunnelConnectionHealth]'  );
   has 'virtualNetworkGateway1' => (is => 'ro', isa => 'Any'  );
   has 'virtualNetworkGateway2' => (is => 'ro', isa => 'Any'  );
   has 'id' => (is => 'ro', isa => 'Str'  );

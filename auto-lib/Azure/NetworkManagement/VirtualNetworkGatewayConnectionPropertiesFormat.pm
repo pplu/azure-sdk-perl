@@ -13,6 +13,7 @@ package Azure::NetworkManagement::VirtualNetworkGatewayConnectionPropertiesForma
   has 'resourceGuid' => (is => 'ro', isa => 'Str'  );
   has 'routingWeight' => (is => 'ro', isa => 'Int'  );
   has 'sharedKey' => (is => 'ro', isa => 'Str'  );
+  has 'tunnelConnectionStatus' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::TunnelConnectionHealth]'  );
   has 'virtualNetworkGateway1' => (is => 'ro', isa => 'Azure::NetworkManagement::VirtualNetworkGateway'  );
   has 'virtualNetworkGateway2' => (is => 'ro', isa => 'Azure::NetworkManagement::VirtualNetworkGateway'  );
 1;
