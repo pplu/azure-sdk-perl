@@ -182,6 +182,10 @@ package Azure::SDK::Builder;
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
       return $title if ($title eq 'BatchManagement');
+      return $title if ($title eq 'AzureAnalysisServices');
+      return $title if ($title eq 'DocumentDB');
+      return $title if ($title eq 'StorageManagement');
+      return $title if ($title eq 'StorageImportExport');
 
       die "Service has spaces in it's name. Please correct" if ($title =~ m/ /);
 
