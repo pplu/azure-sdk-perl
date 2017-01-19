@@ -1,5 +1,6 @@
 gen-classes:
 	rm -rf auto-lib/
+	perl -pi -nle 's/^\xEF\xBB\xBF//' arm-network/2016-06-01/swagger/network.json
 	perl -pi -nle 's/^\xEF\xBB\xBF//' azure-rest-api-specs/arm-network/2016-09-01/swagger/network.json
 	perl -pi -nle 's/^\xEF\xBB\xBF//' azure-rest-api-specs/arm-eventhub/2015-08-01/swagger/EventHub.json
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen
