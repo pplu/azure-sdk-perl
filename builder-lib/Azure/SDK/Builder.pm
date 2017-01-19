@@ -96,6 +96,10 @@ package Azure::SDK::Builder;
       return $id if ($id eq 'GetMAMUserDevices');
       return $id if ($id eq 'GetMAMUserDeviceByDeviceName');
       return $id if ($id eq 'WipeMAMUserDevice');
+      # storage importexport
+      return $id if ($id eq 'ListLocations');
+      return $id if ($id eq 'GetLocation');
+      return $id if ($id eq 'ListSupportedOperations');
       # KeyVault names don't have to be transformed
       return $id if ($self->schema->info->title eq 'KeyVaultClient');
 
@@ -187,7 +191,7 @@ package Azure::SDK::Builder;
       return $title if ($title eq 'StorageManagement');
       return $title if ($title eq 'StorageImportExport');
 
-      die "Service has spaces in it's name. Please correct" if ($title =~ m/ /);
+      die "Service '$title' has spaces in it's name. Please correct" if ($title =~ m/ /);
 
       die "Can't derive service from $title" if (not defined $service);
       return $service;
