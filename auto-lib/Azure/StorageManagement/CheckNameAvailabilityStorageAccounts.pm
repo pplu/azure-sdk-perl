@@ -5,7 +5,7 @@ package Azure::StorageManagement::CheckNameAvailabilityStorageAccounts;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Azure::StorageManagement::StorageAccountCheckNameAvailabilityParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-05-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
