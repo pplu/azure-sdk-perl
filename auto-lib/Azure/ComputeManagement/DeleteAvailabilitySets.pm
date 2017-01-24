@@ -16,6 +16,6 @@ package Azure::ComputeManagement::DeleteAvailabilitySets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/availabilitySets/{availabilitySetName}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::DeleteAvailabilitySetsResult');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;
