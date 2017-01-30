@@ -1,0 +1,6 @@
+package Azure::CustomerInsightsManagement::GetHubsResult;
+  use Moose;
+
+  has properties => (is => 'ro', isa => 'Any'  );
+
+1;
