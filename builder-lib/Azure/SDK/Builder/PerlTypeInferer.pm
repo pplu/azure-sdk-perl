@@ -80,7 +80,7 @@ package Azure::SDK::Builder::PerlTypeInferer;
         }
       } else {
         $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
-        $self->root_schema->log->warn('Can\'t find a Perl type because self->type and self->schema is undefined');
+        $self->root_schema->log->warn('Can\'t find a Perl type because self->type and self->schema is undefined on ' . ref($self) );
         return 'Any'
       }
     }
