@@ -1,7 +1,7 @@
 package Azure::RecoveryServicesBackup::AzureIaaSClassicComputeVMProtectedItem;
   use Moose;
 
-  has 'extendedInfo' => (is => 'ro', isa => 'Any'  );
+  has 'extendedInfo' => (is => 'ro', isa => 'Azure::RecoveryServicesBackup::AzureIaaSVMProtectedItemExtendedInfo'  );
   has 'friendlyName' => (is => 'ro', isa => 'Str'  );
   has 'lastBackupStatus' => (is => 'ro', isa => 'Str'  );
   has 'lastBackupTime' => (is => 'ro', isa => 'Str'  );

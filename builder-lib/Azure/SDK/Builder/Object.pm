@@ -77,10 +77,22 @@ package Azure::SDK::Builder::Object;
         foreach my $extra_object_properties (@{ $self->allOf }) {
           my $object = defined $extra_object_properties->ref ? $self->root_schema->resolve_path($extra_object_properties->ref) : $extra_object_properties;
           foreach my $property (sort keys %{ $object->properties }){
+            my $param = $object->properties->{ $property };
+
+            my $type;
+            my $args;
+            if (defined $param->ref) {
+              $args = $self->root_schema->object_for_ref($param);
+              $type = $args->name;
+            } else {
+              $args = $param;
+            }
+
             push @$params, Azure::SDK::Builder::Parameter->new(
+              %$args,
               root_schema => $self->root_schema,
               name => $property,
-              %{ $object->properties->{ $property } }
+              (defined $type) ? (type => $type) : (),
             );
           }
         }

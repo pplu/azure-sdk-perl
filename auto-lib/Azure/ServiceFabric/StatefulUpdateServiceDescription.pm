@@ -7,5 +7,5 @@ package Azure::ServiceFabric::StatefulUpdateServiceDescription;
   has 'StandByReplicaKeepDurationInMilliseconds' => (is => 'ro', isa => 'Int'  );
   has 'TargetReplicaSetSize' => (is => 'ro', isa => 'Int'  );
   has 'Flags' => (is => 'ro', isa => 'Int'  );
-  has 'ServiceKind' => (is => 'ro', isa => 'Any'  );
+  has 'ServiceKind' => (is => 'ro', isa => 'Azure::ServiceFabric::ServiceKind'  );
 1;

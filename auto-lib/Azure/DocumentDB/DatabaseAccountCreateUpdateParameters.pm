@@ -8,6 +8,6 @@ package Azure::DocumentDB::DatabaseAccountCreateUpdateParameters;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'Any'  );
+  has 'tags' => (is => 'ro', isa => 'Azure::DocumentDB::Tags'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;

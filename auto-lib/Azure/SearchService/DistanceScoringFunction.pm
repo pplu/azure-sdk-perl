@@ -4,6 +4,6 @@ package Azure::SearchService::DistanceScoringFunction;
   has 'distance' => (is => 'ro', isa => 'Azure::SearchService::DistanceScoringParameters'  );
   has 'boost' => (is => 'ro', isa => 'Num'  );
   has 'fieldName' => (is => 'ro', isa => 'Str'  );
-  has 'interpolation' => (is => 'ro', isa => 'Any'  );
+  has 'interpolation' => (is => 'ro', isa => 'Azure::SearchService::ScoringFunctionInterpolation'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;
