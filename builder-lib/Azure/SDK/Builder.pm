@@ -186,6 +186,7 @@ package Azure::SDK::Builder;
       return 'ServerFirewall' if ($title eq 'Server Firewall Rule APIs');
       return 'SQLReplicationLink' if ($title eq 'Azure SQL Replication Link API spec');
       return 'SQLDatabase' if ($title eq 'Azure SQL Database API spec');
+      return 'LogAnalytics' if ($title eq 'Azure Log Analytics');
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
       return $title if ($title eq 'BatchManagement');
