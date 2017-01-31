@@ -21,7 +21,7 @@ package Azure::SQLDatabase::Database;
   has 'sourceDatabaseId' => (is => 'ro', isa => 'Str'  );
   has 'status' => (is => 'ro', isa => 'Str'  );
   has 'transparentDataEncryption' => (is => 'ro', isa => 'ArrayRef[Azure::SQLDatabase::TransparentDataEncryption]'  );
-  has 'upgradeHint' => (is => 'ro', isa => 'Any'  );
+  has 'upgradeHint' => (is => 'ro', isa => 'Azure::SQLDatabase::UpgradeHint'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

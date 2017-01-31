@@ -63,12 +63,20 @@ package Azure::SDK::Builder::Object;
           push @$params, map {
             my $param = $flatten->properties->{ $_ };
 
-            my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
+            my $type;
+            my $args;
+            if (defined $param->ref) {
+              $args = $self->root_schema->object_for_ref($param);
+              $type = $args->name;
+            } else {
+              $args = $param;
+            }
 
             Azure::SDK::Builder::Parameter->new(
+              %$args,
               root_schema => $self->root_schema,
               name => $_,
-              %$args
+              (defined $type) ? (type => $type) : (),
             );
           } sort keys %{ $flatten->properties };
         }

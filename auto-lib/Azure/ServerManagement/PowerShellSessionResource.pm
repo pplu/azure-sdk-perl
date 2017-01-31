@@ -7,7 +7,7 @@ package Azure::ServerManagement::PowerShellSessionResource;
   has 'runspaceAvailability' => (is => 'ro', isa => 'Str'  );
   has 'sessionId' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );
-  has 'version' => (is => 'ro', isa => 'Any'  );
+  has 'version' => (is => 'ro', isa => 'Azure::ServerManagement::Version'  );
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

@@ -11,6 +11,6 @@ package Azure::DevTestLabs::CustomImage;
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'uniqueIdentifier' => (is => 'ro', isa => 'Str'  );
-  has 'vhd' => (is => 'ro', isa => 'Any'  );
-  has 'vm' => (is => 'ro', isa => 'Any'  );
+  has 'vhd' => (is => 'ro', isa => 'Azure::DevTestLabs::CustomImagePropertiesCustom'  );
+  has 'vm' => (is => 'ro', isa => 'Azure::DevTestLabs::CustomImagePropertiesFromVm'  );
 1;

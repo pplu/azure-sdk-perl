@@ -4,6 +4,6 @@ package Azure::NetworkManagement::ApplicationGatewayIPConfiguration;
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
-  has 'subnet' => (is => 'ro', isa => 'Any'  );
+  has 'subnet' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
 1;

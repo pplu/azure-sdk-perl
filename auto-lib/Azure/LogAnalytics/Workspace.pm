@@ -6,7 +6,7 @@ package Azure::LogAnalytics::Workspace;
   has 'portalUrl' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'retentionInDays' => (is => 'ro', isa => 'Int'  );
-  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::LogAnalytics::Sku'  );
   has 'source' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

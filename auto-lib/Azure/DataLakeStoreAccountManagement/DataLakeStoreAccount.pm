@@ -5,7 +5,7 @@ package Azure::DataLakeStoreAccountManagement::DataLakeStoreAccount;
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'currentTier' => (is => 'ro', isa => 'Str'  );
   has 'defaultGroup' => (is => 'ro', isa => 'Str'  );
-  has 'encryptionConfig' => (is => 'ro', isa => 'Any'  );
+  has 'encryptionConfig' => (is => 'ro', isa => 'Azure::DataLakeStoreAccountManagement::EncryptionConfig'  );
   has 'encryptionProvisioningState' => (is => 'ro', isa => 'Str'  );
   has 'encryptionState' => (is => 'ro', isa => 'Str'  );
   has 'endpoint' => (is => 'ro', isa => 'Str'  );

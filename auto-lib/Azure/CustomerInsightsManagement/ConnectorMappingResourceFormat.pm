@@ -11,7 +11,7 @@ package Azure::CustomerInsightsManagement::ConnectorMappingResourceFormat;
   has 'entityType' => (is => 'ro', isa => 'Str'  );
   has 'entityTypeName' => (is => 'ro', isa => 'Str'  );
   has 'lastModified' => (is => 'ro', isa => 'Str'  );
-  has 'mappingProperties' => (is => 'ro', isa => 'Any'  );
+  has 'mappingProperties' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ConnectorMappingProperties'  );
   has 'nextRunTime' => (is => 'ro', isa => 'Str'  );
   has 'runId' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );

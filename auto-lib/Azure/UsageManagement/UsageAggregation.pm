@@ -4,7 +4,7 @@ package Azure::UsageManagement::UsageAggregation;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
-  has 'infoFields' => (is => 'ro', isa => 'Any'  );
+  has 'infoFields' => (is => 'ro', isa => 'Azure::UsageManagement::InfoField'  );
   has 'instanceData' => (is => 'ro', isa => 'Str'  );
   has 'meterCategory' => (is => 'ro', isa => 'Str'  );
   has 'meterId' => (is => 'ro', isa => 'Str'  );

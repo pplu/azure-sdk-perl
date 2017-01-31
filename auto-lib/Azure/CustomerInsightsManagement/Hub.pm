@@ -2,7 +2,7 @@ package Azure::CustomerInsightsManagement::Hub;
   use Moose;
 
   has 'apiEndpoint' => (is => 'ro', isa => 'Str'  );
-  has 'hubBillingInfo' => (is => 'ro', isa => 'Any'  );
+  has 'hubBillingInfo' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::HubBillingInfoFormat'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'tenantFeatures' => (is => 'ro', isa => 'Int'  );
   has 'webEndpoint' => (is => 'ro', isa => 'Str'  );

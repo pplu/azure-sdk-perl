@@ -3,7 +3,7 @@ package Azure::InsightsManagement::LogProfileResource;
 
   has 'categories' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'locations' => (is => 'ro', isa => 'ArrayRef[Str]'  );
-  has 'retentionPolicy' => (is => 'ro', isa => 'Any'  );
+  has 'retentionPolicy' => (is => 'ro', isa => 'Azure::InsightsManagement::RetentionPolicy'  );
   has 'serviceBusRuleId' => (is => 'ro', isa => 'Str'  );
   has 'storageAccountId' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );

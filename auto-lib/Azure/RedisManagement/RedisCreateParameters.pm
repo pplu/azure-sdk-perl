@@ -1,7 +1,7 @@
 package Azure::RedisManagement::RedisCreateParameters;
   use Moose;
 
-  has 'sku' => (is => 'ro', isa => 'Any'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::RedisManagement::Sku'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

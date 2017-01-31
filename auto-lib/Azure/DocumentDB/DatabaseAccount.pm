@@ -2,12 +2,12 @@ package Azure::DocumentDB::DatabaseAccount;
   use Moose;
 
   has 'kind' => (is => 'ro', isa => 'Str'  );
-  has 'consistencyPolicy' => (is => 'ro', isa => 'Any'  );
-  has 'databaseAccountOfferType' => (is => 'ro', isa => 'Any'  );
+  has 'consistencyPolicy' => (is => 'ro', isa => 'Azure::DocumentDB::ConsistencyPolicy'  );
+  has 'databaseAccountOfferType' => (is => 'ro', isa => 'Azure::DocumentDB::DatabaseAccountOfferType'  );
   has 'documentEndpoint' => (is => 'ro', isa => 'Str'  );
   has 'failoverPolicies' => (is => 'ro', isa => 'ArrayRef[Azure::DocumentDB::FailoverPolicy]'  );
-  has 'ipRangeFilter' => (is => 'ro', isa => 'Any'  );
-  has 'provisioningState' => (is => 'ro', isa => 'Any'  );
+  has 'ipRangeFilter' => (is => 'ro', isa => 'Azure::DocumentDB::IPRangeFilter'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Azure::DocumentDB::ProvisioningState'  );
   has 'readLocations' => (is => 'ro', isa => 'ArrayRef[Azure::DocumentDB::Location]'  );
   has 'writeLocations' => (is => 'ro', isa => 'ArrayRef[Azure::DocumentDB::Location]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
