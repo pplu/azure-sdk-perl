@@ -1,6 +1,11 @@
 package Azure::SQLDatabase::GetRecommendedElasticPoolsResult;
   use Moose;
 
+  has id => (is => 'ro', isa => 'Str'  );
+  has location => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has tags => (is => 'ro', isa => 'HashRef'  );
+  has type => (is => 'ro', isa => 'Str'  );
   has databaseDtuMax => (is => 'ro', isa => 'Num'  );
   has databaseDtuMin => (is => 'ro', isa => 'Num'  );
   has databaseEdition => (is => 'ro', isa => 'Str'  );

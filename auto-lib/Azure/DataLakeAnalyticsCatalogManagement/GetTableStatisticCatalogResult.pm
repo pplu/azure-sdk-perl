@@ -14,5 +14,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::GetTableStatisticCatalogResul
   has tableName => (is => 'ro', isa => 'Str'  );
   has updateTime => (is => 'ro', isa => 'Str'  );
   has userStatName => (is => 'ro', isa => 'Str'  );
+  has computeAccountName => (is => 'ro', isa => 'Str'  );
+  has version => (is => 'ro', isa => 'Str'  );
 
 1;

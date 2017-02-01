@@ -1,6 +1,9 @@
 package Azure::CustomerInsightsManagement::GetRelationshipLinksResult;
   use Moose;
 
+  has id => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has type => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'HashRef'  );
   has displayName => (is => 'ro', isa => 'HashRef'  );
   has interactionType => (is => 'ro', isa => 'Str'  );

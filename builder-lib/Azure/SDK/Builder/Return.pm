@@ -45,6 +45,36 @@ package Azure::SDK::Builder::Return;
         );
       }
 
+      if (defined $self->allOf) {
+        foreach my $extra_object_properties (@{ $self->allOf }) {
+          my $object = defined $extra_object_properties->ref ? $self->root_schema->resolve_path($extra_object_properties->ref) : $extra_object_properties;
+          foreach my $property (sort keys %{ $object->properties }){
+            my $param = $object->properties->{ $property };
+
+            if ($param->x_ms_client_flatten) {
+              push @to_flatten, $param;
+              next;
+            }
+
+
+            my $type;
+            my $args;
+            if (defined $param->ref) {
+              $args = $self->root_schema->object_for_ref($param);
+              $type = $args->name;
+            } else {
+              $args = $param;
+            }
+
+            push @$atts, Azure::SDK::Builder::Property->new(
+              %$args,
+              root_schema => $self->root_schema,
+              name => $property,
+            );
+          }
+        }
+      }
+
       foreach my $flatten_ref (@to_flatten) {
         my $flatten;
 

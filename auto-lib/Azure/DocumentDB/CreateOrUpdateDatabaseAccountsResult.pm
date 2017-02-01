@@ -2,6 +2,11 @@ package Azure::DocumentDB::CreateOrUpdateDatabaseAccountsResult;
   use Moose;
 
   has kind => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
+  has location => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has tags => (is => 'ro', isa => 'HashRef'  );
+  has type => (is => 'ro', isa => 'Str'  );
   has consistencyPolicy => (is => 'ro', isa => 'HashRef'  );
   has databaseAccountOfferType => (is => 'ro', isa => 'Str'  );
   has documentEndpoint => (is => 'ro', isa => 'Str'  );

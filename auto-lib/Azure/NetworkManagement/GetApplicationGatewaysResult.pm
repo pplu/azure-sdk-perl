@@ -2,6 +2,11 @@ package Azure::NetworkManagement::GetApplicationGatewaysResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
+  has location => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has tags => (is => 'ro', isa => 'HashRef'  );
+  has type => (is => 'ro', isa => 'Str'  );
   has authenticationCertificates => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ApplicationGatewayAuthenticationCertificate]'  );
   has backendAddressPools => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ApplicationGatewayBackendAddressPool]'  );
   has backendHttpSettingsCollection => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ApplicationGatewayBackendHttpSettings]'  );

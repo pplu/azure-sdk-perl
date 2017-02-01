@@ -3,6 +3,7 @@ package Azure::NetworkManagement::GetVirtualNetworkPeeringsResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
   has allowForwardedTraffic => (is => 'ro', isa => 'Bool'  );
   has allowGatewayTransit => (is => 'ro', isa => 'Bool'  );
   has allowVirtualNetworkAccess => (is => 'ro', isa => 'Bool'  );

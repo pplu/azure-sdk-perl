@@ -3,6 +3,7 @@ package Azure::LogicManagement::GetWorkflowTriggersResult;
 
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
   has changedTime => (is => 'ro', isa => 'Str'  );
   has createdTime => (is => 'ro', isa => 'Str'  );
   has lastExecutionTime => (is => 'ro', isa => 'Str'  );

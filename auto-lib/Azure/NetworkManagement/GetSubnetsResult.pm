@@ -3,6 +3,7 @@ package Azure::NetworkManagement::GetSubnetsResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
   has addressPrefix => (is => 'ro', isa => 'Str'  );
   has ipConfigurations => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::IPConfiguration]'  );
   has networkSecurityGroup => (is => 'ro', isa => 'Any'  );

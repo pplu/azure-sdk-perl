@@ -3,6 +3,11 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachinesResult;
 
   has plan => (is => 'ro', isa => 'Any'  );
   has resources => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VirtualMachineExtension]'  );
+  has id => (is => 'ro', isa => 'Str'  );
+  has location => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has tags => (is => 'ro', isa => 'HashRef'  );
+  has type => (is => 'ro', isa => 'Str'  );
   has availabilitySet => (is => 'ro', isa => 'Any'  );
   has diagnosticsProfile => (is => 'ro', isa => 'Any'  );
   has hardwareProfile => (is => 'ro', isa => 'Any'  );

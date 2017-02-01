@@ -1,6 +1,11 @@
 package Azure::ContainerService::GetContainerServicesResult;
   use Moose;
 
+  has id => (is => 'ro', isa => 'Str'  );
+  has location => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has tags => (is => 'ro', isa => 'HashRef'  );
+  has type => (is => 'ro', isa => 'Str'  );
   has agentPoolProfiles => (is => 'ro', isa => 'ArrayRef[Azure::ContainerService::ContainerServiceAgentPoolProfile]'  );
   has customProfile => (is => 'ro', isa => 'Any'  );
   has diagnosticsProfile => (is => 'ro', isa => 'Any'  );

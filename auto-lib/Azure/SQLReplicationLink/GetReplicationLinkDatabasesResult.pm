@@ -1,6 +1,8 @@
 package Azure::SQLReplicationLink::GetReplicationLinkDatabasesResult;
   use Moose;
 
+  has id => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
   has partnerDatabase => (is => 'ro', isa => 'Str'  );
   has partnerLocation => (is => 'ro', isa => 'Str'  );
   has partnerRole => (is => 'ro', isa => 'Str'  );

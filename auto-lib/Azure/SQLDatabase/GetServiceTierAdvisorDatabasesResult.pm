@@ -1,6 +1,8 @@
 package Azure::SQLDatabase::GetServiceTierAdvisorDatabasesResult;
   use Moose;
 
+  has id => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
   has activeTimeRatio => (is => 'ro', isa => 'Num'  );
   has avgDtu => (is => 'ro', isa => 'Num'  );
   has confidence => (is => 'ro', isa => 'Num'  );

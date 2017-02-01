@@ -3,6 +3,7 @@ package Azure::NetworkManagement::CreateOrUpdateSecurityRulesResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
   has access => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'Str'  );
   has destinationAddressPrefix => (is => 'ro', isa => 'Str'  );

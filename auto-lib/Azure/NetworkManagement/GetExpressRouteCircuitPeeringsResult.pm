@@ -3,6 +3,7 @@ package Azure::NetworkManagement::GetExpressRouteCircuitPeeringsResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
   has azureASN => (is => 'ro', isa => 'Int'  );
   has gatewayManagerEtag => (is => 'ro', isa => 'Str'  );
   has lastModifiedBy => (is => 'ro', isa => 'Str'  );

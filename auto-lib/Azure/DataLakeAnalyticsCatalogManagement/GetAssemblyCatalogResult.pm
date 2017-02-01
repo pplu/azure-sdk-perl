@@ -8,5 +8,7 @@ package Azure::DataLakeAnalyticsCatalogManagement::GetAssemblyCatalogResult;
   has files => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsCatalogManagement::USqlAssemblyFileInfo]'  );
   has isUserDefined => (is => 'ro', isa => 'Bool'  );
   has isVisible => (is => 'ro', isa => 'Bool'  );
+  has computeAccountName => (is => 'ro', isa => 'Str'  );
+  has version => (is => 'ro', isa => 'Str'  );
 
 1;

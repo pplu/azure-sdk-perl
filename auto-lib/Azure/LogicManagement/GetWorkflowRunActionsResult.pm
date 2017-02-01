@@ -3,6 +3,7 @@ package Azure::LogicManagement::GetWorkflowRunActionsResult;
 
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
   has code => (is => 'ro', isa => 'Str'  );
   has correlation => (is => 'ro', isa => 'HashRef'  );
   has endTime => (is => 'ro', isa => 'Str'  );

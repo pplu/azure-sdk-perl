@@ -1,6 +1,9 @@
 package Azure::CustomerInsightsManagement::CreateOrUpdateKpiResult;
   use Moose;
 
+  has id => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has type => (is => 'ro', isa => 'Str'  );
   has aliases => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::KpiAlias]'  );
   has calculationWindow => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'HashRef'  );
