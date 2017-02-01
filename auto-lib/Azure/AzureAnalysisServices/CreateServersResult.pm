@@ -10,5 +10,6 @@ package Azure::AzureAnalysisServices::CreateServersResult;
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has serverFullName => (is => 'ro', isa => 'Str'  );
   has state => (is => 'ro', isa => 'Str'  );
+  has asAdministrators => (is => 'ro', isa => 'HashRef'  );
 
 1;
