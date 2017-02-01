@@ -1,6 +1,9 @@
 package Azure::ServerManagement::GetNodeResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'HashRef'  );
+  has connectionName => (is => 'ro', isa => 'Str'  );
+  has created => (is => 'ro', isa => 'Str'  );
+  has gatewayId => (is => 'ro', isa => 'Str'  );
+  has updated => (is => 'ro', isa => 'Str'  );
 
 1;

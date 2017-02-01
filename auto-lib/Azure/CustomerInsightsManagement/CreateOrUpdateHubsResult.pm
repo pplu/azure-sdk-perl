@@ -1,6 +1,10 @@
 package Azure::CustomerInsightsManagement::CreateOrUpdateHubsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has apiEndpoint => (is => 'ro', isa => 'Str'  );
+  has hubBillingInfo => (is => 'ro', isa => 'Any'  );
+  has provisioningState => (is => 'ro', isa => 'Str'  );
+  has tenantFeatures => (is => 'ro', isa => 'Int'  );
+  has webEndpoint => (is => 'ro', isa => 'Str'  );
 
 1;

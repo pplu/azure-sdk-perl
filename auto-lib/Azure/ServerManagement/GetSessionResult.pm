@@ -1,6 +1,8 @@
 package Azure::ServerManagement::GetSessionResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'HashRef'  );
+  has created => (is => 'ro', isa => 'Str'  );
+  has updated => (is => 'ro', isa => 'Str'  );
+  has userName => (is => 'ro', isa => 'Str'  );
 
 1;

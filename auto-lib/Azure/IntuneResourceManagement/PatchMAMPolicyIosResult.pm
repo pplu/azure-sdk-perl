@@ -1,6 +1,7 @@
 package Azure::IntuneResourceManagement::PatchMAMPolicyIosResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has fileEncryptionLevel => (is => 'ro', isa => 'Str'  );
+  has touchId => (is => 'ro', isa => 'Str'  );
 
 1;

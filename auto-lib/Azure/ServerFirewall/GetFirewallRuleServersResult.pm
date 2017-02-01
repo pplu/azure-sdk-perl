@@ -3,6 +3,7 @@ package Azure::ServerFirewall::GetFirewallRuleServersResult;
 
   has kind => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Any'  );
+  has endIpAddress => (is => 'ro', isa => 'Str'  );
+  has startIpAddress => (is => 'ro', isa => 'Str'  );
 
 1;

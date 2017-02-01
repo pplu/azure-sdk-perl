@@ -1,6 +1,6 @@
 package Azure::NotificationHubsManagement::GetAuthorizationRuleNamespacesResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has rights => (is => 'ro', isa => 'ArrayRef[Str]'  );
 
 1;

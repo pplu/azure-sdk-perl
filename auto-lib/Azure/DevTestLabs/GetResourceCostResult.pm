@@ -4,8 +4,10 @@ package Azure::DevTestLabs::GetResourceCostResult;
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Any'  );
   has tags => (is => 'ro', isa => 'HashRef'  );
   has type => (is => 'ro', isa => 'Str'  );
+  has costs => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLabs::CostPerDayProperties]'  );
+  has currencyCode => (is => 'ro', isa => 'Str'  );
+  has resourceCosts => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLabs::ResourceCostProperties]'  );
 
 1;

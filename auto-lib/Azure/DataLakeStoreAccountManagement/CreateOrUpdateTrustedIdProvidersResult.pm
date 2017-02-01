@@ -1,6 +1,6 @@
 package Azure::DataLakeStoreAccountManagement::CreateOrUpdateTrustedIdProvidersResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has idProvider => (is => 'ro', isa => 'Str'  );
 
 1;

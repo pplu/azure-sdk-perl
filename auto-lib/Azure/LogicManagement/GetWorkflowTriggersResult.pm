@@ -2,7 +2,15 @@ package Azure::LogicManagement::GetWorkflowTriggersResult;
   use Moose;
 
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Any'  );
   has type => (is => 'ro', isa => 'Str'  );
+  has changedTime => (is => 'ro', isa => 'Str'  );
+  has createdTime => (is => 'ro', isa => 'Str'  );
+  has lastExecutionTime => (is => 'ro', isa => 'Str'  );
+  has nextExecutionTime => (is => 'ro', isa => 'Str'  );
+  has provisioningState => (is => 'ro', isa => 'Str'  );
+  has recurrence => (is => 'ro', isa => 'HashRef'  );
+  has state => (is => 'ro', isa => 'Str'  );
+  has status => (is => 'ro', isa => 'Str'  );
+  has workflow => (is => 'ro', isa => 'HashRef'  );
 
 1;

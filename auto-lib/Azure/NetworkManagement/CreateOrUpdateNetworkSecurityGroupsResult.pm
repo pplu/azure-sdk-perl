@@ -2,6 +2,11 @@ package Azure::NetworkManagement::CreateOrUpdateNetworkSecurityGroupsResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Any'  );
+  has defaultSecurityRules => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::SecurityRule]'  );
+  has networkInterfaces => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::NetworkInterface]'  );
+  has provisioningState => (is => 'ro', isa => 'Str'  );
+  has resourceGuid => (is => 'ro', isa => 'Str'  );
+  has securityRules => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::SecurityRule]'  );
+  has subnets => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::Subnet]'  );
 
 1;

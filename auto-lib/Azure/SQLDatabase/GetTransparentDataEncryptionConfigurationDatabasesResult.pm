@@ -1,6 +1,6 @@
 package Azure::SQLDatabase::GetTransparentDataEncryptionConfigurationDatabasesResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has status => (is => 'ro', isa => 'Str'  );
 
 1;

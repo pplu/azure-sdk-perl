@@ -1,6 +1,7 @@
 package Azure::IntuneResourceManagement::GetMAMFlaggedUserByNameResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has errorCount => (is => 'ro', isa => 'Int'  );
+  has friendlyName => (is => 'ro', isa => 'Str'  );
 
 1;

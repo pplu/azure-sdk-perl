@@ -1,6 +1,6 @@
 package Azure::DataLakeAnalyticsAccountManagement::GetDataLakeStoreAccountsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has suffix => (is => 'ro', isa => 'Str'  );
 
 1;

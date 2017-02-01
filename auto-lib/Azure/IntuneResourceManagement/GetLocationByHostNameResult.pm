@@ -1,6 +1,6 @@
 package Azure::IntuneResourceManagement::GetLocationByHostNameResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has hostName => (is => 'ro', isa => 'Str'  );
 
 1;

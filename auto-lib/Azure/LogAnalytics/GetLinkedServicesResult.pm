@@ -1,6 +1,6 @@
 package Azure::LogAnalytics::GetLinkedServicesResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has resourceId => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -1,6 +1,7 @@
 package Azure::DataLakeStoreAccountManagement::GetFirewallRulesResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has endIpAddress => (is => 'ro', isa => 'Str'  );
+  has startIpAddress => (is => 'ro', isa => 'Str'  );
 
 1;

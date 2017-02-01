@@ -3,7 +3,11 @@ package Azure::Policy::CreatePolicyAssignmentsResult;
 
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Any'  );
   has type => (is => 'ro', isa => 'Str'  );
+  has description => (is => 'ro', isa => 'Str'  );
+  has displayName => (is => 'ro', isa => 'Str'  );
+  has parameters => (is => 'ro', isa => 'HashRef'  );
+  has policyDefinitionId => (is => 'ro', isa => 'Str'  );
+  has scope => (is => 'ro', isa => 'Str'  );
 
 1;

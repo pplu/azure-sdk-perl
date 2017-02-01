@@ -1,6 +1,8 @@
 package Azure::AzureAnalysisServices::GetDetailsServersResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has provisioningState => (is => 'ro', isa => 'Str'  );
+  has serverFullName => (is => 'ro', isa => 'Str'  );
+  has state => (is => 'ro', isa => 'Str'  );
 
 1;

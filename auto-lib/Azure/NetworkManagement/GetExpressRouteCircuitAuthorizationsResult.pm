@@ -3,6 +3,8 @@ package Azure::NetworkManagement::GetExpressRouteCircuitAuthorizationsResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Any'  );
+  has authorizationKey => (is => 'ro', isa => 'Str'  );
+  has authorizationUseStatus => (is => 'ro', isa => 'Str'  );
+  has provisioningState => (is => 'ro', isa => 'Str'  );
 
 1;

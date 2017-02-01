@@ -1,6 +1,9 @@
 package Azure::CdnManagement::UpdateEndpointsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has hostName => (is => 'ro', isa => 'Str'  );
+  has origins => (is => 'ro', isa => 'ArrayRef[Azure::CdnManagement::DeepCreatedOrigin]'  );
+  has provisioningState => (is => 'ro', isa => 'Str'  );
+  has resourceState => (is => 'ro', isa => 'Str'  );
 
 1;

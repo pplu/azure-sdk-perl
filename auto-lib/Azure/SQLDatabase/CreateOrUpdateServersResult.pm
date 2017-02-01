@@ -1,6 +1,9 @@
 package Azure::SQLDatabase::CreateOrUpdateServersResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has administratorLogin => (is => 'ro', isa => 'Str'  );
+  has administratorLoginPassword => (is => 'ro', isa => 'Str'  );
+  has fullyQualifiedDomainName => (is => 'ro', isa => 'Str'  );
+  has version => (is => 'ro', isa => 'Str'  );
 
 1;

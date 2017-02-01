@@ -1,6 +1,6 @@
 package Azure::IntuneResourceManagement::WipeMAMUserDeviceResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has value => (is => 'ro', isa => 'Str'  );
 
 1;

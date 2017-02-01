@@ -1,6 +1,7 @@
 package Azure::DataLakeAnalyticsAccountManagement::GetStorageAccountsResult;
   use Moose;
 
-  has properties => (is => 'ro', isa => 'Any'  );
+  has accessKey => (is => 'ro', isa => 'Str'  );
+  has suffix => (is => 'ro', isa => 'Str'  );
 
 1;
