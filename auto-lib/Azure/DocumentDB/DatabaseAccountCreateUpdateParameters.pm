@@ -1,6 +1,7 @@
 package Azure::DocumentDB::DatabaseAccountCreateUpdateParameters;
   use Moose;
 
+  has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'consistencyPolicy' => (is => 'ro', isa => 'Azure::DocumentDB::ConsistencyPolicy'  );
   has 'databaseAccountOfferType' => (is => 'ro', isa => 'Azure::DocumentDB::DatabaseAccountOfferType'  );
   has 'ipRangeFilter' => (is => 'ro', isa => 'Azure::DocumentDB::IPRangeFilter'  );
