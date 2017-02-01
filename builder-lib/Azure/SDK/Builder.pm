@@ -209,6 +209,12 @@ package Azure::SDK::Builder;
     return ($parts[1], $parts[2]);
   }
 
+  has _file_objects_cache => (
+    is => 'rw',
+    isa => 'HashRef',
+    default => sub { { } },
+  );
+
   sub object_for_ref {
     my ($self, $ref) = @_;
 
@@ -218,13 +224,18 @@ package Azure::SDK::Builder;
     # When the path is './network.json#/objects/Resource' we have to look in
     # network.json
     if (my ($find_path_in_file, $rest_of_path) = ($final_path =~ m/^\.\/(.*?)#(.*)/)) {
-      # Strip file off the end, so we can concatenate the file in the path
       my $def_file = file($self->schema_file);
-      $def_file = $def_file->dir;
-      $def_file .= "/$find_path_in_file";
+      if (defined $self->_file_objects_cache->{ $def_file }) {
+        return $self->_file_objects_cache->{ $def_file };
+      } else {
+        # Strip file off the end, so we can concatenate the file in the path
+        my $file = $def_file->dir;
+        $file .= "/$find_path_in_file";
 
-      $final_path = "#$rest_of_path";
-      $final_objects = Azure::SDK::Builder->new(schema_file => $def_file)->objects;
+        $final_path = "#$rest_of_path";
+        $final_objects = Azure::SDK::Builder->new(schema_file => $file)->objects;
+        $self->_file_objects_cache->{ $def_file } = $final_objects;
+      }
     }
 
     my ($first, $second) = $self->path_parts($final_path);
