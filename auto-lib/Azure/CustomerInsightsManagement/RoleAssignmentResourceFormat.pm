@@ -1,6 +1,9 @@
 package Azure::CustomerInsightsManagement::RoleAssignmentResourceFormat;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'assignmentName' => (is => 'ro', isa => 'Str'  );
   has 'connectors' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ResourceSetDescription'  );
   has 'description' => (is => 'ro', isa => 'HashRef'  );
@@ -19,7 +22,4 @@ package Azure::CustomerInsightsManagement::RoleAssignmentResourceFormat;
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
   has 'views' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ResourceSetDescription'  );
   has 'widgetTypes' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ResourceSetDescription'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

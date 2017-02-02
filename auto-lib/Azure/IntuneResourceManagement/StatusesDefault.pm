@@ -1,6 +1,11 @@
 package Azure::IntuneResourceManagement::StatusesDefault;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'deployedPolicies' => (is => 'ro', isa => 'Int'  );
   has 'enrolledUsers' => (is => 'ro', isa => 'Int'  );
   has 'flaggedUsers' => (is => 'ro', isa => 'Int'  );
@@ -10,9 +15,4 @@ package Azure::IntuneResourceManagement::StatusesDefault;
   has 'wipeFailedApps' => (is => 'ro', isa => 'Int'  );
   has 'wipePendingApps' => (is => 'ro', isa => 'Int'  );
   has 'wipeSucceededApps' => (is => 'ro', isa => 'Int'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

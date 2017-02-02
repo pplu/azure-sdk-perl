@@ -1,6 +1,11 @@
 package Azure::ServiceBusManagement::SubscriptionResource;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'accessedAt' => (is => 'ro', isa => 'Str'  );
   has 'autoDeleteOnIdle' => (is => 'ro', isa => 'Str'  );
   has 'countDetails' => (is => 'ro', isa => 'Azure::ServiceBusManagement::MessageCountDetails'  );
@@ -17,9 +22,4 @@ package Azure::ServiceBusManagement::SubscriptionResource;
   has 'requiresSession' => (is => 'ro', isa => 'Bool'  );
   has 'status' => (is => 'ro', isa => 'Azure::ServiceBusManagement::EntityStatus'  );
   has 'updatedAt' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

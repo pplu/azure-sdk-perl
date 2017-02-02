@@ -3,6 +3,7 @@ package Azure::NetworkManagement::VirtualNetworkPeering;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'allowForwardedTraffic' => (is => 'ro', isa => 'Bool'  );
   has 'allowGatewayTransit' => (is => 'ro', isa => 'Bool'  );
   has 'allowVirtualNetworkAccess' => (is => 'ro', isa => 'Bool'  );
@@ -10,5 +11,4 @@ package Azure::NetworkManagement::VirtualNetworkPeering;
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'remoteVirtualNetwork' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'useRemoteGateways' => (is => 'ro', isa => 'Bool'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

@@ -3,6 +3,7 @@ package Azure::NetworkManagement::ApplicationGatewayHttpListener;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'frontendIPConfiguration' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'frontendPort' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'hostName' => (is => 'ro', isa => 'Str'  );
@@ -10,5 +11,4 @@ package Azure::NetworkManagement::ApplicationGatewayHttpListener;
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'requireServerNameIndication' => (is => 'ro', isa => 'Bool'  );
   has 'sslCertificate' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

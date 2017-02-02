@@ -3,6 +3,7 @@ package Azure::LogicManagement::WorkflowTrigger;
 
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'changedTime' => (is => 'ro', isa => 'Str'  );
   has 'createdTime' => (is => 'ro', isa => 'Str'  );
   has 'lastExecutionTime' => (is => 'ro', isa => 'Str'  );
@@ -12,5 +13,4 @@ package Azure::LogicManagement::WorkflowTrigger;
   has 'state' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowState'  );
   has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
   has 'workflow' => (is => 'ro', isa => 'Azure::LogicManagement::ResourceReference'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

@@ -3,6 +3,7 @@ package Azure::NetworkManagement::ExpressRouteCircuitPeering;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'azureASN' => (is => 'ro', isa => 'Int'  );
   has 'gatewayManagerEtag' => (is => 'ro', isa => 'Str'  );
   has 'lastModifiedBy' => (is => 'ro', isa => 'Str'  );
@@ -18,5 +19,4 @@ package Azure::NetworkManagement::ExpressRouteCircuitPeering;
   has 'state' => (is => 'ro', isa => 'Str'  );
   has 'stats' => (is => 'ro', isa => 'Azure::NetworkManagement::ExpressRouteCircuitStats'  );
   has 'vlanId' => (is => 'ro', isa => 'Int'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

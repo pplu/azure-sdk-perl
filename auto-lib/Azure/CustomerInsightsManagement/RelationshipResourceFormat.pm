@@ -1,6 +1,9 @@
 package Azure::CustomerInsightsManagement::RelationshipResourceFormat;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'cardinality' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'HashRef'  );
   has 'displayName' => (is => 'ro', isa => 'HashRef'  );
@@ -13,7 +16,4 @@ package Azure::CustomerInsightsManagement::RelationshipResourceFormat;
   has 'relationshipGuidId' => (is => 'ro', isa => 'Str'  );
   has 'relationshipName' => (is => 'ro', isa => 'Str'  );
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

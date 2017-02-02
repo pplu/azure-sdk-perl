@@ -3,6 +3,7 @@ package Azure::LogicManagement::WorkflowTriggerHistory;
 
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'code' => (is => 'ro', isa => 'Str'  );
   has 'correlation' => (is => 'ro', isa => 'Azure::LogicManagement::Correlation'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
@@ -14,5 +15,4 @@ package Azure::LogicManagement::WorkflowTriggerHistory;
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
   has 'trackingId' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

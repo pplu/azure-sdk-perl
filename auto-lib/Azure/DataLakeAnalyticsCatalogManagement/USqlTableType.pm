@@ -17,4 +17,6 @@ package Azure::DataLakeAnalyticsCatalogManagement::USqlTableType;
   has 'typeFamily' => (is => 'ro', isa => 'Str'  );
   has 'typeName' => (is => 'ro', isa => 'Str'  );
   has 'userTypeId' => (is => 'ro', isa => 'Int'  );
+  has 'computeAccountName' => (is => 'ro', isa => 'Str'  );
+  has 'version' => (is => 'ro', isa => 'Str'  );
 1;

@@ -1,6 +1,8 @@
 package Azure::SQLDatabase::ServiceTierAdvisor;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
   has 'activeTimeRatio' => (is => 'ro', isa => 'Num'  );
   has 'avgDtu' => (is => 'ro', isa => 'Num'  );
   has 'confidence' => (is => 'ro', isa => 'Num'  );
@@ -20,6 +22,4 @@ package Azure::SQLDatabase::ServiceTierAdvisor;
   has 'serviceLevelObjectiveUsageMetrics' => (is => 'ro', isa => 'ArrayRef[Azure::SQLDatabase::SloUsageMetric]'  );
   has 'usageBasedRecommendationServiceLevelObjective' => (is => 'ro', isa => 'Str'  );
   has 'usageBasedRecommendationServiceLevelObjectiveId' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
 1;

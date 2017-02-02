@@ -3,6 +3,7 @@ package Azure::NetworkManagement::SecurityRule;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'access' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'destinationAddressPrefix' => (is => 'ro', isa => 'Str'  );
@@ -13,5 +14,4 @@ package Azure::NetworkManagement::SecurityRule;
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'sourceAddressPrefix' => (is => 'ro', isa => 'Str'  );
   has 'sourcePortRange' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

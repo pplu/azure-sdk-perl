@@ -3,6 +3,7 @@ package Azure::LogicManagement::WorkflowRun;
 
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'code' => (is => 'ro', isa => 'Str'  );
   has 'correlation' => (is => 'ro', isa => 'Azure::LogicManagement::Correlation'  );
   has 'correlationId' => (is => 'ro', isa => 'Str'  );
@@ -14,5 +15,4 @@ package Azure::LogicManagement::WorkflowRun;
   has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
   has 'trigger' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowRunTrigger'  );
   has 'workflow' => (is => 'ro', isa => 'Azure::LogicManagement::ResourceReference'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

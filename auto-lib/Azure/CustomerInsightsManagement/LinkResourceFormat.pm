@@ -1,6 +1,9 @@
 package Azure::CustomerInsightsManagement::LinkResourceFormat;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'HashRef'  );
   has 'displayName' => (is => 'ro', isa => 'HashRef'  );
   has 'linkName' => (is => 'ro', isa => 'Str'  );
@@ -11,7 +14,4 @@ package Azure::CustomerInsightsManagement::LinkResourceFormat;
   has 'sourceInteractionType' => (is => 'ro', isa => 'Str'  );
   has 'targetProfileType' => (is => 'ro', isa => 'Str'  );
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

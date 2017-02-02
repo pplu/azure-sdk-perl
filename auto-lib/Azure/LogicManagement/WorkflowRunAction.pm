@@ -3,6 +3,7 @@ package Azure::LogicManagement::WorkflowRunAction;
 
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'code' => (is => 'ro', isa => 'Str'  );
   has 'correlation' => (is => 'ro', isa => 'Azure::LogicManagement::Correlation'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
@@ -13,5 +14,4 @@ package Azure::LogicManagement::WorkflowRunAction;
   has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
   has 'trackedProperties' => (is => 'ro', isa => 'Azure::LogicManagement::Object'  );
   has 'trackingId' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

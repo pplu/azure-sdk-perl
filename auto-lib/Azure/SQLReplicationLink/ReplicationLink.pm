@@ -1,6 +1,8 @@
 package Azure::SQLReplicationLink::ReplicationLink;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
   has 'partnerDatabase' => (is => 'ro', isa => 'Str'  );
   has 'partnerLocation' => (is => 'ro', isa => 'Str'  );
   has 'partnerRole' => (is => 'ro', isa => 'Str'  );
@@ -9,6 +11,4 @@ package Azure::SQLReplicationLink::ReplicationLink;
   has 'replicationState' => (is => 'ro', isa => 'Str'  );
   has 'role' => (is => 'ro', isa => 'Str'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
 1;

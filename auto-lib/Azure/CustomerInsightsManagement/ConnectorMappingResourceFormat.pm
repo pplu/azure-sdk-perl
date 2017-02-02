@@ -1,6 +1,9 @@
 package Azure::CustomerInsightsManagement::ConnectorMappingResourceFormat;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'connectorMappingName' => (is => 'ro', isa => 'Str'  );
   has 'connectorName' => (is => 'ro', isa => 'Str'  );
   has 'connectorType' => (is => 'ro', isa => 'Str'  );
@@ -16,7 +19,4 @@ package Azure::CustomerInsightsManagement::ConnectorMappingResourceFormat;
   has 'runId' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

@@ -3,6 +3,7 @@ package Azure::NetworkManagement::Probe;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'intervalInSeconds' => (is => 'ro', isa => 'Int'  );
   has 'loadBalancingRules' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::SubResource]'  );
   has 'numberOfProbes' => (is => 'ro', isa => 'Int'  );
@@ -10,5 +11,4 @@ package Azure::NetworkManagement::Probe;
   has 'protocol' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'requestPath' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

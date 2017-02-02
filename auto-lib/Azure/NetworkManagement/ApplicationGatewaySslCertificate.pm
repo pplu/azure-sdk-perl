@@ -3,9 +3,9 @@ package Azure::NetworkManagement::ApplicationGatewaySslCertificate;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'data' => (is => 'ro', isa => 'Str'  );
   has 'password' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'publicCertData' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
 1;

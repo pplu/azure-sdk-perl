@@ -1,6 +1,11 @@
 package Azure::StorageImportExport::Job;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'backupDriveManifest' => (is => 'ro', isa => 'Bool'  );
   has 'cancelRequested' => (is => 'ro', isa => 'Bool'  );
   has 'containerSas' => (is => 'ro', isa => 'Str'  );
@@ -19,9 +24,4 @@ package Azure::StorageImportExport::Job;
   has 'shippingInformation' => (is => 'ro', isa => 'Azure::StorageImportExport::ShippingInformation'  );
   has 'state' => (is => 'ro', isa => 'Str'  );
   has 'storageAccountId' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

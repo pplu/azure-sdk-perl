@@ -1,6 +1,9 @@
 package Azure::CustomerInsightsManagement::KpiResourceFormat;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'aliases' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::KpiAlias]'  );
   has 'calculationWindow' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'HashRef'  );
@@ -19,7 +22,4 @@ package Azure::CustomerInsightsManagement::KpiResourceFormat;
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
   has 'thresHolds' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::KpiThresholds'  );
   has 'unit' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

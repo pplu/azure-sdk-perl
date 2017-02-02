@@ -1,6 +1,9 @@
 package Azure::CustomerInsightsManagement::WidgetTypeResourceFormat;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'changed' => (is => 'ro', isa => 'Str'  );
   has 'created' => (is => 'ro', isa => 'Str'  );
   has 'definition' => (is => 'ro', isa => 'Str'  );
@@ -10,7 +13,4 @@ package Azure::CustomerInsightsManagement::WidgetTypeResourceFormat;
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
   has 'widgetTypeName' => (is => 'ro', isa => 'Str'  );
   has 'widgetVersion' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

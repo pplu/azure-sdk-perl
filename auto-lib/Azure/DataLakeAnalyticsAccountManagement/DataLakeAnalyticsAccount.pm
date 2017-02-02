@@ -1,6 +1,11 @@
 package Azure::DataLakeAnalyticsAccountManagement::DataLakeAnalyticsAccount;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'currentTier' => (is => 'ro', isa => 'Str'  );
   has 'dataLakeStoreAccounts' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::DataLakeStoreAccountInfo]'  );
@@ -16,9 +21,4 @@ package Azure::DataLakeAnalyticsAccountManagement::DataLakeAnalyticsAccount;
   has 'storageAccounts' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::StorageAccountInfo]'  );
   has 'systemMaxDegreeOfParallelism' => (is => 'ro', isa => 'Int'  );
   has 'systemMaxJobCount' => (is => 'ro', isa => 'Int'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;
