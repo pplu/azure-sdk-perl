@@ -27,6 +27,14 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::CreateAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CreateOrUpdateFirewallRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::CreateOrUpdateFirewallRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub DeleteAccount {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -41,6 +49,14 @@ package Azure::DataLakeAnalyticsAccountManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteDataLakeStoreAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteFirewallRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteFirewallRules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteStorageAccounts {
@@ -65,6 +81,14 @@ package Azure::DataLakeAnalyticsAccountManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetDataLakeStoreAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetFirewallRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetFirewallRules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetStorageAccounts {
@@ -97,6 +121,14 @@ package Azure::DataLakeAnalyticsAccountManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListByAccountDataLakeStoreAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByAccountFirewallRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListByAccountFirewallRules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByAccountStorageAccounts {
@@ -139,6 +171,14 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::UpdateAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateFirewallRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::UpdateFirewallRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub UpdateStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -148,6 +188,6 @@ package Azure::DataLakeAnalyticsAccountManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AddDataLakeStoreAccounts AddStorageAccounts CreateAccount DeleteAccount DeleteDataLakeStoreAccounts DeleteStorageAccounts GetAccount GetDataLakeStoreAccounts GetStorageAccounts GetStorageContainerStorageAccounts ListAccount ListByAccountDataLakeStoreAccounts ListByAccountStorageAccounts ListByResourceGroupAccount ListSasTokensStorageAccounts ListStorageContainersStorageAccounts UpdateAccount UpdateStorageAccounts / }
+  sub operations { qw/AddDataLakeStoreAccounts AddStorageAccounts CreateAccount CreateOrUpdateFirewallRules DeleteAccount DeleteDataLakeStoreAccounts DeleteFirewallRules DeleteStorageAccounts GetAccount GetDataLakeStoreAccounts GetFirewallRules GetStorageAccounts GetStorageContainerStorageAccounts ListAccount ListByAccountDataLakeStoreAccounts ListByAccountFirewallRules ListByAccountStorageAccounts ListByResourceGroupAccount ListSasTokensStorageAccounts ListStorageContainersStorageAccounts UpdateAccount UpdateFirewallRules UpdateStorageAccounts / }
 
 1;
