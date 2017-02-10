@@ -17,6 +17,7 @@ package Azure::BatchService::PoolAddParameter;
   has 'startTask' => (is => 'ro', isa => 'Azure::BatchService::StartTask'  );
   has 'targetDedicated' => (is => 'ro', isa => 'Int'  );
   has 'taskSchedulingPolicy' => (is => 'ro', isa => 'Azure::BatchService::TaskSchedulingPolicy'  );
+  has 'userAccounts' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::UserAccount]'  );
   has 'virtualMachineConfiguration' => (is => 'ro', isa => 'Azure::BatchService::VirtualMachineConfiguration'  );
   has 'vmSize' => (is => 'ro', isa => 'Str'  );
 1;

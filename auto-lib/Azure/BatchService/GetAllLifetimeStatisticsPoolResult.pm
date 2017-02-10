@@ -1,4 +1,4 @@
-package Azure::BatchService::GetAllPoolsLifetimeStatisticsPoolResult;
+package Azure::BatchService::GetAllLifetimeStatisticsPoolResult;
   use Moose;
 
   has lastUpdateTime => (is => 'ro', isa => 'Str'  );

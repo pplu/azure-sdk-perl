@@ -5,7 +5,7 @@ package Azure::BatchService::AddPool;
   has 'Pool' => (is => 'ro', required => 1, isa => 'Azure::BatchService::PoolAddParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01.3.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',

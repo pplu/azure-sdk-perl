@@ -2,7 +2,7 @@ package Azure::BatchManagement::ListByResourceGroupBatchAccount;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-12-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

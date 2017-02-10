@@ -1,4 +1,4 @@
-package Azure::BatchService::PoolListPoolUsageMetricsResult;
+package Azure::BatchService::PoolListUsageMetricsResult;
   use Moose;
 
   has 'odata.nextLink' => (is => 'ro', isa => 'Str'  );

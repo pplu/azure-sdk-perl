@@ -10,6 +10,8 @@ package Azure::BatchManagement::GetBatchAccountResult;
   has activeJobAndJobScheduleQuota => (is => 'ro', isa => 'Int'  );
   has autoStorage => (is => 'ro', isa => 'Any'  );
   has coreQuota => (is => 'ro', isa => 'Int'  );
+  has keyVaultReference => (is => 'ro', isa => 'Any'  );
+  has poolAllocationMode => (is => 'ro', isa => 'Str'  );
   has poolQuota => (is => 'ro', isa => 'Int'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
 

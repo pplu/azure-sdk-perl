@@ -5,7 +5,7 @@ package Azure::BatchManagement::UpdateApplication;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-12-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'applicationId' => (is => 'ro', required => 1, isa => 'Str',

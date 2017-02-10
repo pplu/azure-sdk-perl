@@ -5,6 +5,6 @@ package Azure::BatchService::StartTask;
   has 'environmentSettings' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::EnvironmentSetting]'  );
   has 'maxTaskRetryCount' => (is => 'ro', isa => 'Int'  );
   has 'resourceFiles' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ResourceFile]'  );
-  has 'runElevated' => (is => 'ro', isa => 'Bool'  );
+  has 'userIdentity' => (is => 'ro', isa => 'Azure::BatchService::UserIdentity'  );
   has 'waitForSuccess' => (is => 'ro', isa => 'Bool'  );
 1;

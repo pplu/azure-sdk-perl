@@ -1,8 +1,8 @@
-package Azure::BatchService::GetAllPoolsLifetimeStatisticsPool;
+package Azure::BatchService::GetAllLifetimeStatisticsJob;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01.3.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
@@ -18,7 +18,7 @@ package Azure::BatchService::GetAllPoolsLifetimeStatisticsPool;
     traits => [ 'Azure::ParamInQuery' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/lifetimepoolstats');
-  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetAllPoolsLifetimeStatisticsPoolResult');
+  class_has _api_uri => (is => 'ro', default => '/lifetimejobstats');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetAllLifetimeStatisticsJobResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

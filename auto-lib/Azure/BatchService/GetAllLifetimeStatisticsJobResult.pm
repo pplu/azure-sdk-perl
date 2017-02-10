@@ -1,4 +1,4 @@
-package Azure::BatchService::GetAllJobsLifetimeStatisticsJobResult;
+package Azure::BatchService::GetAllLifetimeStatisticsJobResult;
   use Moose;
 
   has kernelCPUTime => (is => 'ro', isa => 'Str'  );

@@ -1,11 +1,11 @@
-package Azure::BatchService::ListPoolUsageMetricsPool;
+package Azure::BatchService::ListUsageMetricsPool;
   use Moose;
   use MooseX::ClassAttribute;
 
   has '$filter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01.3.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
@@ -31,6 +31,6 @@ package Azure::BatchService::ListPoolUsageMetricsPool;
   );
 
   class_has _api_uri => (is => 'ro', default => '/poolusagemetrics');
-  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListPoolUsageMetricsPoolResult');
+  class_has _returns => (is => 'ro', default => 'Azure::BatchService::ListUsageMetricsPoolResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

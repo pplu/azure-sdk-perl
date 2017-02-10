@@ -138,14 +138,14 @@ package Azure::BatchService;
     my $call_object = $self->new_with_coercions('Azure::BatchService::ExistsPool', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetAllJobsLifetimeStatisticsJob {
+  sub GetAllLifetimeStatisticsJob {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::BatchService::GetAllJobsLifetimeStatisticsJob', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::BatchService::GetAllLifetimeStatisticsJob', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetAllPoolsLifetimeStatisticsPool {
+  sub GetAllLifetimeStatisticsPool {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::BatchService::GetAllPoolsLifetimeStatisticsPool', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::BatchService::GetAllLifetimeStatisticsPool', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetApplication {
@@ -183,19 +183,19 @@ package Azure::BatchService;
     my $call_object = $self->new_with_coercions('Azure::BatchService::GetJobSchedule', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetNodeFilePropertiesFromComputeNodeFile {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::BatchService::GetNodeFilePropertiesFromComputeNodeFile', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetNodeFilePropertiesFromTaskFile {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::BatchService::GetNodeFilePropertiesFromTaskFile', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub GetPool {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::BatchService::GetPool', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetPropertiesFromComputeNodeFile {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::BatchService::GetPropertiesFromComputeNodeFile', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetPropertiesFromTaskFile {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::BatchService::GetPropertiesFromTaskFile', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetRemoteDesktopComputeNode {
@@ -263,11 +263,6 @@ package Azure::BatchService;
     my $call_object = $self->new_with_coercions('Azure::BatchService::ListPool', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListPoolUsageMetricsPool {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::BatchService::ListPoolUsageMetricsPool', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub ListPreparationAndReleaseTaskStatusJob {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::BatchService::ListPreparationAndReleaseTaskStatusJob', { @_ });
@@ -281,6 +276,11 @@ package Azure::BatchService;
   sub ListTask {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::BatchService::ListTask', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListUsageMetricsPool {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::BatchService::ListUsageMetricsPool', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub PatchJob {
@@ -374,6 +374,6 @@ package Azure::BatchService;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AddCertificate AddCollectionTask AddJob AddJobSchedule AddPool AddTask AddUserComputeNode CancelDeletionCertificate DeleteCertificate DeleteFromComputeNodeFile DeleteFromTaskFile DeleteJob DeleteJobSchedule DeletePool DeleteTask DeleteUserComputeNode DisableAutoScalePool DisableJob DisableJobSchedule DisableSchedulingComputeNode EnableAutoScalePool EnableJob EnableJobSchedule EnableSchedulingComputeNode EvaluateAutoScalePool ExistsJobSchedule ExistsPool GetAllJobsLifetimeStatisticsJob GetAllPoolsLifetimeStatisticsPool GetApplication GetCertificate GetComputeNode GetFromComputeNodeFile GetFromTaskFile GetJob GetJobSchedule GetNodeFilePropertiesFromComputeNodeFile GetNodeFilePropertiesFromTaskFile GetPool GetRemoteDesktopComputeNode GetRemoteLoginSettingsComputeNode GetTask ListApplication ListCertificate ListComputeNode ListFromComputeNodeFile ListFromJobScheduleJob ListFromTaskFile ListJob ListJobSchedule ListNodeAgentSkusAccount ListPool ListPoolUsageMetricsPool ListPreparationAndReleaseTaskStatusJob ListSubtasksTask ListTask PatchJob PatchJobSchedule PatchPool ReactivateTask RebootComputeNode ReimageComputeNode RemoveNodesPool ResizePool StopResizePool TerminateJob TerminateJobSchedule TerminateTask UpdateJob UpdateJobSchedule UpdatePropertiesPool UpdateTask UpdateUserComputeNode UpgradeOSPool / }
+  sub operations { qw/AddCertificate AddCollectionTask AddJob AddJobSchedule AddPool AddTask AddUserComputeNode CancelDeletionCertificate DeleteCertificate DeleteFromComputeNodeFile DeleteFromTaskFile DeleteJob DeleteJobSchedule DeletePool DeleteTask DeleteUserComputeNode DisableAutoScalePool DisableJob DisableJobSchedule DisableSchedulingComputeNode EnableAutoScalePool EnableJob EnableJobSchedule EnableSchedulingComputeNode EvaluateAutoScalePool ExistsJobSchedule ExistsPool GetAllLifetimeStatisticsJob GetAllLifetimeStatisticsPool GetApplication GetCertificate GetComputeNode GetFromComputeNodeFile GetFromTaskFile GetJob GetJobSchedule GetPool GetPropertiesFromComputeNodeFile GetPropertiesFromTaskFile GetRemoteDesktopComputeNode GetRemoteLoginSettingsComputeNode GetTask ListApplication ListCertificate ListComputeNode ListFromComputeNodeFile ListFromJobScheduleJob ListFromTaskFile ListJob ListJobSchedule ListNodeAgentSkusAccount ListPool ListPreparationAndReleaseTaskStatusJob ListSubtasksTask ListTask ListUsageMetricsPool PatchJob PatchJobSchedule PatchPool ReactivateTask RebootComputeNode ReimageComputeNode RemoveNodesPool ResizePool StopResizePool TerminateJob TerminateJobSchedule TerminateTask UpdateJob UpdateJobSchedule UpdatePropertiesPool UpdateTask UpdateUserComputeNode UpgradeOSPool / }
 
 1;
