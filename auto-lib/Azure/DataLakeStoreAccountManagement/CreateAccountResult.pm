@@ -14,6 +14,7 @@ package Azure::DataLakeStoreAccountManagement::CreateAccountResult;
   has encryptionProvisioningState => (is => 'ro', isa => 'Str'  );
   has encryptionState => (is => 'ro', isa => 'Str'  );
   has endpoint => (is => 'ro', isa => 'Str'  );
+  has firewallAllowAzureIps => (is => 'ro', isa => 'Str'  );
   has firewallRules => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeStoreAccountManagement::FirewallRule]'  );
   has firewallState => (is => 'ro', isa => 'Str'  );
   has lastModifiedTime => (is => 'ro', isa => 'Str'  );
