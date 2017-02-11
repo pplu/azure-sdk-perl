@@ -8,6 +8,9 @@ requires 'URI::Template';
 requires 'Module::Runtime';
 requires 'Module::Find';
 
+requires 'ARGV::Struct';
+requires 'Hash::Flatten';
+
 on develop => sub {
   requires 'MooseX::StrictConstructor';
   requires 'MooseX::DataModel';
