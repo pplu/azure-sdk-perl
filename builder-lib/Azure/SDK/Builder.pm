@@ -187,6 +187,8 @@ package Azure::SDK::Builder;
       return 'SQLReplicationLink' if ($title eq 'Azure SQL Replication Link API spec');
       return 'SQLDatabase' if ($title eq 'Azure SQL Database API spec');
       return 'LogAnalytics' if ($title eq 'Azure Log Analytics');
+      return 'AppServicePlans' if ($title eq 'AppServicePlans API Client');
+      return 'AppServiceEnvironments' if ($title eq 'AppServiceEnvironments API Client');
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
       return $title if ($title eq 'BatchManagement');
