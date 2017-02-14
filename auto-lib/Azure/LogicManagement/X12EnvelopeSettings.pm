@@ -1,0 +1,28 @@
+package Azure::LogicManagement::X12EnvelopeSettings;
+  use Moose;
+
+  has 'controlStandardsId' => (is => 'ro', isa => 'Int'  );
+  has 'controlVersionNumber' => (is => 'ro', isa => 'Str'  );
+  has 'enableDefaultGroupHeaders' => (is => 'ro', isa => 'Bool'  );
+  has 'functionalGroupId' => (is => 'ro', isa => 'Str'  );
+  has 'groupControlNumberLowerBound' => (is => 'ro', isa => 'Int'  );
+  has 'groupControlNumberUpperBound' => (is => 'ro', isa => 'Int'  );
+  has 'groupHeaderAgencyCode' => (is => 'ro', isa => 'Str'  );
+  has 'groupHeaderDateFormat' => (is => 'ro', isa => 'Azure::LogicManagement::X12DateFormat'  );
+  has 'groupHeaderTimeFormat' => (is => 'ro', isa => 'Azure::LogicManagement::X12TimeFormat'  );
+  has 'groupHeaderVersion' => (is => 'ro', isa => 'Str'  );
+  has 'interchangeControlNumberLowerBound' => (is => 'ro', isa => 'Int'  );
+  has 'interchangeControlNumberUpperBound' => (is => 'ro', isa => 'Int'  );
+  has 'overwriteExistingTransactionSetControlNumber' => (is => 'ro', isa => 'Bool'  );
+  has 'receiverApplicationId' => (is => 'ro', isa => 'Str'  );
+  has 'rolloverGroupControlNumber' => (is => 'ro', isa => 'Bool'  );
+  has 'rolloverInterchangeControlNumber' => (is => 'ro', isa => 'Bool'  );
+  has 'rolloverTransactionSetControlNumber' => (is => 'ro', isa => 'Bool'  );
+  has 'senderApplicationId' => (is => 'ro', isa => 'Str'  );
+  has 'transactionSetControlNumberLowerBound' => (is => 'ro', isa => 'Int'  );
+  has 'transactionSetControlNumberPrefix' => (is => 'ro', isa => 'Str'  );
+  has 'transactionSetControlNumberSuffix' => (is => 'ro', isa => 'Str'  );
+  has 'transactionSetControlNumberUpperBound' => (is => 'ro', isa => 'Int'  );
+  has 'usageIndicator' => (is => 'ro', isa => 'Azure::LogicManagement::UsageIndicator'  );
+  has 'useControlStandardsIdAsRepetitionCharacter' => (is => 'ro', isa => 'Bool'  );
+1;
