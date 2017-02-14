@@ -2,7 +2,7 @@ package Azure::UsageManagement::GetRateCard;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has '$filter' => (is => 'ro', isa => 'Str',
+  has '$filter' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-06-01-preview',
