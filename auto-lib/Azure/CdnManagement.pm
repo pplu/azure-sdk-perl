@@ -8,14 +8,6 @@ package Azure::CdnManagement;
     my $call_object = $self->new_with_coercions('Azure::CdnManagement::CheckNameAvailability', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CheckResourceUsage {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CheckResourceUsage', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub CreateCustomDomains {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -62,6 +54,22 @@ package Azure::CdnManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteProfiles', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DisableCustomHttpsCustomDomains {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DisableCustomHttpsCustomDomains', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub EnableCustomHttpsCustomDomains {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::EnableCustomHttpsCustomDomains', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GenerateSsoUriProfiles {
@@ -154,6 +162,14 @@ package Azure::CdnManagement;
     my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListResourceUsage {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListResourceUsage', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListResourceUsageEndpoints {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -235,6 +251,6 @@ package Azure::CdnManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailability CheckResourceUsage CreateCustomDomains CreateEndpoints CreateProfiles DeleteCustomDomains DeleteEndpoints DeleteProfiles GenerateSsoUriProfiles GetCustomDomains GetEndpoints GetOrigins GetProfiles ListByEndpointCustomDomains ListByEndpointOrigins ListByProfileEndpoints ListByResourceGroupProfiles ListEdgeNodes ListOperations ListProfiles ListResourceUsageEndpoints ListResourceUsageProfiles LoadContentEndpoints PurgeContentEndpoints StartEndpoints StopEndpoints UpdateEndpoints UpdateOrigins UpdateProfiles ValidateCustomDomainEndpoints / }
+  sub operations { qw/CheckNameAvailability CreateCustomDomains CreateEndpoints CreateProfiles DeleteCustomDomains DeleteEndpoints DeleteProfiles DisableCustomHttpsCustomDomains EnableCustomHttpsCustomDomains GenerateSsoUriProfiles GetCustomDomains GetEndpoints GetOrigins GetProfiles ListByEndpointCustomDomains ListByEndpointOrigins ListByProfileEndpoints ListByResourceGroupProfiles ListEdgeNodes ListOperations ListProfiles ListResourceUsage ListResourceUsageEndpoints ListResourceUsageProfiles LoadContentEndpoints PurgeContentEndpoints StartEndpoints StopEndpoints UpdateEndpoints UpdateOrigins UpdateProfiles ValidateCustomDomainEndpoints / }
 
 1;

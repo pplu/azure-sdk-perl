@@ -1,4 +1,4 @@
-package Azure::CdnManagement::CheckResourceUsageResult;
+package Azure::CdnManagement::ListResourceUsageResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );

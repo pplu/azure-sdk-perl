@@ -1,4 +1,4 @@
-package Azure::CdnManagement::CheckResourceUsage;
+package Azure::CdnManagement::ListResourceUsage;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -10,6 +10,6 @@ package Azure::CdnManagement::CheckResourceUsage;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Cdn/checkResourceUsage');
-  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::CheckResourceUsageResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::ListResourceUsageResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

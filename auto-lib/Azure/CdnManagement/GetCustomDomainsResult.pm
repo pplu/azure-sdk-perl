@@ -6,6 +6,7 @@ package Azure::CdnManagement::GetCustomDomainsResult;
   has name => (is => 'ro', isa => 'Str'  );
   has tags => (is => 'ro', isa => 'HashRef'  );
   has type => (is => 'ro', isa => 'Str'  );
+  has CustomHttpsProvisioningState => (is => 'ro', isa => 'Str'  );
   has hostName => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has resourceState => (is => 'ro', isa => 'Str'  );

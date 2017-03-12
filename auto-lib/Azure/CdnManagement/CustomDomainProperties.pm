@@ -1,6 +1,7 @@
 package Azure::CdnManagement::CustomDomainProperties;
   use Moose;
 
+  has 'CustomHttpsProvisioningState' => (is => 'ro', isa => 'Str'  );
   has 'hostName' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'resourceState' => (is => 'ro', isa => 'Str'  );
