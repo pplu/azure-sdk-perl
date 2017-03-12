@@ -8,6 +8,9 @@ package Azure::ServiceFabric::CreateApplications;
   has 'applicationDescription' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::ApplicationDescription',
     traits => [ 'Azure::ParamInBody' ],
   );
+  has 'timeout' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/$/Create');
   class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::CreateApplicationsResult');

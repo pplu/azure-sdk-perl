@@ -11,6 +11,9 @@ package Azure::ServiceFabric::ResumeApplicationUpgrades;
   has 'resumeApplicationUpgrade' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::ResumeApplicationUpgrade',
     traits => [ 'Azure::ParamInBody' ],
   );
+  has 'timeout' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/MoveNextUpgradeDomain');
   class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::ResumeApplicationUpgradesResult');

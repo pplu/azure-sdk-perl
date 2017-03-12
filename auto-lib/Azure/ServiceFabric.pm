@@ -243,6 +243,11 @@ package Azure::ServiceFabric;
     my $call_object = $self->new_with_coercions('Azure::ServiceFabric::RegisterApplicationTypes', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub RegisterClusterPackages {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ServiceFabric::RegisterClusterPackages', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RemoveApplications {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::ServiceFabric::RemoveApplications', { @_ });
@@ -286,6 +291,16 @@ package Azure::ServiceFabric;
   sub ResumeApplicationUpgrades {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::ServiceFabric::ResumeApplicationUpgrades', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ResumeClusterUpgrades {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ServiceFabric::ResumeClusterUpgrades', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RollbackClusterUpgrades {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ServiceFabric::RollbackClusterUpgrades', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub SendApplicationHealths {
@@ -338,14 +353,29 @@ package Azure::ServiceFabric;
     my $call_object = $self->new_with_coercions('Azure::ServiceFabric::StartApplicationUpgrades', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub StartClusterUpgrades {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ServiceFabric::StartClusterUpgrades', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub UnregisterApplicationTypes {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::ServiceFabric::UnregisterApplicationTypes', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UnregisterClusterPackages {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ServiceFabric::UnregisterClusterPackages', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub UpdateApplicationUpgrades {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::ServiceFabric::UpdateApplicationUpgrades', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateClusterUpgrades {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ServiceFabric::UpdateClusterUpgrades', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateServiceGroups {
@@ -359,6 +389,6 @@ package Azure::ServiceFabric;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateApplications CreateServiceFromTemplates CreateServiceGroupFromTemplates CreateServiceGroups CreateServices DisableNodes EnableNodes GetApplicationHealths GetApplicationManifests GetApplications GetApplicationTypes GetApplicationUpgrades GetClusterHealths GetClusterLoadInformations GetClusterManifests GetDeployedApplicationHealths GetDeployedApplications GetDeployedCodePackages GetDeployedReplicaDetails GetDeployedReplicas GetDeployedServicePackageHealths GetDeployedServicePackages GetDeployedServiceTypes GetNodeHealths GetNodeLoadInformations GetNodes GetPartitionHealths GetPartitionLoadInformations GetPartitions GetReplicaHealths GetReplicaLoadInformations GetReplicas GetServiceDescriptions GetServiceGroupDescriptions GetServiceGroupMembers GetServiceHealths GetServiceManifests GetServices GetServiceTypes GetUpgradeProgresses ListApplications ListApplicationTypes ListDeployedApplications ListNodes ListPartitions ListReplicas ListServices RegisterApplicationTypes RemoveApplications RemoveNodeStates RemoveServiceGroups RemoveServices RepairPartitionLists RepairPartitions ResetPartitionLoads ResolveServices ResumeApplicationUpgrades SendApplicationHealths SendClusterHealths SendDeployedApplicationHealths SendDeployedServicePackageHealths SendNodeHealths SendPartitionHealths SendReplicaHealths SendServiceHealths StartApplicationUpgradeRollbacks StartApplicationUpgrades UnregisterApplicationTypes UpdateApplicationUpgrades UpdateServiceGroups UpdateServices / }
+  sub operations { qw/CreateApplications CreateServiceFromTemplates CreateServiceGroupFromTemplates CreateServiceGroups CreateServices DisableNodes EnableNodes GetApplicationHealths GetApplicationManifests GetApplications GetApplicationTypes GetApplicationUpgrades GetClusterHealths GetClusterLoadInformations GetClusterManifests GetDeployedApplicationHealths GetDeployedApplications GetDeployedCodePackages GetDeployedReplicaDetails GetDeployedReplicas GetDeployedServicePackageHealths GetDeployedServicePackages GetDeployedServiceTypes GetNodeHealths GetNodeLoadInformations GetNodes GetPartitionHealths GetPartitionLoadInformations GetPartitions GetReplicaHealths GetReplicaLoadInformations GetReplicas GetServiceDescriptions GetServiceGroupDescriptions GetServiceGroupMembers GetServiceHealths GetServiceManifests GetServices GetServiceTypes GetUpgradeProgresses ListApplications ListApplicationTypes ListDeployedApplications ListNodes ListPartitions ListReplicas ListServices RegisterApplicationTypes RegisterClusterPackages RemoveApplications RemoveNodeStates RemoveServiceGroups RemoveServices RepairPartitionLists RepairPartitions ResetPartitionLoads ResolveServices ResumeApplicationUpgrades ResumeClusterUpgrades RollbackClusterUpgrades SendApplicationHealths SendClusterHealths SendDeployedApplicationHealths SendDeployedServicePackageHealths SendNodeHealths SendPartitionHealths SendReplicaHealths SendServiceHealths StartApplicationUpgradeRollbacks StartApplicationUpgrades StartClusterUpgrades UnregisterApplicationTypes UnregisterClusterPackages UpdateApplicationUpgrades UpdateClusterUpgrades UpdateServiceGroups UpdateServices / }
 
 1;

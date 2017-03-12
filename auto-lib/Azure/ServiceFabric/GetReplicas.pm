@@ -11,6 +11,9 @@ package Azure::ServiceFabric::GetReplicas;
   has 'replicaId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
+  has 'timeout' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
 
   class_has _api_uri => (is => 'ro', default => '/Partitions/{partitionId}/$/GetReplicas/{replicaId}');
   class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::GetReplicasResult');

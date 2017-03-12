@@ -11,6 +11,9 @@ package Azure::ServiceFabric::CreateServices;
   has 'createServiceDescription' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::CreateServiceDescription',
     traits => [ 'Azure::ParamInBody' ],
   );
+  has 'timeout' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServices/$/Create');
   class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::CreateServicesResult');
