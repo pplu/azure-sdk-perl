@@ -5,7 +5,7 @@ package Azure::NetworkManagement::GetNetworkInterfaces;
   has '$expand' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'networkInterfaceName' => (is => 'ro', required => 1, isa => 'Str',

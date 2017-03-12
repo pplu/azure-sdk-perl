@@ -10,6 +10,7 @@ package Azure::NetworkManagement::ExpressRouteCircuitPeeringPropertiesFormat;
   has 'primaryAzurePort' => (is => 'ro', isa => 'Str'  );
   has 'primaryPeerAddressPrefix' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'routeFilter' => (is => 'ro', isa => 'Azure::NetworkManagement::RouteFilter'  );
   has 'secondaryAzurePort' => (is => 'ro', isa => 'Str'  );
   has 'secondaryPeerAddressPrefix' => (is => 'ro', isa => 'Str'  );
   has 'sharedKey' => (is => 'ro', isa => 'Str'  );
