@@ -1,6 +1,7 @@
 package Azure::RedisManagement::RedisResourceProperties;
   use Moose;
 
+  has 'accessKeys' => (is => 'ro', isa => 'Azure::RedisManagement::RedisAccessKeys'  );
   has 'hostName' => (is => 'ro', isa => 'Str'  );
   has 'port' => (is => 'ro', isa => 'Int'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );

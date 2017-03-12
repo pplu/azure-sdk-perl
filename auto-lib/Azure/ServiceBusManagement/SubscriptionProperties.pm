@@ -9,8 +9,6 @@ package Azure::ServiceBusManagement::SubscriptionProperties;
   has 'deadLetteringOnMessageExpiration' => (is => 'ro', isa => 'Bool'  );
   has 'defaultMessageTimeToLive' => (is => 'ro', isa => 'Str'  );
   has 'enableBatchedOperations' => (is => 'ro', isa => 'Bool'  );
-  has 'entityAvailabilityStatus' => (is => 'ro', isa => 'Azure::ServiceBusManagement::EntityAvailabilityStatus'  );
-  has 'isReadOnly' => (is => 'ro', isa => 'Bool'  );
   has 'lockDuration' => (is => 'ro', isa => 'Str'  );
   has 'maxDeliveryCount' => (is => 'ro', isa => 'Int'  );
   has 'messageCount' => (is => 'ro', isa => 'Int'  );

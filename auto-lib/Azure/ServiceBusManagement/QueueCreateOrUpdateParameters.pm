@@ -13,8 +13,6 @@ package Azure::ServiceBusManagement::QueueCreateOrUpdateParameters;
   has 'enableBatchedOperations' => (is => 'ro', isa => 'Bool'  );
   has 'enableExpress' => (is => 'ro', isa => 'Bool'  );
   has 'enablePartitioning' => (is => 'ro', isa => 'Bool'  );
-  has 'entityAvailabilityStatus' => (is => 'ro', isa => 'Azure::ServiceBusManagement::EntityAvailabilityStatus'  );
-  has 'isAnonymousAccessible' => (is => 'ro', isa => 'Bool'  );
   has 'lockDuration' => (is => 'ro', isa => 'Str'  );
   has 'maxDeliveryCount' => (is => 'ro', isa => 'Int'  );
   has 'maxSizeInMegabytes' => (is => 'ro', isa => 'Int'  );

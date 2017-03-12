@@ -8,7 +8,7 @@ package Azure::InsightsManagement::CreateOrUpdateLogProfiles;
   has 'logProfileName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::InsightsManagement::LogProfileProperties',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::InsightsManagement::LogProfileResource',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
