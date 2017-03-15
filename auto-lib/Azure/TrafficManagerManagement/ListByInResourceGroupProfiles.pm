@@ -1,8 +1,8 @@
-package Azure::TrafficManagerManagement::ListAllInResourceGroupProfiles;
+package Azure::TrafficManagerManagement::ListByInResourceGroupProfiles;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-11-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -13,6 +13,6 @@ package Azure::TrafficManagerManagement::ListAllInResourceGroupProfiles;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles');
-  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::ListAllInResourceGroupProfilesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::ListByInResourceGroupProfilesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

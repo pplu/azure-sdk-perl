@@ -1,4 +1,4 @@
-package Azure::TrafficManagerManagement::ListAllInResourceGroupProfilesResult;
+package Azure::TrafficManagerManagement::ListByInResourceGroupProfilesResult;
   use Moose;
 
   has value => (is => 'ro', isa => 'ArrayRef[Azure::TrafficManagerManagement::Profile]'  );
