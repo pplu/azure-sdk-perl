@@ -2,7 +2,7 @@ package Azure::LogicManagement::IntegrationAccountSchemaProperties;
   use Moose;
 
   has 'changedTime' => (is => 'ro', isa => 'Str'  );
-  has 'content' => (is => 'ro', isa => 'HashRef'  );
+  has 'content' => (is => 'ro', isa => 'Str'  );
   has 'contentLink' => (is => 'ro', isa => 'Azure::LogicManagement::ContentLink'  );
   has 'contentType' => (is => 'ro', isa => 'Str'  );
   has 'createdTime' => (is => 'ro', isa => 'Str'  );

@@ -1,6 +1,5 @@
 package Azure::LogicManagement::ErrorResponse;
   use Moose;
 
-  has 'code' => (is => 'ro', isa => 'Str'  );
-  has 'message' => (is => 'ro', isa => 'Str'  );
+  has 'error' => (is => 'ro', isa => 'Azure::LogicManagement::ErrorProperties'  );
 1;

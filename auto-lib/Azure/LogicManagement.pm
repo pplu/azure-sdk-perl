@@ -59,6 +59,14 @@ package Azure::LogicManagement;
     my $call_object = $self->new_with_coercions('Azure::LogicManagement::CreateOrUpdateSchemas', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CreateOrUpdateSessions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::LogicManagement::CreateOrUpdateSessions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateOrUpdateWorkflows {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -113,6 +121,14 @@ package Azure::LogicManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::LogicManagement::DeleteSchemas', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteSessions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::LogicManagement::DeleteSessions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteWorkflows {
@@ -203,6 +219,14 @@ package Azure::LogicManagement;
     my $call_object = $self->new_with_coercions('Azure::LogicManagement::GetSchemas', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetSessions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::LogicManagement::GetSessions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetWorkflowRunActions {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -289,6 +313,14 @@ package Azure::LogicManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::LogicManagement::ListByIntegrationAccountsSchemas', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByIntegrationAccountsSessions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::LogicManagement::ListByIntegrationAccountsSessions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupIntegrationAccounts {
@@ -409,6 +441,6 @@ package Azure::LogicManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CancelWorkflowRuns CreateOrUpdateAgreements CreateOrUpdateCertificates CreateOrUpdateIntegrationAccounts CreateOrUpdateMaps CreateOrUpdatePartners CreateOrUpdateSchemas CreateOrUpdateWorkflows DeleteAgreements DeleteCertificates DeleteIntegrationAccounts DeleteMaps DeletePartners DeleteSchemas DeleteWorkflows DisableWorkflows EnableWorkflows GenerateUpgradedDefinitionWorkflows GetAgreements GetCallbackUrlIntegrationAccounts GetCertificates GetIntegrationAccounts GetMaps GetPartners GetSchemas GetWorkflowRunActions GetWorkflowRuns GetWorkflows GetWorkflowTriggerHistories GetWorkflowTriggers GetWorkflowVersions ListByIntegrationAccountsAgreements ListByIntegrationAccountsCertificates ListByIntegrationAccountsMaps ListByIntegrationAccountsPartners ListByIntegrationAccountsSchemas ListByResourceGroupIntegrationAccounts ListByResourceGroupWorkflows ListBySubscriptionIntegrationAccounts ListBySubscriptionWorkflows ListCallbackUrlWorkflowTriggers ListOperations ListWorkflowRunActions ListWorkflowRuns ListWorkflowTriggerHistories ListWorkflowTriggers ListWorkflowVersions RunWorkflowTriggers UpdateIntegrationAccounts UpdateWorkflows ValidateWorkflows / }
+  sub operations { qw/CancelWorkflowRuns CreateOrUpdateAgreements CreateOrUpdateCertificates CreateOrUpdateIntegrationAccounts CreateOrUpdateMaps CreateOrUpdatePartners CreateOrUpdateSchemas CreateOrUpdateSessions CreateOrUpdateWorkflows DeleteAgreements DeleteCertificates DeleteIntegrationAccounts DeleteMaps DeletePartners DeleteSchemas DeleteSessions DeleteWorkflows DisableWorkflows EnableWorkflows GenerateUpgradedDefinitionWorkflows GetAgreements GetCallbackUrlIntegrationAccounts GetCertificates GetIntegrationAccounts GetMaps GetPartners GetSchemas GetSessions GetWorkflowRunActions GetWorkflowRuns GetWorkflows GetWorkflowTriggerHistories GetWorkflowTriggers GetWorkflowVersions ListByIntegrationAccountsAgreements ListByIntegrationAccountsCertificates ListByIntegrationAccountsMaps ListByIntegrationAccountsPartners ListByIntegrationAccountsSchemas ListByIntegrationAccountsSessions ListByResourceGroupIntegrationAccounts ListByResourceGroupWorkflows ListBySubscriptionIntegrationAccounts ListBySubscriptionWorkflows ListCallbackUrlWorkflowTriggers ListOperations ListWorkflowRunActions ListWorkflowRuns ListWorkflowTriggerHistories ListWorkflowTriggers ListWorkflowVersions RunWorkflowTriggers UpdateIntegrationAccounts UpdateWorkflows ValidateWorkflows / }
 
 1;
