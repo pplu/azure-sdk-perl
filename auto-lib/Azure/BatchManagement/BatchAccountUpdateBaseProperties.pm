@@ -1,6 +1,5 @@
-package Azure::BatchManagement::BatchAccountUpdateParameters;
+package Azure::BatchManagement::BatchAccountUpdateBaseProperties;
   use Moose;
 
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
   has 'autoStorage' => (is => 'ro', isa => 'Azure::BatchManagement::AutoStorageBaseProperties'  );
 1;
