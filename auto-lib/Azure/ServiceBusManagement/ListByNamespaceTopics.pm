@@ -1,4 +1,4 @@
-package Azure::ServiceBusManagement::ListAllQueues;
+package Azure::ServiceBusManagement::ListByNamespaceTopics;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -15,7 +15,7 @@ package Azure::ServiceBusManagement::ListAllQueues;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/queues');
-  class_has _returns => (is => 'ro', default => 'Azure::ServiceBusManagement::ListAllQueuesResult');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceBusManagement::ListByNamespaceTopicsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

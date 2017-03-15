@@ -1,4 +1,4 @@
-package Azure::ServiceBusManagement::ListBySubscriptionNamespaces;
+package Azure::ServiceBusManagement::ListNamespaces;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -10,6 +10,6 @@ package Azure::ServiceBusManagement::ListBySubscriptionNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.ServiceBus/namespaces');
-  class_has _returns => (is => 'ro', default => 'Azure::ServiceBusManagement::ListBySubscriptionNamespacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceBusManagement::ListNamespacesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

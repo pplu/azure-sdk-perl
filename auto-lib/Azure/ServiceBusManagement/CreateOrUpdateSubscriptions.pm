@@ -8,7 +8,7 @@ package Azure::ServiceBusManagement::CreateOrUpdateSubscriptions;
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ServiceBusManagement::SubscriptionCreateOrUpdateParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ServiceBusManagement::Subscription',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

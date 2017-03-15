@@ -1,4 +1,4 @@
-package Azure::ServiceBusManagement::ListAllSubscriptions;
+package Azure::ServiceBusManagement::ListByTopicSubscriptions;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -19,6 +19,6 @@ package Azure::ServiceBusManagement::ListAllSubscriptions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceBus/namespaces/{namespaceName}/topics/{topicName}/subscriptions');
-  class_has _returns => (is => 'ro', default => 'Azure::ServiceBusManagement::ListAllSubscriptionsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ServiceBusManagement::ListByTopicSubscriptionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

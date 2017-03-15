@@ -8,7 +8,7 @@ package Azure::ServiceBusManagement::CreateOrUpdateQueues;
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ServiceBusManagement::QueueCreateOrUpdateParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ServiceBusManagement::Queue',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'queueName' => (is => 'ro', required => 1, isa => 'Str',

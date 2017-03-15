@@ -1,8 +1,9 @@
-package Azure::ServiceBusManagement::TopicCreateOrUpdateParameters;
+package Azure::ServiceBusManagement::Topic;
   use Moose;
 
-  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'accessedAt' => (is => 'ro', isa => 'Str'  );
   has 'autoDeleteOnIdle' => (is => 'ro', isa => 'Str'  );
   has 'countDetails' => (is => 'ro', isa => 'Azure::ServiceBusManagement::MessageCountDetails'  );

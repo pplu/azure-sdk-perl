@@ -1,4 +1,4 @@
-package Azure::ServiceBusManagement::ListByResourceGroupNamespacesResult;
+package Azure::ServiceBusManagement::ListNamespacesResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
