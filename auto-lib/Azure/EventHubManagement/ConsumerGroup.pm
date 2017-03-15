@@ -1,7 +1,7 @@
-package Azure::EventHubManagement::ConsumerGroupCreateOrUpdateParameters;
+package Azure::EventHubManagement::ConsumerGroup;
   use Moose;
 
-  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'createdAt' => (is => 'ro', isa => 'Str'  );

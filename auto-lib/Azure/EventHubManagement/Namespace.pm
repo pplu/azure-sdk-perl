@@ -1,11 +1,11 @@
-package Azure::EventHubManagement::NamespaceResource;
+package Azure::EventHubManagement::Namespace;
   use Moose;
 
   has 'sku' => (is => 'ro', isa => 'Azure::EventHubManagement::Sku'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
   has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'createdAt' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );

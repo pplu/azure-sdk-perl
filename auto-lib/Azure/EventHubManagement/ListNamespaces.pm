@@ -1,4 +1,4 @@
-package Azure::EventHubManagement::ListBySubscriptionNamespaces;
+package Azure::EventHubManagement::ListNamespaces;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -10,6 +10,6 @@ package Azure::EventHubManagement::ListBySubscriptionNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.EventHub/namespaces');
-  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::ListBySubscriptionNamespacesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::ListNamespacesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

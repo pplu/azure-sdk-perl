@@ -1,4 +1,4 @@
-package Azure::EventHubManagement::CreateOrUpdateNamespaces;
+package Azure::EventHubManagement::UpdateNamespaces;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,7 +8,7 @@ package Azure::EventHubManagement::CreateOrUpdateNamespaces;
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::EventHubManagement::Namespace',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::EventHubManagement::NamespaceUpdateParameter',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -19,6 +19,6 @@ package Azure::EventHubManagement::CreateOrUpdateNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}');
-  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::CreateOrUpdateNamespacesResult');
-  class_has _api_method => (is => 'ro', default => 'PUT');
+  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::UpdateNamespacesResult');
+  class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

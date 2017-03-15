@@ -1,12 +1,9 @@
-package Azure::EventHubManagement::ListAllConsumerGroups;
+package Azure::EventHubManagement::ListByNamespaceEventHubs;
   use Moose;
   use MooseX::ClassAttribute;
 
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-08-01',
     traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'eventHubName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
   );
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -18,7 +15,7 @@ package Azure::EventHubManagement::ListAllConsumerGroups;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/eventhubs/{eventHubName}/consumergroups');
-  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::ListAllConsumerGroupsResult');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/eventhubs');
+  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::ListByNamespaceEventHubsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

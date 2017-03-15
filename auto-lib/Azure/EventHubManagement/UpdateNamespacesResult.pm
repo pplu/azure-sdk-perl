@@ -1,4 +1,4 @@
-package Azure::EventHubManagement::GetNamespacesResult;
+package Azure::EventHubManagement::UpdateNamespacesResult;
   use Moose;
 
   has sku => (is => 'ro', isa => 'HashRef'  );

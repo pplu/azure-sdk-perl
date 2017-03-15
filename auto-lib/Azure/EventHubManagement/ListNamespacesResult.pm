@@ -1,4 +1,4 @@
-package Azure::EventHubManagement::ListByResourceGroupNamespacesResult;
+package Azure::EventHubManagement::ListNamespacesResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
