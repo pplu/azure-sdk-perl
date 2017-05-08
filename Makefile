@@ -20,8 +20,8 @@ gen-classes:
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-resources/policy/2016-12-01/swagger/policy.json
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-resources/resources/2016-09-01/swagger/resources.json
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-resources/subscriptions/2016-06-01/swagger/subscriptions.json
-	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-web/2016-09-01/AppServiceEnvironments.json
-	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-web/2016-09-01/AppServicePlans.json
+	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-web/2016-09-01/swagger/AppServiceEnvironments.json
+	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-web/2016-09-01/swagger/AppServicePlans.json
 
 deps-update:
 	PERL_CARTON_MIRROR=file://`find $(HOME) -type d -iname cps-cpan`/repo carton install
