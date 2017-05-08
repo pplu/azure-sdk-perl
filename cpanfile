@@ -7,6 +7,10 @@ requires 'Throwable::Error';
 requires 'URI::Template';
 requires 'Module::Runtime';
 requires 'Module::Find';
+requires 'Path::Class';
+
+requires 'ARGV::Struct';
+requires 'Hash::Flatten';
 
 on develop => sub {
   requires 'MooseX::StrictConstructor';

@@ -5,72 +5,114 @@ package Azure::RedisManagement;
 
   sub CreateOrUpdatePatchSchedules {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::CreateOrUpdatePatchSchedules', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::CreateOrUpdatePatchSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::CreateRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::CreateRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeletePatchSchedules {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::DeletePatchSchedules', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::DeletePatchSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::DeleteRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::DeleteRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ExportDataRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ExportDataRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ExportDataRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ForceRebootRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ForceRebootRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ForceRebootRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetPatchSchedules {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::GetPatchSchedules', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::GetPatchSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::GetRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::GetRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ImportDataRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ImportDataRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ImportDataRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ListByResourceGroupRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ListByResourceGroupRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListKeysRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ListKeysRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ListKeysRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ListRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::ListRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub RegenerateKeyRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::RegenerateKeyRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::RegenerateKeyRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateRedis {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RedisManagement::UpdateRedis', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RedisManagement::UpdateRedis', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

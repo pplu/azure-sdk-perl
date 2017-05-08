@@ -3,6 +3,10 @@ package Azure::Policy::GetPolicyDefinitionsResult;
 
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Any'  );
+  has description => (is => 'ro', isa => 'Str'  );
+  has displayName => (is => 'ro', isa => 'Str'  );
+  has parameters => (is => 'ro', isa => 'HashRef'  );
+  has policyRule => (is => 'ro', isa => 'HashRef'  );
+  has policyType => (is => 'ro', isa => 'Str'  );
 
 1;

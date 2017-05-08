@@ -11,5 +11,5 @@ package Azure::DevTestLabs::GalleryImage;
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'enabled' => (is => 'ro', isa => 'Bool'  );
   has 'icon' => (is => 'ro', isa => 'Str'  );
-  has 'imageReference' => (is => 'ro', isa => 'Any'  );
+  has 'imageReference' => (is => 'ro', isa => 'Azure::DevTestLabs::GalleryImageReference'  );
 1;

@@ -2,7 +2,7 @@ package Azure::DataLakeAnalyticsJobManagement::GetStatisticsJob;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-03-20-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'jobIdentity' => (is => 'ro', required => 1, isa => 'Str',

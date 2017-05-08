@@ -6,7 +6,12 @@ package Azure::[% c.service %];
   [%- FOREACH method_name = c.methods.keys.sort %]
   sub [% method_name %] {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::[% c.service %]::[% method_name %]', @_);
+    [%- IF (c.methods.$method_name.subscription_argument) %]
+    if (defined $self->subscription_id) {
+      push @_, '[% c.methods.$method_name.subscription_argument.name %]' => $self->subscription_id;
+    }
+    [%- END %]
+    my $call_object = $self->new_with_coercions('Azure::[% c.service %]::[% method_name %]', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   [%- END %]

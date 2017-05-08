@@ -1,6 +1,11 @@
 package Azure::AzureSQLDatabase::Database;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'collation' => (is => 'ro', isa => 'Str'  );
   has 'containmentState' => (is => 'ro', isa => 'Int'  );
   has 'createMode' => (is => 'ro', isa => 'Str'  );
@@ -21,10 +26,5 @@ package Azure::AzureSQLDatabase::Database;
   has 'sourceDatabaseId' => (is => 'ro', isa => 'Str'  );
   has 'status' => (is => 'ro', isa => 'Str'  );
   has 'transparentDataEncryption' => (is => 'ro', isa => 'ArrayRef[Azure::AzureSQLDatabase::TransparentDataEncryption]'  );
-  has 'upgradeHint' => (is => 'ro', isa => 'Any'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'upgradeHint' => (is => 'ro', isa => 'Azure::AzureSQLDatabase::UpgradeHint'  );
 1;

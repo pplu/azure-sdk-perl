@@ -3,5 +3,5 @@ package Azure::AzureAnalysisServices::AnalysisServicesServerProperties;
 
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'serverFullName' => (is => 'ro', isa => 'Str'  );
-  has 'asAdministrators' => (is => 'ro', isa => 'Any'  );
+  has 'asAdministrators' => (is => 'ro', isa => 'Azure::AzureAnalysisServices::ServerAdministrators'  );
 1;

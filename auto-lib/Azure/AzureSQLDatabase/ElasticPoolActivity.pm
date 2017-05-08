@@ -1,6 +1,11 @@
 package Azure::AzureSQLDatabase::ElasticPoolActivity;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'elasticPoolName' => (is => 'ro', isa => 'Str'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'errorCode' => (is => 'ro', isa => 'Int'  );
@@ -17,9 +22,4 @@ package Azure::AzureSQLDatabase::ElasticPoolActivity;
   has 'serverName' => (is => 'ro', isa => 'Str'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

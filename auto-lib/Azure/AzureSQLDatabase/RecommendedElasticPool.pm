@@ -1,6 +1,11 @@
 package Azure::AzureSQLDatabase::RecommendedElasticPool;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'databaseDtuMax' => (is => 'ro', isa => 'Num'  );
   has 'databaseDtuMin' => (is => 'ro', isa => 'Num'  );
   has 'databaseEdition' => (is => 'ro', isa => 'Str'  );
@@ -12,9 +17,4 @@ package Azure::AzureSQLDatabase::RecommendedElasticPool;
   has 'observationPeriodEnd' => (is => 'ro', isa => 'Str'  );
   has 'observationPeriodStart' => (is => 'ro', isa => 'Str'  );
   has 'storageMB' => (is => 'ro', isa => 'Num'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

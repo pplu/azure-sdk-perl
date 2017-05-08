@@ -5,52 +5,82 @@ package Azure::SearchManagement;
 
   sub CheckNameAvailabilityServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CheckNameAvailabilityServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CheckNameAvailabilityServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CreateOrUpdateServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CreateOrUpdateServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateQueryKeys {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CreateQueryKeys', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::CreateQueryKeys', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteQueryKeys {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::DeleteQueryKeys', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::DeleteQueryKeys', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::DeleteServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::DeleteServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetAdminKeys {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::GetAdminKeys', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::GetAdminKeys', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::GetServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::GetServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListByResourceGroupServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListByResourceGroupServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListBySearchServiceQueryKeys {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListBySearchServiceQueryKeys', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::ListBySearchServiceQueryKeys', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub RegenerateAdminKeys {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchManagement::RegenerateAdminKeys', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::SearchManagement::RegenerateAdminKeys', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

@@ -1,6 +1,11 @@
 package Azure::AzureSQLDatabase::RecommendedIndex;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'action' => (is => 'ro', isa => 'Str'  );
   has 'columns' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'created' => (is => 'ro', isa => 'Str'  );
@@ -13,9 +18,4 @@ package Azure::AzureSQLDatabase::RecommendedIndex;
   has 'schema' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );
   has 'table' => (is => 'ro', isa => 'Str'  );
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
 1;

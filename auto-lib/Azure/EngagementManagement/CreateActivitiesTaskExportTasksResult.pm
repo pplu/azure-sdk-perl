@@ -5,8 +5,8 @@ package Azure::EngagementManagement::CreateActivitiesTaskExportTasksResult;
   has dateCreated => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'Str'  );
   has errorDetails => (is => 'ro', isa => 'Str'  );
-  has exportType => (is => 'ro', isa => 'Any'  );
+  has exportType => (is => 'ro', isa => 'Str'  );
   has id => (is => 'ro', isa => 'Str'  );
-  has state => (is => 'ro', isa => 'Any'  );
+  has state => (is => 'ro', isa => 'Str'  );
 
 1;

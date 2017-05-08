@@ -25,7 +25,7 @@ package Azure::EngagementManagement::Campaign;
   has 'exitButtonText' => (is => 'ro', isa => 'Str'  );
   has 'notificationImage' => (is => 'ro', isa => 'Str'  );
   has 'notificationMessage' => (is => 'ro', isa => 'Str'  );
-  has 'notificationOptions' => (is => 'ro', isa => 'Any'  );
+  has 'notificationOptions' => (is => 'ro', isa => 'Azure::EngagementManagement::NotificationOptions'  );
   has 'notificationTitle' => (is => 'ro', isa => 'Str'  );
   has 'payload' => (is => 'ro', isa => 'HashRef'  );
   has 'title' => (is => 'ro', isa => 'Str'  );

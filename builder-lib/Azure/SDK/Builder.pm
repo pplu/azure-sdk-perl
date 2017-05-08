@@ -76,11 +76,15 @@ package Azure::SDK::Builder;
   }
 
   sub operationId_to_methodname {
-    my $id = shift;
+    my ($self, $id) = @_;
     if (my ($p1, $p2) = ($id =~ m/(.*)_(.*)/)) {
       return "$p2$p1";
     } else {
       return $id if ($id eq 'CheckDnsNameAvailability');
+      # Cdn
+      return $id if ($id eq 'CheckNameAvailability');
+      return $id if ($id eq 'ListOperations');
+      return $id if ($id eq 'CheckResourceUsage');
       return $id if ($id eq 'GetLocations');
       return $id if ($id eq 'GetLocationByHostName');
       return $id if ($id eq 'GetApps');
@@ -94,6 +98,12 @@ package Azure::SDK::Builder;
       return $id if ($id eq 'WipeMAMUserDevice');
       return $id if ($id eq 'GetCertificates');
       return $id if ($id eq 'DeleteCertificateContacts');
+      # storage importexport
+      return $id if ($id eq 'ListLocations');
+      return $id if ($id eq 'GetLocation');
+      return $id if ($id eq 'ListSupportedOperations');
+      # KeyVault names don't have to be transformed
+      return $id if ($self->schema->info->title eq 'KeyVaultClient');
 
       return 'GetAvailableOperations' if ($id eq 'getAvailableOperations');
 
@@ -118,7 +128,7 @@ package Azure::SDK::Builder;
 
         foreach my $http_verb (sort keys %{ $self->schema->paths->{ $path } }) {
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
-          my $operationId = operationId_to_methodname($operation->operationId);
+          my $operationId = $self->operationId_to_methodname($operation->operationId);
 
           $methods{ $operationId } =
             Azure::SDK::Builder::Method->new(
@@ -143,8 +153,9 @@ package Azure::SDK::Builder;
       my $self = shift;
       my %objects => ();
 
+      my $definitions = (defined $self->schema->definitions) ? $self->schema->definitions : {};
 
-      foreach my $ob_name (sort keys %{ $self->schema->definitions }) {
+      foreach my $ob_name (sort keys %$definitions) {
         my $object = $self->schema->definitions->{ $ob_name };
         $object = $self->resolve_path($object->ref) if (defined $object->ref);
 
@@ -177,6 +188,11 @@ package Azure::SDK::Builder;
       return 'ServerFirewall' if ($title eq 'Server Firewall Rule APIs');
       return 'AzureSQLReplicationLink' if ($title eq 'Azure SQL Replication Link API spec');
       return 'AzureSQLDatabase' if ($title eq 'Azure SQL Database API spec');
+      return 'SQLReplicationLink' if ($title eq 'Azure SQL Replication Link API spec');
+      return 'SQLDatabase' if ($title eq 'Azure SQL Database API spec');
+      return 'LogAnalytics' if ($title eq 'Azure Log Analytics');
+      return 'AppServicePlans' if ($title eq 'AppServicePlans API Client');
+      return 'AppServiceEnvironments' if ($title eq 'AppServiceEnvironments API Client');
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
@@ -184,6 +200,7 @@ package Azure::SDK::Builder;
       return $title if ($title eq 'DocumentDB');
       return $title if ($title eq 'StorageImportExport');
       return $title if ($title eq 'StorageManagement');
+      return $title if ($title eq 'AzureAnalysisServices');
 
       die "Service '$title' has spaces in it's name. Please correct" if ($title =~ m/ /);
 
@@ -199,20 +216,61 @@ package Azure::SDK::Builder;
     return ($parts[1], $parts[2]);
   }
 
+  has _file_objects_cache => (
+    is => 'rw',
+    isa => 'HashRef',
+    default => sub { { } },
+  );
+
   sub object_for_ref {
     my ($self, $ref) = @_;
 
-    my ($first, $second) = $self->path_parts($ref->ref);
+    my $final_path = $ref->ref;
+    my $final_objects = $self->objects;
 
-    return $self->objects->{ $second };
+    # When the path is './network.json#/objects/Resource' we have to look in
+    # network.json
+    if (my ($find_path_in_file, $rest_of_path) = ($final_path =~ m/^\.\/(.*?)#(.*)/)) {
+      if (defined $self->_file_objects_cache->{ $find_path_in_file }) {
+        $final_objects = $self->_file_objects_cache->{ $find_path_in_file };
+      } else {
+        # Strip file off the end, so we can concatenate the file in the path
+        my $file = file($self->schema_file)->dir;
+        $file .= "/$find_path_in_file";
+
+        $final_objects = Azure::SDK::Builder->new(schema_file => $file)->objects;
+        $self->_file_objects_cache->{ $find_path_in_file } = $final_objects;
+      }
+      $final_path = "#$rest_of_path";
+    }
+
+    my ($first, $second) = $self->path_parts($final_path);
+    #die "Can't find $final_path in objects" if ($first ne 'objects');
+
+    return $final_objects->{ $second };
   }
 
   sub resolve_path {
     my ($self, $path) = @_;
 
-    my ($first, $second) = $self->path_parts($path);
+    my $final_path = $path;
+    my $final_schema = $self->schema;
 
-    return $self->schema->$first->{ $second };
+    # When the path is './network.json#/definitions/Resource' we have to look in
+    # network.json
+    if (my ($find_path_in_file, $rest_of_path) = ($path =~ m/^\.\/(.*?)#(.*)/)) {
+      # Strip file off the end, so we can concatenate the file in the path
+      my $def_file = file($self->schema_file);
+      $def_file = $def_file->dir;
+      $def_file .= "/$find_path_in_file";
+
+      $final_path = "#$rest_of_path";
+      $final_schema = Azure::SDK::Builder->new(schema_file => $def_file)->schema;
+    }
+
+    my ($first, $second) = $self->path_parts($final_path);
+
+    return $final_schema->$first->{ $second };
   }
 
   sub build {

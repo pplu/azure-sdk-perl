@@ -9,6 +9,8 @@ use strict;
 use warnings;
 use Azure::SDK::Builder;
 
+$|=1;
+
 my @files = @ARGV;
 
 if (@files == 0) {

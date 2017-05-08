@@ -5,22 +5,34 @@ package Azure::InsightsManagement;
 
   sub CreateOrUpdateLogProfiles {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::InsightsManagement::CreateOrUpdateLogProfiles', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::InsightsManagement::CreateOrUpdateLogProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteLogProfiles {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::InsightsManagement::DeleteLogProfiles', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::InsightsManagement::DeleteLogProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetLogProfiles {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::InsightsManagement::GetLogProfiles', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::InsightsManagement::GetLogProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListLogProfiles {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::InsightsManagement::ListLogProfiles', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::InsightsManagement::ListLogProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

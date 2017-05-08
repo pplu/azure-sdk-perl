@@ -5,27 +5,42 @@ package Azure::ContainerService;
 
   sub CreateOrUpdateContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::CreateOrUpdateContainerServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::CreateOrUpdateContainerServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::DeleteContainerServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::DeleteContainerServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::GetContainerServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::GetContainerServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListByResourceGroupContainerServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListByResourceGroupContainerServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListContainerServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListContainerServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ContainerService::ListContainerServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

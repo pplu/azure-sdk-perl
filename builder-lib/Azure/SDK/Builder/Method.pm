@@ -21,6 +21,19 @@ package Azure::SDK::Builder::Method;
     is => 'ro',
   );
 
+  has subscription_argument => (
+    is => 'ro',
+    isa => 'Undef|Azure::SDK::Builder::BodyMethodArgument|Azure::SDK::Builder::OtherMethodArgument',
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      my @subs_arguments = grep { $_->name eq 'subscriptionId' } @{ $self->arguments };
+      die "Detected too many subscription arguments" if (@subs_arguments > 1);
+      return $subs_arguments[0] if (@subs_arguments);
+      return undef;
+    }
+  );
+
   has arguments => (
     is => 'ro',
     isa => 'ArrayRef[Azure::SDK::Builder::BodyMethodArgument|Azure::SDK::Builder::OtherMethodArgument]',

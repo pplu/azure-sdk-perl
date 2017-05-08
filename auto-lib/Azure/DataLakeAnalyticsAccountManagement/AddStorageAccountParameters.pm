@@ -1,5 +1,6 @@
 package Azure::DataLakeAnalyticsAccountManagement::AddStorageAccountParameters;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsAccountManagement::StorageAccountProperties'  );
+  has 'accessKey' => (is => 'ro', isa => 'Str'  );
+  has 'suffix' => (is => 'ro', isa => 'Str'  );
 1;

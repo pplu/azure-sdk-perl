@@ -5,22 +5,34 @@ package Azure::ServerFirewall;
 
   sub CreateOrUpdateFirewallRuleServers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ServerFirewall::CreateOrUpdateFirewallRuleServers', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServerFirewall::CreateOrUpdateFirewallRuleServers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteFirewallRuleServers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ServerFirewall::DeleteFirewallRuleServers', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServerFirewall::DeleteFirewallRuleServers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetFirewallRuleServers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ServerFirewall::GetFirewallRuleServers', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServerFirewall::GetFirewallRuleServers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListFirewallRulesServers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ServerFirewall::ListFirewallRulesServers', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServerFirewall::ListFirewallRulesServers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

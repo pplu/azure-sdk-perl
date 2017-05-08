@@ -1,6 +1,8 @@
 package Azure::DataLakeAnalyticsAccountManagement::DataLakeStoreAccountInfo;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsAccountManagement::DataLakeStoreAccountInfoProperties'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'suffix' => (is => 'ro', isa => 'Str'  );
 1;

@@ -1,6 +1,9 @@
 package Azure::DataLakeAnalyticsAccountManagement::StorageAccountInfo;
   use Moose;
 
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsAccountManagement::StorageAccountProperties'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'accessKey' => (is => 'ro', isa => 'Str'  );
+  has 'suffix' => (is => 'ro', isa => 'Str'  );
 1;

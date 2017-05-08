@@ -5,7 +5,7 @@ use Moose::Util::TypeConstraints;
 
 has caller => (
   is => 'rw',
-  #does => 'Azure::Net::CallerRole',
+  does => 'Azure::Net::CallerRole',
   lazy => 1,
   default => sub {
     Azure->load_class('Azure::Net::Caller');
@@ -15,7 +15,7 @@ has caller => (
 );
 has credentials => (
   is => 'rw',
-  #does => 'Paws::Credential',
+  does => 'Azure::Credential',
   lazy => 1,
   default => sub {
     Azure->load_class('Azure::Credentials::AzureADClientCredentials');
@@ -28,6 +28,11 @@ has immutable => (
   isa => 'Bool',
   default => 0,
 );
+has subscription_id => (
+  is => 'ro',
+  isa => 'Str|Undef',
+);
+
 __PACKAGE__->meta->make_immutable;
 
 package Azure;
@@ -75,7 +80,8 @@ package Azure;
   
     $constructor_params{ caller } = $self->config->caller if (not exists $constructor_params{ caller });
     $constructor_params{ credentials } = $self->config->credentials if (not exists $constructor_params{ credentials });
-  
+    $constructor_params{ subscription_id } = $self->config->subscription_id if (not exists $constructor_params{ subscription_id });    
+
     my $class = $self->class_for_service($service_name);
     my $instance = $class->new(
       %constructor_params

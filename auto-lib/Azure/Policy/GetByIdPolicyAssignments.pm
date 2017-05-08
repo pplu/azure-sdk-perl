@@ -2,7 +2,7 @@ package Azure::Policy::GetByIdPolicyAssignments;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'policyAssignmentId' => (is => 'ro', required => 1, isa => 'Str',

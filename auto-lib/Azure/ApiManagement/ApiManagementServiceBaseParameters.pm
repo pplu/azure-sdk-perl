@@ -18,5 +18,5 @@ package Azure::ApiManagement::ApiManagementServiceBaseParameters;
   has 'staticIPs' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'targetProvisioningState' => (is => 'ro', isa => 'Str'  );
   has 'vpnType' => (is => 'ro', isa => 'Str'  );
-  has 'vpnconfiguration' => (is => 'ro', isa => 'Any'  );
+  has 'vpnconfiguration' => (is => 'ro', isa => 'Azure::ApiManagement::VirtualNetworkConfiguration'  );
 1;

@@ -8,4 +8,5 @@ package Azure::EngagementManagement::CampaignListResult;
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'timezone' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Int'  );
+  has 'state' => (is => 'ro', isa => 'Str'  );
 1;

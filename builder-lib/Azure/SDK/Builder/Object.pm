@@ -15,6 +15,50 @@ package Azure::SDK::Builder::Object;
     required => 1,
   );
 
+  sub get_attributes_from_properties {
+    my ($self, $object) = @_;
+
+    if (defined $object->ref) {
+      $object = $self->root_schema->resolve_path($object->ref);
+    }
+
+    my $atts = [];
+    my @to_flatten = ();
+
+    my $properties = $object->properties;
+    foreach my $prop_name (sort keys %$properties){
+      my $props = $properties->{ $prop_name };
+
+      if ($props->x_ms_client_flatten) {
+        push @to_flatten, $props;
+        next;
+      }
+
+      my $type;
+      if (defined $props->ref) {
+        $props = $self->root_schema->object_for_ref($props);
+        $type = $props->name;
+      }
+
+      push @$atts, Azure::SDK::Builder::Parameter->new(
+        %$props,
+        root_schema => $self->root_schema,
+        name => $prop_name,
+        (defined $type) ? (type => $type) : (),
+      );
+    }
+    if (defined $object->allOf) {
+      foreach my $extra_object_properties (@{ $object->allOf }) {
+        push @$atts, @{ $self->get_attributes_from_properties($extra_object_properties) };
+      }
+    }
+    foreach my $flatten_ref (@to_flatten) {
+      push @$atts, @{ $self->get_attributes_from_properties($flatten_ref) };
+    }
+
+    return $atts;
+  }
+
   has attributes => (
     is => 'ro',
     isa => 'ArrayRef[Azure::SDK::Builder::Parameter]',
@@ -22,71 +66,7 @@ package Azure::SDK::Builder::Object;
     default => sub {
       my $self = shift;
 
-      my $params = [];
-      if (defined $self->properties) {
-        my @to_flatten = ();
-        foreach my $property (sort keys %{ $self->properties }) {
-          my $param = $self->properties->{ $property };
-
-          if ($param->x_ms_client_flatten) {
-            push @to_flatten, $param;
-            next;
-          }
-
-          my $type;
-          my $args;
-          if (defined $param->ref) {
-            $args = $self->root_schema->object_for_ref($param);
-            $type = $args->name;
-          } else {
-            $args = $param;
-          }
-
-          push @$params, Azure::SDK::Builder::Parameter->new(
-            %$args,
-            root_schema => $self->root_schema,
-            name => $property,
-            (defined $type) ? (type => $type) : (),
-          );
-        }
-
-        foreach my $flatten_ref (@to_flatten) {
-          my $flatten;
-          if (defined $flatten_ref->ref) {
-            $flatten = $self->root_schema->resolve_path($flatten_ref->ref);
-          } else {
-            $flatten = $flatten_ref;
-          }
-
-          next if (not defined $flatten->properties);
-
-          push @$params, map {
-            my $param = $flatten->properties->{ $_ };
-
-            my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
-
-            Azure::SDK::Builder::Parameter->new(
-              root_schema => $self->root_schema,
-              name => $_,
-              %$args
-            );
-          } sort keys %{ $flatten->properties };
-        }
-      }
-      if (defined $self->allOf) {
-        foreach my $extra_object_properties (@{ $self->allOf }) {
-          my $object = defined $extra_object_properties->ref ? $self->root_schema->resolve_path($extra_object_properties->ref) : $extra_object_properties;
-          foreach my $property (sort keys %{ $object->properties }){
-            push @$params, Azure::SDK::Builder::Parameter->new(
-              root_schema => $self->root_schema,
-              name => $property,
-              %{ $object->properties->{ $property } }
-            );
-          }
-        }
-      }
-
-      return $params;
+      return $self->get_attributes_from_properties($self);
     }
   );
 

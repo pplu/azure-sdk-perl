@@ -5,7 +5,10 @@ package Azure::RecoveryServicesBackup;
 
   sub UnregisterProtectionContainers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServicesBackup::UnregisterProtectionContainers', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::RecoveryServicesBackup::UnregisterProtectionContainers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

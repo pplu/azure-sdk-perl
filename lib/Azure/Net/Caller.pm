@@ -2,6 +2,8 @@ package Azure::Net::Caller;
   use Moose;
   use HTTP::Tiny;
 
+  with 'Azure::Net::CallerRole';
+
   has ua => (is => 'rw', required => 1, lazy => 1,
     default     => sub {
       use HTTP::Tiny;

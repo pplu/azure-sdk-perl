@@ -5,47 +5,74 @@ package Azure::MediaServicesManagement;
 
   sub CheckNameAvailabilityMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::CheckNameAvailabilityMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::CheckNameAvailabilityMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::CreateMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::CreateMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::DeleteMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::DeleteMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::GetMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::GetMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListByResourceGroupMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListByResourceGroupMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListKeysMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListKeysMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListKeysMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub RegenerateKeyMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::RegenerateKeyMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::RegenerateKeyMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub SyncStorageKeysMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::SyncStorageKeysMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::SyncStorageKeysMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateMediaService {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::UpdateMediaService', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::UpdateMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

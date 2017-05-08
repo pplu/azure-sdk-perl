@@ -5,17 +5,26 @@ package Azure::NetworkManagement;
 
   sub GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

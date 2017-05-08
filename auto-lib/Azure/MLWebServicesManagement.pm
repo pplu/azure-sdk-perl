@@ -5,37 +5,58 @@ package Azure::MLWebServicesManagement;
 
   sub CreateOrUpdateWebServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::CreateOrUpdateWebServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::CreateOrUpdateWebServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetWebServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::GetWebServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::GetWebServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupWebServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListByResourceGroupWebServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListByResourceGroupWebServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListKeysWebServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListKeysWebServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListKeysWebServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListWebServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListWebServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListWebServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub PatchWebServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::PatchWebServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::PatchWebServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub RemoveWebServices {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::RemoveWebServices', @_);
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::RemoveWebServices', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 

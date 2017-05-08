@@ -5,7 +5,7 @@ package Azure::Insights;
 
   sub ListMetrics {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Insights::ListMetrics', @_);
+    my $call_object = $self->new_with_coercions('Azure::Insights::ListMetrics', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
