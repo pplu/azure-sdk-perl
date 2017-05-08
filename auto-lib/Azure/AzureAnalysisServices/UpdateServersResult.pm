@@ -9,6 +9,8 @@ package Azure::AzureAnalysisServices::UpdateServersResult;
   has type => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has serverFullName => (is => 'ro', isa => 'Str'  );
+  has state => (is => 'ro', isa => 'Str'  );
   has asAdministrators => (is => 'ro', isa => 'HashRef'  );
+  has backupConfiguration => (is => 'ro', isa => 'HashRef'  );
 
 1;

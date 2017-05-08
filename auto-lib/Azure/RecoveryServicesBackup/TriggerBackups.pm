@@ -2,7 +2,7 @@ package Azure::RecoveryServicesBackup::TriggerBackups;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'containerName' => (is => 'ro', required => 1, isa => 'Str',
@@ -11,11 +11,11 @@ package Azure::RecoveryServicesBackup::TriggerBackups;
   has 'fabricName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::BackupRequestResource',
+    traits => [ 'Azure::ParamInBody' ],
+  );
   has 'protectedItemName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'resourceBackupRequest' => (is => 'ro', required => 1, isa => 'Azure::RecoveryServicesBackup::BackupRequestResource',
-    traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

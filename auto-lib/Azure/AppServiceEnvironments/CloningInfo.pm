@@ -7,6 +7,7 @@ package Azure::AppServiceEnvironments::CloningInfo;
   has 'configureLoadBalancing' => (is => 'ro', isa => 'Bool'  );
   has 'correlationId' => (is => 'ro', isa => 'Str'  );
   has 'hostingEnvironment' => (is => 'ro', isa => 'Str'  );
+  has 'ignoreQuotas' => (is => 'ro', isa => 'Bool'  );
   has 'overwrite' => (is => 'ro', isa => 'Bool'  );
   has 'sourceWebAppId' => (is => 'ro', isa => 'Str'  );
   has 'trafficManagerProfileId' => (is => 'ro', isa => 'Str'  );

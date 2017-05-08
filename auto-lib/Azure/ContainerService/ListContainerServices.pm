@@ -2,7 +2,7 @@ package Azure::ContainerService::ListContainerServices;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-30',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-31',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

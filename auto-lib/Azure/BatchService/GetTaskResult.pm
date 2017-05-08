@@ -3,6 +3,7 @@ package Azure::BatchService::GetTaskResult;
 
   has affinityInfo => (is => 'ro', isa => 'Any'  );
   has applicationPackageReferences => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ApplicationPackageReference]'  );
+  has authenticationTokenSettings => (is => 'ro', isa => 'Any'  );
   has commandLine => (is => 'ro', isa => 'Str'  );
   has constraints => (is => 'ro', isa => 'Any'  );
   has creationTime => (is => 'ro', isa => 'Str'  );
@@ -19,10 +20,10 @@ package Azure::BatchService::GetTaskResult;
   has previousState => (is => 'ro', isa => 'Str'  );
   has previousStateTransitionTime => (is => 'ro', isa => 'Str'  );
   has resourceFiles => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ResourceFile]'  );
-  has runElevated => (is => 'ro', isa => 'Bool'  );
   has state => (is => 'ro', isa => 'Str'  );
   has stateTransitionTime => (is => 'ro', isa => 'Str'  );
   has stats => (is => 'ro', isa => 'Any'  );
   has url => (is => 'ro', isa => 'Str'  );
+  has userIdentity => (is => 'ro', isa => 'Any'  );
 
 1;

@@ -5,7 +5,7 @@ package Azure::DataLakeStoreFileSystemManagement::CheckAccessFileSystem;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'fsaction' => (is => 'ro', isa => 'Str',
+  has 'fsaction' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'op' => (is => 'ro', required => 1, isa => 'Str',

@@ -2,10 +2,7 @@ package Azure::BatchService::AddUserComputeNode;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'User' => (is => 'ro', required => 1, isa => 'Azure::BatchService::ComputeNodeUser',
-    traits => [ 'Azure::ParamInBody' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01.3.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
@@ -25,6 +22,9 @@ package Azure::BatchService::AddUserComputeNode;
   );
   has 'timeout' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'user' => (is => 'ro', required => 1, isa => 'Azure::BatchService::ComputeNodeUser',
+    traits => [ 'Azure::ParamInBody' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools/{poolId}/nodes/{nodeId}/users');

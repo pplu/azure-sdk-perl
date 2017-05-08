@@ -8,10 +8,16 @@ package Azure::DataLakeStoreFileSystemManagement::CreateFileSystem;
   has 'directFilePath' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
+  has 'leaseId' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
   has 'op' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'overwrite' => (is => 'ro', isa => 'Bool',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'permission' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'streamContents' => (is => 'ro', isa => 'Any',

@@ -11,6 +11,9 @@ package Azure::ServiceFabric::CreateServiceGroups;
   has 'createServiceGroupDescription' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::CreateServiceGroupDescription',
     traits => [ 'Azure::ParamInBody' ],
   );
+  has 'timeout' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/GetServices/$/CreateServiceGroup');
   class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::CreateServiceGroupsResult');

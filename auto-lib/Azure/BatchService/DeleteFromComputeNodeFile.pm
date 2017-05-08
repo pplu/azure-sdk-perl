@@ -2,13 +2,13 @@ package Azure::BatchService::DeleteFromComputeNodeFile;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01.3.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'fileName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'filePath' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'nodeId' => (is => 'ro', required => 1, isa => 'Str',
@@ -30,7 +30,7 @@ package Azure::BatchService::DeleteFromComputeNodeFile;
     traits => [ 'Azure::ParamInQuery' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/pools/{poolId}/nodes/{nodeId}/files/{fileName}');
+  class_has _api_uri => (is => 'ro', default => '/pools/{poolId}/nodes/{nodeId}/files/{filePath}');
   class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

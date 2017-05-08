@@ -1,5 +1,5 @@
 package Azure::NetworkManagement::VpnClientParameters;
   use Moose;
 
-  has 'ProcessorArchitecture' => (is => 'ro', isa => 'Str'  );
+  has 'processorArchitecture' => (is => 'ro', isa => 'Str'  );
 1;

@@ -67,14 +67,6 @@ package Azure::AppServicePlans;
     my $call_object = $self->new_with_coercions('Azure::AppServicePlans::GetHybridConnectionPlanLimitAppServicePlans', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetOperationAppServicePlans {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::GetOperationAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub GetRouteForVnetAppServicePlans {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -139,14 +131,6 @@ package Azure::AppServicePlans;
     my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListHybridConnectionsAppServicePlans', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListHybridConnectionWebAppsAppServicePlans {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListHybridConnectionWebAppsAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub ListMetricDefintionsAppServicePlans {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -163,12 +147,12 @@ package Azure::AppServicePlans;
     my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListMetricsAppServicePlans', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListtRoutesForVnetAppServicePlans {
+  sub ListRoutesForVnetAppServicePlans {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListtRoutesForVnetAppServicePlans', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListRoutesForVnetAppServicePlans', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListVnetsAppServicePlans {
@@ -187,6 +171,14 @@ package Azure::AppServicePlans;
     my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListWebAppsAppServicePlans', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListWebAppsByHybridConnectionAppServicePlans {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListWebAppsByHybridConnectionAppServicePlans', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RebootWorkerAppServicePlans {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -201,14 +193,6 @@ package Azure::AppServicePlans;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::AppServicePlans::RestartWebAppsAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateHybridConnectionAppServicePlans {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::UpdateHybridConnectionAppServicePlans', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateVnetGatewayAppServicePlans {
@@ -228,6 +212,6 @@ package Azure::AppServicePlans;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateAppServicePlans CreateOrUpdateVnetRouteAppServicePlans DeleteAppServicePlans DeleteHybridConnectionAppServicePlans DeleteVnetRouteAppServicePlans GetAppServicePlans GetHybridConnectionAppServicePlans GetHybridConnectionPlanLimitAppServicePlans GetOperationAppServicePlans GetRouteForVnetAppServicePlans GetVnetFromServerFarmAppServicePlans GetVnetGatewayAppServicePlans ListAppServicePlans ListByResourceGroupAppServicePlans ListCapabilitiesAppServicePlans ListHybridConnectionKeysAppServicePlans ListHybridConnectionsAppServicePlans ListHybridConnectionWebAppsAppServicePlans ListMetricDefintionsAppServicePlans ListMetricsAppServicePlans ListtRoutesForVnetAppServicePlans ListVnetsAppServicePlans ListWebAppsAppServicePlans RebootWorkerAppServicePlans RestartWebAppsAppServicePlans UpdateHybridConnectionAppServicePlans UpdateVnetGatewayAppServicePlans UpdateVnetRouteAppServicePlans / }
+  sub operations { qw/CreateOrUpdateAppServicePlans CreateOrUpdateVnetRouteAppServicePlans DeleteAppServicePlans DeleteHybridConnectionAppServicePlans DeleteVnetRouteAppServicePlans GetAppServicePlans GetHybridConnectionAppServicePlans GetHybridConnectionPlanLimitAppServicePlans GetRouteForVnetAppServicePlans GetVnetFromServerFarmAppServicePlans GetVnetGatewayAppServicePlans ListAppServicePlans ListByResourceGroupAppServicePlans ListCapabilitiesAppServicePlans ListHybridConnectionKeysAppServicePlans ListHybridConnectionsAppServicePlans ListMetricDefintionsAppServicePlans ListMetricsAppServicePlans ListRoutesForVnetAppServicePlans ListVnetsAppServicePlans ListWebAppsAppServicePlans ListWebAppsByHybridConnectionAppServicePlans RebootWorkerAppServicePlans RestartWebAppsAppServicePlans UpdateVnetGatewayAppServicePlans UpdateVnetRouteAppServicePlans / }
 
 1;

@@ -2,7 +2,7 @@ package Azure::ContainerRegistryManagement::DeleteRegistries;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-27-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'registryName' => (is => 'ro', required => 1, isa => 'Str',

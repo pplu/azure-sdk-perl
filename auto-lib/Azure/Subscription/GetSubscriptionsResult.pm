@@ -7,6 +7,5 @@ package Azure::Subscription::GetSubscriptionsResult;
   has state => (is => 'ro', isa => 'Str'  );
   has subscriptionId => (is => 'ro', isa => 'Str'  );
   has subscriptionPolicies => (is => 'ro', isa => 'Any'  );
-  has tenantId => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -2,7 +2,7 @@ package Azure::TrafficManagerManagement::DeleteProfiles;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-11-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'profileName' => (is => 'ro', required => 1, isa => 'Str',
@@ -16,6 +16,6 @@ package Azure::TrafficManagerManagement::DeleteProfiles;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::DeleteProfilesResult');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

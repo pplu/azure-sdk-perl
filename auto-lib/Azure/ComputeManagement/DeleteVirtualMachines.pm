@@ -16,6 +16,6 @@ package Azure::ComputeManagement::DeleteVirtualMachines;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::DeleteVirtualMachinesResult');
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

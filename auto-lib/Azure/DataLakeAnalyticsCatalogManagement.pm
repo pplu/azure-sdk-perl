@@ -48,6 +48,11 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetExternalDataSourceCatalog', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetPackageCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetPackageCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetProcedureCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetProcedureCatalog', { @_ });
@@ -113,6 +118,11 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListExternalDataSourcesCatalog', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListPackagesCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListPackagesCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListProceduresCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListProceduresCatalog', { @_ });
@@ -128,9 +138,24 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTablePartitionsCatalog', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListTablesByDatabaseCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTablesByDatabaseCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListTablesCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTablesCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListTableStatisticsByDatabaseAndSchemaCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsByDatabaseAndSchemaCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListTableStatisticsByDatabaseCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsByDatabaseCatalog', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListTableStatisticsCatalog {
@@ -143,6 +168,11 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableTypesCatalog', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListTableValuedFunctionsByDatabaseCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsByDatabaseCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListTableValuedFunctionsCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsCatalog', { @_ });
@@ -151,6 +181,11 @@ package Azure::DataLakeAnalyticsCatalogManagement;
   sub ListTypesCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTypesCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListViewsByDatabaseCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListViewsByDatabaseCatalog', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListViewsCatalog {
@@ -169,6 +204,6 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateCredentialCatalog CreateSecretCatalog DeleteAllSecretsCatalog DeleteCredentialCatalog DeleteSecretCatalog GetAssemblyCatalog GetCredentialCatalog GetDatabaseCatalog GetExternalDataSourceCatalog GetProcedureCatalog GetSchemaCatalog GetSecretCatalog GetTableCatalog GetTablePartitionCatalog GetTableStatisticCatalog GetTableTypeCatalog GetTableValuedFunctionCatalog GetViewCatalog ListAssembliesCatalog ListCredentialsCatalog ListDatabasesCatalog ListExternalDataSourcesCatalog ListProceduresCatalog ListSchemasCatalog ListTablePartitionsCatalog ListTablesCatalog ListTableStatisticsCatalog ListTableTypesCatalog ListTableValuedFunctionsCatalog ListTypesCatalog ListViewsCatalog UpdateCredentialCatalog UpdateSecretCatalog / }
+  sub operations { qw/CreateCredentialCatalog CreateSecretCatalog DeleteAllSecretsCatalog DeleteCredentialCatalog DeleteSecretCatalog GetAssemblyCatalog GetCredentialCatalog GetDatabaseCatalog GetExternalDataSourceCatalog GetPackageCatalog GetProcedureCatalog GetSchemaCatalog GetSecretCatalog GetTableCatalog GetTablePartitionCatalog GetTableStatisticCatalog GetTableTypeCatalog GetTableValuedFunctionCatalog GetViewCatalog ListAssembliesCatalog ListCredentialsCatalog ListDatabasesCatalog ListExternalDataSourcesCatalog ListPackagesCatalog ListProceduresCatalog ListSchemasCatalog ListTablePartitionsCatalog ListTablesByDatabaseCatalog ListTablesCatalog ListTableStatisticsByDatabaseAndSchemaCatalog ListTableStatisticsByDatabaseCatalog ListTableStatisticsCatalog ListTableTypesCatalog ListTableValuedFunctionsByDatabaseCatalog ListTableValuedFunctionsCatalog ListTypesCatalog ListViewsByDatabaseCatalog ListViewsCatalog UpdateCredentialCatalog UpdateSecretCatalog / }
 
 1;

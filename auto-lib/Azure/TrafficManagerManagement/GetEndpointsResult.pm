@@ -7,6 +7,7 @@ package Azure::TrafficManagerManagement::GetEndpointsResult;
   has endpointLocation => (is => 'ro', isa => 'Str'  );
   has endpointMonitorStatus => (is => 'ro', isa => 'Str'  );
   has endpointStatus => (is => 'ro', isa => 'Str'  );
+  has geoMapping => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has minChildEndpoints => (is => 'ro', isa => 'Int'  );
   has priority => (is => 'ro', isa => 'Int'  );
   has target => (is => 'ro', isa => 'Str'  );

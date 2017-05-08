@@ -3,111 +3,79 @@ package Azure::ApiManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub BackupApiManagementServices {
+  sub CreateOrUpdateUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::BackupApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CheckNameAvailabilityApiManagementServices {
+  sub DeleteUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::CheckNameAvailabilityApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::DeleteUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateApiManagementServices {
+  sub GenerateSsoUrlUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GenerateSsoUrlUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteApiManagementServices {
+  sub GetUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::DeleteApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetApiManagementServices {
+  sub ListByServiceUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByServiceUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetSsoTokenApiManagementServices {
+  sub ListByUsersUserGroups {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetSsoTokenApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByUsersUserGroups', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListApiManagementServices {
+  sub ListByUsersUserIdentities {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByUsersUserIdentities', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByResourceGroupApiManagementServices {
+  sub ListByUsersUserSubscriptions {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByResourceGroupApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByUsersUserSubscriptions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ManageDeploymentsApiManagementServices {
+  sub UpdateUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ManageDeploymentsApiManagementServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub RestoreApiManagementServices {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::RestoreApiManagementServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateApiManagementServices {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateApiManagementServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateHostnameApiManagementServices {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateHostnameApiManagementServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UploadCertificateApiManagementServices {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UploadCertificateApiManagementServices', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/BackupApiManagementServices CheckNameAvailabilityApiManagementServices CreateOrUpdateApiManagementServices DeleteApiManagementServices GetApiManagementServices GetSsoTokenApiManagementServices ListApiManagementServices ListByResourceGroupApiManagementServices ManageDeploymentsApiManagementServices RestoreApiManagementServices UpdateApiManagementServices UpdateHostnameApiManagementServices UploadCertificateApiManagementServices / }
+  sub operations { qw/CreateOrUpdateUsers DeleteUsers GenerateSsoUrlUsers GetUsers ListByServiceUsers ListByUsersUserGroups ListByUsersUserIdentities ListByUsersUserSubscriptions UpdateUsers / }
 
 1;

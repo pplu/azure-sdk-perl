@@ -1,14 +1,20 @@
 package Azure::DataLakeAnalyticsAccountManagement::DataLakeAnalyticsAccountProperties;
   use Moose;
 
+  has 'computePolicies' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::ComputePolicyAccountCreateParameters]'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'currentTier' => (is => 'ro', isa => 'Str'  );
   has 'dataLakeStoreAccounts' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::DataLakeStoreAccountInfo]'  );
   has 'defaultDataLakeStoreAccount' => (is => 'ro', isa => 'Str'  );
   has 'endpoint' => (is => 'ro', isa => 'Str'  );
+  has 'firewallAllowAzureIps' => (is => 'ro', isa => 'Str'  );
+  has 'firewallRules' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::FirewallRule]'  );
+  has 'firewallState' => (is => 'ro', isa => 'Str'  );
   has 'lastModifiedTime' => (is => 'ro', isa => 'Str'  );
   has 'maxDegreeOfParallelism' => (is => 'ro', isa => 'Int'  );
+  has 'maxDegreeOfParallelismPerJob' => (is => 'ro', isa => 'Int'  );
   has 'maxJobCount' => (is => 'ro', isa => 'Int'  );
+  has 'minPriorityPerJob' => (is => 'ro', isa => 'Int'  );
   has 'newTier' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'queryStoreRetention' => (is => 'ro', isa => 'Int'  );

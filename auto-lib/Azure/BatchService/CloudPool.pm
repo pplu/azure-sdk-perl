@@ -29,6 +29,7 @@ package Azure::BatchService::CloudPool;
   has 'targetDedicated' => (is => 'ro', isa => 'Int'  );
   has 'taskSchedulingPolicy' => (is => 'ro', isa => 'Azure::BatchService::TaskSchedulingPolicy'  );
   has 'url' => (is => 'ro', isa => 'Str'  );
+  has 'userAccounts' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::UserAccount]'  );
   has 'virtualMachineConfiguration' => (is => 'ro', isa => 'Azure::BatchService::VirtualMachineConfiguration'  );
   has 'vmSize' => (is => 'ro', isa => 'Str'  );
 1;

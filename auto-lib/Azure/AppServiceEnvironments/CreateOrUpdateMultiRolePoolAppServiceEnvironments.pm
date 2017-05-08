@@ -5,7 +5,7 @@ package Azure::AppServiceEnvironments::CreateOrUpdateMultiRolePoolAppServiceEnvi
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'multiRolePoolEnvelope' => (is => 'ro', required => 1, isa => 'Azure::AppServiceEnvironments::WorkerPool',
+  has 'multiRolePoolEnvelope' => (is => 'ro', required => 1, isa => 'Azure::AppServiceEnvironments::WorkerPoolResource',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'name' => (is => 'ro', required => 1, isa => 'Str',

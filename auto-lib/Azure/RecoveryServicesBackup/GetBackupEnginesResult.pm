@@ -1,7 +1,12 @@
 package Azure::RecoveryServicesBackup::GetBackupEnginesResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServicesBackup::BackupEngineBaseResource]'  );
-  has nextLink => (is => 'ro', isa => 'Str'  );
+  has properties => (is => 'ro', isa => 'HashRef'  );
+  has eTag => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
+  has location => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has tags => (is => 'ro', isa => 'HashRef'  );
+  has type => (is => 'ro', isa => 'Str'  );
 
 1;

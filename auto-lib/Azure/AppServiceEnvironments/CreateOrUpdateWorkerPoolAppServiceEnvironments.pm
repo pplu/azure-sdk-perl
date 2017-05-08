@@ -14,7 +14,7 @@ package Azure::AppServiceEnvironments::CreateOrUpdateWorkerPoolAppServiceEnviron
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'workerPoolEnvelope' => (is => 'ro', required => 1, isa => 'Azure::AppServiceEnvironments::WorkerPool',
+  has 'workerPoolEnvelope' => (is => 'ro', required => 1, isa => 'Azure::AppServiceEnvironments::WorkerPoolResource',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'workerPoolName' => (is => 'ro', required => 1, isa => 'Str',

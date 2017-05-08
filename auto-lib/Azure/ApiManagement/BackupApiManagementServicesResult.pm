@@ -2,12 +2,12 @@ package Azure::ApiManagement::BackupApiManagementServicesResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
+  has sku => (is => 'ro', isa => 'Any'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has type => (is => 'ro', isa => 'Str'  );
-  has sku => (is => 'ro', isa => 'Any'  );
   has tags => (is => 'ro', isa => 'HashRef'  );
+  has type => (is => 'ro', isa => 'Str'  );
   has additionalLocations => (is => 'ro', isa => 'ArrayRef[Azure::ApiManagement::AdditionalRegion]'  );
   has addresserEmail => (is => 'ro', isa => 'Str'  );
   has createdAtUtc => (is => 'ro', isa => 'Str'  );

@@ -2,6 +2,7 @@ package Azure::RecoveryServicesBackup::ProtectedItem;
   use Moose;
 
   has 'backupManagementType' => (is => 'ro', isa => 'Str'  );
+  has 'containerName' => (is => 'ro', isa => 'Str'  );
   has 'lastRecoveryPoint' => (is => 'ro', isa => 'Str'  );
   has 'policyId' => (is => 'ro', isa => 'Str'  );
   has 'protectedItemType' => (is => 'ro', isa => 'Str'  );

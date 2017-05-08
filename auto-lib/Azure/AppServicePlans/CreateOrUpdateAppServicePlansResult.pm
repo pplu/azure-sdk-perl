@@ -16,6 +16,7 @@ package Azure::AppServicePlans::CreateOrUpdateAppServicePlansResult;
   has numberOfSites => (is => 'ro', isa => 'Int'  );
   has perSiteScaling => (is => 'ro', isa => 'Bool'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
+  has reserved => (is => 'ro', isa => 'Bool'  );
   has resourceGroup => (is => 'ro', isa => 'Str'  );
   has status => (is => 'ro', isa => 'Str'  );
   has subscription => (is => 'ro', isa => 'Str'  );

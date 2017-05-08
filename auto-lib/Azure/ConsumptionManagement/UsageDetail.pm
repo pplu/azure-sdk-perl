@@ -1,0 +1,23 @@
+package Azure::ConsumptionManagement::UsageDetail;
+  use Moose;
+
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'additionalProperties' => (is => 'ro', isa => 'HashRef'  );
+  has 'billableQuantity' => (is => 'ro', isa => 'Num'  );
+  has 'billingPeriodId' => (is => 'ro', isa => 'Str'  );
+  has 'currency' => (is => 'ro', isa => 'Str'  );
+  has 'instanceId' => (is => 'ro', isa => 'Str'  );
+  has 'instanceLocation' => (is => 'ro', isa => 'Str'  );
+  has 'instanceName' => (is => 'ro', isa => 'Str'  );
+  has 'invoiceId' => (is => 'ro', isa => 'Str'  );
+  has 'isEstimated' => (is => 'ro', isa => 'Bool'  );
+  has 'meterDetails' => (is => 'ro', isa => 'Azure::ConsumptionManagement::MeterDetails'  );
+  has 'meterId' => (is => 'ro', isa => 'Str'  );
+  has 'pretaxCost' => (is => 'ro', isa => 'Num'  );
+  has 'usageEnd' => (is => 'ro', isa => 'Str'  );
+  has 'usageQuantity' => (is => 'ro', isa => 'Num'  );
+  has 'usageStart' => (is => 'ro', isa => 'Str'  );
+1;

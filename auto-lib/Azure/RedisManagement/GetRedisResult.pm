@@ -6,6 +6,7 @@ package Azure::RedisManagement::GetRedisResult;
   has name => (is => 'ro', isa => 'Str'  );
   has tags => (is => 'ro', isa => 'HashRef'  );
   has type => (is => 'ro', isa => 'Str'  );
+  has accessKeys => (is => 'ro', isa => 'Any'  );
   has hostName => (is => 'ro', isa => 'Str'  );
   has port => (is => 'ro', isa => 'Int'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );

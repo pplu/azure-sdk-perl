@@ -10,6 +10,7 @@ package Azure::LogicManagement::GetWorkflowRunActionsResult;
   has error => (is => 'ro', isa => 'HashRef'  );
   has inputsLink => (is => 'ro', isa => 'HashRef'  );
   has outputsLink => (is => 'ro', isa => 'HashRef'  );
+  has retryHistory => (is => 'ro', isa => 'ArrayRef[Azure::LogicManagement::RetryHistory]'  );
   has startTime => (is => 'ro', isa => 'Str'  );
   has status => (is => 'ro', isa => 'Str'  );
   has trackedProperties => (is => 'ro', isa => 'HashRef'  );

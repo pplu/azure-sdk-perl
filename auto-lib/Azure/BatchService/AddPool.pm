@@ -2,10 +2,7 @@ package Azure::BatchService::AddPool;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Pool' => (is => 'ro', required => 1, isa => 'Azure::BatchService::PoolAddParameter',
-    traits => [ 'Azure::ParamInBody' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01.3.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
@@ -13,6 +10,9 @@ package Azure::BatchService::AddPool;
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'pool' => (is => 'ro', required => 1, isa => 'Azure::BatchService::PoolAddParameter',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'return-client-request-id' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInHeader' ],

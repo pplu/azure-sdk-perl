@@ -1,6 +1,7 @@
 package Azure::AppServiceEnvironments::HostNameSslState;
   use Moose;
 
+  has 'hostType' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'sslState' => (is => 'ro', isa => 'Str'  );
   has 'thumbprint' => (is => 'ro', isa => 'Str'  );

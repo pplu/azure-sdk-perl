@@ -8,6 +8,9 @@ package Azure::ServiceFabric::ListApplications;
   has 'continuation-token' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
+  has 'timeout' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
 
   class_has _api_uri => (is => 'ro', default => '/Applications');
   class_has _returns => (is => 'ro', default => 'Azure::ServiceFabric::ListApplicationsResult');

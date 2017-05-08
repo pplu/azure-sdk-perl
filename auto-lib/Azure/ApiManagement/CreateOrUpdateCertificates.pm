@@ -5,7 +5,7 @@ package Azure::ApiManagement::CreateOrUpdateCertificates;
   has 'If-Match' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-07',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'certificateId' => (is => 'ro', required => 1, isa => 'Str',

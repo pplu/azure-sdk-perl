@@ -1,6 +1,6 @@
 package Azure::DevTestLabs::ArmTemplateInfo;
   use Moose;
 
-  has 'parameters' => (is => 'ro', isa => 'Azure::DevTestLabs::Object'  );
-  has 'template' => (is => 'ro', isa => 'Azure::DevTestLabs::Object'  );
+  has 'parameters' => (is => 'ro', isa => 'HashRef'  );
+  has 'template' => (is => 'ro', isa => 'HashRef'  );
 1;

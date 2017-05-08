@@ -3,39 +3,23 @@ package Azure::RecoveryServices;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CreateOrUpdateVaults {
+  sub ListByVaultsUsages {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServices::CreateOrUpdateVaults', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::RecoveryServices::ListByVaultsUsages', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteVaults {
+  sub ListOperations {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServices::DeleteVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetVaults {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServices::GetVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListByResourceGroupVaults {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServices::ListByResourceGroupVaults', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::RecoveryServices::ListOperations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateVaults DeleteVaults GetVaults ListByResourceGroupVaults / }
+  sub operations { qw/ListByVaultsUsages ListOperations / }
 
 1;

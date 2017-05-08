@@ -2,7 +2,7 @@ package Azure::ApiManagement::GetSsoTokenApiManagementServices;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-07',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -17,5 +17,5 @@ package Azure::ApiManagement::GetSsoTokenApiManagementServices;
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/getssotoken');
   class_has _returns => (is => 'ro', default => 'Azure::ApiManagement::GetSsoTokenApiManagementServicesResult');
-  class_has _api_method => (is => 'ro', default => 'GET');
+  class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -5,7 +5,7 @@ package Azure::AppServiceEnvironments::CreateOrUpdateAppServiceEnvironments;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'hostingEnvironmentEnvelope' => (is => 'ro', required => 1, isa => 'Azure::AppServiceEnvironments::AppServiceEnvironment',
+  has 'hostingEnvironmentEnvelope' => (is => 'ro', required => 1, isa => 'Azure::AppServiceEnvironments::AppServiceEnvironmentResource',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'name' => (is => 'ro', required => 1, isa => 'Str',

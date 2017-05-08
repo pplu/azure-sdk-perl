@@ -6,6 +6,7 @@ package Azure::DevTestLabs::Policy;
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'tags' => (is => 'ro', isa => 'HashRef'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'createdDate' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'evaluatorType' => (is => 'ro', isa => 'Str'  );
   has 'factData' => (is => 'ro', isa => 'Str'  );

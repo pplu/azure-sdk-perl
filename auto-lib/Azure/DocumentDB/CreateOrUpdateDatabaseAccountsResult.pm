@@ -10,6 +10,7 @@ package Azure::DocumentDB::CreateOrUpdateDatabaseAccountsResult;
   has consistencyPolicy => (is => 'ro', isa => 'HashRef'  );
   has databaseAccountOfferType => (is => 'ro', isa => 'Str'  );
   has documentEndpoint => (is => 'ro', isa => 'Str'  );
+  has enableAutomaticFailover => (is => 'ro', isa => 'Bool'  );
   has failoverPolicies => (is => 'ro', isa => 'ArrayRef[Azure::DocumentDB::FailoverPolicy]'  );
   has ipRangeFilter => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );

@@ -1,6 +1,7 @@
 package Azure::DevTestLabs::PolicyProperties;
   use Moose;
 
+  has 'createdDate' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'evaluatorType' => (is => 'ro', isa => 'Str'  );
   has 'factData' => (is => 'ro', isa => 'Str'  );

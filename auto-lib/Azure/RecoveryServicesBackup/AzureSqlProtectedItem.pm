@@ -5,6 +5,7 @@ package Azure::RecoveryServicesBackup::AzureSqlProtectedItem;
   has 'protectedItemDataId' => (is => 'ro', isa => 'Str'  );
   has 'protectionState' => (is => 'ro', isa => 'Str'  );
   has 'backupManagementType' => (is => 'ro', isa => 'Str'  );
+  has 'containerName' => (is => 'ro', isa => 'Str'  );
   has 'lastRecoveryPoint' => (is => 'ro', isa => 'Str'  );
   has 'policyId' => (is => 'ro', isa => 'Str'  );
   has 'protectedItemType' => (is => 'ro', isa => 'Str'  );

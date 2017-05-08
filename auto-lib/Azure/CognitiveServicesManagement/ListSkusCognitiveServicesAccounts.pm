@@ -5,7 +5,7 @@ package Azure::CognitiveServicesManagement::ListSkusCognitiveServicesAccounts;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-02-01-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-18',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

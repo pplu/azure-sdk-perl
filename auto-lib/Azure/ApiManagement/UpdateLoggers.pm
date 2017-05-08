@@ -5,7 +5,7 @@ package Azure::ApiManagement::UpdateLoggers;
   has 'If-Match' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-07',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'loggerid' => (is => 'ro', required => 1, isa => 'Str',

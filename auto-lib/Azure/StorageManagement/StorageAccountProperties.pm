@@ -13,4 +13,5 @@ package Azure::StorageManagement::StorageAccountProperties;
   has 'secondaryLocation' => (is => 'ro', isa => 'Str'  );
   has 'statusOfPrimary' => (is => 'ro', isa => 'Str'  );
   has 'statusOfSecondary' => (is => 'ro', isa => 'Str'  );
+  has 'supportsHttpsTrafficOnly' => (is => 'ro', isa => 'Bool'  );
 1;

@@ -5,7 +5,7 @@ package Azure::ApiManagement::UpdateApiOperations;
   has 'If-Match' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-07',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'apiId' => (is => 'ro', required => 1, isa => 'Str',
@@ -14,7 +14,7 @@ package Azure::ApiManagement::UpdateApiOperations;
   has 'operationId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::PatchParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::OperationUpdateContract',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

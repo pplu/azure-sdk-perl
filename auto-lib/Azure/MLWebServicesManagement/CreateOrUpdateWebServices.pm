@@ -2,7 +2,7 @@ package Azure::MLWebServicesManagement::CreateOrUpdateWebServices;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-05-01-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'createOrUpdatePayload' => (is => 'ro', required => 1, isa => 'Azure::MLWebServicesManagement::WebService',

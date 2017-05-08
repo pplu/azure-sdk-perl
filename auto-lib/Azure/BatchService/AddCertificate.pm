@@ -2,11 +2,11 @@ package Azure::BatchService::AddCertificate;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Certificate' => (is => 'ro', required => 1, isa => 'Azure::BatchService::CertificateAddParameter',
-    traits => [ 'Azure::ParamInBody' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01.3.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'certificate' => (is => 'ro', required => 1, isa => 'Azure::BatchService::CertificateAddParameter',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],

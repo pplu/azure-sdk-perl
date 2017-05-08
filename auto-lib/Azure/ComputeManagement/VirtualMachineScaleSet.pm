@@ -1,6 +1,7 @@
 package Azure::ComputeManagement::VirtualMachineScaleSet;
   use Moose;
 
+  has 'identity' => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineScaleSetIdentity'  );
   has 'sku' => (is => 'ro', isa => 'Azure::ComputeManagement::Sku'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

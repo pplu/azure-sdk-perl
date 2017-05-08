@@ -10,6 +10,7 @@ package Azure::CognitiveServicesManagement::GetPropertiesCognitiveServicesAccoun
   has tags => (is => 'ro', isa => 'HashRef'  );
   has type => (is => 'ro', isa => 'Str'  );
   has endpoint => (is => 'ro', isa => 'Str'  );
+  has internalId => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
 
 1;

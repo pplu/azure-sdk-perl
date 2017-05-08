@@ -2,10 +2,10 @@ package Azure::ApiManagement::UpdateApiManagementServices;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-07',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::ApiManagementServiceBaseParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::ApiManagementServiceUpdateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

@@ -1,10 +1,8 @@
 package Azure::RecoveryServices::Resource;
   use Moose;
 
+  has 'eTag' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'sku' => (is => 'ro', isa => 'Azure::RecoveryServices::Sku'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;

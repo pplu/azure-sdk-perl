@@ -8,6 +8,9 @@ package Azure::DataLakeStoreFileSystemManagement::OpenFileSystem;
   has 'directFilePath' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
+  has 'fileSessionId' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
   has 'length' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );

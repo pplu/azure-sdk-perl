@@ -48,6 +48,14 @@ package Azure::DocumentDB;
     my $call_object = $self->new_with_coercions('Azure::DocumentDB::ListByResourceGroupDatabaseAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListConnectionStringsDatabaseAccounts {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DocumentDB::ListConnectionStringsDatabaseAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListDatabaseAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -89,6 +97,6 @@ package Azure::DocumentDB;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameExistsDatabaseAccounts CreateOrUpdateDatabaseAccounts DeleteDatabaseAccounts FailoverPriorityChangeDatabaseAccounts GetDatabaseAccounts ListByResourceGroupDatabaseAccounts ListDatabaseAccounts ListKeysDatabaseAccounts ListReadOnlyKeysDatabaseAccounts PatchDatabaseAccounts RegenerateKeyDatabaseAccounts / }
+  sub operations { qw/CheckNameExistsDatabaseAccounts CreateOrUpdateDatabaseAccounts DeleteDatabaseAccounts FailoverPriorityChangeDatabaseAccounts GetDatabaseAccounts ListByResourceGroupDatabaseAccounts ListConnectionStringsDatabaseAccounts ListDatabaseAccounts ListKeysDatabaseAccounts ListReadOnlyKeysDatabaseAccounts PatchDatabaseAccounts RegenerateKeyDatabaseAccounts / }
 
 1;

@@ -2,14 +2,14 @@ package Azure::BatchService::AddJob;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Job' => (is => 'ro', required => 1, isa => 'Azure::BatchService::JobAddParameter',
-    traits => [ 'Azure::ParamInBody' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01.3.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'job' => (is => 'ro', required => 1, isa => 'Azure::BatchService::JobAddParameter',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'ocp-date' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],

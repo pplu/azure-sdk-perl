@@ -1,7 +1,9 @@
 package Azure::DevTestLabs::ArtifactSourceProperties;
   use Moose;
 
+  has 'armTemplateFolderPath' => (is => 'ro', isa => 'Str'  );
   has 'branchRef' => (is => 'ro', isa => 'Str'  );
+  has 'createdDate' => (is => 'ro', isa => 'Str'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'folderPath' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );

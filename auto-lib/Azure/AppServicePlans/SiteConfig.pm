@@ -1,18 +1,14 @@
 package Azure::AppServicePlans::SiteConfig;
   use Moose;
 
-  has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'kind' => (is => 'ro', isa => 'Str'  );
-  has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
   has 'alwaysOn' => (is => 'ro', isa => 'Bool'  );
   has 'apiDefinition' => (is => 'ro', isa => 'Azure::AppServicePlans::ApiDefinitionInfo'  );
   has 'appCommandLine' => (is => 'ro', isa => 'Str'  );
+  has 'appSettings' => (is => 'ro', isa => 'ArrayRef[Azure::AppServicePlans::NameValuePair]'  );
   has 'autoHealEnabled' => (is => 'ro', isa => 'Bool'  );
   has 'autoHealRules' => (is => 'ro', isa => 'Azure::AppServicePlans::AutoHealRules'  );
   has 'autoSwapSlotName' => (is => 'ro', isa => 'Str'  );
+  has 'connectionStrings' => (is => 'ro', isa => 'ArrayRef[Azure::AppServicePlans::ConnStringInfo]'  );
   has 'cors' => (is => 'ro', isa => 'Azure::AppServicePlans::CorsSettings'  );
   has 'defaultDocuments' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'detailedErrorLoggingEnabled' => (is => 'ro', isa => 'Bool'  );
@@ -25,6 +21,7 @@ package Azure::AppServicePlans::SiteConfig;
   has 'javaContainerVersion' => (is => 'ro', isa => 'Str'  );
   has 'javaVersion' => (is => 'ro', isa => 'Str'  );
   has 'limits' => (is => 'ro', isa => 'Azure::AppServicePlans::SiteLimits'  );
+  has 'linuxFxVersion' => (is => 'ro', isa => 'Str'  );
   has 'loadBalancing' => (is => 'ro', isa => 'Str'  );
   has 'localMySqlEnabled' => (is => 'ro', isa => 'Bool'  );
   has 'logsDirectorySizeLimit' => (is => 'ro', isa => 'Int'  );

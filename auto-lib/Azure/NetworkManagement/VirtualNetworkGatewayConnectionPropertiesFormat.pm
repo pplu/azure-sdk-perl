@@ -7,6 +7,7 @@ package Azure::NetworkManagement::VirtualNetworkGatewayConnectionPropertiesForma
   has 'egressBytesTransferred' => (is => 'ro', isa => 'Int'  );
   has 'enableBgp' => (is => 'ro', isa => 'Bool'  );
   has 'ingressBytesTransferred' => (is => 'ro', isa => 'Int'  );
+  has 'ipsecPolicies' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::IpsecPolicy]'  );
   has 'localNetworkGateway2' => (is => 'ro', isa => 'Azure::NetworkManagement::LocalNetworkGateway'  );
   has 'peer' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
@@ -14,6 +15,7 @@ package Azure::NetworkManagement::VirtualNetworkGatewayConnectionPropertiesForma
   has 'routingWeight' => (is => 'ro', isa => 'Int'  );
   has 'sharedKey' => (is => 'ro', isa => 'Str'  );
   has 'tunnelConnectionStatus' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::TunnelConnectionHealth]'  );
+  has 'usePolicyBasedTrafficSelectors' => (is => 'ro', isa => 'Bool'  );
   has 'virtualNetworkGateway1' => (is => 'ro', isa => 'Azure::NetworkManagement::VirtualNetworkGateway'  );
   has 'virtualNetworkGateway2' => (is => 'ro', isa => 'Azure::NetworkManagement::VirtualNetworkGateway'  );
 1;

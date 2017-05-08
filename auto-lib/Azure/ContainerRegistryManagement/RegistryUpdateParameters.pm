@@ -3,5 +3,5 @@ package Azure::ContainerRegistryManagement::RegistryUpdateParameters;
 
   has 'tags' => (is => 'ro', isa => 'HashRef'  );
   has 'adminUserEnabled' => (is => 'ro', isa => 'Bool'  );
-  has 'storageAccount' => (is => 'ro', isa => 'Azure::ContainerRegistryManagement::StorageAccountProperties'  );
+  has 'storageAccount' => (is => 'ro', isa => 'Azure::ContainerRegistryManagement::StorageAccountParameters'  );
 1;

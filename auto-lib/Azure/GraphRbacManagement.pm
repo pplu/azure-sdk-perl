@@ -78,6 +78,11 @@ package Azure::GraphRbacManagement;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetMemberGroupsUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetObjectsByObjectIdsObjects {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetObjectsByObjectIdsObjects', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetServicePrincipals {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetServicePrincipals', { @_ });
@@ -169,6 +174,6 @@ package Azure::GraphRbacManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AddMemberGroups CreateApplications CreateGroups CreateServicePrincipals CreateUsers DeleteApplications DeleteGroups DeleteServicePrincipals DeleteUsers GetApplications GetCurrentUserObjects GetGroupMembersGroups GetGroups GetMemberGroupsGroups GetMemberGroupsUsers GetServicePrincipals GetUsers IsMemberOfGroups ListApplications ListGroups ListKeyCredentialsApplications ListKeyCredentialsServicePrincipals ListPasswordCredentialsApplications ListPasswordCredentialsServicePrincipals ListServicePrincipals ListUsers PatchApplications RemoveMemberGroups UpdateKeyCredentialsApplications UpdateKeyCredentialsServicePrincipals UpdatePasswordCredentialsApplications UpdatePasswordCredentialsServicePrincipals UpdateUsers / }
+  sub operations { qw/AddMemberGroups CreateApplications CreateGroups CreateServicePrincipals CreateUsers DeleteApplications DeleteGroups DeleteServicePrincipals DeleteUsers GetApplications GetCurrentUserObjects GetGroupMembersGroups GetGroups GetMemberGroupsGroups GetMemberGroupsUsers GetObjectsByObjectIdsObjects GetServicePrincipals GetUsers IsMemberOfGroups ListApplications ListGroups ListKeyCredentialsApplications ListKeyCredentialsServicePrincipals ListPasswordCredentialsApplications ListPasswordCredentialsServicePrincipals ListServicePrincipals ListUsers PatchApplications RemoveMemberGroups UpdateKeyCredentialsApplications UpdateKeyCredentialsServicePrincipals UpdatePasswordCredentialsApplications UpdatePasswordCredentialsServicePrincipals UpdateUsers / }
 
 1;

@@ -2,7 +2,7 @@ package Azure::ApiManagement::UploadCertificateApiManagementServices;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-07',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::ApiManagementServiceUploadCertificateParameters',
@@ -18,7 +18,7 @@ package Azure::ApiManagement::UploadCertificateApiManagementServices;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/updatecertificate');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/uploadcertificate');
   class_has _returns => (is => 'ro', default => 'Azure::ApiManagement::UploadCertificateApiManagementServicesResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -8,8 +8,11 @@ package Azure::ServiceFabric::StartApplicationUpgrades;
   has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'startApplicationUpgradeDescription' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::StartApplicationUpgradeDescription',
+  has 'startApplicationUpgrade' => (is => 'ro', required => 1, isa => 'Azure::ServiceFabric::StartApplicationUpgrade',
     traits => [ 'Azure::ParamInBody' ],
+  );
+  has 'timeout' => (is => 'ro', isa => 'Int',
+    traits => [ 'Azure::ParamInQuery' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/Applications/{applicationName}/$/Upgrade');

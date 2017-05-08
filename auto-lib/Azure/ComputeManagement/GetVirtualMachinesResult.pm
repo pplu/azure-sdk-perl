@@ -1,6 +1,7 @@
 package Azure::ComputeManagement::GetVirtualMachinesResult;
   use Moose;
 
+  has identity => (is => 'ro', isa => 'Any'  );
   has plan => (is => 'ro', isa => 'Any'  );
   has resources => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VirtualMachineExtension]'  );
   has id => (is => 'ro', isa => 'Str'  );

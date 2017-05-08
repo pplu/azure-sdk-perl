@@ -2,6 +2,6 @@ package Azure::AppServiceEnvironments::ListMultiRolePoolsAppServiceEnvironmentsR
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::AppServiceEnvironments::WorkerPool]'  );
+  has value => (is => 'ro', isa => 'ArrayRef[Azure::AppServiceEnvironments::WorkerPoolResource]'  );
 
 1;

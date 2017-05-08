@@ -16,6 +16,8 @@ package Azure::MLWebServicesManagement::WebServicePropertiesForGraph;
   has 'output' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::ServiceInputOutputSpecification'  );
   has 'packageType' => (is => 'ro', isa => 'Str'  );
   has 'parameters' => (is => 'ro', isa => 'HashRef'  );
+  has 'payloadsInBlobStorage' => (is => 'ro', isa => 'Bool'  );
+  has 'payloadsLocation' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::BlobLocation'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'readOnly' => (is => 'ro', isa => 'Bool'  );
   has 'realtimeConfiguration' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::RealtimeConfiguration'  );

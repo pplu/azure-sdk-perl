@@ -7,5 +7,5 @@ package Azure::BatchService::JobReleaseTask;
   has 'maxWallClockTime' => (is => 'ro', isa => 'Str'  );
   has 'resourceFiles' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ResourceFile]'  );
   has 'retentionTime' => (is => 'ro', isa => 'Str'  );
-  has 'runElevated' => (is => 'ro', isa => 'Bool'  );
+  has 'userIdentity' => (is => 'ro', isa => 'Azure::BatchService::UserIdentity'  );
 1;

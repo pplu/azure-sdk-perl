@@ -2,7 +2,7 @@ package Azure::iotHub::ListEventHubConsumerGroupsIotHubResource;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-02-03',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-19',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'eventHubEndpointName' => (is => 'ro', required => 1, isa => 'Str',

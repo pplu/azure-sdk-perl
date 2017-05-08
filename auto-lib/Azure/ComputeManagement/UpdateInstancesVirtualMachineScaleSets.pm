@@ -19,6 +19,6 @@ package Azure::ComputeManagement::UpdateInstancesVirtualMachineScaleSets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachineScaleSets/{vmScaleSetName}/manualupgrade');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::UpdateInstancesVirtualMachineScaleSetsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

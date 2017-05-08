@@ -12,5 +12,6 @@ package Azure::iotHub::IotHubProperties;
   has 'messagingEndpoints' => (is => 'ro', isa => 'HashRef'  );
   has 'operationsMonitoringProperties' => (is => 'ro', isa => 'Azure::iotHub::OperationsMonitoringProperties'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'routing' => (is => 'ro', isa => 'Azure::iotHub::RoutingProperties'  );
   has 'storageEndpoints' => (is => 'ro', isa => 'HashRef'  );
 1;

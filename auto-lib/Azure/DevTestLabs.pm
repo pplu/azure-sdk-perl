@@ -3,423 +3,847 @@ package Azure::DevTestLabs;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub ApplyArtifactsVirtualMachine {
+  sub AddDataDiskVirtualMachines {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ApplyArtifactsVirtualMachine', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::AddDataDiskVirtualMachines', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateEnvironmentLab {
+  sub ApplyArtifactsVirtualMachines {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateEnvironmentLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ApplyArtifactsVirtualMachines', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateResourceArtifactSource {
+  sub AttachDisks {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateResourceArtifactSource', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::AttachDisks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateResourceCustomImage {
+  sub ClaimAnyVmLabs {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateResourceCustomImage', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ClaimAnyVmLabs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateResourceFormula {
+  sub ClaimVirtualMachines {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateResourceFormula', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ClaimVirtualMachines', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateResourceLab {
+  sub CreateEnvironmentLabs {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateResourceLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateEnvironmentLabs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateResourcePolicy {
+  sub CreateOrUpdateArtifactSources {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateResourcePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateArtifactSources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateResourceSchedule {
+  sub CreateOrUpdateCosts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateResourceSchedule', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateCosts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateResourceVirtualMachine {
+  sub CreateOrUpdateCustomImages {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateResourceVirtualMachine', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateCustomImages', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateResourceVirtualNetwork {
+  sub CreateOrUpdateDisks {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateResourceVirtualNetwork', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateDisks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteResourceArtifactSource {
+  sub CreateOrUpdateEnvironments {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteResourceArtifactSource', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateEnvironments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteResourceCustomImage {
+  sub CreateOrUpdateFormulas {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteResourceCustomImage', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateFormulas', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteResourceFormula {
+  sub CreateOrUpdateGlobalSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteResourceFormula', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateGlobalSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteResourceLab {
+  sub CreateOrUpdateLabs {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteResourceLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateLabs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteResourcePolicy {
+  sub CreateOrUpdateNotificationChannels {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteResourcePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateNotificationChannels', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteResourceSchedule {
+  sub CreateOrUpdatePolicies {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteResourceSchedule', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdatePolicies', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteResourceVirtualMachine {
+  sub CreateOrUpdateSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteResourceVirtualMachine', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteResourceVirtualNetwork {
+  sub CreateOrUpdateSecrets {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteResourceVirtualNetwork', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateSecrets', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub EvaluatePoliciesPolicySet {
+  sub CreateOrUpdateServiceRunners {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::EvaluatePoliciesPolicySet', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateServiceRunners', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ExecuteSchedule {
+  sub CreateOrUpdateUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ExecuteSchedule', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GenerateArmTemplateArtifact {
+  sub CreateOrUpdateVirtualMachines {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GenerateArmTemplateArtifact', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateVirtualMachines', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GenerateUploadUriLab {
+  sub CreateOrUpdateVirtualMachineSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GenerateUploadUriLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateVirtualMachineSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceArtifact {
+  sub CreateOrUpdateVirtualNetworks {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceArtifact', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::CreateOrUpdateVirtualNetworks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceArtifactSource {
+  sub DeleteArtifactSources {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceArtifactSource', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteArtifactSources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceCost {
+  sub DeleteCustomImages {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceCost', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteCustomImages', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceCustomImage {
+  sub DeleteDisks {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceCustomImage', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteDisks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceFormula {
+  sub DeleteEnvironments {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceFormula', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteEnvironments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceLab {
+  sub DeleteFormulas {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteFormulas', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourcePolicy {
+  sub DeleteGlobalSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourcePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteGlobalSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceSchedule {
+  sub DeleteLabs {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceSchedule', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteLabs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceVirtualMachine {
+  sub DeleteNotificationChannels {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceVirtualMachine', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteNotificationChannels', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetResourceVirtualNetwork {
+  sub DeletePolicies {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetResourceVirtualNetwork', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeletePolicies', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListArtifact {
+  sub DeleteSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListArtifact', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListArtifactSource {
+  sub DeleteSecrets {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListArtifactSource', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteSecrets', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByResourceGroupLab {
+  sub DeleteServiceRunners {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListByResourceGroupLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteServiceRunners', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListBySubscriptionLab {
+  sub DeleteUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListBySubscriptionLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListCustomImage {
+  sub DeleteVirtualMachines {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListCustomImage', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteVirtualMachines', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListFormula {
+  sub DeleteVirtualMachineSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListFormula', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteVirtualMachineSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListGalleryImage {
+  sub DeleteVirtualNetworks {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListGalleryImage', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DeleteVirtualNetworks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListPolicy {
+  sub DetachDataDiskVirtualMachines {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListPolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DetachDataDiskVirtualMachines', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListSchedule {
+  sub DetachDisks {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListSchedule', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::DetachDisks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListVhdsLab {
+  sub EvaluatePoliciesPolicySets {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListVhdsLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::EvaluatePoliciesPolicySets', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListVirtualMachine {
+  sub ExecuteGlobalSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListVirtualMachine', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ExecuteGlobalSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListVirtualNetwork {
+  sub ExecuteSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListVirtualNetwork', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ExecuteSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub PatchResourceArtifactSource {
+  sub ExecuteVirtualMachineSchedules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::PatchResourceArtifactSource', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ExecuteVirtualMachineSchedules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub PatchResourceLab {
+  sub ExportResourceUsageLabs {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::PatchResourceLab', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ExportResourceUsageLabs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub PatchResourcePolicy {
+  sub GenerateArmTemplateArtifacts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::PatchResourcePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GenerateArmTemplateArtifacts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub PatchResourceSchedule {
+  sub GenerateUploadUriLabs {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::PatchResourceSchedule', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GenerateUploadUriLabs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub PatchResourceVirtualMachine {
+  sub GetArmTemplates {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::PatchResourceVirtualMachine', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetArmTemplates', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub PatchResourceVirtualNetwork {
+  sub GetArtifacts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::PatchResourceVirtualNetwork', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetArtifacts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub StartVirtualMachine {
+  sub GetArtifactSources {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::StartVirtualMachine', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetArtifactSources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub StopVirtualMachine {
+  sub GetCosts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::StopVirtualMachine', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetCosts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetCustomImages {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetCustomImages', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetDisks {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetDisks', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetEnvironments {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetEnvironments', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetFormulas {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetFormulas', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetGlobalSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetGlobalSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetLabs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetLabs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetNotificationChannels {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetNotificationChannels', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetPolicies {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetPolicies', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetSecrets {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetSecrets', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetServiceRunners {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetServiceRunners', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetUsers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetUsers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetVirtualMachines {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetVirtualMachines', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetVirtualMachineSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetVirtualMachineSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetVirtualNetworks {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::GetVirtualNetworks', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListApplicableSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListApplicableSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListApplicableSchedulesVirtualMachines {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListApplicableSchedulesVirtualMachines', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListArmTemplates {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListArmTemplates', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListArtifacts {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListArtifacts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListArtifactSources {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListArtifactSources', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByResourceGroupGlobalSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListByResourceGroupGlobalSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByResourceGroupLabs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListByResourceGroupLabs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListBySubscriptionGlobalSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListBySubscriptionGlobalSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListBySubscriptionLabs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListBySubscriptionLabs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListCustomImages {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListCustomImages', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListDisks {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListDisks', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListEnvironments {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListEnvironments', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListFormulas {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListFormulas', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListGalleryImages {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListGalleryImages', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListNotificationChannels {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListNotificationChannels', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListPolicies {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListPolicies', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListSecrets {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListSecrets', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListServiceRunners {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListServiceRunners', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListUsers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListUsers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListVhdsLabs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListVhdsLabs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListVirtualMachines {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListVirtualMachines', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListVirtualMachineSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListVirtualMachineSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListVirtualNetworks {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::ListVirtualNetworks', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub NotifyNotificationChannels {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::NotifyNotificationChannels', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RetargetGlobalSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::RetargetGlobalSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub StartVirtualMachines {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::StartVirtualMachines', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub StopVirtualMachines {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::StopVirtualMachines', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateArtifactSources {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateArtifactSources', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateGlobalSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateGlobalSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateLabs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateLabs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateNotificationChannels {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateNotificationChannels', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdatePolicies {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdatePolicies', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateUsers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateUsers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateVirtualMachines {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateVirtualMachines', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateVirtualMachineSchedules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateVirtualMachineSchedules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateVirtualNetworks {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DevTestLabs::UpdateVirtualNetworks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/ApplyArtifactsVirtualMachine CreateEnvironmentLab CreateOrUpdateResourceArtifactSource CreateOrUpdateResourceCustomImage CreateOrUpdateResourceFormula CreateOrUpdateResourceLab CreateOrUpdateResourcePolicy CreateOrUpdateResourceSchedule CreateOrUpdateResourceVirtualMachine CreateOrUpdateResourceVirtualNetwork DeleteResourceArtifactSource DeleteResourceCustomImage DeleteResourceFormula DeleteResourceLab DeleteResourcePolicy DeleteResourceSchedule DeleteResourceVirtualMachine DeleteResourceVirtualNetwork EvaluatePoliciesPolicySet ExecuteSchedule GenerateArmTemplateArtifact GenerateUploadUriLab GetResourceArtifact GetResourceArtifactSource GetResourceCost GetResourceCustomImage GetResourceFormula GetResourceLab GetResourcePolicy GetResourceSchedule GetResourceVirtualMachine GetResourceVirtualNetwork ListArtifact ListArtifactSource ListByResourceGroupLab ListBySubscriptionLab ListCustomImage ListFormula ListGalleryImage ListPolicy ListSchedule ListVhdsLab ListVirtualMachine ListVirtualNetwork PatchResourceArtifactSource PatchResourceLab PatchResourcePolicy PatchResourceSchedule PatchResourceVirtualMachine PatchResourceVirtualNetwork StartVirtualMachine StopVirtualMachine / }
+  sub operations { qw/AddDataDiskVirtualMachines ApplyArtifactsVirtualMachines AttachDisks ClaimAnyVmLabs ClaimVirtualMachines CreateEnvironmentLabs CreateOrUpdateArtifactSources CreateOrUpdateCosts CreateOrUpdateCustomImages CreateOrUpdateDisks CreateOrUpdateEnvironments CreateOrUpdateFormulas CreateOrUpdateGlobalSchedules CreateOrUpdateLabs CreateOrUpdateNotificationChannels CreateOrUpdatePolicies CreateOrUpdateSchedules CreateOrUpdateSecrets CreateOrUpdateServiceRunners CreateOrUpdateUsers CreateOrUpdateVirtualMachines CreateOrUpdateVirtualMachineSchedules CreateOrUpdateVirtualNetworks DeleteArtifactSources DeleteCustomImages DeleteDisks DeleteEnvironments DeleteFormulas DeleteGlobalSchedules DeleteLabs DeleteNotificationChannels DeletePolicies DeleteSchedules DeleteSecrets DeleteServiceRunners DeleteUsers DeleteVirtualMachines DeleteVirtualMachineSchedules DeleteVirtualNetworks DetachDataDiskVirtualMachines DetachDisks EvaluatePoliciesPolicySets ExecuteGlobalSchedules ExecuteSchedules ExecuteVirtualMachineSchedules ExportResourceUsageLabs GenerateArmTemplateArtifacts GenerateUploadUriLabs GetArmTemplates GetArtifacts GetArtifactSources GetCosts GetCustomImages GetDisks GetEnvironments GetFormulas GetGlobalSchedules GetLabs GetNotificationChannels GetPolicies GetSchedules GetSecrets GetServiceRunners GetUsers GetVirtualMachines GetVirtualMachineSchedules GetVirtualNetworks ListApplicableSchedules ListApplicableSchedulesVirtualMachines ListArmTemplates ListArtifacts ListArtifactSources ListByResourceGroupGlobalSchedules ListByResourceGroupLabs ListBySubscriptionGlobalSchedules ListBySubscriptionLabs ListCustomImages ListDisks ListEnvironments ListFormulas ListGalleryImages ListNotificationChannels ListPolicies ListSchedules ListSecrets ListServiceRunners ListUsers ListVhdsLabs ListVirtualMachines ListVirtualMachineSchedules ListVirtualNetworks NotifyNotificationChannels RetargetGlobalSchedules StartVirtualMachines StopVirtualMachines UpdateArtifactSources UpdateGlobalSchedules UpdateLabs UpdateNotificationChannels UpdatePolicies UpdateSchedules UpdateUsers UpdateVirtualMachines UpdateVirtualMachineSchedules UpdateVirtualNetworks / }
 
 1;
