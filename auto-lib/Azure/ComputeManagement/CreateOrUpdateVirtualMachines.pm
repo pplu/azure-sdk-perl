@@ -5,7 +5,10 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachines;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-03-30',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ComputeManagement::VirtualMachine',
+  has 'location' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInBody' ],
+  );
+  has 'properties' => (is => 'ro', required => 1, isa => 'Azure::ComputeManagement::VirtualMachine',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -13,6 +16,9 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachines;
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'tags' => (is => 'ro', isa => 'Any',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'vmName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
