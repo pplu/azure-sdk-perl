@@ -5,4 +5,5 @@ package Azure::GraphRbacManagement::UserUpdateParameters;
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'mailNickname' => (is => 'ro', isa => 'Str'  );
   has 'passwordProfile' => (is => 'ro', isa => 'Azure::GraphRbacManagement::PasswordProfile'  );
+  has 'usageLocation' => (is => 'ro', isa => 'Str'  );
 1;
