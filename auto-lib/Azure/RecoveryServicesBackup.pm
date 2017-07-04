@@ -251,14 +251,6 @@ package Azure::RecoveryServicesBackup;
     my $call_object = $self->new_with_coercions('Azure::RecoveryServicesBackup::ListBackupUsageSummaries', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListOperations {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServicesBackup::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub ListRecoveryPoints {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -332,6 +324,6 @@ package Azure::RecoveryServicesBackup;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateProtectedItems CreateOrUpdateProtectionPolicies DeleteProtectedItems DeleteProtectionPolicies ExportJobs GetBackupEngines GetBackupOperationResults GetBackupOperationStatuses GetBackupResourceStorageConfigs GetBackupResourceVaultConfigs GetExportJobsOperationResults GetJobDetails GetJobOperationResults GetProtectedItemOperationResults GetProtectedItemOperationStatuses GetProtectedItems GetProtectionContainerOperationResults GetProtectionContainerRefreshOperationResults GetProtectionContainers GetProtectionPolicies GetProtectionPolicyOperationResults GetProtectionPolicyOperationStatuses GetRecoveryPoints GetSecurityPINs ListBackupEngines ListBackupJobs ListBackupPolicies ListBackupProtectableItems ListBackupProtectedItems ListBackupProtectionContainers ListBackupUsageSummaries ListOperations ListRecoveryPoints ProvisionItemLevelRecoveryConnections RefreshProtectionContainers RevokeItemLevelRecoveryConnections TriggerBackups TriggerJobCancellations TriggerRestores UpdateBackupResourceStorageConfigs UpdateBackupResourceVaultConfigs / }
+  sub operations { qw/CreateOrUpdateProtectedItems CreateOrUpdateProtectionPolicies DeleteProtectedItems DeleteProtectionPolicies ExportJobs GetBackupEngines GetBackupOperationResults GetBackupOperationStatuses GetBackupResourceStorageConfigs GetBackupResourceVaultConfigs GetExportJobsOperationResults GetJobDetails GetJobOperationResults GetProtectedItemOperationResults GetProtectedItemOperationStatuses GetProtectedItems GetProtectionContainerOperationResults GetProtectionContainerRefreshOperationResults GetProtectionContainers GetProtectionPolicies GetProtectionPolicyOperationResults GetProtectionPolicyOperationStatuses GetRecoveryPoints GetSecurityPINs ListBackupEngines ListBackupJobs ListBackupPolicies ListBackupProtectableItems ListBackupProtectedItems ListBackupProtectionContainers ListBackupUsageSummaries ListRecoveryPoints ProvisionItemLevelRecoveryConnections RefreshProtectionContainers RevokeItemLevelRecoveryConnections TriggerBackups TriggerJobCancellations TriggerRestores UpdateBackupResourceStorageConfigs UpdateBackupResourceVaultConfigs / }
 
 1;
