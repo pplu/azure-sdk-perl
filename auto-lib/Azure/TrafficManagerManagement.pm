@@ -5,9 +5,6 @@ package Azure::TrafficManagerManagement;
 
   sub CheckTrafficManagerRelativeDnsNameAvailabilityProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
     my $call_object = $self->new_with_coercions('Azure::TrafficManagerManagement::CheckTrafficManagerRelativeDnsNameAvailabilityProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
@@ -64,20 +61,20 @@ package Azure::TrafficManagerManagement;
     my $call_object = $self->new_with_coercions('Azure::TrafficManagerManagement::GetProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListAllProfiles {
+  sub ListByResourceGroupProfiles {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::TrafficManagerManagement::ListAllProfiles', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::TrafficManagerManagement::ListByResourceGroupProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByInResourceGroupProfiles {
+  sub ListBySubscriptionProfiles {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::TrafficManagerManagement::ListByInResourceGroupProfiles', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::TrafficManagerManagement::ListBySubscriptionProfiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateEndpoints {
@@ -97,6 +94,6 @@ package Azure::TrafficManagerManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckTrafficManagerRelativeDnsNameAvailabilityProfiles CreateOrUpdateEndpoints CreateOrUpdateProfiles DeleteEndpoints DeleteProfiles GetDefaultGeographicHierarchies GetEndpoints GetProfiles ListAllProfiles ListByInResourceGroupProfiles UpdateEndpoints UpdateProfiles / }
+  sub operations { qw/CheckTrafficManagerRelativeDnsNameAvailabilityProfiles CreateOrUpdateEndpoints CreateOrUpdateProfiles DeleteEndpoints DeleteProfiles GetDefaultGeographicHierarchies GetEndpoints GetProfiles ListByResourceGroupProfiles ListBySubscriptionProfiles UpdateEndpoints UpdateProfiles / }
 
 1;
