@@ -5,6 +5,6 @@ package Azure::CognitiveServicesManagement::CheckSkuAvailabilityResult;
   has 'message' => (is => 'ro', isa => 'Str'  );
   has 'reason' => (is => 'ro', isa => 'Str'  );
   has 'skuAvailable' => (is => 'ro', isa => 'Bool'  );
-  has 'skuName' => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::Sku'  );
+  has 'skuName' => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::SkuName'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;
