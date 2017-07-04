@@ -17,6 +17,7 @@ package Azure::BatchService::GetTaskResult;
   has lastModified => (is => 'ro', isa => 'Str'  );
   has multiInstanceSettings => (is => 'ro', isa => 'Any'  );
   has nodeInfo => (is => 'ro', isa => 'Any'  );
+  has outputFiles => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::OutputFile]'  );
   has previousState => (is => 'ro', isa => 'Str'  );
   has previousStateTransitionTime => (is => 'ro', isa => 'Str'  );
   has resourceFiles => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ResourceFile]'  );

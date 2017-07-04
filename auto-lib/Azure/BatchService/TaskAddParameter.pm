@@ -12,6 +12,7 @@ package Azure::BatchService::TaskAddParameter;
   has 'exitConditions' => (is => 'ro', isa => 'Azure::BatchService::ExitConditions'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'multiInstanceSettings' => (is => 'ro', isa => 'Azure::BatchService::MultiInstanceSettings'  );
+  has 'outputFiles' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::OutputFile]'  );
   has 'resourceFiles' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ResourceFile]'  );
   has 'userIdentity' => (is => 'ro', isa => 'Azure::BatchService::UserIdentity'  );
 1;

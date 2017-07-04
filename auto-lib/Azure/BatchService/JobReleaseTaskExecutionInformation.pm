@@ -3,7 +3,8 @@ package Azure::BatchService::JobReleaseTaskExecutionInformation;
 
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'exitCode' => (is => 'ro', isa => 'Int'  );
-  has 'schedulingError' => (is => 'ro', isa => 'Azure::BatchService::TaskSchedulingError'  );
+  has 'failureInfo' => (is => 'ro', isa => 'Azure::BatchService::TaskFailureInformation'  );
+  has 'result' => (is => 'ro', isa => 'Azure::BatchService::TaskExecutionResult'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );
   has 'taskRootDirectory' => (is => 'ro', isa => 'Str'  );

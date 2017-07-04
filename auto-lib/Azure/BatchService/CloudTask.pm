@@ -17,6 +17,7 @@ package Azure::BatchService::CloudTask;
   has 'lastModified' => (is => 'ro', isa => 'Str'  );
   has 'multiInstanceSettings' => (is => 'ro', isa => 'Azure::BatchService::MultiInstanceSettings'  );
   has 'nodeInfo' => (is => 'ro', isa => 'Azure::BatchService::ComputeNodeInformation'  );
+  has 'outputFiles' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::OutputFile]'  );
   has 'previousState' => (is => 'ro', isa => 'Azure::BatchService::TaskState'  );
   has 'previousStateTransitionTime' => (is => 'ro', isa => 'Str'  );
   has 'resourceFiles' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ResourceFile]'  );

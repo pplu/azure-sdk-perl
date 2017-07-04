@@ -5,7 +5,7 @@ package Azure::BatchService::ListNodeAgentSkusAccount;
   has '$filter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01.5.1',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',

@@ -1,6 +1,7 @@
 package Azure::BatchService::PoolAddParameter;
   use Moose;
 
+  has 'applicationLicenses' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'applicationPackageReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ApplicationPackageReference]'  );
   has 'autoScaleEvaluationInterval' => (is => 'ro', isa => 'Str'  );
   has 'autoScaleFormula' => (is => 'ro', isa => 'Str'  );
@@ -15,7 +16,8 @@ package Azure::BatchService::PoolAddParameter;
   has 'networkConfiguration' => (is => 'ro', isa => 'Azure::BatchService::NetworkConfiguration'  );
   has 'resizeTimeout' => (is => 'ro', isa => 'Str'  );
   has 'startTask' => (is => 'ro', isa => 'Azure::BatchService::StartTask'  );
-  has 'targetDedicated' => (is => 'ro', isa => 'Int'  );
+  has 'targetDedicatedNodes' => (is => 'ro', isa => 'Int'  );
+  has 'targetLowPriorityNodes' => (is => 'ro', isa => 'Int'  );
   has 'taskSchedulingPolicy' => (is => 'ro', isa => 'Azure::BatchService::TaskSchedulingPolicy'  );
   has 'userAccounts' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::UserAccount]'  );
   has 'virtualMachineConfiguration' => (is => 'ro', isa => 'Azure::BatchService::VirtualMachineConfiguration'  );

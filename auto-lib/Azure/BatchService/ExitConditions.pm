@@ -4,5 +4,6 @@ package Azure::BatchService::ExitConditions;
   has 'default' => (is => 'ro', isa => 'Azure::BatchService::ExitOptions'  );
   has 'exitCodeRanges' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ExitCodeRangeMapping]'  );
   has 'exitCodes' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::ExitCodeMapping]'  );
-  has 'schedulingError' => (is => 'ro', isa => 'Azure::BatchService::ExitOptions'  );
+  has 'fileUploadError' => (is => 'ro', isa => 'Azure::BatchService::ExitOptions'  );
+  has 'preProcessingError' => (is => 'ro', isa => 'Azure::BatchService::ExitOptions'  );
 1;

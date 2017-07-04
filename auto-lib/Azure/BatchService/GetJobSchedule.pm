@@ -20,7 +20,7 @@ package Azure::BatchService::GetJobSchedule;
   has 'If-Unmodified-Since' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01.4.0',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01.5.1',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',
