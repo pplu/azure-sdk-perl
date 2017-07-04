@@ -11,6 +11,6 @@ package Azure::AzureAnalysisServices::GetDetailsServersResult;
   has serverFullName => (is => 'ro', isa => 'Str'  );
   has state => (is => 'ro', isa => 'Str'  );
   has asAdministrators => (is => 'ro', isa => 'HashRef'  );
-  has backupConfiguration => (is => 'ro', isa => 'HashRef'  );
+  has backupBlobContainerUri => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -43,6 +43,22 @@ package Azure::AzureAnalysisServices;
     my $call_object = $self->new_with_coercions('Azure::AzureAnalysisServices::ListServers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListSkusForExistingServers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AzureAnalysisServices::ListSkusForExistingServers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListSkusForNewServers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AzureAnalysisServices::ListSkusForNewServers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ResumeServers {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -68,6 +84,6 @@ package Azure::AzureAnalysisServices;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateServers DeleteServers GetDetailsServers ListByResourceGroupServers ListServers ResumeServers SuspendServers UpdateServers / }
+  sub operations { qw/CreateServers DeleteServers GetDetailsServers ListByResourceGroupServers ListServers ListSkusForExistingServers ListSkusForNewServers ResumeServers SuspendServers UpdateServers / }
 
 1;
