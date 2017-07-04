@@ -1,6 +1,7 @@
 package Azure::StorageManagement::UpdateStorageAccountsResult;
   use Moose;
 
+  has identity => (is => 'ro', isa => 'Any'  );
   has kind => (is => 'ro', isa => 'Str'  );
   has sku => (is => 'ro', isa => 'Any'  );
   has id => (is => 'ro', isa => 'Str'  );
@@ -13,6 +14,7 @@ package Azure::StorageManagement::UpdateStorageAccountsResult;
   has customDomain => (is => 'ro', isa => 'Any'  );
   has encryption => (is => 'ro', isa => 'Any'  );
   has lastGeoFailoverTime => (is => 'ro', isa => 'Str'  );
+  has networkAcls => (is => 'ro', isa => 'Any'  );
   has primaryEndpoints => (is => 'ro', isa => 'Any'  );
   has primaryLocation => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
