@@ -1,0 +1,26 @@
+package Azure::SiteRecoveryManagement::HyperVReplicaAzureReplicationDetails;
+  use Moose;
+
+  has 'azureVMDiskDetails' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::AzureVmDiskDetails]'  );
+  has 'enableRDPOnTargetOption' => (is => 'ro', isa => 'Str'  );
+  has 'encryption' => (is => 'ro', isa => 'Str'  );
+  has 'initialReplicationDetails' => (is => 'ro', isa => 'Azure::SiteRecoveryManagement::InitialReplicationDetails'  );
+  has 'lastReplicatedTime' => (is => 'ro', isa => 'Str'  );
+  has 'licenseType' => (is => 'ro', isa => 'Str'  );
+  has 'oSDetails' => (is => 'ro', isa => 'Azure::SiteRecoveryManagement::OSDetails'  );
+  has 'recoveryAvailabilitySetId' => (is => 'ro', isa => 'Str'  );
+  has 'recoveryAzureLogStorageAccountId' => (is => 'ro', isa => 'Str'  );
+  has 'recoveryAzureResourceGroupId' => (is => 'ro', isa => 'Str'  );
+  has 'recoveryAzureStorageAccount' => (is => 'ro', isa => 'Str'  );
+  has 'recoveryAzureVMName' => (is => 'ro', isa => 'Str'  );
+  has 'recoveryAzureVMSize' => (is => 'ro', isa => 'Str'  );
+  has 'selectedRecoveryAzureNetworkId' => (is => 'ro', isa => 'Str'  );
+  has 'sourceVmCPUCount' => (is => 'ro', isa => 'Int'  );
+  has 'sourceVmRAMSizeInMB' => (is => 'ro', isa => 'Int'  );
+  has 'useManagedDisks' => (is => 'ro', isa => 'Str'  );
+  has 'vmId' => (is => 'ro', isa => 'Str'  );
+  has 'vmNics' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::VMNicDetails]'  );
+  has 'vmProtectionState' => (is => 'ro', isa => 'Str'  );
+  has 'vmProtectionStateDescription' => (is => 'ro', isa => 'Str'  );
+  has 'instanceType' => (is => 'ro', isa => 'Str'  );
+1;

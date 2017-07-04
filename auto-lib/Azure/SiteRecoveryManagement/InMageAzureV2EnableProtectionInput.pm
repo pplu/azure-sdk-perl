@@ -1,0 +1,20 @@
+package Azure::SiteRecoveryManagement::InMageAzureV2EnableProtectionInput;
+  use Moose;
+
+  has 'disksToInclude' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'enableRDPOnTargetOption' => (is => 'ro', isa => 'Str'  );
+  has 'logStorageAccountId' => (is => 'ro', isa => 'Str'  );
+  has 'masterTargetId' => (is => 'ro', isa => 'Str'  );
+  has 'multiVmGroupId' => (is => 'ro', isa => 'Str'  );
+  has 'multiVmGroupName' => (is => 'ro', isa => 'Str'  );
+  has 'processServerId' => (is => 'ro', isa => 'Str'  );
+  has 'runAsAccountId' => (is => 'ro', isa => 'Str'  );
+  has 'storageAccountId' => (is => 'ro', isa => 'Str'  );
+  has 'targetAzureNetworkId' => (is => 'ro', isa => 'Str'  );
+  has 'targetAzureSubnetId' => (is => 'ro', isa => 'Str'  );
+  has 'targetAzureV1ResourceGroupId' => (is => 'ro', isa => 'Str'  );
+  has 'targetAzureV2ResourceGroupId' => (is => 'ro', isa => 'Str'  );
+  has 'targetAzureVmName' => (is => 'ro', isa => 'Str'  );
+  has 'useManagedDisks' => (is => 'ro', isa => 'Str'  );
+  has 'instanceType' => (is => 'ro', isa => 'Str'  );
+1;
