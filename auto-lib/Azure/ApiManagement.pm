@@ -27,6 +27,14 @@ package Azure::ApiManagement;
     my $call_object = $self->new_with_coercions('Azure::ApiManagement::GenerateSsoUrlUsers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetSharedAccessTokenUsers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetSharedAccessTokenUsers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetUsers {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -76,6 +84,6 @@ package Azure::ApiManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateUsers DeleteUsers GenerateSsoUrlUsers GetUsers ListByServiceUsers ListByUsersUserGroups ListByUsersUserIdentities ListByUsersUserSubscriptions UpdateUsers / }
+  sub operations { qw/CreateOrUpdateUsers DeleteUsers GenerateSsoUrlUsers GetSharedAccessTokenUsers GetUsers ListByServiceUsers ListByUsersUserGroups ListByUsersUserIdentities ListByUsersUserSubscriptions UpdateUsers / }
 
 1;
