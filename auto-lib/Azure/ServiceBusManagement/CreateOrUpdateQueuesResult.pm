@@ -2,7 +2,6 @@ package Azure::ServiceBusManagement::CreateOrUpdateQueuesResult;
   use Moose;
 
   has id => (is => 'ro', isa => 'Str'  );
-  has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
   has accessedAt => (is => 'ro', isa => 'Str'  );
@@ -12,11 +11,8 @@ package Azure::ServiceBusManagement::CreateOrUpdateQueuesResult;
   has deadLetteringOnMessageExpiration => (is => 'ro', isa => 'Bool'  );
   has defaultMessageTimeToLive => (is => 'ro', isa => 'Str'  );
   has duplicateDetectionHistoryTimeWindow => (is => 'ro', isa => 'Str'  );
-  has enableBatchedOperations => (is => 'ro', isa => 'Bool'  );
   has enableExpress => (is => 'ro', isa => 'Bool'  );
   has enablePartitioning => (is => 'ro', isa => 'Bool'  );
-  has entityAvailabilityStatus => (is => 'ro', isa => 'Str'  );
-  has isAnonymousAccessible => (is => 'ro', isa => 'Bool'  );
   has lockDuration => (is => 'ro', isa => 'Str'  );
   has maxDeliveryCount => (is => 'ro', isa => 'Int'  );
   has maxSizeInMegabytes => (is => 'ro', isa => 'Int'  );
@@ -25,7 +21,6 @@ package Azure::ServiceBusManagement::CreateOrUpdateQueuesResult;
   has requiresSession => (is => 'ro', isa => 'Bool'  );
   has sizeInBytes => (is => 'ro', isa => 'Int'  );
   has status => (is => 'ro', isa => 'Str'  );
-  has supportOrdering => (is => 'ro', isa => 'Bool'  );
   has updatedAt => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -51,6 +51,14 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateQueues', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CreateOrUpdateRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateOrUpdateSubscriptions {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -105,6 +113,14 @@ package Azure::ServiceBusManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteQueues', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteRules', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteSubscriptions {
@@ -163,6 +179,14 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetQueues', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetRules {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetSubscriptions {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -177,30 +201,6 @@ package Azure::ServiceBusManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListAllQueues {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListAllQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListAllSubscriptions {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListAllSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListAllTopics {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListAllTopics', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAuthorizationRulesNamespaces {
@@ -227,6 +227,22 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListAuthorizationRulesTopics', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByNamespaceQueues {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByNamespaceQueues', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByNamespaceTopics {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByNamespaceTopics', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListByResourceGroupNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -235,12 +251,20 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByResourceGroupNamespaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListBySubscriptionNamespaces {
+  sub ListBySubscriptionsRules {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListBySubscriptionNamespaces', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListBySubscriptionsRules', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByTopicSubscriptions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByTopicSubscriptions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListKeysNamespaces {
@@ -265,6 +289,14 @@ package Azure::ServiceBusManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListKeysTopics', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListNamespaces {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListNamespaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListOperations {
@@ -305,6 +337,6 @@ package Azure::ServiceBusManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleQueues CreateOrUpdateAuthorizationRuleTopics CreateOrUpdateNamespaces CreateOrUpdateQueues CreateOrUpdateSubscriptions CreateOrUpdateTopics DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleQueues DeleteAuthorizationRuleTopics DeleteNamespaces DeleteQueues DeleteSubscriptions DeleteTopics GetAuthorizationRuleNamespaces GetAuthorizationRuleQueues GetAuthorizationRuleTopics GetNamespaces GetQueues GetSubscriptions GetTopics ListAllQueues ListAllSubscriptions ListAllTopics ListAuthorizationRulesNamespaces ListAuthorizationRulesQueues ListAuthorizationRulesTopics ListByResourceGroupNamespaces ListBySubscriptionNamespaces ListKeysNamespaces ListKeysQueues ListKeysTopics ListOperations RegenerateKeysNamespaces RegenerateKeysQueues RegenerateKeysTopics UpdateNamespaces / }
+  sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleQueues CreateOrUpdateAuthorizationRuleTopics CreateOrUpdateNamespaces CreateOrUpdateQueues CreateOrUpdateRules CreateOrUpdateSubscriptions CreateOrUpdateTopics DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleQueues DeleteAuthorizationRuleTopics DeleteNamespaces DeleteQueues DeleteRules DeleteSubscriptions DeleteTopics GetAuthorizationRuleNamespaces GetAuthorizationRuleQueues GetAuthorizationRuleTopics GetNamespaces GetQueues GetRules GetSubscriptions GetTopics ListAuthorizationRulesNamespaces ListAuthorizationRulesQueues ListAuthorizationRulesTopics ListByNamespaceQueues ListByNamespaceTopics ListByResourceGroupNamespaces ListBySubscriptionsRules ListByTopicSubscriptions ListKeysNamespaces ListKeysQueues ListKeysTopics ListNamespaces ListOperations RegenerateKeysNamespaces RegenerateKeysQueues RegenerateKeysTopics UpdateNamespaces / }
 
 1;

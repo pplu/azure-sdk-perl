@@ -2,7 +2,7 @@ package Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleTopics;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-08-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'authorizationRuleName' => (is => 'ro', required => 1, isa => 'Str',
@@ -11,7 +11,7 @@ package Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleTopics;
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ServiceBusManagement::SharedAccessAuthorizationRuleCreateOrUpdateParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ServiceBusManagement::SBAuthorizationRule',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

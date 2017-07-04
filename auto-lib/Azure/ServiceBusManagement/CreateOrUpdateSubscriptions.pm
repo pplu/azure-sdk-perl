@@ -2,13 +2,13 @@ package Azure::ServiceBusManagement::CreateOrUpdateSubscriptions;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-08-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ServiceBusManagement::SubscriptionCreateOrUpdateParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ServiceBusManagement::SBSubscription',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
