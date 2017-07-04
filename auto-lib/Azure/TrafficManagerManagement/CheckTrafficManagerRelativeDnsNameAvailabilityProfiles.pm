@@ -2,14 +2,11 @@ package Azure::TrafficManagerManagement::CheckTrafficManagerRelativeDnsNameAvail
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-05-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::TrafficManagerManagement::CheckTrafficManagerRelativeDnsNameAvailabilityParameters',
     traits => [ 'Azure::ParamInBody' ],
-  );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Network/checkTrafficManagerNameAvailability');

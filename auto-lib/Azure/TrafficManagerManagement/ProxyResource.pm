@@ -1,4 +1,4 @@
-package Azure::TrafficManagerManagement::Resource;
+package Azure::TrafficManagerManagement::ProxyResource;
   use Moose;
 
   has 'id' => (is => 'ro', isa => 'Str'  );
