@@ -5,7 +5,7 @@ package Azure::ContainerRegistryManagement::CreateRegistries;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'registryCreateParameters' => (is => 'ro', required => 1, isa => 'Azure::ContainerRegistryManagement::RegistryCreateParameters',
+  has 'registry' => (is => 'ro', required => 1, isa => 'Azure::ContainerRegistryManagement::Registry',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'registryName' => (is => 'ro', required => 1, isa => 'Str',

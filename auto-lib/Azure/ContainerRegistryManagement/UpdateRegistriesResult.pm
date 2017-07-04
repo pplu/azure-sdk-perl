@@ -11,6 +11,7 @@ package Azure::ContainerRegistryManagement::UpdateRegistriesResult;
   has creationDate => (is => 'ro', isa => 'Str'  );
   has loginServer => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
+  has status => (is => 'ro', isa => 'Any'  );
   has storageAccount => (is => 'ro', isa => 'Any'  );
 
 1;

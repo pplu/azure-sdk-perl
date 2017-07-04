@@ -7,5 +7,6 @@ package Azure::ContainerRegistryManagement::CreateOrUpdateReplicationsResult;
   has tags => (is => 'ro', isa => 'HashRef'  );
   has type => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
+  has status => (is => 'ro', isa => 'Any'  );
 
 1;

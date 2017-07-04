@@ -136,6 +136,14 @@ package Azure::ContainerRegistryManagement;
     my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListReplications', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListUsagesRegistries {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListUsagesRegistries', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListWebhooks {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -177,6 +185,6 @@ package Azure::ContainerRegistryManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityRegistries CreateOrUpdateReplications CreateRegistries CreateWebhooks DeleteRegistries DeleteReplications DeleteWebhooks GetCallbackConfigWebhooks GetRegistries GetReplications GetWebhooks ListByResourceGroupRegistries ListCredentialsRegistries ListEventsWebhooks ListOperations ListRegistries ListReplications ListWebhooks PingWebhooks RegenerateCredentialRegistries UpdateRegistries UpdateWebhooks / }
+  sub operations { qw/CheckNameAvailabilityRegistries CreateOrUpdateReplications CreateRegistries CreateWebhooks DeleteRegistries DeleteReplications DeleteWebhooks GetCallbackConfigWebhooks GetRegistries GetReplications GetWebhooks ListByResourceGroupRegistries ListCredentialsRegistries ListEventsWebhooks ListOperations ListRegistries ListReplications ListUsagesRegistries ListWebhooks PingWebhooks RegenerateCredentialRegistries UpdateRegistries UpdateWebhooks / }
 
 1;
