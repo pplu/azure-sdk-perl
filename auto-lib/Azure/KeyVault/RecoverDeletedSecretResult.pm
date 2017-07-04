@@ -1,9 +1,6 @@
-package Azure::KeyVault::DeleteSecretResult;
+package Azure::KeyVault::RecoverDeletedSecretResult;
   use Moose;
 
-  has deletedDate => (is => 'ro', isa => 'Int'  );
-  has recoveryId => (is => 'ro', isa => 'Str'  );
-  has scheduledPurgeDate => (is => 'ro', isa => 'Int'  );
   has attributes => (is => 'ro', isa => 'Any'  );
   has contentType => (is => 'ro', isa => 'Str'  );
   has id => (is => 'ro', isa => 'Str'  );

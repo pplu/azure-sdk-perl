@@ -1,4 +1,4 @@
-package Azure::KeyVault::DeleteSecretResult;
+package Azure::KeyVault::GetDeletedSecretResult;
   use Moose;
 
   has deletedDate => (is => 'ro', isa => 'Int'  );

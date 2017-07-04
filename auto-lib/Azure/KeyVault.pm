@@ -8,6 +8,11 @@ package Azure::KeyVault;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::BackupKey', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub BackupSecret {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::BackupSecret', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateCertificate {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::CreateCertificate', { @_ });
@@ -48,9 +53,19 @@ package Azure::KeyVault;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::DeleteKey', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub DeleteSasDefinition {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::DeleteSasDefinition', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub DeleteSecret {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::DeleteSecret', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteStorageAccount {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::DeleteStorageAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub encrypt {
@@ -98,6 +113,36 @@ package Azure::KeyVault;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::GetCertificateVersions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetDeletedCertificate {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetDeletedCertificate', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetDeletedCertificates {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetDeletedCertificates', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetDeletedKey {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetDeletedKey', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetDeletedKeys {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetDeletedKeys', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetDeletedSecret {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetDeletedSecret', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetDeletedSecrets {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetDeletedSecrets', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetKey {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::GetKey', { @_ });
@@ -111,6 +156,16 @@ package Azure::KeyVault;
   sub GetKeyVersions {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::GetKeyVersions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetSasDefinition {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetSasDefinition', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetSasDefinitions {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetSasDefinitions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetSecret {
@@ -128,6 +183,16 @@ package Azure::KeyVault;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::GetSecretVersions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetStorageAccount {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetStorageAccount', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetStorageAccounts {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::GetStorageAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ImportCertificate {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::ImportCertificate', { @_ });
@@ -143,9 +208,49 @@ package Azure::KeyVault;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::MergeCertificate', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub PurgeDeletedCertificate {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::PurgeDeletedCertificate', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub PurgeDeletedKey {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::PurgeDeletedKey', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub PurgeDeletedSecret {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::PurgeDeletedSecret', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RecoverDeletedCertificate {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::RecoverDeletedCertificate', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RecoverDeletedKey {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::RecoverDeletedKey', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RecoverDeletedSecret {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::RecoverDeletedSecret', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RegenerateStorageAccountKey {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::RegenerateStorageAccountKey', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RestoreKey {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::RestoreKey', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub RestoreSecret {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::RestoreSecret', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub SetCertificateContacts {
@@ -158,9 +263,19 @@ package Azure::KeyVault;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::SetCertificateIssuer', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub SetSasDefinition {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::SetSasDefinition', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub SetSecret {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::SetSecret', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub SetStorageAccount {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::SetStorageAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub sign {
@@ -198,9 +313,19 @@ package Azure::KeyVault;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::UpdateKey', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateSasDefinition {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::UpdateSasDefinition', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub UpdateSecret {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::KeyVault::UpdateSecret', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateStorageAccount {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::KeyVault::UpdateStorageAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub verify {
@@ -214,6 +339,6 @@ package Azure::KeyVault;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/BackupKey CreateCertificate CreateKey decrypt DeleteCertificate DeleteCertificateContacts DeleteCertificateIssuer DeleteCertificateOperation DeleteKey DeleteSecret encrypt GetCertificate GetCertificateContacts GetCertificateIssuer GetCertificateIssuers GetCertificateOperation GetCertificatePolicy GetCertificates GetCertificateVersions GetKey GetKeys GetKeyVersions GetSecret GetSecrets GetSecretVersions ImportCertificate ImportKey MergeCertificate RestoreKey SetCertificateContacts SetCertificateIssuer SetSecret sign unwrapKey UpdateCertificate UpdateCertificateIssuer UpdateCertificateOperation UpdateCertificatePolicy UpdateKey UpdateSecret verify wrapKey / }
+  sub operations { qw/BackupKey BackupSecret CreateCertificate CreateKey decrypt DeleteCertificate DeleteCertificateContacts DeleteCertificateIssuer DeleteCertificateOperation DeleteKey DeleteSasDefinition DeleteSecret DeleteStorageAccount encrypt GetCertificate GetCertificateContacts GetCertificateIssuer GetCertificateIssuers GetCertificateOperation GetCertificatePolicy GetCertificates GetCertificateVersions GetDeletedCertificate GetDeletedCertificates GetDeletedKey GetDeletedKeys GetDeletedSecret GetDeletedSecrets GetKey GetKeys GetKeyVersions GetSasDefinition GetSasDefinitions GetSecret GetSecrets GetSecretVersions GetStorageAccount GetStorageAccounts ImportCertificate ImportKey MergeCertificate PurgeDeletedCertificate PurgeDeletedKey PurgeDeletedSecret RecoverDeletedCertificate RecoverDeletedKey RecoverDeletedSecret RegenerateStorageAccountKey RestoreKey RestoreSecret SetCertificateContacts SetCertificateIssuer SetSasDefinition SetSecret SetStorageAccount sign unwrapKey UpdateCertificate UpdateCertificateIssuer UpdateCertificateOperation UpdateCertificatePolicy UpdateKey UpdateSasDefinition UpdateSecret UpdateStorageAccount verify wrapKey / }
 
 1;
