@@ -23,9 +23,6 @@ gen-classes:
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-web/2016-09-01/swagger/AppServiceEnvironments.json
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-web/2016-09-01/swagger/AppServicePlans.json
 
-deps-update:
-	PERL_CARTON_MIRROR=file://`find $(HOME) -type d -iname cps-cpan`/repo carton install
-
 pull-other-sdks:
 	git submodule init
 	git submodule update
