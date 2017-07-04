@@ -1,4 +1,4 @@
-package Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePolicyResult;
+package Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePoliciesResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );

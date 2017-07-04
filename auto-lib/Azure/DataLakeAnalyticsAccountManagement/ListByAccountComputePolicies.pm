@@ -1,4 +1,4 @@
-package Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePolicy;
+package Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePolicies;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -16,6 +16,6 @@ package Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePolicy;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeAnalytics/accounts/{accountName}/computePolicies');
-  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePolicyResult');
+  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePoliciesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

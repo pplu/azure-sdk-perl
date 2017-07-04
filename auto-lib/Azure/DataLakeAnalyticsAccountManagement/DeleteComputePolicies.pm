@@ -1,4 +1,4 @@
-package Azure::DataLakeAnalyticsAccountManagement::UpdateComputePolicy;
+package Azure::DataLakeAnalyticsAccountManagement::DeleteComputePolicies;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -11,9 +11,6 @@ package Azure::DataLakeAnalyticsAccountManagement::UpdateComputePolicy;
   has 'computePolicyName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsAccountManagement::ComputePolicy',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
@@ -22,6 +19,6 @@ package Azure::DataLakeAnalyticsAccountManagement::UpdateComputePolicy;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeAnalytics/accounts/{accountName}/computePolicies/{computePolicyName}');
-  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::UpdateComputePolicyResult');
-  class_has _api_method => (is => 'ro', default => 'PATCH');
+  class_has _returns => (is => 'ro', default => '');
+  class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

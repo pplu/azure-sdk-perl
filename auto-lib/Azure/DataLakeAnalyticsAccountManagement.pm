@@ -27,12 +27,12 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::CreateAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateComputePolicy {
+  sub CreateOrUpdateComputePolicies {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::CreateOrUpdateComputePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::CreateOrUpdateComputePolicies', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateFirewallRules {
@@ -51,12 +51,12 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteComputePolicy {
+  sub DeleteComputePolicies {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteComputePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::DeleteComputePolicies', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteDataLakeStoreAccounts {
@@ -91,12 +91,12 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetComputePolicy {
+  sub GetComputePolicies {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetComputePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::GetComputePolicies', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetDataLakeStoreAccounts {
@@ -139,12 +139,12 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByAccountComputePolicy {
+  sub ListByAccountComputePolicies {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::ListByAccountComputePolicies', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByAccountDataLakeStoreAccounts {
@@ -203,12 +203,12 @@ package Azure::DataLakeAnalyticsAccountManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::UpdateAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub UpdateComputePolicy {
+  sub UpdateComputePolicies {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::UpdateComputePolicy', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsAccountManagement::UpdateComputePolicies', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateFirewallRules {
@@ -228,6 +228,6 @@ package Azure::DataLakeAnalyticsAccountManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AddDataLakeStoreAccounts AddStorageAccounts CreateAccount CreateOrUpdateComputePolicy CreateOrUpdateFirewallRules DeleteAccount DeleteComputePolicy DeleteDataLakeStoreAccounts DeleteFirewallRules DeleteStorageAccounts GetAccount GetComputePolicy GetDataLakeStoreAccounts GetFirewallRules GetStorageAccounts GetStorageContainerStorageAccounts ListAccount ListByAccountComputePolicy ListByAccountDataLakeStoreAccounts ListByAccountFirewallRules ListByAccountStorageAccounts ListByResourceGroupAccount ListSasTokensStorageAccounts ListStorageContainersStorageAccounts UpdateAccount UpdateComputePolicy UpdateFirewallRules UpdateStorageAccounts / }
+  sub operations { qw/AddDataLakeStoreAccounts AddStorageAccounts CreateAccount CreateOrUpdateComputePolicies CreateOrUpdateFirewallRules DeleteAccount DeleteComputePolicies DeleteDataLakeStoreAccounts DeleteFirewallRules DeleteStorageAccounts GetAccount GetComputePolicies GetDataLakeStoreAccounts GetFirewallRules GetStorageAccounts GetStorageContainerStorageAccounts ListAccount ListByAccountComputePolicies ListByAccountDataLakeStoreAccounts ListByAccountFirewallRules ListByAccountStorageAccounts ListByResourceGroupAccount ListSasTokensStorageAccounts ListStorageContainersStorageAccounts UpdateAccount UpdateComputePolicies UpdateFirewallRules UpdateStorageAccounts / }
 
 1;

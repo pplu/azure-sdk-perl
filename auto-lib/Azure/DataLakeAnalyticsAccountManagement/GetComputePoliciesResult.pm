@@ -1,4 +1,4 @@
-package Azure::DataLakeAnalyticsAccountManagement::UpdateComputePolicyResult;
+package Azure::DataLakeAnalyticsAccountManagement::GetComputePoliciesResult;
   use Moose;
 
   has name => (is => 'ro', isa => 'Str'  );
