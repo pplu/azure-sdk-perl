@@ -2,7 +2,7 @@ package Azure::KeyVaultManagement::CreateOrUpdateVaults;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-06-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::KeyVaultManagement::VaultCreateOrUpdateParameters',
