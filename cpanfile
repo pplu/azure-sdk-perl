@@ -19,6 +19,7 @@ on develop => sub {
   requires 'Template';
   requires 'Data::Printer';
   requires 'Carp::Always';
+  requires 'File::Slurp';
 
   requires 'Dist::Zilla';
   requires 'Dist::Zilla::Plugin::Prereqs::FromCPANfile';
