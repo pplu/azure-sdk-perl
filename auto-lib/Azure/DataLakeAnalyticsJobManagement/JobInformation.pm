@@ -10,6 +10,7 @@ package Azure::DataLakeAnalyticsJobManagement::JobInformation;
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'priority' => (is => 'ro', isa => 'Int'  );
   has 'properties' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsJobManagement::JobProperties'  );
+  has 'related' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsJobManagement::JobRelationshipProperties'  );
   has 'result' => (is => 'ro', isa => 'Str'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'state' => (is => 'ro', isa => 'Str'  );

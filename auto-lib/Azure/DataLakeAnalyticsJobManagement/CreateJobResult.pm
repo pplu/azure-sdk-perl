@@ -10,6 +10,7 @@ package Azure::DataLakeAnalyticsJobManagement::CreateJobResult;
   has name => (is => 'ro', isa => 'Str'  );
   has priority => (is => 'ro', isa => 'Int'  );
   has properties => (is => 'ro', isa => 'Any'  );
+  has related => (is => 'ro', isa => 'Any'  );
   has result => (is => 'ro', isa => 'Str'  );
   has startTime => (is => 'ro', isa => 'Str'  );
   has state => (is => 'ro', isa => 'Str'  );

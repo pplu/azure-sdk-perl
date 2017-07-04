@@ -28,6 +28,16 @@ package Azure::DataLakeAnalyticsJobManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetJob', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetPipeline {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetPipeline', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetRecurrence {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetRecurrence', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetStatisticsJob {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetStatisticsJob', { @_ });
@@ -38,7 +48,17 @@ package Azure::DataLakeAnalyticsJobManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::ListJob', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListPipeline {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::ListPipeline', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListRecurrence {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::ListRecurrence', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
 
-  sub operations { qw/BuildJob CancelJob CreateJob GetDebugDataPathJob GetJob GetStatisticsJob ListJob / }
+  sub operations { qw/BuildJob CancelJob CreateJob GetDebugDataPathJob GetJob GetPipeline GetRecurrence GetStatisticsJob ListJob ListPipeline ListRecurrence / }
 
 1;
