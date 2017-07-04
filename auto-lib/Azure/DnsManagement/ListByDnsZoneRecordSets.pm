@@ -2,6 +2,9 @@ package Azure::DnsManagement::ListByDnsZoneRecordSets;
   use Moose;
   use MooseX::ClassAttribute;
 
+  has '$recordsetnamesuffix' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
