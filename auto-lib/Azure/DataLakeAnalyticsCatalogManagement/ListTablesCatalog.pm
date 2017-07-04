@@ -23,6 +23,9 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListTablesCatalog;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
+  has 'basic' => (is => 'ro', isa => 'Bool',
+    traits => [ 'Azure::ParamInQuery' ],
+  );
   has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
