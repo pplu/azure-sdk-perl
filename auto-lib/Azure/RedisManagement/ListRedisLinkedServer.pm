@@ -1,4 +1,4 @@
-package Azure::RedisManagement::UpdateRedis;
+package Azure::RedisManagement::ListRedisLinkedServer;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,9 +8,6 @@ package Azure::RedisManagement::UpdateRedis;
   has 'name' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::RedisManagement::RedisUpdateParameters',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
@@ -18,7 +15,7 @@ package Azure::RedisManagement::UpdateRedis;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{name}');
-  class_has _returns => (is => 'ro', default => 'Azure::RedisManagement::UpdateRedisResult');
-  class_has _api_method => (is => 'ro', default => 'PATCH');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cache/Redis/{name}/linkedServers');
+  class_has _returns => (is => 'ro', default => 'Azure::RedisManagement::ListRedisLinkedServerResult');
+  class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -8,6 +8,7 @@ package Azure::RedisManagement::CreateRedisResult;
   has type => (is => 'ro', isa => 'Str'  );
   has accessKeys => (is => 'ro', isa => 'Any'  );
   has hostName => (is => 'ro', isa => 'Str'  );
+  has linkedServers => (is => 'ro', isa => 'Any'  );
   has port => (is => 'ro', isa => 'Int'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has redisVersion => (is => 'ro', isa => 'Str'  );
