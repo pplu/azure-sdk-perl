@@ -1,4 +1,4 @@
-package Azure::EventHubManagement::SharedAccessAuthorizationRuleResource;
+package Azure::EventHubManagement::AuthorizationRule;
   use Moose;
 
   has 'id' => (is => 'ro', isa => 'Str'  );

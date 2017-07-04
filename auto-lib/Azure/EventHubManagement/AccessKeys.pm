@@ -1,4 +1,4 @@
-package Azure::EventHubManagement::ResourceListKeys;
+package Azure::EventHubManagement::AccessKeys;
   use Moose;
 
   has 'keyName' => (is => 'ro', isa => 'Str'  );

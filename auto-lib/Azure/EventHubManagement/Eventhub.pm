@@ -1,9 +1,10 @@
-package Azure::EventHubManagement::EventHubCreateOrUpdateParameters;
+package Azure::EventHubManagement::Eventhub;
   use Moose;
 
-  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'captureDescription' => (is => 'ro', isa => 'Azure::EventHubManagement::CaptureDescription'  );
   has 'createdAt' => (is => 'ro', isa => 'Str'  );
   has 'messageRetentionInDays' => (is => 'ro', isa => 'Int'  );
   has 'partitionCount' => (is => 'ro', isa => 'Int'  );

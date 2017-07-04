@@ -2,7 +2,7 @@ package Azure::EventHubManagement::CreateOrUpdateConsumerGroups;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-08-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'consumerGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -14,7 +14,7 @@ package Azure::EventHubManagement::CreateOrUpdateConsumerGroups;
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::EventHubManagement::ConsumerGroupCreateOrUpdateParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::EventHubManagement::ConsumerGroup',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

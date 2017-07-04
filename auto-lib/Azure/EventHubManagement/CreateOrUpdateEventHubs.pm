@@ -2,7 +2,7 @@ package Azure::EventHubManagement::CreateOrUpdateEventHubs;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-08-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'eventHubName' => (is => 'ro', required => 1, isa => 'Str',
@@ -11,7 +11,7 @@ package Azure::EventHubManagement::CreateOrUpdateEventHubs;
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::EventHubManagement::EventHubCreateOrUpdateParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::EventHubManagement::Eventhub',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

@@ -4,6 +4,7 @@ package Azure::EventHubManagement::GetEventHubsResult;
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
+  has captureDescription => (is => 'ro', isa => 'Any'  );
   has createdAt => (is => 'ro', isa => 'Str'  );
   has messageRetentionInDays => (is => 'ro', isa => 'Int'  );
   has partitionCount => (is => 'ro', isa => 'Int'  );

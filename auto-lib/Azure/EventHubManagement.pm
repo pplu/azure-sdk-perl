@@ -131,22 +131,6 @@ package Azure::EventHubManagement;
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::GetNamespaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListAllConsumerGroups {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListAllConsumerGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListAllEventHubs {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListAllEventHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub ListAuthorizationRulesEventHubs {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -163,20 +147,28 @@ package Azure::EventHubManagement;
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListAuthorizationRulesNamespaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByEventHubConsumerGroups {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListByEventHubConsumerGroups', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByNamespaceEventHubs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListByNamespaceEventHubs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListByResourceGroupNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListByResourceGroupNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListBySubscriptionNamespaces {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListBySubscriptionNamespaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListKeysEventHubs {
@@ -193,6 +185,14 @@ package Azure::EventHubManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListKeysNamespaces', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListNamespaces {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListNamespaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListOperations {
@@ -225,6 +225,6 @@ package Azure::EventHubManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleEventHubs CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateConsumerGroups CreateOrUpdateEventHubs CreateOrUpdateNamespaces DeleteAuthorizationRuleEventHubs DeleteAuthorizationRuleNamespaces DeleteConsumerGroups DeleteEventHubs DeleteNamespaces GetAuthorizationRuleEventHubs GetAuthorizationRuleNamespaces GetConsumerGroups GetEventHubs GetNamespaces ListAllConsumerGroups ListAllEventHubs ListAuthorizationRulesEventHubs ListAuthorizationRulesNamespaces ListByResourceGroupNamespaces ListBySubscriptionNamespaces ListKeysEventHubs ListKeysNamespaces ListOperations RegenerateKeysEventHubs RegenerateKeysNamespaces UpdateNamespaces / }
+  sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleEventHubs CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateConsumerGroups CreateOrUpdateEventHubs CreateOrUpdateNamespaces DeleteAuthorizationRuleEventHubs DeleteAuthorizationRuleNamespaces DeleteConsumerGroups DeleteEventHubs DeleteNamespaces GetAuthorizationRuleEventHubs GetAuthorizationRuleNamespaces GetConsumerGroups GetEventHubs GetNamespaces ListAuthorizationRulesEventHubs ListAuthorizationRulesNamespaces ListByEventHubConsumerGroups ListByNamespaceEventHubs ListByResourceGroupNamespaces ListKeysEventHubs ListKeysNamespaces ListNamespaces ListOperations RegenerateKeysEventHubs RegenerateKeysNamespaces UpdateNamespaces / }
 
 1;

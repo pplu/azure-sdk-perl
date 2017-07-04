@@ -1,8 +1,8 @@
-package Azure::EventHubManagement::ListAllEventHubs;
+package Azure::EventHubManagement::ListByNamespaceEventHubs;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-08-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'namespaceName' => (is => 'ro', required => 1, isa => 'Str',
@@ -16,6 +16,6 @@ package Azure::EventHubManagement::ListAllEventHubs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/eventhubs');
-  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::ListAllEventHubsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::ListByNamespaceEventHubsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

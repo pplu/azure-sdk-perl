@@ -8,11 +8,11 @@ package Azure::EventHubManagement::GetNamespacesResult;
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
   has createdAt => (is => 'ro', isa => 'Str'  );
-  has enabled => (is => 'ro', isa => 'Bool'  );
+  has isAutoInflateEnabled => (is => 'ro', isa => 'Bool'  );
+  has maximumThroughputUnits => (is => 'ro', isa => 'Int'  );
   has metricId => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has serviceBusEndpoint => (is => 'ro', isa => 'Str'  );
-  has status => (is => 'ro', isa => 'Str'  );
   has updatedAt => (is => 'ro', isa => 'Str'  );
 
 1;
