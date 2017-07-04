@@ -5,13 +5,13 @@ package Azure::BatchManagement::CreateApplication;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-05-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'applicationId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', isa => 'Azure::BatchManagement::AddApplicationParameters',
+  has 'parameters' => (is => 'ro', isa => 'Azure::BatchManagement::ApplicationCreateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

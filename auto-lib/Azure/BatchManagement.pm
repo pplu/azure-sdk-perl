@@ -123,6 +123,11 @@ package Azure::BatchManagement;
     my $call_object = $self->new_with_coercions('Azure::BatchManagement::ListByResourceGroupBatchAccount', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListOperations {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::BatchManagement::ListOperations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RegenerateKeyBatchAccount {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -156,6 +161,6 @@ package Azure::BatchManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/ActivateApplicationPackage CreateApplication CreateApplicationPackage CreateBatchAccount DeleteApplication DeleteApplicationPackage DeleteBatchAccount GetApplication GetApplicationPackage GetBatchAccount GetKeysBatchAccount GetQuotasLocation ListApplication ListBatchAccount ListByResourceGroupBatchAccount RegenerateKeyBatchAccount SynchronizeAutoStorageKeysBatchAccount UpdateApplication UpdateBatchAccount / }
+  sub operations { qw/ActivateApplicationPackage CreateApplication CreateApplicationPackage CreateBatchAccount DeleteApplication DeleteApplicationPackage DeleteBatchAccount GetApplication GetApplicationPackage GetBatchAccount GetKeysBatchAccount GetQuotasLocation ListApplication ListBatchAccount ListByResourceGroupBatchAccount ListOperations RegenerateKeyBatchAccount SynchronizeAutoStorageKeysBatchAccount UpdateApplication UpdateBatchAccount / }
 
 1;

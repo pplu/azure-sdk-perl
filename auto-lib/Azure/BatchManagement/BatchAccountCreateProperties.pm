@@ -1,4 +1,4 @@
-package Azure::BatchManagement::BatchAccountBaseProperties;
+package Azure::BatchManagement::BatchAccountCreateProperties;
   use Moose;
 
   has 'autoStorage' => (is => 'ro', isa => 'Azure::BatchManagement::AutoStorageBaseProperties'  );
