@@ -6,6 +6,7 @@ package Azure::NetworkManagement::ExpressRouteCircuitPeering;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'azureASN' => (is => 'ro', isa => 'Int'  );
   has 'gatewayManagerEtag' => (is => 'ro', isa => 'Str'  );
+  has 'ipv6PeeringConfig' => (is => 'ro', isa => 'Azure::NetworkManagement::Ipv6ExpressRouteCircuitPeeringConfig'  );
   has 'lastModifiedBy' => (is => 'ro', isa => 'Str'  );
   has 'microsoftPeeringConfig' => (is => 'ro', isa => 'Azure::NetworkManagement::ExpressRouteCircuitPeeringConfig'  );
   has 'peerASN' => (is => 'ro', isa => 'Int'  );

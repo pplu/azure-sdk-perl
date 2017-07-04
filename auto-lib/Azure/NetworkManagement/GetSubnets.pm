@@ -5,7 +5,7 @@ package Azure::NetworkManagement::GetSubnets;
   has '$expand' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

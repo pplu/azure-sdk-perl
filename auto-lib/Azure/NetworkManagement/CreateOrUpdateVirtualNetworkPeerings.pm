@@ -5,7 +5,7 @@ package Azure::NetworkManagement::CreateOrUpdateVirtualNetworkPeerings;
   has 'VirtualNetworkPeeringParameters' => (is => 'ro', required => 1, isa => 'Azure::NetworkManagement::VirtualNetworkPeering',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

@@ -3,31 +3,31 @@ package Azure::NetworkManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces {
+  sub GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces {
+  sub ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces {
+  sub ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces / }
+  sub operations { qw/GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses / }
 
 1;
