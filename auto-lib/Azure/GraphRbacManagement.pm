@@ -58,6 +58,11 @@ package Azure::GraphRbacManagement;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetCurrentUserObjects', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetDomains {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetDomains', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetGroupMembersGroups {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::GetGroupMembersGroups', { @_ });
@@ -101,6 +106,11 @@ package Azure::GraphRbacManagement;
   sub ListApplications {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListApplications', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListDomains {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListDomains', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListGroups {
@@ -174,6 +184,6 @@ package Azure::GraphRbacManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AddMemberGroups CreateApplications CreateGroups CreateServicePrincipals CreateUsers DeleteApplications DeleteGroups DeleteServicePrincipals DeleteUsers GetApplications GetCurrentUserObjects GetGroupMembersGroups GetGroups GetMemberGroupsGroups GetMemberGroupsUsers GetObjectsByObjectIdsObjects GetServicePrincipals GetUsers IsMemberOfGroups ListApplications ListGroups ListKeyCredentialsApplications ListKeyCredentialsServicePrincipals ListPasswordCredentialsApplications ListPasswordCredentialsServicePrincipals ListServicePrincipals ListUsers PatchApplications RemoveMemberGroups UpdateKeyCredentialsApplications UpdateKeyCredentialsServicePrincipals UpdatePasswordCredentialsApplications UpdatePasswordCredentialsServicePrincipals UpdateUsers / }
+  sub operations { qw/AddMemberGroups CreateApplications CreateGroups CreateServicePrincipals CreateUsers DeleteApplications DeleteGroups DeleteServicePrincipals DeleteUsers GetApplications GetCurrentUserObjects GetDomains GetGroupMembersGroups GetGroups GetMemberGroupsGroups GetMemberGroupsUsers GetObjectsByObjectIdsObjects GetServicePrincipals GetUsers IsMemberOfGroups ListApplications ListDomains ListGroups ListKeyCredentialsApplications ListKeyCredentialsServicePrincipals ListPasswordCredentialsApplications ListPasswordCredentialsServicePrincipals ListServicePrincipals ListUsers PatchApplications RemoveMemberGroups UpdateKeyCredentialsApplications UpdateKeyCredentialsServicePrincipals UpdatePasswordCredentialsApplications UpdatePasswordCredentialsServicePrincipals UpdateUsers / }
 
 1;
