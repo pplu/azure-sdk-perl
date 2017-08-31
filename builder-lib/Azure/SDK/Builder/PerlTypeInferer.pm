@@ -85,30 +85,5 @@ package Azure::SDK::Builder::PerlTypeInferer;
       }
     }
   );
-#      if (not defined $self->type and defined $self->ref){
-#        my (undef, $second) = $self->root_schema->path_parts($self->ref);
-#        return "Azure::" . $self->root_schema->namespace($second);
-#      } elsif ($self->type eq 'string') {
-#        return 'Str';
-#      } elsif ($self->type eq 'boolean') {
-#        return 'Bool';
-#      } elsif ($self->type eq 'array' or defined $self->items) {
-#        #TODO: find out about the inner type for the array
-#        my $inner;
-#        if (defined $self->items->ref) {
-#          my (undef, $second) = $self->root_schema->path_parts($self->items->ref);
-#          $inner = sprintf("Azure::%s", $self->root_schema->namespace($second));
-#        } elsif (defined $self->items->type) {
-#          $inner = $self->items->type;
-#        } else {
-#          my $type = $self->items->type;
-#          if ($type eq 'string'){
-#            $inner = 'Str';
-#          } else {
-#            die "Find out what Moose native type for $type";
-#          }
-#        }
-#
-#        return "ArrayRef[$inner]";
 
 1;
