@@ -9,6 +9,8 @@ package Azure::SDK::Builder;
   use Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::Object;
 
+  has sdk_namespace => (is => 'ro', default => 'Azure');
+
   has schema_file => (
     is => 'ro',
     isa => 'Str',
@@ -193,11 +195,12 @@ package Azure::SDK::Builder;
       return 'LogAnalytics' if ($title eq 'Azure Log Analytics');
       return 'AppServicePlans' if ($title eq 'AppServicePlans API Client');
       return 'AppServiceEnvironments' if ($title eq 'AppServiceEnvironments API Client');
+      return 'CosmosDB' if ($title eq 'Cosmos DB');
+
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
       return $title if ($title eq 'BatchManagement');
-      return $title if ($title eq 'DocumentDB');
       return $title if ($title eq 'StorageImportExport');
       return $title if ($title eq 'StorageManagement');
       return $title if ($title eq 'AzureAnalysisServices');
