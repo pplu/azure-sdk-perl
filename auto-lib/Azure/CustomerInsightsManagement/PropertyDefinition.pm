@@ -2,6 +2,7 @@ package Azure::CustomerInsightsManagement::PropertyDefinition;
   use Moose;
 
   has 'arrayValueSeparator' => (is => 'ro', isa => 'Str'  );
+  has 'dataSourcePrecedenceRules' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::DataSourcePrecedence]'  );
   has 'enumValidValues' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::ProfileEnumValidValuesFormat]'  );
   has 'fieldName' => (is => 'ro', isa => 'Str'  );
   has 'fieldType' => (is => 'ro', isa => 'Str'  );

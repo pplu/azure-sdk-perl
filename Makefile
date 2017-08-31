@@ -3,7 +3,7 @@ gen-classes:
 	perl -pi -nle 's/^\xEF\xBB\xBF//' arm-network/2016-06-01/swagger/network.json
 	perl -pi -nle 's/^\xEF\xBB\xBF//' azure-rest-api-specs/arm-network/2016-09-01/swagger/network.json
 	perl -pi -nle 's/^\xEF\xBB\xBF//' azure-rest-api-specs/arm-eventhub/2015-08-01/swagger/EventHub.json
-	perl -pi -nle 's/^\xEF\xBB\xBF//' azure-rest-api-specs/arm-customer-insights/2017-01-01/swagger/customer-insights.json
+	perl -pi -nle 's/^\xEF\xBB\xBF//' azure-rest-api-specs/arm-customer-insights/2017-04-26/swagger/customer-insights.json
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen
 	# we're only picking up the last directory, where compute is not located
 	carton exec perl -I builder-lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/arm-compute/2016-03-30/swagger/compute.json

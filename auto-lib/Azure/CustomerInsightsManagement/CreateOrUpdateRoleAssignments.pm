@@ -2,7 +2,7 @@ package Azure::CustomerInsightsManagement::CreateOrUpdateRoleAssignments;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-26',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'assignmentName' => (is => 'ro', required => 1, isa => 'Str',

@@ -1,8 +1,7 @@
 package Azure::CustomerInsightsManagement::InteractionTypeDefinition;
   use Moose;
 
-  has 'dataSources' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::DataSource]'  );
-  has 'defaultDataSourceId' => (is => 'ro', isa => 'Str'  );
+  has 'dataSourcePrecedenceRules' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::DataSourcePrecedence]'  );
   has 'idPropertyNames' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'isActivity' => (is => 'ro', isa => 'Bool'  );
   has 'participantProfiles' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::Participant]'  );
@@ -24,4 +23,9 @@ package Azure::CustomerInsightsManagement::InteractionTypeDefinition;
   has 'localizedAttributes' => (is => 'ro', isa => 'HashRef'  );
   has 'mediumImage' => (is => 'ro', isa => 'Str'  );
   has 'smallImage' => (is => 'ro', isa => 'Str'  );
+  has 'dataSourceReferenceId' => (is => 'ro', isa => 'Str'  );
+  has 'dataSourceType' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Int'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
 1;
