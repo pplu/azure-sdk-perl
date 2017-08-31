@@ -1,8 +1,8 @@
 package Azure::ApiManagement::PropertyUpdateParameters;
   use Moose;
 
-  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'displayName' => (is => 'ro', isa => 'Str'  );
+  has 'value' => (is => 'ro', isa => 'Str'  );
   has 'secret' => (is => 'ro', isa => 'Bool'  );
   has 'tags' => (is => 'ro', isa => 'ArrayRef[Str]'  );
-  has 'value' => (is => 'ro', isa => 'Str'  );
 1;

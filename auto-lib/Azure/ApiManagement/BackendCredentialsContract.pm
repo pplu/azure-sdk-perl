@@ -1,9 +1,8 @@
 package Azure::ApiManagement::BackendCredentialsContract;
   use Moose;
 
+  has 'authorization' => (is => 'ro', isa => 'Azure::ApiManagement::BackendAuthorizationHeaderCredentials'  );
   has 'certificate' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'header' => (is => 'ro', isa => 'HashRef'  );
   has 'query' => (is => 'ro', isa => 'HashRef'  );
-  has 'parameter' => (is => 'ro', isa => 'Str'  );
-  has 'scheme' => (is => 'ro', isa => 'Str'  );
 1;

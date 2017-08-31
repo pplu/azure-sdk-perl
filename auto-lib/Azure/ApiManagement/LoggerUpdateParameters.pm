@@ -4,5 +4,5 @@ package Azure::ApiManagement::LoggerUpdateParameters;
   has 'credentials' => (is => 'ro', isa => 'HashRef'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'isBuffered' => (is => 'ro', isa => 'Bool'  );
-  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'loggerType' => (is => 'ro', isa => 'Str'  );
 1;

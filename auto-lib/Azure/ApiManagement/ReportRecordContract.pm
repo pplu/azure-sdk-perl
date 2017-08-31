@@ -15,7 +15,7 @@ package Azure::ApiManagement::ReportRecordContract;
   has 'callCountSuccess' => (is => 'ro', isa => 'Int'  );
   has 'callCountTotal' => (is => 'ro', isa => 'Int'  );
   has 'country' => (is => 'ro', isa => 'Str'  );
-  has 'interval' => (is => 'ro', isa => 'Int'  );
+  has 'interval' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'operationId' => (is => 'ro', isa => 'Str'  );
   has 'productId' => (is => 'ro', isa => 'Str'  );

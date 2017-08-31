@@ -2,10 +2,10 @@ package Azure::ApiManagement::CreateOrUpdateProperty;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::PropertyCreateParameters',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::PropertyContract',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'propId' => (is => 'ro', required => 1, isa => 'Str',
@@ -22,6 +22,6 @@ package Azure::ApiManagement::CreateOrUpdateProperty;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/properties/{propId}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', default => 'Azure::ApiManagement::CreateOrUpdatePropertyResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

@@ -5,7 +5,7 @@ package Azure::ApiManagement::UpdateProperty;
   has 'If-Match' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::PropertyUpdateParameters',

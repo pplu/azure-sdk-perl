@@ -2,7 +2,7 @@ package Azure::ApiManagement::ListApiManagementOperations;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

@@ -3,87 +3,87 @@ package Azure::ApiManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CreateOrUpdateUsers {
+  sub CreateOrUpdateUser {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateUsers', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateUser', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteUsers {
+  sub DeleteUser {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::DeleteUsers', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::DeleteUser', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GenerateSsoUrlUsers {
+  sub GenerateSsoUrlUser {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GenerateSsoUrlUsers', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GenerateSsoUrlUser', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetSharedAccessTokenUsers {
+  sub GetSharedAccessTokenUser {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetSharedAccessTokenUsers', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetSharedAccessTokenUser', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetUsers {
+  sub GetUser {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetUsers', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetUser', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByServiceUsers {
+  sub ListByServiceUser {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByServiceUsers', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByServiceUser', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByUsersUserGroups {
+  sub ListUserGroup {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByUsersUserGroups', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListUserGroup', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByUsersUserIdentities {
+  sub ListUserIdentities {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByUsersUserIdentities', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListUserIdentities', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListByUsersUserSubscriptions {
+  sub ListUserSubscription {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListByUsersUserSubscriptions', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::ListUserSubscription', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub UpdateUsers {
+  sub UpdateUser {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateUsers', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateUser', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateUsers DeleteUsers GenerateSsoUrlUsers GetSharedAccessTokenUsers GetUsers ListByServiceUsers ListByUsersUserGroups ListByUsersUserIdentities ListByUsersUserSubscriptions UpdateUsers / }
+  sub operations { qw/CreateOrUpdateUser DeleteUser GenerateSsoUrlUser GetSharedAccessTokenUser GetUser ListByServiceUser ListUserGroup ListUserIdentities ListUserSubscription UpdateUser / }
 
 1;

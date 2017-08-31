@@ -5,7 +5,10 @@ package Azure::ApiManagement::UpdateTenantAccess;
   has 'If-Match' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-10',
+  has 'accessName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::ApiManagement::AccessInformationUpdateParameters',
@@ -21,7 +24,7 @@ package Azure::ApiManagement::UpdateTenantAccess;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/access');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/tenant/{accessName}');
   class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;
