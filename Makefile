@@ -22,6 +22,7 @@ gen-classes:
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-resources/subscriptions/2016-06-01/swagger/subscriptions.json
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-web/2016-09-01/swagger/AppServiceEnvironments.json
 	carton exec perl -I builder-lib ./builder-bin/azure-sdk-gen azure-rest-api-specs/arm-web/2016-09-01/swagger/AppServicePlans.json
+	carton exec perl -I builder-lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/arm-compute/2017-01-31/swagger/containerService.json
 
 pull-other-sdks:
 	git submodule init
