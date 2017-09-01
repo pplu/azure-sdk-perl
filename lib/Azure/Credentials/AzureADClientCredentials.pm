@@ -80,9 +80,14 @@ package Azure::Credentials::AzureADClientCredentials;
           resource      => $self->resource_id,
         }
       );
-      use Data::Dumper;
-      die "Error obtaining auth token" . Dumper($auth_response) if (not $auth_response->{success});
-      return decode_json($auth_response->{content});
+
+      if (not $auth_response->{ success }) {
+        Azure::Exception->throw(
+          message => $auth_response->{ content },
+          code => 'GetClientCredentialsFailed',
+          http_status => $auth_response->{ status }
+        );
+      }
     }
   );
 
