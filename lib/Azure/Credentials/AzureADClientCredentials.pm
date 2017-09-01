@@ -1,6 +1,7 @@
 package Azure::Credentials::AzureADClientCredentials;
   use Moose;
   use JSON::MaybeXS;
+  use Path::Class::File;
 
   has ua => (is => 'rw', required => 1, lazy => 1,
     default     => sub {
@@ -9,16 +10,6 @@ package Azure::Credentials::AzureADClientCredentials;
         agent => 'Azure Perl SDK ' . $Azure::VERSION,
         timeout => 60,
       );
-    }
-  );
-
-  has access_token => (
-    is => 'ro',
-    isa => 'Str',
-    lazy => 1,
-    default => sub {
-      my $self = shift;
-      return $self->auth->{ access_token };
     }
   );
 
@@ -65,31 +56,83 @@ package Azure::Credentials::AzureADClientCredentials;
     }
   );
 
-  has auth => (
+  sub access_token {
+    my $self = shift;
+    $self->_refresh;
+    $self->current_creds->{ access_token };
+  }
+
+  has current_creds => (is => 'rw');
+
+  has expiration => (
+    is => 'rw',
+    isa => 'Int',
+    lazy => 1,
+    default => sub { 0 }
+  );
+
+  has _cache_file => (
     is => 'ro',
-    isa => 'HashRef',
+    isa => 'Path::Class::File',
     lazy => 1,
     default => sub {
       my $self = shift;
-      my $auth_response = $self->ua->post_form(
-        $self->token_endpoint,
-        {
-          grant_type    => 'client_credentials',
-          client_id     => $self->client_id,
-          client_secret => $self->secret_id,
-          resource      => $self->resource_id,
-        }
-      );
-
-      if (not $auth_response->{ success }) {
-        Azure::Exception->throw(
-          message => $auth_response->{ content },
-          code => 'GetClientCredentialsFailed',
-          http_status => $auth_response->{ status }
-        );
-      }
+      return Path::Class::File->new(
+        '',                        # filesystem root
+        'tmp',                     # tmp
+        '.azure_sdk_' . $self->tenant_id . '_' . $self->client_id
+      );  
     }
   );
+
+  sub _refresh_from_cache {
+    my $self = shift;
+    return if (not $self->_cache_file->stat);
+    my $content = $self->_cache_file->slurp;
+    my $auth = decode_json($content);
+    $self->current_creds($auth);
+    $self->expiration($auth->{ expires_on });
+  }
+
+  sub _save_to_cache {
+    my $self = shift;
+    my $content = encode_json($self->current_creds);
+    $self->_cache_file->spew($content);
+  }
+
+  sub _refresh {
+    my $self = shift;
+
+    if (not defined $self->current_creds) {
+      $self->_refresh_from_cache;
+      return $self->current_creds if (defined $self->current_creds);
+    }
+
+    return if $self->expiration >= time;
+
+    my $auth_response = $self->ua->post_form(
+      $self->token_endpoint,
+      {
+        grant_type    => 'client_credentials',
+        client_id     => $self->client_id,
+        client_secret => $self->secret_id,
+        resource      => $self->resource_id,
+      }
+    );
+
+    if (not $auth_response->{ success }) {
+      Azure::Exception->throw(
+        message => $auth_response->{ content },
+        code => 'GetClientCredentialsFailed',
+        http_status => $auth_response->{ status }
+      );
+    }
+
+    my $auth = decode_json($auth_response->{content});
+    $self->current_creds($auth);
+    $self->expiration($auth->{ expires_on });
+    $self->_save_to_cache;
+  }
 
   with 'Azure::Credential';
 1;
