@@ -83,10 +83,19 @@ package Azure::API::Caller;
   sub error_to_exception {
     my ($self, $struct, $call_object, $http_status, $content, $headers) = @_;
 
-    Azure::Exception->throw(
-      code    => $struct->{ error }->{ code },
-      message => $struct->{ error }->{ message }
-    );
+    if (defined $struct->{ error }) {
+      Azure::Exception->throw(
+        code    => $struct->{ error }->{ code } // 'UnknownCode',
+        message => $struct->{ error }->{ message } // 'Unknown error message',
+        http_status => $http_status,
+      );
+    } else {
+      Azure::Exception->throw(
+        code => 'Http' . $http_status,
+        message => 'Got an HTTP ' . $http_status . ' code',
+        http_status => $http_status,
+      );
+    }
   }
 
   sub response_to_object {
