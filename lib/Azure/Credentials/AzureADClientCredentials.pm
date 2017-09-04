@@ -90,6 +90,7 @@ package Azure::Credentials::AzureADClientCredentials;
     return if (not $self->_cache_file->stat);
     my $content = $self->_cache_file->slurp;
     my $auth = decode_json($content);
+    return if $auth->{ expires_on } < time;
     $self->current_creds($auth);
     $self->expiration($auth->{ expires_on });
   }
