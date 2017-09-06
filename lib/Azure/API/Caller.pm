@@ -246,6 +246,8 @@ package Azure::API::Caller;
           } else {
             $refHash->{ $key } = [ map { $self->to_hash($_) } @{ $params->$att } ];
           }
+        } elsif ($att_type eq 'HashRef') {
+          $refHash->{ $key } = $params->$att;
         } elsif ($att_type->isa('Moose::Meta::TypeConstraint::Enum')) {
           $refHash->{ $key } = $params->$att;
         } else {
