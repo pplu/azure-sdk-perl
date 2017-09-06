@@ -7,42 +7,31 @@ use lib "$FindBin::Bin/../builder-lib";
 
 use strict;
 use warnings;
-use Azure::SDK::Builder;
+use Azure::SDK::MultiBuilder;
 
 $|=1;
 
 my @files = @ARGV;
 
 if (@files == 0) {
-  my @apis = sort grep { -d $_ } glob("azure-rest-api-specs/*");
-  
+  #azure-rest-api-specs/specification/cosmos-db/resource-manager/Microsoft.DocumentDB/2015-04-08/
+  my @apis = sort grep { -d $_ } glob("azure-rest-api-specs/specification/*");
+
+  @apis = map { grep { -d $_ } glob("$_/resource-manager/*") } @apis;
+
+  my @last_apis;
   foreach my $api_dir (@apis) {
-    my @jsons = grep { $_ =~ m|/201[4-9]-\d{2}-\d{2}| } grep { -d $_ } glob("$api_dir/*");
-    my @sorted = sort { 
-      my ($ya, $ym, $yd) = ($a =~ m/(201[4-9])-(\d{2})-(\d{2})/);
-      my ($yb, $yb, $yb) = ($b =~ m/(201[4-9])-(\d{2})-(\d{2})/);
-      my $vala = $ya * 366 + $ym * 30 + $yd;
-      my $valb = $yb * 366 + $yb * 30 + $yb;
-      $vala <=> $valb
-    } @jsons;
+    my @dirs = reverse sort grep { -d $_ } glob("$api_dir/*");
 
-    my $selected_dir = shift @sorted;
-    my @selected = glob("$selected_dir/swagger/*.json");
-
-    push @files, @selected;
-  }
-}
-
-foreach my $file (@files){
-  say "Processing $file";
-
-  eval {
-    my $builder = Azure::SDK::Builder->new(
-      schema_file => $file
+    my $builder = Azure::SDK::MultiBuilder->new(
+      files => [ grep { -f $_ } glob("$dirs[0]/*.json") ]
     );
     $builder->build;
-  };
-  if ($@) {
-    warn $@;
   }
+} else {
+  my $builder = Azure::SDK::MultiBuilder->new(
+    files => \@files,
+  );
+  $builder->build;
 }
+
