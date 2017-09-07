@@ -3,7 +3,6 @@ package Azure::SDK::Builder;
   use Moose;
   use Template;
   use Swagger::Schema;
-  use File::Slurp;
   use FindBin;
   use Path::Class;
   use Azure::SDK::Builder::Method;
@@ -23,7 +22,7 @@ package Azure::SDK::Builder;
     lazy => 1,
     default => sub {
       my $self = shift;
-      my $data = read_file($self->schema_file);
+      my $data = file($self->schema_file)->slurp;
       return Swagger::Schema->MooseX::DataModel::new_from_json($data);
     }
   );
