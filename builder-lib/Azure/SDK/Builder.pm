@@ -7,6 +7,16 @@ package Azure::SDK::Builder;
   use Path::Class;
   use Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::Object;
+  with 'Azure::SDK::TemplateProcessor';
+
+  has log => (
+    is => 'ro',
+    lazy => 1,
+    default => sub { 
+      require Azure::SDK::Builder::Logger;
+      Azure::SDK::Builder::Logger->new() 
+    },
+  );
 
   has sdk_namespace => (is => 'ro', default => 'Azure');
 
@@ -26,55 +36,6 @@ package Azure::SDK::Builder;
       return Swagger::Schema->MooseX::DataModel::new_from_json($data);
     }
   );
-  has output_dir => (
-    is => 'ro',
-    isa => 'Str',
-    default => 'auto-lib/'
-  );
-  has _tt => (is => 'ro', isa => 'Template', default => sub {
-    Template->new(
-      INCLUDE_PATH => "$FindBin::Bin/../templates",
-      INTERPOLATE => 0,
-    );
-  });
-  has log => (
-    is => 'ro',
-    default => sub { Logger->new() },
-  );
-
-  sub process_template {
-    my ($self, $template_file, $vars) = @_;
-
-    $self->log->debug('Processing template \'' . $template_file . '\'');
-
-    $vars = {} if (not defined $vars);
-    my $output = '';
-    $self->_tt->process(
-      $template_file,
-      { c => $self, %$vars },
-      \$output
-    ) or die "Error processing template " . $self->_tt->error;
-
-    $self->log->debug('Output from template: ' . $output);
-
-    #TODO: detect the class name from output, and save to it
-    my ($outfile) = ($output =~ m/package (\S+)(?:\s*;|\s*{)/);
-
-    die "Didn't find package name" if (not defined $outfile or $outfile eq '');
-
-    $self->log->info("Detected package $outfile in output");
-
-    $outfile =~ s/\:\:/\//g;
-    $outfile .= '.pm';
-
-    $self->log->info("Naming it $outfile");
-    my $f = file($self->output_dir, $outfile);
-
-    $f->parent->mkpath;
-
-    #TODO: ensure that the dir of the file exists
-    write_file($f, $output);
-  }
 
   sub operationId_to_methodname {
     my ($self, $id) = @_;
