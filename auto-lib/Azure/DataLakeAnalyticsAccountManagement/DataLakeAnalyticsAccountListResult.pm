@@ -2,5 +2,5 @@ package Azure::DataLakeAnalyticsAccountManagement::DataLakeAnalyticsAccountListR
   use Moose;
 
   has 'nextLink' => (is => 'ro', isa => 'Str'  );
-  has 'value' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::DataLakeAnalyticsAccount]'  );
+  has 'value' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::DataLakeAnalyticsAccountBasic]'  );
 1;
