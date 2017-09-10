@@ -18,8 +18,12 @@ package Azure::SDK::Builder::Object;
   sub get_attributes_from_properties {
     my ($self, $object) = @_;
 
+    my $root_schema = $self->root_schema;
+
     if (defined $object->ref) {
-      $object = $self->root_schema->resolve_path($object->ref);
+      my $path = $self->root_schema->resolve_path($object->ref);
+      $object = $path->object;
+      $root_schema = $path->schema;
     }
 
     my $atts = [];
@@ -36,7 +40,7 @@ package Azure::SDK::Builder::Object;
 
       my $type;
       if (defined $props->ref) {
-        $props = $self->root_schema->object_for_ref($props);
+        $props = $root_schema->object_for_ref($props);
         $type = $props->name;
       }
 

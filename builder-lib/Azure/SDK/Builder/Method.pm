@@ -64,7 +64,13 @@ package Azure::SDK::Builder::Method;
     return [ map {
       my $param = $_;
 
-      my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
+      my $root_schema = $self->root_schema;
+      my $args = $param;
+      if ($param->isa('Swagger::Schema::RefParameter')) {
+        my $path = $self->root_schema->resolve_path($param->ref);
+        $args = $path->object;
+        $root_schema = $path->schema;
+      } 
 
       my $method_argument_class;
           
@@ -77,7 +83,7 @@ package Azure::SDK::Builder::Method;
       }
 
       $method_argument_class->new(
-        root_schema => $self->root_schema,
+        root_schema => $root_schema,
         %$args
       );
     } @$list ];
@@ -103,10 +109,13 @@ package Azure::SDK::Builder::Method;
 
         return undef if (not defined $response->schema);
 
+        my $root_schema = $self->root_schema;
         my $definition;
         if ($response->schema->isa('Swagger::Schema::RefParameter')) {
           my $ref = $response->schema->ref;
-          $definition = $self->root_schema->resolve_path($ref);
+          my $path = $self->root_schema->resolve_path($ref);
+          $definition = $path->object;
+          $root_schema = $path->schema;
         } else {
           $definition = $response->schema;
         }
@@ -114,7 +123,7 @@ package Azure::SDK::Builder::Method;
         my $return = Azure::SDK::Builder::Return->new(
           %$definition,
           name => $self->name . 'Result',
-          root_schema => $self->root_schema,
+          root_schema => $root_schema,
         );
         return $return;
       } else {

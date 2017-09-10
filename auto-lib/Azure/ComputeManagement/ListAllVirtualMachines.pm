@@ -2,7 +2,7 @@ package Azure::ComputeManagement::ListAllVirtualMachines;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-03-30',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-30',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

@@ -2,6 +2,11 @@ package Azure::SDK::Builder::Error;
   use Moose;
   extends 'Throwable::Error';
 
+package Azure::SDK::Builder::Path;
+  use Moose;
+  has object => (is => 'ro', required => 1);
+  has schema => (is => 'ro', required => 1, isa => 'Azure::SDK::Builder');
+
 package Azure::SDK::Builder;
   use v5.10;
   use Moose;
@@ -124,12 +129,18 @@ package Azure::SDK::Builder;
 
       foreach my $ob_name (sort keys %$definitions) {
         my $object = $self->schema->definitions->{ $ob_name };
-        $object = $self->resolve_path($object->ref) if (defined $object->ref);
+        my $root_schema = $self;
+
+        if (defined $object->ref) {
+          my $path = $self->resolve_path($object->ref);
+          $object = $path->object;
+          $root_schema = $path->schema;
+        }
 
         $objects{ $ob_name } = 
           Azure::SDK::Builder::Object->new(
             %$object,
-            root_schema => $self,
+            root_schema => $root_schema,
             name => $self->namespace($ob_name),
           );
       }
@@ -244,12 +255,18 @@ package Azure::SDK::Builder;
       $def_file .= "/$find_path_in_file";
 
       $final_path = "#$rest_of_path";
-      $final_schema = Azure::SDK::Builder->new(schema_file => $def_file)->schema;
+      $final_schema = Azure::SDK::Builder->new(schema_file => $def_file);
     }
 
     my ($first, $second) = $self->path_parts($final_path);
+    my $object = $final_schema->schema->$first->{ $second };
 
-    return $final_schema->$first->{ $second } || Azure::SDK::Builder::Error->throw("Cannot resolve path $path");
+    Azure::SDK::Builder::Error->throw("Cannot resolve path $path") if (not defined $object);
+
+    return Azure::SDK::Builder::Path->new(
+      object => $object,
+      schema => $final_schema,
+    );
   }
 
   sub build {

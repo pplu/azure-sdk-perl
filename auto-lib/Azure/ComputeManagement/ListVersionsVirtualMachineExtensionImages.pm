@@ -11,7 +11,7 @@ package Azure::ComputeManagement::ListVersionsVirtualMachineExtensionImages;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-03-30',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-30',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'location' => (is => 'ro', required => 1, isa => 'Str',

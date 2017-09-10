@@ -2,6 +2,7 @@ package Azure::ComputeManagement::VirtualMachineScaleSetExtensionProperties;
   use Moose;
 
   has 'autoUpgradeMinorVersion' => (is => 'ro', isa => 'Bool'  );
+  has 'forceUpdateTag' => (is => 'ro', isa => 'Str'  );
   has 'protectedSettings' => (is => 'ro', isa => 'HashRef'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'publisher' => (is => 'ro', isa => 'Str'  );
