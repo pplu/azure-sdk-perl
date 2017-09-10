@@ -191,20 +191,28 @@ package Azure::ResourceManagement;
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::GetResources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByResourceGroupDeployments {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListByResourceGroupDeployments', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListByResourceGroupResources {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListByResourceGroupResources', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListDeploymentOperations {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListDeploymentOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListDeployments {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListDeployments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListProviders {
@@ -231,14 +239,6 @@ package Azure::ResourceManagement;
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListResources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListResourcesResourceGroups {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ListResourcesResourceGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub ListTags {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -253,14 +253,6 @@ package Azure::ResourceManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::MoveResourcesResources', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub PatchResourceGroups {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::PatchResourceGroups', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub RegisterProviders {
@@ -279,6 +271,14 @@ package Azure::ResourceManagement;
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::UnregisterProviders', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateResourceGroups {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::UpdateResourceGroups', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ValidateDeployments {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -287,7 +287,15 @@ package Azure::ResourceManagement;
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ValidateDeployments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ValidateMoveResourcesResources {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::ValidateMoveResourcesResources', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
 
-  sub operations { qw/CancelDeployments CheckExistenceByIdResources CheckExistenceDeployments CheckExistenceResourceGroups CheckExistenceResources CreateOrUpdateByIdResources CreateOrUpdateDeployments CreateOrUpdateResourceGroups CreateOrUpdateResources CreateOrUpdateTags CreateOrUpdateValueTags DeleteByIdResources DeleteDeployments DeleteResourceGroups DeleteResources DeleteTags DeleteValueTags ExportTemplateDeployments ExportTemplateResourceGroups GetByIdResources GetDeploymentOperations GetDeployments GetProviders GetResourceGroups GetResources ListDeploymentOperations ListDeployments ListProviders ListResourceGroups ListResources ListResourcesResourceGroups ListTags MoveResourcesResources PatchResourceGroups RegisterProviders UnregisterProviders ValidateDeployments / }
+  sub operations { qw/CancelDeployments CheckExistenceByIdResources CheckExistenceDeployments CheckExistenceResourceGroups CheckExistenceResources CreateOrUpdateByIdResources CreateOrUpdateDeployments CreateOrUpdateResourceGroups CreateOrUpdateResources CreateOrUpdateTags CreateOrUpdateValueTags DeleteByIdResources DeleteDeployments DeleteResourceGroups DeleteResources DeleteTags DeleteValueTags ExportTemplateDeployments ExportTemplateResourceGroups GetByIdResources GetDeploymentOperations GetDeployments GetProviders GetResourceGroups GetResources ListByResourceGroupDeployments ListByResourceGroupResources ListDeploymentOperations ListProviders ListResourceGroups ListResources ListTags MoveResourcesResources RegisterProviders UnregisterProviders UpdateResourceGroups ValidateDeployments ValidateMoveResourcesResources / }
 
 1;

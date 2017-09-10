@@ -2,7 +2,7 @@ package Azure::ResourceManagement::CheckExistenceDeployments;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-05-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'deploymentName' => (is => 'ro', required => 1, isa => 'Str',

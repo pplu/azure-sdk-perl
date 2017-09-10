@@ -1,4 +1,4 @@
-package Azure::ResourceManagement::ListDeploymentsResult;
+package Azure::ResourceManagement::ListByResourceGroupDeploymentsResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );

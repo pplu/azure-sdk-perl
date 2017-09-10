@@ -1,4 +1,4 @@
-package Azure::ResourceManagement::ListResourcesResourceGroups;
+package Azure::ResourceManagement::ListByResourceGroupResources;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -11,7 +11,7 @@ package Azure::ResourceManagement::ListResourcesResourceGroups;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-05-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -22,6 +22,6 @@ package Azure::ResourceManagement::ListResourcesResourceGroups;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/resources');
-  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ListResourcesResourceGroupsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::ListByResourceGroupResourcesResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

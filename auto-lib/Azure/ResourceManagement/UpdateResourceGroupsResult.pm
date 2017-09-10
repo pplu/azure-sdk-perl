@@ -1,4 +1,4 @@
-package Azure::ResourceManagement::PatchResourceGroupsResult;
+package Azure::ResourceManagement::UpdateResourceGroupsResult;
   use Moose;
 
   has id => (is => 'ro', isa => 'Str'  );

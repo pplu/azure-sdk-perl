@@ -1,4 +1,4 @@
-package Azure::ResourceManagement::MoveResourcesResources;
+package Azure::ResourceManagement::ValidateMoveResourcesResources;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -15,7 +15,7 @@ package Azure::ResourceManagement::MoveResourcesResources;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{sourceResourceGroupName}/moveResources');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{sourceResourceGroupName}/validateMoveResources');
   class_has _returns => (is => 'ro', default => '');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

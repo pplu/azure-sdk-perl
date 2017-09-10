@@ -2,7 +2,7 @@ package Azure::ResourceManagement::CheckExistenceResources;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-05-10',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parentResourcePath' => (is => 'ro', required => 1, isa => 'Str',
