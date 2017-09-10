@@ -11,6 +11,14 @@ package Azure::BatchManagement;
     my $call_object = $self->new_with_coercions('Azure::BatchManagement::ActivateApplicationPackage', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CheckNameAvailabilityLocation {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::BatchManagement::CheckNameAvailabilityLocation', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateApplication {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -161,6 +169,6 @@ package Azure::BatchManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/ActivateApplicationPackage CreateApplication CreateApplicationPackage CreateBatchAccount DeleteApplication DeleteApplicationPackage DeleteBatchAccount GetApplication GetApplicationPackage GetBatchAccount GetKeysBatchAccount GetQuotasLocation ListApplication ListBatchAccount ListByResourceGroupBatchAccount ListOperations RegenerateKeyBatchAccount SynchronizeAutoStorageKeysBatchAccount UpdateApplication UpdateBatchAccount / }
+  sub operations { qw/ActivateApplicationPackage CheckNameAvailabilityLocation CreateApplication CreateApplicationPackage CreateBatchAccount DeleteApplication DeleteApplicationPackage DeleteBatchAccount GetApplication GetApplicationPackage GetBatchAccount GetKeysBatchAccount GetQuotasLocation ListApplication ListBatchAccount ListByResourceGroupBatchAccount ListOperations RegenerateKeyBatchAccount SynchronizeAutoStorageKeysBatchAccount UpdateApplication UpdateBatchAccount / }
 
 1;
