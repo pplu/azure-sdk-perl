@@ -8,7 +8,7 @@ package Azure::DataLakeAnalyticsJobManagement::CreateJob;
   has 'jobIdentity' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::DataLakeAnalyticsJobManagement::JobInformation',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::DataLakeAnalyticsJobManagement::CreateJobParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
 

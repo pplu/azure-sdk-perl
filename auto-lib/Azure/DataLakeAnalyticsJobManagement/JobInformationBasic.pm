@@ -1,9 +1,6 @@
-package Azure::DataLakeAnalyticsJobManagement::JobInformation;
+package Azure::DataLakeAnalyticsJobManagement::JobInformationBasic;
   use Moose;
 
-  has 'errorMessage' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsJobManagement::JobErrorDetails]'  );
-  has 'properties' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsJobManagement::JobProperties'  );
-  has 'stateAuditRecords' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsJobManagement::JobStateAuditRecord]'  );
   has 'degreeOfParallelism' => (is => 'ro', isa => 'Int'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'jobId' => (is => 'ro', isa => 'Str'  );
