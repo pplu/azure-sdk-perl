@@ -227,6 +227,14 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListAuthorizationRulesTopics', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByNamespaceEventHubs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByNamespaceEventHubs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListByNamespaceQueues {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -249,6 +257,14 @@ package Azure::ServiceBusManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByResourceGroupNamespaces', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListBySkuRegions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListBySkuRegions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListBySubscriptionsRules {
@@ -304,6 +320,14 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListOperations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListPremiumMessagingRegions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListPremiumMessagingRegions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RegenerateKeysNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -337,6 +361,6 @@ package Azure::ServiceBusManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleQueues CreateOrUpdateAuthorizationRuleTopics CreateOrUpdateNamespaces CreateOrUpdateQueues CreateOrUpdateRules CreateOrUpdateSubscriptions CreateOrUpdateTopics DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleQueues DeleteAuthorizationRuleTopics DeleteNamespaces DeleteQueues DeleteRules DeleteSubscriptions DeleteTopics GetAuthorizationRuleNamespaces GetAuthorizationRuleQueues GetAuthorizationRuleTopics GetNamespaces GetQueues GetRules GetSubscriptions GetTopics ListAuthorizationRulesNamespaces ListAuthorizationRulesQueues ListAuthorizationRulesTopics ListByNamespaceQueues ListByNamespaceTopics ListByResourceGroupNamespaces ListBySubscriptionsRules ListByTopicSubscriptions ListKeysNamespaces ListKeysQueues ListKeysTopics ListNamespaces ListOperations RegenerateKeysNamespaces RegenerateKeysQueues RegenerateKeysTopics UpdateNamespaces / }
+  sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleQueues CreateOrUpdateAuthorizationRuleTopics CreateOrUpdateNamespaces CreateOrUpdateQueues CreateOrUpdateRules CreateOrUpdateSubscriptions CreateOrUpdateTopics DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleQueues DeleteAuthorizationRuleTopics DeleteNamespaces DeleteQueues DeleteRules DeleteSubscriptions DeleteTopics GetAuthorizationRuleNamespaces GetAuthorizationRuleQueues GetAuthorizationRuleTopics GetNamespaces GetQueues GetRules GetSubscriptions GetTopics ListAuthorizationRulesNamespaces ListAuthorizationRulesQueues ListAuthorizationRulesTopics ListByNamespaceEventHubs ListByNamespaceQueues ListByNamespaceTopics ListByResourceGroupNamespaces ListBySkuRegions ListBySubscriptionsRules ListByTopicSubscriptions ListKeysNamespaces ListKeysQueues ListKeysTopics ListNamespaces ListOperations ListPremiumMessagingRegions RegenerateKeysNamespaces RegenerateKeysQueues RegenerateKeysTopics UpdateNamespaces / }
 
 1;
