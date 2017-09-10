@@ -156,6 +156,14 @@ package Azure::SDK::Builder;
       return 'AppServicePlans' if ($title eq 'AppServicePlans API Client');
       return 'AppServiceEnvironments' if ($title eq 'AppServiceEnvironments API Client');
       return 'CosmosDB' if ($title eq 'Cosmos DB');
+      return 'AzureSQLDatabaseBackupLongRetentionPolicy' if ($title eq 'Azure SQL Database Backup Long Term Retention Policy');
+      return 'AzureSQLDatabaseBackupLongRetentionVault' if ($title eq 'Azure SQL Server Backup Long Term Retention Vault');
+      return 'AzureSQLDatabaseBackup' if ($title eq 'Azure SQL Database Backup');
+      return 'ResourceHealth' if ($title eq 'Microsoft.ResourceHealth');
+      return 'Monitor' if ($title eq 'Azure Action Groups API');
+      return 'Monitor' if ($title eq 'Azure Activity Log Alerts API');
+      return 'ServiceMap' if ($title eq 'Service Map');
+      return 'VisualStudio' if ($title eq 'Visual Studio Resource Provider Client');
 
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
@@ -164,6 +172,7 @@ package Azure::SDK::Builder;
       return $title if ($title eq 'StorageImportExport');
       return $title if ($title eq 'StorageManagement');
       return $title if ($title eq 'AzureAnalysisServices');
+      return $title if ($title eq 'AutomationManagement');
 
       die "Service '$title' has spaces in it's name. Please correct" if ($title =~ m/ /);
 
