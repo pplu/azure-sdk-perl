@@ -72,6 +72,14 @@ package Azure::StorageManagement;
     my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListServiceSASStorageAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListSKUs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListSKUs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListStorageAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -105,6 +113,6 @@ package Azure::StorageManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityStorageAccounts CreateStorageAccounts DeleteStorageAccounts GetPropertiesStorageAccounts ListAccountSASStorageAccounts ListByResourceGroupStorageAccounts ListKeysStorageAccounts ListOperations ListServiceSASStorageAccounts ListStorageAccounts ListUsage RegenerateKeyStorageAccounts UpdateStorageAccounts / }
+  sub operations { qw/CheckNameAvailabilityStorageAccounts CreateStorageAccounts DeleteStorageAccounts GetPropertiesStorageAccounts ListAccountSASStorageAccounts ListByResourceGroupStorageAccounts ListKeysStorageAccounts ListOperations ListServiceSASStorageAccounts ListSKUs ListStorageAccounts ListUsage RegenerateKeyStorageAccounts UpdateStorageAccounts / }
 
 1;

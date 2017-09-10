@@ -1,4 +1,4 @@
-package Azure::StorageManagement::StorageNetworkAcls;
+package Azure::StorageManagement::NetworkRuleSet;
   use Moose;
 
   has 'bypass' => (is => 'ro', isa => 'Str'  );

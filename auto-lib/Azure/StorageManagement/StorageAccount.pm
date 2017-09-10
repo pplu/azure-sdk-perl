@@ -14,7 +14,7 @@ package Azure::StorageManagement::StorageAccount;
   has 'customDomain' => (is => 'ro', isa => 'Azure::StorageManagement::CustomDomain'  );
   has 'encryption' => (is => 'ro', isa => 'Azure::StorageManagement::Encryption'  );
   has 'lastGeoFailoverTime' => (is => 'ro', isa => 'Str'  );
-  has 'networkAcls' => (is => 'ro', isa => 'Azure::StorageManagement::StorageNetworkAcls'  );
+  has 'networkAcls' => (is => 'ro', isa => 'Azure::StorageManagement::NetworkRuleSet'  );
   has 'primaryEndpoints' => (is => 'ro', isa => 'Azure::StorageManagement::Endpoints'  );
   has 'primaryLocation' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
