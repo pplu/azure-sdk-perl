@@ -59,6 +59,14 @@ package Azure::CustomerInsightsManagement;
     my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::CreateOrUpdateLinks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CreateOrUpdatePredictions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::CreateOrUpdatePredictions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateOrUpdateProfiles {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -137,6 +145,14 @@ package Azure::CustomerInsightsManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::DeleteLinks', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeletePredictions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::DeletePredictions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteProfiles {
@@ -243,6 +259,22 @@ package Azure::CustomerInsightsManagement;
     my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::GetLinks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetModelStatusPredictions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::GetModelStatusPredictions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetPredictions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::GetPredictions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetProfiles {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -273,6 +305,14 @@ package Azure::CustomerInsightsManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::GetRoleAssignments', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetTrainingResultsPredictions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::GetTrainingResultsPredictions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetUploadUrlForDataImages {
@@ -355,6 +395,14 @@ package Azure::CustomerInsightsManagement;
     my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::ListByHubLinks', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByHubPredictions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::ListByHubPredictions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListByHubProfiles {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -427,6 +475,14 @@ package Azure::CustomerInsightsManagement;
     my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::ListHubs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ModelStatusPredictions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::ModelStatusPredictions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RegeneratePrimaryKeyAuthorizationPolicies {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -468,6 +524,6 @@ package Azure::CustomerInsightsManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateAuthorizationPolicies CreateOrUpdateConnectorMappings CreateOrUpdateConnectors CreateOrUpdateHubs CreateOrUpdateInteractions CreateOrUpdateKpi CreateOrUpdateLinks CreateOrUpdateProfiles CreateOrUpdateRelationshipLinks CreateOrUpdateRelationships CreateOrUpdateRoleAssignments CreateOrUpdateViews DeleteConnectorMappings DeleteConnectors DeleteHubs DeleteKpi DeleteLinks DeleteProfiles DeleteRelationshipLinks DeleteRelationships DeleteRoleAssignments DeleteViews GetAuthorizationPolicies GetConnectorMappings GetConnectors GetEnrichingKpisProfiles GetHubs GetInteractions GetKpi GetLinks GetProfiles GetRelationshipLinks GetRelationships GetRoleAssignments GetUploadUrlForDataImages GetUploadUrlForEntityTypeImages GetViews GetWidgetTypes ListByConnectorConnectorMappings ListByHubAuthorizationPolicies ListByHubConnectors ListByHubInteractions ListByHubKpi ListByHubLinks ListByHubProfiles ListByHubRelationshipLinks ListByHubRelationships ListByHubRoleAssignments ListByHubRoles ListByHubViews ListByHubWidgetTypes ListByResourceGroupHubs ListHubs RegeneratePrimaryKeyAuthorizationPolicies RegenerateSecondaryKeyAuthorizationPolicies ReprocessKpi SuggestRelationshipLinksInteractions UpdateHubs / }
+  sub operations { qw/CreateOrUpdateAuthorizationPolicies CreateOrUpdateConnectorMappings CreateOrUpdateConnectors CreateOrUpdateHubs CreateOrUpdateInteractions CreateOrUpdateKpi CreateOrUpdateLinks CreateOrUpdatePredictions CreateOrUpdateProfiles CreateOrUpdateRelationshipLinks CreateOrUpdateRelationships CreateOrUpdateRoleAssignments CreateOrUpdateViews DeleteConnectorMappings DeleteConnectors DeleteHubs DeleteKpi DeleteLinks DeletePredictions DeleteProfiles DeleteRelationshipLinks DeleteRelationships DeleteRoleAssignments DeleteViews GetAuthorizationPolicies GetConnectorMappings GetConnectors GetEnrichingKpisProfiles GetHubs GetInteractions GetKpi GetLinks GetModelStatusPredictions GetPredictions GetProfiles GetRelationshipLinks GetRelationships GetRoleAssignments GetTrainingResultsPredictions GetUploadUrlForDataImages GetUploadUrlForEntityTypeImages GetViews GetWidgetTypes ListByConnectorConnectorMappings ListByHubAuthorizationPolicies ListByHubConnectors ListByHubInteractions ListByHubKpi ListByHubLinks ListByHubPredictions ListByHubProfiles ListByHubRelationshipLinks ListByHubRelationships ListByHubRoleAssignments ListByHubRoles ListByHubViews ListByHubWidgetTypes ListByResourceGroupHubs ListHubs ModelStatusPredictions RegeneratePrimaryKeyAuthorizationPolicies RegenerateSecondaryKeyAuthorizationPolicies ReprocessKpi SuggestRelationshipLinksInteractions UpdateHubs / }
 
 1;
