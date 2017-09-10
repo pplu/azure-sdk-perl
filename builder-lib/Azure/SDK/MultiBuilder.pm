@@ -69,6 +69,10 @@ package Azure::SDK::MultiBuilder;
   sub build {
     my $self = shift;
 
+    $self->log->info("Processing files");
+    $self->log->info("  $_") for (@{ $self->files });
+    $self->log->info("Generating for service " . $self->service);
+
     foreach my $file (@{ $self->_swags }) {
       $file->build;
     }
