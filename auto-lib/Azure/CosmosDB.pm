@@ -72,6 +72,11 @@ package Azure::CosmosDB;
     my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListKeysDatabaseAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListOperations {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListOperations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListReadOnlyKeysDatabaseAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -97,6 +102,6 @@ package Azure::CosmosDB;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameExistsDatabaseAccounts CreateOrUpdateDatabaseAccounts DeleteDatabaseAccounts FailoverPriorityChangeDatabaseAccounts GetDatabaseAccounts ListByResourceGroupDatabaseAccounts ListConnectionStringsDatabaseAccounts ListDatabaseAccounts ListKeysDatabaseAccounts ListReadOnlyKeysDatabaseAccounts PatchDatabaseAccounts RegenerateKeyDatabaseAccounts / }
+  sub operations { qw/CheckNameExistsDatabaseAccounts CreateOrUpdateDatabaseAccounts DeleteDatabaseAccounts FailoverPriorityChangeDatabaseAccounts GetDatabaseAccounts ListByResourceGroupDatabaseAccounts ListConnectionStringsDatabaseAccounts ListDatabaseAccounts ListKeysDatabaseAccounts ListOperations ListReadOnlyKeysDatabaseAccounts PatchDatabaseAccounts RegenerateKeyDatabaseAccounts / }
 
 1;
