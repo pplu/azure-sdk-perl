@@ -2,6 +2,7 @@ package Azure::ApiManagement::ApiManagementServiceBaseProperties;
   use Moose;
 
   has 'additionalLocations' => (is => 'ro', isa => 'ArrayRef[Azure::ApiManagement::AdditionalLocation]'  );
+  has 'certificates' => (is => 'ro', isa => 'ArrayRef[Azure::ApiManagement::CertificateConfiguration]'  );
   has 'createdAtUtc' => (is => 'ro', isa => 'Str'  );
   has 'customProperties' => (is => 'ro', isa => 'HashRef'  );
   has 'gatewayUrl' => (is => 'ro', isa => 'Str'  );
