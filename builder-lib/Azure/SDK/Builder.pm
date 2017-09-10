@@ -64,6 +64,7 @@ package Azure::SDK::Builder;
       return $id if ($id eq 'WipeMAMUserDevice');
       return $id if ($id eq 'GetCertificates');
       return $id if ($id eq 'DeleteCertificateContacts');
+      return $id if ($id eq 'ValidateProbe');
       # storage importexport
       return $id if ($id eq 'ListLocations');
       return $id if ($id eq 'GetLocation');
@@ -168,6 +169,8 @@ package Azure::SDK::Builder;
       return 'Monitor' if ($title eq 'Azure Activity Log Alerts API');
       return 'ServiceMap' if ($title eq 'Service Map');
       return 'VisualStudio' if ($title eq 'Visual Studio Resource Provider Client');
+      return 'Relay' if ($title eq 'Relay API');
+      return 'CognitiveFace' if ($title eq 'Face API');
 
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
