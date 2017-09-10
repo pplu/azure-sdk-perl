@@ -1,3 +1,7 @@
+package Azure::SDK::Builder::Error;
+  use Moose;
+  extends 'Throwable::Error';
+
 package Azure::SDK::Builder;
   use v5.10;
   use Moose;
@@ -184,7 +188,7 @@ package Azure::SDK::Builder;
   sub path_parts {
     my ($self, $path) = @_;
     my @parts = split /\//, $path;
-    die "Cannot resolve a path doesn't start with #: $path" if ($parts[0] ne '#');
+    Azure::SDK::Builder::Error->throw("Cannot resolve a path doesn't start with #: $path") if ($parts[0] ne '#');
     return ($parts[1], $parts[2]);
   }
 
