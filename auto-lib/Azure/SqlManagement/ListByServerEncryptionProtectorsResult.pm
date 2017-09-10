@@ -1,4 +1,4 @@
-package Azure::SqlManagement::ListEncryptionProtectorsServersResult;
+package Azure::SqlManagement::ListByServerEncryptionProtectorsResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );

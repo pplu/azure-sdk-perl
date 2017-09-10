@@ -1,4 +1,4 @@
-package Azure::SqlManagement::UpdateRecommendedActionDatabasesResult;
+package Azure::SqlManagement::GetDatabaseRecommendedActionsResult;
   use Moose;
 
   has kind => (is => 'ro', isa => 'Str'  );

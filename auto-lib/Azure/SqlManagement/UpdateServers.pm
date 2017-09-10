@@ -5,7 +5,7 @@ package Azure::SqlManagement::UpdateServers;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-05-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::SqlManagement::Server',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::SqlManagement::ServerUpdate',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

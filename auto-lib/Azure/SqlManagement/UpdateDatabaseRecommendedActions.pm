@@ -1,4 +1,4 @@
-package Azure::SqlManagement::UpdateRecommendedActionDatabases;
+package Azure::SqlManagement::UpdateDatabaseRecommendedActions;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -28,6 +28,6 @@ package Azure::SqlManagement::UpdateRecommendedActionDatabases;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/advisors/{advisorName}/recommendedActions/{recommendedActionName}');
-  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::UpdateRecommendedActionDatabasesResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::UpdateDatabaseRecommendedActionsResult');
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

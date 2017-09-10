@@ -8,7 +8,7 @@ package Azure::SqlManagement::UpdateFailoverGroups;
   has 'failoverGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::SqlManagement::FailoverGroup',
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::SqlManagement::FailoverGroupUpdate',
     traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

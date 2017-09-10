@@ -1,4 +1,4 @@
-package Azure::SqlManagement::UpdateAdvisorDatabases;
+package Azure::SqlManagement::ListByDatabaseAdvisorDatabaseRecommendedActions;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -11,9 +11,6 @@ package Azure::SqlManagement::UpdateAdvisorDatabases;
   has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::SqlManagement::Advisor',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
@@ -24,7 +21,7 @@ package Azure::SqlManagement::UpdateAdvisorDatabases;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/advisors/{advisorName}');
-  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::UpdateAdvisorDatabasesResult');
-  class_has _api_method => (is => 'ro', default => 'PATCH');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/advisors/{advisorName}/recommendedActions');
+  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::ListByDatabaseAdvisorDatabaseRecommendedActionsResult');
+  class_has _api_method => (is => 'ro', default => 'GET');
 1;

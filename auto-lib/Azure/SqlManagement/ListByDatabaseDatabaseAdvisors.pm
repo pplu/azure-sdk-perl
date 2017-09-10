@@ -1,9 +1,12 @@
-package Azure::SqlManagement::ListAdvisorsServers;
+package Azure::SqlManagement::ListByDatabaseDatabaseAdvisors;
   use Moose;
   use MooseX::ClassAttribute;
 
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-05-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
+  );
+  has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -15,7 +18,7 @@ package Azure::SqlManagement::ListAdvisorsServers;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/advisors');
-  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::ListAdvisorsServersResult');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/advisors');
+  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::ListByDatabaseDatabaseAdvisorsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -1,4 +1,4 @@
-package Azure::SqlManagement::GetEncryptionProtectorServersResult;
+package Azure::SqlManagement::CreateOrUpdateEncryptionProtectorsResult;
   use Moose;
 
   has kind => (is => 'ro', isa => 'Str'  );

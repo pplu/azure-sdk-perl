@@ -1,4 +1,4 @@
-package Azure::SqlManagement::UpdateAdvisorDatabasesResult;
+package Azure::SqlManagement::UpdateServerAdvisorsResult;
   use Moose;
 
   has kind => (is => 'ro', isa => 'Str'  );

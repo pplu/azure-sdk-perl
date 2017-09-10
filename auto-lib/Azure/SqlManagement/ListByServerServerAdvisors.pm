@@ -1,4 +1,4 @@
-package Azure::SqlManagement::ListEncryptionProtectorsServers;
+package Azure::SqlManagement::ListByServerServerAdvisors;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -15,7 +15,7 @@ package Azure::SqlManagement::ListEncryptionProtectorsServers;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/encryptionProtector');
-  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::ListEncryptionProtectorsServersResult');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/advisors');
+  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::ListByServerServerAdvisorsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

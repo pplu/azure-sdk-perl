@@ -1,4 +1,4 @@
-package Azure::SqlManagement::CreateOrUpdateEncryptionProtectorServers;
+package Azure::SqlManagement::CreateOrUpdateEncryptionProtectors;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -22,6 +22,6 @@ package Azure::SqlManagement::CreateOrUpdateEncryptionProtectorServers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/encryptionProtector/{encryptionProtectorName}');
-  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::CreateOrUpdateEncryptionProtectorServersResult');
+  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::CreateOrUpdateEncryptionProtectorsResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

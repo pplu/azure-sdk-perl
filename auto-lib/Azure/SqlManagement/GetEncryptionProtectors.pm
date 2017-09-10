@@ -1,14 +1,11 @@
-package Azure::SqlManagement::ListRecommendedActionsDatabases;
+package Azure::SqlManagement::GetEncryptionProtectors;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'advisorName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-05-01-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'databaseName' => (is => 'ro', required => 1, isa => 'Str',
+  has 'encryptionProtectorName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -21,7 +18,7 @@ package Azure::SqlManagement::ListRecommendedActionsDatabases;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/advisors/{advisorName}/recommendedActions');
-  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::ListRecommendedActionsDatabasesResult');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/encryptionProtector/{encryptionProtectorName}');
+  class_has _returns => (is => 'ro', default => 'Azure::SqlManagement::GetEncryptionProtectorsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;
