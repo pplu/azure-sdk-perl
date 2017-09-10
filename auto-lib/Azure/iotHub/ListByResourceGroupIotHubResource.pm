@@ -2,7 +2,7 @@ package Azure::iotHub::ListByResourceGroupIotHubResource;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-19',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-07-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
