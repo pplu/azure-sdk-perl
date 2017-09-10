@@ -249,7 +249,7 @@ package Azure::SDK::Builder;
 
     my ($first, $second) = $self->path_parts($final_path);
 
-    return $final_schema->$first->{ $second };
+    return $final_schema->$first->{ $second } || Azure::SDK::Builder::Error->throw("Cannot resolve path $path");
   }
 
   sub build {
