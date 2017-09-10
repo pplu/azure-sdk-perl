@@ -1,4 +1,4 @@
-package Azure::AzureAnalysisServices::GetDetailsServers;
+package Azure::AzureAnalysisServices::ListGatewayStatusServers;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -15,7 +15,7 @@ package Azure::AzureAnalysisServices::GetDetailsServers;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}');
-  class_has _returns => (is => 'ro', default => 'Azure::AzureAnalysisServices::GetDetailsServersResult');
-  class_has _api_method => (is => 'ro', default => 'GET');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/listGatewayStatus');
+  class_has _returns => (is => 'ro', default => 'Azure::AzureAnalysisServices::ListGatewayStatusServersResult');
+  class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -12,5 +12,8 @@ package Azure::AzureAnalysisServices::UpdateServersResult;
   has state => (is => 'ro', isa => 'Str'  );
   has asAdministrators => (is => 'ro', isa => 'HashRef'  );
   has backupBlobContainerUri => (is => 'ro', isa => 'Str'  );
+  has gatewayDetails => (is => 'ro', isa => 'HashRef'  );
+  has ipV4FirewallSettings => (is => 'ro', isa => 'HashRef'  );
+  has querypoolConnectionMode => (is => 'ro', isa => 'Str'  );
 
 1;
