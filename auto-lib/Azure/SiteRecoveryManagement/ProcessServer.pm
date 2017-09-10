@@ -15,6 +15,7 @@ package Azure::SiteRecoveryManagement::ProcessServer;
   has 'memoryUsageStatus' => (is => 'ro', isa => 'Str'  );
   has 'mobilityServiceUpdates' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::MobilityServiceUpdate]'  );
   has 'osType' => (is => 'ro', isa => 'Str'  );
+  has 'osVersion' => (is => 'ro', isa => 'Str'  );
   has 'psServiceStatus' => (is => 'ro', isa => 'Str'  );
   has 'replicationPairCount' => (is => 'ro', isa => 'Str'  );
   has 'spaceUsageStatus' => (is => 'ro', isa => 'Str'  );

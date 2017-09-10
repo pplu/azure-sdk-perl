@@ -7,5 +7,6 @@ package Azure::SiteRecoveryManagement::A2AEnableProtectionInput;
   has 'recoveryContainerId' => (is => 'ro', isa => 'Str'  );
   has 'recoveryResourceGroupId' => (is => 'ro', isa => 'Str'  );
   has 'vmDisks' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::A2AVmDiskInputDetails]'  );
+  has 'vmManagedDisks' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::A2AVmManagedDiskInputDetails]'  );
   has 'instanceType' => (is => 'ro', isa => 'Str'  );
 1;

@@ -4,6 +4,8 @@ package Azure::SiteRecoveryManagement::ReplicationProtectedItemProperties;
   has 'activeLocation' => (is => 'ro', isa => 'Str'  );
   has 'allowedOperations' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'currentScenario' => (is => 'ro', isa => 'Azure::SiteRecoveryManagement::CurrentScenarioDetails'  );
+  has 'failoverHealth' => (is => 'ro', isa => 'Str'  );
+  has 'failoverHealthErrors' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::HealthError]'  );
   has 'failoverRecoveryPointId' => (is => 'ro', isa => 'Str'  );
   has 'friendlyName' => (is => 'ro', isa => 'Str'  );
   has 'lastSuccessfulFailoverTime' => (is => 'ro', isa => 'Str'  );

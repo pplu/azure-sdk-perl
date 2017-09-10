@@ -10,6 +10,7 @@ package Azure::SiteRecoveryManagement::RecoveryPlanProperties;
   has 'groups' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::RecoveryPlanGroup]'  );
   has 'lastPlannedFailoverTime' => (is => 'ro', isa => 'Str'  );
   has 'lastTestFailoverTime' => (is => 'ro', isa => 'Str'  );
+  has 'lastUnplannedFailoverTime' => (is => 'ro', isa => 'Str'  );
   has 'primaryFabricFriendlyName' => (is => 'ro', isa => 'Str'  );
   has 'primaryFabricId' => (is => 'ro', isa => 'Str'  );
   has 'recoveryFabricFriendlyName' => (is => 'ro', isa => 'Str'  );
