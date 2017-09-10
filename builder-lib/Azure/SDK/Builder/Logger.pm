@@ -1,5 +1,6 @@
 package Azure::SDK::Builder::Logger {
   use Moose;
+  use v5.10;
   has log_level => (is => 'ro', default => 5);
   sub debug { if (shift->log_level > 4) { say '[DEBUG] ', $_ for @_ } }
   sub info  { if (shift->log_level > 3) { say '[INFO ] ', $_ for @_ } }
