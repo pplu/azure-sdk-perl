@@ -2,6 +2,7 @@ package Azure::NetworkManagement::LoadBalancer;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::NetworkManagement::LoadBalancerSku'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

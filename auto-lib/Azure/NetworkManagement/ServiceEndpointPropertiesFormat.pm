@@ -1,4 +1,4 @@
-package Azure::NetworkManagement::PrivateAccessServicePropertiesFormat;
+package Azure::NetworkManagement::ServiceEndpointPropertiesFormat;
   use Moose;
 
   has 'locations' => (is => 'ro', isa => 'ArrayRef[Str]'  );

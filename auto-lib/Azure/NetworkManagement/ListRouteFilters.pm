@@ -2,7 +2,7 @@ package Azure::NetworkManagement::ListRouteFilters;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-08-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

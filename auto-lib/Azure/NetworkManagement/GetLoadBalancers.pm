@@ -5,7 +5,7 @@ package Azure::NetworkManagement::GetLoadBalancers;
   has '$expand' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-08-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'loadBalancerName' => (is => 'ro', required => 1, isa => 'Str',

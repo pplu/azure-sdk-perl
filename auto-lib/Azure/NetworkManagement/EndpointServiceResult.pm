@@ -1,4 +1,4 @@
-package Azure::NetworkManagement::PrivateAccessServiceResult;
+package Azure::NetworkManagement::EndpointServiceResult;
   use Moose;
 
   has 'name' => (is => 'ro', isa => 'Str'  );

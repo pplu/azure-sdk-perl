@@ -1,4 +1,4 @@
-package Azure::NetworkManagement::ListLoadBalancersResult;
+package Azure::NetworkManagement::ListNetworkInterfaceLoadBalancersResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );

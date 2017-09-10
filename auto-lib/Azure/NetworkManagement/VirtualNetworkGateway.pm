@@ -14,8 +14,6 @@ package Azure::NetworkManagement::VirtualNetworkGateway;
   has 'gatewayType' => (is => 'ro', isa => 'Str'  );
   has 'ipConfigurations' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::VirtualNetworkGatewayIPConfiguration]'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
-  has 'radiusSecret' => (is => 'ro', isa => 'Str'  );
-  has 'radiusServer' => (is => 'ro', isa => 'Str'  );
   has 'resourceGuid' => (is => 'ro', isa => 'Str'  );
   has 'sku' => (is => 'ro', isa => 'Azure::NetworkManagement::VirtualNetworkGatewaySku'  );
   has 'vpnClientConfiguration' => (is => 'ro', isa => 'Azure::NetworkManagement::VpnClientConfiguration'  );
