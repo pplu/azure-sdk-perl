@@ -1,4 +1,4 @@
-package Azure::ContainerRegistryManagement::CreateOrUpdateReplicationsResult;
+package Azure::ContainerRegistryManagement::UpdateReplicationsResult;
   use Moose;
 
   has id => (is => 'ro', isa => 'Str'  );

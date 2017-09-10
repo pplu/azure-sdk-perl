@@ -1,4 +1,4 @@
-package Azure::ContainerRegistryManagement::CreateOrUpdateReplications;
+package Azure::ContainerRegistryManagement::UpdateReplications;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,11 +8,11 @@ package Azure::ContainerRegistryManagement::CreateOrUpdateReplications;
   has 'registryName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'replication' => (is => 'ro', required => 1, isa => 'Azure::ContainerRegistryManagement::Replication',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'replicationName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'replicationUpdateParameters' => (is => 'ro', required => 1, isa => 'Azure::ContainerRegistryManagement::ReplicationUpdateParameters',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -22,6 +22,6 @@ package Azure::ContainerRegistryManagement::CreateOrUpdateReplications;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ContainerRegistry/registries/{registryName}/replications/{replicationName}');
-  class_has _returns => (is => 'ro', default => 'Azure::ContainerRegistryManagement::CreateOrUpdateReplicationsResult');
-  class_has _api_method => (is => 'ro', default => 'PUT');
+  class_has _returns => (is => 'ro', default => 'Azure::ContainerRegistryManagement::UpdateReplicationsResult');
+  class_has _api_method => (is => 'ro', default => 'PATCH');
 1;
