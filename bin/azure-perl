@@ -19,7 +19,9 @@ use Getopt::Long qw/GetOptionsFromArray/;
 
 my @args = @ARGV;
 
-my $azure = Azure->new;
+my $subs = $ENV{AZURE_SUBSCRIPTION_ID} or die "Please define env AZURE_SUBSCRIPTION_ID";
+
+my $azure = Azure->new();
 
 my $service_name = shift @args;
 if (not defined $service_name) {
@@ -42,6 +44,8 @@ my @opts = (
 GetOptionsFromArray(\@args, $opts, @opts);
 
 my $method_name = shift @args;
+
+$opts->{ subscription_id } = $subs;
 
 if (exists $opts->{caller}) {
   Azure->load_class($opts->{ caller });
