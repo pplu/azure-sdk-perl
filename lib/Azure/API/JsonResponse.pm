@@ -36,7 +36,7 @@ package Azure::API::JsonResponse;
     my ($self, $call_object, $response) = @_;
 
     if ($response->content) {
-      my $struct = eval { $self->unserialize_response };
+      my $struct = eval { $self->unserialize_response($response) };
 
       # If we could deserialize and there is traces of the error struct
       if (defined $struct and defined $struct->{ error }) {
