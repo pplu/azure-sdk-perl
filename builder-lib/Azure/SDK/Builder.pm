@@ -225,6 +225,7 @@ package Azure::SDK::Builder;
       return $title if ($title eq 'StorageImportExport');
       return $title if ($title eq 'StorageManagement');
       return $title if ($title eq 'AzureAnalysisServices');
+      return $title if ($title eq 'AutomationManagement');
 
       die "Service '$title' has spaces in it's name. Please correct" if ($title =~ m/ /);
 
