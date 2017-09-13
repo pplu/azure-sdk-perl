@@ -36,8 +36,8 @@ package Azure::API::JsonResponse;
 
     if (defined $struct->{ error }) {
       Azure::Exception->throw(
-        code    => $struct->{ error }->{ code } // 'UnknownCode',
-        message => $struct->{ error }->{ message } // 'Unknown error message',
+        code    => $struct->{ error }->{ code } // 'UnspecifiedErrorCode',
+        message => $struct->{ error }->{ message } // 'No error message specified by server',
         http_status => $http_status,
       );
     } else {
