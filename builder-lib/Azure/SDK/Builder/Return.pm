@@ -3,6 +3,7 @@ package Azure::SDK::Builder::Return;
   extends 'Swagger::Schema::Schema';
 
   has name => (is => 'ro', isa => 'Str', required => 1);
+  has service => (is => 'ro', isa => 'Str', required => 1);
 
   use Azure::SDK::Builder::Property;
 
@@ -15,6 +16,14 @@ package Azure::SDK::Builder::Return;
     weak_ref => 1,
     required => 1,
   );
+
+  has fully_namespaced => (is => 'ro', lazy => 1, isa => 'Str', default => sub {
+    my $self = shift;
+    sprintf '%s::%s::%s',
+      $self->root_schema->sdk_namespace,
+      $self->service,
+      $self->name
+  });
 
   sub get_attributes_from_properties {
     my ($self, $object) = @_;

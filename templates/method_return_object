@@ -1,5 +1,5 @@
 [% ret = method.return -%]
-package Azure::[% ret.name %];
+package [% ret.fully_namespaced %];
   use Moose;
 
   [%- FOREACH property = ret.attributes %]

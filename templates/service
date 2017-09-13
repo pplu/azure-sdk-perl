@@ -1,4 +1,4 @@
-package Azure::[% c.service %];
+package [% c.sdk_namespace %]::[% c.service %];
   use Moose;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';

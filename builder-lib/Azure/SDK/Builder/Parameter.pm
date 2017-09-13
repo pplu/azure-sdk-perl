@@ -5,6 +5,7 @@ package Azure::SDK::Builder::Parameter;
 
   has ref => (is => 'ro', isa => 'Str');
   has type => (is => 'ro', isa => 'Str');
+  has service => (is => 'ro', isa => 'Str', required => 1);
 
   has root_schema => (
     is => 'ro',
@@ -32,6 +33,14 @@ package Azure::SDK::Builder::Parameter;
       return $name;
     }
   );
+
+  has fully_namespaced => (is => 'ro', lazy => 1, isa => 'Str', default => sub {
+    my $self = shift;
+    sprintf '%s::%s::%s',
+      $self->root_schema->sdk_namespace,
+      $self->service,
+      $self->name
+  });
 
   has in_trait => (
     is => 'ro',

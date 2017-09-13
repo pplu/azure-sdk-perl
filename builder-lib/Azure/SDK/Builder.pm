@@ -113,11 +113,6 @@ package Azure::SDK::Builder;
     }
   }
 
-  sub namespace {
-    my ($self, $thing) = @_;
-    return $self->service . '::' . $thing;
-  }
-
   has methods => (
     is => 'ro',
     isa => 'HashRef',
@@ -132,13 +127,16 @@ package Azure::SDK::Builder;
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
           my $operationId = $self->operationId_to_methodname($operation->operationId);
 
+          die "$operationId has already been declared. The source was " . $operation->operationId if (defined $methods{ $operationId });
+
           $methods{ $operationId } =
             Azure::SDK::Builder::Method->new(
               %$operation,
               path => $path,
               root_schema => $self,
               method => uc($http_verb),
-              name => $self->namespace($operationId),
+              service => $self->service,
+              name => $operationId,
               common_parameters => $common_parameters,
             );
         }
@@ -146,6 +144,16 @@ package Azure::SDK::Builder;
       return \%methods;
     }
   );
+
+  sub object_for_path {
+    my ($self, $path) = @_;
+    if (my ($second) = ($path =~ m/definitions\/(.*)$/)){
+      my $obj_name = $self->definitionname_to_objectname($second);
+      return $self->objects->{ $obj_name };
+    } else {
+      die "$path is not for an object";
+    }
+  }
 
   has objects => (
     is => 'ro',
@@ -161,11 +169,14 @@ package Azure::SDK::Builder;
         my $object = $self->schema->definitions->{ $ob_name };
         $object = $self->resolve_path($object->ref) if (defined $object->ref);
 
-        $objects{ $ob_name } = 
+        my $def_name = $self->definitionname_to_objectname($ob_name);
+
+        $objects{ $def_name } = 
           Azure::SDK::Builder::Object->new(
             %$object,
             root_schema => $self,
-            name => $self->namespace($ob_name),
+            service => $self->service,
+            name => $def_name,
           );
       }
 
@@ -250,6 +261,12 @@ package Azure::SDK::Builder;
     my ($first, $second) = $self->path_parts($final_path);
     #die "Can't find $final_path in objects" if ($first ne 'objects');
 
+    $second = $self->definitionname_to_objectname($second);
+
+    if (not defined $final_objects->{ $second }){
+      $self->log->warn("Can't find an object object_for_ref for $ref: nothing found in $first called $second");
+    }
+
     return $final_objects->{ $second };
   }
 
@@ -272,6 +289,12 @@ package Azure::SDK::Builder;
     }
 
     my ($first, $second) = $self->path_parts($final_path);
+
+    die "Nothing under $final_schema $first" if (not defined $final_schema->$first);
+
+    if (not defined $final_schema->$first->{ $second }) {
+      $self->log->warn("Can't resolve_path for $path: nothing found in $first called $second");
+    }
 
     return $final_schema->$first->{ $second };
   }
