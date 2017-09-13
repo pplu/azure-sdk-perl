@@ -77,6 +77,16 @@ package Azure::SDK::Builder;
     write_file($f, $output);
   }
 
+  sub definitionname_to_objectname {
+    my ($self, $name) = @_;
+    
+    die "Strange characters in definition name $name" if ($name !~ m/\w(?:\w|\d)+/);
+
+    # By default we don't touch the name. If someone wants to
+    # rewrite the name, they can "around" this method
+    return $name;
+  }
+
   sub operationId_to_methodname {
     my ($self, $id) = @_;
     if (my ($p1, $p2) = ($id =~ m/(.*)_(.*)/)) {
