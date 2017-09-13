@@ -34,11 +34,13 @@ package Azure::API::Caller;
 
   has response_to_object => (
     is => 'ro',
-    default => sub {
-      Azure::API::JsonResponse->new;
-    }
+    builder => '_response_to_object_builder',
   );
-  
+ 
+  sub _response_to_object_builder {
+    Azure::API::JsonResponse->new;
+  }
+ 
   sub new_with_coercions {
     my ($self, $class, $params) = @_;
 
