@@ -10,52 +10,58 @@ package Azure::API::JsonResponse;
     my $content = $response->content;
     my $headers = $response->headers;
 
-    my $ret_class = $call_object->meta->name->_returns;
-
-    my $unserialized_struct;
-    $unserialized_struct = $self->unserialize_response($content);
-
     if ( $http_status >= 300 ) {
-        return $self->error_to_exception($unserialized_struct, $call_object, $http_status, $content, $headers);
+        return $self->error_to_exception($call_object, $response);
     } else {
-        return $self->response_to_object($unserialized_struct, $call_object, $http_status, $content, $headers);
+        return $self->response_to_object($call_object, $response);
     }
   }
 
   sub unserialize_response {
-    my ($self, $data) = @_;
+    my ($self, $response) = @_;
 
-    return {} if ($data eq '');
-
-    my $json = decode_json( $data );
-    return $json;
+    my $struct = eval { decode_json( $response->content ) };
+    if ($@) {
+      return Paws::Exception->new(
+        message => $@,
+        code => 'InvalidContent',
+        request_id => '',
+        http_status => $response->status,
+      );
+    }
+    return $struct;
   }
 
   sub error_to_exception {
-    my ($self, $struct, $call_object, $http_status, $content, $headers) = @_;
+    my ($self, $call_object, $response) = @_;
 
-    if (defined $struct->{ error }) {
-      Azure::Exception->throw(
-        code    => $struct->{ error }->{ code } // 'UnspecifiedErrorCode',
-        message => $struct->{ error }->{ message } // 'No error message specified by server',
-        http_status => $http_status,
-      );
-    } else {
-      Azure::Exception->throw(
-        code => 'Http' . $http_status,
-        message => 'Got an HTTP ' . $http_status . ' code',
-        http_status => $http_status,
-      );
+    if ($response->content) {
+      my $struct = eval { $self->unserialize_response };
+
+      # If we could deserialize and there is traces of the error struct
+      if (defined $struct and defined $struct->{ error }) {
+        Azure::Exception->throw(
+          code    => $struct->{ error }->{ code } // 'UnspecifiedErrorCode',
+          message => $struct->{ error }->{ message } // 'No error message specified by server',
+          http_status => $response->status,
+        );
+      } 
     }
+    Azure::Exception->throw(
+      code => 'HTTP' . $response->status,
+      message => 'Got an HTTP ' . $response->status . ' code',
+      http_status => $response->status,
+    );
   }
 
   sub response_to_object {
-    my ($self, $unserialized_struct, $call_object, $http_status, $content, $headers) = @_;
+    my ($self, $call_object, $response) = @_;
 
     $call_object = $call_object->meta->name;
 
     if ($call_object->_returns){
       Azure->load_class($call_object->_returns);
+      my $unserialized_struct = $self->unserialize_response($response);
       my $o_result = $self->new_from_struct($call_object->_returns, $unserialized_struct);
       return $o_result;
     } else {
