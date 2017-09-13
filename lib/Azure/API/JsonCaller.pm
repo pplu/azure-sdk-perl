@@ -2,7 +2,6 @@ package Azure::API::JsonCaller;
   use Moose::Role;
   use JSON::MaybeXS;
   use URI::Template;
-  use POSIX qw(strftime);
 
   sub _is_internal_type {
     my ($self, $att_type) = @_;
