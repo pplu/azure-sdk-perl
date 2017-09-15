@@ -22,7 +22,7 @@ package Azure::API::JsonResponse;
 
     my $struct = eval { decode_json( $response->content ) };
     if ($@) {
-      return Paws::Exception->new(
+      return Azure::Exception->new(
         message => $@,
         code => 'InvalidContent',
         request_id => '',
