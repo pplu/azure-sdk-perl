@@ -64,6 +64,7 @@ package Azure::ExampleService::Object {
   has bool => (is => 'ro', isa => 'Bool');
   has subobj => (is => 'ro', isa => 'Azure::ExampleService::SubObject');
   has arrayofstr => (is => 'ro', isa => 'ArrayRef[Str]');
+  has arrayofsubobj => (is => 'ro', isa => 'ArrayRef[Azure::ExampleService::SubObject]');
   has hashref => (is => 'ro', isa => 'HashRef');
 }
 package Azure::ExampleService::Method2 {
@@ -162,6 +163,7 @@ throws_ok(
       bool => 1,
       subobj => { str => 'strval2' },
       arrayofstr => [ 'Str1', 'Str2' ],
+      arrayofsubobj => [ { str => 'obj1' }, { str => 'obj2' } ],
       hashref => { k1 => 'v1', k2 => 'v2' },
     },  
   );
@@ -179,6 +181,7 @@ throws_ok(
   is_deeply($struct->{ subobj }, { str => 'strval2' });
   is_deeply($struct->{ arrayofstr }, [ 'Str1', 'Str2' ]);
   is_deeply($struct->{ hashref }, { k1 => 'v1', k2 => 'v2' });
+  is_deeply($struct->{ arrayofsubobj }, [ { str => 'obj1' }, { str => 'obj2' } ]);
 }
 
 done_testing;
