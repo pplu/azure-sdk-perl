@@ -57,6 +57,20 @@ package Azure::API::Caller;
 
       if ($class_att->type_constraint->is_a_type_of('Object')){
         $args{ $att_name } = $self->new_with_coercions($class_att->type_constraint->class, $params->{ $att_name });
+      } elsif ($class_att->type_constraint->is_a_type_of('ArrayRef')) {
+        my $inner_type = $class_att->type_constraint->type_parameter;
+        if ($inner_type->is_a_type_of('Object')){
+          $args{ $att_name } = [ map { $self->new_with_coercions($inner_type->name, $_) } @{ $params->{ $att_name } } ];
+        } else {
+          $args{ $att_name } = $params->{ $att_name };
+        }
+      } elsif ($class_att->type_constraint->is_a_type_of('HashRef')) {
+        #my $inner_type = $class_att->type_constraint->type_parameter;
+        #if ($inner_type->is_a_type_of('Object')){
+        #  $args{ $att_name } = { map { ($_ => $self->new_with_coercions($inner_type->name, $params->{$_})) } keys %{ $params->{ $att_name } } };
+        #} else {
+          $args{ $att_name } = $params->{ $att_name };
+        #}
       } else {
         $args{ $att_name } = $params->{ $att_name };
       }
@@ -89,6 +103,11 @@ package Azure::API::Caller;
           } else {
             $refHash->{ $key } = [ map { $self->to_hash($_) } @{ $params->$att } ];
           }
+        } elsif ($att_type eq 'HashRef') {
+          $refHash->{ $key } = $params->$att;
+        } elsif ($att_type eq 'Any') {
+          use Data::Dumper;
+          $refHash->{ $key } = Dumper($params->$att);
         } elsif ($att_type->isa('Moose::Meta::TypeConstraint::Enum')) {
           $refHash->{ $key } = $params->$att;
         } else {

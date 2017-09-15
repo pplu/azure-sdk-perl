@@ -29,12 +29,10 @@ package Azure::API::JsonCaller;
           if ($self->_is_internal_type($internal_type)){
             $p{ $key } = $params->$att;
           } else { 
-            # No arrayrefs of objects yet
-            die "ArrayRefs of non-internal types ($internal_type) not supported";
-            # $p{ $key } = [ map { $self->_to_jsoncaller_params($_) } @{ $params->$att } ];
+            $p{ $key } = [ map { $self->_to_jsoncaller_params($_) } @{ $params->$att } ];
           }
         } elsif ($att_type eq 'HashRef') {
-
+          $p{ $key } = $params->$att;
         } else {
           $p{ $key } = $self->_to_jsoncaller_params($params->$att);
         }
