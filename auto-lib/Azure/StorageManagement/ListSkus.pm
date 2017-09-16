@@ -1,4 +1,4 @@
-package Azure::StorageManagement::ListSKUs;
+package Azure::StorageManagement::ListSkus;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -10,6 +10,6 @@ package Azure::StorageManagement::ListSKUs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Storage/skus');
-  class_has _returns => (is => 'ro', default => 'Azure::StorageManagement::ListSKUsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::StorageManagement::ListSkusResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;
