@@ -27,7 +27,7 @@ package Azure::Policy::ListForResourcePolicyAssignments;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/policyassignments');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/policyAssignments');
   class_has _returns => (is => 'ro', default => 'Azure::Policy::ListForResourcePolicyAssignmentsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;
