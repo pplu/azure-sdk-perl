@@ -1,8 +1,8 @@
-package Azure::NetworkManagement::GetVpnProfilePacakgeUrlVirtualNetworkGateways;
+package Azure::NetworkManagement::GetVpnProfilePackageUrlVirtualNetworkGateways;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-08-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -16,6 +16,6 @@ package Azure::NetworkManagement::GetVpnProfilePacakgeUrlVirtualNetworkGateways;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{virtualNetworkGatewayName}/getvpnprofilepackageurl');
-  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetVpnProfilePacakgeUrlVirtualNetworkGatewaysResult');
+  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetVpnProfilePackageUrlVirtualNetworkGatewaysResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

@@ -10,6 +10,6 @@ package Azure::NetworkManagement::LoadBalancingRulePropertiesFormat;
   has 'idleTimeoutInMinutes' => (is => 'ro', isa => 'Int'  );
   has 'loadDistribution' => (is => 'ro', isa => 'Str'  );
   has 'probe' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
-  has 'protocol' => (is => 'ro', isa => 'Str'  );
+  has 'protocol' => (is => 'ro', isa => 'Azure::NetworkManagement::TransportProtocol'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
 1;

@@ -5,6 +5,6 @@ package Azure::NetworkManagement::InboundNatPoolPropertiesFormat;
   has 'frontendIPConfiguration' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'frontendPortRangeEnd' => (is => 'ro', isa => 'Int'  );
   has 'frontendPortRangeStart' => (is => 'ro', isa => 'Int'  );
-  has 'protocol' => (is => 'ro', isa => 'Str'  );
+  has 'protocol' => (is => 'ro', isa => 'Azure::NetworkManagement::TransportProtocol'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
 1;

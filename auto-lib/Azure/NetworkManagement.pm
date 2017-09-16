@@ -43,6 +43,14 @@ package Azure::NetworkManagement;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateApplicationGateways', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CreateOrUpdateApplicationSecurityGroups {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateApplicationSecurityGroups', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateOrUpdateExpressRouteCircuitAuthorizations {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -217,6 +225,14 @@ package Azure::NetworkManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteApplicationGateways', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteApplicationSecurityGroups {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteApplicationSecurityGroups', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteExpressRouteCircuitAuthorizations {
@@ -417,6 +433,14 @@ package Azure::NetworkManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetApplicationGateways', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetApplicationSecurityGroups {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetApplicationSecurityGroups', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetBgpPeerStatusVirtualNetworkGateways {
@@ -763,12 +787,12 @@ package Azure::NetworkManagement;
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVMSecurityRulesNetworkWatchers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetVpnProfilePacakgeUrlVirtualNetworkGateways {
+  sub GetVpnProfilePackageUrlVirtualNetworkGateways {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVpnProfilePacakgeUrlVirtualNetworkGateways', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVpnProfilePackageUrlVirtualNetworkGateways', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAllApplicationGateways {
@@ -777,6 +801,14 @@ package Azure::NetworkManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllApplicationGateways', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListAllApplicationSecurityGroups {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllApplicationSecurityGroups', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAllExpressRouteCircuits {
@@ -849,6 +881,14 @@ package Azure::NetworkManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListApplicationGateways', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListApplicationSecurityGroups {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListApplicationSecurityGroups', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListArpTableExpressRouteCircuits {
@@ -1308,6 +1348,6 @@ package Azure::NetworkManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/BackendHealthApplicationGateways CheckConnectivityNetworkWatchers CheckDnsNameAvailability CheckIPAddressAvailabilityVirtualNetworks CreateOrUpdateApplicationGateways CreateOrUpdateExpressRouteCircuitAuthorizations CreateOrUpdateExpressRouteCircuitPeerings CreateOrUpdateExpressRouteCircuits CreateOrUpdateInboundNatRules CreateOrUpdateLoadBalancers CreateOrUpdateLocalNetworkGateways CreateOrUpdateNetworkInterfaces CreateOrUpdateNetworkSecurityGroups CreateOrUpdateNetworkWatchers CreateOrUpdatePublicIPAddresses CreateOrUpdateRouteFilterRules CreateOrUpdateRouteFilters CreateOrUpdateRoutes CreateOrUpdateRouteTables CreateOrUpdateSecurityRules CreateOrUpdateSubnets CreateOrUpdateVirtualNetworkGatewayConnections CreateOrUpdateVirtualNetworkGateways CreateOrUpdateVirtualNetworkPeerings CreateOrUpdateVirtualNetworks CreatePacketCaptures DeleteApplicationGateways DeleteExpressRouteCircuitAuthorizations DeleteExpressRouteCircuitPeerings DeleteExpressRouteCircuits DeleteInboundNatRules DeleteLoadBalancers DeleteLocalNetworkGateways DeleteNetworkInterfaces DeleteNetworkSecurityGroups DeleteNetworkWatchers DeletePacketCaptures DeletePublicIPAddresses DeleteRouteFilterRules DeleteRouteFilters DeleteRoutes DeleteRouteTables DeleteSecurityRules DeleteSubnets DeleteVirtualNetworkGatewayConnections DeleteVirtualNetworkGateways DeleteVirtualNetworkPeerings DeleteVirtualNetworks GeneratevpnclientpackageVirtualNetworkGateways GenerateVpnProfileVirtualNetworkGateways GetAdvertisedRoutesVirtualNetworkGateways GetApplicationGateways GetBgpPeerStatusVirtualNetworkGateways GetDefaultSecurityRules GetEffectiveRouteTableNetworkInterfaces GetExpressRouteCircuitAuthorizations GetExpressRouteCircuitPeerings GetExpressRouteCircuits GetFlowLogStatusNetworkWatchers GetInboundNatRules GetLearnedRoutesVirtualNetworkGateways GetLoadBalancerBackendAddressPools GetLoadBalancerFrontendIPConfigurations GetLoadBalancerLoadBalancingRules GetLoadBalancerProbes GetLoadBalancers GetLocalNetworkGateways GetNetworkInterfaceIPConfigurations GetNetworkInterfaces GetNetworkSecurityGroups GetNetworkWatchers GetNextHopNetworkWatchers GetPacketCaptures GetPeeringStatsExpressRouteCircuits GetPublicIPAddresses GetRouteFilterRules GetRouteFilters GetRoutes GetRouteTables GetSecurityRules GetSharedKeyVirtualNetworkGatewayConnections GetSslPredefinedPolicyApplicationGateways GetStatsExpressRouteCircuits GetStatusPacketCaptures GetSubnets GetTopologyNetworkWatchers GetTroubleshootingNetworkWatchers GetTroubleshootingResultNetworkWatchers GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses GetVirtualNetworkGatewayConnections GetVirtualNetworkGateways GetVirtualNetworkPeerings GetVirtualNetworks GetVMSecurityRulesNetworkWatchers GetVpnProfilePacakgeUrlVirtualNetworkGateways ListAllApplicationGateways ListAllExpressRouteCircuits ListAllLoadBalancers ListAllNetworkInterfaces ListAllNetworkSecurityGroups ListAllNetworkWatchers ListAllPublicIPAddresses ListAllRouteTables ListAllVirtualNetworks ListApplicationGateways ListArpTableExpressRouteCircuits ListAvailableEndpointServices ListAvailableSslOptionsApplicationGateways ListAvailableSslPredefinedPoliciesApplicationGateways ListAvailableWafRuleSetsApplicationGateways ListBgpServiceCommunities ListByResourceGroupRouteFilters ListByRouteFilterRouteFilterRules ListConnectionsVirtualNetworkGateways ListDefaultSecurityRules ListEffectiveNetworkSecurityGroupsNetworkInterfaces ListExpressRouteCircuitAuthorizations ListExpressRouteCircuitPeerings ListExpressRouteCircuits ListExpressRouteServiceProviders ListInboundNatRules ListLoadBalancerBackendAddressPools ListLoadBalancerFrontendIPConfigurations ListLoadBalancerLoadBalancingRules ListLoadBalancerNetworkInterfaces ListLoadBalancerProbes ListLoadBalancers ListLocalNetworkGateways ListNetworkInterfaceIPConfigurations ListNetworkInterfaceLoadBalancers ListNetworkInterfaces ListNetworkSecurityGroups ListNetworkWatchers ListPacketCaptures ListPublicIPAddresses ListRouteFilters ListRoutes ListRoutesTableExpressRouteCircuits ListRoutesTableSummaryExpressRouteCircuits ListRouteTables ListSecurityRules ListSubnets ListUsages ListUsageVirtualNetworks ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses ListVirtualNetworkGatewayConnections ListVirtualNetworkGateways ListVirtualNetworkPeerings ListVirtualNetworks ResetSharedKeyVirtualNetworkGatewayConnections ResetVirtualNetworkGateways SetFlowLogConfigurationNetworkWatchers SetSharedKeyVirtualNetworkGatewayConnections StartApplicationGateways StopApplicationGateways StopPacketCaptures UpdateRouteFilterRules UpdateRouteFilters VerifyIPFlowNetworkWatchers / }
+  sub operations { qw/BackendHealthApplicationGateways CheckConnectivityNetworkWatchers CheckDnsNameAvailability CheckIPAddressAvailabilityVirtualNetworks CreateOrUpdateApplicationGateways CreateOrUpdateApplicationSecurityGroups CreateOrUpdateExpressRouteCircuitAuthorizations CreateOrUpdateExpressRouteCircuitPeerings CreateOrUpdateExpressRouteCircuits CreateOrUpdateInboundNatRules CreateOrUpdateLoadBalancers CreateOrUpdateLocalNetworkGateways CreateOrUpdateNetworkInterfaces CreateOrUpdateNetworkSecurityGroups CreateOrUpdateNetworkWatchers CreateOrUpdatePublicIPAddresses CreateOrUpdateRouteFilterRules CreateOrUpdateRouteFilters CreateOrUpdateRoutes CreateOrUpdateRouteTables CreateOrUpdateSecurityRules CreateOrUpdateSubnets CreateOrUpdateVirtualNetworkGatewayConnections CreateOrUpdateVirtualNetworkGateways CreateOrUpdateVirtualNetworkPeerings CreateOrUpdateVirtualNetworks CreatePacketCaptures DeleteApplicationGateways DeleteApplicationSecurityGroups DeleteExpressRouteCircuitAuthorizations DeleteExpressRouteCircuitPeerings DeleteExpressRouteCircuits DeleteInboundNatRules DeleteLoadBalancers DeleteLocalNetworkGateways DeleteNetworkInterfaces DeleteNetworkSecurityGroups DeleteNetworkWatchers DeletePacketCaptures DeletePublicIPAddresses DeleteRouteFilterRules DeleteRouteFilters DeleteRoutes DeleteRouteTables DeleteSecurityRules DeleteSubnets DeleteVirtualNetworkGatewayConnections DeleteVirtualNetworkGateways DeleteVirtualNetworkPeerings DeleteVirtualNetworks GeneratevpnclientpackageVirtualNetworkGateways GenerateVpnProfileVirtualNetworkGateways GetAdvertisedRoutesVirtualNetworkGateways GetApplicationGateways GetApplicationSecurityGroups GetBgpPeerStatusVirtualNetworkGateways GetDefaultSecurityRules GetEffectiveRouteTableNetworkInterfaces GetExpressRouteCircuitAuthorizations GetExpressRouteCircuitPeerings GetExpressRouteCircuits GetFlowLogStatusNetworkWatchers GetInboundNatRules GetLearnedRoutesVirtualNetworkGateways GetLoadBalancerBackendAddressPools GetLoadBalancerFrontendIPConfigurations GetLoadBalancerLoadBalancingRules GetLoadBalancerProbes GetLoadBalancers GetLocalNetworkGateways GetNetworkInterfaceIPConfigurations GetNetworkInterfaces GetNetworkSecurityGroups GetNetworkWatchers GetNextHopNetworkWatchers GetPacketCaptures GetPeeringStatsExpressRouteCircuits GetPublicIPAddresses GetRouteFilterRules GetRouteFilters GetRoutes GetRouteTables GetSecurityRules GetSharedKeyVirtualNetworkGatewayConnections GetSslPredefinedPolicyApplicationGateways GetStatsExpressRouteCircuits GetStatusPacketCaptures GetSubnets GetTopologyNetworkWatchers GetTroubleshootingNetworkWatchers GetTroubleshootingResultNetworkWatchers GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses GetVirtualNetworkGatewayConnections GetVirtualNetworkGateways GetVirtualNetworkPeerings GetVirtualNetworks GetVMSecurityRulesNetworkWatchers GetVpnProfilePackageUrlVirtualNetworkGateways ListAllApplicationGateways ListAllApplicationSecurityGroups ListAllExpressRouteCircuits ListAllLoadBalancers ListAllNetworkInterfaces ListAllNetworkSecurityGroups ListAllNetworkWatchers ListAllPublicIPAddresses ListAllRouteTables ListAllVirtualNetworks ListApplicationGateways ListApplicationSecurityGroups ListArpTableExpressRouteCircuits ListAvailableEndpointServices ListAvailableSslOptionsApplicationGateways ListAvailableSslPredefinedPoliciesApplicationGateways ListAvailableWafRuleSetsApplicationGateways ListBgpServiceCommunities ListByResourceGroupRouteFilters ListByRouteFilterRouteFilterRules ListConnectionsVirtualNetworkGateways ListDefaultSecurityRules ListEffectiveNetworkSecurityGroupsNetworkInterfaces ListExpressRouteCircuitAuthorizations ListExpressRouteCircuitPeerings ListExpressRouteCircuits ListExpressRouteServiceProviders ListInboundNatRules ListLoadBalancerBackendAddressPools ListLoadBalancerFrontendIPConfigurations ListLoadBalancerLoadBalancingRules ListLoadBalancerNetworkInterfaces ListLoadBalancerProbes ListLoadBalancers ListLocalNetworkGateways ListNetworkInterfaceIPConfigurations ListNetworkInterfaceLoadBalancers ListNetworkInterfaces ListNetworkSecurityGroups ListNetworkWatchers ListPacketCaptures ListPublicIPAddresses ListRouteFilters ListRoutes ListRoutesTableExpressRouteCircuits ListRoutesTableSummaryExpressRouteCircuits ListRouteTables ListSecurityRules ListSubnets ListUsages ListUsageVirtualNetworks ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses ListVirtualNetworkGatewayConnections ListVirtualNetworkGateways ListVirtualNetworkPeerings ListVirtualNetworks ResetSharedKeyVirtualNetworkGatewayConnections ResetVirtualNetworkGateways SetFlowLogConfigurationNetworkWatchers SetSharedKeyVirtualNetworkGatewayConnections StartApplicationGateways StopApplicationGateways StopPacketCaptures UpdateRouteFilterRules UpdateRouteFilters VerifyIPFlowNetworkWatchers / }
 
 1;

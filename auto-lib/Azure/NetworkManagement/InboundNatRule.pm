@@ -10,6 +10,6 @@ package Azure::NetworkManagement::InboundNatRule;
   has 'frontendIPConfiguration' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'frontendPort' => (is => 'ro', isa => 'Int'  );
   has 'idleTimeoutInMinutes' => (is => 'ro', isa => 'Int'  );
-  has 'protocol' => (is => 'ro', isa => 'Str'  );
+  has 'protocol' => (is => 'ro', isa => 'Azure::NetworkManagement::TransportProtocol'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );
 1;
