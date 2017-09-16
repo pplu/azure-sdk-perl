@@ -51,6 +51,11 @@ package Azure::MediaServicesManagement;
     my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListKeysMediaService', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListOperations {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListOperations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub RegenerateKeyMediaService {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -76,6 +81,6 @@ package Azure::MediaServicesManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityMediaService CreateMediaService DeleteMediaService GetMediaService ListByResourceGroupMediaService ListKeysMediaService RegenerateKeyMediaService SyncStorageKeysMediaService UpdateMediaService / }
+  sub operations { qw/CheckNameAvailabilityMediaService CreateMediaService DeleteMediaService GetMediaService ListByResourceGroupMediaService ListKeysMediaService ListOperations RegenerateKeyMediaService SyncStorageKeysMediaService UpdateMediaService / }
 
 1;

@@ -2,14 +2,14 @@ package Azure::MediaServicesManagement::RegenerateKeyMediaService;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'RegenerateKeyInput' => (is => 'ro', required => 1, isa => 'Azure::MediaServicesManagement::RegenerateKeyInput',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-10-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'mediaServiceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::MediaServicesManagement::RegenerateKeyInput',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
