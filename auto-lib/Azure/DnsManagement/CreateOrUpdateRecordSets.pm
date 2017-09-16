@@ -8,7 +8,7 @@ package Azure::DnsManagement::CreateOrUpdateRecordSets;
   has 'If-None-Match' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-15-preview',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::DnsManagement::RecordSet',
