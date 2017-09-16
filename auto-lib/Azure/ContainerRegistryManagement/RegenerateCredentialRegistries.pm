@@ -2,7 +2,7 @@ package Azure::ContainerRegistryManagement::RegenerateCredentialRegistries;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-10-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'regenerateCredentialParameters' => (is => 'ro', required => 1, isa => 'Azure::ContainerRegistryManagement::RegenerateCredentialParameters',

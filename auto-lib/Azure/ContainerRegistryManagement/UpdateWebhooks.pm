@@ -2,7 +2,7 @@ package Azure::ContainerRegistryManagement::UpdateWebhooks;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-10-01',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'registryName' => (is => 'ro', required => 1, isa => 'Str',
