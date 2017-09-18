@@ -6,7 +6,8 @@ package Azure::SDK::Builder::Object;
   extends 'Swagger::Schema::Schema';
   use Azure::SDK::Builder::Parameter;
 
-  has name => (is => 'ro', isa => 'Str', required => 1);
+  has name    => (is => 'ro', isa => 'Str', required => 1);
+  has service => (is => 'ro', isa => 'Str', required => 1);
 
   has root_schema => (
     is => 'ro',
@@ -14,6 +15,14 @@ package Azure::SDK::Builder::Object;
     weak_ref => 1,
     required => 1,
   );
+
+  has fully_namespaced => (is => 'ro', lazy => 1, isa => 'Str', default => sub {
+    my $self = shift;
+    sprintf '%s::%s::%s',
+      $self->root_schema->sdk_namespace,
+      $self->service,
+      $self->name
+  });
 
   sub get_attributes_from_properties {
     my ($self, $object) = @_;
@@ -41,13 +50,15 @@ package Azure::SDK::Builder::Object;
       my $type;
       if (defined $props->ref) {
         $props = $root_schema->object_for_ref($props);
-        $type = $props->name;
+        #$type = $props->name;
+        $type = $props->fully_namespaced;
       }
 
       push @$atts, Azure::SDK::Builder::Parameter->new(
         %$props,
         root_schema => $self->root_schema,
         name => $prop_name,
+        service => $self->service,
         (defined $type) ? (type => $type) : (),
       );
     }

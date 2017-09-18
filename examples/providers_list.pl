@@ -7,7 +7,7 @@ use Azure;
 
 my $r = Azure->service('ResourceManagement', subscription_id => $ENV{AZURE_SUBSCRIPTION_ID});
 
-my $ret = $r->ListResources();
+my $ret = $r->ListProviders();
 
 use Data::Dumper;
 print Dumper($ret);

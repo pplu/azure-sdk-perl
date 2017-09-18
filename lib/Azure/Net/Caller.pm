@@ -1,6 +1,7 @@
 package Azure::Net::Caller;
   use Moose;
   use HTTP::Tiny;
+  use Azure::Net::APIResponse;
 
   with 'Azure::Net::CallerRole';
 
@@ -32,15 +33,24 @@ package Azure::Net::Caller;
         (defined $requestObj->content)?(content => $requestObj->content):(),
       }
     );
-    $self->caller_to_response($service, $call_object, $response->{status}, $response->{content}, $response->{headers});
+
+    $self->caller_to_response(
+      $service,
+      $call_object,
+      Azure::Net::APIResponse->new(
+        status => $response->{status},
+        content => $response->{content},
+        headers => $response->{headers},
+      )
+    );
   }
 
   sub caller_to_response {
-    my ($self, $service, $call_object, $status, $content, $headers) = @_;
-    if ($status == 599){
-      return Paws::Exception->throw(message => $content, code => 'ConnectionError', request_id => '');
+    my ($self, $service, $call_object, $response) = @_;
+    if ($response->status == 599){
+      return Paws::Exception->throw(message => $response->content, code => 'ConnectionError', request_id => '');
     } else {
-      return $service->handle_response($call_object, $status, $content, $headers);
+      return $service->response_to_object->process($call_object, $response);
     }
   }
 

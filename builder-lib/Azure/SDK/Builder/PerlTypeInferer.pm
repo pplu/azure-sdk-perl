@@ -45,7 +45,8 @@ package Azure::SDK::Builder::PerlTypeInferer;
             }
           } elsif (defined $self->items->ref) {
             my ($second) = ($self->items->ref =~ m/definitions\/(.*)$/);
-            $inner = sprintf("Azure::%s", $self->root_schema->namespace($second));
+            #$inner = sprintf("%s::%s", $self->root_schema->sdk_namespace, $self->root_schema->namespace($second));
+            $inner = $self->root_schema->object_for_path($self->items->ref)->fully_namespaced;
           }
           return "ArrayRef[$inner]";
         } elsif ($self->type eq 'object') {
@@ -53,7 +54,7 @@ package Azure::SDK::Builder::PerlTypeInferer;
           # type of the values of the hashref
           return 'HashRef';
         } elsif ($self->type =~ m/\:\:/) {
-          return 'Azure::' . $self->type;
+          return $self->type;
         } else {
           $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
           $self->root_schema->log->warn('Can\'t find a Perl type for ' . $self->type);
@@ -62,7 +63,7 @@ package Azure::SDK::Builder::PerlTypeInferer;
       } elsif ($self->can('schema') and defined $self->schema) {
         if (defined $self->schema->ref) {
           my $obj = $self->root_schema->object_for_ref($self->schema);
-          return 'Azure::' . $obj->name;
+          return $obj->fully_namespaced;
         } elsif (defined $self->schema->type) {
           my $type = $self->schema->type;
           my $inner;
@@ -85,30 +86,5 @@ package Azure::SDK::Builder::PerlTypeInferer;
       }
     }
   );
-#      if (not defined $self->type and defined $self->ref){
-#        my (undef, $second) = $self->root_schema->path_parts($self->ref);
-#        return "Azure::" . $self->root_schema->namespace($second);
-#      } elsif ($self->type eq 'string') {
-#        return 'Str';
-#      } elsif ($self->type eq 'boolean') {
-#        return 'Bool';
-#      } elsif ($self->type eq 'array' or defined $self->items) {
-#        #TODO: find out about the inner type for the array
-#        my $inner;
-#        if (defined $self->items->ref) {
-#          my (undef, $second) = $self->root_schema->path_parts($self->items->ref);
-#          $inner = sprintf("Azure::%s", $self->root_schema->namespace($second));
-#        } elsif (defined $self->items->type) {
-#          $inner = $self->items->type;
-#        } else {
-#          my $type = $self->items->type;
-#          if ($type eq 'string'){
-#            $inner = 'Str';
-#          } else {
-#            die "Find out what Moose native type for $type";
-#          }
-#        }
-#
-#        return "ArrayRef[$inner]";
 
 1;

@@ -4,24 +4,9 @@ use warnings;
 use strict;
 
 use Azure;
-use Feature;
-use ResourceManagement;
+my $r = Azure->service('ResourceManagement', subscription_id => $ENV{AZURE_SUBSCRIPTION_ID});
 
-use Azure::Net::Caller;
-
-my $r = ResourceManagement->new(
-  caller => Azure::Net::Caller->new,
-  credentials => Azure::Credentials::AzureADClientCredentials->new(
-    tenant_id => $ENV{AZURE_TENANT_ID},
-    client_id => $ENV{AZURE_CLIENT_ID},
-    secret_id => $ENV{AZURE_SECRET_ID},
-  ),
-);
-
-my $ret = $r->ListResourceGroups(
-  'api-version' => '2016-02-01',
-  subscriptionId => $ENV{AZURE_SUBSCRIPTION_ID},
-);
+my $ret = $r->ListResourceGroups();
 
 use Data::Dumper;
 print Dumper($ret);

@@ -7,8 +7,17 @@ package Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::Return;
 
   has name => (is => 'ro', isa => 'Str', required => 1);
+  has service => (is => 'ro', isa => 'Str', required => 1);
   has path => (is => 'ro', isa => 'Str', required => 1);
   has method => (is => 'ro', isa => 'Str', required => 1);
+
+  has fully_namespaced => (is => 'ro', lazy => 1, isa => 'Str', default => sub {
+    my $self = shift;
+    sprintf '%s::%s::%s',
+      $self->root_schema->sdk_namespace,
+      $self->service,
+      $self->name
+  });
 
   has root_schema => (
     is => 'ro',
@@ -124,6 +133,7 @@ package Azure::SDK::Builder::Method;
           %$definition,
           name => $self->name . 'Result',
           root_schema => $root_schema,
+          service => $self->service,
         );
         return $return;
       } else {

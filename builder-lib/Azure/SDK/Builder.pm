@@ -46,6 +46,16 @@ package Azure::SDK::Builder;
     }
   );
 
+  sub definitionname_to_objectname {
+    my ($self, $name) = @_;
+    
+    die "Strange characters in definition name $name" if ($name !~ m/\w(?:\w|\d)+/);
+
+    # By default we don't touch the name. If someone wants to
+    # rewrite the name, they can "around" this method
+    return $name;
+  }
+
   sub operationId_to_methodname {
     my ($self, $id) = @_;
     if (my ($p1, $p2) = ($id =~ m/(.*)_(.*)/)) {
@@ -83,11 +93,6 @@ package Azure::SDK::Builder;
     }
   }
 
-  sub namespace {
-    my ($self, $thing) = @_;
-    return $self->service . '::' . $thing;
-  }
-
   has methods => (
     is => 'ro',
     isa => 'HashRef',
@@ -102,13 +107,16 @@ package Azure::SDK::Builder;
           my $operation = $self->schema->paths->{ $path }->{ $http_verb };
           my $operationId = $self->operationId_to_methodname($operation->operationId);
 
+          die "$operationId has already been declared. The source was " . $operation->operationId if (defined $methods{ $operationId });
+
           $methods{ $operationId } =
             Azure::SDK::Builder::Method->new(
               %$operation,
               path => $path,
               root_schema => $self,
               method => uc($http_verb),
-              name => $self->namespace($operationId),
+              service => $self->service,
+              name => $operationId,
               common_parameters => $common_parameters,
             );
         }
@@ -116,6 +124,16 @@ package Azure::SDK::Builder;
       return \%methods;
     }
   );
+
+  sub object_for_path {
+    my ($self, $path) = @_;
+    if (my ($second) = ($path =~ m/definitions\/(.*)$/)){
+      my $obj_name = $self->definitionname_to_objectname($second);
+      return $self->objects->{ $obj_name };
+    } else {
+      die "$path is not for an object";
+    }
+  }
 
   has objects => (
     is => 'ro',
@@ -137,11 +155,14 @@ package Azure::SDK::Builder;
           $root_schema = $path->schema;
         }
 
-        $objects{ $ob_name } = 
+        my $def_name = $self->definitionname_to_objectname($ob_name);
+
+        $objects{ $def_name } = 
           Azure::SDK::Builder::Object->new(
             %$object,
             root_schema => $root_schema,
-            name => $self->namespace($ob_name),
+            service => $self->service,
+            name => $def_name,
           );
       }
 
@@ -236,6 +257,12 @@ package Azure::SDK::Builder;
 
     my ($first, $second) = $self->path_parts($final_path);
     #die "Can't find $final_path in objects" if ($first ne 'objects');
+
+    $second = $self->definitionname_to_objectname($second);
+
+    if (not defined $final_objects->{ $second }){
+      $self->log->warn("Can't find an object object_for_ref for $ref: nothing found in $first called $second");
+    }
 
     return $final_objects->{ $second };
   }

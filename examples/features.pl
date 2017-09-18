@@ -4,19 +4,13 @@ use warnings;
 use strict;
 
 use Azure;
-use Feature;
 
-use Azure::Net::Caller;
-
-my $f = Feature->new(
-  caller => Azure::Net::Caller->new,
-  credentials => Azure::Credentials::AzureADClientCredentials->new(),
+my $f = Azure->service(
+  'Feature',
+  subscription_id => $ENV{AZURE_SUBSCRIPTION_ID},
 );
 
-my $ret = $f->ListAllFeatures(
-  'api-version' => '2015-12-01',
-  subscriptionId => $ENV{AZURE_SUBSCRIPTION_ID},
-);
+my $ret = $f->ListAllFeatures();
 
 use Data::Dumper;
 print Dumper($ret);
