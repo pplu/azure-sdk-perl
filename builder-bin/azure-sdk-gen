@@ -13,25 +13,8 @@ $|=1;
 
 my @files = @ARGV;
 
-if (@files == 0) {
-  #azure-rest-api-specs/specification/cosmos-db/resource-manager/Microsoft.DocumentDB/2015-04-08/
-  my @apis = sort grep { -d $_ } glob("azure-rest-api-specs/specification/*");
-
-  @apis = map { grep { -d $_ } glob("$_/resource-manager/*") } @apis;
-
-  my @last_apis;
-  foreach my $api_dir (@apis) {
-    my @dirs = reverse sort grep { -d $_ } glob("$api_dir/*");
-
-    my $builder = Azure::SDK::MultiBuilder->new(
-      files => [ grep { -f $_ } glob("$dirs[0]/*.json") ]
-    );
-    $builder->build;
-  }
-} else {
-  my $builder = Azure::SDK::MultiBuilder->new(
-    files => \@files,
-  );
-  $builder->build;
-}
-
+die "Usage: $0 file1 [file2 file3]" if (not @files);
+my $builder = Azure::SDK::MultiBuilder->new(
+  files => \@files,
+);
+$builder->build;
