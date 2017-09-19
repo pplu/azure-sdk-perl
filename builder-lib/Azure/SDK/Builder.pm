@@ -6,6 +6,7 @@ package Azure::SDK::Builder::Path;
   use Moose;
   has object => (is => 'ro', required => 1);
   has schema => (is => 'ro', required => 1, isa => 'Azure::SDK::Builder');
+  has path   => (is => 'ro', required => 1);
 
 package Azure::SDK::Builder;
   use v5.10;
@@ -42,6 +43,8 @@ package Azure::SDK::Builder;
     default => sub {
       my $self = shift;
       my $data = file($self->schema_file)->slurp;
+      Azure::SDK::Builder::Error->throw("Couldn't read file " . $self->schema_file) if (not defined $data);
+      $data =~ s/^\xEF\xBB\xBF//;
       return Swagger::Schema->MooseX::DataModel::new_from_json($data);
     }
   );
@@ -86,6 +89,11 @@ package Azure::SDK::Builder;
       return $id if ($id eq 'ListSupportedOperations');
       # KeyVault names don't have to be transformed
       return $id if ($self->schema->info->title eq 'KeyVaultClient');
+
+      # Cognitive Text Analytics
+      return 'KeyPhrases' if ($id eq 'Key Phrases');
+      return 'DetectLanguage' if ($id eq 'Detect Language');
+      return 'Sentiment' if ($id eq 'Sentiment');
 
       return 'GetAvailableOperations' if ($id eq 'getAvailableOperations');
 
@@ -180,6 +188,9 @@ package Azure::SDK::Builder;
       # ./src/ResourceManagement/Compute/ComputeManagement/ComputeManagementClient.json
       my ($service) = ($title =~ m/^(.*)Client$/);
 
+      return 'ComputeManagement' if ($title eq 'ComputeManagementClient');
+      return 'ComputeManagement' if ($title eq 'DiskResourceProviderClient');
+      return 'ComputeManagement' if ($title eq 'RunCommandsClient');
       return 'EngagementManagement' if ($title eq 'Engagement.ManagementClient'); 
       return 'MLWebServicesManagement' if ($title eq 'Azure ML Web Services Management Client');
       return 'MLCommitmentPlansManagement' if ($title eq 'Azure ML Commitment Plans Management Client');
@@ -203,6 +214,9 @@ package Azure::SDK::Builder;
       return 'VisualStudio' if ($title eq 'Visual Studio Resource Provider Client');
       return 'Relay' if ($title eq 'Relay API');
       return 'CognitiveFace' if ($title eq 'Face API');
+      return 'CongitiveTextAnalytics' if ($title eq 'Text Analytics API');
+      return 'MarketplaceOrdering' if ($title eq 'MarketplaceOrdering.Agreements');
+      return 'LogAnalytics' if ($title eq 'Azure Log Analytics - Operations Management');
 
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
@@ -227,72 +241,64 @@ package Azure::SDK::Builder;
     return ($parts[1], $parts[2]);
   }
 
-  has _file_objects_cache => (
+  sub object_for_ref {
+    my ($self, $ref) = @_;
+
+    $self->log->debug("Object for ref: $ref " . $ref->ref);
+    my $path = $self->resolve_path($ref->ref);
+    my $objects = $self->objects;
+    my $final_path = $path->path;
+
+    my ($first, $second) = $self->path_parts($path->path);
+    Azure::SDK::Builder::Error->throw("Can't process $final_path in objects because path is not a definitions path") if ($first ne 'definitions');
+
+    my $object = $path->schema->objects->{ $second };
+    Azure::SDK::Builder::Error->throw("Can't find $final_path in objects") if (not defined $object);
+    return $object;
+  }
+
+  has _file_refs_cache => (
     is => 'rw',
     isa => 'HashRef',
     default => sub { { } },
   );
 
-  sub object_for_ref {
-    my ($self, $ref) = @_;
-
-    my $final_path = $ref->ref;
-    my $final_objects = $self->objects;
-
-    # When the path is './network.json#/objects/Resource' we have to look in
-    # network.json
-    if (my ($find_path_in_file, $rest_of_path) = ($final_path =~ m/^\.\/(.*?)#(.*)/)) {
-      if (defined $self->_file_objects_cache->{ $find_path_in_file }) {
-        $final_objects = $self->_file_objects_cache->{ $find_path_in_file };
-      } else {
-        # Strip file off the end, so we can concatenate the file in the path
-        my $file = file($self->schema_file)->dir;
-        $file .= "/$find_path_in_file";
-
-        $final_objects = Azure::SDK::Builder->new(schema_file => $file)->objects;
-        $self->_file_objects_cache->{ $find_path_in_file } = $final_objects;
-      }
-      $final_path = "#$rest_of_path";
-    }
-
-    my ($first, $second) = $self->path_parts($final_path);
-    #die "Can't find $final_path in objects" if ($first ne 'objects');
-
-    $second = $self->definitionname_to_objectname($second);
-
-    if (not defined $final_objects->{ $second }){
-      $self->log->warn("Can't find an object object_for_ref for $ref: nothing found in $first called $second");
-    }
-
-    return $final_objects->{ $second };
-  }
-
   sub resolve_path {
     my ($self, $path) = @_;
 
+    $self->log->debug("Resolving $path");
+
     my $final_path = $path;
-    my $final_schema = $self->schema;
+    my $final_schema = $self;
 
     # When the path is './network.json#/definitions/Resource' we have to look in
     # network.json
-    if (my ($find_path_in_file, $rest_of_path) = ($path =~ m/^\.\/(.*?)#(.*)/)) {
-      # Strip file off the end, so we can concatenate the file in the path
-      my $def_file = file($self->schema_file);
-      $def_file = $def_file->dir;
-      $def_file .= "/$find_path_in_file";
-
+    if (my ($find_path_in_file, $rest_of_path) = ($path =~ m/^(.+?)#(.*)/)) {
       $final_path = "#$rest_of_path";
-      $final_schema = Azure::SDK::Builder->new(schema_file => $def_file);
+
+      if (defined $self->_file_refs_cache->{ $find_path_in_file }) {
+        $final_schema = $self->_file_refs_cache->{ $find_path_in_file };
+      } else {
+        # Strip file off the end, so we can concatenate the file in the path
+        my $def_file = file($self->schema_file);
+        $def_file = $def_file->dir;
+        $def_file .= "/$find_path_in_file";
+
+        $final_schema = Azure::SDK::Builder->new(schema_file => $def_file);
+
+        $self->_file_refs_cache->{ $find_path_in_file } = $final_schema;
+      }
     }
 
     my ($first, $second) = $self->path_parts($final_path);
     my $object = $final_schema->schema->$first->{ $second };
 
-    Azure::SDK::Builder::Error->throw("Cannot resolve path $path") if (not defined $object);
+    Azure::SDK::Builder::Error->throw("Cannot resolve path $path in " . $final_schema->schema_file) if (not defined $object);
 
     return Azure::SDK::Builder::Path->new(
       object => $object,
       schema => $final_schema,
+      path => $final_path,
     );
   }
 

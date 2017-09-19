@@ -8,6 +8,7 @@ package Azure::SDK::Builder::Object;
 
   has name    => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);
+  has x_ms_client_flatten => (is => 'ro');
 
   has root_schema => (
     is => 'ro',
@@ -41,6 +42,7 @@ package Azure::SDK::Builder::Object;
     my $properties = $object->properties;
     foreach my $prop_name (sort keys %$properties){
       my $props = $properties->{ $prop_name };
+      my $prop_root_schema = $root_schema;
 
       if ($props->x_ms_client_flatten) {
         push @to_flatten, $props;
@@ -50,13 +52,13 @@ package Azure::SDK::Builder::Object;
       my $type;
       if (defined $props->ref) {
         $props = $root_schema->object_for_ref($props);
-        #$type = $props->name;
-        $type = $props->fully_namespaced;
+        $type = $props->name;
+        $prop_root_schema = $props->root_schema;
       }
 
       push @$atts, Azure::SDK::Builder::Parameter->new(
         %$props,
-        root_schema => $self->root_schema,
+        root_schema => $prop_root_schema,
         name => $prop_name,
         service => $self->service,
         (defined $type) ? (type => $type) : (),

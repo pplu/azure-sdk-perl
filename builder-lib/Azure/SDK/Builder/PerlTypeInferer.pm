@@ -44,21 +44,30 @@ package Azure::SDK::Builder::PerlTypeInferer;
               $self->root_schema->log->warn("Find out what Moose native type for $type");
             }
           } elsif (defined $self->items->ref) {
-            my ($second) = ($self->items->ref =~ m/definitions\/(.*)$/);
-            #$inner = sprintf("%s::%s", $self->root_schema->sdk_namespace, $self->root_schema->namespace($second));
             $inner = $self->root_schema->object_for_path($self->items->ref)->fully_namespaced;
           }
           return "ArrayRef[$inner]";
         } elsif ($self->type eq 'object') {
-          #TODO: additionalProperties->type should contain the
-          # type of the values of the hashref
-          return 'HashRef';
-        } elsif ($self->type =~ m/\:\:/) {
-          return $self->type;
+          # the existence of additionalProperties indicates that the object is a map of arbitrary keys to values
+          if (defined $self->additionalProperties) {
+            if (defined $self->additionalProperties->ref) {
+              my $inner = $self->root_schema->object_for_path($self->additionalProperties->ref)->fully_namespaced;
+              return "HashRef[$inner]";
+            }
+            return 'HashRef[Str]' if ($self->additionalProperties->type eq 'string');
+            return 'HashRef[Num]' if ($self->additionalProperties->type eq 'number');
+            return 'HashRef[HashRef]' if ($self->additionalProperties->type eq 'object');
+            if ($self->additionalProperties->type eq 'array') {
+              my $items = $self->additionalProperties->items;
+              return 'HashRef[ArrayRef[Str]' if ($items->type eq 'string');
+              return 'HashRef[ArrayRef[ArrayRef[HashRef]]]' if ($items->type eq 'array' and $items->items->type eq 'object');
+            } 
+            die "Unknown HashRef type " . $self->additionalProperties->type;
+          } else {
+            return $self->fully_namespaced;
+          }
         } else {
-          $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
-          $self->root_schema->log->warn('Can\'t find a Perl type for ' . $self->type);
-          return 'Any'
+          return $self->fully_namespaced;
         }
       } elsif ($self->can('schema') and defined $self->schema) {
         if (defined $self->schema->ref) {
@@ -74,13 +83,14 @@ package Azure::SDK::Builder::PerlTypeInferer;
             $inner = 'Int';
           } else {
             $inner = 'Any';
-            $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
+            $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }, "$self"));
             $self->root_schema->log->warn("Find out what Moose type for $type");
           }
           return $inner;
         }
       } else {
         $self->root_schema->log->debug(Dumper({ %$self, root_schema => undef }));
+        $self->root_schema->log->debug($self);
         $self->root_schema->log->warn('Can\'t find a Perl type because self->type and self->schema is undefined on ' . ref($self) );
         return 'Any'
       }
