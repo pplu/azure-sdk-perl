@@ -36,10 +36,11 @@ package Azure::SDK::Builder::Parameter;
 
   has fully_namespaced => (is => 'ro', lazy => 1, isa => 'Str', default => sub {
     my $self = shift;
-    sprintf '%s::%s::%s',
+    die "Don't call fully_namespaced " if (not defined $self->type);
+    return sprintf '%s::%s::%s',
       $self->root_schema->sdk_namespace,
       $self->service,
-      $self->name
+      $self->type;
   });
 
   has in_trait => (
