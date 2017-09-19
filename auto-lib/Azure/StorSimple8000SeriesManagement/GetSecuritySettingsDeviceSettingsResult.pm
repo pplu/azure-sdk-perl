@@ -5,7 +5,7 @@ package Azure::StorSimple8000SeriesManagement::GetSecuritySettingsDeviceSettings
   has kind => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
-  has chapSettings => (is => 'ro', isa => 'HashRef'  );
-  has remoteManagementSettings => (is => 'ro', isa => 'HashRef'  );
+  has chapSettings => (is => 'ro', isa => 'Azure::StorSimple8000SeriesManagement::ChapSettings'  );
+  has remoteManagementSettings => (is => 'ro', isa => 'Azure::StorSimple8000SeriesManagement::RemoteManagementSettings'  );
 
 1;

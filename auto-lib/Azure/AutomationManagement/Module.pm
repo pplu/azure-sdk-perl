@@ -11,7 +11,7 @@ package Azure::AutomationManagement::Module;
   has 'contentLink' => (is => 'ro', isa => 'Azure::AutomationManagement::ContentLink'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
-  has 'error' => (is => 'ro', isa => 'Azure::AutomationManagement::error'  );
+  has 'error' => (is => 'ro', isa => 'Azure::AutomationManagement::ModuleErrorInfo'  );
   has 'isGlobal' => (is => 'ro', isa => 'Bool'  );
   has 'lastModifiedTime' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );

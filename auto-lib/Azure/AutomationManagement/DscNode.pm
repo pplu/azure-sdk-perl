@@ -5,7 +5,7 @@ package Azure::AutomationManagement::DscNode;
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'ip' => (is => 'ro', isa => 'Str'  );
   has 'lastSeen' => (is => 'ro', isa => 'Str'  );
-  has 'nodeConfiguration' => (is => 'ro', isa => 'Azure::AutomationManagement::nodeConfiguration'  );
+  has 'nodeConfiguration' => (is => 'ro', isa => 'Azure::AutomationManagement::DscNodeConfigurationAssociationProperty'  );
   has 'nodeId' => (is => 'ro', isa => 'Str'  );
   has 'registrationTime' => (is => 'ro', isa => 'Str'  );
   has 'status' => (is => 'ro', isa => 'Str'  );

@@ -2,7 +2,7 @@ package Azure::MySQLManagement::ServerUpdateParameters;
   use Moose;
 
   has 'sku' => (is => 'ro', isa => 'Azure::MySQLManagement::Sku'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'administratorLoginPassword' => (is => 'ro', isa => 'Str'  );
   has 'sslEnforcement' => (is => 'ro', isa => 'Azure::MySQLManagement::SslEnforcement'  );
   has 'storageMB' => (is => 'ro', isa => 'Int'  );

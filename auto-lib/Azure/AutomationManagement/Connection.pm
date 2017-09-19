@@ -3,7 +3,7 @@ package Azure::AutomationManagement::Connection;
 
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'connectionType' => (is => 'ro', isa => 'Azure::AutomationManagement::connectionType'  );
+  has 'connectionType' => (is => 'ro', isa => 'Azure::AutomationManagement::ConnectionTypeAssociationProperty'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'fieldDefinitionValues' => (is => 'ro', isa => 'HashRef[Str]'  );

@@ -3,5 +3,5 @@ package Azure::iotHub::EventHubConsumerGroupInfo;
 
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
 1;

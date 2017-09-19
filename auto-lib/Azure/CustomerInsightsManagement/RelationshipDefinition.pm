@@ -2,8 +2,8 @@ package Azure::CustomerInsightsManagement::RelationshipDefinition;
   use Moose;
 
   has 'cardinality' => (is => 'ro', isa => 'Str'  );
-  has 'description' => (is => 'ro', isa => 'HashRef'  );
-  has 'displayName' => (is => 'ro', isa => 'HashRef'  );
+  has 'description' => (is => 'ro', isa => 'HashRef[Str]'  );
+  has 'displayName' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'expiryDateTimeUtc' => (is => 'ro', isa => 'Str'  );
   has 'fields' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::PropertyDefinition]'  );
   has 'lookupMappings' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::RelationshipTypeMapping]'  );

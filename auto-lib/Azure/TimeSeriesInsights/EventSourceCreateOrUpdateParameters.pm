@@ -3,6 +3,6 @@ package Azure::TimeSeriesInsights::EventSourceCreateOrUpdateParameters;
 
   has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'timestampPropertyName' => (is => 'ro', isa => 'Str'  );
 1;

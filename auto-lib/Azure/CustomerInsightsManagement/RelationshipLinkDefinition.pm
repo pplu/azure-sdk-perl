@@ -1,8 +1,8 @@
 package Azure::CustomerInsightsManagement::RelationshipLinkDefinition;
   use Moose;
 
-  has 'description' => (is => 'ro', isa => 'HashRef'  );
-  has 'displayName' => (is => 'ro', isa => 'HashRef'  );
+  has 'description' => (is => 'ro', isa => 'HashRef[Str]'  );
+  has 'displayName' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'interactionType' => (is => 'ro', isa => 'Str'  );
   has 'linkName' => (is => 'ro', isa => 'Str'  );
   has 'mappings' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::RelationshipLinkFieldMapping]'  );

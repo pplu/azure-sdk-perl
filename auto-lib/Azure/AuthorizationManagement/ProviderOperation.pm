@@ -5,5 +5,5 @@ package Azure::AuthorizationManagement::ProviderOperation;
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'origin' => (is => 'ro', isa => 'Str'  );
-  has 'properties' => (is => 'ro', isa => 'HashRef'  );
+  has 'properties' => (is => 'ro', isa => 'Azure::AuthorizationManagement::object'  );
 1;

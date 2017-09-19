@@ -1,7 +1,7 @@
 package Azure::DataLakeAnalyticsAccountManagement::DataLakeAnalyticsAccountUpdateParameters;
   use Moose;
 
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'computePolicies' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::ComputePolicy]'  );
   has 'firewallAllowAzureIps' => (is => 'ro', isa => 'Str'  );
   has 'firewallRules' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsAccountManagement::FirewallRule]'  );

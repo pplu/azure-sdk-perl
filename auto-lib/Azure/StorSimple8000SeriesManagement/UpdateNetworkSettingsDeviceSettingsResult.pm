@@ -5,8 +5,8 @@ package Azure::StorSimple8000SeriesManagement::UpdateNetworkSettingsDeviceSettin
   has kind => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
-  has dnsSettings => (is => 'ro', isa => 'HashRef'  );
-  has networkAdapters => (is => 'ro', isa => 'HashRef'  );
-  has webproxySettings => (is => 'ro', isa => 'HashRef'  );
+  has dnsSettings => (is => 'ro', isa => 'Azure::StorSimple8000SeriesManagement::DNSSettings'  );
+  has networkAdapters => (is => 'ro', isa => 'Azure::StorSimple8000SeriesManagement::NetworkAdapterList'  );
+  has webproxySettings => (is => 'ro', isa => 'Azure::StorSimple8000SeriesManagement::WebproxySettings'  );
 
 1;

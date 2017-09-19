@@ -4,7 +4,7 @@ package Azure::ApiManagement::ApiManagementServiceBaseProperties;
   has 'additionalLocations' => (is => 'ro', isa => 'ArrayRef[Azure::ApiManagement::AdditionalLocation]'  );
   has 'certificates' => (is => 'ro', isa => 'ArrayRef[Azure::ApiManagement::CertificateConfiguration]'  );
   has 'createdAtUtc' => (is => 'ro', isa => 'Str'  );
-  has 'customProperties' => (is => 'ro', isa => 'HashRef'  );
+  has 'customProperties' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'gatewayUrl' => (is => 'ro', isa => 'Str'  );
   has 'hostnameConfigurations' => (is => 'ro', isa => 'ArrayRef[Azure::ApiManagement::HostnameConfiguration]'  );
   has 'managementApiUrl' => (is => 'ro', isa => 'Str'  );

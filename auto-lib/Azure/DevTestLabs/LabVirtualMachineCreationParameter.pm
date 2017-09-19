@@ -3,7 +3,7 @@ package Azure::DevTestLabs::LabVirtualMachineCreationParameter;
 
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'allowClaim' => (is => 'ro', isa => 'Bool'  );
   has 'applicableSchedule' => (is => 'ro', isa => 'Azure::DevTestLabs::ApplicableSchedule'  );
   has 'artifactDeploymentStatus' => (is => 'ro', isa => 'Azure::DevTestLabs::ArtifactDeploymentStatusProperties'  );

@@ -4,6 +4,6 @@ package Azure::LogicManagement::IntegrationAccountCertificateProperties;
   has 'changedTime' => (is => 'ro', isa => 'Str'  );
   has 'createdTime' => (is => 'ro', isa => 'Str'  );
   has 'key' => (is => 'ro', isa => 'Azure::LogicManagement::KeyVaultKeyReference'  );
-  has 'metadata' => (is => 'ro', isa => 'HashRef'  );
+  has 'metadata' => (is => 'ro', isa => 'Azure::LogicManagement::object'  );
   has 'publicCertificate' => (is => 'ro', isa => 'Str'  );
 1;

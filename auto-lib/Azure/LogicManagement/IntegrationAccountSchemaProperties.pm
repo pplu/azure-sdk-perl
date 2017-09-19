@@ -8,7 +8,7 @@ package Azure::LogicManagement::IntegrationAccountSchemaProperties;
   has 'createdTime' => (is => 'ro', isa => 'Str'  );
   has 'documentName' => (is => 'ro', isa => 'Str'  );
   has 'fileName' => (is => 'ro', isa => 'Str'  );
-  has 'metadata' => (is => 'ro', isa => 'HashRef'  );
+  has 'metadata' => (is => 'ro', isa => 'Azure::LogicManagement::object'  );
   has 'schemaType' => (is => 'ro', isa => 'Azure::LogicManagement::SchemaType'  );
   has 'targetNamespace' => (is => 'ro', isa => 'Str'  );
 1;

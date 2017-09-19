@@ -5,7 +5,7 @@ package Azure::NotificationHubsManagement::GetPnsCredentialsNotificationHubsResu
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has sku => (is => 'ro', isa => 'Any'  );
-  has tags => (is => 'ro', isa => 'HashRef'  );
+  has tags => (is => 'ro', isa => 'HashRef[Str]'  );
   has type => (is => 'ro', isa => 'Str'  );
   has admCredential => (is => 'ro', isa => 'Any'  );
   has apnsCredential => (is => 'ro', isa => 'Any'  );

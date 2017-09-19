@@ -9,7 +9,7 @@ package Azure::AutomationManagement::Runbook;
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
-  has 'draft' => (is => 'ro', isa => 'Azure::AutomationManagement::draft'  );
+  has 'draft' => (is => 'ro', isa => 'Azure::AutomationManagement::RunbookDraft'  );
   has 'jobCount' => (is => 'ro', isa => 'Int'  );
   has 'lastModifiedBy' => (is => 'ro', isa => 'Str'  );
   has 'lastModifiedTime' => (is => 'ro', isa => 'Str'  );

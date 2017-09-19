@@ -6,5 +6,5 @@ package Azure::AutomationManagement::JobCreateParameters;
   has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'parameters' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'runOn' => (is => 'ro', isa => 'Str'  );
-  has 'runbook' => (is => 'ro', isa => 'Azure::AutomationManagement::runbook'  );
+  has 'runbook' => (is => 'ro', isa => 'Azure::AutomationManagement::RunbookAssociationProperty'  );
 1;

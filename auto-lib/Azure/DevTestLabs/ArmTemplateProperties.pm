@@ -1,7 +1,7 @@
 package Azure::DevTestLabs::ArmTemplateProperties;
   use Moose;
 
-  has 'contents' => (is => 'ro', isa => 'HashRef'  );
+  has 'contents' => (is => 'ro', isa => 'Azure::DevTestLabs::object'  );
   has 'createdDate' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );

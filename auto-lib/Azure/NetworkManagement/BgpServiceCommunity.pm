@@ -4,7 +4,7 @@ package Azure::NetworkManagement::BgpServiceCommunity;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'bgpCommunities' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::BGPCommunity]'  );
   has 'serviceName' => (is => 'ro', isa => 'Str'  );

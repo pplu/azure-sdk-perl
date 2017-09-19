@@ -1,7 +1,7 @@
 package Azure::AppServiceEnvironments::CloningInfo;
   use Moose;
 
-  has 'appSettingsOverrides' => (is => 'ro', isa => 'HashRef'  );
+  has 'appSettingsOverrides' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'cloneCustomHostNames' => (is => 'ro', isa => 'Bool'  );
   has 'cloneSourceControl' => (is => 'ro', isa => 'Bool'  );
   has 'configureLoadBalancing' => (is => 'ro', isa => 'Bool'  );

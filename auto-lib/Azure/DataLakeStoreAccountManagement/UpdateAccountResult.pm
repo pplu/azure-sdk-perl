@@ -5,7 +5,7 @@ package Azure::DataLakeStoreAccountManagement::UpdateAccountResult;
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has tags => (is => 'ro', isa => 'HashRef'  );
+  has tags => (is => 'ro', isa => 'HashRef[Str]'  );
   has type => (is => 'ro', isa => 'Str'  );
   has currentTier => (is => 'ro', isa => 'Str'  );
   has defaultGroup => (is => 'ro', isa => 'Str'  );

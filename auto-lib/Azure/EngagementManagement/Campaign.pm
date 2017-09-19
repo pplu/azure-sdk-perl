@@ -1,12 +1,12 @@
 package Azure::EngagementManagement::Campaign;
   use Moose;
 
-  has 'audience' => (is => 'ro', isa => 'HashRef'  );
+  has 'audience' => (is => 'ro', isa => 'Azure::EngagementManagement::object'  );
   has 'category' => (is => 'ro', isa => 'Str'  );
   has 'deliveryActivities' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'deliveryTime' => (is => 'ro', isa => 'Str'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
-  has 'localization' => (is => 'ro', isa => 'HashRef'  );
+  has 'localization' => (is => 'ro', isa => 'HashRef[Azure::EngagementManagement::CampaignLocalization]'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'notificationBadge' => (is => 'ro', isa => 'Bool'  );
   has 'notificationCloseable' => (is => 'ro', isa => 'Bool'  );
@@ -27,6 +27,6 @@ package Azure::EngagementManagement::Campaign;
   has 'notificationMessage' => (is => 'ro', isa => 'Str'  );
   has 'notificationOptions' => (is => 'ro', isa => 'Azure::EngagementManagement::NotificationOptions'  );
   has 'notificationTitle' => (is => 'ro', isa => 'Str'  );
-  has 'payload' => (is => 'ro', isa => 'HashRef'  );
+  has 'payload' => (is => 'ro', isa => 'Azure::EngagementManagement::object'  );
   has 'title' => (is => 'ro', isa => 'Str'  );
 1;

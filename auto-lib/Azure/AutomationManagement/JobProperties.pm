@@ -9,7 +9,7 @@ package Azure::AutomationManagement::JobProperties;
   has 'lastStatusModifiedTime' => (is => 'ro', isa => 'Str'  );
   has 'parameters' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'runOn' => (is => 'ro', isa => 'Str'  );
-  has 'runbook' => (is => 'ro', isa => 'Azure::AutomationManagement::runbook'  );
+  has 'runbook' => (is => 'ro', isa => 'Azure::AutomationManagement::RunbookAssociationProperty'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'startedBy' => (is => 'ro', isa => 'Str'  );
   has 'status' => (is => 'ro', isa => 'Str'  );

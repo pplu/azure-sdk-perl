@@ -5,7 +5,7 @@ package Azure::SiteRecoveryManagement::InMageReplicationDetails;
   has 'agentDetails' => (is => 'ro', isa => 'Azure::SiteRecoveryManagement::InMageAgentDetails'  );
   has 'azureStorageAccountId' => (is => 'ro', isa => 'Str'  );
   has 'compressedDataRateInMB' => (is => 'ro', isa => 'Num'  );
-  has 'consistencyPoints' => (is => 'ro', isa => 'HashRef'  );
+  has 'consistencyPoints' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'datastores' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'discoveryType' => (is => 'ro', isa => 'Str'  );
   has 'diskResized' => (is => 'ro', isa => 'Str'  );

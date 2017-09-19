@@ -1,7 +1,7 @@
 package Azure::EngagementManagement::GetStatisticsCampaignsResult;
   use Moose;
 
-  has answers => (is => 'ro', isa => 'HashRef'  );
+  has answers => (is => 'ro', isa => 'HashRef[HashRef]'  );
   has content-actioned => (is => 'ro', isa => 'Int'  );
   has content-displayed => (is => 'ro', isa => 'Int'  );
   has content-exited => (is => 'ro', isa => 'Int'  );

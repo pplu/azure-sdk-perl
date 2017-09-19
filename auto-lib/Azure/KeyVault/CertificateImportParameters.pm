@@ -4,6 +4,6 @@ package Azure::KeyVault::CertificateImportParameters;
   has 'attributes' => (is => 'ro', isa => 'Azure::KeyVault::CertificateAttributes'  );
   has 'policy' => (is => 'ro', isa => 'Azure::KeyVault::CertificatePolicy'  );
   has 'pwd' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'value' => (is => 'ro', isa => 'Str'  );
 1;

@@ -1,7 +1,7 @@
 package Azure::EngagementManagement::GetByUserIdDevicesResult;
   use Moose;
 
-  has appInfo => (is => 'ro', isa => 'HashRef'  );
+  has appInfo => (is => 'ro', isa => 'HashRef[Str]'  );
   has deviceId => (is => 'ro', isa => 'Str'  );
   has info => (is => 'ro', isa => 'Any'  );
   has location => (is => 'ro', isa => 'Any'  );

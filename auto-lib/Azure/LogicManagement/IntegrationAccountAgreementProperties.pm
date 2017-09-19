@@ -9,5 +9,5 @@ package Azure::LogicManagement::IntegrationAccountAgreementProperties;
   has 'guestPartner' => (is => 'ro', isa => 'Str'  );
   has 'hostIdentity' => (is => 'ro', isa => 'Azure::LogicManagement::BusinessIdentity'  );
   has 'hostPartner' => (is => 'ro', isa => 'Str'  );
-  has 'metadata' => (is => 'ro', isa => 'HashRef'  );
+  has 'metadata' => (is => 'ro', isa => 'Azure::LogicManagement::object'  );
 1;

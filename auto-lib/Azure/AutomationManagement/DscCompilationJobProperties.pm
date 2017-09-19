@@ -1,7 +1,7 @@
 package Azure::AutomationManagement::DscCompilationJobProperties;
   use Moose;
 
-  has 'configuration' => (is => 'ro', isa => 'Azure::AutomationManagement::configuration'  );
+  has 'configuration' => (is => 'ro', isa => 'Azure::AutomationManagement::DscConfigurationAssociationProperty'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'exception' => (is => 'ro', isa => 'Str'  );

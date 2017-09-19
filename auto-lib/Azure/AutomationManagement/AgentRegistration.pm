@@ -4,5 +4,5 @@ package Azure::AutomationManagement::AgentRegistration;
   has 'dscMetaConfiguration' => (is => 'ro', isa => 'Str'  );
   has 'endpoint' => (is => 'ro', isa => 'Str'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
-  has 'keys' => (is => 'ro', isa => 'Azure::AutomationManagement::keys'  );
+  has 'keys' => (is => 'ro', isa => 'Azure::AutomationManagement::AgentRegistrationKeys'  );
 1;

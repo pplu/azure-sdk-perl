@@ -1,7 +1,7 @@
 package Azure::ServiceFabricManagement::ClusterUpdateParameters;
   use Moose;
 
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'certificate' => (is => 'ro', isa => 'Azure::ServiceFabricManagement::CertificateDescription'  );
   has 'clientCertificateCommonNames' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::ClientCertificateCommonName]'  );
   has 'clientCertificateThumbprints' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::ClientCertificateThumbprint]'  );

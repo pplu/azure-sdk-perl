@@ -9,12 +9,12 @@ package Azure::ManagedApplication::CreateOrUpdateAppliancesResult;
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has tags => (is => 'ro', isa => 'HashRef'  );
+  has tags => (is => 'ro', isa => 'HashRef[Str]'  );
   has type => (is => 'ro', isa => 'Str'  );
   has applianceDefinitionId => (is => 'ro', isa => 'Str'  );
   has managedResourceGroupId => (is => 'ro', isa => 'Str'  );
-  has outputs => (is => 'ro', isa => 'HashRef'  );
-  has parameters => (is => 'ro', isa => 'HashRef'  );
+  has outputs => (is => 'ro', isa => 'Azure::object'  );
+  has parameters => (is => 'ro', isa => 'Azure::object'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has uiDefinitionUri => (is => 'ro', isa => 'Str'  );
 

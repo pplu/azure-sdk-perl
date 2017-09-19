@@ -1,7 +1,7 @@
 package Azure::CdnManagement::EndpointUpdateParameters;
   use Moose;
 
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'contentTypesToCompress' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'geoFilters' => (is => 'ro', isa => 'ArrayRef[Azure::CdnManagement::GeoFilter]'  );
   has 'isCompressionEnabled' => (is => 'ro', isa => 'Bool'  );

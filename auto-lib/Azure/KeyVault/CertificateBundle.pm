@@ -8,6 +8,6 @@ package Azure::KeyVault::CertificateBundle;
   has 'kid' => (is => 'ro', isa => 'Str'  );
   has 'policy' => (is => 'ro', isa => 'Azure::KeyVault::CertificatePolicy'  );
   has 'sid' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'x5t' => (is => 'ro', isa => 'Str'  );
 1;

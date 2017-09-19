@@ -6,6 +6,6 @@ package Azure::ResourceManagement::GetResourceGroupsResult;
   has managedBy => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has properties => (is => 'ro', isa => 'Any'  );
-  has tags => (is => 'ro', isa => 'HashRef'  );
+  has tags => (is => 'ro', isa => 'HashRef[Str]'  );
 
 1;

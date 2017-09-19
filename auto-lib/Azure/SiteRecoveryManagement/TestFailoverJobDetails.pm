@@ -7,6 +7,6 @@ package Azure::SiteRecoveryManagement::TestFailoverJobDetails;
   has 'networkType' => (is => 'ro', isa => 'Str'  );
   has 'protectedItemDetails' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::FailoverReplicationProtectedItemDetails]'  );
   has 'testFailoverStatus' => (is => 'ro', isa => 'Str'  );
-  has 'affectedObjectDetails' => (is => 'ro', isa => 'HashRef'  );
+  has 'affectedObjectDetails' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'instanceType' => (is => 'ro', isa => 'Str'  );
 1;

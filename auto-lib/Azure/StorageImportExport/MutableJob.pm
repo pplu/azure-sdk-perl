@@ -1,7 +1,7 @@
 package Azure::StorageImportExport::MutableJob;
   use Moose;
 
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'Azure::StorageImportExport::object'  );
   has 'backupDriveManifest' => (is => 'ro', isa => 'Bool'  );
   has 'cancelRequested' => (is => 'ro', isa => 'Bool'  );
   has 'deliveryPackage' => (is => 'ro', isa => 'Azure::StorageImportExport::PackageInfomation'  );
