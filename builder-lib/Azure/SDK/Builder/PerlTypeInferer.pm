@@ -59,7 +59,7 @@ package Azure::SDK::Builder::PerlTypeInferer;
             return 'HashRef[HashRef]' if ($self->additionalProperties->type eq 'object');
             if ($self->additionalProperties->type eq 'array') {
               my $items = $self->additionalProperties->items;
-              return 'HashRef[ArrayRef[Str]' if ($items->type eq 'string');
+              return 'HashRef[ArrayRef[Str]]' if ($items->type eq 'string');
               return 'HashRef[ArrayRef[ArrayRef[HashRef]]]' if ($items->type eq 'array' and $items->items->type eq 'object');
             } 
             die "Unknown HashRef type " . $self->additionalProperties->type;
