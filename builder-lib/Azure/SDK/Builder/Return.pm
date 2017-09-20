@@ -54,6 +54,7 @@ package Azure::SDK::Builder::Return;
         %$props,
         root_schema => $root_schema,
         name => $prop_name,
+        service => $self->service,
       );
     }
     if (defined $object->allOf) {
