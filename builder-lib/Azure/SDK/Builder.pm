@@ -379,10 +379,13 @@ package Azure::SDK::Builder;
           'method_args_object',
           { method => $method },
         );
+      }
+      foreach my $return_name (sort keys %{ $self->method_returns }){
+        my $return = $self->method_returns->{ $return_name };
         $self->process_template(
           'method_return_object',
-          { method => $method },
-        ) if (defined $method->return);
+          { return => $return },
+        );
       }
     };
     if ($@){
@@ -390,5 +393,4 @@ package Azure::SDK::Builder;
     }
   }
 
-1;
 1;
