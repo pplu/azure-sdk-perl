@@ -13,8 +13,8 @@ package Azure::ManagedApplication::CreateOrUpdateByIdAppliancesResult;
   has type => (is => 'ro', isa => 'Str'  );
   has applianceDefinitionId => (is => 'ro', isa => 'Str'  );
   has managedResourceGroupId => (is => 'ro', isa => 'Str'  );
-  has outputs => (is => 'ro', isa => 'Azure::object'  );
-  has parameters => (is => 'ro', isa => 'Azure::object'  );
+  has outputs => (is => 'ro', isa => 'HashRef'  );
+  has parameters => (is => 'ro', isa => 'HashRef'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has uiDefinitionUri => (is => 'ro', isa => 'Str'  );
 

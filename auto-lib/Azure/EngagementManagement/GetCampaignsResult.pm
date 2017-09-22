@@ -5,7 +5,7 @@ package Azure::EngagementManagement::GetCampaignsResult;
   has finishedDate => (is => 'ro', isa => 'Str'  );
   has id => (is => 'ro', isa => 'Int'  );
   has state => (is => 'ro', isa => 'Str'  );
-  has audience => (is => 'ro', isa => 'Azure::object'  );
+  has audience => (is => 'ro', isa => 'Azure::EngagementManagement::GetCampaignsResult_audience'  );
   has category => (is => 'ro', isa => 'Str'  );
   has deliveryActivities => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has deliveryTime => (is => 'ro', isa => 'Str'  );
@@ -31,7 +31,7 @@ package Azure::EngagementManagement::GetCampaignsResult;
   has notificationMessage => (is => 'ro', isa => 'Str'  );
   has notificationOptions => (is => 'ro', isa => 'Any'  );
   has notificationTitle => (is => 'ro', isa => 'Str'  );
-  has payload => (is => 'ro', isa => 'Azure::object'  );
+  has payload => (is => 'ro', isa => 'HashRef'  );
   has title => (is => 'ro', isa => 'Str'  );
 
 1;

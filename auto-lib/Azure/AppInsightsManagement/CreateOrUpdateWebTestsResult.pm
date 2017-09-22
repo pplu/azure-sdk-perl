@@ -7,7 +7,7 @@ package Azure::AppInsightsManagement::CreateOrUpdateWebTestsResult;
   has name => (is => 'ro', isa => 'Str'  );
   has tags => (is => 'ro', isa => 'Any'  );
   has type => (is => 'ro', isa => 'Str'  );
-  has Configuration => (is => 'ro', isa => 'Azure::object'  );
+  has Configuration => (is => 'ro', isa => 'Azure::AppInsightsManagement::CreateOrUpdateWebTestsResult_Configuration'  );
   has Description => (is => 'ro', isa => 'Str'  );
   has Enabled => (is => 'ro', isa => 'Bool'  );
   has Frequency => (is => 'ro', isa => 'Int'  );

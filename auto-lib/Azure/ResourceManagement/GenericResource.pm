@@ -5,7 +5,7 @@ package Azure::ResourceManagement::GenericResource;
   has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'managedBy' => (is => 'ro', isa => 'Str'  );
   has 'plan' => (is => 'ro', isa => 'Azure::ResourceManagement::Plan'  );
-  has 'properties' => (is => 'ro', isa => 'Azure::ResourceManagement::object'  );
+  has 'properties' => (is => 'ro', isa => 'HashRef'  );
   has 'sku' => (is => 'ro', isa => 'Azure::ResourceManagement::Sku'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );

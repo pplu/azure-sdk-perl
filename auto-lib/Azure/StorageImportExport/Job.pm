@@ -4,7 +4,7 @@ package Azure::StorageImportExport::Job;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'Azure::StorageImportExport::object'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'backupDriveManifest' => (is => 'ro', isa => 'Bool'  );
   has 'cancelRequested' => (is => 'ro', isa => 'Bool'  );

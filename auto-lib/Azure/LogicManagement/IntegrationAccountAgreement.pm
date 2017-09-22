@@ -14,5 +14,5 @@ package Azure::LogicManagement::IntegrationAccountAgreement;
   has 'guestPartner' => (is => 'ro', isa => 'Str'  );
   has 'hostIdentity' => (is => 'ro', isa => 'Azure::LogicManagement::BusinessIdentity'  );
   has 'hostPartner' => (is => 'ro', isa => 'Str'  );
-  has 'metadata' => (is => 'ro', isa => 'Azure::LogicManagement::object'  );
+  has 'metadata' => (is => 'ro', isa => 'Azure::LogicManagement::IntegrationAccountAgreement_metadata'  );
 1;

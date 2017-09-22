@@ -6,8 +6,8 @@ package Azure::Policy::GetPolicySetDefinitionsResult;
   has type => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'Str'  );
   has displayName => (is => 'ro', isa => 'Str'  );
-  has metadata => (is => 'ro', isa => 'Azure::object'  );
-  has parameters => (is => 'ro', isa => 'Azure::object'  );
+  has metadata => (is => 'ro', isa => 'HashRef'  );
+  has parameters => (is => 'ro', isa => 'HashRef'  );
   has policyDefinitions => (is => 'ro', isa => 'ArrayRef[Azure::Policy::PolicyDefinitionReference]'  );
   has policyType => (is => 'ro', isa => 'Str'  );
 

@@ -9,7 +9,7 @@ package Azure::LogicManagement::CreateOrUpdatePartnersResult;
   has changedTime => (is => 'ro', isa => 'Str'  );
   has content => (is => 'ro', isa => 'Azure::LogicManagement::PartnerContent'  );
   has createdTime => (is => 'ro', isa => 'Str'  );
-  has metadata => (is => 'ro', isa => 'Azure::object'  );
+  has metadata => (is => 'ro', isa => 'Azure::LogicManagement::CreateOrUpdatePartnersResult_metadata'  );
   has partnerType => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -1,5 +1,5 @@
 package Azure::ComputeManagement::ComputeLongRunningOperationProperties;
   use Moose;
 
-  has 'output' => (is => 'ro', isa => 'Azure::ComputeManagement::object'  );
+  has 'output' => (is => 'ro', isa => 'HashRef'  );
 1;

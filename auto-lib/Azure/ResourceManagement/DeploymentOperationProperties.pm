@@ -6,7 +6,7 @@ package Azure::ResourceManagement::DeploymentOperationProperties;
   has 'response' => (is => 'ro', isa => 'Azure::ResourceManagement::HttpMessage'  );
   has 'serviceRequestId' => (is => 'ro', isa => 'Str'  );
   has 'statusCode' => (is => 'ro', isa => 'Str'  );
-  has 'statusMessage' => (is => 'ro', isa => 'Azure::ResourceManagement::object'  );
+  has 'statusMessage' => (is => 'ro', isa => 'HashRef'  );
   has 'targetResource' => (is => 'ro', isa => 'Azure::ResourceManagement::TargetResource'  );
   has 'timestamp' => (is => 'ro', isa => 'Str'  );
 1;

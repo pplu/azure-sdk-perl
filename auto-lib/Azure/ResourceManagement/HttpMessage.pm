@@ -1,5 +1,5 @@
 package Azure::ResourceManagement::HttpMessage;
   use Moose;
 
-  has 'content' => (is => 'ro', isa => 'Azure::ResourceManagement::object'  );
+  has 'content' => (is => 'ro', isa => 'HashRef'  );
 1;

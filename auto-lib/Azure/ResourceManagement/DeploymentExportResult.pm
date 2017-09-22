@@ -1,5 +1,5 @@
 package Azure::ResourceManagement::DeploymentExportResult;
   use Moose;
 
-  has 'template' => (is => 'ro', isa => 'Azure::ResourceManagement::object'  );
+  has 'template' => (is => 'ro', isa => 'HashRef'  );
 1;

@@ -11,7 +11,7 @@ package Azure::CustomerInsightsManagement::GetPredictionsResult;
   has involvedInteractionTypes => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has involvedKpiTypes => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has involvedRelationships => (is => 'ro', isa => 'ArrayRef[Str]'  );
-  has mappings => (is => 'ro', isa => 'Azure::object'  );
+  has mappings => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::GetPredictionsResult_mappings'  );
   has negativeOutcomeExpression => (is => 'ro', isa => 'Str'  );
   has positiveOutcomeExpression => (is => 'ro', isa => 'Str'  );
   has predictionName => (is => 'ro', isa => 'Str'  );
@@ -19,7 +19,7 @@ package Azure::CustomerInsightsManagement::GetPredictionsResult;
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has scopeExpression => (is => 'ro', isa => 'Str'  );
   has scoreLabel => (is => 'ro', isa => 'Str'  );
-  has systemGeneratedEntities => (is => 'ro', isa => 'Any'  );
+  has systemGeneratedEntities => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::GetPredictionsResult_systemGeneratedEntities'  );
   has tenantId => (is => 'ro', isa => 'Str'  );
 
 1;

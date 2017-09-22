@@ -14,6 +14,6 @@ package Azure::LogicManagement::GetAgreementsResult;
   has guestPartner => (is => 'ro', isa => 'Str'  );
   has hostIdentity => (is => 'ro', isa => 'Azure::LogicManagement::BusinessIdentity'  );
   has hostPartner => (is => 'ro', isa => 'Str'  );
-  has metadata => (is => 'ro', isa => 'Azure::object'  );
+  has metadata => (is => 'ro', isa => 'Azure::LogicManagement::GetAgreementsResult_metadata'  );
 
 1;

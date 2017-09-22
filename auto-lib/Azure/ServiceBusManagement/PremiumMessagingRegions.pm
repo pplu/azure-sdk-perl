@@ -1,7 +1,7 @@
 package Azure::ServiceBusManagement::PremiumMessagingRegions;
   use Moose;
 
-  has 'properties' => (is => 'ro', isa => 'Any'  );
+  has 'properties' => (is => 'ro', isa => 'Azure::ServiceBusManagement::PremiumMessagingRegions_properties'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );

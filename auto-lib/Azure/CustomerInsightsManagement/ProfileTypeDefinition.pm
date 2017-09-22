@@ -12,7 +12,7 @@ package Azure::CustomerInsightsManagement::ProfileTypeDefinition;
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
   has 'timestampFieldName' => (is => 'ro', isa => 'Str'  );
   has 'typeName' => (is => 'ro', isa => 'Str'  );
-  has 'attributes' => (is => 'ro', isa => 'HashRef[ArrayRef[Str]'  );
+  has 'attributes' => (is => 'ro', isa => 'HashRef[ArrayRef[Str]]'  );
   has 'description' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'displayName' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'largeImage' => (is => 'ro', isa => 'Str'  );

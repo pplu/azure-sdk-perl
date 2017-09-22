@@ -6,7 +6,7 @@ package Azure::DevTestLabs::ArmTemplate;
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
-  has 'contents' => (is => 'ro', isa => 'Azure::DevTestLabs::object'  );
+  has 'contents' => (is => 'ro', isa => 'HashRef'  );
   has 'createdDate' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
