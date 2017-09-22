@@ -31,6 +31,17 @@ package Azure::API::JsonCaller;
           } else { 
             $p{ $key } = [ map { $self->_to_jsoncaller_params($_) } @{ $params->$att } ];
           }
+        } elsif ($att_type =~ m/^HashRef\[(.*)\]/) {
+          my $internal_type = "$1";
+          if ($self->_is_internal_type($internal_type)){
+            $p{ $key } = $params->$att;
+          } elsif ($internal_type eq 'HashRef' or $internal_type eq 'ArrayRef[Str]' or
+                   $internal_type eq 'ArrayRef[ArrayRef[HashRef]]') {
+            $p{ $key } = $params->$att;    
+          } else {
+            # HashRef of objects
+            $p{ $key } = { map { ($_ => $self->_to_jsoncaller_params($params->$att->{$_})) } keys %{ $params->$att } };
+          }
         } elsif ($att_type eq 'HashRef') {
           $p{ $key } = $params->$att;
         } else {
