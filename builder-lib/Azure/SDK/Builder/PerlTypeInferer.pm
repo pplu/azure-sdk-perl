@@ -48,8 +48,8 @@ package Azure::SDK::Builder::PerlTypeInferer;
           }
           return "ArrayRef[$inner]";
         } elsif ($self->type eq 'object') {
-          # the existence of additionalProperties indicates that the object is a map of arbitrary keys to values
           if (defined $self->additionalProperties) {
+            # the existence of additionalProperties indicates that it's a "map" object (a HashRef in Perl terms) whose keys are strings, and values of a type described in additionalProperties
             if (defined $self->additionalProperties->ref) {
               my $inner = $self->root_schema->object_for_path($self->additionalProperties->ref)->fully_namespaced;
               return "HashRef[$inner]";
@@ -63,8 +63,11 @@ package Azure::SDK::Builder::PerlTypeInferer;
               return 'HashRef[ArrayRef[ArrayRef[HashRef]]]' if ($items->type eq 'array' and $items->items->type eq 'object');
             } 
             die "Unknown HashRef type " . $self->additionalProperties->type;
+          } elsif (defined $self->properties) {
+            # If it has properties in it's schema element, it has to have a proper name
+            $self->fully_namespaced;
           } else {
-            return $self->fully_namespaced;
+            return 'HashRef';
           }
         } else {
           return $self->fully_namespaced;

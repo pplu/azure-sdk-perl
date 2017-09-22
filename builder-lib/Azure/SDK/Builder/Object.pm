@@ -54,6 +54,13 @@ package Azure::SDK::Builder::Object;
         $props = $root_schema->object_for_ref($props);
         $type = $props->name;
         $prop_root_schema = $props->root_schema;
+      } else {
+        # This case is for objects defined inlined. We have to
+        # give them a "special" type (since they have no
+        # identifying type)
+        if (defined $props->properties) {
+          $type = $self->name . "_${prop_name}";
+        }
       }
 
       push @$atts, Azure::SDK::Builder::Parameter->new(

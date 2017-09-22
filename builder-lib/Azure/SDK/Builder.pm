@@ -105,6 +105,11 @@ package Azure::SDK::Builder;
     is => 'ro',
     isa => 'HashRef',
     lazy => 1,
+    traits => [ 'Hash' ],
+    handles => {
+      method_names => 'keys',
+      method => 'get',
+    },
     default => sub {
       my $self = shift;
       my %methods = ();
@@ -133,6 +138,21 @@ package Azure::SDK::Builder;
     }
   );
 
+  has method_returns => (
+    is => 'ro',
+    isa => 'HashRef[Azure::SDK::Builder::Return]',
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      my %returns = ();
+      foreach my $method_name ($self->method_names){
+        my $method = $self->method($method_name);
+        $returns{ $method_name } = $method->return if (defined $method->return);
+      }
+      return \%returns;
+    }
+  );
+
   sub object_for_path {
     my ($self, $path) = @_;
     if (my ($second) = ($path =~ m/definitions\/(.*)$/)){
@@ -145,12 +165,17 @@ package Azure::SDK::Builder;
 
   has objects => (
     is => 'ro',
-    isa => 'HashRef',
+    isa => 'HashRef[Azure::SDK::Builder::Object]',
     lazy => 1,
+    traits => [ 'Hash' ],
+    handles => {
+      object_list => 'values',
+    },
     default => sub {
       my $self = shift;
       my %objects => ();
 
+      # Get objects from the definitions (almost everything refs out to defintions/NameOfObject
       my $definitions = (defined $self->schema->definitions) ? $self->schema->definitions : {};
 
       foreach my $ob_name (sort keys %$definitions) {
@@ -172,11 +197,42 @@ package Azure::SDK::Builder;
             service => $self->service,
             name => $def_name,
           );
+
+        $self->_get_subobjects_in(\%objects, $def_name, $objects{ $def_name });
+      }
+
+      # Get inlined objects in return objects (properties of objects that instead of ref, inline their defintion)
+      foreach my $rname (keys %{ $self->method_returns }) {
+        my $object = $self->method_returns->{ $rname };
+        my $prefix = $object->fully_namespaced;
+        $self->_get_subobjects_in(\%objects, $prefix, $object);
       }
 
       return \%objects;
     },
   );
+
+  sub _get_subobjects_in {
+    my ($self, $sub_objects, $prefix, $object) = @_;
+    
+    return if (not defined $object->properties);
+
+    foreach my $property (keys %{ $object->properties }){
+      my $o = $object->properties->{ $property };
+
+      if (defined $o->type and $o->type eq 'object' and defined $o->properties) {
+        my $oname = "${prefix}_${property}";
+        die "$oname is duplicate in sub_objects" if (defined $sub_objects->{ $oname });
+        $sub_objects->{ $oname } = Azure::SDK::Builder::Object->new(
+          %$o,
+          root_schema => $self,
+          service => $self->service,
+          name => $oname,
+        );
+        $self->_get_subobjects_in($sub_objects, $oname, $o);
+      }
+    }
+  }
 
   has service => (
     is => 'ro', 

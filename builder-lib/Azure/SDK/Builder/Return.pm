@@ -7,7 +7,7 @@ package Azure::SDK::Builder::Return;
 
   use Azure::SDK::Builder::Property;
 
-  has type => (is => 'ro', isa => 'Str');
+  has '+type' => (isa => 'Str');
   has ref => (is => 'ro', isa => 'Str');
 
   has root_schema => (
@@ -48,13 +48,21 @@ package Azure::SDK::Builder::Return;
         next;
       }
 
-      $props = $self->root_schema->object_for_ref($props) if (defined $props->ref);
-
+      my $type;
+      if (defined $props->ref) {
+        $props = $self->root_schema->object_for_ref($props) if (defined $props->ref);
+      } else {
+        # If the object is inlined, we have to give it a special type
+        if (defined $props->properties) {
+          $type = $self->name . "_${prop_name}";
+        }
+      }
       push @$atts, Azure::SDK::Builder::Property->new(
         %$props,
         root_schema => $root_schema,
         name => $prop_name,
         service => $self->service,
+        (defined $type)?(type => $type):(),
       );
     }
     if (defined $object->allOf) {

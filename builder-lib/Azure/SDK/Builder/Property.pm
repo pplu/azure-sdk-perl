@@ -6,13 +6,15 @@ package Azure::SDK::Builder::Property;
   has ref => (is => 'ro', isa => 'Str');
   has service => (is => 'ro', isa => 'Str', required => 1);
 
+  has type => (is => 'ro', isa => 'Str');
+
   has fully_namespaced => (is => 'ro', lazy => 1, isa => 'Str', default => sub {
     my $self = shift;
 
     sprintf '%s::%s::%s',
       $self->root_schema->sdk_namespace,
       $self->service,
-      $self->type
+      $self->type,
   });
 
   has property_name => (
