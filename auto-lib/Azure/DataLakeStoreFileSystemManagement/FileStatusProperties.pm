@@ -2,13 +2,12 @@ package Azure::DataLakeStoreFileSystemManagement::FileStatusProperties;
   use Moose;
 
   has 'accessTime' => (is => 'ro', isa => 'Int'  );
-  has 'aclBit' => (is => 'ro', isa => 'Bool'  );
   has 'blockSize' => (is => 'ro', isa => 'Int'  );
   has 'childrenNum' => (is => 'ro', isa => 'Int'  );
+  has 'expirationTime' => (is => 'ro', isa => 'Int'  );
   has 'group' => (is => 'ro', isa => 'Str'  );
   has 'length' => (is => 'ro', isa => 'Int'  );
   has 'modificationTime' => (is => 'ro', isa => 'Int'  );
-  has 'msExpirationTime' => (is => 'ro', isa => 'Int'  );
   has 'owner' => (is => 'ro', isa => 'Str'  );
   has 'pathSuffix' => (is => 'ro', isa => 'Str'  );
   has 'permission' => (is => 'ro', isa => 'Str'  );
