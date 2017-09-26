@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::UpdateCognitiveServicesAccounts;
+package Azure::CognitiveServicesManagement::GetPropertiesAccounts;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,9 +8,6 @@ package Azure::CognitiveServicesManagement::UpdateCognitiveServicesAccounts;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-18',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::CognitiveServicesManagement::CognitiveServicesAccountUpdateParameters',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
@@ -19,6 +16,6 @@ package Azure::CognitiveServicesManagement::UpdateCognitiveServicesAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}');
-  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::UpdateCognitiveServicesAccountsResult');
-  class_has _api_method => (is => 'ro', default => 'PATCH');
+  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::GetPropertiesAccountsResult');
+  class_has _api_method => (is => 'ro', default => 'GET');
 1;

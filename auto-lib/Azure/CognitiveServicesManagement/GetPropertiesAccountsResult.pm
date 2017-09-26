@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::UpdateCognitiveServicesAccountsResult;
+package Azure::CognitiveServicesManagement::GetPropertiesAccountsResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );

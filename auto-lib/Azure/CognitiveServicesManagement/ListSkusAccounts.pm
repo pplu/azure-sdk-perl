@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::ListSkusCognitiveServicesAccounts;
+package Azure::CognitiveServicesManagement::ListSkusAccounts;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -16,6 +16,6 @@ package Azure::CognitiveServicesManagement::ListSkusCognitiveServicesAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/skus');
-  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::ListSkusCognitiveServicesAccountsResult');
+  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::ListSkusAccountsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

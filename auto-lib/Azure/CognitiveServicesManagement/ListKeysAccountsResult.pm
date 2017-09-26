@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::ListKeysCognitiveServicesAccountsResult;
+package Azure::CognitiveServicesManagement::ListKeysAccountsResult;
   use Moose;
 
   has key1 => (is => 'ro', isa => 'Str'  );

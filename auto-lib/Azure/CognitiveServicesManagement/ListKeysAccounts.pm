@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::RegenerateKeyCognitiveServicesAccounts;
+package Azure::CognitiveServicesManagement::ListKeysAccounts;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,9 +8,6 @@ package Azure::CognitiveServicesManagement::RegenerateKeyCognitiveServicesAccoun
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-18',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::CognitiveServicesManagement::RegenerateKeyParameters',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
@@ -18,7 +15,7 @@ package Azure::CognitiveServicesManagement::RegenerateKeyCognitiveServicesAccoun
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/regenerateKey');
-  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::RegenerateKeyCognitiveServicesAccountsResult');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/listKeys');
+  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::ListKeysAccountsResult');
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

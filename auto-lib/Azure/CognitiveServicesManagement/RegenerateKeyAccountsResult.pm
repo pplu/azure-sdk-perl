@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::RegenerateKeyCognitiveServicesAccountsResult;
+package Azure::CognitiveServicesManagement::RegenerateKeyAccountsResult;
   use Moose;
 
   has key1 => (is => 'ro', isa => 'Str'  );

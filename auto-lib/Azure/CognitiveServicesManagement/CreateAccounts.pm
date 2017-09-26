@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::DeleteCognitiveServicesAccounts;
+package Azure::CognitiveServicesManagement::CreateAccounts;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,6 +8,9 @@ package Azure::CognitiveServicesManagement::DeleteCognitiveServicesAccounts;
   has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-18',
     traits => [ 'Azure::ParamInQuery' ],
   );
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::CognitiveServicesManagement::CognitiveServicesAccountCreateParameters',
+    traits => [ 'Azure::ParamInBody' ],
+  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
@@ -16,6 +19,6 @@ package Azure::CognitiveServicesManagement::DeleteCognitiveServicesAccounts;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}');
-  class_has _returns => (is => 'ro', default => '');
-  class_has _api_method => (is => 'ro', default => 'DELETE');
+  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::CreateAccountsResult');
+  class_has _api_method => (is => 'ro', default => 'PUT');
 1;

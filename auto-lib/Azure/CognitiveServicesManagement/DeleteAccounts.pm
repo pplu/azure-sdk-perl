@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::ListKeysCognitiveServicesAccounts;
+package Azure::CognitiveServicesManagement::DeleteAccounts;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -15,7 +15,7 @@ package Azure::CognitiveServicesManagement::ListKeysCognitiveServicesAccounts;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}/listKeys');
-  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::ListKeysCognitiveServicesAccountsResult');
-  class_has _api_method => (is => 'ro', default => 'POST');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CognitiveServices/accounts/{accountName}');
+  class_has _returns => (is => 'ro', default => '');
+  class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

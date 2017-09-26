@@ -1,4 +1,4 @@
-package Azure::CognitiveServicesManagement::CreateCognitiveServicesAccountsResult;
+package Azure::CognitiveServicesManagement::CreateAccountsResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
