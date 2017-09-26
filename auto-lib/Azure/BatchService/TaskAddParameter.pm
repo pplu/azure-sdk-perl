@@ -6,6 +6,7 @@ package Azure::BatchService::TaskAddParameter;
   has 'authenticationTokenSettings' => (is => 'ro', isa => 'Azure::BatchService::AuthenticationTokenSettings'  );
   has 'commandLine' => (is => 'ro', isa => 'Str'  );
   has 'constraints' => (is => 'ro', isa => 'Azure::BatchService::TaskConstraints'  );
+  has 'containerSettings' => (is => 'ro', isa => 'Azure::BatchService::TaskContainerSettings'  );
   has 'dependsOn' => (is => 'ro', isa => 'Azure::BatchService::TaskDependencies'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'environmentSettings' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::EnvironmentSetting]'  );

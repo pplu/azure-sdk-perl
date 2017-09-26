@@ -2,7 +2,7 @@ package Azure::BatchService::AddCollectionTask;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01.5.1',
+  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-01.6.0',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'client-request-id' => (is => 'ro', isa => 'Str',

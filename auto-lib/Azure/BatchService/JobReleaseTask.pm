@@ -2,6 +2,7 @@ package Azure::BatchService::JobReleaseTask;
   use Moose;
 
   has 'commandLine' => (is => 'ro', isa => 'Str'  );
+  has 'containerSettings' => (is => 'ro', isa => 'Azure::BatchService::TaskContainerSettings'  );
   has 'environmentSettings' => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::EnvironmentSetting]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'maxWallClockTime' => (is => 'ro', isa => 'Str'  );

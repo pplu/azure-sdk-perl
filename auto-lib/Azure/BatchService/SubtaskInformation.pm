@@ -1,6 +1,7 @@
 package Azure::BatchService::SubtaskInformation;
   use Moose;
 
+  has 'containerInfo' => (is => 'ro', isa => 'Azure::BatchService::TaskContainerExecutionInformation'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'exitCode' => (is => 'ro', isa => 'Int'  );
   has 'failureInfo' => (is => 'ro', isa => 'Azure::BatchService::TaskFailureInformation'  );
