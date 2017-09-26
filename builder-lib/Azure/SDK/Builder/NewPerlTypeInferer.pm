@@ -51,8 +51,8 @@ package Azure::SDK::Builder::NewPerlTypeInferer;
             $self->root_schema->log->warn("Find out what Moose native type for $type");
           }
         } elsif (defined $schema->items->ref) {
-          my $obj = $self->root_schema->object_for_path($schema->items->ref);
-          $inner = $self->root_schema->object_for_path($schema->items->ref)->fully_namespaced;
+          my $object = $self->root_schema->object_for_ref($schema->items);
+          $inner = $object->fully_namespaced;
         }
         return "ArrayRef[$inner]";
       } elsif ($schema->type eq 'object') {

@@ -1,0 +1,12 @@
+package Azure::NetworkManagement::PatchRouteFilter;
+  use Moose;
+
+  has 'etag' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'peerings' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ExpressRouteCircuitPeering]'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'rules' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::RouteFilterRule]'  );
+1;
