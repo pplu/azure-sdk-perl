@@ -41,32 +41,19 @@ package Azure::SDK::Builder::Object;
 
     my $properties = $object->properties;
     foreach my $prop_name (sort keys %$properties){
-      my $props = $properties->{ $prop_name };
-      my $prop_root_schema = $root_schema;
+      my $prop_schema = $properties->{ $prop_name };
 
-      if ($props->x_ms_client_flatten) {
-        push @to_flatten, $props;
+      if ($prop_schema->x_ms_client_flatten) {
+        push @to_flatten, $prop_schema;
         next;
       }
 
-      my $type;
-      if (defined $props->ref) {
-        $props = $root_schema->object_for_ref($props);
-        $type = $props->name;
-        $prop_root_schema = $props->root_schema;
-      } else {
-        # This case is for objects defined inlined. We have to
-        # give them a "special" type (since they have no
-        # identifying type)
-        if (defined $props->properties) {
-          $type = $self->name . "_${prop_name}";
-        }
-      }
+      my $type = $self->name . "_${prop_name}" if (defined $prop_schema->properties);
 
       push @$atts, Azure::SDK::Builder::Parameter->new(
-        %$props,
-        root_schema => $prop_root_schema,
-        name => $prop_name,
+        original_schema => $prop_schema,
+        root_schema => $root_schema,
+        original_name => $prop_name,
         service => $self->service,
         (defined $type) ? (type => $type) : (),
       );

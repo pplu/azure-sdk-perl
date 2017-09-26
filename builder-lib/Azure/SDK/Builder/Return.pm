@@ -5,7 +5,7 @@ package Azure::SDK::Builder::Return;
   has name => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);
 
-  use Azure::SDK::Builder::Property;
+  use Azure::SDK::Builder::Parameter;
 
   has '+type' => (isa => 'Str');
   has ref => (is => 'ro', isa => 'Str');
@@ -48,19 +48,12 @@ package Azure::SDK::Builder::Return;
         next;
       }
 
-      my $type;
-      if (defined $props->ref) {
-        $props = $self->root_schema->object_for_ref($props) if (defined $props->ref);
-      } else {
-        # If the object is inlined, we have to give it a special type
-        if (defined $props->properties) {
-          $type = $self->name . "_${prop_name}";
-        }
-      }
-      push @$atts, Azure::SDK::Builder::Property->new(
-        %$props,
+      my $type = $self->name . "_${prop_name}" if (defined $props->properties);
+
+      push @$atts, Azure::SDK::Builder::Parameter->new(
         root_schema => $root_schema,
-        name => $prop_name,
+        original_name => $prop_name,
+        original_schema => $props,
         service => $self->service,
         (defined $type)?(type => $type):(),
       );
@@ -80,7 +73,7 @@ package Azure::SDK::Builder::Return;
   has attributes => (
     is => 'ro',
     lazy => 1,
-    isa => 'ArrayRef[Azure::SDK::Builder::Property]',
+    isa => 'ArrayRef[Azure::SDK::Builder::Parameter]',
     default => sub {
       my $self = shift;
 
