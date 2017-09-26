@@ -17,6 +17,8 @@ gen-classes:
 	carton exec perl -I lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/specification/datalake-store/data-plane/Microsoft.DataLakeStore/2015-10-01-preview/filesystem.json
 	# Find data-plane APIs for generation. skip datalake and search
 	find azure-rest-api-specs/specification/ -maxdepth 1 -mindepth 1 | xargs -I{} find {} -type d -name data-plane ! -path */datalake-analytics/* ! -path */search/* | xargs -I{} bash -c "find {} -mindepth 2 -maxdepth 2 | sort | tail -n1" | xargs -I{} bash -c "carton exec perl -I lib/ ./builder-bin/azure-sdk-gen {}/*.json" ; exit 0
+	# Cognitive APIs 
+	find azure-rest-api-specs/specification/cognitiveservices/data-plane/ -maxdepth 1 -mindepth 1 | xargs -I{} find {} -type d -maxdepth 1 -mindepth 1 | xargs -I{} bash -c "carton exec perl -I lib/ ./builder-bin/azure-sdk-gen {}/*.json"
 	# Datalake API uses two separate namespaces
 	carton exec perl -I lib/ ./builder-bin/azure-sdk-gen azure-rest-api-specs/specification/datalake-analytics/data-plane/Microsoft.DataLakeAnalytics/2016-11-01/catalog.json
 	carton exec perl -I lib/ ./builder-bin/azure-sdk-gen azure-rest-api-specs/specification/datalake-analytics/data-plane/Microsoft.DataLakeAnalytics/2016-11-01/job.json
