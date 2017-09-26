@@ -5,10 +5,6 @@ package Azure::SDK::Builder::PerlTypeInferer;
   requires 'root_schema';
   requires 'type';
 
-  has element_type => (is => 'ro', isa => 'Str|Undef', default => sub {
-    shift->type;
-  });
-
   has perl_type => (
     is => 'ro',
     isa => 'Str',
