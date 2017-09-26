@@ -216,7 +216,7 @@ package Azure::SDK::Builder;
       foreach my $rname (keys %{ $self->method_returns }) {
         my $object = $self->method_returns->{ $rname };
         my $prefix = $object->fully_namespaced;
-        $self->_get_subobjects_in(\%objects, $prefix, $object);
+        $self->_get_subobjects_in($objects, $prefix, $object);
       }
 
       return $objects;
