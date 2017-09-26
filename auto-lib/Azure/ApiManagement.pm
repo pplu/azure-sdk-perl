@@ -99,6 +99,14 @@ package Azure::ApiManagement;
     my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateCertificate', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CreateOrUpdateDelegationSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateDelegationSettings', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateOrUpdateEmailTemplate {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -185,6 +193,22 @@ package Azure::ApiManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateProperty', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateOrUpdateSignInSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateSignInSettings', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateOrUpdateSignUpSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::CreateOrUpdateSignUpSettings', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateSubscription {
@@ -459,6 +483,14 @@ package Azure::ApiManagement;
     my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetCertificate', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetDelegationSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetDelegationSettings', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetEmailTemplate {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -545,6 +577,22 @@ package Azure::ApiManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetSharedAccessTokenUser', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetSignInSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetSignInSettings', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetSignUpSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::GetSignUpSettings', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetSsoTokenApiManagementService {
@@ -1032,6 +1080,14 @@ package Azure::ApiManagement;
     my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateBackend', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateDelegationSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateDelegationSettings', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub UpdateEmailTemplate {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -1104,6 +1160,22 @@ package Azure::ApiManagement;
     my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateQuotaByPeriodKeys', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateSignInSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateSignInSettings', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateSignUpSettings {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ApiManagement::UpdateSignUpSettings', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub UpdateSubscription {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -1137,6 +1209,6 @@ package Azure::ApiManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/ApplyNetworkConfigurationUpdatesApiManagementService BackupApiManagementService CheckNameAvailabilityApiManagementService CreateGroupUser CreateOrUpdateApi CreateOrUpdateApiManagementService CreateOrUpdateApiOperation CreateOrUpdateApiOperationPolicy CreateOrUpdateApiPolicy CreateOrUpdateAuthorizationServer CreateOrUpdateBackend CreateOrUpdateCertificate CreateOrUpdateEmailTemplate CreateOrUpdateGroup CreateOrUpdateIdentityProvider CreateOrUpdateLogger CreateOrUpdateOpenIdConnectProvider CreateOrUpdatePolicy CreateOrUpdateProduct CreateOrUpdateProductApi CreateOrUpdateProductGroup CreateOrUpdateProductPolicy CreateOrUpdateProperty CreateOrUpdateSubscription CreateOrUpdateUser DeleteApi DeleteApiManagementService DeleteApiOperation DeleteApiOperationPolicy DeleteApiPolicy DeleteAuthorizationServer DeleteBackend DeleteCertificate DeleteEmailTemplate DeleteGroup DeleteGroupUser DeleteIdentityProvider DeleteLogger DeleteOpenIdConnectProvider DeletePolicy DeleteProduct DeleteProductApi DeleteProductGroup DeleteProductPolicy DeleteProperty DeleteSubscription DeleteUser DeployTenantConfiguration GenerateSsoUrlUser GetApi GetApiManagementService GetApiOperation GetApiOperationPolicy GetApiPolicy GetAuthorizationServer GetBackend GetCertificate GetEmailTemplate GetGroup GetIdentityProvider GetLogger GetOpenIdConnectProvider GetPolicy GetProduct GetProductPolicy GetProperty GetQuotaByPeriodKeys GetSharedAccessTokenUser GetSsoTokenApiManagementService GetSubscription GetSyncStateTenantConfiguration GetTenantAccess GetTenantAccessGit GetUser ListApiManagementOperations ListApiManagementService ListByApiApiOperation ListByApiApiPolicy ListByApiReports ListByApisApiProduct ListByGeoReports ListByLocationNetworkStatus ListByOperationApiOperationPolicy ListByOperationReports ListByProductProductApi ListByProductProductGroup ListByProductProductPolicy ListByProductReports ListByRequestReports ListByResourceGroupApiManagementService ListByServiceApi ListByServiceAuthorizationServer ListByServiceBackend ListByServiceCertificate ListByServiceEmailTemplate ListByServiceGroup ListByServiceIdentityProvider ListByServiceLogger ListByServiceNetworkStatus ListByServiceOpenIdConnectProvider ListByServicePolicy ListByServicePolicySnippets ListByServiceProduct ListByServiceProperty ListByServiceQuotaByCounterKeys ListByServiceRegions ListByServiceUser ListBySubscriptionReports ListByTimeReports ListByUserReports ListGroupUser ListProductSubscriptions ListSubscription ListUserGroup ListUserIdentities ListUserSubscription RegeneratePrimaryKeySubscription RegeneratePrimaryKeyTenantAccess RegeneratePrimaryKeyTenantAccessGit RegenerateSecondaryKeySubscription RegenerateSecondaryKeyTenantAccess RegenerateSecondaryKeyTenantAccessGit RestoreApiManagementService SaveTenantConfiguration UpdateApi UpdateApiManagementService UpdateApiOperation UpdateAuthorizationServer UpdateBackend UpdateEmailTemplate UpdateGroup UpdateIdentityProvider UpdateLogger UpdateOpenIdConnectProvider UpdateProduct UpdateProperty UpdateQuotaByCounterKeys UpdateQuotaByPeriodKeys UpdateSubscription UpdateTenantAccess UpdateUser ValidateTenantConfiguration / }
+  sub operations { qw/ApplyNetworkConfigurationUpdatesApiManagementService BackupApiManagementService CheckNameAvailabilityApiManagementService CreateGroupUser CreateOrUpdateApi CreateOrUpdateApiManagementService CreateOrUpdateApiOperation CreateOrUpdateApiOperationPolicy CreateOrUpdateApiPolicy CreateOrUpdateAuthorizationServer CreateOrUpdateBackend CreateOrUpdateCertificate CreateOrUpdateDelegationSettings CreateOrUpdateEmailTemplate CreateOrUpdateGroup CreateOrUpdateIdentityProvider CreateOrUpdateLogger CreateOrUpdateOpenIdConnectProvider CreateOrUpdatePolicy CreateOrUpdateProduct CreateOrUpdateProductApi CreateOrUpdateProductGroup CreateOrUpdateProductPolicy CreateOrUpdateProperty CreateOrUpdateSignInSettings CreateOrUpdateSignUpSettings CreateOrUpdateSubscription CreateOrUpdateUser DeleteApi DeleteApiManagementService DeleteApiOperation DeleteApiOperationPolicy DeleteApiPolicy DeleteAuthorizationServer DeleteBackend DeleteCertificate DeleteEmailTemplate DeleteGroup DeleteGroupUser DeleteIdentityProvider DeleteLogger DeleteOpenIdConnectProvider DeletePolicy DeleteProduct DeleteProductApi DeleteProductGroup DeleteProductPolicy DeleteProperty DeleteSubscription DeleteUser DeployTenantConfiguration GenerateSsoUrlUser GetApi GetApiManagementService GetApiOperation GetApiOperationPolicy GetApiPolicy GetAuthorizationServer GetBackend GetCertificate GetDelegationSettings GetEmailTemplate GetGroup GetIdentityProvider GetLogger GetOpenIdConnectProvider GetPolicy GetProduct GetProductPolicy GetProperty GetQuotaByPeriodKeys GetSharedAccessTokenUser GetSignInSettings GetSignUpSettings GetSsoTokenApiManagementService GetSubscription GetSyncStateTenantConfiguration GetTenantAccess GetTenantAccessGit GetUser ListApiManagementOperations ListApiManagementService ListByApiApiOperation ListByApiApiPolicy ListByApiReports ListByApisApiProduct ListByGeoReports ListByLocationNetworkStatus ListByOperationApiOperationPolicy ListByOperationReports ListByProductProductApi ListByProductProductGroup ListByProductProductPolicy ListByProductReports ListByRequestReports ListByResourceGroupApiManagementService ListByServiceApi ListByServiceAuthorizationServer ListByServiceBackend ListByServiceCertificate ListByServiceEmailTemplate ListByServiceGroup ListByServiceIdentityProvider ListByServiceLogger ListByServiceNetworkStatus ListByServiceOpenIdConnectProvider ListByServicePolicy ListByServicePolicySnippets ListByServiceProduct ListByServiceProperty ListByServiceQuotaByCounterKeys ListByServiceRegions ListByServiceUser ListBySubscriptionReports ListByTimeReports ListByUserReports ListGroupUser ListProductSubscriptions ListSubscription ListUserGroup ListUserIdentities ListUserSubscription RegeneratePrimaryKeySubscription RegeneratePrimaryKeyTenantAccess RegeneratePrimaryKeyTenantAccessGit RegenerateSecondaryKeySubscription RegenerateSecondaryKeyTenantAccess RegenerateSecondaryKeyTenantAccessGit RestoreApiManagementService SaveTenantConfiguration UpdateApi UpdateApiManagementService UpdateApiOperation UpdateAuthorizationServer UpdateBackend UpdateDelegationSettings UpdateEmailTemplate UpdateGroup UpdateIdentityProvider UpdateLogger UpdateOpenIdConnectProvider UpdateProduct UpdateProperty UpdateQuotaByCounterKeys UpdateQuotaByPeriodKeys UpdateSignInSettings UpdateSignUpSettings UpdateSubscription UpdateTenantAccess UpdateUser ValidateTenantConfiguration / }
 
 1;
