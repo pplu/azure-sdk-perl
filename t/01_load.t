@@ -11,9 +11,14 @@ use Class::Unload;
 my $azure = Azure->new;
 ok(1,"Loaded Azure");
 
-foreach my $service (sort $azure->available_services){
-  Azure->preload_service($service);
-  ok(1,"Loaded service $service");
+my @services = @ARGV;
+@services = sort $azure->available_services if (not @services);
+
+foreach my $service (@services){
+  my $error = 0;
+  eval { Azure->preload_service($service); };
+  if ($@) { diag($@); $error = 1 };
+  ok(!$error,"Loaded service $service");
   unload($azure->_class_prefix . $service);
 }
 
