@@ -10,4 +10,5 @@ package Azure::ComputeManagement::VirtualMachineScaleSetVMInstanceView;
   has 'rdpThumbPrint' => (is => 'ro', isa => 'Str'  );
   has 'statuses' => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::InstanceViewStatus]'  );
   has 'vmAgent' => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineAgentInstanceView'  );
+  has 'vmHealth' => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineHealthStatus'  );
 1;

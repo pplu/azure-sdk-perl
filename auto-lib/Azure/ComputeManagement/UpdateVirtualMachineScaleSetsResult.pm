@@ -1,4 +1,4 @@
-package Azure::ComputeManagement::CreateOrUpdateVirtualMachineScaleSetsResult;
+package Azure::ComputeManagement::UpdateVirtualMachineScaleSetsResult;
   use Moose;
 
   has identity => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineScaleSetIdentity'  );

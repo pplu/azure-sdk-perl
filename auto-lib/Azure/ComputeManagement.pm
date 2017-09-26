@@ -3,6 +3,14 @@ package Azure::ComputeManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
+  sub CancelVirtualMachineScaleSetRollingUpgrades {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ComputeManagement::CancelVirtualMachineScaleSetRollingUpgrades', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CaptureVirtualMachines {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -235,6 +243,14 @@ package Azure::ComputeManagement;
     my $call_object = $self->new_with_coercions('Azure::ComputeManagement::GetInstanceViewVirtualMachineScaleSetVMs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetLatestVirtualMachineScaleSetRollingUpgrades {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ComputeManagement::GetLatestVirtualMachineScaleSetRollingUpgrades', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetSnapshots {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -321,6 +337,14 @@ package Azure::ComputeManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ComputeManagement::GrantAccessSnapshots', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub InstanceViewVirtualMachines {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ComputeManagement::InstanceViewVirtualMachines', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAllVirtualMachines {
@@ -651,6 +675,14 @@ package Azure::ComputeManagement;
     my $call_object = $self->new_with_coercions('Azure::ComputeManagement::RunCommandVirtualMachines', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub StartOSUpgradeVirtualMachineScaleSetRollingUpgrades {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ComputeManagement::StartOSUpgradeVirtualMachineScaleSetRollingUpgrades', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub StartVirtualMachines {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -699,7 +731,15 @@ package Azure::ComputeManagement;
     my $call_object = $self->new_with_coercions('Azure::ComputeManagement::UpdateSnapshots', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateVirtualMachineScaleSets {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ComputeManagement::UpdateVirtualMachineScaleSets', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
 
-  sub operations { qw/CaptureVirtualMachines ConvertToManagedDisksVirtualMachines CreateOrUpdateAvailabilitySets CreateOrUpdateDisks CreateOrUpdateImages CreateOrUpdateSnapshots CreateOrUpdateVirtualMachineExtensions CreateOrUpdateVirtualMachines CreateOrUpdateVirtualMachineScaleSetExtensions CreateOrUpdateVirtualMachineScaleSets DeallocateVirtualMachines DeallocateVirtualMachineScaleSets DeallocateVirtualMachineScaleSetVMs DeleteAvailabilitySets DeleteDisks DeleteImages DeleteInstancesVirtualMachineScaleSets DeleteSnapshots DeleteVirtualMachineExtensions DeleteVirtualMachines DeleteVirtualMachineScaleSetExtensions DeleteVirtualMachineScaleSets DeleteVirtualMachineScaleSetVMs GeneralizeVirtualMachines GetAvailabilitySets GetDisks GetImages GetInstanceViewVirtualMachineScaleSets GetInstanceViewVirtualMachineScaleSetVMs GetSnapshots GetVirtualMachineExtensionImages GetVirtualMachineExtensions GetVirtualMachineImages GetVirtualMachineRunCommands GetVirtualMachines GetVirtualMachineScaleSetExtensions GetVirtualMachineScaleSets GetVirtualMachineScaleSetVMs GrantAccessDisks GrantAccessSnapshots ListAllVirtualMachines ListAllVirtualMachineScaleSets ListAvailabilitySets ListAvailableSizesAvailabilitySets ListAvailableSizesVirtualMachines ListByResourceGroupDisks ListByResourceGroupImages ListByResourceGroupSnapshots ListDisks ListImages ListOffersVirtualMachineImages ListPublishersVirtualMachineImages ListResourceSkus ListSkusVirtualMachineImages ListSkusVirtualMachineScaleSets ListSnapshots ListTypesVirtualMachineExtensionImages ListUsage ListVersionsVirtualMachineExtensionImages ListVirtualMachineImages ListVirtualMachineRunCommands ListVirtualMachines ListVirtualMachineScaleSetExtensions ListVirtualMachineScaleSets ListVirtualMachineScaleSetVMs ListVirtualMachineSizes PerformMaintenanceVirtualMachines PowerOffVirtualMachines PowerOffVirtualMachineScaleSets PowerOffVirtualMachineScaleSetVMs RedeployVirtualMachines ReimageAllVirtualMachineScaleSets ReimageAllVirtualMachineScaleSetVMs ReimageVirtualMachineScaleSets ReimageVirtualMachineScaleSetVMs RestartVirtualMachines RestartVirtualMachineScaleSets RestartVirtualMachineScaleSetVMs RevokeAccessDisks RevokeAccessSnapshots RunCommandVirtualMachines StartVirtualMachines StartVirtualMachineScaleSets StartVirtualMachineScaleSetVMs UpdateDisks UpdateInstancesVirtualMachineScaleSets UpdateSnapshots / }
+  sub operations { qw/CancelVirtualMachineScaleSetRollingUpgrades CaptureVirtualMachines ConvertToManagedDisksVirtualMachines CreateOrUpdateAvailabilitySets CreateOrUpdateDisks CreateOrUpdateImages CreateOrUpdateSnapshots CreateOrUpdateVirtualMachineExtensions CreateOrUpdateVirtualMachines CreateOrUpdateVirtualMachineScaleSetExtensions CreateOrUpdateVirtualMachineScaleSets DeallocateVirtualMachines DeallocateVirtualMachineScaleSets DeallocateVirtualMachineScaleSetVMs DeleteAvailabilitySets DeleteDisks DeleteImages DeleteInstancesVirtualMachineScaleSets DeleteSnapshots DeleteVirtualMachineExtensions DeleteVirtualMachines DeleteVirtualMachineScaleSetExtensions DeleteVirtualMachineScaleSets DeleteVirtualMachineScaleSetVMs GeneralizeVirtualMachines GetAvailabilitySets GetDisks GetImages GetInstanceViewVirtualMachineScaleSets GetInstanceViewVirtualMachineScaleSetVMs GetLatestVirtualMachineScaleSetRollingUpgrades GetSnapshots GetVirtualMachineExtensionImages GetVirtualMachineExtensions GetVirtualMachineImages GetVirtualMachineRunCommands GetVirtualMachines GetVirtualMachineScaleSetExtensions GetVirtualMachineScaleSets GetVirtualMachineScaleSetVMs GrantAccessDisks GrantAccessSnapshots InstanceViewVirtualMachines ListAllVirtualMachines ListAllVirtualMachineScaleSets ListAvailabilitySets ListAvailableSizesAvailabilitySets ListAvailableSizesVirtualMachines ListByResourceGroupDisks ListByResourceGroupImages ListByResourceGroupSnapshots ListDisks ListImages ListOffersVirtualMachineImages ListPublishersVirtualMachineImages ListResourceSkus ListSkusVirtualMachineImages ListSkusVirtualMachineScaleSets ListSnapshots ListTypesVirtualMachineExtensionImages ListUsage ListVersionsVirtualMachineExtensionImages ListVirtualMachineImages ListVirtualMachineRunCommands ListVirtualMachines ListVirtualMachineScaleSetExtensions ListVirtualMachineScaleSets ListVirtualMachineScaleSetVMs ListVirtualMachineSizes PerformMaintenanceVirtualMachines PowerOffVirtualMachines PowerOffVirtualMachineScaleSets PowerOffVirtualMachineScaleSetVMs RedeployVirtualMachines ReimageAllVirtualMachineScaleSets ReimageAllVirtualMachineScaleSetVMs ReimageVirtualMachineScaleSets ReimageVirtualMachineScaleSetVMs RestartVirtualMachines RestartVirtualMachineScaleSets RestartVirtualMachineScaleSetVMs RevokeAccessDisks RevokeAccessSnapshots RunCommandVirtualMachines StartOSUpgradeVirtualMachineScaleSetRollingUpgrades StartVirtualMachines StartVirtualMachineScaleSets StartVirtualMachineScaleSetVMs UpdateDisks UpdateInstancesVirtualMachineScaleSets UpdateSnapshots UpdateVirtualMachineScaleSets / }
 
 1;

@@ -4,6 +4,7 @@ package Azure::ComputeManagement::GetVirtualMachineScaleSetsResult;
   has identity => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineScaleSetIdentity'  );
   has plan => (is => 'ro', isa => 'Azure::ComputeManagement::Plan'  );
   has sku => (is => 'ro', isa => 'Azure::ComputeManagement::Sku'  );
+  has zones => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );

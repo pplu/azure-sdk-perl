@@ -3,6 +3,7 @@ package Azure::ComputeManagement::Disk;
 
   has 'managedBy' => (is => 'ro', isa => 'Str'  );
   has 'sku' => (is => 'ro', isa => 'Azure::ComputeManagement::DiskSku'  );
+  has 'zones' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

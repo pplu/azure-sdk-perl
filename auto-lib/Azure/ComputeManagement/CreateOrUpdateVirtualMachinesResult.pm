@@ -4,6 +4,7 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachinesResult;
   has identity => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineIdentity'  );
   has plan => (is => 'ro', isa => 'Azure::ComputeManagement::Plan'  );
   has resources => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::VirtualMachineExtension]'  );
+  has zones => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
