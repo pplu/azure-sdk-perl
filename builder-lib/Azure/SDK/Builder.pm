@@ -362,18 +362,21 @@ package Azure::SDK::Builder;
     my $self = shift;
 
     eval {
+      $self->log->info('Generating service class ' . $self->service);
       $self->process_template(
         'service',
       );
 
-      foreach my $object (sort keys %{ $self->objects }){
+      foreach my $object_name (sort keys %{ $self->objects }){
+        $self->log->info("Generating object class $object_name");
         $self->process_template(
           'object',
-          { object => $self->objects->{ $object } },
+          { object => $self->objects->{ $object_name } },
         );
       }
   
       foreach my $method_name (sort keys %{ $self->methods }){
+        $self->log->info("Generating method class $method_name");
         my $method = $self->methods->{ $method_name };
         $self->process_template(
           'method_args_object',
@@ -381,6 +384,7 @@ package Azure::SDK::Builder;
         );
       }
       foreach my $return_name (sort keys %{ $self->method_returns }){
+        $self->log->info("Generating return class $return_name");
         my $return = $self->method_returns->{ $return_name };
         $self->process_template(
           'method_return_object',
