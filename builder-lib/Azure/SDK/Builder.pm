@@ -287,6 +287,7 @@ package Azure::SDK::Builder;
       return 'DomainServices' if ($title eq 'DomainServices');
       return 'ManagementGroups' if ($title eq 'Management Groups API');
       return 'MachineLearningCompute' if ($title eq 'Machine Learning Compute Management Client');
+      return 'CognitiveEntitySearch' if ($title eq 'Entity Search API');
 
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
