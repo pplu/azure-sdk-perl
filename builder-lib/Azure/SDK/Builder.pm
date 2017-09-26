@@ -273,6 +273,9 @@ package Azure::SDK::Builder;
       return 'CongitiveTextAnalytics' if ($title eq 'Text Analytics API');
       return 'MarketplaceOrdering' if ($title eq 'MarketplaceOrdering.Agreements');
       return 'LogAnalytics' if ($title eq 'Azure Log Analytics - Operations Management');
+      return 'DomainServices' if ($title eq 'DomainServices');
+      return 'ManagementGroups' if ($title eq 'Management Groups API');
+      return 'MachineLearningCompute' if ($title eq 'Machine Learning Compute Management Client');
 
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
