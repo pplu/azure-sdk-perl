@@ -9,7 +9,7 @@ package Azure::LogicManagement::WorkflowRunProperties;
   has 'outputs' => (is => 'ro', isa => 'HashRef[Azure::LogicManagement::WorkflowOutputParameter]'  );
   has 'response' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowRunTrigger'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
-  has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
   has 'trigger' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowRunTrigger'  );
   has 'workflow' => (is => 'ro', isa => 'Azure::LogicManagement::ResourceReference'  );
 1;

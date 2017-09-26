@@ -7,7 +7,7 @@ package Azure::CustomerInsightsManagement::LinkDefinition;
   has 'mappings' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::TypePropertiesMapping]'  );
   has 'operationType' => (is => 'ro', isa => 'Str'  );
   has 'participantPropertyReferences' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::ParticipantPropertyReference]'  );
-  has 'provisioningState' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ProvisioningState'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'referenceOnly' => (is => 'ro', isa => 'Bool'  );
   has 'sourceEntityType' => (is => 'ro', isa => 'Str'  );
   has 'sourceEntityTypeName' => (is => 'ro', isa => 'Str'  );

@@ -3,5 +3,5 @@ package Azure::Relay::CheckNameAvailabilityResult;
 
   has 'message' => (is => 'ro', isa => 'Str'  );
   has 'nameAvailable' => (is => 'ro', isa => 'Bool'  );
-  has 'reason' => (is => 'ro', isa => 'Azure::Relay::UnavailableReason'  );
+  has 'reason' => (is => 'ro', isa => 'Str'  );
 1;

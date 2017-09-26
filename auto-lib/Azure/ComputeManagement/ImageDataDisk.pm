@@ -7,5 +7,5 @@ package Azure::ComputeManagement::ImageDataDisk;
   has 'lun' => (is => 'ro', isa => 'Int'  );
   has 'managedDisk' => (is => 'ro', isa => 'Azure::ComputeManagement::SubResource'  );
   has 'snapshot' => (is => 'ro', isa => 'Azure::ComputeManagement::SubResource'  );
-  has 'storageAccountType' => (is => 'ro', isa => 'Azure::ComputeManagement::StorageAccountType'  );
+  has 'storageAccountType' => (is => 'ro', isa => 'Str'  );
 1;

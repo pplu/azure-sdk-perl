@@ -1,7 +1,7 @@
 package Azure::ServiceMap::ClientGroupMembersCount;
   use Moose;
 
-  has 'accuracy' => (is => 'ro', isa => 'Azure::ServiceMap::Accuracy'  );
+  has 'accuracy' => (is => 'ro', isa => 'Str'  );
   has 'count' => (is => 'ro', isa => 'Int'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );
   has 'groupId' => (is => 'ro', isa => 'Str'  );

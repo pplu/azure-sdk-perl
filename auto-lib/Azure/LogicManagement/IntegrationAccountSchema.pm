@@ -14,6 +14,6 @@ package Azure::LogicManagement::IntegrationAccountSchema;
   has 'documentName' => (is => 'ro', isa => 'Str'  );
   has 'fileName' => (is => 'ro', isa => 'Str'  );
   has 'metadata' => (is => 'ro', isa => 'Azure::LogicManagement::IntegrationAccountSchema_metadata'  );
-  has 'schemaType' => (is => 'ro', isa => 'Azure::LogicManagement::SchemaType'  );
+  has 'schemaType' => (is => 'ro', isa => 'Str'  );
   has 'targetNamespace' => (is => 'ro', isa => 'Str'  );
 1;

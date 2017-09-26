@@ -8,7 +8,7 @@ package Azure::CustomerInsightsManagement::RelationshipDefinition;
   has 'fields' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::PropertyDefinition]'  );
   has 'lookupMappings' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::RelationshipTypeMapping]'  );
   has 'profileType' => (is => 'ro', isa => 'Str'  );
-  has 'provisioningState' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ProvisioningState'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'relatedProfileType' => (is => 'ro', isa => 'Str'  );
   has 'relationshipGuidId' => (is => 'ro', isa => 'Str'  );
   has 'relationshipName' => (is => 'ro', isa => 'Str'  );

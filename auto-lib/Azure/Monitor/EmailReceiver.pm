@@ -3,5 +3,5 @@ package Azure::Monitor::EmailReceiver;
 
   has 'emailAddress' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'status' => (is => 'ro', isa => 'Azure::Monitor::ReceiverStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
 1;

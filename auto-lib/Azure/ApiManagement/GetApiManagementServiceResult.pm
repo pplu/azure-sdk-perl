@@ -3,7 +3,7 @@ package Azure::ApiManagement::GetApiManagementServiceResult;
 
   has etag => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
-  has sku => (is => 'ro', isa => 'Any'  );
+  has sku => (is => 'ro', isa => 'Azure::ApiManagement::ApiManagementServiceSkuProperties'  );
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has tags => (is => 'ro', isa => 'HashRef[Str]'  );
@@ -23,7 +23,7 @@ package Azure::ApiManagement::GetApiManagementServiceResult;
   has scmUrl => (is => 'ro', isa => 'Str'  );
   has staticIps => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has targetProvisioningState => (is => 'ro', isa => 'Str'  );
-  has virtualNetworkConfiguration => (is => 'ro', isa => 'Any'  );
+  has virtualNetworkConfiguration => (is => 'ro', isa => 'Azure::ApiManagement::VirtualNetworkConfiguration'  );
   has virtualNetworkType => (is => 'ro', isa => 'Str'  );
 
 1;

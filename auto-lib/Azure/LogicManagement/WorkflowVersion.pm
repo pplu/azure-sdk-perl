@@ -13,6 +13,6 @@ package Azure::LogicManagement::WorkflowVersion;
   has 'integrationAccount' => (is => 'ro', isa => 'Azure::LogicManagement::ResourceReference'  );
   has 'parameters' => (is => 'ro', isa => 'HashRef[Azure::LogicManagement::WorkflowParameter]'  );
   has 'sku' => (is => 'ro', isa => 'Azure::LogicManagement::Sku'  );
-  has 'state' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowState'  );
+  has 'state' => (is => 'ro', isa => 'Str'  );
   has 'version' => (is => 'ro', isa => 'Str'  );
 1;

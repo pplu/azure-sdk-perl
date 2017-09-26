@@ -1,7 +1,7 @@
 package Azure::KeyVault::RecoverDeletedSecretResult;
   use Moose;
 
-  has attributes => (is => 'ro', isa => 'Any'  );
+  has attributes => (is => 'ro', isa => 'Azure::KeyVault::SecretAttributes'  );
   has contentType => (is => 'ro', isa => 'Str'  );
   has id => (is => 'ro', isa => 'Str'  );
   has kid => (is => 'ro', isa => 'Str'  );

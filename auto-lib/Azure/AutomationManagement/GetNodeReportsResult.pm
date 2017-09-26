@@ -9,7 +9,7 @@ package Azure::AutomationManagement::GetNodeReportsResult;
   has iPV6Addresses => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has id => (is => 'ro', isa => 'Str'  );
   has lastModifiedTime => (is => 'ro', isa => 'Str'  );
-  has metaConfiguration => (is => 'ro', isa => 'Any'  );
+  has metaConfiguration => (is => 'ro', isa => 'Azure::AutomationManagement::DscMetaConfiguration'  );
   has numberOfResources => (is => 'ro', isa => 'Int'  );
   has rawErrors => (is => 'ro', isa => 'Str'  );
   has rebootRequested => (is => 'ro', isa => 'Str'  );

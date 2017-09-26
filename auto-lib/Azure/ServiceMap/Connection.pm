@@ -5,7 +5,7 @@ package Azure::ServiceMap::Connection;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
-  has 'failureState' => (is => 'ro', isa => 'Azure::ServiceMap::ConnectionFailureState'  );
+  has 'failureState' => (is => 'ro', isa => 'Str'  );
   has 'serverPort' => (is => 'ro', isa => 'Azure::ServiceMap::PortReference'  );
   has 'destination' => (is => 'ro', isa => 'Azure::ServiceMap::ResourceReference'  );
   has 'endTime' => (is => 'ro', isa => 'Str'  );

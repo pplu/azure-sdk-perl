@@ -3,7 +3,7 @@ package Azure::Policy::DeletePolicyAssignmentsResult;
 
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has sku => (is => 'ro', isa => 'Any'  );
+  has sku => (is => 'ro', isa => 'Azure::Policy::PolicySku'  );
   has type => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'Str'  );
   has displayName => (is => 'ro', isa => 'Str'  );

@@ -8,7 +8,7 @@ package Azure::ComputeManagement::CreateOrUpdateVirtualMachineExtensionsResult;
   has type => (is => 'ro', isa => 'Str'  );
   has autoUpgradeMinorVersion => (is => 'ro', isa => 'Bool'  );
   has forceUpdateTag => (is => 'ro', isa => 'Str'  );
-  has instanceView => (is => 'ro', isa => 'Any'  );
+  has instanceView => (is => 'ro', isa => 'Azure::ComputeManagement::VirtualMachineExtensionInstanceView'  );
   has protectedSettings => (is => 'ro', isa => 'HashRef'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has publisher => (is => 'ro', isa => 'Str'  );

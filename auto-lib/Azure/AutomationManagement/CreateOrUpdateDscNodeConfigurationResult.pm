@@ -1,7 +1,7 @@
 package Azure::AutomationManagement::CreateOrUpdateDscNodeConfigurationResult;
   use Moose;
 
-  has configuration => (is => 'ro', isa => 'Any'  );
+  has configuration => (is => 'ro', isa => 'Azure::AutomationManagement::DscConfigurationAssociationProperty'  );
   has creationTime => (is => 'ro', isa => 'Str'  );
   has id => (is => 'ro', isa => 'Str'  );
   has lastModifiedTime => (is => 'ro', isa => 'Str'  );

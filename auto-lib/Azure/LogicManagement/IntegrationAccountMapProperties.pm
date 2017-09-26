@@ -6,7 +6,7 @@ package Azure::LogicManagement::IntegrationAccountMapProperties;
   has 'contentLink' => (is => 'ro', isa => 'Azure::LogicManagement::ContentLink'  );
   has 'contentType' => (is => 'ro', isa => 'Str'  );
   has 'createdTime' => (is => 'ro', isa => 'Str'  );
-  has 'mapType' => (is => 'ro', isa => 'Azure::LogicManagement::MapType'  );
+  has 'mapType' => (is => 'ro', isa => 'Str'  );
   has 'metadata' => (is => 'ro', isa => 'Azure::LogicManagement::IntegrationAccountMapProperties_metadata'  );
   has 'parametersSchema' => (is => 'ro', isa => 'Azure::LogicManagement::IntegrationAccountMapProperties_parametersSchema'  );
 1;

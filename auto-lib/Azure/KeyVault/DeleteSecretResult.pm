@@ -4,7 +4,7 @@ package Azure::KeyVault::DeleteSecretResult;
   has deletedDate => (is => 'ro', isa => 'Int'  );
   has recoveryId => (is => 'ro', isa => 'Str'  );
   has scheduledPurgeDate => (is => 'ro', isa => 'Int'  );
-  has attributes => (is => 'ro', isa => 'Any'  );
+  has attributes => (is => 'ro', isa => 'Azure::KeyVault::SecretAttributes'  );
   has contentType => (is => 'ro', isa => 'Str'  );
   has id => (is => 'ro', isa => 'Str'  );
   has kid => (is => 'ro', isa => 'Str'  );

@@ -2,7 +2,7 @@ package Azure::AutomationManagement::CreateDscCompilationJobResult;
   use Moose;
 
   has id => (is => 'ro', isa => 'Str'  );
-  has configuration => (is => 'ro', isa => 'Any'  );
+  has configuration => (is => 'ro', isa => 'Azure::AutomationManagement::DscConfigurationAssociationProperty'  );
   has creationTime => (is => 'ro', isa => 'Str'  );
   has endTime => (is => 'ro', isa => 'Str'  );
   has exception => (is => 'ro', isa => 'Str'  );

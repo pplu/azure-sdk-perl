@@ -2,7 +2,7 @@ package Azure::LogAnalytics::DataSource;
   use Moose;
 
   has 'eTag' => (is => 'ro', isa => 'Str'  );
-  has 'kind' => (is => 'ro', isa => 'Azure::LogAnalytics::DataSourceKind'  );
+  has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'properties' => (is => 'ro', isa => 'Azure::LogAnalytics::Object'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

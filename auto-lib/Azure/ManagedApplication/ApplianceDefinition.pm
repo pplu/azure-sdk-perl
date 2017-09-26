@@ -13,6 +13,6 @@ package Azure::ManagedApplication::ApplianceDefinition;
   has 'authorizations' => (is => 'ro', isa => 'ArrayRef[Azure::ManagedApplication::ApplianceProviderAuthorization]'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
   has 'displayName' => (is => 'ro', isa => 'Str'  );
-  has 'lockLevel' => (is => 'ro', isa => 'Azure::ManagedApplication::ApplianceLockLevel'  );
+  has 'lockLevel' => (is => 'ro', isa => 'Str'  );
   has 'packageFileUri' => (is => 'ro', isa => 'Str'  );
 1;

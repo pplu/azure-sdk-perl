@@ -7,7 +7,7 @@ package Azure::CustomerInsightsManagement::UpdateHubsResult;
   has tags => (is => 'ro', isa => 'HashRef[Str]'  );
   has type => (is => 'ro', isa => 'Str'  );
   has apiEndpoint => (is => 'ro', isa => 'Str'  );
-  has hubBillingInfo => (is => 'ro', isa => 'Any'  );
+  has hubBillingInfo => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::HubBillingInfoFormat'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has tenantFeatures => (is => 'ro', isa => 'Int'  );
   has webEndpoint => (is => 'ro', isa => 'Str'  );

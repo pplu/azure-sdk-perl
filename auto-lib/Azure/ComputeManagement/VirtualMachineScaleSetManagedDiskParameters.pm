@@ -1,5 +1,5 @@
 package Azure::ComputeManagement::VirtualMachineScaleSetManagedDiskParameters;
   use Moose;
 
-  has 'storageAccountType' => (is => 'ro', isa => 'Azure::ComputeManagement::StorageAccountType'  );
+  has 'storageAccountType' => (is => 'ro', isa => 'Str'  );
 1;

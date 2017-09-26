@@ -1,7 +1,7 @@
 package Azure::ComputeManagement::GetAvailabilitySetsResult;
   use Moose;
 
-  has sku => (is => 'ro', isa => 'Any'  );
+  has sku => (is => 'ro', isa => 'Azure::ComputeManagement::Sku'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );

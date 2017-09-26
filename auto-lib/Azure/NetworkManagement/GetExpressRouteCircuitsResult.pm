@@ -2,7 +2,7 @@ package Azure::NetworkManagement::GetExpressRouteCircuitsResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
-  has sku => (is => 'ro', isa => 'Any'  );
+  has sku => (is => 'ro', isa => 'Azure::NetworkManagement::ExpressRouteCircuitSku'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
@@ -16,7 +16,7 @@ package Azure::NetworkManagement::GetExpressRouteCircuitsResult;
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has serviceKey => (is => 'ro', isa => 'Str'  );
   has serviceProviderNotes => (is => 'ro', isa => 'Str'  );
-  has serviceProviderProperties => (is => 'ro', isa => 'Any'  );
+  has serviceProviderProperties => (is => 'ro', isa => 'Azure::NetworkManagement::ExpressRouteCircuitServiceProviderProperties'  );
   has serviceProviderProvisioningState => (is => 'ro', isa => 'Str'  );
 
 1;

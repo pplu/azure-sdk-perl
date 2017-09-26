@@ -11,7 +11,7 @@ package Azure::LogicManagement::WorkflowRunTrigger;
   has 'outputs' => (is => 'ro', isa => 'Azure::LogicManagement::Object'  );
   has 'outputsLink' => (is => 'ro', isa => 'Azure::LogicManagement::ContentLink'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
-  has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
   has 'trackedProperties' => (is => 'ro', isa => 'Azure::LogicManagement::Object'  );
   has 'trackingId' => (is => 'ro', isa => 'Str'  );
 1;

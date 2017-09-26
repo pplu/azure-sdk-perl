@@ -11,7 +11,7 @@ package Azure::CustomerInsightsManagement::RoleAssignment;
   has 'links' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ResourceSetDescription'  );
   has 'principals' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::AssignmentPrincipal]'  );
   has 'profiles' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ResourceSetDescription'  );
-  has 'provisioningState' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ProvisioningState'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'relationshipLinks' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ResourceSetDescription'  );
   has 'relationships' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ResourceSetDescription'  );
   has 'role' => (is => 'ro', isa => 'Str'  );

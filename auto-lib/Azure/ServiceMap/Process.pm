@@ -12,7 +12,7 @@ package Azure::ServiceMap::Process;
   has 'displayName' => (is => 'ro', isa => 'Str'  );
   has 'executableName' => (is => 'ro', isa => 'Str'  );
   has 'machine' => (is => 'ro', isa => 'Azure::ServiceMap::ResourceReference'  );
-  has 'monitoringState' => (is => 'ro', isa => 'Azure::ServiceMap::MonitoringState'  );
+  has 'monitoringState' => (is => 'ro', isa => 'Str'  );
   has 'role' => (is => 'ro', isa => 'Str'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
   has 'timestamp' => (is => 'ro', isa => 'Str'  );

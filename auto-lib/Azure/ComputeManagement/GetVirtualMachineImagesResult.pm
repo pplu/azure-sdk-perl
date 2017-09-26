@@ -6,7 +6,7 @@ package Azure::ComputeManagement::GetVirtualMachineImagesResult;
   has tags => (is => 'ro', isa => 'HashRef[Str]'  );
   has id => (is => 'ro', isa => 'Str'  );
   has dataDiskImages => (is => 'ro', isa => 'ArrayRef[Azure::ComputeManagement::DataDiskImage]'  );
-  has osDiskImage => (is => 'ro', isa => 'Any'  );
-  has plan => (is => 'ro', isa => 'Any'  );
+  has osDiskImage => (is => 'ro', isa => 'Azure::ComputeManagement::OSDiskImage'  );
+  has plan => (is => 'ro', isa => 'Azure::ComputeManagement::PurchasePlan'  );
 
 1;

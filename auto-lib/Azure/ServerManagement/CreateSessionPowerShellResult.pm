@@ -13,6 +13,6 @@ package Azure::ServerManagement::CreateSessionPowerShellResult;
   has runspaceAvailability => (is => 'ro', isa => 'Str'  );
   has sessionId => (is => 'ro', isa => 'Str'  );
   has state => (is => 'ro', isa => 'Str'  );
-  has version => (is => 'ro', isa => 'Any'  );
+  has version => (is => 'ro', isa => 'Azure::ServerManagement::Version'  );
 
 1;

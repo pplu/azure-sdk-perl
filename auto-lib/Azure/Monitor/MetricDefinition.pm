@@ -8,5 +8,5 @@ package Azure::Monitor::MetricDefinition;
   has 'name' => (is => 'ro', isa => 'Azure::Monitor::LocalizableString'  );
   has 'primaryAggregationType' => (is => 'ro', isa => 'Str'  );
   has 'resourceId' => (is => 'ro', isa => 'Str'  );
-  has 'unit' => (is => 'ro', isa => 'Azure::Monitor::Unit'  );
+  has 'unit' => (is => 'ro', isa => 'Str'  );
 1;

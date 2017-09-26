@@ -19,7 +19,7 @@ package Azure::CustomerInsightsManagement::KpiResourceFormat;
   has 'groupByMetadata' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::KpiGroupByMetadata]'  );
   has 'kpiName' => (is => 'ro', isa => 'Str'  );
   has 'participantProfilesMetadata' => (is => 'ro', isa => 'ArrayRef[Azure::CustomerInsightsManagement::KpiParticipantProfilesMetadata]'  );
-  has 'provisioningState' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ProvisioningState'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'tenantId' => (is => 'ro', isa => 'Str'  );
   has 'thresHolds' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::KpiThresholds'  );
   has 'unit' => (is => 'ro', isa => 'Str'  );

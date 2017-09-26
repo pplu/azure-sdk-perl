@@ -5,7 +5,7 @@ package Azure::AutomationManagement::DeleteDscNodeResult;
   has etag => (is => 'ro', isa => 'Str'  );
   has ip => (is => 'ro', isa => 'Str'  );
   has lastSeen => (is => 'ro', isa => 'Str'  );
-  has nodeConfiguration => (is => 'ro', isa => 'Any'  );
+  has nodeConfiguration => (is => 'ro', isa => 'Azure::AutomationManagement::DscNodeConfigurationAssociationProperty'  );
   has nodeId => (is => 'ro', isa => 'Str'  );
   has registrationTime => (is => 'ro', isa => 'Str'  );
   has status => (is => 'ro', isa => 'Str'  );

@@ -7,7 +7,7 @@ package Azure::BatchService::TaskExecutionInformation;
   has 'lastRequeueTime' => (is => 'ro', isa => 'Str'  );
   has 'lastRetryTime' => (is => 'ro', isa => 'Str'  );
   has 'requeueCount' => (is => 'ro', isa => 'Int'  );
-  has 'result' => (is => 'ro', isa => 'Azure::BatchService::TaskExecutionResult'  );
+  has 'result' => (is => 'ro', isa => 'Str'  );
   has 'retryCount' => (is => 'ro', isa => 'Int'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
 1;

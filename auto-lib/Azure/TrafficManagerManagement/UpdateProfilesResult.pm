@@ -6,9 +6,9 @@ package Azure::TrafficManagerManagement::UpdateProfilesResult;
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
-  has dnsConfig => (is => 'ro', isa => 'Any'  );
+  has dnsConfig => (is => 'ro', isa => 'Azure::TrafficManagerManagement::DnsConfig'  );
   has endpoints => (is => 'ro', isa => 'ArrayRef[Azure::TrafficManagerManagement::Endpoint]'  );
-  has monitorConfig => (is => 'ro', isa => 'Any'  );
+  has monitorConfig => (is => 'ro', isa => 'Azure::TrafficManagerManagement::MonitorConfig'  );
   has profileStatus => (is => 'ro', isa => 'Str'  );
   has trafficRoutingMethod => (is => 'ro', isa => 'Str'  );
 

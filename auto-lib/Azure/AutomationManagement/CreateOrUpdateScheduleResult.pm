@@ -3,7 +3,7 @@ package Azure::AutomationManagement::CreateOrUpdateScheduleResult;
 
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has advancedSchedule => (is => 'ro', isa => 'Any'  );
+  has advancedSchedule => (is => 'ro', isa => 'Azure::AutomationManagement::AdvancedSchedule'  );
   has creationTime => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'Str'  );
   has expiryTime => (is => 'ro', isa => 'Str'  );

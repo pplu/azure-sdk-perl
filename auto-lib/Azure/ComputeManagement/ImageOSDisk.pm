@@ -8,5 +8,5 @@ package Azure::ComputeManagement::ImageOSDisk;
   has 'osState' => (is => 'ro', isa => 'Str'  );
   has 'osType' => (is => 'ro', isa => 'Str'  );
   has 'snapshot' => (is => 'ro', isa => 'Azure::ComputeManagement::SubResource'  );
-  has 'storageAccountType' => (is => 'ro', isa => 'Azure::ComputeManagement::StorageAccountType'  );
+  has 'storageAccountType' => (is => 'ro', isa => 'Str'  );
 1;

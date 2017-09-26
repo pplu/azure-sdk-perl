@@ -1,9 +1,9 @@
 package Azure::ManagedApplication::GetApplianceDefinitionsResult;
   use Moose;
 
-  has identity => (is => 'ro', isa => 'Any'  );
+  has identity => (is => 'ro', isa => 'Azure::ManagedApplication::Identity'  );
   has managedBy => (is => 'ro', isa => 'Str'  );
-  has sku => (is => 'ro', isa => 'Any'  );
+  has sku => (is => 'ro', isa => 'Azure::ManagedApplication::Sku'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );

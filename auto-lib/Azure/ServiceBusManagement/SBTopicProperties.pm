@@ -13,7 +13,7 @@ package Azure::ServiceBusManagement::SBTopicProperties;
   has 'maxSizeInMegabytes' => (is => 'ro', isa => 'Int'  );
   has 'requiresDuplicateDetection' => (is => 'ro', isa => 'Bool'  );
   has 'sizeInBytes' => (is => 'ro', isa => 'Int'  );
-  has 'status' => (is => 'ro', isa => 'Azure::ServiceBusManagement::EntityStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
   has 'subscriptionCount' => (is => 'ro', isa => 'Int'  );
   has 'supportOrdering' => (is => 'ro', isa => 'Bool'  );
   has 'updatedAt' => (is => 'ro', isa => 'Str'  );

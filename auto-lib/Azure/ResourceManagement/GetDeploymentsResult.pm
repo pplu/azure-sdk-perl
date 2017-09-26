@@ -3,6 +3,6 @@ package Azure::ResourceManagement::GetDeploymentsResult;
 
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has properties => (is => 'ro', isa => 'Any'  );
+  has properties => (is => 'ro', isa => 'Azure::ResourceManagement::DeploymentPropertiesExtended'  );
 
 1;

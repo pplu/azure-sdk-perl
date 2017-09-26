@@ -5,5 +5,5 @@ package Azure::Monitor::Metric;
   has 'name' => (is => 'ro', isa => 'Azure::Monitor::LocalizableString'  );
   has 'timeseries' => (is => 'ro', isa => 'ArrayRef[Azure::Monitor::TimeSeriesElement]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
-  has 'unit' => (is => 'ro', isa => 'Azure::Monitor::Unit'  );
+  has 'unit' => (is => 'ro', isa => 'Str'  );
 1;

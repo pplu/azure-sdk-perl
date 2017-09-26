@@ -6,6 +6,6 @@ package Azure::ServiceMap::GetClientGroupsResult;
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has type => (is => 'ro', isa => 'Str'  );
-  has clientsOf => (is => 'ro', isa => 'Any'  );
+  has clientsOf => (is => 'ro', isa => 'Azure::ServiceMap::ResourceReference'  );
 
 1;

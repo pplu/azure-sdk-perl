@@ -13,7 +13,7 @@ package Azure::CustomerInsightsManagement::Prediction;
   has 'positiveOutcomeExpression' => (is => 'ro', isa => 'Str'  );
   has 'predictionName' => (is => 'ro', isa => 'Str'  );
   has 'primaryProfileType' => (is => 'ro', isa => 'Str'  );
-  has 'provisioningState' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ProvisioningState'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
   has 'scopeExpression' => (is => 'ro', isa => 'Str'  );
   has 'scoreLabel' => (is => 'ro', isa => 'Str'  );
   has 'systemGeneratedEntities' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::Prediction_systemGeneratedEntities'  );

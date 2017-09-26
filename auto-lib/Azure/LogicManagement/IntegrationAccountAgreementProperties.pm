@@ -1,7 +1,7 @@
 package Azure::LogicManagement::IntegrationAccountAgreementProperties;
   use Moose;
 
-  has 'agreementType' => (is => 'ro', isa => 'Azure::LogicManagement::AgreementType'  );
+  has 'agreementType' => (is => 'ro', isa => 'Str'  );
   has 'changedTime' => (is => 'ro', isa => 'Str'  );
   has 'content' => (is => 'ro', isa => 'Azure::LogicManagement::AgreementContent'  );
   has 'createdTime' => (is => 'ro', isa => 'Str'  );

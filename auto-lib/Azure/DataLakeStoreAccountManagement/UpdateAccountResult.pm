@@ -1,7 +1,7 @@
 package Azure::DataLakeStoreAccountManagement::UpdateAccountResult;
   use Moose;
 
-  has identity => (is => 'ro', isa => 'Any'  );
+  has identity => (is => 'ro', isa => 'Azure::DataLakeStoreAccountManagement::EncryptionIdentity'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
@@ -9,7 +9,7 @@ package Azure::DataLakeStoreAccountManagement::UpdateAccountResult;
   has type => (is => 'ro', isa => 'Str'  );
   has currentTier => (is => 'ro', isa => 'Str'  );
   has defaultGroup => (is => 'ro', isa => 'Str'  );
-  has encryptionConfig => (is => 'ro', isa => 'Any'  );
+  has encryptionConfig => (is => 'ro', isa => 'Azure::DataLakeStoreAccountManagement::EncryptionConfig'  );
   has encryptionProvisioningState => (is => 'ro', isa => 'Str'  );
   has encryptionState => (is => 'ro', isa => 'Str'  );
   has firewallAllowAzureIps => (is => 'ro', isa => 'Str'  );

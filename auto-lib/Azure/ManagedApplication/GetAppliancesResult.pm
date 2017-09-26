@@ -2,10 +2,10 @@ package Azure::ManagedApplication::GetAppliancesResult;
   use Moose;
 
   has kind => (is => 'ro', isa => 'Str'  );
-  has plan => (is => 'ro', isa => 'Any'  );
-  has identity => (is => 'ro', isa => 'Any'  );
+  has plan => (is => 'ro', isa => 'Azure::ManagedApplication::Plan'  );
+  has identity => (is => 'ro', isa => 'Azure::ManagedApplication::Identity'  );
   has managedBy => (is => 'ro', isa => 'Str'  );
-  has sku => (is => 'ro', isa => 'Any'  );
+  has sku => (is => 'ro', isa => 'Azure::ManagedApplication::Sku'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );

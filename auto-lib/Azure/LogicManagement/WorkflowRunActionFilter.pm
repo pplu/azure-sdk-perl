@@ -1,5 +1,5 @@
 package Azure::LogicManagement::WorkflowRunActionFilter;
   use Moose;
 
-  has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
 1;
