@@ -201,6 +201,17 @@ package Azure::SDK::Builder;
         $self->_get_subobjects_in(\%objects, $def_name, $objects{ $def_name });
       }
 
+      return \%objects;
+    }
+  );
+
+  has inline_objects => (
+    is => 'ro',
+    isa => 'HashRef[Azure::SDK::Builder::Object]',
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      my $objects = {};
       # Get inlined objects in return objects (properties of objects that instead of ref, inline their defintion)
       foreach my $rname (keys %{ $self->method_returns }) {
         my $object = $self->method_returns->{ $rname };
@@ -208,7 +219,7 @@ package Azure::SDK::Builder;
         $self->_get_subobjects_in(\%objects, $prefix, $object);
       }
 
-      return \%objects;
+      return $objects;
     },
   );
 
@@ -375,6 +386,13 @@ package Azure::SDK::Builder;
         $self->process_template(
           'object',
           { object => $self->objects->{ $object_name } },
+        );
+      }
+      foreach my $object_name (sort keys %{ $self->inline_objects }){
+        $self->log->info("Generating object class $object_name");
+        $self->process_template(
+          'object',
+          { object => $self->inline_objects->{ $object_name } },
         );
       }
   
