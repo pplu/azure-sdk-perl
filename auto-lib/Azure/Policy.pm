@@ -8,12 +8,12 @@ package Azure::Policy;
     my $call_object = $self->new_with_coercions('Azure::Policy::CreateByIdPolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdatePolicySetDefinitions {
+  sub CreateOrUpdatePolicyDefinitions {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::Policy::CreateOrUpdatePolicySetDefinitions', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::Policy::CreateOrUpdatePolicyDefinitions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreatePolicyAssignments {
@@ -31,12 +31,12 @@ package Azure::Policy;
     my $call_object = $self->new_with_coercions('Azure::Policy::DeletePolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeletePolicySetDefinitions {
+  sub DeletePolicyDefinitions {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::Policy::DeletePolicySetDefinitions', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::Policy::DeletePolicyDefinitions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetByIdPolicyAssignments {
@@ -49,12 +49,12 @@ package Azure::Policy;
     my $call_object = $self->new_with_coercions('Azure::Policy::GetPolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetPolicySetDefinitions {
+  sub GetPolicyDefinitions {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::Policy::GetPolicySetDefinitions', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::Policy::GetPolicyDefinitions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListForResourceGroupPolicyAssignments {
@@ -81,15 +81,15 @@ package Azure::Policy;
     my $call_object = $self->new_with_coercions('Azure::Policy::ListPolicyAssignments', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListPolicySetDefinitions {
+  sub ListPolicyDefinitions {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::Policy::ListPolicySetDefinitions', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::Policy::ListPolicyDefinitions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateByIdPolicyAssignments CreateOrUpdatePolicySetDefinitions CreatePolicyAssignments DeleteByIdPolicyAssignments DeletePolicyAssignments DeletePolicySetDefinitions GetByIdPolicyAssignments GetPolicyAssignments GetPolicySetDefinitions ListForResourceGroupPolicyAssignments ListForResourcePolicyAssignments ListPolicyAssignments ListPolicySetDefinitions / }
+  sub operations { qw/CreateByIdPolicyAssignments CreateOrUpdatePolicyDefinitions CreatePolicyAssignments DeleteByIdPolicyAssignments DeletePolicyAssignments DeletePolicyDefinitions GetByIdPolicyAssignments GetPolicyAssignments GetPolicyDefinitions ListForResourceGroupPolicyAssignments ListForResourcePolicyAssignments ListPolicyAssignments ListPolicyDefinitions / }
 
 1;
