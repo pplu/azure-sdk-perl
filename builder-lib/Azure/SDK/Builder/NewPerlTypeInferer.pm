@@ -59,7 +59,7 @@ package Azure::SDK::Builder::NewPerlTypeInferer;
         if (defined $schema->additionalProperties) {
           # the existence of additionalProperties indicates that it's a "map" object (a HashRef in Perl terms) whose keys are strings, and values of a type described in additionalProperties
           if (defined $schema->additionalProperties->ref) {
-            my $inner = $self->root_schema->object_for_path($schema->additionalProperties->ref)->fully_namespaced;
+            my $inner = $self->root_schema->object_for_ref($schema->additionalProperties)->fully_namespaced;
             return "HashRef[$inner]";
           }
           return 'HashRef[Str]' if ($schema->additionalProperties->type eq 'string');
