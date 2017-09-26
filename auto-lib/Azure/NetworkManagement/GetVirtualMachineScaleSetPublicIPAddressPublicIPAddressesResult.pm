@@ -3,6 +3,7 @@ package Azure::NetworkManagement::GetVirtualMachineScaleSetPublicIPAddressPublic
 
   has etag => (is => 'ro', isa => 'Str'  );
   has sku => (is => 'ro', isa => 'Azure::NetworkManagement::PublicIPAddressSku'  );
+  has zones => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
