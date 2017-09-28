@@ -1,6 +1,6 @@
-package Azure::SDK::Builder::BodyMethodArgument;
+package Azure::SDK::Builder::MethodArgument;
   use Moose;
-  extends 'Azure::SDK::Builder::Parameter';
+  extends 'Azure::SDK::Builder::Property';
 
   has '+original_schema' => (
     isa => 'Swagger::Schema::BodyParameter|Swagger::Schema::OtherParameter|Swagger::Schema::RefParameter|Swagger::Schema::Schema',

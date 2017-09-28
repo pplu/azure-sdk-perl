@@ -1,4 +1,4 @@
-package Azure::SDK::Builder::Parameter;
+package Azure::SDK::Builder::Property;
   use Moose;
 
   has original_schema => (is => 'ro', required => 1, isa => 'Swagger::Schema::Schema');

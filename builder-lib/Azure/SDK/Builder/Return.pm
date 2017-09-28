@@ -5,7 +5,7 @@ package Azure::SDK::Builder::Return;
   has name => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);
 
-  use Azure::SDK::Builder::Parameter;
+  use Azure::SDK::Builder::Property;
 
   has '+type' => (isa => 'Str');
   has ref => (is => 'ro', isa => 'Str');
@@ -50,7 +50,7 @@ package Azure::SDK::Builder::Return;
 
       my $type = $self->name . "_${prop_name}" if (defined $props->properties);
 
-      push @$atts, Azure::SDK::Builder::Parameter->new(
+      push @$atts, Azure::SDK::Builder::Property->new(
         root_schema => $root_schema,
         original_name => $prop_name,
         original_schema => $props,
@@ -73,7 +73,7 @@ package Azure::SDK::Builder::Return;
   has attributes => (
     is => 'ro',
     lazy => 1,
-    isa => 'ArrayRef[Azure::SDK::Builder::Parameter]',
+    isa => 'ArrayRef[Azure::SDK::Builder::Property]',
     default => sub {
       my $self = shift;
 

@@ -2,7 +2,7 @@ package Azure::SDK::Builder::Method;
   use Moose;
   extends 'Swagger::Schema::Operation';
 
-  use Azure::SDK::Builder::BodyMethodArgument;
+  use Azure::SDK::Builder::MethodArgument;
   use Azure::SDK::Builder::Return;
 
   has name => (is => 'ro', isa => 'Str', required => 1);
@@ -31,7 +31,7 @@ package Azure::SDK::Builder::Method;
 
   has subscription_argument => (
     is => 'ro',
-    isa => 'Undef|Azure::SDK::Builder::BodyMethodArgument',
+    isa => 'Undef|Azure::SDK::Builder::MethodArgument',
     lazy => 1,
     default => sub {
       my $self = shift;
@@ -44,7 +44,7 @@ package Azure::SDK::Builder::Method;
 
   has arguments => (
     is => 'ro',
-    isa => 'ArrayRef[Azure::SDK::Builder::BodyMethodArgument]',
+    isa => 'ArrayRef[Azure::SDK::Builder::MethodArgument]',
     lazy => 1,
     default => sub {
       my $self = shift;
@@ -68,7 +68,7 @@ package Azure::SDK::Builder::Method;
       #    my $path = $self->root_schema->resolve_path($resolve_this->resolved_schema->schema->ref)->object;
       #    foreach my $arg_name (keys %{ $path->properties }) {
       #      my $arg_schema = $path->properties->{ $arg_name };
-      #      my $argument = Azure::SDK::Builder::BodyMethodArgument->new(
+      #      my $argument = Azure::SDK::Builder::MethodArgument->new(
       #        original_name => $arg_name,
       #        original_schema => $arg_schema,
       #        root_schema => $self->root_schema,
@@ -95,7 +95,7 @@ package Azure::SDK::Builder::Method;
     return [] if (not defined $list);
 
     return [ map {
-      Azure::SDK::Builder::BodyMethodArgument->new(
+      Azure::SDK::Builder::MethodArgument->new(
         original_schema => $_,
         root_schema => $self->root_schema,
         service => $self->service,

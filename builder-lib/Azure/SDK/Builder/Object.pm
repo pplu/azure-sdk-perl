@@ -4,7 +4,7 @@ package Azure::SDK::Builder::Object;
   use Data::Dumper;
 
   extends 'Swagger::Schema::Schema';
-  use Azure::SDK::Builder::Parameter;
+  use Azure::SDK::Builder::Property;
 
   has name    => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);
@@ -50,7 +50,7 @@ package Azure::SDK::Builder::Object;
 
       my $type = $self->name . "_${prop_name}" if (defined $prop_schema->properties);
 
-      push @$atts, Azure::SDK::Builder::Parameter->new(
+      push @$atts, Azure::SDK::Builder::Property->new(
         original_schema => $prop_schema,
         root_schema => $root_schema,
         original_name => $prop_name,
@@ -72,7 +72,7 @@ package Azure::SDK::Builder::Object;
 
   has attributes => (
     is => 'ro',
-    isa => 'ArrayRef[Azure::SDK::Builder::Parameter]',
+    isa => 'ArrayRef[Azure::SDK::Builder::Property]',
     lazy => 1,
     default => sub {
       my $self = shift;
