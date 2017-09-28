@@ -13,7 +13,7 @@ gen-classes:
 	carton exec perl -I lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/specification/resources/resource-manager/Microsoft.Resources/2017-05-10/resources.json
 	carton exec perl -I lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/specification/resources/resource-manager/Microsoft.Solutions/2016-09-01-preview/managedapplications.json
 	carton exec perl -I lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/specification/resources/resource-manager/Microsoft.Authorization/2016-09-01/locks.json
-	carton exec perl -I lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/specification/resources/resource-manager/Microsoft.Authorization/2016-12-01/policy.json
+	carton exec perl -I lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/specification/resources/resource-manager/Microsoft.Authorization/2016-12-01/policy*.json
 	carton exec perl -I lib/ builder-bin/azure-sdk-gen azure-rest-api-specs/specification/datalake-store/data-plane/Microsoft.DataLakeStore/2015-10-01-preview/filesystem.json
 	# Find data-plane APIs for generation. skip datalake and search
 	find azure-rest-api-specs/specification/ -maxdepth 1 -mindepth 1 | xargs -I{} find {} -type d -name data-plane ! -path */datalake-analytics/* ! -path */search/* | xargs -I{} bash -c "find {} -mindepth 2 -maxdepth 2 | sort | tail -n1" | xargs -I{} bash -c "carton exec perl -I lib/ ./builder-bin/azure-sdk-gen {}/*.json" ; exit 0
