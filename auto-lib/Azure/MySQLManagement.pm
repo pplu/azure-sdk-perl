@@ -59,6 +59,14 @@ package Azure::MySQLManagement;
     my $call_object = $self->new_with_coercions('Azure::MySQLManagement::DeleteServers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ExecuteCheckNameAvailability {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ExecuteCheckNameAvailability', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetConfigurations {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -131,9 +139,25 @@ package Azure::MySQLManagement;
     my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListByServerLogFiles', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListLocationBasedPerformanceTier {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListLocationBasedPerformanceTier', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListOperations {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListOperations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListPerformanceTiers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListPerformanceTiers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListServers {
@@ -153,6 +177,6 @@ package Azure::MySQLManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateConfigurations CreateOrUpdateDatabases CreateOrUpdateFirewallRules CreateOrUpdateServers DeleteDatabases DeleteFirewallRules DeleteServers GetConfigurations GetDatabases GetFirewallRules GetServers ListByResourceGroupServers ListByServerConfigurations ListByServerDatabases ListByServerFirewallRules ListByServerLogFiles ListOperations ListServers UpdateServers / }
+  sub operations { qw/CreateOrUpdateConfigurations CreateOrUpdateDatabases CreateOrUpdateFirewallRules CreateOrUpdateServers DeleteDatabases DeleteFirewallRules DeleteServers ExecuteCheckNameAvailability GetConfigurations GetDatabases GetFirewallRules GetServers ListByResourceGroupServers ListByServerConfigurations ListByServerDatabases ListByServerFirewallRules ListByServerLogFiles ListLocationBasedPerformanceTier ListOperations ListPerformanceTiers ListServers UpdateServers / }
 
 1;
