@@ -2,8 +2,8 @@ package Azure::DevTestLabs::CreateOrUpdateFormulas;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-05-15',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-05-15',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'formula' => (is => 'ro', required => 1, isa => 'Azure::DevTestLabs::Formula',
     traits => [ 'Azure::ParamInBody' ],

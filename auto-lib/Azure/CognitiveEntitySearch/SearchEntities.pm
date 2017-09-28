@@ -2,11 +2,11 @@ package Azure::CognitiveEntitySearch::SearchEntities;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Accept-Language' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
   has 'Accept' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
+  );
+  has 'Accept_Language' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'Accept-Language',
   );
   has 'Pragma' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader' ],
@@ -23,17 +23,17 @@ package Azure::CognitiveEntitySearch::SearchEntities;
   has 'SetLang' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'User-Agent' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'User_Agent' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'User-Agent',
   );
-  has 'X-MSEdge-ClientID' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'X_MSEdge_ClientID' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'X-MSEdge-ClientID',
   );
-  has 'X-MSEdge-ClientIP' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'X_MSEdge_ClientIP' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'X-MSEdge-ClientIP',
   );
-  has 'X-Search-Location' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'X_Search_Location' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'X-Search-Location',
   );
   has 'cc' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],

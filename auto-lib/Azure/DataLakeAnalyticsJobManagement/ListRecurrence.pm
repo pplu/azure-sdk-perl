@@ -2,8 +2,8 @@ package Azure::DataLakeAnalyticsJobManagement::ListRecurrence;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'endDateTime' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],

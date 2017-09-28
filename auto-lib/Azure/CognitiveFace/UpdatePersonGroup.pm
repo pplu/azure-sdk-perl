@@ -2,8 +2,8 @@ package Azure::CognitiveFace::UpdatePersonGroup;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Ocp-Apim-Subscription-Key' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'Ocp_Apim_Subscription_Key' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'Ocp-Apim-Subscription-Key',
   );
   has 'body' => (is => 'ro', required => 1, isa => 'Azure::CognitiveFace::CreatePersonGroupRequest',
     traits => [ 'Azure::ParamInBody' ],

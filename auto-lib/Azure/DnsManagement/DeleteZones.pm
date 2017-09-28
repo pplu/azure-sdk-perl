@@ -2,11 +2,11 @@ package Azure::DnsManagement::DeleteZones;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'If-Match' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'If_Match' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'If-Match',
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-15-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

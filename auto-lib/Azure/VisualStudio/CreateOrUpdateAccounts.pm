@@ -2,8 +2,8 @@ package Azure::VisualStudio::CreateOrUpdateAccounts;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2014-04-01-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2014-04-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'body' => (is => 'ro', required => 1, isa => 'Azure::VisualStudio::AccountResourceRequest',
     traits => [ 'Azure::ParamInBody' ],

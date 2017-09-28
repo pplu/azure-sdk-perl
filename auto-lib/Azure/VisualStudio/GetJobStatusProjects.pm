@@ -2,8 +2,8 @@ package Azure::VisualStudio::GetJobStatusProjects;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2014-04-01-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2014-04-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'jobId' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],

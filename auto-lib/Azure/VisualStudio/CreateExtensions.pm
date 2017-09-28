@@ -5,8 +5,8 @@ package Azure::VisualStudio::CreateExtensions;
   has 'accountResourceName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2014-04-01-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2014-04-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'body' => (is => 'ro', required => 1, isa => 'Azure::VisualStudio::ExtensionResourceRequest',
     traits => [ 'Azure::ParamInBody' ],

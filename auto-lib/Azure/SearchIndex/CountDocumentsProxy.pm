@@ -2,11 +2,11 @@ package Azure::SearchIndex::CountDocumentsProxy;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-09-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
-  has 'client-request-id' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'client_request_id' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'client-request-id',
   );
 
   class_has _api_uri => (is => 'ro', default => '/docs/$count');

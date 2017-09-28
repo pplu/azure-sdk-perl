@@ -8,8 +8,8 @@ package Azure::TimeSeriesInsights::UpdateAccessPolicies;
   has 'accessPolicyUpdateParameters' => (is => 'ro', required => 1, isa => 'Azure::TimeSeriesInsights::AccessPolicyUpdateParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-02-28-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-02-28-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'environmentName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

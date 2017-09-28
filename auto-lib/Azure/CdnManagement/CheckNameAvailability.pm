@@ -2,8 +2,8 @@ package Azure::CdnManagement::CheckNameAvailability;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-02',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-02',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'checkNameAvailabilityInput' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::CheckNameAvailabilityInput',
     traits => [ 'Azure::ParamInBody' ],

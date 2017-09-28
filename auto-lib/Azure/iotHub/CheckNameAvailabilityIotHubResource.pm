@@ -2,8 +2,8 @@ package Azure::iotHub::CheckNameAvailabilityIotHubResource;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-07-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-07-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'operationInputs' => (is => 'ro', required => 1, isa => 'Azure::iotHub::OperationInputs',
     traits => [ 'Azure::ParamInBody' ],

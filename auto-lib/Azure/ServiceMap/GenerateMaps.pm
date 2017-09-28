@@ -2,8 +2,8 @@ package Azure::ServiceMap::GenerateMaps;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-11-01-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-11-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'request' => (is => 'ro', required => 1, isa => 'Azure::ServiceMap::MapRequest',
     traits => [ 'Azure::ParamInBody' ],

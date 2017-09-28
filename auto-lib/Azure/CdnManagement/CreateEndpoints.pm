@@ -2,8 +2,8 @@ package Azure::CdnManagement::CreateEndpoints;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-02',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-02',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'endpoint' => (is => 'ro', required => 1, isa => 'Azure::CdnManagement::Endpoint',
     traits => [ 'Azure::ParamInBody' ],

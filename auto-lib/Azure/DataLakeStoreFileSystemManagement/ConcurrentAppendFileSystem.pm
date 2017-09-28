@@ -2,11 +2,11 @@ package Azure::DataLakeStoreFileSystemManagement::ConcurrentAppendFileSystem;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Transfer-Encoding' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'Transfer_Encoding' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'Transfer-Encoding',
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-10-01-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-10-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'appendMode' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],

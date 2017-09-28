@@ -2,8 +2,8 @@ package Azure::MySQLManagement::UpdateServers;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-30-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-04-30-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::MySQLManagement::ServerUpdateParameters',
     traits => [ 'Azure::ParamInBody' ],

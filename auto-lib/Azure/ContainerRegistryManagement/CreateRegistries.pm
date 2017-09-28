@@ -2,8 +2,8 @@ package Azure::ContainerRegistryManagement::CreateRegistries;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-10-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-10-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'registry' => (is => 'ro', required => 1, isa => 'Azure::ContainerRegistryManagement::Registry',
     traits => [ 'Azure::ParamInBody' ],

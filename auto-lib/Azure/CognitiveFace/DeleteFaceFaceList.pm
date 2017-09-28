@@ -2,8 +2,8 @@ package Azure::CognitiveFace::DeleteFaceFaceList;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Ocp-Apim-Subscription-Key' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'Ocp_Apim_Subscription_Key' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'Ocp-Apim-Subscription-Key',
   );
   has 'faceListId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
