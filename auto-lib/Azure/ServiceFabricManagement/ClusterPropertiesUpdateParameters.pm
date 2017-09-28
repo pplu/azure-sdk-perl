@@ -1,6 +1,7 @@
 package Azure::ServiceFabricManagement::ClusterPropertiesUpdateParameters;
   use Moose;
 
+  has 'addOnFeatures' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::AddOnFeatures]'  );
   has 'certificate' => (is => 'ro', isa => 'Azure::ServiceFabricManagement::CertificateDescription'  );
   has 'clientCertificateCommonNames' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::ClientCertificateCommonName]'  );
   has 'clientCertificateThumbprints' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::ClientCertificateThumbprint]'  );
