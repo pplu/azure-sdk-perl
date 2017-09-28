@@ -3,6 +3,14 @@ package Azure::ServiceBusManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
+  sub BreakPairingDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::BreakPairingDisasterRecoveryConfigs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CheckNameAvailabilityNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -33,6 +41,14 @@ package Azure::ServiceBusManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleTopics', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateOrUpdateDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateDisasterRecoveryConfigs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateNamespaces {
@@ -99,6 +115,14 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteAuthorizationRuleTopics', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub DeleteDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteDisasterRecoveryConfigs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub DeleteNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -139,6 +163,14 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteTopics', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub FailOverDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::FailOverDisasterRecoveryConfigs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetAuthorizationRuleNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -161,6 +193,14 @@ package Azure::ServiceBusManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetAuthorizationRuleTopics', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetDisasterRecoveryConfigs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetNamespaces {
@@ -283,6 +323,14 @@ package Azure::ServiceBusManagement;
     my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByTopicSubscriptions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListDisasterRecoveryConfigs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListKeysNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -361,6 +409,6 @@ package Azure::ServiceBusManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleQueues CreateOrUpdateAuthorizationRuleTopics CreateOrUpdateNamespaces CreateOrUpdateQueues CreateOrUpdateRules CreateOrUpdateSubscriptions CreateOrUpdateTopics DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleQueues DeleteAuthorizationRuleTopics DeleteNamespaces DeleteQueues DeleteRules DeleteSubscriptions DeleteTopics GetAuthorizationRuleNamespaces GetAuthorizationRuleQueues GetAuthorizationRuleTopics GetNamespaces GetQueues GetRules GetSubscriptions GetTopics ListAuthorizationRulesNamespaces ListAuthorizationRulesQueues ListAuthorizationRulesTopics ListByNamespaceEventHubs ListByNamespaceQueues ListByNamespaceTopics ListByResourceGroupNamespaces ListBySkuRegions ListBySubscriptionsRules ListByTopicSubscriptions ListKeysNamespaces ListKeysQueues ListKeysTopics ListNamespaces ListOperations ListPremiumMessagingRegions RegenerateKeysNamespaces RegenerateKeysQueues RegenerateKeysTopics UpdateNamespaces / }
+  sub operations { qw/BreakPairingDisasterRecoveryConfigs CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleQueues CreateOrUpdateAuthorizationRuleTopics CreateOrUpdateDisasterRecoveryConfigs CreateOrUpdateNamespaces CreateOrUpdateQueues CreateOrUpdateRules CreateOrUpdateSubscriptions CreateOrUpdateTopics DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleQueues DeleteAuthorizationRuleTopics DeleteDisasterRecoveryConfigs DeleteNamespaces DeleteQueues DeleteRules DeleteSubscriptions DeleteTopics FailOverDisasterRecoveryConfigs GetAuthorizationRuleNamespaces GetAuthorizationRuleQueues GetAuthorizationRuleTopics GetDisasterRecoveryConfigs GetNamespaces GetQueues GetRules GetSubscriptions GetTopics ListAuthorizationRulesNamespaces ListAuthorizationRulesQueues ListAuthorizationRulesTopics ListByNamespaceEventHubs ListByNamespaceQueues ListByNamespaceTopics ListByResourceGroupNamespaces ListBySkuRegions ListBySubscriptionsRules ListByTopicSubscriptions ListDisasterRecoveryConfigs ListKeysNamespaces ListKeysQueues ListKeysTopics ListNamespaces ListOperations ListPremiumMessagingRegions RegenerateKeysNamespaces RegenerateKeysQueues RegenerateKeysTopics UpdateNamespaces / }
 
 1;
