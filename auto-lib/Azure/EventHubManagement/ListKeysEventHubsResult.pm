@@ -1,6 +1,8 @@
 package Azure::EventHubManagement::ListKeysEventHubsResult;
   use Moose;
 
+  has aliasPrimaryConnectionString => (is => 'ro', isa => 'Str'  );
+  has aliasSecondaryConnectionString => (is => 'ro', isa => 'Str'  );
   has keyName => (is => 'ro', isa => 'Str'  );
   has primaryConnectionString => (is => 'ro', isa => 'Str'  );
   has primaryKey => (is => 'ro', isa => 'Str'  );
