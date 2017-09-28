@@ -22,7 +22,7 @@ package Azure::SDK::Builder::NewPerlTypeInferer;
 
     my $schema = $self->resolved_schema;
 
-    if (defined $schema->type) {
+    if ($schema->can('type') and defined $schema->type) {
       if      ($schema->type eq 'string') {
         return 'Str';
       } elsif ($schema->type eq 'integer') {
@@ -55,7 +55,7 @@ package Azure::SDK::Builder::NewPerlTypeInferer;
           $inner = $object->fully_namespaced;
         }
         return "ArrayRef[$inner]";
-      } elsif ($schema->type eq 'object') {
+      } elsif ($schema->can('type') and $schema->type eq 'object') {
         if (defined $schema->additionalProperties) {
           # the existence of additionalProperties indicates that it's a "map" object (a HashRef in Perl terms) whose keys are strings, and values of a type described in additionalProperties
           if (defined $schema->additionalProperties->ref) {
@@ -84,9 +84,9 @@ package Azure::SDK::Builder::NewPerlTypeInferer;
       }
     } elsif ($schema->can('schema') and defined $schema->schema) {
       if (defined $schema->schema->ref) {
-        my $obj = $self->root_schema->object_for_ref($self->schema);
+        my $obj = $self->root_schema->object_for_ref($schema->schema);
         return $obj->fully_namespaced;
-      } elsif (defined $self->schema->type) {
+      } elsif (defined $schema->schema->type) {
         my $type = $schema->schema->type;
         my $inner;
 
