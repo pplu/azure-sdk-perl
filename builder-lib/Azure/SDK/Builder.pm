@@ -156,8 +156,7 @@ package Azure::SDK::Builder;
   sub object_for_path {
     my ($self, $path) = @_;
     if (my ($second) = ($path =~ m/definitions\/(.*)$/)){
-      my $obj_name = $self->definitionname_to_objectname($second);
-      return $self->objects->{ $obj_name };
+      return $self->objects->{ $second };
     } else {
       die "$path is not for an object";
     }
@@ -190,7 +189,7 @@ package Azure::SDK::Builder;
 
         my $def_name = $self->definitionname_to_objectname($ob_name);
 
-        $objects{ $def_name } = 
+        $objects{ $ob_name } = 
           Azure::SDK::Builder::Object->new(
             %$object,
             root_schema => $root_schema,
@@ -198,7 +197,7 @@ package Azure::SDK::Builder;
             name => $def_name,
           );
 
-        $self->_get_subobjects_in(\%objects, $def_name, $objects{ $def_name });
+        $self->_get_subobjects_in(\%objects, $def_name, $objects{ $ob_name });
       }
 
       return \%objects;
