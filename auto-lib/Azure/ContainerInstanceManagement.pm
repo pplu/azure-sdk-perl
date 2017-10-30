@@ -51,7 +51,12 @@ package Azure::ContainerInstanceManagement;
     my $call_object = $self->new_with_coercions('Azure::ContainerInstanceManagement::ListContainerLogs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListOperations {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ContainerInstanceManagement::ListOperations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
 
-  sub operations { qw/CreateOrUpdateContainerGroups DeleteContainerGroups GetContainerGroups ListByResourceGroupContainerGroups ListContainerGroups ListContainerLogs / }
+  sub operations { qw/CreateOrUpdateContainerGroups DeleteContainerGroups GetContainerGroups ListByResourceGroupContainerGroups ListContainerGroups ListContainerLogs ListOperations / }
 
 1;
