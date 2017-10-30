@@ -1,4 +1,4 @@
-package Azure::iotHub::CreateOrUpdateIotHubResource;
+package Azure::iotHub::CreateOrUpdateCertificates;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,8 +8,11 @@ package Azure::iotHub::CreateOrUpdateIotHubResource;
   has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-07-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
-  has 'iotHubDescription' => (is => 'ro', required => 1, isa => 'Azure::iotHub::IotHubDescription',
+  has 'certificateDescription' => (is => 'ro', required => 1, isa => 'Azure::iotHub::CertificateBodyDescription',
     traits => [ 'Azure::ParamInBody' ],
+  );
+  has 'certificateName' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -21,7 +24,7 @@ package Azure::iotHub::CreateOrUpdateIotHubResource;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}');
-  class_has _returns => (is => 'ro', default => 'Azure::iotHub::CreateOrUpdateIotHubResourceResult');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/certificates/{certificateName}');
+  class_has _returns => (is => 'ro', default => 'Azure::iotHub::CreateOrUpdateCertificatesResult');
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;
