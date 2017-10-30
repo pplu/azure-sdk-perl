@@ -2,7 +2,7 @@ package Azure::DomainServices::GetDomainServices;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'domainServiceName' => (is => 'ro', required => 1, isa => 'Str',
