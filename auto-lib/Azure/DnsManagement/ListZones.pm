@@ -5,7 +5,7 @@ package Azure::DnsManagement::ListZones;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',

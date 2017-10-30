@@ -5,7 +5,7 @@ package Azure::DnsManagement::UpdateRecordSets;
   has 'If_Match' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'If-Match',
   );
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::DnsManagement::RecordSet',
