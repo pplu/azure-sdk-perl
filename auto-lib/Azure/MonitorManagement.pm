@@ -33,7 +33,17 @@ package Azure::MonitorManagement;
     my $call_object = $self->new_with_coercions('Azure::MonitorManagement::ListDiagnosticSettingsCategory', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListMetricDefinitions {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::MonitorManagement::ListMetricDefinitions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListMetrics {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::MonitorManagement::ListMetrics', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
 
-  sub operations { qw/CreateOrUpdateDiagnosticSettings DeleteDiagnosticSettings GetDiagnosticSettings GetDiagnosticSettingsCategory ListDiagnosticSettings ListDiagnosticSettingsCategory / }
+  sub operations { qw/CreateOrUpdateDiagnosticSettings DeleteDiagnosticSettings GetDiagnosticSettings GetDiagnosticSettingsCategory ListDiagnosticSettings ListDiagnosticSettingsCategory ListMetricDefinitions ListMetrics / }
 
 1;
