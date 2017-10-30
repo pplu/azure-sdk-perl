@@ -1,4 +1,4 @@
-package Azure::HDInsightManagement::ChangeRdpSettingsClusters;
+package Azure::HDInsightManagement::DisableMonitoringExtension;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,9 +8,6 @@ package Azure::HDInsightManagement::ChangeRdpSettingsClusters;
   has 'clusterName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::HDInsightManagement::RDPSettingsParameters',
-    traits => [ 'Azure::ParamInBody' ],
-  );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
@@ -18,7 +15,7 @@ package Azure::HDInsightManagement::ChangeRdpSettingsClusters;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/changerdpsetting');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/clustermonitoring');
   class_has _returns => (is => 'ro', default => '');
-  class_has _api_method => (is => 'ro', default => 'POST');
+  class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

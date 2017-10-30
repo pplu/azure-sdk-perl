@@ -1,15 +1,15 @@
-package Azure::HDInsightManagement::GetApplications;
+package Azure::HDInsightManagement::EnableMonitoringExtension;
   use Moose;
   use MooseX::ClassAttribute;
 
   has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-03-01-preview',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
-  has 'applicationName' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
   has 'clusterName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::HDInsightManagement::ClusterMonitoringRequest',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -18,7 +18,7 @@ package Azure::HDInsightManagement::GetApplications;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/applications/{applicationName}');
-  class_has _returns => (is => 'ro', default => 'Azure::HDInsightManagement::GetApplicationsResult');
-  class_has _api_method => (is => 'ro', default => 'GET');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/clustermonitoring');
+  class_has _returns => (is => 'ro', default => '');
+  class_has _api_method => (is => 'ro', default => 'PUT');
 1;

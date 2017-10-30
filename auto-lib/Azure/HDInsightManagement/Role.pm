@@ -1,6 +1,7 @@
 package Azure::HDInsightManagement::Role;
   use Moose;
 
+  has 'dataDisksGroups' => (is => 'ro', isa => 'ArrayRef[Azure::HDInsightManagement::DataDisksGroups]'  );
   has 'hardwareProfile' => (is => 'ro', isa => 'Azure::HDInsightManagement::HardwareProfile'  );
   has 'minInstanceCount' => (is => 'ro', isa => 'Int'  );
   has 'name' => (is => 'ro', isa => 'Str'  );

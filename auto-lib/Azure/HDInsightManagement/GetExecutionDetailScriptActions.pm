@@ -1,4 +1,4 @@
-package Azure::HDInsightManagement::GetScriptExecutionHistory;
+package Azure::HDInsightManagement::GetExecutionDetailScriptActions;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -19,6 +19,6 @@ package Azure::HDInsightManagement::GetScriptExecutionHistory;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/scriptExecutionHistory/{scriptExecutionId}');
-  class_has _returns => (is => 'ro', default => 'Azure::HDInsightManagement::GetScriptExecutionHistoryResult');
+  class_has _returns => (is => 'ro', default => 'Azure::HDInsightManagement::GetExecutionDetailScriptActionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

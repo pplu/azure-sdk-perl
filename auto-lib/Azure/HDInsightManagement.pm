@@ -3,14 +3,6 @@ package Azure::HDInsightManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub ChangeRdpSettingsClusters {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ChangeRdpSettingsClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub CreateApplications {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -67,6 +59,22 @@ package Azure::HDInsightManagement;
     my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::DeleteScriptActions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub DisableMonitoringExtension {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::DisableMonitoringExtension', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub EnableMonitoringExtension {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::EnableMonitoringExtension', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ExecuteScriptActionsClusters {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -107,6 +115,14 @@ package Azure::HDInsightManagement;
     my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetConfigurations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetExecutionDetailScriptActions {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetExecutionDetailScriptActions', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetExtension {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -115,12 +131,12 @@ package Azure::HDInsightManagement;
     my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetExtension', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetScriptExecutionHistory {
+  sub GetMonitoringStatusExtension {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetScriptExecutionHistory', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetMonitoringStatusExtension', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListApplications {
@@ -152,12 +168,12 @@ package Azure::HDInsightManagement;
     my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListOperations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListScriptActions {
+  sub ListPersistedScriptsScriptActions {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListScriptActions', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListPersistedScriptsScriptActions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListScriptExecutionHistory {
@@ -201,6 +217,6 @@ package Azure::HDInsightManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/ChangeRdpSettingsClusters CreateApplications CreateClusters CreateExtension DeleteApplications DeleteClusters DeleteExtension DeleteScriptActions ExecuteScriptActionsClusters GetApplications GetCapabilitiesLocation GetClusters GetConfigurations GetExtension GetScriptExecutionHistory ListApplications ListByResourceGroupClusters ListClusters ListOperations ListScriptActions ListScriptExecutionHistory PromoteScriptExecutionHistory ResizeClusters UpdateClusters UpdateHTTPSettingsConfigurations / }
+  sub operations { qw/CreateApplications CreateClusters CreateExtension DeleteApplications DeleteClusters DeleteExtension DeleteScriptActions DisableMonitoringExtension EnableMonitoringExtension ExecuteScriptActionsClusters GetApplications GetCapabilitiesLocation GetClusters GetConfigurations GetExecutionDetailScriptActions GetExtension GetMonitoringStatusExtension ListApplications ListByResourceGroupClusters ListClusters ListOperations ListPersistedScriptsScriptActions ListScriptExecutionHistory PromoteScriptExecutionHistory ResizeClusters UpdateClusters UpdateHTTPSettingsConfigurations / }
 
 1;

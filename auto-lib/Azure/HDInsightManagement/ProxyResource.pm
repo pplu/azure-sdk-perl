@@ -1,4 +1,4 @@
-package Azure::HDInsightManagement::Resource;
+package Azure::HDInsightManagement::ProxyResource;
   use Moose;
 
   has 'id' => (is => 'ro', isa => 'Str'  );

@@ -1,4 +1,4 @@
-package Azure::HDInsightManagement::ListScriptActions;
+package Azure::HDInsightManagement::GetMonitoringStatusExtension;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -15,7 +15,7 @@ package Azure::HDInsightManagement::ListScriptActions;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/scriptActions');
-  class_has _returns => (is => 'ro', default => 'Azure::HDInsightManagement::ListScriptActionsResult');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HDInsight/clusters/{clusterName}/extensions/clustermonitoring');
+  class_has _returns => (is => 'ro', default => 'Azure::HDInsightManagement::GetMonitoringStatusExtensionResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

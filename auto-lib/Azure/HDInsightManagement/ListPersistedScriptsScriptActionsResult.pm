@@ -1,4 +1,4 @@
-package Azure::HDInsightManagement::ListScriptActionsResult;
+package Azure::HDInsightManagement::ListPersistedScriptsScriptActionsResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
