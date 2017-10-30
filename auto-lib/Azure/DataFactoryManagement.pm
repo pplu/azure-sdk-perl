@@ -3,6 +3,14 @@ package Azure::DataFactoryManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
+  sub CancelPipelineRunFactories {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::DataFactoryManagement::CancelPipelineRunFactories', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateOrUpdateDatasets {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -345,6 +353,6 @@ package Azure::DataFactoryManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateDatasets CreateOrUpdateFactories CreateOrUpdateIntegrationRuntimes CreateOrUpdateLinkedServices CreateOrUpdatePipelines CreateOrUpdateTriggers CreateRunPipelines DeleteDatasets DeleteFactories DeleteIntegrationRuntimes DeleteLinkedServices DeletePipelines DeleteTriggers GetConnectionInfoIntegrationRuntimes GetDatasets GetFactories GetIntegrationRuntimes GetLinkedServices GetMonitoringDataIntegrationRuntimes GetPipelineRuns GetPipelines GetStatusIntegrationRuntimes GetTriggers ListAuthKeysIntegrationRuntimes ListByFactoryDatasets ListByFactoryIntegrationRuntimes ListByFactoryLinkedServices ListByFactoryPipelines ListByFactoryTriggers ListByPipelineRunActivityRuns ListByResourceGroupFactories ListFactories ListOperations ListRunsTriggers QueryByFactoryPipelineRuns RegenerateAuthKeyIntegrationRuntimes RemoveNodeIntegrationRuntimes StartIntegrationRuntimes StartTriggers StopIntegrationRuntimes StopTriggers SyncCredentialsIntegrationRuntimes UpdateFactories / }
+  sub operations { qw/CancelPipelineRunFactories CreateOrUpdateDatasets CreateOrUpdateFactories CreateOrUpdateIntegrationRuntimes CreateOrUpdateLinkedServices CreateOrUpdatePipelines CreateOrUpdateTriggers CreateRunPipelines DeleteDatasets DeleteFactories DeleteIntegrationRuntimes DeleteLinkedServices DeletePipelines DeleteTriggers GetConnectionInfoIntegrationRuntimes GetDatasets GetFactories GetIntegrationRuntimes GetLinkedServices GetMonitoringDataIntegrationRuntimes GetPipelineRuns GetPipelines GetStatusIntegrationRuntimes GetTriggers ListAuthKeysIntegrationRuntimes ListByFactoryDatasets ListByFactoryIntegrationRuntimes ListByFactoryLinkedServices ListByFactoryPipelines ListByFactoryTriggers ListByPipelineRunActivityRuns ListByResourceGroupFactories ListFactories ListOperations ListRunsTriggers QueryByFactoryPipelineRuns RegenerateAuthKeyIntegrationRuntimes RemoveNodeIntegrationRuntimes StartIntegrationRuntimes StartTriggers StopIntegrationRuntimes StopTriggers SyncCredentialsIntegrationRuntimes UpdateFactories / }
 
 1;
