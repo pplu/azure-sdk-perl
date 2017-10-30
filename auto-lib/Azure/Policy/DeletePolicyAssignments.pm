@@ -2,7 +2,7 @@ package Azure::Policy::DeletePolicyAssignments;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'policyAssignmentName' => (is => 'ro', required => 1, isa => 'Str',

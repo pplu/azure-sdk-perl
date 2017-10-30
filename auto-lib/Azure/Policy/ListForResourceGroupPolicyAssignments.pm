@@ -5,7 +5,7 @@ package Azure::Policy::ListForResourceGroupPolicyAssignments;
   has '$filter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',

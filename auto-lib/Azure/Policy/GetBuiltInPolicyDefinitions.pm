@@ -1,4 +1,4 @@
-package Azure::Policy::GetPolicyDefinitions;
+package Azure::Policy::GetBuiltInPolicyDefinitions;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -8,11 +8,8 @@ package Azure::Policy::GetPolicyDefinitions;
   has 'policyDefinitionName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
-  );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policyDefinitions/{policyDefinitionName}');
-  class_has _returns => (is => 'ro', default => 'Azure::Policy::GetPolicyDefinitionsResult');
+  class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Authorization/policyDefinitions/{policyDefinitionName}');
+  class_has _returns => (is => 'ro', default => 'Azure::Policy::GetBuiltInPolicyDefinitionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

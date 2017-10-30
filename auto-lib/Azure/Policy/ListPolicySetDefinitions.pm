@@ -9,7 +9,7 @@ package Azure::Policy::ListPolicySetDefinitions;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policysetdefinitions');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/policySetDefinitions');
   class_has _returns => (is => 'ro', default => 'Azure::Policy::ListPolicySetDefinitionsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;
