@@ -475,6 +475,11 @@ package Azure::CustomerInsightsManagement;
     my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::ListHubs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListOperations {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::CustomerInsightsManagement::ListOperations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ModelStatusPredictions {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -524,6 +529,6 @@ package Azure::CustomerInsightsManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateAuthorizationPolicies CreateOrUpdateConnectorMappings CreateOrUpdateConnectors CreateOrUpdateHubs CreateOrUpdateInteractions CreateOrUpdateKpi CreateOrUpdateLinks CreateOrUpdatePredictions CreateOrUpdateProfiles CreateOrUpdateRelationshipLinks CreateOrUpdateRelationships CreateOrUpdateRoleAssignments CreateOrUpdateViews DeleteConnectorMappings DeleteConnectors DeleteHubs DeleteKpi DeleteLinks DeletePredictions DeleteProfiles DeleteRelationshipLinks DeleteRelationships DeleteRoleAssignments DeleteViews GetAuthorizationPolicies GetConnectorMappings GetConnectors GetEnrichingKpisProfiles GetHubs GetInteractions GetKpi GetLinks GetModelStatusPredictions GetPredictions GetProfiles GetRelationshipLinks GetRelationships GetRoleAssignments GetTrainingResultsPredictions GetUploadUrlForDataImages GetUploadUrlForEntityTypeImages GetViews GetWidgetTypes ListByConnectorConnectorMappings ListByHubAuthorizationPolicies ListByHubConnectors ListByHubInteractions ListByHubKpi ListByHubLinks ListByHubPredictions ListByHubProfiles ListByHubRelationshipLinks ListByHubRelationships ListByHubRoleAssignments ListByHubRoles ListByHubViews ListByHubWidgetTypes ListByResourceGroupHubs ListHubs ModelStatusPredictions RegeneratePrimaryKeyAuthorizationPolicies RegenerateSecondaryKeyAuthorizationPolicies ReprocessKpi SuggestRelationshipLinksInteractions UpdateHubs / }
+  sub operations { qw/CreateOrUpdateAuthorizationPolicies CreateOrUpdateConnectorMappings CreateOrUpdateConnectors CreateOrUpdateHubs CreateOrUpdateInteractions CreateOrUpdateKpi CreateOrUpdateLinks CreateOrUpdatePredictions CreateOrUpdateProfiles CreateOrUpdateRelationshipLinks CreateOrUpdateRelationships CreateOrUpdateRoleAssignments CreateOrUpdateViews DeleteConnectorMappings DeleteConnectors DeleteHubs DeleteKpi DeleteLinks DeletePredictions DeleteProfiles DeleteRelationshipLinks DeleteRelationships DeleteRoleAssignments DeleteViews GetAuthorizationPolicies GetConnectorMappings GetConnectors GetEnrichingKpisProfiles GetHubs GetInteractions GetKpi GetLinks GetModelStatusPredictions GetPredictions GetProfiles GetRelationshipLinks GetRelationships GetRoleAssignments GetTrainingResultsPredictions GetUploadUrlForDataImages GetUploadUrlForEntityTypeImages GetViews GetWidgetTypes ListByConnectorConnectorMappings ListByHubAuthorizationPolicies ListByHubConnectors ListByHubInteractions ListByHubKpi ListByHubLinks ListByHubPredictions ListByHubProfiles ListByHubRelationshipLinks ListByHubRelationships ListByHubRoleAssignments ListByHubRoles ListByHubViews ListByHubWidgetTypes ListByResourceGroupHubs ListHubs ListOperations ModelStatusPredictions RegeneratePrimaryKeyAuthorizationPolicies RegenerateSecondaryKeyAuthorizationPolicies ReprocessKpi SuggestRelationshipLinksInteractions UpdateHubs / }
 
 1;
