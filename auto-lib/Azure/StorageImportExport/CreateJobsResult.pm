@@ -1,4 +1,4 @@
-package Azure::StorageImportExport::UpdateJobsResult;
+package Azure::StorageImportExport::CreateJobsResult;
   use Moose;
 
   has id => (is => 'ro', isa => 'Str'  );

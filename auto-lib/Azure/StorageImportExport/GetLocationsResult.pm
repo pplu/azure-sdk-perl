@@ -1,4 +1,4 @@
-package Azure::StorageImportExport::GetLocationResult;
+package Azure::StorageImportExport::GetLocationsResult;
   use Moose;
 
   has id => (is => 'ro', isa => 'Str'  );

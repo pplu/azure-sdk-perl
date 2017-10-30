@@ -2,17 +2,17 @@ package Azure::StorageImportExport::UpdateJobs;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Accept_Language' => (is => 'ro', required => 1, isa => 'Str',
+  has 'Accept_Language' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'Accept-Language',
   );
   has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
+  has 'body' => (is => 'ro', required => 1, isa => 'Azure::StorageImportExport::UpdateJobParameters',
+    traits => [ 'Azure::ParamInBody' ],
+  );
   has 'jobName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
-  );
-  has 'jobProperties' => (is => 'ro', required => 1, isa => 'Azure::StorageImportExport::MutableJob',
-    traits => [ 'Azure::ParamInBody' ],
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

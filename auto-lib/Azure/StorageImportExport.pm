@@ -3,12 +3,12 @@ package Azure::StorageImportExport;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CreateOrUpdateJobs {
+  sub CreateJobs {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::CreateOrUpdateJobs', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::CreateJobs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteJobs {
@@ -27,17 +27,17 @@ package Azure::StorageImportExport;
     my $call_object = $self->new_with_coercions('Azure::StorageImportExport::GetJobs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetLocation {
+  sub GetLocations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::GetLocation', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::GetLocations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListBitLockerKeysJobs {
+  sub ListBitLockerKeys {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::ListBitLockerKeysJobs', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::ListBitLockerKeys', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListByResourceGroupJobs {
@@ -48,12 +48,12 @@ package Azure::StorageImportExport;
     my $call_object = $self->new_with_coercions('Azure::StorageImportExport::ListByResourceGroupJobs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListJobs {
+  sub ListBySubscriptionJobs {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::ListJobs', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::ListBySubscriptionJobs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListLocations {
@@ -61,17 +61,9 @@ package Azure::StorageImportExport;
     my $call_object = $self->new_with_coercions('Azure::StorageImportExport::ListLocations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListSupportedOperations {
+  sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::ListSupportedOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub MoveJobs {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::MoveJobs', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::StorageImportExport::ListOperations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub UpdateJobs {
@@ -83,6 +75,6 @@ package Azure::StorageImportExport;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateOrUpdateJobs DeleteJobs GetJobs GetLocation ListBitLockerKeysJobs ListByResourceGroupJobs ListJobs ListLocations ListSupportedOperations MoveJobs UpdateJobs / }
+  sub operations { qw/CreateJobs DeleteJobs GetJobs GetLocations ListBitLockerKeys ListByResourceGroupJobs ListBySubscriptionJobs ListLocations ListOperations UpdateJobs / }
 
 1;

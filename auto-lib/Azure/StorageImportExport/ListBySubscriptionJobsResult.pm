@@ -1,4 +1,4 @@
-package Azure::StorageImportExport::ListByResourceGroupJobsResult;
+package Azure::StorageImportExport::ListBySubscriptionJobsResult;
   use Moose;
 
   has nextLink => (is => 'ro', isa => 'Str'  );
