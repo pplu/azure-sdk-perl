@@ -12,6 +12,10 @@ package [% method.fully_namespaced %];
   [%- END %]
 
   class_has _api_uri => (is => 'ro', default => '[% method.path %]');
-  class_has _returns => (is => 'ro', default => '[% IF method.return %][% method.return.fully_namespaced %][% END %]');
+  class_has _returns => (is => 'ro', default => sub {
+    [% FOREACH return_code IN method.return.keys.sort %]
+      [% return_code %] => '[% method.return.$return_code.fully_namespaced %]',
+    [% END %]
+  });
   class_has _api_method => (is => 'ro', default => '[% method.method %]');
 1;

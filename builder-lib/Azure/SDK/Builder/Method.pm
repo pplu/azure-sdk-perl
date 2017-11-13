@@ -94,47 +94,44 @@ package Azure::SDK::Builder::Method;
 
   has return => (
     is => 'ro',
-    isa => 'Azure::SDK::Builder::Return|Undef',
+    isa => 'HashRef[Azure::SDK::Builder::Return]',
     lazy => 1,
     default => sub {
       my $self = shift;
-      if (   defined $self->responses->{200}
-          or defined $self->responses->{201}
-          or defined $self->responses->{204} 
-          or defined $self->responses->{202}
-         ) {
-        my $response = $self->responses->{200} 
-                    || $self->responses->{201} 
-                    || $self->responses->{204} 
-                    || $self->responses->{202};
 
-        die "Error finding the 20X response" if (not defined $response);
+      my $responses = {};
 
-        return undef if (not defined $response->schema);
+      foreach my $status (keys %{ $self->responses }) {
+        my $response = $self->responses->{ $status };
 
-        my $definition;
-        if ($response->schema->isa('Swagger::Schema::RefParameter')) {
-          my $ref = $response->schema->ref;
-          $definition = $self->root_schema->resolve_path($ref);
-        } else {
-          $definition = $response->schema;
-        }
+        if (defined $response->schema) {
+          my $definition;
+          if ($response->schema->isa('Swagger::Schema::RefParameter')) {
+            my $ref = $response->schema->ref;
+            $definition = $self->root_schema->resolve_path($ref);
+          } else {
+            $definition = $response->schema;
+          }
 
-        my $return = Azure::SDK::Builder::Return->new(
-          %$definition,
-          name => $self->name . 'Result',
-          service => $self->service,
-          root_schema => $self->root_schema,
-        );
-        return $return;
-      } else {
-        # some APIs have just a default response that resolves to an error object
-        if (scalar(keys %{ $self->responses }) == 1 and defined $self->responses->{ default }) {
-          return undef;
-        } else {
-          die 'Can\'t find a valid response for ' . $self->method . ' on ' . $self->path;
+          my $return = Azure::SDK::Builder::Return->new(
+            %$definition,
+            name => $self->name . 'Result',
+            service => $self->service,
+            root_schema => $self->root_schema,
+          );
+          $responses->{ $status } = $return;
         }
       }
+
+      #} else {
+      #  # some APIs have just a default response that resolves to an error object
+      #  if (scalar(keys %{ $self->responses }) == 1 and defined $self->responses->{ default }) {
+      #    return undef;
+      #  } else {
+      #    die 'Can\'t find a valid response for ' . $self->method . ' on ' . $self->path;
+      #  }
+      #}
+      return $responses;
     }
   );
 
