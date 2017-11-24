@@ -2,14 +2,14 @@ package Azure::KeyVault::UpdateCertificate;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
-  has 'certificate-name' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'certificate_name' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath', 'Azure::LocationInResponse' ], location => 'certificate-name',
   );
-  has 'certificate-version' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'certificate_version' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath', 'Azure::LocationInResponse' ], location => 'certificate-version',
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::KeyVault::CertificateUpdateParameters',
     traits => [ 'Azure::ParamInBody' ],

@@ -3,6 +3,6 @@ package Azure::SiteRecoveryManagement::ExportJobDetails;
 
   has 'blobUri' => (is => 'ro', isa => 'Str'  );
   has 'sasToken' => (is => 'ro', isa => 'Str'  );
-  has 'affectedObjectDetails' => (is => 'ro', isa => 'HashRef'  );
+  has 'affectedObjectDetails' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'instanceType' => (is => 'ro', isa => 'Str'  );
 1;

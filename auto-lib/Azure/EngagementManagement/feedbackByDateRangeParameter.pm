@@ -1,10 +1,10 @@
 package Azure::EngagementManagement::feedbackByDateRangeParameter;
   use Moose;
 
-  has 'campaignType' => (is => 'ro', isa => 'Azure::EngagementManagement::CampaignType'  );
-  has 'campaignWindowEnd' => (is => 'ro', isa => 'Azure::EngagementManagement::timestamp'  );
-  has 'campaignWindowStart' => (is => 'ro', isa => 'Azure::EngagementManagement::timestamp'  );
-  has 'containerUrl' => (is => 'ro', isa => 'Azure::EngagementManagement::containerUrl'  );
+  has 'campaignType' => (is => 'ro', isa => 'Str'  );
+  has 'campaignWindowEnd' => (is => 'ro', isa => 'Str'  );
+  has 'campaignWindowStart' => (is => 'ro', isa => 'Str'  );
+  has 'containerUrl' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
-  has 'exportFormat' => (is => 'ro', isa => 'Azure::EngagementManagement::exportFormat'  );
+  has 'exportFormat' => (is => 'ro', isa => 'Str'  );
 1;

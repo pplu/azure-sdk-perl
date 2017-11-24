@@ -2,8 +2,8 @@ package Azure::LogicManagement::CreateOrUpdateCertificates;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'certificate' => (is => 'ro', required => 1, isa => 'Azure::LogicManagement::IntegrationAccountCertificate',
     traits => [ 'Azure::ParamInBody' ],

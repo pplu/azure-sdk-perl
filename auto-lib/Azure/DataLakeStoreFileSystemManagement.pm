@@ -33,6 +33,11 @@ package Azure::DataLakeStoreFileSystemManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::DeleteFileSystem', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub FlushFileSystem {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::FlushFileSystem', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetAclStatusFileSystem {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::GetAclStatusFileSystem', { @_ });
@@ -114,6 +119,6 @@ package Azure::DataLakeStoreFileSystemManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AppendFileSystem CheckAccessFileSystem ConcatFileSystem ConcurrentAppendFileSystem CreateFileSystem DeleteFileSystem GetAclStatusFileSystem GetContentSummaryFileSystem GetFileStatusFileSystem ListFileStatusFileSystem MkdirsFileSystem ModifyAclEntriesFileSystem MsConcatFileSystem OpenFileSystem RemoveAclEntriesFileSystem RemoveAclFileSystem RemoveDefaultAclFileSystem RenameFileSystem SetAclFileSystem SetFileExpiryFileSystem SetOwnerFileSystem SetPermissionFileSystem / }
+  sub operations { qw/AppendFileSystem CheckAccessFileSystem ConcatFileSystem ConcurrentAppendFileSystem CreateFileSystem DeleteFileSystem FlushFileSystem GetAclStatusFileSystem GetContentSummaryFileSystem GetFileStatusFileSystem ListFileStatusFileSystem MkdirsFileSystem ModifyAclEntriesFileSystem MsConcatFileSystem OpenFileSystem RemoveAclEntriesFileSystem RemoveAclFileSystem RemoveDefaultAclFileSystem RenameFileSystem SetAclFileSystem SetFileExpiryFileSystem SetOwnerFileSystem SetPermissionFileSystem / }
 
 1;

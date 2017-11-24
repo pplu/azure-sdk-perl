@@ -2,8 +2,8 @@ package Azure::LogicManagement::RegenerateAccessKeyWorkflows;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-06-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'keyType' => (is => 'ro', required => 1, isa => 'Azure::LogicManagement::RegenerateActionParameter',
     traits => [ 'Azure::ParamInBody' ],

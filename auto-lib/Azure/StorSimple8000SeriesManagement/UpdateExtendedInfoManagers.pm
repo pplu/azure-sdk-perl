@@ -2,11 +2,11 @@ package Azure::StorSimple8000SeriesManagement::UpdateExtendedInfoManagers;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'If-Match' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
+  has 'If_Match' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'If-Match',
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'managerName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

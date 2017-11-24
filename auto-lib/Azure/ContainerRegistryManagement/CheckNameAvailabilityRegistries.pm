@@ -2,8 +2,8 @@ package Azure::ContainerRegistryManagement::CheckNameAvailabilityRegistries;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-10-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'registryNameCheckRequest' => (is => 'ro', required => 1, isa => 'Azure::ContainerRegistryManagement::RegistryNameCheckRequest',
     traits => [ 'Azure::ParamInBody' ],

@@ -3,10 +3,12 @@ package Azure::SiteRecoveryManagement::RecoveryServicesProviderProperties;
 
   has 'allowedScenarios' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'connectionStatus' => (is => 'ro', isa => 'Str'  );
+  has 'draIdentifier' => (is => 'ro', isa => 'Str'  );
   has 'fabricFriendlyName' => (is => 'ro', isa => 'Str'  );
   has 'fabricType' => (is => 'ro', isa => 'Str'  );
   has 'friendlyName' => (is => 'ro', isa => 'Str'  );
   has 'healthErrorDetails' => (is => 'ro', isa => 'ArrayRef[Azure::SiteRecoveryManagement::HealthError]'  );
+  has 'identityDetails' => (is => 'ro', isa => 'Azure::SiteRecoveryManagement::IdentityInformation'  );
   has 'lastHeartBeat' => (is => 'ro', isa => 'Str'  );
   has 'protectedItemCount' => (is => 'ro', isa => 'Int'  );
   has 'providerVersion' => (is => 'ro', isa => 'Str'  );

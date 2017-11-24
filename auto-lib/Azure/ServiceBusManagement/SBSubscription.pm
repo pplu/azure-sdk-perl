@@ -16,6 +16,6 @@ package Azure::ServiceBusManagement::SBSubscription;
   has 'maxDeliveryCount' => (is => 'ro', isa => 'Int'  );
   has 'messageCount' => (is => 'ro', isa => 'Int'  );
   has 'requiresSession' => (is => 'ro', isa => 'Bool'  );
-  has 'status' => (is => 'ro', isa => 'Azure::ServiceBusManagement::EntityStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
   has 'updatedAt' => (is => 'ro', isa => 'Str'  );
 1;

@@ -7,7 +7,7 @@ package Azure::AppInsightsManagement::GetWebTestsResult;
   has name => (is => 'ro', isa => 'Str'  );
   has tags => (is => 'ro', isa => 'Any'  );
   has type => (is => 'ro', isa => 'Str'  );
-  has Configuration => (is => 'ro', isa => 'HashRef'  );
+  has Configuration => (is => 'ro', isa => 'Azure::AppInsightsManagement::GetWebTestsResult_Configuration'  );
   has Description => (is => 'ro', isa => 'Str'  );
   has Enabled => (is => 'ro', isa => 'Bool'  );
   has Frequency => (is => 'ro', isa => 'Int'  );

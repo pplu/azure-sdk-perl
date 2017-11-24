@@ -2,11 +2,11 @@ package Azure::KeyVault::SetCertificateIssuer;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-10-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
-  has 'issuer-name' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInPath' ],
+  has 'issuer_name' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInPath', 'Azure::LocationInResponse' ], location => 'issuer-name',
   );
   has 'parameter' => (is => 'ro', required => 1, isa => 'Azure::KeyVault::CertificateIssuerSetParameters',
     traits => [ 'Azure::ParamInBody' ],

@@ -4,9 +4,9 @@ package Azure::KeyVault::GetDeletedKeyResult;
   has deletedDate => (is => 'ro', isa => 'Int'  );
   has recoveryId => (is => 'ro', isa => 'Str'  );
   has scheduledPurgeDate => (is => 'ro', isa => 'Int'  );
-  has attributes => (is => 'ro', isa => 'Any'  );
-  has key => (is => 'ro', isa => 'Any'  );
+  has attributes => (is => 'ro', isa => 'Azure::KeyVault::KeyAttributes'  );
+  has key => (is => 'ro', isa => 'Azure::KeyVault::JsonWebKey'  );
   has managed => (is => 'ro', isa => 'Bool'  );
-  has tags => (is => 'ro', isa => 'HashRef'  );
+  has tags => (is => 'ro', isa => 'HashRef[Str]'  );
 
 1;

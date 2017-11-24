@@ -4,7 +4,7 @@ package Azure::ComputeManagement::VirtualMachineExtension;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'autoUpgradeMinorVersion' => (is => 'ro', isa => 'Bool'  );
   has 'forceUpdateTag' => (is => 'ro', isa => 'Str'  );

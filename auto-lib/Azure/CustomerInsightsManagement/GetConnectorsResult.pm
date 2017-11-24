@@ -6,7 +6,7 @@ package Azure::CustomerInsightsManagement::GetConnectorsResult;
   has type => (is => 'ro', isa => 'Str'  );
   has connectorId => (is => 'ro', isa => 'Int'  );
   has connectorName => (is => 'ro', isa => 'Str'  );
-  has connectorProperties => (is => 'ro', isa => 'HashRef'  );
+  has connectorProperties => (is => 'ro', isa => 'HashRef[HashRef]'  );
   has connectorType => (is => 'ro', isa => 'Str'  );
   has created => (is => 'ro', isa => 'Str'  );
   has description => (is => 'ro', isa => 'Str'  );

@@ -6,7 +6,7 @@ package Azure::ServiceBusManagement::CreateOrUpdateTopicsResult;
   has type => (is => 'ro', isa => 'Str'  );
   has accessedAt => (is => 'ro', isa => 'Str'  );
   has autoDeleteOnIdle => (is => 'ro', isa => 'Str'  );
-  has countDetails => (is => 'ro', isa => 'HashRef'  );
+  has countDetails => (is => 'ro', isa => 'Azure::ServiceBusManagement::MessageCountDetails'  );
   has createdAt => (is => 'ro', isa => 'Str'  );
   has defaultMessageTimeToLive => (is => 'ro', isa => 'Str'  );
   has duplicateDetectionHistoryTimeWindow => (is => 'ro', isa => 'Str'  );

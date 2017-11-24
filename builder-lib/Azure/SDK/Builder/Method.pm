@@ -2,8 +2,7 @@ package Azure::SDK::Builder::Method;
   use Moose;
   extends 'Swagger::Schema::Operation';
 
-  use Azure::SDK::Builder::BodyMethodArgument;
-  use Azure::SDK::Builder::OtherMethodArgument;
+  use Azure::SDK::Builder::MethodArgument;
   use Azure::SDK::Builder::Return;
 
   has name => (is => 'ro', isa => 'Str', required => 1);
@@ -32,7 +31,7 @@ package Azure::SDK::Builder::Method;
 
   has subscription_argument => (
     is => 'ro',
-    isa => 'Undef|Azure::SDK::Builder::BodyMethodArgument|Azure::SDK::Builder::OtherMethodArgument',
+    isa => 'Undef|Azure::SDK::Builder::MethodArgument',
     lazy => 1,
     default => sub {
       my $self = shift;
@@ -45,18 +44,43 @@ package Azure::SDK::Builder::Method;
 
   has arguments => (
     is => 'ro',
-    isa => 'ArrayRef[Azure::SDK::Builder::BodyMethodArgument|Azure::SDK::Builder::OtherMethodArgument]',
+    isa => 'ArrayRef[Azure::SDK::Builder::MethodArgument]',
     lazy => 1,
     default => sub {
       my $self = shift;
 
       my $common_args = $self->parameters_to_arguments($self->common_parameters);
       my $args = $self->parameters_to_arguments($self->parameters);
+
       #TODO: resolve overrides (name and location pairs)
       my $method_args = { };
       $method_args->{ $_->name . '/' . $_->location } = $_ for (@$common_args);
       $method_args->{ $_->name . '/' . $_->location } = $_ for (@$args);
 
+      # TODO: this loop would flatten arguments in the request, so that callers don't
+      # have to specify an extra level of arguments (like body => { .... })
+      # we will have to signal where to flatten the arguments
+      # TODO: maybe this applies to non-body arguments
+      #foreach my $key (keys %$method_args) {
+      #  my $arg = $method_args->{ $key };
+      #  if ($arg->resolved_schema->x_ms_client_flatten) {
+      #    my $resolve_this = delete $method_args->{ $key };
+      #    my $path = $self->root_schema->resolve_path($resolve_this->resolved_schema->schema->ref)->object;
+      #    foreach my $arg_name (keys %{ $path->properties }) {
+      #      my $arg_schema = $path->properties->{ $arg_name };
+      #      my $argument = Azure::SDK::Builder::MethodArgument->new(
+      #        original_name => $arg_name,
+      #        original_schema => $arg_schema,
+      #        root_schema => $self->root_schema,
+      #        service => $self->service,
+      #        location => 'body',
+      #      );
+      #      $method_args->{ $argument->name . '/' . $argument->location } = $argument;
+      #    }
+      #  }
+      #}
+
+      # Fill array resolved_args with the arguments in a sorted order
       my $resolved_args = [];
       foreach my $key (sort keys %$method_args) {
         push @$resolved_args, $method_args->{ $key };
@@ -71,23 +95,10 @@ package Azure::SDK::Builder::Method;
     return [] if (not defined $list);
 
     return [ map {
-      my $param = $_;
-
-      my $args = $param->isa('Swagger::Schema::RefParameter') ? $self->root_schema->resolve_path($param->ref) : $param;
-
-      my $method_argument_class;
-          
-      if ($args->isa('Swagger::Schema::BodyParameter')) {
-        $method_argument_class = 'Azure::SDK::Builder::BodyMethodArgument';
-      } elsif ($args->isa('Swagger::Schema::OtherParameter')) {
-        $method_argument_class = 'Azure::SDK::Builder::OtherMethodArgument';
-      } else {
-        die "Found a strange Parameter type in self->parameters: $args";
-      }
-
-      $method_argument_class->new(
+      Azure::SDK::Builder::MethodArgument->new(
+        original_schema => $_,
         root_schema => $self->root_schema,
-        %$args
+        service => $self->service,
       );
     } @$list ];
   }

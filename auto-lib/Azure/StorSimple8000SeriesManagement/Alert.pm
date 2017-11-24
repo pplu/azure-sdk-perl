@@ -10,7 +10,7 @@ package Azure::StorSimple8000SeriesManagement::Alert;
   has 'appearedAtTime' => (is => 'ro', isa => 'Str'  );
   has 'clearedAtSourceTime' => (is => 'ro', isa => 'Str'  );
   has 'clearedAtTime' => (is => 'ro', isa => 'Str'  );
-  has 'detailedInformation' => (is => 'ro', isa => 'HashRef'  );
+  has 'detailedInformation' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'errorDetails' => (is => 'ro', isa => 'Azure::StorSimple8000SeriesManagement::AlertErrorDetails'  );
   has 'recommendation' => (is => 'ro', isa => 'Str'  );
   has 'resolutionReason' => (is => 'ro', isa => 'Str'  );

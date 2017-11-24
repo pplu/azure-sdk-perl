@@ -3,6 +3,7 @@ package Azure::NetworkManagement::FrontendIPConfiguration;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'zones' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'inboundNatPools' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::SubResource]'  );
   has 'inboundNatRules' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::SubResource]'  );

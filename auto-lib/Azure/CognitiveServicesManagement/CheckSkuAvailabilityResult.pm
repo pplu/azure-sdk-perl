@@ -1,10 +1,10 @@
 package Azure::CognitiveServicesManagement::CheckSkuAvailabilityResult;
   use Moose;
 
-  has 'kind' => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::CognitiveServicesAccountKind'  );
+  has 'kind' => (is => 'ro', isa => 'Str'  );
   has 'message' => (is => 'ro', isa => 'Str'  );
   has 'reason' => (is => 'ro', isa => 'Str'  );
   has 'skuAvailable' => (is => 'ro', isa => 'Bool'  );
-  has 'skuName' => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::SkuName'  );
+  has 'skuName' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;

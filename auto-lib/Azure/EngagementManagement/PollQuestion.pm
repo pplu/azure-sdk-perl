@@ -3,6 +3,6 @@ package Azure::EngagementManagement::PollQuestion;
 
   has 'choices' => (is => 'ro', isa => 'ArrayRef[Azure::EngagementManagement::PollQuestionChoice]'  );
   has 'id' => (is => 'ro', isa => 'Int'  );
-  has 'localization' => (is => 'ro', isa => 'HashRef'  );
+  has 'localization' => (is => 'ro', isa => 'HashRef[Azure::EngagementManagement::PollQuestionLocalization]'  );
   has 'title' => (is => 'ro', isa => 'Str'  );
 1;

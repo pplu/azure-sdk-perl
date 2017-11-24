@@ -7,5 +7,5 @@ package Azure::KeyVault::StorageBundle;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'regenerationPeriod' => (is => 'ro', isa => 'Str'  );
   has 'resourceId' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
 1;

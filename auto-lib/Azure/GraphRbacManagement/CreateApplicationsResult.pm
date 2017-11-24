@@ -7,6 +7,7 @@ package Azure::GraphRbacManagement::CreateApplicationsResult;
   has displayName => (is => 'ro', isa => 'Str'  );
   has homepage => (is => 'ro', isa => 'Str'  );
   has identifierUris => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has oauth2AllowImplicitFlow => (is => 'ro', isa => 'Bool'  );
   has objectId => (is => 'ro', isa => 'Str'  );
   has objectType => (is => 'ro', isa => 'Str'  );
   has replyUrls => (is => 'ro', isa => 'ArrayRef[Str]'  );

@@ -1,5 +1,6 @@
 package Azure::ServiceFabricManagement::ErrorModel;
   use Moose;
 
-  has 'error' => (is => 'ro', isa => 'Any'  );
+  has 'code' => (is => 'ro', isa => 'Str'  );
+  has 'message' => (is => 'ro', isa => 'Str'  );
 1;

@@ -1,6 +1,7 @@
 package Azure::ServiceFabricManagement::ClusterProperties;
   use Moose;
 
+  has 'addOnFeatures' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::AddOnFeatures]'  );
   has 'availableClusterVersions' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::ClusterVersionDetails]'  );
   has 'azureActiveDirectory' => (is => 'ro', isa => 'Azure::ServiceFabricManagement::AzureActiveDirectory'  );
   has 'certificate' => (is => 'ro', isa => 'Azure::ServiceFabricManagement::CertificateDescription'  );

@@ -7,6 +7,7 @@ package Azure::DataLakeAnalyticsJobManagement::JobInnerError;
   has 'diagnosticCode' => (is => 'ro', isa => 'Int'  );
   has 'errorId' => (is => 'ro', isa => 'Str'  );
   has 'helpLink' => (is => 'ro', isa => 'Str'  );
+  has 'innerError' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsJobManagement::JobInnerError'  );
   has 'internalDiagnostics' => (is => 'ro', isa => 'Str'  );
   has 'message' => (is => 'ro', isa => 'Str'  );
   has 'resolution' => (is => 'ro', isa => 'Str'  );

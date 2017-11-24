@@ -1,5 +1,5 @@
 package Azure::LogicManagement::IntegrationAccountSku;
   use Moose;
 
-  has 'name' => (is => 'ro', isa => 'Azure::LogicManagement::IntegrationAccountSkuName'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
 1;

@@ -1,16 +1,16 @@
 package Azure::AppServicePlans::GetAppServicePlansResult;
   use Moose;
 
-  has sku => (is => 'ro', isa => 'HashRef'  );
+  has sku => (is => 'ro', isa => 'Azure::AppServicePlans::SkuDescription'  );
   has id => (is => 'ro', isa => 'Str'  );
   has kind => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has tags => (is => 'ro', isa => 'HashRef'  );
+  has tags => (is => 'ro', isa => 'HashRef[Str]'  );
   has type => (is => 'ro', isa => 'Str'  );
   has adminSiteName => (is => 'ro', isa => 'Str'  );
   has geoRegion => (is => 'ro', isa => 'Str'  );
-  has hostingEnvironmentProfile => (is => 'ro', isa => 'HashRef'  );
+  has hostingEnvironmentProfile => (is => 'ro', isa => 'Azure::AppServicePlans::HostingEnvironmentProfile'  );
   has maximumNumberOfWorkers => (is => 'ro', isa => 'Int'  );
   has name => (is => 'ro', isa => 'Str'  );
   has numberOfSites => (is => 'ro', isa => 'Int'  );

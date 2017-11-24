@@ -6,6 +6,7 @@ package Azure::NetworkManagement::LoadBalancingRule;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'backendAddressPool' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'backendPort' => (is => 'ro', isa => 'Int'  );
+  has 'disableOutboundSnat' => (is => 'ro', isa => 'Bool'  );
   has 'enableFloatingIP' => (is => 'ro', isa => 'Bool'  );
   has 'frontendIPConfiguration' => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has 'frontendPort' => (is => 'ro', isa => 'Int'  );

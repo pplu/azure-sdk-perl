@@ -2,8 +2,8 @@ package Azure::GraphRbacManagement::CreateGroups;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '1.6',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '1.6',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::GraphRbacManagement::GroupCreateParameters',
     traits => [ 'Azure::ParamInBody' ],

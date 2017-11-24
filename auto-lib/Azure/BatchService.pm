@@ -213,6 +213,11 @@ package Azure::BatchService;
     my $call_object = $self->new_with_coercions('Azure::BatchService::GetTask', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetTaskCountsJob {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::BatchService::GetTaskCountsJob', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListApplication {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::BatchService::ListApplication', { @_ });
@@ -374,6 +379,6 @@ package Azure::BatchService;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AddCertificate AddCollectionTask AddJob AddJobSchedule AddPool AddTask AddUserComputeNode CancelDeletionCertificate DeleteCertificate DeleteFromComputeNodeFile DeleteFromTaskFile DeleteJob DeleteJobSchedule DeletePool DeleteTask DeleteUserComputeNode DisableAutoScalePool DisableJob DisableJobSchedule DisableSchedulingComputeNode EnableAutoScalePool EnableJob EnableJobSchedule EnableSchedulingComputeNode EvaluateAutoScalePool ExistsJobSchedule ExistsPool GetAllLifetimeStatisticsJob GetAllLifetimeStatisticsPool GetApplication GetCertificate GetComputeNode GetFromComputeNodeFile GetFromTaskFile GetJob GetJobSchedule GetPool GetPropertiesFromComputeNodeFile GetPropertiesFromTaskFile GetRemoteDesktopComputeNode GetRemoteLoginSettingsComputeNode GetTask ListApplication ListCertificate ListComputeNode ListFromComputeNodeFile ListFromJobScheduleJob ListFromTaskFile ListJob ListJobSchedule ListNodeAgentSkusAccount ListPool ListPreparationAndReleaseTaskStatusJob ListSubtasksTask ListTask ListUsageMetricsPool PatchJob PatchJobSchedule PatchPool ReactivateTask RebootComputeNode ReimageComputeNode RemoveNodesPool ResizePool StopResizePool TerminateJob TerminateJobSchedule TerminateTask UpdateJob UpdateJobSchedule UpdatePropertiesPool UpdateTask UpdateUserComputeNode UpgradeOSPool / }
+  sub operations { qw/AddCertificate AddCollectionTask AddJob AddJobSchedule AddPool AddTask AddUserComputeNode CancelDeletionCertificate DeleteCertificate DeleteFromComputeNodeFile DeleteFromTaskFile DeleteJob DeleteJobSchedule DeletePool DeleteTask DeleteUserComputeNode DisableAutoScalePool DisableJob DisableJobSchedule DisableSchedulingComputeNode EnableAutoScalePool EnableJob EnableJobSchedule EnableSchedulingComputeNode EvaluateAutoScalePool ExistsJobSchedule ExistsPool GetAllLifetimeStatisticsJob GetAllLifetimeStatisticsPool GetApplication GetCertificate GetComputeNode GetFromComputeNodeFile GetFromTaskFile GetJob GetJobSchedule GetPool GetPropertiesFromComputeNodeFile GetPropertiesFromTaskFile GetRemoteDesktopComputeNode GetRemoteLoginSettingsComputeNode GetTask GetTaskCountsJob ListApplication ListCertificate ListComputeNode ListFromComputeNodeFile ListFromJobScheduleJob ListFromTaskFile ListJob ListJobSchedule ListNodeAgentSkusAccount ListPool ListPreparationAndReleaseTaskStatusJob ListSubtasksTask ListTask ListUsageMetricsPool PatchJob PatchJobSchedule PatchPool ReactivateTask RebootComputeNode ReimageComputeNode RemoveNodesPool ResizePool StopResizePool TerminateJob TerminateJobSchedule TerminateTask UpdateJob UpdateJobSchedule UpdatePropertiesPool UpdateTask UpdateUserComputeNode UpgradeOSPool / }
 
 1;

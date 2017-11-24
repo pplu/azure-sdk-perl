@@ -9,10 +9,10 @@ package Azure::AdvisorManagement::GetRecommendationsResult;
   has impactedField => (is => 'ro', isa => 'Str'  );
   has impactedValue => (is => 'ro', isa => 'Str'  );
   has lastUpdated => (is => 'ro', isa => 'Str'  );
-  has metadata => (is => 'ro', isa => 'HashRef'  );
+  has metadata => (is => 'ro', isa => 'HashRef[HashRef]'  );
   has recommendationTypeId => (is => 'ro', isa => 'Str'  );
   has risk => (is => 'ro', isa => 'Str'  );
-  has shortDescription => (is => 'ro', isa => 'HashRef'  );
+  has shortDescription => (is => 'ro', isa => 'Azure::AdvisorManagement::ShortDescription'  );
   has suppressionIds => (is => 'ro', isa => 'ArrayRef[Str]'  );
 
 1;

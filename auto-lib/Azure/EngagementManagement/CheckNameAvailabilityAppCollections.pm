@@ -2,8 +2,8 @@ package Azure::EngagementManagement::CheckNameAvailabilityAppCollections;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2014-12-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2014-12-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::EngagementManagement::AppCollectionNameAvailability',
     traits => [ 'Azure::ParamInBody' ],

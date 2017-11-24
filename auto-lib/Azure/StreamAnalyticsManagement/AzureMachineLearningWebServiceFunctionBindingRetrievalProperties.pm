@@ -2,5 +2,5 @@ package Azure::StreamAnalyticsManagement::AzureMachineLearningWebServiceFunction
   use Moose;
 
   has 'executeEndpoint' => (is => 'ro', isa => 'Str'  );
-  has 'udfType' => (is => 'ro', isa => 'Azure::StreamAnalyticsManagement::UdfType'  );
+  has 'udfType' => (is => 'ro', isa => 'Str'  );
 1;

@@ -4,6 +4,7 @@ package Azure::SiteRecoveryManagement::VMNicDetails;
   has 'ipAddressType' => (is => 'ro', isa => 'Str'  );
   has 'nicId' => (is => 'ro', isa => 'Str'  );
   has 'primaryNicStaticIPAddress' => (is => 'ro', isa => 'Str'  );
+  has 'recoveryNicIpAddressType' => (is => 'ro', isa => 'Str'  );
   has 'recoveryVMNetworkId' => (is => 'ro', isa => 'Str'  );
   has 'recoveryVMSubnetName' => (is => 'ro', isa => 'Str'  );
   has 'replicaNicId' => (is => 'ro', isa => 'Str'  );

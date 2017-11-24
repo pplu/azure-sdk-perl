@@ -6,7 +6,7 @@ package Azure::UsageManagement::MeterInfo;
   has 'MeterCategory' => (is => 'ro', isa => 'Str'  );
   has 'MeterId' => (is => 'ro', isa => 'Str'  );
   has 'MeterName' => (is => 'ro', isa => 'Str'  );
-  has 'MeterRates' => (is => 'ro', isa => 'HashRef'  );
+  has 'MeterRates' => (is => 'ro', isa => 'HashRef[Num]'  );
   has 'MeterRegion' => (is => 'ro', isa => 'Str'  );
   has 'MeterSubCategory' => (is => 'ro', isa => 'Str'  );
   has 'MeterTags' => (is => 'ro', isa => 'ArrayRef[Str]'  );

@@ -2,5 +2,5 @@ package Azure::CognitiveServicesManagement::CognitiveServicesAccountUpdateParame
   use Moose;
 
   has 'sku' => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::Sku'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
 1;

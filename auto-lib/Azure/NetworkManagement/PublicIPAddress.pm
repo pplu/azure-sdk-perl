@@ -2,10 +2,12 @@ package Azure::NetworkManagement::PublicIPAddress;
   use Moose;
 
   has 'etag' => (is => 'ro', isa => 'Str'  );
+  has 'sku' => (is => 'ro', isa => 'Azure::NetworkManagement::PublicIPAddressSku'  );
+  has 'zones' => (is => 'ro', isa => 'ArrayRef[Str]'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'dnsSettings' => (is => 'ro', isa => 'Azure::NetworkManagement::PublicIPAddressDnsSettings'  );
   has 'idleTimeoutInMinutes' => (is => 'ro', isa => 'Int'  );

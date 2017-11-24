@@ -1,13 +1,32 @@
+package Azure::SDK::Builder::Error;
+  use Moose;
+  extends 'Throwable::Error';
+
+package Azure::SDK::Builder::Path;
+  use Moose;
+  has object => (is => 'ro', required => 1);
+  has schema => (is => 'ro', required => 1, isa => 'Azure::SDK::Builder');
+  has path   => (is => 'ro', required => 1);
+
 package Azure::SDK::Builder;
   use v5.10;
   use Moose;
   use Template;
   use Swagger::Schema;
-  use File::Slurp;
   use FindBin;
   use Path::Class;
   use Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::Object;
+  with 'Azure::SDK::TemplateProcessor';
+
+  has log => (
+    is => 'ro',
+    lazy => 1,
+    default => sub { 
+      require Azure::SDK::Builder::Logger;
+      Azure::SDK::Builder::Logger->new() 
+    },
+  );
 
   has sdk_namespace => (is => 'ro', default => 'Azure');
 
@@ -23,59 +42,12 @@ package Azure::SDK::Builder;
     lazy => 1,
     default => sub {
       my $self = shift;
-      my $data = read_file($self->schema_file);
+      my $data = file($self->schema_file)->slurp;
+      Azure::SDK::Builder::Error->throw("Couldn't read file " . $self->schema_file) if (not defined $data);
+      $data =~ s/^\xEF\xBB\xBF//;
       return Swagger::Schema->MooseX::DataModel::new_from_json($data);
     }
   );
-  has output_dir => (
-    is => 'ro',
-    isa => 'Str',
-    default => 'auto-lib/'
-  );
-  has _tt => (is => 'ro', isa => 'Template', default => sub {
-    Template->new(
-      INCLUDE_PATH => "$FindBin::Bin/../templates",
-      INTERPOLATE => 0,
-    );
-  });
-  has log => (
-    is => 'ro',
-    default => sub { Logger->new() },
-  );
-
-  sub process_template {
-    my ($self, $template_file, $vars) = @_;
-
-    $self->log->debug('Processing template \'' . $template_file . '\'');
-
-    $vars = {} if (not defined $vars);
-    my $output = '';
-    $self->_tt->process(
-      $template_file,
-      { c => $self, %$vars },
-      \$output
-    ) or die "Error processing template " . $self->_tt->error;
-
-    $self->log->debug('Output from template: ' . $output);
-
-    #TODO: detect the class name from output, and save to it
-    my ($outfile) = ($output =~ m/package (\S+)(?:\s*;|\s*{)/);
-
-    die "Didn't find package name" if (not defined $outfile or $outfile eq '');
-
-    $self->log->info("Detected package $outfile in output");
-
-    $outfile =~ s/\:\:/\//g;
-    $outfile .= '.pm';
-
-    $self->log->info("Naming it $outfile");
-    my $f = file($self->output_dir, $outfile);
-
-    $f->parent->mkpath;
-
-    #TODO: ensure that the dir of the file exists
-    write_file($f, $output);
-  }
 
   sub definitionname_to_objectname {
     my ($self, $name) = @_;
@@ -110,12 +82,18 @@ package Azure::SDK::Builder;
       return $id if ($id eq 'WipeMAMUserDevice');
       return $id if ($id eq 'GetCertificates');
       return $id if ($id eq 'DeleteCertificateContacts');
+      return $id if ($id eq 'ValidateProbe');
       # storage importexport
       return $id if ($id eq 'ListLocations');
       return $id if ($id eq 'GetLocation');
       return $id if ($id eq 'ListSupportedOperations');
       # KeyVault names don't have to be transformed
       return $id if ($self->schema->info->title eq 'KeyVaultClient');
+
+      # Cognitive Text Analytics
+      return 'KeyPhrases' if ($id eq 'Key Phrases');
+      return 'DetectLanguage' if ($id eq 'Detect Language');
+      return 'Sentiment' if ($id eq 'Sentiment');
 
       return 'GetAvailableOperations' if ($id eq 'getAvailableOperations');
 
@@ -127,6 +105,11 @@ package Azure::SDK::Builder;
     is => 'ro',
     isa => 'HashRef',
     lazy => 1,
+    traits => [ 'Hash' ],
+    handles => {
+      method_names => 'keys',
+      method => 'get',
+    },
     default => sub {
       my $self = shift;
       my %methods = ();
@@ -155,11 +138,25 @@ package Azure::SDK::Builder;
     }
   );
 
+  has method_returns => (
+    is => 'ro',
+    isa => 'HashRef[Azure::SDK::Builder::Return]',
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      my %returns = ();
+      foreach my $method_name ($self->method_names){
+        my $method = $self->method($method_name);
+        $returns{ $method_name } = $method->return if (defined $method->return);
+      }
+      return \%returns;
+    }
+  );
+
   sub object_for_path {
     my ($self, $path) = @_;
     if (my ($second) = ($path =~ m/definitions\/(.*)$/)){
-      my $obj_name = $self->definitionname_to_objectname($second);
-      return $self->objects->{ $obj_name };
+      return $self->objects->{ $second };
     } else {
       die "$path is not for an object";
     }
@@ -167,32 +164,85 @@ package Azure::SDK::Builder;
 
   has objects => (
     is => 'ro',
-    isa => 'HashRef',
+    isa => 'HashRef[Azure::SDK::Builder::Object]',
     lazy => 1,
+    traits => [ 'Hash' ],
+    handles => {
+      object_list => 'values',
+    },
     default => sub {
       my $self = shift;
       my %objects => ();
 
+      # Get objects from the definitions (almost everything refs out to defintions/NameOfObject
       my $definitions = (defined $self->schema->definitions) ? $self->schema->definitions : {};
 
       foreach my $ob_name (sort keys %$definitions) {
         my $object = $self->schema->definitions->{ $ob_name };
-        $object = $self->resolve_path($object->ref) if (defined $object->ref);
+        my $root_schema = $self;
+
+        if (defined $object->ref) {
+          my $path = $self->resolve_path($object->ref);
+          $object = $path->object;
+          $root_schema = $path->schema;
+        }
 
         my $def_name = $self->definitionname_to_objectname($ob_name);
 
-        $objects{ $def_name } = 
+        $objects{ $ob_name } = 
           Azure::SDK::Builder::Object->new(
             %$object,
-            root_schema => $self,
+            root_schema => $root_schema,
             service => $self->service,
             name => $def_name,
           );
+
+        $self->_get_subobjects_in(\%objects, $def_name, $objects{ $ob_name });
       }
 
       return \%objects;
+    }
+  );
+
+  has inline_objects => (
+    is => 'ro',
+    isa => 'HashRef[Azure::SDK::Builder::Object]',
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      my $objects = {};
+      # Get inlined objects in return objects (properties of objects that instead of ref, inline their defintion)
+      foreach my $rname (keys %{ $self->method_returns }) {
+        my $object = $self->method_returns->{ $rname };
+        my $prefix = $object->fully_namespaced;
+        $self->_get_subobjects_in($objects, $prefix, $object);
+      }
+
+      return $objects;
     },
   );
+
+  sub _get_subobjects_in {
+    my ($self, $sub_objects, $prefix, $object) = @_;
+    
+    return if (not defined $object->properties);
+
+    foreach my $property (keys %{ $object->properties }){
+      my $o = $object->properties->{ $property };
+
+      if (defined $o->type and $o->type eq 'object' and defined $o->properties) {
+        my $oname = "${prefix}_${property}";
+        die "$oname is duplicate in sub_objects" if (defined $sub_objects->{ $oname });
+        $sub_objects->{ $oname } = Azure::SDK::Builder::Object->new(
+          %$o,
+          root_schema => $self,
+          service => $self->service,
+          name => $oname,
+        );
+        $self->_get_subobjects_in($sub_objects, $oname, $o);
+      }
+    }
+  }
 
   has service => (
     is => 'ro', 
@@ -204,6 +254,9 @@ package Azure::SDK::Builder;
       # ./src/ResourceManagement/Compute/ComputeManagement/ComputeManagementClient.json
       my ($service) = ($title =~ m/^(.*)Client$/);
 
+      return 'ComputeManagement' if ($title eq 'ComputeManagementClient');
+      return 'ComputeManagement' if ($title eq 'DiskResourceProviderClient');
+      return 'ComputeManagement' if ($title eq 'RunCommandsClient');
       return 'EngagementManagement' if ($title eq 'Engagement.ManagementClient'); 
       return 'MLWebServicesManagement' if ($title eq 'Azure ML Web Services Management Client');
       return 'MLCommitmentPlansManagement' if ($title eq 'Azure ML Commitment Plans Management Client');
@@ -217,6 +270,23 @@ package Azure::SDK::Builder;
       return 'AppServicePlans' if ($title eq 'AppServicePlans API Client');
       return 'AppServiceEnvironments' if ($title eq 'AppServiceEnvironments API Client');
       return 'CosmosDB' if ($title eq 'Cosmos DB');
+      return 'AzureSQLDatabaseBackupLongRetentionPolicy' if ($title eq 'Azure SQL Database Backup Long Term Retention Policy');
+      return 'AzureSQLDatabaseBackupLongRetentionVault' if ($title eq 'Azure SQL Server Backup Long Term Retention Vault');
+      return 'AzureSQLDatabaseBackup' if ($title eq 'Azure SQL Database Backup');
+      return 'ResourceHealth' if ($title eq 'Microsoft.ResourceHealth');
+      return 'Monitor' if ($title eq 'Azure Action Groups API');
+      return 'Monitor' if ($title eq 'Azure Activity Log Alerts API');
+      return 'ServiceMap' if ($title eq 'Service Map');
+      return 'VisualStudio' if ($title eq 'Visual Studio Resource Provider Client');
+      return 'Relay' if ($title eq 'Relay API');
+      return 'CognitiveFace' if ($title eq 'Face API');
+      return 'CongitiveTextAnalytics' if ($title eq 'Text Analytics API');
+      return 'MarketplaceOrdering' if ($title eq 'MarketplaceOrdering.Agreements');
+      return 'LogAnalytics' if ($title eq 'Azure Log Analytics - Operations Management');
+      return 'DomainServices' if ($title eq 'DomainServices');
+      return 'ManagementGroups' if ($title eq 'Management Groups API');
+      return 'MachineLearningCompute' if ($title eq 'Machine Learning Compute Management Client');
+      return 'CognitiveEntitySearch' if ($title eq 'Entity Search API');
 
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
@@ -237,119 +307,115 @@ package Azure::SDK::Builder;
   sub path_parts {
     my ($self, $path) = @_;
     my @parts = split /\//, $path;
-    die "Cannot resolve a path doesn't start with #: $path" if ($parts[0] ne '#');
+    Azure::SDK::Builder::Error->throw("Cannot resolve a path doesn't start with #: $path") if ($parts[0] ne '#');
     return ($parts[1], $parts[2]);
   }
 
-  has _file_objects_cache => (
+  sub object_for_ref {
+    my ($self, $ref) = @_;
+
+    $self->log->debug("Object for ref: $ref " . $ref->ref);
+    my $path = $self->resolve_path($ref->ref);
+    my $objects = $self->objects;
+    my $final_path = $path->path;
+
+    my ($first, $second) = $self->path_parts($path->path);
+    Azure::SDK::Builder::Error->throw("Can't process $final_path in objects because path is not a definitions path") if ($first ne 'definitions');
+
+    my $object = $path->schema->objects->{ $second };
+    Azure::SDK::Builder::Error->throw("Can't find $final_path in objects") if (not defined $object);
+    return $object;
+  }
+
+  has _file_refs_cache => (
     is => 'rw',
     isa => 'HashRef',
     default => sub { { } },
   );
 
-  sub object_for_ref {
-    my ($self, $ref) = @_;
-
-    my $final_path = $ref->ref;
-    my $final_objects = $self->objects;
-
-    # When the path is './network.json#/objects/Resource' we have to look in
-    # network.json
-    if (my ($find_path_in_file, $rest_of_path) = ($final_path =~ m/^\.\/(.*?)#(.*)/)) {
-      if (defined $self->_file_objects_cache->{ $find_path_in_file }) {
-        $final_objects = $self->_file_objects_cache->{ $find_path_in_file };
-      } else {
-        # Strip file off the end, so we can concatenate the file in the path
-        my $file = file($self->schema_file)->dir;
-        $file .= "/$find_path_in_file";
-
-        $final_objects = Azure::SDK::Builder->new(schema_file => $file)->objects;
-        $self->_file_objects_cache->{ $find_path_in_file } = $final_objects;
-      }
-      $final_path = "#$rest_of_path";
-    }
-
-    my ($first, $second) = $self->path_parts($final_path);
-    #die "Can't find $final_path in objects" if ($first ne 'objects');
-
-    $second = $self->definitionname_to_objectname($second);
-
-    if (not defined $final_objects->{ $second }){
-      $self->log->warn("Can't find an object object_for_ref for $ref: nothing found in $first called $second");
-    }
-
-    return $final_objects->{ $second };
-  }
-
   sub resolve_path {
     my ($self, $path) = @_;
 
+    $self->log->debug("Resolving $path");
+
     my $final_path = $path;
-    my $final_schema = $self->schema;
+    my $final_schema = $self;
 
     # When the path is './network.json#/definitions/Resource' we have to look in
     # network.json
-    if (my ($find_path_in_file, $rest_of_path) = ($path =~ m/^\.\/(.*?)#(.*)/)) {
-      # Strip file off the end, so we can concatenate the file in the path
-      my $def_file = file($self->schema_file);
-      $def_file = $def_file->dir;
-      $def_file .= "/$find_path_in_file";
-
+    if (my ($find_path_in_file, $rest_of_path) = ($path =~ m/^(.+?)#(.*)/)) {
       $final_path = "#$rest_of_path";
-      $final_schema = Azure::SDK::Builder->new(schema_file => $def_file)->schema;
+
+      if (defined $self->_file_refs_cache->{ $find_path_in_file }) {
+        $final_schema = $self->_file_refs_cache->{ $find_path_in_file };
+      } else {
+        # Strip file off the end, so we can concatenate the file in the path
+        my $def_file = file($self->schema_file);
+        $def_file = $def_file->dir;
+        $def_file .= "/$find_path_in_file";
+
+        $final_schema = Azure::SDK::Builder->new(schema_file => $def_file);
+
+        $self->_file_refs_cache->{ $find_path_in_file } = $final_schema;
+      }
     }
 
     my ($first, $second) = $self->path_parts($final_path);
+    my $object = $final_schema->schema->$first->{ $second };
 
-    die "Nothing under $final_schema $first" if (not defined $final_schema->$first);
+    Azure::SDK::Builder::Error->throw("Cannot resolve path $path in " . $final_schema->schema_file) if (not defined $object);
 
-    if (not defined $final_schema->$first->{ $second }) {
-      $self->log->warn("Can't resolve_path for $path: nothing found in $first called $second");
-    }
-
-    return $final_schema->$first->{ $second };
+    return Azure::SDK::Builder::Path->new(
+      object => $object,
+      schema => $final_schema,
+      path => $final_path,
+    );
   }
 
   sub build {
     my $self = shift;
 
     eval {
+      $self->log->info('Generating service class ' . $self->service);
       $self->process_template(
         'service',
       );
 
-      foreach my $object (sort keys %{ $self->objects }){
+      foreach my $object_name (sort keys %{ $self->objects }){
+        $self->log->info("Generating object class $object_name");
         $self->process_template(
           'object',
-          { object => $self->objects->{ $object } },
+          { object => $self->objects->{ $object_name } },
+        );
+      }
+      foreach my $object_name (sort keys %{ $self->inline_objects }){
+        $self->log->info("Generating object class $object_name");
+        $self->process_template(
+          'object',
+          { object => $self->inline_objects->{ $object_name } },
         );
       }
   
       foreach my $method_name (sort keys %{ $self->methods }){
+        $self->log->info("Generating method class $method_name");
         my $method = $self->methods->{ $method_name };
         $self->process_template(
           'method_args_object',
           { method => $method },
         );
+      }
+      foreach my $return_name (sort keys %{ $self->method_returns }){
+        $self->log->info("Generating return class $return_name");
+        my $return = $self->method_returns->{ $return_name };
         $self->process_template(
           'method_return_object',
-          { method => $method },
-        ) if (defined $method->return);
+          { return => $return },
+        );
       }
     };
     if ($@){
       $self->log->error("Failed building " . $self->service . ": $@");
     }
   }
-
-1;
-package Logger {
-  use Moose;
-  has log_level => (is => 'ro', default => 5);
-  sub debug { if (shift->log_level > 4) { say '[DEBUG] ', $_ for @_ } }
-  sub info  { if (shift->log_level > 3) { say '[INFO ] ', $_ for @_ } }
-  sub warn  { if (shift->log_level > 2) { say '[WARN ] ', $_ for @_ } }
-  sub error { if (shift->log_level > 0) { say '[ERROR] ', $_ for @_ } }
-}
 
 1;

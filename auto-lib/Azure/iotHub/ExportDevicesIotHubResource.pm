@@ -2,8 +2,8 @@ package Azure::iotHub::ExportDevicesIotHubResource;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-19',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-07-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'exportDevicesParameters' => (is => 'ro', required => 1, isa => 'Azure::iotHub::ExportDevicesRequest',
     traits => [ 'Azure::ParamInBody' ],

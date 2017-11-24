@@ -2,6 +2,7 @@ package Azure::NetworkManagement::NetworkInterfaceIPConfigurationPropertiesForma
   use Moose;
 
   has 'applicationGatewayBackendAddressPools' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ApplicationGatewayBackendAddressPool]'  );
+  has 'applicationSecurityGroups' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::ApplicationSecurityGroup]'  );
   has 'loadBalancerBackendAddressPools' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::BackendAddressPool]'  );
   has 'loadBalancerInboundNatRules' => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::InboundNatRule]'  );
   has 'primary' => (is => 'ro', isa => 'Bool'  );

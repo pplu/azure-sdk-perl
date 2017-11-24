@@ -1,7 +1,7 @@
 package Azure::DataLakeStoreAccountManagement::DataLakeStoreAccountUpdateParameters;
   use Moose;
 
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'defaultGroup' => (is => 'ro', isa => 'Str'  );
   has 'encryptionConfig' => (is => 'ro', isa => 'Azure::DataLakeStoreAccountManagement::UpdateEncryptionConfig'  );
   has 'firewallAllowAzureIps' => (is => 'ro', isa => 'Str'  );

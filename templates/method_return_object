@@ -1,12 +1,11 @@
-[% ret = method.return -%]
-package [% ret.fully_namespaced %];
+package [% return.fully_namespaced %];
   use Moose;
 
-  [%- FOREACH property = ret.attributes %]
-  has [% property.property_name %] => (is => 'ro'
+  [%- FOREACH property = return.attributes %]
+  has [% property.name %] => (is => 'ro'
     [%- IF (property.required) %], required => 1[% END -%]
-    [%- IF (property.perl_type) %], isa => '[% property.perl_type %]'[% END -%]
-    [%- IF (property.property_location.defined) %], traits => [ 'Azure::LocationInResponse' ], location => '[% property.property_location %]'[% END -%]
+    [%- %], isa => '[% property.perl_type %]'[% -%]
+    [%- IF (property.special_requestname) %], traits => [ 'Azure::LocationInResponse' ], location => '[% property.original_name %]'[% END -%]
   );
   [%- END %]
 

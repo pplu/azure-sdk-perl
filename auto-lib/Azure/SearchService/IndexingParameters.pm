@@ -3,7 +3,7 @@ package Azure::SearchService::IndexingParameters;
 
   has 'base64EncodeKeys' => (is => 'ro', isa => 'Bool'  );
   has 'batchSize' => (is => 'ro', isa => 'Int'  );
-  has 'configuration' => (is => 'ro', isa => 'HashRef'  );
+  has 'configuration' => (is => 'ro', isa => 'HashRef[HashRef]'  );
   has 'maxFailedItems' => (is => 'ro', isa => 'Int'  );
   has 'maxFailedItemsPerBatch' => (is => 'ro', isa => 'Int'  );
 1;

@@ -2,7 +2,7 @@ package Azure::MLWebServicesManagement::CreateRegionalPropertiesWebServicesResul
   use Moose;
 
   has endTime => (is => 'ro', isa => 'Str'  );
-  has errorInfo => (is => 'ro', isa => 'HashRef'  );
+  has errorInfo => (is => 'ro', isa => 'Azure::MLWebServicesManagement::AsyncOperationErrorInfo'  );
   has id => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
   has percentComplete => (is => 'ro', isa => 'Num'  );

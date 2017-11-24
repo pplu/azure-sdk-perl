@@ -2,7 +2,7 @@ package Azure::MLWebServicesManagement::WebServicePropertiesForGraph;
   use Moose;
 
   has 'package' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::GraphPackage'  );
-  has 'assets' => (is => 'ro', isa => 'HashRef'  );
+  has 'assets' => (is => 'ro', isa => 'HashRef[Azure::MLWebServicesManagement::AssetItem]'  );
   has 'commitmentPlan' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::CommitmentPlan'  );
   has 'createdOn' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );
@@ -15,7 +15,7 @@ package Azure::MLWebServicesManagement::WebServicePropertiesForGraph;
   has 'modifiedOn' => (is => 'ro', isa => 'Str'  );
   has 'output' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::ServiceInputOutputSpecification'  );
   has 'packageType' => (is => 'ro', isa => 'Str'  );
-  has 'parameters' => (is => 'ro', isa => 'HashRef'  );
+  has 'parameters' => (is => 'ro', isa => 'HashRef[Azure::MLWebServicesManagement::WebServiceParameter]'  );
   has 'payloadsInBlobStorage' => (is => 'ro', isa => 'Bool'  );
   has 'payloadsLocation' => (is => 'ro', isa => 'Azure::MLWebServicesManagement::BlobLocation'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );

@@ -4,6 +4,6 @@ package Azure::LogicManagement::IntegrationAccountPartnerProperties;
   has 'changedTime' => (is => 'ro', isa => 'Str'  );
   has 'content' => (is => 'ro', isa => 'Azure::LogicManagement::PartnerContent'  );
   has 'createdTime' => (is => 'ro', isa => 'Str'  );
-  has 'metadata' => (is => 'ro', isa => 'HashRef'  );
-  has 'partnerType' => (is => 'ro', isa => 'Azure::LogicManagement::PartnerType'  );
+  has 'metadata' => (is => 'ro', isa => 'Azure::LogicManagement::IntegrationAccountPartnerProperties_metadata'  );
+  has 'partnerType' => (is => 'ro', isa => 'Str'  );
 1;

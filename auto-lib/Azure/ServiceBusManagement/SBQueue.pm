@@ -20,6 +20,6 @@ package Azure::ServiceBusManagement::SBQueue;
   has 'requiresDuplicateDetection' => (is => 'ro', isa => 'Bool'  );
   has 'requiresSession' => (is => 'ro', isa => 'Bool'  );
   has 'sizeInBytes' => (is => 'ro', isa => 'Int'  );
-  has 'status' => (is => 'ro', isa => 'Azure::ServiceBusManagement::EntityStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
   has 'updatedAt' => (is => 'ro', isa => 'Str'  );
 1;

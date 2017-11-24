@@ -2,8 +2,8 @@ package Azure::MLWebServicesManagement::GetWebServices;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'region' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],

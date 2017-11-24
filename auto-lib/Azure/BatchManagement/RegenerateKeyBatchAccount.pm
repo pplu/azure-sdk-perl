@@ -5,8 +5,8 @@ package Azure::BatchManagement::RegenerateKeyBatchAccount;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-05-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-05-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::BatchManagement::BatchAccountRegenerateKeyParameters',
     traits => [ 'Azure::ParamInBody' ],

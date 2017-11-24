@@ -19,6 +19,14 @@ package Azure::AzureAnalysisServices;
     my $call_object = $self->new_with_coercions('Azure::AzureAnalysisServices::DeleteServers', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub DissociateGatewayServers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AzureAnalysisServices::DissociateGatewayServers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetDetailsServers {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -33,6 +41,19 @@ package Azure::AzureAnalysisServices;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::AzureAnalysisServices::ListByResourceGroupServers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListGatewayStatusServers {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AzureAnalysisServices::ListGatewayStatusServers', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListOperations {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::AzureAnalysisServices::ListOperations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListServers {
@@ -84,6 +105,6 @@ package Azure::AzureAnalysisServices;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateServers DeleteServers GetDetailsServers ListByResourceGroupServers ListServers ListSkusForExistingServers ListSkusForNewServers ResumeServers SuspendServers UpdateServers / }
+  sub operations { qw/CreateServers DeleteServers DissociateGatewayServers GetDetailsServers ListByResourceGroupServers ListGatewayStatusServers ListOperations ListServers ListSkusForExistingServers ListSkusForNewServers ResumeServers SuspendServers UpdateServers / }
 
 1;

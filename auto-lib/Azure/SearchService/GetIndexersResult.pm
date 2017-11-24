@@ -7,8 +7,8 @@ package Azure::SearchService::GetIndexersResult;
   has disabled => (is => 'ro', isa => 'Bool'  );
   has fieldMappings => (is => 'ro', isa => 'ArrayRef[Azure::SearchService::FieldMapping]'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has parameters => (is => 'ro', isa => 'Any'  );
-  has schedule => (is => 'ro', isa => 'Any'  );
+  has parameters => (is => 'ro', isa => 'Azure::SearchService::IndexingParameters'  );
+  has schedule => (is => 'ro', isa => 'Azure::SearchService::IndexingSchedule'  );
   has targetIndexName => (is => 'ro', isa => 'Str'  );
 
 1;
