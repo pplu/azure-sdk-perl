@@ -5,8 +5,8 @@ package Azure::UsageManagement::ListUsageAggregates;
   has 'aggregationGranularity' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-06-01-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-06-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'continuationToken' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],

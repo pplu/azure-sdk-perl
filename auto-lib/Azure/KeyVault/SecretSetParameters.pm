@@ -3,6 +3,6 @@ package Azure::KeyVault::SecretSetParameters;
 
   has 'attributes' => (is => 'ro', isa => 'Azure::KeyVault::SecretAttributes'  );
   has 'contentType' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'value' => (is => 'ro', isa => 'Str'  );
 1;

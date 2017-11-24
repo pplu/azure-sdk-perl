@@ -11,20 +11,20 @@ package Azure::ContainerRegistryManagement;
     my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::CheckNameAvailabilityRegistries', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub CreateOrUpdateReplications {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::CreateOrUpdateReplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub CreateRegistries {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::CreateRegistries', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateReplications {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::CreateReplications', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateWebhooks {
@@ -176,6 +176,14 @@ package Azure::ContainerRegistryManagement;
     my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::UpdateRegistries', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateReplications {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::UpdateReplications', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub UpdateWebhooks {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -185,6 +193,6 @@ package Azure::ContainerRegistryManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityRegistries CreateOrUpdateReplications CreateRegistries CreateWebhooks DeleteRegistries DeleteReplications DeleteWebhooks GetCallbackConfigWebhooks GetRegistries GetReplications GetWebhooks ListByResourceGroupRegistries ListCredentialsRegistries ListEventsWebhooks ListOperations ListRegistries ListReplications ListUsagesRegistries ListWebhooks PingWebhooks RegenerateCredentialRegistries UpdateRegistries UpdateWebhooks / }
+  sub operations { qw/CheckNameAvailabilityRegistries CreateRegistries CreateReplications CreateWebhooks DeleteRegistries DeleteReplications DeleteWebhooks GetCallbackConfigWebhooks GetRegistries GetReplications GetWebhooks ListByResourceGroupRegistries ListCredentialsRegistries ListEventsWebhooks ListOperations ListRegistries ListReplications ListUsagesRegistries ListWebhooks PingWebhooks RegenerateCredentialRegistries UpdateRegistries UpdateReplications UpdateWebhooks / }
 
 1;

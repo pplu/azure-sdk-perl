@@ -3,6 +3,22 @@ package Azure::AdvisorManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
+  sub CreateInResourceGroupConfigurations {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::CreateInResourceGroupConfigurations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateInSubscriptionConfigurations {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::CreateInSubscriptionConfigurations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateSuppressions {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::CreateSuppressions', { @_ });
@@ -39,6 +55,22 @@ package Azure::AdvisorManagement;
     my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::GetSuppressions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByResourceGroupConfigurations {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::ListByResourceGroupConfigurations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListBySubscriptionConfigurations {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::ListBySubscriptionConfigurations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListOperations {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::ListOperations', { @_ });
@@ -61,6 +93,6 @@ package Azure::AdvisorManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateSuppressions DeleteSuppressions GenerateRecommendations GetGenerateStatusRecommendations GetRecommendations GetSuppressions ListOperations ListRecommendations ListSuppressions / }
+  sub operations { qw/CreateInResourceGroupConfigurations CreateInSubscriptionConfigurations CreateSuppressions DeleteSuppressions GenerateRecommendations GetGenerateStatusRecommendations GetRecommendations GetSuppressions ListByResourceGroupConfigurations ListBySubscriptionConfigurations ListOperations ListRecommendations ListSuppressions / }
 
 1;

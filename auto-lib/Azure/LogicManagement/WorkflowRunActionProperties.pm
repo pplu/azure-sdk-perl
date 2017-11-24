@@ -9,7 +9,7 @@ package Azure::LogicManagement::WorkflowRunActionProperties;
   has 'outputsLink' => (is => 'ro', isa => 'Azure::LogicManagement::ContentLink'  );
   has 'retryHistory' => (is => 'ro', isa => 'ArrayRef[Azure::LogicManagement::RetryHistory]'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
-  has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
   has 'trackedProperties' => (is => 'ro', isa => 'Azure::LogicManagement::Object'  );
   has 'trackingId' => (is => 'ro', isa => 'Str'  );
 1;

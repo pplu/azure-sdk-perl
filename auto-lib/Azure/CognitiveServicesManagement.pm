@@ -3,28 +3,28 @@ package Azure::CognitiveServicesManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
-  sub CreateCognitiveServicesAccounts {
+  sub CreateAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::CreateCognitiveServicesAccounts', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::CreateAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub DeleteCognitiveServicesAccounts {
+  sub DeleteAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::DeleteCognitiveServicesAccounts', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::DeleteAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub GetPropertiesCognitiveServicesAccounts {
+  sub GetPropertiesAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::GetPropertiesCognitiveServicesAccounts', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::GetPropertiesAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListAccounts {
@@ -51,12 +51,12 @@ package Azure::CognitiveServicesManagement;
     my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::ListCheckSkuAvailability', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListKeysCognitiveServicesAccounts {
+  sub ListKeysAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::ListKeysCognitiveServicesAccounts', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::ListKeysAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ListOperations {
@@ -64,31 +64,31 @@ package Azure::CognitiveServicesManagement;
     my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::ListOperations', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub ListSkusCognitiveServicesAccounts {
+  sub ListSkusAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::ListSkusCognitiveServicesAccounts', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::ListSkusAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub RegenerateKeyCognitiveServicesAccounts {
+  sub RegenerateKeyAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::RegenerateKeyCognitiveServicesAccounts', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::RegenerateKeyAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
-  sub UpdateCognitiveServicesAccounts {
+  sub UpdateAccounts {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
-    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::UpdateCognitiveServicesAccounts', { @_ });
+    my $call_object = $self->new_with_coercions('Azure::CognitiveServicesManagement::UpdateAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateCognitiveServicesAccounts DeleteCognitiveServicesAccounts GetPropertiesCognitiveServicesAccounts ListAccounts ListByResourceGroupAccounts ListCheckSkuAvailability ListKeysCognitiveServicesAccounts ListOperations ListSkusCognitiveServicesAccounts RegenerateKeyCognitiveServicesAccounts UpdateCognitiveServicesAccounts / }
+  sub operations { qw/CreateAccounts DeleteAccounts GetPropertiesAccounts ListAccounts ListByResourceGroupAccounts ListCheckSkuAvailability ListKeysAccounts ListOperations ListSkusAccounts RegenerateKeyAccounts UpdateAccounts / }
 
 1;

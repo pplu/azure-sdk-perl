@@ -3,7 +3,7 @@ package Azure::SchedulerManagement::ServiceBusMessage;
 
   has 'authentication' => (is => 'ro', isa => 'Azure::SchedulerManagement::ServiceBusAuthentication'  );
   has 'brokeredMessageProperties' => (is => 'ro', isa => 'Azure::SchedulerManagement::ServiceBusBrokeredMessageProperties'  );
-  has 'customMessageProperties' => (is => 'ro', isa => 'HashRef'  );
+  has 'customMessageProperties' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'message' => (is => 'ro', isa => 'Str'  );
   has 'namespace' => (is => 'ro', isa => 'Str'  );
   has 'transportType' => (is => 'ro', isa => 'Str'  );

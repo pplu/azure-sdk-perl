@@ -23,8 +23,8 @@ package Azure::DataLakeAnalyticsAccountManagement::ListByAccountStorageAccounts;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
@@ -33,7 +33,7 @@ package Azure::DataLakeAnalyticsAccountManagement::ListByAccountStorageAccounts;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeAnalytics/accounts/{accountName}/StorageAccounts/');
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DataLakeAnalytics/accounts/{accountName}/StorageAccounts');
   class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsAccountManagement::ListByAccountStorageAccountsResult');
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

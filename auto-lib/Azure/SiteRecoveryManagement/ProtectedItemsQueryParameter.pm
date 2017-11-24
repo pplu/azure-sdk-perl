@@ -3,4 +3,5 @@ package Azure::SiteRecoveryManagement::ProtectedItemsQueryParameter;
 
   has 'recoveryPlanName' => (is => 'ro', isa => 'Str'  );
   has 'sourceFabricName' => (is => 'ro', isa => 'Str'  );
+  has 'vCenterName' => (is => 'ro', isa => 'Str'  );
 1;

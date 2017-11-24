@@ -7,6 +7,7 @@ package Azure::SiteRecoveryManagement::InMageProtectedDiskDetails;
   has 'diskResized' => (is => 'ro', isa => 'Str'  );
   has 'fileSystemCapacityInBytes' => (is => 'ro', isa => 'Int'  );
   has 'healthErrorCode' => (is => 'ro', isa => 'Str'  );
+  has 'lastRpoCalculatedTime' => (is => 'ro', isa => 'Str'  );
   has 'protectionStage' => (is => 'ro', isa => 'Str'  );
   has 'psDataInMB' => (is => 'ro', isa => 'Num'  );
   has 'resyncDurationInSeconds' => (is => 'ro', isa => 'Int'  );

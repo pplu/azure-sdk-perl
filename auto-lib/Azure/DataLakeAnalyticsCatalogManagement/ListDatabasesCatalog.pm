@@ -20,8 +20,8 @@ package Azure::DataLakeAnalyticsCatalogManagement::ListDatabasesCatalog;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
 
   class_has _api_uri => (is => 'ro', default => '/catalog/usql/databases');

@@ -66,6 +66,12 @@ package Azure::ExampleService::Object {
   has arrayofstr => (is => 'ro', isa => 'ArrayRef[Str]');
   has arrayofsubobj => (is => 'ro', isa => 'ArrayRef[Azure::ExampleService::SubObject]');
   has hashref => (is => 'ro', isa => 'HashRef');
+  has hashref_of_str => (is => 'ro', isa => 'HashRef[Str]');
+  has hashref_of_num => (is => 'ro', isa => 'HashRef[Num]');
+  has hashref_of_obj => (is => 'ro', isa => 'HashRef[Azure::ExampleService::SubObject]');
+  has hashref_of_hashref => (is => 'ro', isa => 'HashRef[HashRef]');
+  has hashref_of_arrayref_of_str => (is => 'ro', isa => 'HashRef[ArrayRef[Str]]');
+  has hashref_of_arrayref_of_arrayref_of_hashref => (is => 'ro', isa => 'HashRef[ArrayRef[ArrayRef[HashRef]]]');
 }
 package Azure::ExampleService::Method2 {
   use Moose;
@@ -120,8 +126,6 @@ throws_ok(
     subscriptionId => '0000-0000',
   );
 
-  print Dumper($ro);
-
   ok(not(defined($ro->headers->header('header-param2'))));
   ok(not(defined($ro->headers->header('headerparam1'))));
   like($ro->url, qr/\?api-version=2001-01-01/);
@@ -137,8 +141,6 @@ throws_ok(
     subscriptionId => '0000-0000',
   );
 
-  print Dumper($ro);
-
   like($ro->url, qr/\?api-version=2001-01-01/);
   cmp_ok($ro->headers->header('headerparam1'), 'eq', 'hp1');
   cmp_ok($ro->headers->header('header-param2'), 'eq', 'hp2');
@@ -149,8 +151,6 @@ throws_ok(
   my $ro = $svc->Method2(
     bodyparam1 => {},  
   );
-
-  print Dumper($ro);
 
   cmp_ok($ro->content, 'eq', '{}');
 }
@@ -165,10 +165,17 @@ throws_ok(
       arrayofstr => [ 'Str1', 'Str2' ],
       arrayofsubobj => [ { str => 'obj1' }, { str => 'obj2' } ],
       hashref => { k1 => 'v1', k2 => 'v2' },
+      hashref_of_str => { K1 => 'Str1', K2 => 'Str2' },
+      hashref_of_num => { K1 => 1, K2 => 2 },
+      hashref_of_obj => { K1 => { str => 'v1' }, K2 => { str => 'v2' } },
+      hashref_of_hashref => { K1 => { v1 => 'K1v1', v2 => 'K2v2' },  },
+      hashref_of_arrayref_of_str => { K1 => [ 'v1', 'v2' ], K2 => [ 'v3', 'v4' ] },
+      hashref_of_arrayref_of_arrayref_of_hashref => {
+        K1 => [ [ { k1 => 'v1' } ], [ { k2 => 'v2' } ] ],
+        K2 => [ [ { k3 => 'v3' } ], [ { k4 => 'v4' } ] ],
+      }
     },  
   );
-
-  print Dumper($ro);
 
   use JSON::MaybeXS;
   my $struct = decode_json($ro->content);
@@ -180,8 +187,17 @@ throws_ok(
   cmp_ok($struct->{ bool }, '==', 1);
   is_deeply($struct->{ subobj }, { str => 'strval2' });
   is_deeply($struct->{ arrayofstr }, [ 'Str1', 'Str2' ]);
-  is_deeply($struct->{ hashref }, { k1 => 'v1', k2 => 'v2' });
   is_deeply($struct->{ arrayofsubobj }, [ { str => 'obj1' }, { str => 'obj2' } ]);
+  is_deeply($struct->{ hashref }, { k1 => 'v1', k2 => 'v2' });
+  is_deeply($struct->{ hashref_of_str }, { K1 => 'Str1', K2 => 'Str2' });
+  is_deeply($struct->{ hashref_of_num }, { K1 => 1, K2 => 2 });
+  is_deeply($struct->{ hashref_of_obj }, { K1 => { str => 'v1' }, K2 => { str => 'v2' } });
+  is_deeply($struct->{ hashref_of_hashref }, { K1 => { v1 => 'K1v1', v2 => 'K2v2' },  });
+  is_deeply($struct->{ hashref_of_arrayref_of_str }, { K1 => [ 'v1', 'v2' ], K2 => [ 'v3', 'v4' ] });
+  is_deeply($struct->{ hashref_of_arrayref_of_arrayref_of_hashref }, {
+        K1 => [ [ { k1 => 'v1' } ], [ { k2 => 'v2' } ] ],
+        K2 => [ [ { k3 => 'v3' } ], [ { k4 => 'v4' } ] ],
+      });
 }
 
 done_testing;

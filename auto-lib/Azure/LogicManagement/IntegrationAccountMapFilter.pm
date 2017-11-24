@@ -1,5 +1,5 @@
 package Azure::LogicManagement::IntegrationAccountMapFilter;
   use Moose;
 
-  has 'mapType' => (is => 'ro', isa => 'Azure::LogicManagement::MapType'  );
+  has 'mapType' => (is => 'ro', isa => 'Str'  );
 1;

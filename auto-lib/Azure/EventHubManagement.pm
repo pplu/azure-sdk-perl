@@ -3,6 +3,14 @@ package Azure::EventHubManagement;
 
   with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
 
+  sub BreakPairingDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::BreakPairingDisasterRecoveryConfigs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CheckNameAvailabilityNamespaces {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -33,6 +41,14 @@ package Azure::EventHubManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::CreateOrUpdateConsumerGroups', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub CreateOrUpdateDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::CreateOrUpdateDisasterRecoveryConfigs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub CreateOrUpdateEventHubs {
@@ -75,6 +91,14 @@ package Azure::EventHubManagement;
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::DeleteConsumerGroups', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub DeleteDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::DeleteDisasterRecoveryConfigs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub DeleteEventHubs {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -89,6 +113,14 @@ package Azure::EventHubManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::DeleteNamespaces', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub FailOverDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::FailOverDisasterRecoveryConfigs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetAuthorizationRuleEventHubs {
@@ -113,6 +145,14 @@ package Azure::EventHubManagement;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::GetConsumerGroups', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::GetDisasterRecoveryConfigs', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetEventHubs {
@@ -171,6 +211,14 @@ package Azure::EventHubManagement;
     my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListByResourceGroupNamespaces', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListDisasterRecoveryConfigs {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventHubManagement::ListDisasterRecoveryConfigs', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListKeysEventHubs {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -225,6 +273,6 @@ package Azure::EventHubManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleEventHubs CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateConsumerGroups CreateOrUpdateEventHubs CreateOrUpdateNamespaces DeleteAuthorizationRuleEventHubs DeleteAuthorizationRuleNamespaces DeleteConsumerGroups DeleteEventHubs DeleteNamespaces GetAuthorizationRuleEventHubs GetAuthorizationRuleNamespaces GetConsumerGroups GetEventHubs GetNamespaces ListAuthorizationRulesEventHubs ListAuthorizationRulesNamespaces ListByEventHubConsumerGroups ListByNamespaceEventHubs ListByResourceGroupNamespaces ListKeysEventHubs ListKeysNamespaces ListNamespaces ListOperations RegenerateKeysEventHubs RegenerateKeysNamespaces UpdateNamespaces / }
+  sub operations { qw/BreakPairingDisasterRecoveryConfigs CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleEventHubs CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateConsumerGroups CreateOrUpdateDisasterRecoveryConfigs CreateOrUpdateEventHubs CreateOrUpdateNamespaces DeleteAuthorizationRuleEventHubs DeleteAuthorizationRuleNamespaces DeleteConsumerGroups DeleteDisasterRecoveryConfigs DeleteEventHubs DeleteNamespaces FailOverDisasterRecoveryConfigs GetAuthorizationRuleEventHubs GetAuthorizationRuleNamespaces GetConsumerGroups GetDisasterRecoveryConfigs GetEventHubs GetNamespaces ListAuthorizationRulesEventHubs ListAuthorizationRulesNamespaces ListByEventHubConsumerGroups ListByNamespaceEventHubs ListByResourceGroupNamespaces ListDisasterRecoveryConfigs ListKeysEventHubs ListKeysNamespaces ListNamespaces ListOperations RegenerateKeysEventHubs RegenerateKeysNamespaces UpdateNamespaces / }
 
 1;

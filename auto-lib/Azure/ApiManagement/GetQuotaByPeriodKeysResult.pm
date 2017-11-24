@@ -1,7 +1,7 @@
 package Azure::ApiManagement::GetQuotaByPeriodKeysResult;
   use Moose;
 
-  has Value => (is => 'ro', isa => 'Any'  );
+  has Value => (is => 'ro', isa => 'Azure::ApiManagement::QuotaCounterValueContractProperties'  );
   has counterKey => (is => 'ro', isa => 'Str'  );
   has periodEndTime => (is => 'ro', isa => 'Str'  );
   has periodKey => (is => 'ro', isa => 'Str'  );

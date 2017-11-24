@@ -6,6 +6,6 @@ package Azure::PowerBIEmbeddedManagement::WorkspaceCollection;
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'properties' => (is => 'ro', isa => 'HashRef'  );
   has 'sku' => (is => 'ro', isa => 'Azure::PowerBIEmbeddedManagement::AzureSku'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
 1;

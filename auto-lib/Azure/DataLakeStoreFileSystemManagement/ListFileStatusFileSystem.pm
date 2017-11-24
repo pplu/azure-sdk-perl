@@ -2,8 +2,8 @@ package Azure::DataLakeStoreFileSystemManagement::ListFileStatusFileSystem;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-10-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'listAfter' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
@@ -18,9 +18,6 @@ package Azure::DataLakeStoreFileSystemManagement::ListFileStatusFileSystem;
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'op' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInQuery' ],
-  );
-  has 'tooId' => (is => 'ro', isa => 'Bool',
     traits => [ 'Azure::ParamInQuery' ],
   );
 

@@ -5,8 +5,8 @@ package Azure::StorSimple8000SeriesManagement::GetAccessControlRecords;
   has 'accessControlRecordName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'managerName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

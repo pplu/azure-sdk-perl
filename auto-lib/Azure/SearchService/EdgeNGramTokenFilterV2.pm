@@ -3,7 +3,7 @@ package Azure::SearchService::EdgeNGramTokenFilterV2;
 
   has 'maxGram' => (is => 'ro', isa => 'Int'  );
   has 'minGram' => (is => 'ro', isa => 'Int'  );
-  has 'side' => (is => 'ro', isa => 'Azure::SearchService::EdgeNGramTokenFilterSide'  );
+  has 'side' => (is => 'ro', isa => 'Str'  );
   has '@odata.type' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
 1;

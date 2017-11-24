@@ -1,7 +1,7 @@
 package Azure::BatchService::GetCertificateResult;
   use Moose;
 
-  has deleteCertificateError => (is => 'ro', isa => 'Any'  );
+  has deleteCertificateError => (is => 'ro', isa => 'Azure::BatchService::DeleteCertificateError'  );
   has previousState => (is => 'ro', isa => 'Str'  );
   has previousStateTransitionTime => (is => 'ro', isa => 'Str'  );
   has publicData => (is => 'ro', isa => 'Str'  );

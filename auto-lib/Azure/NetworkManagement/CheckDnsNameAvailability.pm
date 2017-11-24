@@ -2,10 +2,10 @@ package Azure::NetworkManagement::CheckDnsNameAvailability;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
-  has 'domainNameLabel' => (is => 'ro', isa => 'Str',
+  has 'domainNameLabel' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInQuery' ],
   );
   has 'location' => (is => 'ro', required => 1, isa => 'Str',

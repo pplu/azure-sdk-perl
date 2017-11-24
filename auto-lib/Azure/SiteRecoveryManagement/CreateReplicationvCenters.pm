@@ -5,8 +5,8 @@ package Azure::SiteRecoveryManagement::CreateReplicationvCenters;
   has 'addVCenterRequest' => (is => 'ro', required => 1, isa => 'Azure::SiteRecoveryManagement::AddVCenterRequest',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-08-10',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-08-10',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'fabricName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

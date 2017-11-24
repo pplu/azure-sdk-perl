@@ -3,7 +3,7 @@ package Azure::LogicManagement::EdifactDelimiterOverride;
 
   has 'componentSeparator' => (is => 'ro', isa => 'Int'  );
   has 'dataElementSeparator' => (is => 'ro', isa => 'Int'  );
-  has 'decimalPointIndicator' => (is => 'ro', isa => 'Azure::LogicManagement::EdifactDecimalIndicator'  );
+  has 'decimalPointIndicator' => (is => 'ro', isa => 'Str'  );
   has 'messageAssociationAssignedCode' => (is => 'ro', isa => 'Str'  );
   has 'messageId' => (is => 'ro', isa => 'Str'  );
   has 'messageRelease' => (is => 'ro', isa => 'Str'  );
@@ -11,6 +11,6 @@ package Azure::LogicManagement::EdifactDelimiterOverride;
   has 'releaseIndicator' => (is => 'ro', isa => 'Int'  );
   has 'repetitionSeparator' => (is => 'ro', isa => 'Int'  );
   has 'segmentTerminator' => (is => 'ro', isa => 'Int'  );
-  has 'segmentTerminatorSuffix' => (is => 'ro', isa => 'Azure::LogicManagement::SegmentTerminatorSuffix'  );
+  has 'segmentTerminatorSuffix' => (is => 'ro', isa => 'Str'  );
   has 'targetNamespace' => (is => 'ro', isa => 'Str'  );
 1;

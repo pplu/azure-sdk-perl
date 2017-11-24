@@ -1,0 +1,19 @@
+package Azure::AutomationManagement::RunbookProperties;
+  use Moose;
+
+  has 'creationTime' => (is => 'ro', isa => 'Str'  );
+  has 'description' => (is => 'ro', isa => 'Str'  );
+  has 'draft' => (is => 'ro', isa => 'Azure::AutomationManagement::RunbookDraft'  );
+  has 'jobCount' => (is => 'ro', isa => 'Int'  );
+  has 'lastModifiedBy' => (is => 'ro', isa => 'Str'  );
+  has 'lastModifiedTime' => (is => 'ro', isa => 'Str'  );
+  has 'logActivityTrace' => (is => 'ro', isa => 'Int'  );
+  has 'logProgress' => (is => 'ro', isa => 'Bool'  );
+  has 'logVerbose' => (is => 'ro', isa => 'Bool'  );
+  has 'outputTypes' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'parameters' => (is => 'ro', isa => 'HashRef[Azure::AutomationManagement::RunbookParameter]'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'publishContentLink' => (is => 'ro', isa => 'Azure::AutomationManagement::ContentLink'  );
+  has 'runbookType' => (is => 'ro', isa => 'Str'  );
+  has 'state' => (is => 'ro', isa => 'Str'  );
+1;

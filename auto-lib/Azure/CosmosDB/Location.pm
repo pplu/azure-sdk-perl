@@ -5,5 +5,5 @@ package Azure::CosmosDB::Location;
   has 'failoverPriority' => (is => 'ro', isa => 'Int'  );
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'locationName' => (is => 'ro', isa => 'Str'  );
-  has 'provisioningState' => (is => 'ro', isa => 'Azure::CosmosDB::ProvisioningState'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
 1;

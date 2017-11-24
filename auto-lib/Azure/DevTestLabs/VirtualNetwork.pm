@@ -4,7 +4,7 @@ package Azure::DevTestLabs::VirtualNetwork;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'allowedSubnets' => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLabs::Subnet]'  );
   has 'createdDate' => (is => 'ro', isa => 'Str'  );

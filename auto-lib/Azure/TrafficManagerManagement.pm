@@ -53,6 +53,14 @@ package Azure::TrafficManagerManagement;
     my $call_object = $self->new_with_coercions('Azure::TrafficManagerManagement::GetEndpoints', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub GetHeatMap {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::TrafficManagerManagement::GetHeatMap', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub GetProfiles {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -94,6 +102,6 @@ package Azure::TrafficManagerManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckTrafficManagerRelativeDnsNameAvailabilityProfiles CreateOrUpdateEndpoints CreateOrUpdateProfiles DeleteEndpoints DeleteProfiles GetDefaultGeographicHierarchies GetEndpoints GetProfiles ListByResourceGroupProfiles ListBySubscriptionProfiles UpdateEndpoints UpdateProfiles / }
+  sub operations { qw/CheckTrafficManagerRelativeDnsNameAvailabilityProfiles CreateOrUpdateEndpoints CreateOrUpdateProfiles DeleteEndpoints DeleteProfiles GetDefaultGeographicHierarchies GetEndpoints GetHeatMap GetProfiles ListByResourceGroupProfiles ListBySubscriptionProfiles UpdateEndpoints UpdateProfiles / }
 
 1;

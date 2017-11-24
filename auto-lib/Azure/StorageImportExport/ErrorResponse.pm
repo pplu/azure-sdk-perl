@@ -1,5 +1,9 @@
 package Azure::StorageImportExport::ErrorResponse;
   use Moose;
 
-  has 'error' => (is => 'ro', isa => 'Azure::StorageImportExport::ErrorInfo'  );
+  has 'code' => (is => 'ro', isa => 'Str'  );
+  has 'details' => (is => 'ro', isa => 'ArrayRef[]'  );
+  has 'innererror' => (is => 'ro', isa => 'HashRef'  );
+  has 'message' => (is => 'ro', isa => 'Str'  );
+  has 'target' => (is => 'ro', isa => 'Str'  );
 1;

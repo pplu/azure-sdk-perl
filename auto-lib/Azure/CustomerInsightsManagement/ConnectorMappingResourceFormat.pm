@@ -6,7 +6,7 @@ package Azure::CustomerInsightsManagement::ConnectorMappingResourceFormat;
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'connectorMappingName' => (is => 'ro', isa => 'Str'  );
   has 'connectorName' => (is => 'ro', isa => 'Str'  );
-  has 'connectorType' => (is => 'ro', isa => 'Azure::CustomerInsightsManagement::ConnectorType'  );
+  has 'connectorType' => (is => 'ro', isa => 'Str'  );
   has 'created' => (is => 'ro', isa => 'Str'  );
   has 'dataFormatId' => (is => 'ro', isa => 'Str'  );
   has 'description' => (is => 'ro', isa => 'Str'  );

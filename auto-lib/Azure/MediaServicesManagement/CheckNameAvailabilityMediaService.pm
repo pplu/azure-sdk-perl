@@ -2,11 +2,11 @@ package Azure::MediaServicesManagement::CheckNameAvailabilityMediaService;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'CheckNameAvailabilityInput' => (is => 'ro', required => 1, isa => 'Azure::MediaServicesManagement::CheckNameAvailabilityInput',
-    traits => [ 'Azure::ParamInBody' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-10-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2015-10-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::MediaServicesManagement::CheckNameAvailabilityInput',
+    traits => [ 'Azure::ParamInBody' ],
   );
   has 'subscriptionId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

@@ -3,5 +3,5 @@ package Azure::KeyVault::KeyUpdateParameters;
 
   has 'attributes' => (is => 'ro', isa => 'Azure::KeyVault::KeyAttributes'  );
   has 'key_ops' => (is => 'ro', isa => 'ArrayRef[Str]'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
 1;

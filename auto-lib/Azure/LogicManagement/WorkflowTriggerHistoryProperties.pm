@@ -10,6 +10,6 @@ package Azure::LogicManagement::WorkflowTriggerHistoryProperties;
   has 'outputsLink' => (is => 'ro', isa => 'Azure::LogicManagement::ContentLink'  );
   has 'run' => (is => 'ro', isa => 'Azure::LogicManagement::ResourceReference'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
-  has 'status' => (is => 'ro', isa => 'Azure::LogicManagement::WorkflowStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
   has 'trackingId' => (is => 'ro', isa => 'Str'  );
 1;

@@ -2,10 +2,11 @@ package Azure::NetworkManagement::CreateOrUpdateLoadBalancersResult;
   use Moose;
 
   has etag => (is => 'ro', isa => 'Str'  );
+  has sku => (is => 'ro', isa => 'Azure::NetworkManagement::LoadBalancerSku'  );
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has tags => (is => 'ro', isa => 'HashRef'  );
+  has tags => (is => 'ro', isa => 'HashRef[Str]'  );
   has type => (is => 'ro', isa => 'Str'  );
   has backendAddressPools => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::BackendAddressPool]'  );
   has frontendIPConfigurations => (is => 'ro', isa => 'ArrayRef[Azure::NetworkManagement::FrontendIPConfiguration]'  );

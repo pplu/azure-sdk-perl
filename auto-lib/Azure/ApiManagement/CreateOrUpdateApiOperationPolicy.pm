@@ -2,14 +2,14 @@ package Azure::ApiManagement::CreateOrUpdateApiOperationPolicy;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'If-Match' => (is => 'ro', required => 1, isa => 'Str',
-    traits => [ 'Azure::ParamInHeader' ],
-  );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'If_Match' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'If-Match',
   );
   has 'apiId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
+  );
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-03-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'operationId' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

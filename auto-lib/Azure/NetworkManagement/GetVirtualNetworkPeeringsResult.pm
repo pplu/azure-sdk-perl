@@ -9,7 +9,7 @@ package Azure::NetworkManagement::GetVirtualNetworkPeeringsResult;
   has allowVirtualNetworkAccess => (is => 'ro', isa => 'Bool'  );
   has peeringState => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
-  has remoteVirtualNetwork => (is => 'ro', isa => 'Any'  );
+  has remoteVirtualNetwork => (is => 'ro', isa => 'Azure::NetworkManagement::SubResource'  );
   has useRemoteGateways => (is => 'ro', isa => 'Bool'  );
 
 1;

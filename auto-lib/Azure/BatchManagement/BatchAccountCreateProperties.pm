@@ -3,5 +3,5 @@ package Azure::BatchManagement::BatchAccountCreateProperties;
 
   has 'autoStorage' => (is => 'ro', isa => 'Azure::BatchManagement::AutoStorageBaseProperties'  );
   has 'keyVaultReference' => (is => 'ro', isa => 'Azure::BatchManagement::KeyVaultReference'  );
-  has 'poolAllocationMode' => (is => 'ro', isa => 'Azure::BatchManagement::PoolAllocationMode'  );
+  has 'poolAllocationMode' => (is => 'ro', isa => 'Str'  );
 1;

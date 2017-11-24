@@ -3,5 +3,5 @@ package Azure::SearchService::IndexerExecutionInfo;
 
   has 'executionHistory' => (is => 'ro', isa => 'ArrayRef[Azure::SearchService::IndexerExecutionResult]'  );
   has 'lastResult' => (is => 'ro', isa => 'Azure::SearchService::IndexerExecutionResult'  );
-  has 'status' => (is => 'ro', isa => 'Azure::SearchService::IndexerStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
 1;

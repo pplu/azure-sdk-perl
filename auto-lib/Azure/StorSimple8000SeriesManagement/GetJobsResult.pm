@@ -2,7 +2,7 @@ package Azure::StorSimple8000SeriesManagement::GetJobsResult;
   use Moose;
 
   has endTime => (is => 'ro', isa => 'Str'  );
-  has error => (is => 'ro', isa => 'HashRef'  );
+  has error => (is => 'ro', isa => 'Azure::StorSimple8000SeriesManagement::JobErrorDetails'  );
   has percentComplete => (is => 'ro', isa => 'Int'  );
   has startTime => (is => 'ro', isa => 'Str'  );
   has status => (is => 'ro', isa => 'Str'  );
@@ -12,7 +12,7 @@ package Azure::StorSimple8000SeriesManagement::GetJobsResult;
   has type => (is => 'ro', isa => 'Str'  );
   has backupPointInTime => (is => 'ro', isa => 'Str'  );
   has backupType => (is => 'ro', isa => 'Str'  );
-  has dataStats => (is => 'ro', isa => 'HashRef'  );
+  has dataStats => (is => 'ro', isa => 'Azure::StorSimple8000SeriesManagement::DataStatistics'  );
   has deviceId => (is => 'ro', isa => 'Str'  );
   has entityLabel => (is => 'ro', isa => 'Str'  );
   has entityType => (is => 'ro', isa => 'Str'  );

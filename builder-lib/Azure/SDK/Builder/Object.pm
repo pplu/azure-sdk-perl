@@ -4,10 +4,11 @@ package Azure::SDK::Builder::Object;
   use Data::Dumper;
 
   extends 'Swagger::Schema::Schema';
-  use Azure::SDK::Builder::Parameter;
+  use Azure::SDK::Builder::Property;
 
   has name    => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);
+  has x_ms_client_flatten => (is => 'ro');
 
   has root_schema => (
     is => 'ro',
@@ -27,8 +28,12 @@ package Azure::SDK::Builder::Object;
   sub get_attributes_from_properties {
     my ($self, $object) = @_;
 
+    my $root_schema = $self->root_schema;
+
     if (defined $object->ref) {
-      $object = $self->root_schema->resolve_path($object->ref);
+      my $path = $self->root_schema->resolve_path($object->ref);
+      $object = $path->object;
+      $root_schema = $path->schema;
     }
 
     my $atts = [];
@@ -36,23 +41,19 @@ package Azure::SDK::Builder::Object;
 
     my $properties = $object->properties;
     foreach my $prop_name (sort keys %$properties){
-      my $props = $properties->{ $prop_name };
+      my $prop_schema = $properties->{ $prop_name };
 
-      if ($props->x_ms_client_flatten) {
-        push @to_flatten, $props;
+      if ($prop_schema->x_ms_client_flatten) {
+        push @to_flatten, $prop_schema;
         next;
       }
 
-      my $type;
-      if (defined $props->ref) {
-        $props = $self->root_schema->object_for_ref($props);
-        $type = $props->fully_namespaced;
-      }
+      my $type = $self->name . "_${prop_name}" if (defined $prop_schema->properties);
 
-      push @$atts, Azure::SDK::Builder::Parameter->new(
-        %$props,
-        root_schema => $self->root_schema,
-        name => $prop_name,
+      push @$atts, Azure::SDK::Builder::Property->new(
+        original_schema => $prop_schema,
+        root_schema => $root_schema,
+        original_name => $prop_name,
         service => $self->service,
         (defined $type) ? (type => $type) : (),
       );
@@ -71,7 +72,7 @@ package Azure::SDK::Builder::Object;
 
   has attributes => (
     is => 'ro',
-    isa => 'ArrayRef[Azure::SDK::Builder::Parameter]',
+    isa => 'ArrayRef[Azure::SDK::Builder::Property]',
     lazy => 1,
     default => sub {
       my $self = shift;

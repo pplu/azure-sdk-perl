@@ -2,8 +2,8 @@ package Azure::Policy::CreateByIdPolicyAssignments;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'parameters' => (is => 'ro', required => 1, isa => 'Azure::Policy::PolicyAssignment',
     traits => [ 'Azure::ParamInBody' ],

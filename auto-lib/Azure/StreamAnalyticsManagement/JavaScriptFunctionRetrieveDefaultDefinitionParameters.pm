@@ -3,5 +3,5 @@ package Azure::StreamAnalyticsManagement::JavaScriptFunctionRetrieveDefaultDefin
 
   has 'bindingType' => (is => 'ro', isa => 'Str'  );
   has 'script' => (is => 'ro', isa => 'Str'  );
-  has 'udfType' => (is => 'ro', isa => 'Azure::StreamAnalyticsManagement::UdfType'  );
+  has 'udfType' => (is => 'ro', isa => 'Str'  );
 1;

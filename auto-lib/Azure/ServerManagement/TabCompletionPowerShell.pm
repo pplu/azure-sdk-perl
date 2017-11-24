@@ -5,8 +5,8 @@ package Azure::ServerManagement::TabCompletionPowerShell;
   has 'PowerShellTabCompletionParamters' => (is => 'ro', required => 1, isa => 'Azure::ServerManagement::PowerShellTabCompletionParameters',
     traits => [ 'Azure::ParamInBody' ],
   );
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01-preview',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-07-01-preview',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'nodeName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],

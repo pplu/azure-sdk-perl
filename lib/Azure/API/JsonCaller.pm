@@ -31,6 +31,17 @@ package Azure::API::JsonCaller;
           } else { 
             $p{ $key } = [ map { $self->_to_jsoncaller_params($_) } @{ $params->$att } ];
           }
+        } elsif ($att_type =~ m/^HashRef\[(.*)\]/) {
+          my $internal_type = "$1";
+          if ($self->_is_internal_type($internal_type)){
+            $p{ $key } = $params->$att;
+          } elsif ($internal_type eq 'HashRef' or $internal_type eq 'ArrayRef[Str]' or
+                   $internal_type eq 'ArrayRef[ArrayRef[HashRef]]') {
+            $p{ $key } = $params->$att;    
+          } else {
+            # HashRef of objects
+            $p{ $key } = { map { ($_ => $self->_to_jsoncaller_params($params->$att->{$_})) } keys %{ $params->$att } };
+          }
         } elsif ($att_type eq 'HashRef') {
           $p{ $key } = $params->$att;
         } else {
@@ -59,15 +70,18 @@ package Azure::API::JsonCaller;
 
     foreach my $attribute ($call->meta->get_all_attributes) {
       next if (not $attribute->has_value($call));
+      my $location = $attribute->does('Azure::LocationInResponse')?
+                       $attribute->location :
+                       $attribute->name;
 
       if ($attribute->does('Azure::API::Attribute::Trait::ParamInHeader')) {
-        $request->headers->header( $attribute->name => $attribute->get_value($call) );
+        $request->headers->header( $location => $attribute->get_value($call) );
       } elsif ($attribute->does('Azure::API::Attribute::Trait::ParamInPath')) {
-        $request->path->{ $attribute->name } = $attribute->get_value($call);
+        $request->path->{ $location } = $attribute->get_value($call);
       } elsif ($attribute->does('Azure::API::Attribute::Trait::ParamInQuery')) {
-        $request->query->{ $attribute->name } = $attribute->get_value($call);
+        $request->query->{ $location } = $attribute->get_value($call);
       } elsif ($attribute->does('Azure::API::Attribute::Trait::ParamInBody')) {
-        $content->{ $attribute->name } = $self->_to_jsoncaller_params($attribute->get_value($call)) if ($attribute->has_value($call));
+        $content->{ $location } = $self->_to_jsoncaller_params($attribute->get_value($call));
       } else {
         use Data::Dumper;
         print Dumper($attribute);

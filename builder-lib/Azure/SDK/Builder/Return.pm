@@ -7,7 +7,7 @@ package Azure::SDK::Builder::Return;
 
   use Azure::SDK::Builder::Property;
 
-  has type => (is => 'ro', isa => 'Str');
+  has '+type' => (isa => 'Str');
   has ref => (is => 'ro', isa => 'Str');
 
   has root_schema => (
@@ -28,8 +28,12 @@ package Azure::SDK::Builder::Return;
   sub get_attributes_from_properties {
     my ($self, $object) = @_;
 
+    my $root_schema = $self->root_schema;
+
     if (defined $object->ref) {
-      $object = $self->root_schema->resolve_path($object->ref);
+      my $path = $self->root_schema->resolve_path($object->ref);
+      $object = $path->object;
+      $root_schema = $path->schema;
     }
 
     my $atts = [];
@@ -44,12 +48,14 @@ package Azure::SDK::Builder::Return;
         next;
       }
 
-      $props = $self->root_schema->object_for_ref($props) if (defined $props->ref);
+      my $type = $self->name . "_${prop_name}" if (defined $props->properties);
 
       push @$atts, Azure::SDK::Builder::Property->new(
-        %$props,
-        root_schema => $self->root_schema,
-        name => $prop_name,
+        root_schema => $root_schema,
+        original_name => $prop_name,
+        original_schema => $props,
+        service => $self->service,
+        (defined $type)?(type => $type):(),
       );
     }
     if (defined $object->allOf) {

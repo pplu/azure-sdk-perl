@@ -19,12 +19,28 @@ package Azure::iotHub;
     my $call_object = $self->new_with_coercions('Azure::iotHub::CreateEventHubConsumerGroupIotHubResource', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub CreateOrUpdateCertificates {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::iotHub::CreateOrUpdateCertificates', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateOrUpdateIotHubResource {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::iotHub::CreateOrUpdateIotHubResource', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub DeleteCertificates {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::iotHub::DeleteCertificates', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub DeleteEventHubConsumerGroupIotHubResource {
@@ -49,6 +65,22 @@ package Azure::iotHub;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::iotHub::ExportDevicesIotHubResource', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GenerateVerificationCodeCertificates {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::iotHub::GenerateVerificationCodeCertificates', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub GetCertificates {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::iotHub::GetCertificates', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub GetEventHubConsumerGroupIotHubResource {
@@ -115,6 +147,14 @@ package Azure::iotHub;
     my $call_object = $self->new_with_coercions('Azure::iotHub::ImportDevicesIotHubResource', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListByIotHubCertificates {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::iotHub::ListByIotHubCertificates', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListByResourceGroupIotHubResource {
     my $self = shift;
     if (defined $self->subscription_id) {
@@ -155,7 +195,20 @@ package Azure::iotHub;
     my $call_object = $self->new_with_coercions('Azure::iotHub::ListKeysIotHubResource', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListOperations {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::iotHub::ListOperations', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub VerifyCertificates {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::iotHub::VerifyCertificates', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
 
-  sub operations { qw/CheckNameAvailabilityIotHubResource CreateEventHubConsumerGroupIotHubResource CreateOrUpdateIotHubResource DeleteEventHubConsumerGroupIotHubResource DeleteIotHubResource ExportDevicesIotHubResource GetEventHubConsumerGroupIotHubResource GetIotHubResource GetJobIotHubResource GetKeysForKeyNameIotHubResource GetQuotaMetricsIotHubResource GetStatsIotHubResource GetValidSkusIotHubResource ImportDevicesIotHubResource ListByResourceGroupIotHubResource ListBySubscriptionIotHubResource ListEventHubConsumerGroupsIotHubResource ListJobsIotHubResource ListKeysIotHubResource / }
+  sub operations { qw/CheckNameAvailabilityIotHubResource CreateEventHubConsumerGroupIotHubResource CreateOrUpdateCertificates CreateOrUpdateIotHubResource DeleteCertificates DeleteEventHubConsumerGroupIotHubResource DeleteIotHubResource ExportDevicesIotHubResource GenerateVerificationCodeCertificates GetCertificates GetEventHubConsumerGroupIotHubResource GetIotHubResource GetJobIotHubResource GetKeysForKeyNameIotHubResource GetQuotaMetricsIotHubResource GetStatsIotHubResource GetValidSkusIotHubResource ImportDevicesIotHubResource ListByIotHubCertificates ListByResourceGroupIotHubResource ListBySubscriptionIotHubResource ListEventHubConsumerGroupsIotHubResource ListJobsIotHubResource ListKeysIotHubResource ListOperations VerifyCertificates / }
 
 1;

@@ -55,9 +55,7 @@ package Azure::API::Caller;
 
       next if (not exists $params->{ $att_name });
 
-      if ($class_att->type_constraint->is_a_type_of('Object')){
-        $args{ $att_name } = $self->new_with_coercions($class_att->type_constraint->class, $params->{ $att_name });
-      } elsif ($class_att->type_constraint->is_a_type_of('ArrayRef')) {
+      if ($class_att->type_constraint->is_a_type_of('ArrayRef')) {
         my $inner_type = $class_att->type_constraint->type_parameter;
         if ($inner_type->is_a_type_of('Object')){
           $args{ $att_name } = [ map { $self->new_with_coercions($inner_type->name, $_) } @{ $params->{ $att_name } } ];
@@ -65,12 +63,20 @@ package Azure::API::Caller;
           $args{ $att_name } = $params->{ $att_name };
         }
       } elsif ($class_att->type_constraint->is_a_type_of('HashRef')) {
-        #my $inner_type = $class_att->type_constraint->type_parameter;
-        #if ($inner_type->is_a_type_of('Object')){
-        #  $args{ $att_name } = { map { ($_ => $self->new_with_coercions($inner_type->name, $params->{$_})) } keys %{ $params->{ $att_name } } };
-        #} else {
-          $args{ $att_name } = $params->{ $att_name };
-        #}
+        if ($class_att->type_constraint->isa('Moose::Meta::TypeConstraint::Parameterizable')) {
+          # Only a HashRef type...
+          $args{ $att_name } = $params->{ $att_name } 
+        } else {
+          # HashRef[...] type
+          my $inner_type = $class_att->type_constraint->type_parameter;
+          if ($inner_type->is_a_type_of('Object')){
+            $args{ $att_name } = { map { ($_ => $self->new_with_coercions($inner_type->name, $params->{ $att_name }->{ $_ })) } keys %{ $params->{ $att_name } } };
+          } else {
+            $args{ $att_name } = $params->{ $att_name };
+          }
+        }
+      } elsif ($class_att->type_constraint->is_a_type_of('Object')){
+        $args{ $att_name } = $self->new_with_coercions($class_att->type_constraint->class, $params->{ $att_name });
       } else {
         $args{ $att_name } = $params->{ $att_name };
       }

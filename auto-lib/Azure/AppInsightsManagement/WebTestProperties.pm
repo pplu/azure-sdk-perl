@@ -1,7 +1,7 @@
 package Azure::AppInsightsManagement::WebTestProperties;
   use Moose;
 
-  has 'Configuration' => (is => 'ro', isa => 'HashRef'  );
+  has 'Configuration' => (is => 'ro', isa => 'Azure::AppInsightsManagement::WebTestProperties_Configuration'  );
   has 'Description' => (is => 'ro', isa => 'Str'  );
   has 'Enabled' => (is => 'ro', isa => 'Bool'  );
   has 'Frequency' => (is => 'ro', isa => 'Int'  );

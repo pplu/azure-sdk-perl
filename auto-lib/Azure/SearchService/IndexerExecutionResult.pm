@@ -9,5 +9,5 @@ package Azure::SearchService::IndexerExecutionResult;
   has 'itemsFailed' => (is => 'ro', isa => 'Int'  );
   has 'itemsProcessed' => (is => 'ro', isa => 'Int'  );
   has 'startTime' => (is => 'ro', isa => 'Str'  );
-  has 'status' => (is => 'ro', isa => 'Azure::SearchService::IndexerExecutionStatus'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
 1;

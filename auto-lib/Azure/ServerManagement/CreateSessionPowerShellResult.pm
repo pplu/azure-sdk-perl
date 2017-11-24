@@ -5,7 +5,7 @@ package Azure::ServerManagement::CreateSessionPowerShellResult;
   has id => (is => 'ro', isa => 'Str'  );
   has location => (is => 'ro', isa => 'Str'  );
   has name => (is => 'ro', isa => 'Str'  );
-  has tags => (is => 'ro', isa => 'HashRef'  );
+  has tags => (is => 'ro', isa => 'HashRef[Str]'  );
   has type => (is => 'ro', isa => 'Str'  );
   has disconnectedOn => (is => 'ro', isa => 'Str'  );
   has expiresOn => (is => 'ro', isa => 'Str'  );
@@ -13,6 +13,6 @@ package Azure::ServerManagement::CreateSessionPowerShellResult;
   has runspaceAvailability => (is => 'ro', isa => 'Str'  );
   has sessionId => (is => 'ro', isa => 'Str'  );
   has state => (is => 'ro', isa => 'Str'  );
-  has version => (is => 'ro', isa => 'Any'  );
+  has version => (is => 'ro', isa => 'Azure::ServerManagement::Version'  );
 
 1;

@@ -1,7 +1,7 @@
 package Azure::ConsumptionManagement::UsageDetailProperties;
   use Moose;
 
-  has 'additionalProperties' => (is => 'ro', isa => 'HashRef'  );
+  has 'additionalProperties' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'billableQuantity' => (is => 'ro', isa => 'Num'  );
   has 'billingPeriodId' => (is => 'ro', isa => 'Str'  );
   has 'currency' => (is => 'ro', isa => 'Str'  );

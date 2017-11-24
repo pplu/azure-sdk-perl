@@ -2,8 +2,8 @@ package Azure::PowerBIEmbeddedManagement::migrateWorkspaceCollections;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-01-29',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-01-29',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'body' => (is => 'ro', required => 1, isa => 'Azure::PowerBIEmbeddedManagement::MigrateWorkspaceCollectionRequest',
     traits => [ 'Azure::ParamInBody' ],

@@ -2,8 +2,11 @@ package Azure::iotHub::CreateOrUpdateIotHubResource;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api-version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-01-19',
-    traits => [ 'Azure::ParamInQuery' ],
+  has 'If_Match' => (is => 'ro', isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'If-Match',
+  );
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-07-01',
+    traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'iotHubDescription' => (is => 'ro', required => 1, isa => 'Azure::iotHub::IotHubDescription',
     traits => [ 'Azure::ParamInBody' ],

@@ -1,5 +1,5 @@
 package Azure::LogicManagement::IntegrationAccountAgreementFilter;
   use Moose;
 
-  has 'agreementType' => (is => 'ro', isa => 'Azure::LogicManagement::AgreementType'  );
+  has 'agreementType' => (is => 'ro', isa => 'Str'  );
 1;

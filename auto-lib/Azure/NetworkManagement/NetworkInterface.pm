@@ -5,7 +5,7 @@ package Azure::NetworkManagement::NetworkInterface;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'location' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
-  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
   has 'dnsSettings' => (is => 'ro', isa => 'Azure::NetworkManagement::NetworkInterfaceDnsSettings'  );
   has 'enableAcceleratedNetworking' => (is => 'ro', isa => 'Bool'  );
