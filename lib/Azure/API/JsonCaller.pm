@@ -107,8 +107,6 @@ package Azure::API::JsonCaller;
     $request->uri($uri->as_string);
     $request->url($self->_api_endpoint . $uri);
 
-    #my $data = $self->_to_jsoncaller_params($call);
-    #$request->content(encode_json($data));
 
     $self->sign($request);
 
