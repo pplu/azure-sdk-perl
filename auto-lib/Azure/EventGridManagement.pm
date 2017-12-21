@@ -184,7 +184,15 @@ package Azure::EventGridManagement;
     my $call_object = $self->new_with_coercions('Azure::EventGridManagement::UpdateEventSubscriptions', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateTopics {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::UpdateTopics', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
 
-  sub operations { qw/CreateEventSubscriptions CreateOrUpdateTopics DeleteEventSubscriptions DeleteTopics GetEventSubscriptions GetFullUrlEventSubscriptions GetTopics GetTopicTypes ListByResourceEventSubscriptions ListByResourceGroupTopics ListBySubscriptionTopics ListEventTypesTopics ListEventTypesTopicTypes ListGlobalByResourceGroupEventSubscriptions ListGlobalByResourceGroupForTopicTypeEventSubscriptions ListGlobalBySubscriptionEventSubscriptions ListGlobalBySubscriptionForTopicTypeEventSubscriptions ListOperations ListRegionalByResourceGroupEventSubscriptions ListRegionalByResourceGroupForTopicTypeEventSubscriptions ListRegionalBySubscriptionEventSubscriptions ListRegionalBySubscriptionForTopicTypeEventSubscriptions ListSharedAccessKeysTopics ListTopicTypes RegenerateKeyTopics UpdateEventSubscriptions / }
+  sub operations { qw/CreateEventSubscriptions CreateOrUpdateTopics DeleteEventSubscriptions DeleteTopics GetEventSubscriptions GetFullUrlEventSubscriptions GetTopics GetTopicTypes ListByResourceEventSubscriptions ListByResourceGroupTopics ListBySubscriptionTopics ListEventTypesTopics ListEventTypesTopicTypes ListGlobalByResourceGroupEventSubscriptions ListGlobalByResourceGroupForTopicTypeEventSubscriptions ListGlobalBySubscriptionEventSubscriptions ListGlobalBySubscriptionForTopicTypeEventSubscriptions ListOperations ListRegionalByResourceGroupEventSubscriptions ListRegionalByResourceGroupForTopicTypeEventSubscriptions ListRegionalBySubscriptionEventSubscriptions ListRegionalBySubscriptionForTopicTypeEventSubscriptions ListSharedAccessKeysTopics ListTopicTypes RegenerateKeyTopics UpdateEventSubscriptions UpdateTopics / }
 
 1;
