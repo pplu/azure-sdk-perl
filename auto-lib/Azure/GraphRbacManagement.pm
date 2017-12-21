@@ -8,6 +8,11 @@ package Azure::GraphRbacManagement;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::AddMemberGroups', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub AddOwnerApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::AddOwnerApplications', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub CreateApplications {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::CreateApplications', { @_ });
@@ -128,6 +133,16 @@ package Azure::GraphRbacManagement;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListKeyCredentialsServicePrincipals', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListOwnersApplications {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListOwnersApplications', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListOwnersServicePrincipals {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListOwnersServicePrincipals', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListPasswordCredentialsApplications {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::GraphRbacManagement::ListPasswordCredentialsApplications', { @_ });
@@ -184,6 +199,6 @@ package Azure::GraphRbacManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/AddMemberGroups CreateApplications CreateGroups CreateServicePrincipals CreateUsers DeleteApplications DeleteGroups DeleteServicePrincipals DeleteUsers GetApplications GetCurrentUserObjects GetDomains GetGroupMembersGroups GetGroups GetMemberGroupsGroups GetMemberGroupsUsers GetObjectsByObjectIdsObjects GetServicePrincipals GetUsers IsMemberOfGroups ListApplications ListDomains ListGroups ListKeyCredentialsApplications ListKeyCredentialsServicePrincipals ListPasswordCredentialsApplications ListPasswordCredentialsServicePrincipals ListServicePrincipals ListUsers PatchApplications RemoveMemberGroups UpdateKeyCredentialsApplications UpdateKeyCredentialsServicePrincipals UpdatePasswordCredentialsApplications UpdatePasswordCredentialsServicePrincipals UpdateUsers / }
+  sub operations { qw/AddMemberGroups AddOwnerApplications CreateApplications CreateGroups CreateServicePrincipals CreateUsers DeleteApplications DeleteGroups DeleteServicePrincipals DeleteUsers GetApplications GetCurrentUserObjects GetDomains GetGroupMembersGroups GetGroups GetMemberGroupsGroups GetMemberGroupsUsers GetObjectsByObjectIdsObjects GetServicePrincipals GetUsers IsMemberOfGroups ListApplications ListDomains ListGroups ListKeyCredentialsApplications ListKeyCredentialsServicePrincipals ListOwnersApplications ListOwnersServicePrincipals ListPasswordCredentialsApplications ListPasswordCredentialsServicePrincipals ListServicePrincipals ListUsers PatchApplications RemoveMemberGroups UpdateKeyCredentialsApplications UpdateKeyCredentialsServicePrincipals UpdatePasswordCredentialsApplications UpdatePasswordCredentialsServicePrincipals UpdateUsers / }
 
 1;

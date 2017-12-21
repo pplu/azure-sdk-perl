@@ -1,4 +1,4 @@
-package Azure::GraphRbacManagement::DeleteGroups;
+package Azure::GraphRbacManagement::ListOwnersServicePrincipals;
   use Moose;
   use MooseX::ClassAttribute;
 
@@ -12,7 +12,7 @@ package Azure::GraphRbacManagement::DeleteGroups;
     traits => [ 'Azure::ParamInPath' ],
   );
 
-  class_has _api_uri => (is => 'ro', default => '/{tenantID}/groups/{objectId}');
-  class_has _returns => (is => 'ro', default => '');
-  class_has _api_method => (is => 'ro', default => 'DELETE');
+  class_has _api_uri => (is => 'ro', default => '/{tenantID}/servicePrincipals/{objectId}/owners');
+  class_has _returns => (is => 'ro', default => 'Azure::GraphRbacManagement::ListOwnersServicePrincipalsResult');
+  class_has _api_method => (is => 'ro', default => 'GET');
 1;
