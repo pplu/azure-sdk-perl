@@ -5,7 +5,7 @@ package Azure::BatchManagement::ListApplication;
   has 'accountName' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInPath' ],
   );
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-05-01',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'maxresults' => (is => 'ro', isa => 'Int',

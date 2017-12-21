@@ -1,0 +1,33 @@
+package Azure::BatchManagement::StopResizePoolResult;
+  use Moose;
+
+  has etag => (is => 'ro', isa => 'Str'  );
+  has id => (is => 'ro', isa => 'Str'  );
+  has name => (is => 'ro', isa => 'Str'  );
+  has type => (is => 'ro', isa => 'Str'  );
+  has allocationState => (is => 'ro', isa => 'Str'  );
+  has allocationStateTransitionTime => (is => 'ro', isa => 'Str'  );
+  has applicationLicenses => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has applicationPackages => (is => 'ro', isa => 'ArrayRef[Azure::BatchManagement::ApplicationPackageReference]'  );
+  has autoScaleRun => (is => 'ro', isa => 'Azure::BatchManagement::AutoScaleRun'  );
+  has certificates => (is => 'ro', isa => 'ArrayRef[Azure::BatchManagement::CertificateReference]'  );
+  has creationTime => (is => 'ro', isa => 'Str'  );
+  has currentDedicatedNodes => (is => 'ro', isa => 'Int'  );
+  has currentLowPriorityNodes => (is => 'ro', isa => 'Int'  );
+  has deploymentConfiguration => (is => 'ro', isa => 'Azure::BatchManagement::DeploymentConfiguration'  );
+  has displayName => (is => 'ro', isa => 'Str'  );
+  has interNodeCommunication => (is => 'ro', isa => 'Str'  );
+  has lastModified => (is => 'ro', isa => 'Str'  );
+  has maxTasksPerNode => (is => 'ro', isa => 'Int'  );
+  has metadata => (is => 'ro', isa => 'ArrayRef[Azure::BatchManagement::MetadataItem]'  );
+  has networkConfiguration => (is => 'ro', isa => 'Azure::BatchManagement::NetworkConfiguration'  );
+  has provisioningState => (is => 'ro', isa => 'Str'  );
+  has provisioningStateTransitionTime => (is => 'ro', isa => 'Str'  );
+  has resizeOperationStatus => (is => 'ro', isa => 'Azure::BatchManagement::ResizeOperationStatus'  );
+  has scaleSettings => (is => 'ro', isa => 'Azure::BatchManagement::ScaleSettings'  );
+  has startTask => (is => 'ro', isa => 'Azure::BatchManagement::StartTask'  );
+  has taskSchedulingPolicy => (is => 'ro', isa => 'Azure::BatchManagement::TaskSchedulingPolicy'  );
+  has userAccounts => (is => 'ro', isa => 'ArrayRef[Azure::BatchManagement::UserAccount]'  );
+  has vmSize => (is => 'ro', isa => 'Str'  );
+
+1;
