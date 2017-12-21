@@ -271,12 +271,25 @@ package Azure::ResourceManagement;
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::UnregisterProviders', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub UpdateByIdResources {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::UpdateByIdResources', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub UpdateResourceGroups {
     my $self = shift;
     if (defined $self->subscription_id) {
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::ResourceManagement::UpdateResourceGroups', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub UpdateResources {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::ResourceManagement::UpdateResources', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub ValidateDeployments {
@@ -296,6 +309,6 @@ package Azure::ResourceManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CancelDeployments CheckExistenceByIdResources CheckExistenceDeployments CheckExistenceResourceGroups CheckExistenceResources CreateOrUpdateByIdResources CreateOrUpdateDeployments CreateOrUpdateResourceGroups CreateOrUpdateResources CreateOrUpdateTags CreateOrUpdateValueTags DeleteByIdResources DeleteDeployments DeleteResourceGroups DeleteResources DeleteTags DeleteValueTags ExportTemplateDeployments ExportTemplateResourceGroups GetByIdResources GetDeploymentOperations GetDeployments GetProviders GetResourceGroups GetResources ListByResourceGroupDeployments ListByResourceGroupResources ListDeploymentOperations ListProviders ListResourceGroups ListResources ListTags MoveResourcesResources RegisterProviders UnregisterProviders UpdateResourceGroups ValidateDeployments ValidateMoveResourcesResources / }
+  sub operations { qw/CancelDeployments CheckExistenceByIdResources CheckExistenceDeployments CheckExistenceResourceGroups CheckExistenceResources CreateOrUpdateByIdResources CreateOrUpdateDeployments CreateOrUpdateResourceGroups CreateOrUpdateResources CreateOrUpdateTags CreateOrUpdateValueTags DeleteByIdResources DeleteDeployments DeleteResourceGroups DeleteResources DeleteTags DeleteValueTags ExportTemplateDeployments ExportTemplateResourceGroups GetByIdResources GetDeploymentOperations GetDeployments GetProviders GetResourceGroups GetResources ListByResourceGroupDeployments ListByResourceGroupResources ListDeploymentOperations ListProviders ListResourceGroups ListResources ListTags MoveResourcesResources RegisterProviders UnregisterProviders UpdateByIdResources UpdateResourceGroups UpdateResources ValidateDeployments ValidateMoveResourcesResources / }
 
 1;
