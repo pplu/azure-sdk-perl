@@ -1,8 +1,6 @@
-package Azure::RedisManagement::RedisUpdateParameters;
+package Azure::RedisManagement::RedisCommonProperties;
   use Moose;
 
-  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
-  has 'sku' => (is => 'ro', isa => 'Azure::RedisManagement::Sku'  );
   has 'enableNonSslPort' => (is => 'ro', isa => 'Bool'  );
   has 'redisConfiguration' => (is => 'ro', isa => 'HashRef[Str]'  );
   has 'shardCount' => (is => 'ro', isa => 'Int'  );

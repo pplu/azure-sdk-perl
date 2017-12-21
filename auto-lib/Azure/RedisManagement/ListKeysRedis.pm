@@ -2,7 +2,7 @@ package Azure::RedisManagement::ListKeysRedis;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-02-01',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-10-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'name' => (is => 'ro', required => 1, isa => 'Str',

@@ -1,4 +1,4 @@
-package Azure::RedisManagement::CreateRedisLinkedServerResult;
+package Azure::RedisManagement::GetLinkedServerResult;
   use Moose;
 
   has id => (is => 'ro', isa => 'Str'  );
