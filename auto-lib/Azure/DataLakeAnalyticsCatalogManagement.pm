@@ -98,6 +98,16 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetViewCatalog', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListAclsByDatabaseCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListAclsByDatabaseCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListAclsCatalog {
+    my $self = shift;
+    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListAclsCatalog', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListAssembliesCatalog {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListAssembliesCatalog', { @_ });
@@ -204,6 +214,6 @@ package Azure::DataLakeAnalyticsCatalogManagement;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CreateCredentialCatalog CreateSecretCatalog DeleteAllSecretsCatalog DeleteCredentialCatalog DeleteSecretCatalog GetAssemblyCatalog GetCredentialCatalog GetDatabaseCatalog GetExternalDataSourceCatalog GetPackageCatalog GetProcedureCatalog GetSchemaCatalog GetSecretCatalog GetTableCatalog GetTablePartitionCatalog GetTableStatisticCatalog GetTableTypeCatalog GetTableValuedFunctionCatalog GetViewCatalog ListAssembliesCatalog ListCredentialsCatalog ListDatabasesCatalog ListExternalDataSourcesCatalog ListPackagesCatalog ListProceduresCatalog ListSchemasCatalog ListTablePartitionsCatalog ListTablesByDatabaseCatalog ListTablesCatalog ListTableStatisticsByDatabaseAndSchemaCatalog ListTableStatisticsByDatabaseCatalog ListTableStatisticsCatalog ListTableTypesCatalog ListTableValuedFunctionsByDatabaseCatalog ListTableValuedFunctionsCatalog ListTypesCatalog ListViewsByDatabaseCatalog ListViewsCatalog UpdateCredentialCatalog UpdateSecretCatalog / }
+  sub operations { qw/CreateCredentialCatalog CreateSecretCatalog DeleteAllSecretsCatalog DeleteCredentialCatalog DeleteSecretCatalog GetAssemblyCatalog GetCredentialCatalog GetDatabaseCatalog GetExternalDataSourceCatalog GetPackageCatalog GetProcedureCatalog GetSchemaCatalog GetSecretCatalog GetTableCatalog GetTablePartitionCatalog GetTableStatisticCatalog GetTableTypeCatalog GetTableValuedFunctionCatalog GetViewCatalog ListAclsByDatabaseCatalog ListAclsCatalog ListAssembliesCatalog ListCredentialsCatalog ListDatabasesCatalog ListExternalDataSourcesCatalog ListPackagesCatalog ListProceduresCatalog ListSchemasCatalog ListTablePartitionsCatalog ListTablesByDatabaseCatalog ListTablesCatalog ListTableStatisticsByDatabaseAndSchemaCatalog ListTableStatisticsByDatabaseCatalog ListTableStatisticsCatalog ListTableTypesCatalog ListTableValuedFunctionsByDatabaseCatalog ListTableValuedFunctionsCatalog ListTypesCatalog ListViewsByDatabaseCatalog ListViewsCatalog UpdateCredentialCatalog UpdateSecretCatalog / }
 
 1;
