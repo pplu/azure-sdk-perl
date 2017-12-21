@@ -72,6 +72,70 @@ package Azure::CosmosDB;
     my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListKeysDatabaseAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
+  sub ListMetricDefinitionsCollection {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListMetricDefinitionsCollection', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListMetricDefinitionsDatabase {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListMetricDefinitionsDatabase', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListMetricDefinitionsDatabaseAccounts {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListMetricDefinitionsDatabaseAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListMetricsCollection {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListMetricsCollection', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListMetricsCollectionRegion {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListMetricsCollectionRegion', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListMetricsDatabase {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListMetricsDatabase', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListMetricsDatabaseAccountRegion {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListMetricsDatabaseAccountRegion', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListMetricsDatabaseAccounts {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListMetricsDatabaseAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
   sub ListOperations {
     my $self = shift;
     my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListOperations', { @_ });
@@ -83,6 +147,30 @@ package Azure::CosmosDB;
       push @_, 'subscriptionId' => $self->subscription_id;
     }
     my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListReadOnlyKeysDatabaseAccounts', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListUsagesCollection {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListUsagesCollection', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListUsagesDatabase {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListUsagesDatabase', { @_ });
+    return $self->caller->do_call($self, $call_object);
+  }
+  sub ListUsagesDatabaseAccounts {
+    my $self = shift;
+    if (defined $self->subscription_id) {
+      push @_, 'subscriptionId' => $self->subscription_id;
+    }
+    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListUsagesDatabaseAccounts', { @_ });
     return $self->caller->do_call($self, $call_object);
   }
   sub PatchDatabaseAccounts {
@@ -102,6 +190,6 @@ package Azure::CosmosDB;
     return $self->caller->do_call($self, $call_object);
   }
 
-  sub operations { qw/CheckNameExistsDatabaseAccounts CreateOrUpdateDatabaseAccounts DeleteDatabaseAccounts FailoverPriorityChangeDatabaseAccounts GetDatabaseAccounts ListByResourceGroupDatabaseAccounts ListConnectionStringsDatabaseAccounts ListDatabaseAccounts ListKeysDatabaseAccounts ListOperations ListReadOnlyKeysDatabaseAccounts PatchDatabaseAccounts RegenerateKeyDatabaseAccounts / }
+  sub operations { qw/CheckNameExistsDatabaseAccounts CreateOrUpdateDatabaseAccounts DeleteDatabaseAccounts FailoverPriorityChangeDatabaseAccounts GetDatabaseAccounts ListByResourceGroupDatabaseAccounts ListConnectionStringsDatabaseAccounts ListDatabaseAccounts ListKeysDatabaseAccounts ListMetricDefinitionsCollection ListMetricDefinitionsDatabase ListMetricDefinitionsDatabaseAccounts ListMetricsCollection ListMetricsCollectionRegion ListMetricsDatabase ListMetricsDatabaseAccountRegion ListMetricsDatabaseAccounts ListOperations ListReadOnlyKeysDatabaseAccounts ListUsagesCollection ListUsagesDatabase ListUsagesDatabaseAccounts PatchDatabaseAccounts RegenerateKeyDatabaseAccounts / }
 
 1;
