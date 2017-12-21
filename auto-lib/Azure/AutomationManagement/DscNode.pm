@@ -3,6 +3,7 @@ package Azure::AutomationManagement::DscNode;
 
   has 'accountId' => (is => 'ro', isa => 'Str'  );
   has 'etag' => (is => 'ro', isa => 'Str'  );
+  has 'extensionHandler' => (is => 'ro', isa => 'ArrayRef[Azure::AutomationManagement::DscNodeExtensionHandlerAssociationProperty]'  );
   has 'ip' => (is => 'ro', isa => 'Str'  );
   has 'lastSeen' => (is => 'ro', isa => 'Str'  );
   has 'nodeConfiguration' => (is => 'ro', isa => 'Azure::AutomationManagement::DscNodeConfigurationAssociationProperty'  );
