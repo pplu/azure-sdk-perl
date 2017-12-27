@@ -125,7 +125,7 @@ package Azure::SDK::Builder::Method;
           my $definition;
           if ($response->schema->isa('Swagger::Schema::RefParameter')) {
             my $ref = $response->schema->ref;
-            $definition = $self->root_schema->resolve_path($ref);
+            $definition = $self->root_schema->resolve_path($ref)->object;
           } else {
             $definition = $response->schema;
           }
