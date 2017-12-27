@@ -131,6 +131,7 @@ package Azure::SDK::Builder;
               service => $self->service,
               name => $operationId,
               common_parameters => $common_parameters,
+              is_async => ($operation->x_ms_long_running_operation == 1) ? 1 : 0,
             );
         }
       }

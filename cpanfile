@@ -15,7 +15,7 @@ requires 'Hash::Flatten';
 on develop => sub {
   requires 'MooseX::StrictConstructor';
   requires 'MooseX::DataModel';
-  requires 'Swagger::Schema', '> 0.01';
+  requires 'Swagger::Schema', '>= 1.03';
   requires 'Template';
   requires 'Data::Printer';
   requires 'Carp::Always';

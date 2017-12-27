@@ -103,6 +103,12 @@ package Azure::SDK::Builder::Method;
     } @$list ];
   }
 
+  has is_async => (
+    is => 'ro',
+    isa => 'Int',
+    required => 1,
+  );
+
   has return => (
     is => 'ro',
     isa => 'HashRef[Azure::SDK::Builder::Return]',
