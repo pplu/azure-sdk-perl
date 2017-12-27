@@ -22,6 +22,8 @@ package Azure::Net::Caller;
     my $requestObj = $service->prepare_request_for_call($call_object);
     my $headers    = $requestObj->header_hash;
 
+    $headers->{ 'Content-Length' } = 0 if (not defined $requestObj->content);
+
     # HTTP::Tiny derives the Host header from the URL. It's an error to set it.
     delete $headers->{Host};
 
