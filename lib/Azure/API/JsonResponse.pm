@@ -78,9 +78,9 @@ package Azure::API::JsonResponse;
     my $returns_a = $call_object->_returns->{ $response->status };
     die "Didn't find an adequate response" if (not defined $returns_a);
     
-    Azure->load_class($call_object->_returns);
+    Azure->load_class($returns_a);
     my $unserialized_struct = $self->unserialize_response($response);
-    my $o_result = $self->new_from_struct($call_object->_returns, $unserialized_struct);
+    my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
     return $o_result;
   }
 
