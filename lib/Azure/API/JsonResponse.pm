@@ -59,29 +59,31 @@ package Azure::API::JsonResponse;
     my ($self, $call_object, $response) = @_;
 
     $call_object = $call_object->meta->name;
+    my $returns_a = $call_object->_returns->{ $response->status };
 
-    if ($call_object->_is_async) {
+    if (not defined $returns_a and $call_object->_is_async) {
+      # This takes care of APIs that return their responses in what Azure calls "asyncronous operations"
+      # https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-async-operations
+
       my $info_url = $response->header('azure-asyncoperation');
       $info_url = $response->header('location') if (not defined $info_url);
-
       die "Couldn't find the info_url in the response" if (not defined $info_url);
 
       my $retry_after = $response->header('retry-after');
-
       die "Couldn't find the retry-after in the response" if (not defined $retry_after);
 
       return Azure::API::AsyncOperation->new(
         info_url => $info_url,
         retry_after => $retry_after,
       );
-    }
-    my $returns_a = $call_object->_returns->{ $response->status };
-    die "Didn't find an adequate response" if (not defined $returns_a);
+    } else {
+      die "Didn't find an adequate response" if (not defined $returns_a);
     
-    Azure->load_class($returns_a);
-    my $unserialized_struct = $self->unserialize_response($response);
-    my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
-    return $o_result;
+      Azure->load_class($returns_a);
+      my $unserialized_struct = $self->unserialize_response($response);
+      my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
+      return $o_result;
+    }
   }
 
   sub new_from_struct {
@@ -99,13 +101,13 @@ package Azure::API::JsonResponse;
       my $key = $meta->does('Azure::API::Attribute::Trait::Unwrapped') ? $meta->xmlname : $att;
       my $att_type = $meta->type_constraint;
 
-#      use Data::Dumper;
-#      print STDERR "GOING TO DO AN $att_type\n";
-#      print STDERR "VALUE: " . Dumper($result);
-
+      use Data::Dumper;
+      #print STDERR "GOING TO DO AN $att_type\n";
+      #print STDERR "VALUE: " . Dumper($result);
       # We'll consider that an attribute without brackets [] isn't an array type
       if ($att_type !~ m/\[.*\]$/) {
         my $value = $result->{ $key };
+next if (not defined $value);
         my $value_ref = ref($value);
 
         if ($att_type =~ m/\:\:/) {
@@ -165,35 +167,36 @@ package Azure::API::JsonResponse;
       } elsif (my ($type) = ($att_type =~ m/^ArrayRef\[(.*)\]$/)) {
         my $value = $result->{ $att };
         $value = $result->{ $key } if (not defined $value and $key ne $att);
+next if (not defined $value);
         my $value_ref = ref($value);
 
         if ($type =~ m/\:\:/) {
-          Azure->load_class($type);
+          if (defined $value) {
+            Azure->load_class($type);
 
-          my $val;
-          if (not defined $value) {
-            $val = [ ];
-          } elsif ($value_ref eq 'ARRAY') {
-            $val = $value;
-          } elsif ($value_ref eq 'HASH') {
-            $val = [ $value ];
-          }
+            my $val = $value;
+            #use Data::Dumper;
+            #print Dumper($value_ref, $value);
+            die "Got a non-array value" if ($value_ref ne 'ARRAY');
 
-          if ($type->does('Azure::API::StrToObjMapParser')) {
-            $args{ $att } = [ map { $self->handle_response_strtoobjmap($type, $_) } @$val ];
-          } elsif ($type->does('Azure::API::StrToNativeMapParser')) {
-            $args{ $att } = [ map { $self->handle_response_strtonativemap($type, $_) } @$val ];
-          } elsif ($type->does('Azure::API::MapParser')) {
-            die "MapParser Type in an Array. Please implement me";
-          } else {
-            $args{ $att } = [ map { $self->new_from_struct($type, $_) } @$val ];
+            if ($type->does('Azure::API::StrToObjMapParser')) {
+              $args{ $att } = [ map { $self->handle_response_strtoobjmap($type, $_) } @$val ];
+            } elsif ($type->does('Azure::API::StrToNativeMapParser')) {
+              $args{ $att } = [ map { $self->handle_response_strtonativemap($type, $_) } @$val ];
+            } elsif ($type->does('Azure::API::MapParser')) {
+              die "MapParser Type in an Array. Please implement me";
+            } else {
+              $args{ $att } = [ map { $self->new_from_struct($type, $_) } @$val ];
+            }
           }
         } else {
+          #use Data::Dumper;
+          #print 'NON-OBJECT-ARRAY' . Dumper($value, $value_ref);
           if (defined $value){
             if ($value_ref eq 'ARRAY') {
               $args{ $att } = $value; 
             } else {
-              $args{ $att } = [ $value ];
+              die "Non-Array value";
             }
           }
         }
