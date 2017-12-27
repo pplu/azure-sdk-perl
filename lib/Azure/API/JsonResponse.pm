@@ -1,6 +1,7 @@
 package Azure::API::JsonResponse;
   use Moose;
   use Azure::Net::APIRequest;
+  use Azure::API::AsyncOperation;
   use Moose::Util qw/find_meta/;
   use JSON::MaybeXS;
 
@@ -59,6 +60,21 @@ package Azure::API::JsonResponse;
 
     $call_object = $call_object->meta->name;
 
+    if ($call_object->_is_async) {
+      my $info_url = $response->header('azure-asyncoperation');
+      $info_url = $response->header('location') if (not defined $info_url);
+
+      die "Couldn't find the info_url in the response" if (not defined $info_url);
+
+      my $retry_after = $response->header('retry-after');
+
+      die "Couldn't find the retry-after in the response" if (not defined $retry_after);
+
+      return Azure::API::AsyncOperation->new(
+        info_url => $info_url,
+        retry_after => $retry_after,
+      );
+    }
     my $returns_a = $call_object->_returns->{ $response->status };
     die "Didn't find an adequate response" if (not defined $returns_a);
     
