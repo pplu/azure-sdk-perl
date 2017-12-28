@@ -23,6 +23,9 @@ has credentials => (
   },
   #coerce => 1
 );
+has response_inflator => (
+  is => 'ro',
+);
 has immutable => (
   is => 'rw',
   isa => 'Bool',
@@ -78,6 +81,8 @@ package Azure;
     my ($self, $service_name, %constructor_params) = @_;
     $self = $self->get_self;
   
+    $constructor_params{ response_inflator } = $self->config->response_inflator if (defined $self->config->response_inflator);
+
     $constructor_params{ caller } = $self->config->caller if (not exists $constructor_params{ caller });
     $constructor_params{ credentials } = $self->config->credentials if (not exists $constructor_params{ credentials });
     $constructor_params{ subscription_id } = $self->config->subscription_id if (not exists $constructor_params{ subscription_id });    

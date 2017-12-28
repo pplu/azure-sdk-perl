@@ -2,7 +2,6 @@ package Azure::API::Caller;
   use Moose::Role;
   use Azure::Net::APIRequest;
   use Moose::Util qw/find_meta/;
-  use Azure::API::JsonResponse;
 
   has caller => (
     is => 'ro',
@@ -32,12 +31,13 @@ package Azure::API::Caller;
     required => 1,
   );
 
-  has response_to_object => (
+  has response_inflator => (
     is => 'ro',
-    builder => '_response_to_object_builder',
+    builder => '_build_response_inflator',
   );
  
-  sub _response_to_object_builder {
+  sub _build_response_inflator {
+    require Azure::API::JsonResponse;
     Azure::API::JsonResponse->new;
   }
  
