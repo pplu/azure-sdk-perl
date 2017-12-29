@@ -38,6 +38,11 @@ has subscription_id => (
   is => 'ro',
   isa => 'Str|Undef',
 );
+has handle_async_operations => (
+  is => 'ro',
+  isa => 'Bool',
+  default => 1,
+);
 
 __PACKAGE__->meta->make_immutable;
 
@@ -89,7 +94,8 @@ package Azure;
 
     $constructor_params{ caller } = $self->config->caller if (not exists $constructor_params{ caller });
     $constructor_params{ credentials } = $self->config->credentials if (not exists $constructor_params{ credentials });
-    $constructor_params{ subscription_id } = $self->config->subscription_id if (not exists $constructor_params{ subscription_id });    
+    $constructor_params{ subscription_id } = $self->config->subscription_id if (not exists $constructor_params{ subscription_id });
+    $constructor_params{ handle_async_operations } = $self->config->handle_async_operations if (not exists $constructor_params{ handle_async_operations });
 
     my $class = $self->class_for_service($service_name);
     my $instance = $class->new(
