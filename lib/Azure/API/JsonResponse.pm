@@ -70,11 +70,10 @@ package Azure::API::JsonResponse;
       die "Couldn't find the info_url in the response" if (not defined $info_url);
 
       my $retry_after = $response->header('retry-after');
-      die "Couldn't find the retry-after in the response" if (not defined $retry_after);
 
       return Azure::API::AsyncOperation->new(
         info_url => $info_url,
-        retry_after => $retry_after,
+        (defined $retry_after) ? (retry_after => $retry_after) : (),
       );
     } else {
       die "Didn't find an adequate response" if (not defined $returns_a);

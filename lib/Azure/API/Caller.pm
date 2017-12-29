@@ -14,6 +14,12 @@ package Azure::API::Caller;
     isa => 'Str|Undef',
   );
 
+  has handle_async_operations => (
+    is => 'ro',
+    isa => 'Bool',
+    required => 1,
+  );
+
   has _api_endpoint => (
     is => 'ro',
     default => 'https://management.azure.com/'
@@ -83,6 +89,50 @@ package Azure::API::Caller;
     }
 
     return $class->new(%args);
+  }
+
+  use Azure::API::AsyncOperation;
+
+  sub do_async_retries {
+    my ($self, $retry) = @_;
+
+    # Request for the 
+    my $request = Azure::Net::APIRequest->new();
+    $request->url($retry->info_url);
+    $request->method('GET');
+    $self->sign($request);
+   
+    my $o_result; 
+    do {
+      sleep ($retry->retry_after || 5);
+
+      my $res = $self->caller->do_call($request); 
+      use Data::Dumper;
+      print Dumper($res);
+      my $unserialized_struct = $self->response_inflator->unserialize_response($res);
+      $o_result = $self->response_inflator->new_from_struct('Azure::API::AsyncOperationResult', $unserialized_struct);
+
+    } while (not $o_result->status_is_final);
+    return $o_result;
+  }
+
+
+  sub do_call {
+    my ($self, $subs_argument, $call_class, $params) = @_;
+
+    $params->{ $subs_argument } = $self->subscription_id if (defined $subs_argument and defined $self->subscription_id);
+
+    my $call_object = $self->new_with_coercions($call_class, $params);
+    my $request = $self->prepare_request_for_call($call_object);
+
+    my $response = $self->caller->do_call($request);
+    my $ret = $self->response_inflator->process($call_object, $response);
+
+    if ($self->handle_async_operations and $ret->isa('Azure::API::AsyncOperation')) { 
+      return $self->do_async_retries($ret);
+    } else {
+      return $ret;
+    }
   }
 
   sub to_hash {

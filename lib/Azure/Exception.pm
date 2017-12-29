@@ -17,4 +17,10 @@ package Azure::Exception;
     is => 'ro',
     isa => 'Int',
   );
+
+1;
+package Azure::Exception::ClientException;
+  use Moose;
+  extends 'Azure::Exception';
+
 1;
