@@ -19,7 +19,7 @@ use InflatorThatJustReturnsTheResponse;
 #      sync with how we generate code
 package Azure::ExampleService {
   use Moose;
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub Method1 {
     my $self = shift;
