@@ -128,6 +128,7 @@ package Azure;
     $self = $self->get_self;
   
     my $skip_list = {
+      Credential => 1,
       Exception => 1,
       API => 1,
       Net => 1,
