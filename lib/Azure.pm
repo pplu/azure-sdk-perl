@@ -171,7 +171,7 @@ sub _preload_operations {
     _preload_scanclass($op_params_class);
 
     # 2nd preload the classes that represent responses from the call
-    _preload_scanclass($op_params_class->_returns) if ($op_params_class->_returns);
+    _preload_scanclass($op_params_class->_returns->{ $_ }) for (keys %{ $op_params_class->_returns });
   }
 }
 
