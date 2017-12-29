@@ -1,7 +1,8 @@
-package Azure::API::JsonCaller;
-  use Moose::Role;
+package Azure::API::JsonRequestBuilder;
+  use Moose;
   use JSON::MaybeXS;
   use URI::Template;
+  use Azure::Net::APIRequest;
 
   sub _is_internal_type {
     my ($self, $att_type) = @_;
@@ -60,8 +61,8 @@ package Azure::API::JsonCaller;
     return $uri;
   }
 
-  sub prepare_request_for_call {
-    my ($self, $call) = @_;
+  sub call_to_request {
+    my ($self, $call, $service) = @_;
 
     my $request = Azure::Net::APIRequest->new();
     my $content = {};
@@ -105,10 +106,10 @@ package Azure::API::JsonCaller;
     $uri->query_form($request->query);
 
     $request->uri($uri->as_string);
-    $request->url($self->_api_endpoint . $uri);
+    $request->url($service->_api_endpoint . $uri);
 
 
-    $self->sign($request);
+    $service->sign($request);
 
     return $request;
   }

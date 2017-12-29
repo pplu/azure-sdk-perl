@@ -37,15 +37,21 @@ package Azure::API::Caller;
     required => 1,
   );
 
+  has request_builder => (
+    is => 'ro',
+    default => sub {
+      require Azure::API::JsonRequestBuilder;
+      Azure::API::JsonRequestBuilder->new;
+    },
+  );
+
   has response_inflator => (
     is => 'ro',
-    builder => '_build_response_inflator',
+    default => sub {
+      require Azure::API::JsonResponse;
+      Azure::API::JsonResponse->new;
+    }
   );
- 
-  sub _build_response_inflator {
-    require Azure::API::JsonResponse;
-    Azure::API::JsonResponse->new;
-  }
  
   sub new_with_coercions {
     my ($self, $class, $params) = @_;
@@ -123,7 +129,7 @@ package Azure::API::Caller;
     $params->{ $subs_argument } = $self->subscription_id if (defined $subs_argument and defined $self->subscription_id);
 
     my $call_object = $self->new_with_coercions($call_class, $params);
-    my $request = $self->prepare_request_for_call($call_object);
+    my $request = $self->request_builder->call_to_request($call_object, $self);
 
     my $response = $self->caller->do_call($request);
     my $ret = $self->response_inflator->process($call_object, $response);
@@ -133,6 +139,11 @@ package Azure::API::Caller;
     } else {
       return $ret;
     }
+  }
+
+  sub _is_internal_type {
+    my ($self, $att_type) = @_;
+    return ($att_type eq 'Str' or $att_type eq 'Int' or $att_type eq 'Bool' or $att_type eq 'Num');
   }
 
   sub to_hash {

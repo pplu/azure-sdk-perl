@@ -26,6 +26,9 @@ has credentials => (
 has response_inflator => (
   is => 'ro',
 );
+has request_builder => (
+  is => 'ro',
+);
 has immutable => (
   is => 'rw',
   isa => 'Bool',
@@ -82,6 +85,7 @@ package Azure;
     $self = $self->get_self;
   
     $constructor_params{ response_inflator } = $self->config->response_inflator if (defined $self->config->response_inflator);
+    $constructor_params{ request_builder   } = $self->config->request_builder   if (defined $self->config->request_builder);
 
     $constructor_params{ caller } = $self->config->caller if (not exists $constructor_params{ caller });
     $constructor_params{ credentials } = $self->config->credentials if (not exists $constructor_params{ credentials });
