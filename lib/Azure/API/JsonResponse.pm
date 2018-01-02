@@ -23,11 +23,9 @@ package Azure::API::JsonResponse;
 
     my $struct = eval { decode_json( $response->content ) };
     if ($@) {
-      return Azure::Exception->new(
+      return Azure::Exception->throw(
         message => $@,
         code => 'InvalidContent',
-        request_id => '',
-        http_status => $response->status,
       );
     }
     return $struct;
@@ -41,14 +39,14 @@ package Azure::API::JsonResponse;
 
       # If we could deserialize and there is traces of the error struct
       if (defined $struct and defined $struct->{ error }) {
-        Azure::Exception->throw(
+        Azure::Exception::FromRemote->throw(
           code    => $struct->{ error }->{ code } // 'UnspecifiedErrorCode',
           message => $struct->{ error }->{ message } // 'No error message specified by server',
           http_status => $response->status,
         );
       } 
     }
-    Azure::Exception->throw(
+    Azure::Exception::FromRemote->throw(
       code => 'HTTP' . $response->status,
       message => 'Got an HTTP ' . $response->status . ' code',
       http_status => $response->status,

@@ -1,3 +1,8 @@
+package Azure::Exception::Internal;
+  use Moose;
+  extends 'Throwable::Error';
+
+1;
 package Azure::Exception;
   use Moose;
   extends 'Throwable::Error';
@@ -7,6 +12,11 @@ package Azure::Exception;
     isa => 'Str',
     required => 1,
   );
+
+1;
+package Azure::Exception::FromRemote;
+  use Moose;
+  extends 'Azure::Exception';
 
   has request_id => (
     is => 'ro',

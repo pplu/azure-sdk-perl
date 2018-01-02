@@ -122,7 +122,7 @@ package Azure::Credentials::AzureADClientCredentials;
     );
 
     if (not $auth_response->{ success }) {
-      Azure::Exception->throw(
+      Azure::Exception::FromRemote->throw(
         message => $auth_response->{ content },
         code => 'GetClientCredentialsFailed',
         http_status => $auth_response->{ status }
