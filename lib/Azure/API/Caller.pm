@@ -112,7 +112,7 @@ package Azure::API::Caller;
     my $o_result;
     my $another_poll = 0;
     do {
-      sleep ($retry->retry_after || 5);
+      $self->caller->sleep($retry->retry_after || 5);
 
       my $response = $self->caller->do_call($request);
       $o_result = $self->response_inflator->handle_async_retry($call_object, $response);

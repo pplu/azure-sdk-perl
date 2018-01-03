@@ -5,6 +5,11 @@ package Azure::Net::Caller;
 
   with 'Azure::Net::CallerRole';
 
+  sub sleep {
+    my ($self, $time) = @_;
+    sleep $time;
+  }
+
   has ua => (is => 'rw', required => 1, lazy => 1,
     default     => sub {
       use HTTP::Tiny;
