@@ -149,6 +149,7 @@ package Azure::SDK::Builder;
       foreach my $method_name ($self->method_names){
         my $method = $self->method($method_name);
         foreach my $status (keys %{ $method->return }) {
+          next if ($method->return->{ $status }->isa('Azure::SDK::Builder::NoReturn'));
           $returns{ "$method_name:$status" } = $method->return->{ $status };
         }
       }

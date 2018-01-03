@@ -4,6 +4,7 @@ package Azure::SDK::Builder::Method;
 
   use Azure::SDK::Builder::MethodArgument;
   use Azure::SDK::Builder::Return;
+  use Azure::SDK::Builder::NoReturn;
 
   has name => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);
@@ -111,7 +112,7 @@ package Azure::SDK::Builder::Method;
 
   has return => (
     is => 'ro',
-    isa => 'HashRef[Azure::SDK::Builder::Return]',
+    isa => 'HashRef[Azure::SDK::Builder::ReturnBase]',
     lazy => 1,
     default => sub {
       my $self = shift;
@@ -136,6 +137,9 @@ package Azure::SDK::Builder::Method;
             service => $self->service,
             root_schema => $self->root_schema,
           );
+          $responses->{ $status } = $return;
+        } else {
+          my $return = Azure::SDK::Builder::NoReturn->new();
           $responses->{ $status } = $return;
         }
       }
