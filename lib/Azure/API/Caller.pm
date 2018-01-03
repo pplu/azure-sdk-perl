@@ -100,25 +100,30 @@ package Azure::API::Caller;
   use Azure::API::AsyncOperation;
 
   sub do_async_retries {
-    my ($self, $retry) = @_;
+    my ($self, $call_object, $retry) = @_;
 
     # Request for the 
-    my $request = Azure::Net::APIRequest->new();
-    $request->url($retry->info_url);
-    $request->method('GET');
+    my $request = Azure::Net::APIRequest->new(
+      url => $retry->info_url,
+      method => 'GET'
+    );
     $self->sign($request);
    
-    my $o_result; 
+    my $o_result;
+    my $another_poll = 0;
     do {
       sleep ($retry->retry_after || 5);
 
-      my $res = $self->caller->do_call($request); 
-      use Data::Dumper;
-      print Dumper($res);
-      my $unserialized_struct = $self->response_inflator->unserialize_response($res);
-      $o_result = $self->response_inflator->new_from_struct('Azure::API::AsyncOperationResult', $unserialized_struct);
+      my $response = $self->caller->do_call($request);
+      $o_result = $self->response_inflator->handle_async_retry($call_object, $response);
 
-    } while (not $o_result->status_is_final);
+      if ($o_result->isa('Azure::API::AsyncOperation')) {
+        $retry = $o_result;
+        $another_poll = 1;
+      } elsif ($o_result->isa('Azure::API::AsyncOperationResult')) {
+        $another_poll = (not $o_result->status_is_final);
+      }
+    } while ($another_poll);
     return $o_result;
   }
 
@@ -135,7 +140,7 @@ package Azure::API::Caller;
     my $ret = $self->response_inflator->process($call_object, $response);
 
     if ($self->handle_async_operations and $ret->isa('Azure::API::AsyncOperation')) { 
-      return $self->do_async_retries($ret);
+      return $self->do_async_retries($call_object, $ret);
     } else {
       return $ret;
     }

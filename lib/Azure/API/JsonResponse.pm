@@ -7,14 +7,12 @@ package Azure::API::JsonResponse;
 
   sub process {
     my ($self, $call_object, $response) = @_;
-    my $http_status = $response->status;
-    my $content = $response->content;
-    my $headers = $response->headers;
+    my $call_class = $call_object->meta->name;
 
-    if ( $http_status >= 300 ) {
-        return $self->error_to_exception($call_object, $response);
+    if ($call_class->_is_async) {
+      return $self->handle_async_response($call_object, $response);
     } else {
-        return $self->response_to_object($call_object, $response);
+      return $self->handle_sync_response($call_object, $response);
     }
   }
 
@@ -53,29 +51,82 @@ package Azure::API::JsonResponse;
     );
   }
 
-  sub response_to_object {
+  #
+  # How to handle async responses:
+  #   https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-manager-async-operations.md 
+  #
+  
+  sub handle_async_retry {
     my ($self, $call_object, $response) = @_;
 
-    $call_object = $call_object->meta->name;
-    my $returns_a = $call_object->_returns->{ $response->status };
+    my $info_url = $response->header('azure-asyncoperation');
+    $info_url = $response->header('location') if (not defined $info_url);
 
-    if (not defined $returns_a and $call_object->_is_async) {
-      # This takes care of APIs that return their responses in what Azure calls "asyncronous operations"
-      # https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-async-operations
+    my $continue_async = (defined $info_url);
 
-      my $info_url = $response->header('azure-asyncoperation');
-      $info_url = $response->header('location') if (not defined $info_url);
+    if ($continue_async or $response->status == 202) {
       die "Couldn't find the info_url in the response" if (not defined $info_url);
 
+      # docu says that this header is always sent, but that is false
       my $retry_after = $response->header('retry-after');
 
       return Azure::API::AsyncOperation->new(
         info_url => $info_url,
         (defined $retry_after) ? (retry_after => $retry_after) : (),
       );
-    } else {
-      die "Didn't find an adequate response" if (not defined $returns_a);
+    } elsif ($response->status == 200) {
+      my $unserialized_struct = $self->unserialize_response($response);
+      return Azure::API::AsyncOperationResult->new($unserialized_struct);;
+    }
+  }
+
+  sub handle_async_response {
+    my ($self, $call_object, $response) = @_;
     
+    if ($response->status == 201 or $response->status == 202) {
+      my $info_url = $response->header('azure-asyncoperation');
+      $info_url = $response->header('location') if (not defined $info_url);
+      die "Couldn't find the info_url in the response" if (not defined $info_url);
+
+      # docu says that this header is always sent, but that is false
+      my $retry_after = $response->header('retry-after');
+
+      return Azure::API::AsyncOperation->new(
+        info_url => $info_url,
+        (defined $retry_after) ? (retry_after => $retry_after) : (),
+      );
+    } elsif ($response->status == 204) {
+      #TODO: handle non-completion??
+      my $call_class = $call_object->meta->name;
+      my $returns_a = $call_class->_returns->{ $response->status };
+      return 1 if (not defined $returns_a);
+
+      Azure->load_class($returns_a);
+      my $unserialized_struct = $self->unserialize_response($response);
+      my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
+      return $o_result;
+    } else {
+      return $self->error_to_exception($call_object, $response);
+    }
+  }
+
+  sub handle_sync_response {
+    my ($self, $call_object, $response) = @_;
+    my $call_class = $call_object->meta->name;
+
+    my $returns_a = $call_class->_returns->{ $response->status };
+    if ( $response->status >= 300 ) {
+      if (defined $returns_a) {
+        Azure->load_class($returns_a);
+        my $unserialized_struct = $self->unserialize_response($response);
+        my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
+        return $o_result;
+      } else {
+        return $self->error_to_exception($call_object, $response);
+      }
+    } else {
+      return 1 if (not defined $returns_a);
+
       Azure->load_class($returns_a);
       my $unserialized_struct = $self->unserialize_response($response);
       my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
