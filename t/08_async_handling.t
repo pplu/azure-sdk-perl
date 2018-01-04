@@ -136,6 +136,25 @@ my $az = Azure->new(config => {
   cmp_ok($response->info_url, 'eq', 'https://example.com/URI?api-version=2017-05-10');
 }
 
+{
+  my $stubbed_parts = StubCallerAndRequestBuilder->new;
+  my $non_handled = $az->service('ExampleService', handle_async_operations => 0, request_builder => $stubbed_parts, caller => $stubbed_parts);
+
+  # Get an unexpected HTTP error code
+  throws_ok(sub {
+    $non_handled->NoReturn(
+      responses => [ {
+        content => '{"error":{"code":"InvalidThing","message":"Bla bla validation failed: \'The bla parameter \'foo\' is not found. Please see https://example.com/#using-api for usage details.\'."}}',
+        status => 400,
+        headers => { },
+      },
+      ]
+    );
+  }, 'Azure::Exception::FromRemote');
+  cmp_ok($@->http_status, '==', 400);
+  cmp_ok($@->code, 'eq', 'InvalidThing');
+}
+
 { 
   # https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-manager-async-operations.md#create-storage-account-202-with-location-and-retry-after
   my $stubbed_parts = StubCallerAndRequestBuilder->new;
@@ -249,5 +268,25 @@ my $az = Azure->new(config => {
 
   ok($response, 'Response is trueish if operation succeeds');
 }
+
+{
+  my $stubbed_parts = StubCallerAndRequestBuilder->new;
+  my $handled = $az->service('ExampleService', request_builder => $stubbed_parts, caller => $stubbed_parts);
+
+  # Get an unexpected HTTP error code
+  throws_ok(sub {
+    $handled->NoReturn(
+      responses => [ {
+        content => '{"error":{"code":"InvalidThing","message":"Bla bla validation failed: \'The bla parameter \'foo\' is not found. Please see https://example.com/#using-api for usage details.\'."}}',
+        status => 400,
+        headers => { },
+      },
+      ]
+    );
+  }, 'Azure::Exception::FromRemote');
+  cmp_ok($@->http_status, '==', 400);
+  cmp_ok($@->code, 'eq', 'InvalidThing');
+}
+
 
 done_testing;

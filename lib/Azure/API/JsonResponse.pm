@@ -52,6 +52,8 @@ package Azure::API::JsonResponse;
   sub response_to_asyncoperation {
     my ($self, $call_object, $response) = @_;
     
+    return $self->error_to_exception($call_object, $response) if ( $response->status >= 300 );
+
     die "Can't process non 201 or 202 responses" if ($response->status != 201 and $response->status != 202);
 
     my $info_url = $response->header('azure-asyncoperation');
