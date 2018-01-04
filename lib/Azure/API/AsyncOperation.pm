@@ -12,6 +12,12 @@ package Azure::API::AsyncOperationResult;
     return ($status eq 'Succeeded' or $status eq 'Failed' or $status eq 'Canceled');
   });
 
+  has has_succeeded => (is => 'ro', isa => 'Bool|Undef', lazy => 1, default => sub {
+    my $self = shift;
+    return undef if (not $self->status_is_final);
+    return 1 if ($self->status eq 'Succeeded');
+  });
+
   has id => (is => 'ro', isa => 'Str');
   has name => (is => 'ro', isa => 'Str');
   has startTime => (is => 'ro', isa => 'Str');
