@@ -56,6 +56,7 @@ package Azure::ExampleService::Method1 {
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/example/{pathparam1}');
   class_has _returns => (is => 'ro');
   class_has _api_method => (is => 'ro', default => 'GET');
+  class_has _is_async => (is => 'ro', default => 0);
 }
 package Azure::ExampleService::SubObject {
   use Moose;
@@ -88,6 +89,7 @@ package Azure::ExampleService::Method2 {
   class_has _api_uri => (is => 'ro', default => '/');
   class_has _returns => (is => 'ro');
   class_has _api_method => (is => 'ro', default => 'GET');
+  class_has _is_async => (is => 'ro', default => 0);
 }
 
 my $az = Azure->new(config => {

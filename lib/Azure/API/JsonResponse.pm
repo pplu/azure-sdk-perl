@@ -5,17 +5,6 @@ package Azure::API::JsonResponse;
   use Moose::Util qw/find_meta/;
   use JSON::MaybeXS;
 
-  sub process {
-    my ($self, $call_object, $response) = @_;
-    my $call_class = $call_object->meta->name;
-
-    if ($call_class->_is_async) {
-      return $self->handle_async_response($call_object, $response);
-    } else {
-      return $self->handle_sync_response($call_object, $response);
-    }
-  }
-
   sub unserialize_response {
     my ($self, $response) = @_;
 
@@ -51,66 +40,34 @@ package Azure::API::JsonResponse;
     );
   }
 
-  #
-  # How to handle async responses:
-  #   https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-manager-async-operations.md 
-  #
-  
-  sub handle_async_retry {
+  sub response_to_operationstatus {
     my ($self, $call_object, $response) = @_;
+
+    die "Can't process a non 200 response" if ($response->status != 200);
+
+    my $unserialized_struct = $self->unserialize_response($response);
+    return Azure::API::AsyncOperationResult->new($unserialized_struct);;
+  }
+
+  sub response_to_asyncoperation {
+    my ($self, $call_object, $response) = @_;
+    
+    die "Can't process non 201 or 202 responses" if ($response->status != 201 and $response->status != 202);
 
     my $info_url = $response->header('azure-asyncoperation');
     $info_url = $response->header('location') if (not defined $info_url);
+    die "Couldn't find the info_url in the response" if (not defined $info_url);
 
-    my $continue_async = (defined $info_url);
+    # docu says that this header is always sent, but that is false
+    my $retry_after = $response->header('retry-after');
 
-    if ($continue_async or $response->status == 202) {
-      die "Couldn't find the info_url in the response" if (not defined $info_url);
-
-      # docu says that this header is always sent, but that is false
-      my $retry_after = $response->header('retry-after');
-
-      return Azure::API::AsyncOperation->new(
-        info_url => $info_url,
-        (defined $retry_after) ? (retry_after => $retry_after) : (),
-      );
-    } elsif ($response->status == 200) {
-      my $unserialized_struct = $self->unserialize_response($response);
-      return Azure::API::AsyncOperationResult->new($unserialized_struct);;
-    }
+    return Azure::API::AsyncOperation->new(
+      info_url => $info_url,
+      (defined $retry_after) ? (retry_after => $retry_after) : (),
+    );
   }
 
-  sub handle_async_response {
-    my ($self, $call_object, $response) = @_;
-    
-    if ($response->status == 201 or $response->status == 202) {
-      my $info_url = $response->header('azure-asyncoperation');
-      $info_url = $response->header('location') if (not defined $info_url);
-      die "Couldn't find the info_url in the response" if (not defined $info_url);
-
-      # docu says that this header is always sent, but that is false
-      my $retry_after = $response->header('retry-after');
-
-      return Azure::API::AsyncOperation->new(
-        info_url => $info_url,
-        (defined $retry_after) ? (retry_after => $retry_after) : (),
-      );
-    } elsif ($response->status == 204) {
-      #TODO: handle non-completion??
-      my $call_class = $call_object->meta->name;
-      my $returns_a = $call_class->_returns->{ $response->status };
-      return 1 if (not defined $returns_a);
-
-      Azure->load_class($returns_a);
-      my $unserialized_struct = $self->unserialize_response($response);
-      my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
-      return $o_result;
-    } else {
-      return $self->error_to_exception($call_object, $response);
-    }
-  }
-
-  sub handle_sync_response {
+  sub response_to_result {
     my ($self, $call_object, $response) = @_;
     my $call_class = $call_object->meta->name;
 

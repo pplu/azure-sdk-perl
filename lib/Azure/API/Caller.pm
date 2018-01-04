@@ -99,32 +99,63 @@ package Azure::API::Caller;
 
   use Azure::API::AsyncOperation;
 
-  sub do_async_retries {
-    my ($self, $call_object, $retry) = @_;
+  sub get_asyncoperation_response {
+    my ($self, $async_operation) = @_;
 
-    # Request for the 
     my $request = Azure::Net::APIRequest->new(
-      url => $retry->info_url,
+      url => $async_operation->info_url,
       method => 'GET'
     );
     $self->sign($request);
-   
-    my $o_result;
-    my $another_poll = 0;
-    do {
-      $self->caller->sleep($retry->retry_after || 5);
 
-      my $response = $self->caller->do_call($request);
-      $o_result = $self->response_inflator->handle_async_retry($call_object, $response);
+    $self->caller->sleep($async_operation->retry_after || 5);
 
-      if ($o_result->isa('Azure::API::AsyncOperation')) {
-        $retry = $o_result;
-        $another_poll = 1;
-      } elsif ($o_result->isa('Azure::API::AsyncOperationResult')) {
-        $another_poll = (not $o_result->status_is_final);
+    return $self->caller->do_call($request);
+  }
+
+  # From 
+  # https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-manager-async-operations.md
+  #
+  # Async calls can follow two paths:
+  # | First call to the API url returns (202 or 201 with the address for polling. That
+  # | is handled in do_call, and the result is directed to do_async_retries)
+  # |
+  # | When we call the url from that response, we can get a 200 or a 202
+  # |---------------------------------------| 
+  #    | 200                                | 202
+  #    | we get a json response that        | we continue getting 202 responses
+  #    | we have to parse, and continue     | until we get a 200 or a 204
+  #    | polling until it's status is
+  #    | "Succeeded". Each poll returns
+  #    | a 200 response
+
+  sub do_async_retries {
+    my ($self, $call_object, $retry) = @_;
+
+    my $second_response = $self->get_asyncoperation_response($retry);
+    
+    if ($second_response->status == 200) {
+      my $result = $self->response_inflator->response_to_operationstatus($call_object, $second_response);
+      while (not $result->status_is_final) {
+        my $response = $self->get_asyncoperation_response($retry);
+        $result = $self->response_inflator->response_to_operationstatus($call_object, $response);
       }
-    } while ($another_poll);
-    return $o_result;
+      return $result;
+    } elsif ($second_response->status == 202) {
+      my $response = $second_response;
+      while ($response->status == 202) {
+        $response = $self->get_asyncoperation_response($retry);
+      }
+      if ($response->status == 200) {
+        use Data::Dumper;
+        print Dumper($response);
+        die "please implement handling of this response";
+      } elsif ($response->status == 204) {
+        return 1;
+      } else {
+        die "Got an unexpected status while polling";
+      }
+    }
   }
 
 
@@ -137,12 +168,15 @@ package Azure::API::Caller;
     my $request = $self->request_builder->call_to_request($call_object, $self);
 
     my $response = $self->caller->do_call($request);
-    my $ret = $self->response_inflator->process($call_object, $response);
-
-    if ($self->handle_async_operations and $ret->isa('Azure::API::AsyncOperation')) { 
-      return $self->do_async_retries($call_object, $ret);
+    if ($call_class->_is_async) {
+      my $ret = $self->response_inflator->response_to_asyncoperation($call_object, $response);
+      if ($self->handle_async_operations) {
+        return $self->do_async_retries($call_object, $ret)
+      } else {
+        return $ret;
+      }
     } else {
-      return $ret;
+      return $self->response_inflator->response_to_result($call_object, $response);
     }
   }
 

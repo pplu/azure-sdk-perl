@@ -1,6 +1,6 @@
 package InflatorThatJustReturnsTheResponse {
   use Moose;
-  sub process {
+  sub response_to_result {
     my ($self, $call_object, $response) = @_;
     return $response;
   }

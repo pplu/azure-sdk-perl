@@ -82,8 +82,9 @@ package StubCallerAndRequestBuilder {
 
     $self->call_done;
 
+    my $content = ($response->content eq '[UNDEF]') ? undef : $response->content;
     return Azure::Net::APIResponse->new(
-      content => $response->content,
+      content => $content,
       headers => $response->headers,
       status  => $response->status,
     );
@@ -237,8 +238,8 @@ my $az = Azure->new(config => {
       headers => { 'retry-after' => 15, 'location' => 'https://example.com/URI?api-version=2017-05-10' },
     },
     {
-      content => '{}',
-      status => 200,
+      content => '[UNDEF]',
+      status => 204,
       headers => { },
     },
     ]
@@ -247,12 +248,6 @@ my $az = Azure->new(config => {
   cmp_ok($handled->caller->calls, '==', 4);
 
   ok($response, 'Response is trueish if operation succeeds');
-
-  isa_ok($response, 'Azure::API::AsyncOperationResult');
-  cmp_ok($response->status_is_final, '==', 1);
-  cmp_ok($response->has_succeeded, '==', 1);
-  cmp_ok($response->status, 'eq', 'Succeeded');
-  cmp_ok($response->name, 'eq', 'UNIQUE_ID');
 }
 
 done_testing;

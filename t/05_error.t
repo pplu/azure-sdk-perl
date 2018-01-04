@@ -19,7 +19,7 @@ my $processor = Azure::API::JsonResponse->new;
 
 {
   throws_ok(sub {
-      $processor->process(
+      $processor->response_to_result(
         StubCallObject->new,
         Azure::Net::APIResponse->new(
           status => 404,

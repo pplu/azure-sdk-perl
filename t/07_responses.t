@@ -259,6 +259,4 @@ my $svc = $az->service('ExampleService');
   cmp_ok($@->code, 'eq', 'InvalidContent');
 }
 
-#cmp_ok($@->http_status, '==', 400, 'Got HTTP status in the exception object');
-
 done_testing;
