@@ -21,9 +21,7 @@ my @args = @ARGV;
 
 my $subs = $ENV{AZURE_SUBSCRIPTION_ID} or die "Please define env AZURE_SUBSCRIPTION_ID";
 
-my $azure = Azure->new(config => {
-  handle_async_operations => 0,  
-});
+my $azure = Azure->new(config => {});
 
 my $service_name = shift @args;
 if (not defined $service_name) {
