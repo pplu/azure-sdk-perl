@@ -270,6 +270,40 @@ my $az = Azure->new(config => {
 }
 
 {
+  # https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-manager-async-operations.md#create-storage-account-202-with-location-and-retry-after
+  my $stubbed_parts = StubCallerAndRequestBuilder->new;
+  my $handled = $az->service('ExampleService', request_builder => $stubbed_parts, caller => $stubbed_parts);
+
+  my $response = $handled->NoReturn(
+    responses => [ {
+      content => '',
+      status => 202,
+      headers => { 'retry-after' => 15, 'location' => 'https://example.com/URI?api-version=2017-05-10' },
+    },
+    {
+      content => '',
+      status => 202,
+      headers => { 'retry-after' => 15, 'location' => 'https://example.com/URI?api-version=2017-05-10' },
+    },
+    {
+      content => '',
+      status => 202,
+      headers => { 'retry-after' => 15, 'location' => 'https://example.com/URI?api-version=2017-05-10' },
+    },
+    {
+      content => '',
+      status => 200,
+      headers => { },
+    },
+    ]
+  );
+
+  cmp_ok($handled->caller->calls, '==', 4);
+
+  ok($response, 'Response is trueish if operation succeeds');
+}
+
+{
   my $stubbed_parts = StubCallerAndRequestBuilder->new;
   my $handled = $az->service('ExampleService', request_builder => $stubbed_parts, caller => $stubbed_parts);
 

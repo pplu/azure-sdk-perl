@@ -147,9 +147,7 @@ package Azure::API::Caller;
         $response = $self->get_asyncoperation_response($retry);
       }
       if ($response->status == 200) {
-        use Data::Dumper;
-        print Dumper($response);
-        die "please implement handling of this response";
+        return $self->response_inflator->response_to_result($call_object, $response);
       } elsif ($response->status == 204) {
         return 1;
       } else {
