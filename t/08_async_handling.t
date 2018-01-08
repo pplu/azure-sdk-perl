@@ -64,7 +64,7 @@ package StubCallerAndRequestBuilder {
 
   sub call_to_request {
     my ($self, $call, $service) = @_;
-    die "Can't bind to a second call" if (defined $self->current_call);
+    Azure::Exception::Internal->throw("Can't bind to a second call") if (defined $self->current_call);
     $self->current_call($call);
   }
 
@@ -72,7 +72,7 @@ package StubCallerAndRequestBuilder {
     my ($self, $request) = @_;
 
     my $response = $self->current_call->responses->[ $self->calls ];
-    die "I'm at response number " . ($self->calls + 1) . " but it doesn't exist" if (not defined $response);
+    Azure::Exception::Internal->throw("I'm at response number " . ($self->calls + 1) . " but it doesn't exist") if (not defined $response);
 
     my $r = Azure::Net::APIRequest->new(
       content => $response->content,
