@@ -2,6 +2,7 @@ package Azure::API::Caller;
   use Moose::Role;
   use Azure::Net::APIRequest;
   use Moose::Util qw/find_meta/;
+  use Moose::Util::TypeConstraints qw( find_type_constraint );
 
   has caller => (
     is => 'ro',
@@ -54,47 +55,42 @@ package Azure::API::Caller;
   );
  
   sub new_with_coercions {
-    my ($self, $class, $params) = @_;
+    my ($self, $type_constraint, $value) = @_;
 
-    Azure->load_class($class);
-
-    my %args;
-
-    my $class_meta = find_meta $class;
-
-    foreach my $class_att ($class_meta->get_all_attributes) {
-      my $att_name = $class_att->name;
-
-      next if (not exists $params->{ $att_name });
-
-      if ($class_att->type_constraint->is_a_type_of('ArrayRef')) {
-        my $inner_type = $class_att->type_constraint->type_parameter;
-        if ($inner_type->is_a_type_of('Object')){
-          $args{ $att_name } = [ map { $self->new_with_coercions($inner_type->name, $_) } @{ $params->{ $att_name } } ];
-        } else {
-          $args{ $att_name } = $params->{ $att_name };
-        }
-      } elsif ($class_att->type_constraint->is_a_type_of('HashRef')) {
-        if ($class_att->type_constraint->isa('Moose::Meta::TypeConstraint::Parameterizable')) {
-          # Only a HashRef type...
-          $args{ $att_name } = $params->{ $att_name } 
-        } else {
-          # HashRef[...] type
-          my $inner_type = $class_att->type_constraint->type_parameter;
-          if ($inner_type->is_a_type_of('Object')){
-            $args{ $att_name } = { map { ($_ => $self->new_with_coercions($inner_type->name, $params->{ $att_name }->{ $_ })) } keys %{ $params->{ $att_name } } };
-          } else {
-            $args{ $att_name } = $params->{ $att_name };
-          }
-        }
-      } elsif ($class_att->type_constraint->is_a_type_of('Object')){
-        $args{ $att_name } = $self->new_with_coercions($class_att->type_constraint->class, $params->{ $att_name });
+    if ($type_constraint->is_a_type_of('ArrayRef')) {
+      my $inner_type = $type_constraint->type_parameter;
+      if ($inner_type->is_a_type_of('Object')){
+        Azure->load_class($inner_type->name);
+        return [ map { $self->new_with_coercions($inner_type, $_) } @$value ];
       } else {
-        $args{ $att_name } = $params->{ $att_name };
+        return $value;
       }
+    } elsif ($type_constraint->is_a_type_of('HashRef')) {
+      if ($type_constraint->isa('Moose::Meta::TypeConstraint::Parameterizable')) {
+        # Only a HashRef type...
+        return $value; 
+      } else {
+        # HashRef[...] type
+        my $inner_type = $type_constraint->type_parameter;
+        if ($inner_type->is_a_type_of('Object')){
+          return { map { ($_ => $self->new_with_coercions($inner_type, $value->{ $_ })) } keys %$value };
+        } else {
+          return $value;
+        }
+      }
+    } elsif ($type_constraint->is_a_type_of('Object')){
+      my $class = $type_constraint->name;
+      Azure->load_class($class);
+      my $class_meta = find_meta $class;
+      my %args;
+      foreach my $class_att ($class_meta->get_all_attributes) {
+        my $att_name = $class_att->name;
+        $args{ $att_name } = $self->new_with_coercions($class_att->type_constraint, $value->{ $att_name }) if (defined $value->{ $att_name });
+      }
+      return $class->new(%args);
+    } else {
+      return $value;
     }
-
-    return $class->new(%args);
   }
 
   use Azure::API::AsyncOperation;
@@ -162,7 +158,10 @@ package Azure::API::Caller;
 
     $params->{ $subs_argument } = $self->subscription_id if (defined $subs_argument and defined $self->subscription_id);
 
-    my $call_object = $self->new_with_coercions($call_class, $params);
+    Azure->load_class($call_class);
+    my $constraint = find_type_constraint $call_class;
+    my $call_object = $self->new_with_coercions($constraint, $params);
+
     my $request = $self->request_builder->call_to_request($call_object, $self);
 
     my $response = $self->caller->do_call($request);
