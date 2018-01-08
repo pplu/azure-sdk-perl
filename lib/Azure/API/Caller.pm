@@ -186,7 +186,9 @@ package Azure::API::Caller;
     my ($self, $params) = @_;
     my $refHash = {};
 
-    if      ($params->does('Paws::API::StrToNativeMapParser')) {
+    if      (ref($params) eq 'ARRAY') {
+      return $params;
+    } elsif ($params->does('Paws::API::StrToNativeMapParser')) {
       return $params->Map;
     } elsif ($params->does('Paws::API::StrToObjMapParser')) {
       return { map { ($_ => $self->to_hash($params->Map->{$_})) } keys %{ $params->Map } };

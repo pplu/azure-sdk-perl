@@ -116,6 +116,13 @@ if ($@) {
 
 if (ref($result)) {
   my $h = $service->to_hash($result);
+  if (ref($h) eq 'ARRAY') {
+    # Some calls return an array. Hash::Flatten::flatten doesn't like arrayrefs,
+    # so we convert the array into a hash with indexes as the keys, as it will
+    # visualize in the same manner as a hashref
+    my $i = 0;
+    $h = { map { ($i++ => $_)  } @$h };
+  }
   $h = Hash::Flatten::flatten($h, { HashDelimiter => '.', ArrayDelimiter => '.' });
 
   my $max_chars = reduce { length($a) > length($b) ? $a : $b } keys %$h;

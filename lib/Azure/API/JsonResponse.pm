@@ -76,7 +76,6 @@ package Azure::API::JsonResponse;
     my $returns_a = $call_class->_returns->{ $response->status };
     if ( $response->status >= 300 ) {
       if (defined $returns_a) {
-        Azure->load_class($returns_a);
         my $unserialized_struct = $self->unserialize_response($response);
         my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
         return $o_result;
@@ -86,7 +85,6 @@ package Azure::API::JsonResponse;
     } else {
       return 1 if (not defined $returns_a);
 
-      Azure->load_class($returns_a);
       my $unserialized_struct = $self->unserialize_response($response);
       my $o_result = $self->new_from_struct($returns_a, $unserialized_struct);
       return $o_result;
