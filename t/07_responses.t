@@ -29,6 +29,10 @@ package Azure::ExampleService {
     my $self = shift;
     return $self->do_call(undef, 'Azure::ExampleService::ReturnsObject', { @_ });
   }
+  sub ReturnsArrayOfObject {
+    my $self = shift;
+    return $self->do_call(undef, 'Azure::ExampleService::ReturnsArrayOfObject', { @_ });
+  }
 }
 package Azure::ExampleService::NoReturn {
   use Moose;
@@ -64,6 +68,21 @@ package Azure::ExampleService::Object {
   has hashref_of_hashref => (is => 'ro', isa => 'HashRef[HashRef]');
   has hashref_of_arrayref_of_str => (is => 'ro', isa => 'HashRef[ArrayRef[Str]]');
   has hashref_of_arrayref_of_arrayref_of_hashref => (is => 'ro', isa => 'HashRef[ArrayRef[ArrayRef[HashRef]]]');
+}
+package Azure::ExampleService::ReturnsArrayOfObject {
+  use Moose;
+  use MooseX::ClassAttribute;
+
+  has content => (is => 'ro', isa => 'Str', required => 1, traits => [ 'Azure::ParamInQuery' ]);
+  has status  => (is => 'ro', isa => 'Int', required => 1, traits => [ 'Azure::ParamInQuery' ]);
+  has headers => (is => 'ro', isa => 'HashRef', required => 1, traits => [ 'Azure::ParamInQuery' ]);
+
+  class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/example/{pathparam1}');
+  class_has _returns => (is => 'ro', default => sub { {
+    200 => 'ArrayRef[Azure::ExampleService::Object]',
+  } });
+  class_has _api_method => (is => 'ro', default => 'GET');
+  class_has _is_async => (is => 'ro', default => 0);
 }
 package Azure::ExampleService::ReturnsObject {
   use Moose;
@@ -257,6 +276,17 @@ my $svc = $az->service('ExampleService');
     );
   }, 'Azure::Exception');
   cmp_ok($@->code, 'eq', 'InvalidContent');
+}
+
+{
+  my $response = $svc->ReturnsArrayOfObject(
+    content => '[{"str":"value1"}]',
+    status => 200,
+    headers => {},
+  );
+  ok(ref($response) eq 'ARRAY');
+  isa_ok($response->[0], 'Azure::ExampleService::Object');
+  cmp_ok($response->[0]->str, 'eq', 'value1');
 }
 
 done_testing;
