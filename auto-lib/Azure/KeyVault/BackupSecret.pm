@@ -10,6 +10,13 @@ package Azure::KeyVault::BackupSecret;
   );
 
   class_has _api_uri => (is => 'ro', default => '/secrets/{secret-name}/backup');
-  class_has _returns => (is => 'ro', default => 'Azure::KeyVault::BackupSecretResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::KeyVault::BackupSecretResult',
+    
+      default => 'Azure::KeyVault::BackupSecretResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

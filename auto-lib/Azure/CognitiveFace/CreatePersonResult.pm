@@ -1,6 +1,6 @@
 package Azure::CognitiveFace::CreatePersonResult;
   use Moose;
 
-  has personId => (is => 'ro', isa => 'Str'  );
+  has error => (is => 'ro', isa => 'Azure::CognitiveFace::Error'  );
 
 1;

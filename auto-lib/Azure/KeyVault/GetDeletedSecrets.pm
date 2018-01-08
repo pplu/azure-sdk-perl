@@ -10,6 +10,13 @@ package Azure::KeyVault::GetDeletedSecrets;
   );
 
   class_has _api_uri => (is => 'ro', default => '/deletedsecrets');
-  class_has _returns => (is => 'ro', default => 'Azure::KeyVault::GetDeletedSecretsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::KeyVault::GetDeletedSecretsResult',
+    
+      default => 'Azure::KeyVault::GetDeletedSecretsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

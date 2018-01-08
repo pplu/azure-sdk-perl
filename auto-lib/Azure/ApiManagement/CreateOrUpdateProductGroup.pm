@@ -22,6 +22,15 @@ package Azure::ApiManagement::CreateOrUpdateProductGroup;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/products/{productId}/groups/{groupId}');
-  class_has _returns => (is => 'ro', default => 'Azure::ApiManagement::CreateOrUpdateProductGroupResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ApiManagement::CreateOrUpdateProductGroupResult',
+    
+      201 => 'Azure::ApiManagement::CreateOrUpdateProductGroupResult',
+    
+      default => 'Azure::ApiManagement::CreateOrUpdateProductGroupResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

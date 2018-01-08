@@ -1,98 +1,45 @@
 package Azure::AdvisorManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
-  sub CreateInResourceGroupConfigurations {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::CreateInResourceGroupConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub CreateInSubscriptionConfigurations {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::CreateInSubscriptionConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
   sub CreateSuppressions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::CreateSuppressions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AdvisorManagement::CreateSuppressions', { @_ });
   }
   sub DeleteSuppressions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::DeleteSuppressions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AdvisorManagement::DeleteSuppressions', { @_ });
   }
   sub GenerateRecommendations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::GenerateRecommendations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AdvisorManagement::GenerateRecommendations', { @_ });
   }
   sub GetGenerateStatusRecommendations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::GetGenerateStatusRecommendations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AdvisorManagement::GetGenerateStatusRecommendations', { @_ });
   }
   sub GetRecommendations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::GetRecommendations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AdvisorManagement::GetRecommendations', { @_ });
   }
   sub GetSuppressions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::GetSuppressions', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListByResourceGroupConfigurations {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::ListByResourceGroupConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListBySubscriptionConfigurations {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::ListBySubscriptionConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AdvisorManagement::GetSuppressions', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AdvisorManagement::ListOperations', { @_ });
   }
   sub ListRecommendations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::ListRecommendations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AdvisorManagement::ListRecommendations', { @_ });
   }
   sub ListSuppressions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AdvisorManagement::ListSuppressions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AdvisorManagement::ListSuppressions', { @_ });
   }
 
-  sub operations { qw/CreateInResourceGroupConfigurations CreateInSubscriptionConfigurations CreateSuppressions DeleteSuppressions GenerateRecommendations GetGenerateStatusRecommendations GetRecommendations GetSuppressions ListByResourceGroupConfigurations ListBySubscriptionConfigurations ListOperations ListRecommendations ListSuppressions / }
+  sub operations { qw/CreateSuppressions DeleteSuppressions GenerateRecommendations GetGenerateStatusRecommendations GetRecommendations GetSuppressions ListOperations ListRecommendations ListSuppressions / }
 
 1;

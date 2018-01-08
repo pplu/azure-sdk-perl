@@ -1,7 +1,6 @@
 package Azure::ServiceMap::ListConnectionsProcessesResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ServiceMap::Connection]'  );
+  has error => (is => 'ro', isa => 'Azure::ServiceMap::Error'  );
 
 1;

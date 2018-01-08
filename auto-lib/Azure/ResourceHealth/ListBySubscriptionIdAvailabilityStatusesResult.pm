@@ -1,7 +1,8 @@
 package Azure::ResourceHealth::ListBySubscriptionIdAvailabilityStatusesResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ResourceHealth::availabilityStatus]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has details => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

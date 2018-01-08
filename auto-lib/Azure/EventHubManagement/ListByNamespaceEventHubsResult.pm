@@ -1,7 +1,7 @@
 package Azure::EventHubManagement::ListByNamespaceEventHubsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::EventHubManagement::Eventhub]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

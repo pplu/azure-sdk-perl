@@ -16,6 +16,11 @@ package Azure::DataLakeAnalyticsJobManagement::GetPipeline;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pipelines/{pipelineIdentity}');
-  class_has _returns => (is => 'ro', default => 'Azure::DataLakeAnalyticsJobManagement::GetPipelineResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::DataLakeAnalyticsJobManagement::GetPipelineResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

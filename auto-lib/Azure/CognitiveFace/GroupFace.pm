@@ -10,6 +10,13 @@ package Azure::CognitiveFace::GroupFace;
   );
 
   class_has _api_uri => (is => 'ro', default => '/group');
-  class_has _returns => (is => 'ro', default => 'Azure::CognitiveFace::GroupFaceResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::CognitiveFace::GroupFaceResult',
+    
+      default => 'Azure::CognitiveFace::GroupFaceResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

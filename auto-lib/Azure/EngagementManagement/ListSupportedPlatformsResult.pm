@@ -1,6 +1,6 @@
 package Azure::EngagementManagement::ListSupportedPlatformsResult;
   use Moose;
 
-  has platforms => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has error => (is => 'ro', isa => 'Azure::EngagementManagement::ListSupportedPlatformsResult_error'  );
 
 1;

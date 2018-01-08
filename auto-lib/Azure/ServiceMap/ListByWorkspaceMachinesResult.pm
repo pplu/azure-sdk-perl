@@ -1,7 +1,6 @@
 package Azure::ServiceMap::ListByWorkspaceMachinesResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ServiceMap::Machine]'  );
+  has error => (is => 'ro', isa => 'Azure::ServiceMap::Error'  );
 
 1;

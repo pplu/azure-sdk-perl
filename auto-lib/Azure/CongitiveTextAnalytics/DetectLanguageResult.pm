@@ -1,7 +1,9 @@
 package Azure::CongitiveTextAnalytics::DetectLanguageResult;
   use Moose;
 
-  has documents => (is => 'ro', isa => 'ArrayRef[Azure::CongitiveTextAnalytics::LanguageBatchResultItem]'  );
-  has errors => (is => 'ro', isa => 'ArrayRef[Azure::CongitiveTextAnalytics::ErrorRecord]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has innerError => (is => 'ro', isa => 'Azure::CongitiveTextAnalytics::InternalError'  );
+  has message => (is => 'ro', isa => 'Str'  );
+  has target => (is => 'ro', isa => 'Str'  );
 
 1;

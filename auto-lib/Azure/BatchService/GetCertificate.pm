@@ -28,6 +28,13 @@ package Azure::BatchService::GetCertificate;
   );
 
   class_has _api_uri => (is => 'ro', default => '/certificates(thumbprintAlgorithm={thumbprintAlgorithm},thumbprint={thumbprint})');
-  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetCertificateResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::BatchService::GetCertificateResult',
+    
+      default => 'Azure::BatchService::GetCertificateResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

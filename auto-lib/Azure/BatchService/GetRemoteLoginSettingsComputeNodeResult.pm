@@ -1,7 +1,8 @@
 package Azure::BatchService::GetRemoteLoginSettingsComputeNodeResult;
   use Moose;
 
-  has remoteLoginIPAddress => (is => 'ro', isa => 'Str'  );
-  has remoteLoginPort => (is => 'ro', isa => 'Int'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Azure::BatchService::ErrorMessage'  );
+  has values => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::BatchErrorDetail]'  );
 
 1;

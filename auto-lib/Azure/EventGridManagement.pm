@@ -1,188 +1,111 @@
 package Azure::EventGridManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateEventSubscriptions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::CreateEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::CreateEventSubscriptions', { @_ });
   }
   sub CreateOrUpdateTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::CreateOrUpdateTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::CreateOrUpdateTopics', { @_ });
   }
   sub DeleteEventSubscriptions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::DeleteEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::DeleteEventSubscriptions', { @_ });
   }
   sub DeleteTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::DeleteTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::DeleteTopics', { @_ });
   }
   sub GetEventSubscriptions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::GetEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::GetEventSubscriptions', { @_ });
   }
   sub GetFullUrlEventSubscriptions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::GetFullUrlEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::GetFullUrlEventSubscriptions', { @_ });
   }
   sub GetTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::GetTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::GetTopics', { @_ });
   }
   sub GetTopicTypes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::GetTopicTypes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::GetTopicTypes', { @_ });
   }
   sub ListByResourceEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListByResourceEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListByResourceEventSubscriptions', { @_ });
   }
   sub ListByResourceGroupTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListByResourceGroupTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListByResourceGroupTopics', { @_ });
   }
   sub ListBySubscriptionTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListBySubscriptionTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListBySubscriptionTopics', { @_ });
   }
   sub ListEventTypesTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListEventTypesTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListEventTypesTopics', { @_ });
   }
   sub ListEventTypesTopicTypes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListEventTypesTopicTypes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::ListEventTypesTopicTypes', { @_ });
   }
   sub ListGlobalByResourceGroupEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListGlobalByResourceGroupEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListGlobalByResourceGroupEventSubscriptions', { @_ });
   }
   sub ListGlobalByResourceGroupForTopicTypeEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListGlobalByResourceGroupForTopicTypeEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListGlobalByResourceGroupForTopicTypeEventSubscriptions', { @_ });
   }
   sub ListGlobalBySubscriptionEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListGlobalBySubscriptionEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListGlobalBySubscriptionEventSubscriptions', { @_ });
   }
   sub ListGlobalBySubscriptionForTopicTypeEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListGlobalBySubscriptionForTopicTypeEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListGlobalBySubscriptionForTopicTypeEventSubscriptions', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::ListOperations', { @_ });
   }
   sub ListRegionalByResourceGroupEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListRegionalByResourceGroupEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListRegionalByResourceGroupEventSubscriptions', { @_ });
   }
   sub ListRegionalByResourceGroupForTopicTypeEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListRegionalByResourceGroupForTopicTypeEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListRegionalByResourceGroupForTopicTypeEventSubscriptions', { @_ });
   }
   sub ListRegionalBySubscriptionEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListRegionalBySubscriptionEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListRegionalBySubscriptionEventSubscriptions', { @_ });
   }
   sub ListRegionalBySubscriptionForTopicTypeEventSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListRegionalBySubscriptionForTopicTypeEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListRegionalBySubscriptionForTopicTypeEventSubscriptions', { @_ });
   }
   sub ListSharedAccessKeysTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListSharedAccessKeysTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::ListSharedAccessKeysTopics', { @_ });
   }
   sub ListTopicTypes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::ListTopicTypes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::ListTopicTypes', { @_ });
   }
   sub RegenerateKeyTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::RegenerateKeyTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::EventGridManagement::RegenerateKeyTopics', { @_ });
   }
   sub UpdateEventSubscriptions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::EventGridManagement::UpdateEventSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::EventGridManagement::UpdateEventSubscriptions', { @_ });
   }
 
   sub operations { qw/CreateEventSubscriptions CreateOrUpdateTopics DeleteEventSubscriptions DeleteTopics GetEventSubscriptions GetFullUrlEventSubscriptions GetTopics GetTopicTypes ListByResourceEventSubscriptions ListByResourceGroupTopics ListBySubscriptionTopics ListEventTypesTopics ListEventTypesTopicTypes ListGlobalByResourceGroupEventSubscriptions ListGlobalByResourceGroupForTopicTypeEventSubscriptions ListGlobalBySubscriptionEventSubscriptions ListGlobalBySubscriptionForTopicTypeEventSubscriptions ListOperations ListRegionalByResourceGroupEventSubscriptions ListRegionalByResourceGroupForTopicTypeEventSubscriptions ListRegionalBySubscriptionEventSubscriptions ListRegionalBySubscriptionForTopicTypeEventSubscriptions ListSharedAccessKeysTopics ListTopicTypes RegenerateKeyTopics UpdateEventSubscriptions / }

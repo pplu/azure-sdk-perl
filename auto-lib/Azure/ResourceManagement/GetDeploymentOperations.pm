@@ -19,6 +19,11 @@ package Azure::ResourceManagement::GetDeploymentOperations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/deployments/{deploymentName}/operations/{operationId}');
-  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::GetDeploymentOperationsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ResourceManagement::GetDeploymentOperationsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

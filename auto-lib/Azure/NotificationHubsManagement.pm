@@ -1,223 +1,115 @@
 package Azure::NotificationHubsManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckAvailabilityHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::CheckAvailabilityHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::CheckAvailabilityHubs', { @_ });
   }
   sub CheckAvailabilityName {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::CheckAvailabilityName', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::CheckAvailabilityName', { @_ });
   }
   sub CheckAvailabilityNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::CheckAvailabilityNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::CheckAvailabilityNamespaces', { @_ });
   }
   sub CheckAvailabilityNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::CheckAvailabilityNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::CheckAvailabilityNotificationHubs', { @_ });
   }
   sub CreateOrUpdateAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::CreateOrUpdateAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::CreateOrUpdateAuthorizationRuleNamespaces', { @_ });
   }
   sub CreateOrUpdateAuthorizationRuleNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::CreateOrUpdateAuthorizationRuleNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::CreateOrUpdateAuthorizationRuleNotificationHubs', { @_ });
   }
   sub CreateOrUpdateNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::CreateOrUpdateNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::CreateOrUpdateNamespaces', { @_ });
   }
   sub CreateOrUpdateNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::CreateOrUpdateNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::CreateOrUpdateNotificationHubs', { @_ });
   }
   sub DeleteAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::DeleteAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::DeleteAuthorizationRuleNamespaces', { @_ });
   }
   sub DeleteAuthorizationRuleNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::DeleteAuthorizationRuleNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::DeleteAuthorizationRuleNotificationHubs', { @_ });
   }
   sub DeleteNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::DeleteNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::DeleteNamespaces', { @_ });
   }
   sub DeleteNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::DeleteNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::DeleteNotificationHubs', { @_ });
   }
   sub GetAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::GetAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::GetAuthorizationRuleNamespaces', { @_ });
   }
   sub GetAuthorizationRuleNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::GetAuthorizationRuleNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::GetAuthorizationRuleNotificationHubs', { @_ });
   }
   sub GetNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::GetNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::GetNamespaces', { @_ });
   }
   sub GetNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::GetNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::GetNotificationHubs', { @_ });
   }
   sub GetPnsCredentialsNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::GetPnsCredentialsNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::GetPnsCredentialsNotificationHubs', { @_ });
   }
   sub ListAllNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::ListAllNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::ListAllNamespaces', { @_ });
   }
   sub ListAuthorizationRulesNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::ListAuthorizationRulesNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::ListAuthorizationRulesNamespaces', { @_ });
   }
   sub ListAuthorizationRulesNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::ListAuthorizationRulesNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::ListAuthorizationRulesNotificationHubs', { @_ });
   }
   sub ListKeysNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::ListKeysNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::ListKeysNamespaces', { @_ });
   }
   sub ListKeysNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::ListKeysNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::ListKeysNotificationHubs', { @_ });
   }
   sub ListNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::ListNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::ListNamespaces', { @_ });
   }
   sub ListNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::ListNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::ListNotificationHubs', { @_ });
   }
   sub PatchNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::PatchNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::PatchNamespaces', { @_ });
   }
   sub RegenerateKeysNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::RegenerateKeysNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::RegenerateKeysNamespaces', { @_ });
   }
   sub RegenerateKeysNotificationHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NotificationHubsManagement::RegenerateKeysNotificationHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NotificationHubsManagement::RegenerateKeysNotificationHubs', { @_ });
   }
 
   sub operations { qw/CheckAvailabilityHubs CheckAvailabilityName CheckAvailabilityNamespaces CheckAvailabilityNotificationHubs CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleNotificationHubs CreateOrUpdateNamespaces CreateOrUpdateNotificationHubs DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleNotificationHubs DeleteNamespaces DeleteNotificationHubs GetAuthorizationRuleNamespaces GetAuthorizationRuleNotificationHubs GetNamespaces GetNotificationHubs GetPnsCredentialsNotificationHubs ListAllNamespaces ListAuthorizationRulesNamespaces ListAuthorizationRulesNotificationHubs ListKeysNamespaces ListKeysNotificationHubs ListNamespaces ListNotificationHubs PatchNamespaces RegenerateKeysNamespaces RegenerateKeysNotificationHubs / }

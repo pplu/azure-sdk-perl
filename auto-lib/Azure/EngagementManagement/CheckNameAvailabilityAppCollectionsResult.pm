@@ -1,8 +1,6 @@
 package Azure::EngagementManagement::CheckNameAvailabilityAppCollectionsResult;
   use Moose;
 
-  has available => (is => 'ro', isa => 'Bool'  );
-  has name => (is => 'ro', isa => 'Str'  );
-  has unavailabilityReason => (is => 'ro', isa => 'Str'  );
+  has error => (is => 'ro', isa => 'Azure::EngagementManagement::CheckNameAvailabilityAppCollectionsResult_error'  );
 
 1;

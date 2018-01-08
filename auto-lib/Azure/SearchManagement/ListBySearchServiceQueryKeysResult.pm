@@ -1,6 +1,6 @@
 package Azure::SearchManagement::ListBySearchServiceQueryKeysResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::SearchManagement::QueryKey]'  );
+  has error => (is => 'ro', isa => 'Azure::SearchManagement::CloudErrorBody'  );
 
 1;

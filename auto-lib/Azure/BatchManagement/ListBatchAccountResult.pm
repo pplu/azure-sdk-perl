@@ -1,7 +1,6 @@
 package Azure::BatchManagement::ListBatchAccountResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::BatchManagement::BatchAccount]'  );
+  has error => (is => 'ro', isa => 'Azure::BatchManagement::CloudErrorBody'  );
 
 1;

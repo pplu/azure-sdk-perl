@@ -1,6 +1,8 @@
 package Azure::ResourceHealth::ListOperationsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ResourceHealth::operation]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has details => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -2,7 +2,7 @@ package Azure::Policy::GetByIdPolicyAssignments;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-06-01-preview',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-12-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'policyAssignmentId' => (is => 'ro', required => 1, isa => 'Str',
@@ -10,6 +10,11 @@ package Azure::Policy::GetByIdPolicyAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{policyAssignmentId}');
-  class_has _returns => (is => 'ro', default => 'Azure::Policy::GetByIdPolicyAssignmentsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::Policy::GetByIdPolicyAssignmentsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

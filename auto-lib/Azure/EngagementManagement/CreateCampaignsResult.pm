@@ -1,7 +1,6 @@
 package Azure::EngagementManagement::CreateCampaignsResult;
   use Moose;
 
-  has id => (is => 'ro', isa => 'Int'  );
-  has state => (is => 'ro', isa => 'Str'  );
+  has error => (is => 'ro', isa => 'Azure::EngagementManagement::CreateCampaignsResult_error'  );
 
 1;

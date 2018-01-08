@@ -16,6 +16,13 @@ package Azure::ServiceFabricManagement::ListApplicationType;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/clusters/{clusterName}/applicationTypes');
-  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabricManagement::ListApplicationTypeResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ServiceFabricManagement::ListApplicationTypeResult',
+    
+      default => 'Azure::ServiceFabricManagement::ListApplicationTypeResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

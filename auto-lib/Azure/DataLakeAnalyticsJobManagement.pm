@@ -1,62 +1,51 @@
 package Azure::DataLakeAnalyticsJobManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub BuildJob {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::BuildJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::BuildJob', { @_ });
   }
   sub CancelJob {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::CancelJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::CancelJob', { @_ });
   }
   sub CreateJob {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::CreateJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::CreateJob', { @_ });
   }
   sub GetDebugDataPathJob {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetDebugDataPathJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::GetDebugDataPathJob', { @_ });
   }
   sub GetJob {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::GetJob', { @_ });
   }
   sub GetPipeline {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetPipeline', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::GetPipeline', { @_ });
   }
   sub GetRecurrence {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetRecurrence', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::GetRecurrence', { @_ });
   }
   sub GetStatisticsJob {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::GetStatisticsJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::GetStatisticsJob', { @_ });
   }
   sub ListJob {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::ListJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::ListJob', { @_ });
   }
   sub ListPipeline {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::ListPipeline', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::ListPipeline', { @_ });
   }
   sub ListRecurrence {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsJobManagement::ListRecurrence', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsJobManagement::ListRecurrence', { @_ });
   }
 
   sub operations { qw/BuildJob CancelJob CreateJob GetDebugDataPathJob GetJob GetPipeline GetRecurrence GetStatisticsJob ListJob ListPipeline ListRecurrence / }

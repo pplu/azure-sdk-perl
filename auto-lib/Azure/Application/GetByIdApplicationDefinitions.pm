@@ -10,6 +10,15 @@ package Azure::Application::GetByIdApplicationDefinitions;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{applicationDefinitionId}');
-  class_has _returns => (is => 'ro', default => 'Azure::Application::GetByIdApplicationDefinitionsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::Application::GetByIdApplicationDefinitionsResult',
+    
+      404 => undef,
+    
+      default => 'Azure::Application::GetByIdApplicationDefinitionsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

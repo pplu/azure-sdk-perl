@@ -25,6 +25,13 @@ package Azure::VisualStudio::CreateProjects;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.visualstudio/account/{rootResourceName}/project/{resourceName}');
-  class_has _returns => (is => 'ro', default => 'Azure::VisualStudio::CreateProjectsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::VisualStudio::CreateProjectsResult',
+    
+      202 => undef,
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

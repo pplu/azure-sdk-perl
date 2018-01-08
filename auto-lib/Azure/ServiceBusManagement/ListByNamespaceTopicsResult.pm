@@ -1,7 +1,7 @@
 package Azure::ServiceBusManagement::ListByNamespaceTopicsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ServiceBusManagement::SBTopic]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

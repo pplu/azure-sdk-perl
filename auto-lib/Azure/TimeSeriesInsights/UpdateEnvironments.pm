@@ -19,6 +19,13 @@ package Azure::TimeSeriesInsights::UpdateEnvironments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.TimeSeriesInsights/environments/{environmentName}');
-  class_has _returns => (is => 'ro', default => 'Azure::TimeSeriesInsights::UpdateEnvironmentsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::TimeSeriesInsights::UpdateEnvironmentsResult',
+    
+      default => 'Azure::TimeSeriesInsights::UpdateEnvironmentsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

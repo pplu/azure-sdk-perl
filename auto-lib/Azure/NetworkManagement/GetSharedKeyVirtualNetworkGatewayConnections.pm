@@ -16,6 +16,11 @@ package Azure::NetworkManagement::GetSharedKeyVirtualNetworkGatewayConnections;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/connections/{virtualNetworkGatewayConnectionName}/sharedkey');
-  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetSharedKeyVirtualNetworkGatewayConnectionsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::NetworkManagement::GetSharedKeyVirtualNetworkGatewayConnectionsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

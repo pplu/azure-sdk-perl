@@ -1,95 +1,51 @@
 package Azure::DnsManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateRecordSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::CreateOrUpdateRecordSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::CreateOrUpdateRecordSets', { @_ });
   }
   sub CreateOrUpdateZones {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::CreateOrUpdateZones', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::CreateOrUpdateZones', { @_ });
   }
   sub DeleteRecordSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::DeleteRecordSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::DeleteRecordSets', { @_ });
   }
   sub DeleteZones {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::DeleteZones', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::DeleteZones', { @_ });
   }
   sub GetRecordSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::GetRecordSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::GetRecordSets', { @_ });
   }
   sub GetZones {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::GetZones', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::GetZones', { @_ });
   }
   sub ListByDnsZoneRecordSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListByDnsZoneRecordSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::ListByDnsZoneRecordSets', { @_ });
   }
   sub ListByResourceGroupZones {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListByResourceGroupZones', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::ListByResourceGroupZones', { @_ });
   }
   sub ListByTypeRecordSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListByTypeRecordSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::ListByTypeRecordSets', { @_ });
   }
   sub ListZones {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::ListZones', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::ListZones', { @_ });
   }
   sub UpdateRecordSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::DnsManagement::UpdateRecordSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::DnsManagement::UpdateRecordSets', { @_ });
   }
 
   sub operations { qw/CreateOrUpdateRecordSets CreateOrUpdateZones DeleteRecordSets DeleteZones GetRecordSets GetZones ListByDnsZoneRecordSets ListByResourceGroupZones ListByTypeRecordSets ListZones UpdateRecordSets / }

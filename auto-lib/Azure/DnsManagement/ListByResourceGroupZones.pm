@@ -5,7 +5,7 @@ package Azure::DnsManagement::ListByResourceGroupZones;
   has '$top' => (is => 'ro', isa => 'Int',
     traits => [ 'Azure::ParamInQuery' ],
   );
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-09-01',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-04-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'resourceGroupName' => (is => 'ro', required => 1, isa => 'Str',
@@ -16,6 +16,13 @@ package Azure::DnsManagement::ListByResourceGroupZones;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/dnsZones');
-  class_has _returns => (is => 'ro', default => 'Azure::DnsManagement::ListByResourceGroupZonesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::DnsManagement::ListByResourceGroupZonesResult',
+    
+      default => 'Azure::DnsManagement::ListByResourceGroupZonesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

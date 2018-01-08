@@ -13,6 +13,13 @@ package Azure::CongitiveTextAnalytics::DetectLanguage;
   );
 
   class_has _api_uri => (is => 'ro', default => '/v2.0/languages');
-  class_has _returns => (is => 'ro', default => 'Azure::CongitiveTextAnalytics::DetectLanguageResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::CongitiveTextAnalytics::DetectLanguageResult',
+    
+      default => 'Azure::CongitiveTextAnalytics::DetectLanguageResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

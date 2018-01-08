@@ -1,7 +1,6 @@
 package Azure::KeyVault::GetCertificateContactsResult;
   use Moose;
 
-  has contacts => (is => 'ro', isa => 'ArrayRef[Azure::KeyVault::Contact]'  );
-  has id => (is => 'ro', isa => 'Str'  );
+  has error => (is => 'ro', isa => 'Azure::KeyVault::Error'  );
 
 1;

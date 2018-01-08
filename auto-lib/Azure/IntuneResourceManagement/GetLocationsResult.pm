@@ -1,7 +1,7 @@
 package Azure::IntuneResourceManagement::GetLocationsResult;
   use Moose;
 
-  has nextlink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::IntuneResourceManagement::Location]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -1,7 +1,8 @@
 package Azure::Application::ListByResourceGroupApplicationDefinitionsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::Application::ApplicationDefinition]'  );
+  has errorCode => (is => 'ro', isa => 'Str'  );
+  has errorMessage => (is => 'ro', isa => 'Str'  );
+  has httpStatus => (is => 'ro', isa => 'Str'  );
 
 1;

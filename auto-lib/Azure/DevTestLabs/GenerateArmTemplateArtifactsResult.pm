@@ -1,7 +1,6 @@
 package Azure::DevTestLabs::GenerateArmTemplateArtifactsResult;
   use Moose;
 
-  has parameters => (is => 'ro', isa => 'HashRef'  );
-  has template => (is => 'ro', isa => 'HashRef'  );
+  has error => (is => 'ro', isa => 'Azure::DevTestLabs::CloudErrorBody'  );
 
 1;

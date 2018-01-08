@@ -1,7 +1,6 @@
 package Azure::ManagementGroups::ListManagementGroupsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ManagementGroups::ManagementGroupInfo]'  );
+  has error => (is => 'ro', isa => 'Azure::ManagementGroups::ErrorDetails'  );
 
 1;

@@ -1,6 +1,7 @@
 package Azure::ServiceFabricManagement::ListVersionResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::VersionResource]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

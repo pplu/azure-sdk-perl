@@ -25,6 +25,15 @@ package Azure::DevTestLabs::CreateOrUpdateDisks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/users/{userName}/disks/{name}');
-  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::CreateOrUpdateDisksResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::DevTestLabs::CreateOrUpdateDisksResult',
+    
+      201 => 'Azure::DevTestLabs::CreateOrUpdateDisksResult',
+    
+      default => 'Azure::DevTestLabs::CreateOrUpdateDisksResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

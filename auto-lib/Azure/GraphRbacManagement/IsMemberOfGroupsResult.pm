@@ -1,6 +1,7 @@
 package Azure::GraphRbacManagement::IsMemberOfGroupsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'Bool'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has value => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -1,1502 +1,697 @@
 package Azure::NetworkManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub BackendHealthApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::BackendHealthApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::BackendHealthApplicationGateways', { @_ });
   }
   sub CheckConnectivityNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CheckConnectivityNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CheckConnectivityNetworkWatchers', { @_ });
   }
   sub CheckDnsNameAvailability {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CheckDnsNameAvailability', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CheckDnsNameAvailability', { @_ });
   }
   sub CheckIPAddressAvailabilityVirtualNetworks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CheckIPAddressAvailabilityVirtualNetworks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CheckIPAddressAvailabilityVirtualNetworks', { @_ });
   }
   sub CreateOrUpdateApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateApplicationGateways', { @_ });
   }
   sub CreateOrUpdateApplicationSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateApplicationSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateApplicationSecurityGroups', { @_ });
   }
   sub CreateOrUpdateExpressRouteCircuitAuthorizations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitAuthorizations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitAuthorizations', { @_ });
   }
   sub CreateOrUpdateExpressRouteCircuitPeerings {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitPeerings', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuitPeerings', { @_ });
   }
   sub CreateOrUpdateExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateExpressRouteCircuits', { @_ });
   }
   sub CreateOrUpdateInboundNatRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateInboundNatRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateInboundNatRules', { @_ });
   }
   sub CreateOrUpdateLoadBalancers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateLoadBalancers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateLoadBalancers', { @_ });
   }
   sub CreateOrUpdateLocalNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateLocalNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateLocalNetworkGateways', { @_ });
   }
   sub CreateOrUpdateNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateNetworkInterfaces', { @_ });
   }
   sub CreateOrUpdateNetworkSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateNetworkSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateNetworkSecurityGroups', { @_ });
   }
   sub CreateOrUpdateNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateNetworkWatchers', { @_ });
   }
   sub CreateOrUpdatePublicIPAddresses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdatePublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdatePublicIPAddresses', { @_ });
   }
   sub CreateOrUpdateRouteFilterRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateRouteFilterRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateRouteFilterRules', { @_ });
   }
   sub CreateOrUpdateRouteFilters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateRouteFilters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateRouteFilters', { @_ });
   }
   sub CreateOrUpdateRoutes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateRoutes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateRoutes', { @_ });
   }
   sub CreateOrUpdateRouteTables {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateRouteTables', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateRouteTables', { @_ });
   }
   sub CreateOrUpdateSecurityRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateSecurityRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateSecurityRules', { @_ });
   }
   sub CreateOrUpdateSubnets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateSubnets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateSubnets', { @_ });
   }
   sub CreateOrUpdateVirtualNetworkGatewayConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateVirtualNetworkGatewayConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateVirtualNetworkGatewayConnections', { @_ });
   }
   sub CreateOrUpdateVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateVirtualNetworkGateways', { @_ });
   }
   sub CreateOrUpdateVirtualNetworkPeerings {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateVirtualNetworkPeerings', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateVirtualNetworkPeerings', { @_ });
   }
   sub CreateOrUpdateVirtualNetworks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreateOrUpdateVirtualNetworks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreateOrUpdateVirtualNetworks', { @_ });
   }
   sub CreatePacketCaptures {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::CreatePacketCaptures', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::CreatePacketCaptures', { @_ });
   }
   sub DeleteApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteApplicationGateways', { @_ });
   }
   sub DeleteApplicationSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteApplicationSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteApplicationSecurityGroups', { @_ });
   }
   sub DeleteExpressRouteCircuitAuthorizations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteExpressRouteCircuitAuthorizations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteExpressRouteCircuitAuthorizations', { @_ });
   }
   sub DeleteExpressRouteCircuitPeerings {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteExpressRouteCircuitPeerings', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteExpressRouteCircuitPeerings', { @_ });
   }
   sub DeleteExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteExpressRouteCircuits', { @_ });
   }
   sub DeleteInboundNatRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteInboundNatRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteInboundNatRules', { @_ });
   }
   sub DeleteLoadBalancers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteLoadBalancers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteLoadBalancers', { @_ });
   }
   sub DeleteLocalNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteLocalNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteLocalNetworkGateways', { @_ });
   }
   sub DeleteNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteNetworkInterfaces', { @_ });
   }
   sub DeleteNetworkSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteNetworkSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteNetworkSecurityGroups', { @_ });
   }
   sub DeleteNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteNetworkWatchers', { @_ });
   }
   sub DeletePacketCaptures {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeletePacketCaptures', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeletePacketCaptures', { @_ });
   }
   sub DeletePublicIPAddresses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeletePublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeletePublicIPAddresses', { @_ });
   }
   sub DeleteRouteFilterRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteRouteFilterRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteRouteFilterRules', { @_ });
   }
   sub DeleteRouteFilters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteRouteFilters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteRouteFilters', { @_ });
   }
   sub DeleteRoutes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteRoutes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteRoutes', { @_ });
   }
   sub DeleteRouteTables {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteRouteTables', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteRouteTables', { @_ });
   }
   sub DeleteSecurityRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteSecurityRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteSecurityRules', { @_ });
   }
   sub DeleteSubnets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteSubnets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteSubnets', { @_ });
   }
   sub DeleteVirtualNetworkGatewayConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteVirtualNetworkGatewayConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteVirtualNetworkGatewayConnections', { @_ });
   }
   sub DeleteVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteVirtualNetworkGateways', { @_ });
   }
   sub DeleteVirtualNetworkPeerings {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteVirtualNetworkPeerings', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteVirtualNetworkPeerings', { @_ });
   }
   sub DeleteVirtualNetworks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::DeleteVirtualNetworks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::DeleteVirtualNetworks', { @_ });
   }
   sub GeneratevpnclientpackageVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GeneratevpnclientpackageVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GeneratevpnclientpackageVirtualNetworkGateways', { @_ });
   }
   sub GenerateVpnProfileVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GenerateVpnProfileVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GenerateVpnProfileVirtualNetworkGateways', { @_ });
   }
   sub GetAdvertisedRoutesVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetAdvertisedRoutesVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetAdvertisedRoutesVirtualNetworkGateways', { @_ });
   }
   sub GetApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetApplicationGateways', { @_ });
   }
   sub GetApplicationSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetApplicationSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetApplicationSecurityGroups', { @_ });
   }
   sub GetAzureReachabilityReportNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetAzureReachabilityReportNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetAzureReachabilityReportNetworkWatchers', { @_ });
   }
   sub GetBgpPeerStatusVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetBgpPeerStatusVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetBgpPeerStatusVirtualNetworkGateways', { @_ });
   }
   sub GetDefaultSecurityRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetDefaultSecurityRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetDefaultSecurityRules', { @_ });
   }
   sub GetEffectiveRouteTableNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetEffectiveRouteTableNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetEffectiveRouteTableNetworkInterfaces', { @_ });
   }
   sub GetExpressRouteCircuitAuthorizations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetExpressRouteCircuitAuthorizations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetExpressRouteCircuitAuthorizations', { @_ });
   }
   sub GetExpressRouteCircuitPeerings {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetExpressRouteCircuitPeerings', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetExpressRouteCircuitPeerings', { @_ });
   }
   sub GetExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetExpressRouteCircuits', { @_ });
   }
   sub GetFlowLogStatusNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetFlowLogStatusNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetFlowLogStatusNetworkWatchers', { @_ });
   }
   sub GetInboundNatRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetInboundNatRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetInboundNatRules', { @_ });
   }
   sub GetLearnedRoutesVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetLearnedRoutesVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetLearnedRoutesVirtualNetworkGateways', { @_ });
   }
   sub GetLoadBalancerBackendAddressPools {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetLoadBalancerBackendAddressPools', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetLoadBalancerBackendAddressPools', { @_ });
   }
   sub GetLoadBalancerFrontendIPConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetLoadBalancerFrontendIPConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetLoadBalancerFrontendIPConfigurations', { @_ });
   }
   sub GetLoadBalancerLoadBalancingRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetLoadBalancerLoadBalancingRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetLoadBalancerLoadBalancingRules', { @_ });
   }
   sub GetLoadBalancerProbes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetLoadBalancerProbes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetLoadBalancerProbes', { @_ });
   }
   sub GetLoadBalancers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetLoadBalancers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetLoadBalancers', { @_ });
   }
   sub GetLocalNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetLocalNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetLocalNetworkGateways', { @_ });
   }
   sub GetNetworkInterfaceIPConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetNetworkInterfaceIPConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetNetworkInterfaceIPConfigurations', { @_ });
   }
   sub GetNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetNetworkInterfaces', { @_ });
   }
   sub GetNetworkSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetNetworkSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetNetworkSecurityGroups', { @_ });
   }
   sub GetNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetNetworkWatchers', { @_ });
   }
   sub GetNextHopNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetNextHopNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetNextHopNetworkWatchers', { @_ });
   }
   sub GetPacketCaptures {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetPacketCaptures', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetPacketCaptures', { @_ });
   }
   sub GetPeeringStatsExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetPeeringStatsExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetPeeringStatsExpressRouteCircuits', { @_ });
   }
   sub GetPublicIPAddresses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetPublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetPublicIPAddresses', { @_ });
   }
   sub GetRouteFilterRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetRouteFilterRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetRouteFilterRules', { @_ });
   }
   sub GetRouteFilters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetRouteFilters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetRouteFilters', { @_ });
   }
   sub GetRoutes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetRoutes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetRoutes', { @_ });
   }
   sub GetRouteTables {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetRouteTables', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetRouteTables', { @_ });
   }
   sub GetSecurityRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetSecurityRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetSecurityRules', { @_ });
   }
   sub GetSharedKeyVirtualNetworkGatewayConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetSharedKeyVirtualNetworkGatewayConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetSharedKeyVirtualNetworkGatewayConnections', { @_ });
   }
   sub GetSslPredefinedPolicyApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetSslPredefinedPolicyApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetSslPredefinedPolicyApplicationGateways', { @_ });
   }
   sub GetStatsExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetStatsExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetStatsExpressRouteCircuits', { @_ });
   }
   sub GetStatusPacketCaptures {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetStatusPacketCaptures', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetStatusPacketCaptures', { @_ });
   }
   sub GetSubnets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetSubnets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetSubnets', { @_ });
   }
   sub GetTopologyNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetTopologyNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetTopologyNetworkWatchers', { @_ });
   }
   sub GetTroubleshootingNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetTroubleshootingNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetTroubleshootingNetworkWatchers', { @_ });
   }
   sub GetTroubleshootingResultNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetTroubleshootingResultNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetVirtualMachineScaleSetIpConfigurationNetworkInterfaces {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualMachineScaleSetIpConfigurationNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetTroubleshootingResultNetworkWatchers', { @_ });
   }
   sub GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces', { @_ });
   }
   sub GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses', { @_ });
   }
   sub GetVirtualNetworkGatewayConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualNetworkGatewayConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetVirtualNetworkGatewayConnections', { @_ });
   }
   sub GetVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetVirtualNetworkGateways', { @_ });
   }
   sub GetVirtualNetworkPeerings {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualNetworkPeerings', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetVirtualNetworkPeerings', { @_ });
   }
   sub GetVirtualNetworks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVirtualNetworks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetVirtualNetworks', { @_ });
   }
   sub GetVMSecurityRulesNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVMSecurityRulesNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetVMSecurityRulesNetworkWatchers', { @_ });
   }
   sub GetVpnProfilePackageUrlVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::GetVpnProfilePackageUrlVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::GetVpnProfilePackageUrlVirtualNetworkGateways', { @_ });
   }
   sub ListAllApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllApplicationGateways', { @_ });
   }
   sub ListAllApplicationSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllApplicationSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllApplicationSecurityGroups', { @_ });
   }
   sub ListAllExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllExpressRouteCircuits', { @_ });
   }
   sub ListAllLoadBalancers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllLoadBalancers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllLoadBalancers', { @_ });
   }
   sub ListAllNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllNetworkInterfaces', { @_ });
   }
   sub ListAllNetworkSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllNetworkSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllNetworkSecurityGroups', { @_ });
   }
   sub ListAllNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllNetworkWatchers', { @_ });
   }
   sub ListAllPublicIPAddresses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllPublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllPublicIPAddresses', { @_ });
   }
   sub ListAllRouteTables {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllRouteTables', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllRouteTables', { @_ });
   }
   sub ListAllVirtualNetworks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAllVirtualNetworks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAllVirtualNetworks', { @_ });
   }
   sub ListApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListApplicationGateways', { @_ });
   }
   sub ListApplicationSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListApplicationSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListApplicationSecurityGroups', { @_ });
   }
   sub ListArpTableExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListArpTableExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListArpTableExpressRouteCircuits', { @_ });
   }
   sub ListAvailableEndpointServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAvailableEndpointServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAvailableEndpointServices', { @_ });
   }
   sub ListAvailableProvidersNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAvailableProvidersNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAvailableProvidersNetworkWatchers', { @_ });
   }
   sub ListAvailableSslOptionsApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAvailableSslOptionsApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAvailableSslOptionsApplicationGateways', { @_ });
   }
   sub ListAvailableSslPredefinedPoliciesApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAvailableSslPredefinedPoliciesApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAvailableSslPredefinedPoliciesApplicationGateways', { @_ });
   }
   sub ListAvailableWafRuleSetsApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListAvailableWafRuleSetsApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListAvailableWafRuleSetsApplicationGateways', { @_ });
   }
   sub ListBgpServiceCommunities {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListBgpServiceCommunities', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListBgpServiceCommunities', { @_ });
   }
   sub ListByResourceGroupRouteFilters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListByResourceGroupRouteFilters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListByResourceGroupRouteFilters', { @_ });
   }
   sub ListByRouteFilterRouteFilterRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListByRouteFilterRouteFilterRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListByRouteFilterRouteFilterRules', { @_ });
   }
   sub ListConnectionsVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListConnectionsVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListConnectionsVirtualNetworkGateways', { @_ });
   }
   sub ListDefaultSecurityRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListDefaultSecurityRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListDefaultSecurityRules', { @_ });
   }
   sub ListEffectiveNetworkSecurityGroupsNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListEffectiveNetworkSecurityGroupsNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListEffectiveNetworkSecurityGroupsNetworkInterfaces', { @_ });
   }
   sub ListExpressRouteCircuitAuthorizations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListExpressRouteCircuitAuthorizations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListExpressRouteCircuitAuthorizations', { @_ });
   }
   sub ListExpressRouteCircuitPeerings {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListExpressRouteCircuitPeerings', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListExpressRouteCircuitPeerings', { @_ });
   }
   sub ListExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListExpressRouteCircuits', { @_ });
   }
   sub ListExpressRouteServiceProviders {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListExpressRouteServiceProviders', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListExpressRouteServiceProviders', { @_ });
   }
   sub ListInboundNatRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListInboundNatRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListInboundNatRules', { @_ });
   }
   sub ListLoadBalancerBackendAddressPools {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListLoadBalancerBackendAddressPools', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListLoadBalancerBackendAddressPools', { @_ });
   }
   sub ListLoadBalancerFrontendIPConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListLoadBalancerFrontendIPConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListLoadBalancerFrontendIPConfigurations', { @_ });
   }
   sub ListLoadBalancerLoadBalancingRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListLoadBalancerLoadBalancingRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListLoadBalancerLoadBalancingRules', { @_ });
   }
   sub ListLoadBalancerNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListLoadBalancerNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListLoadBalancerNetworkInterfaces', { @_ });
   }
   sub ListLoadBalancerProbes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListLoadBalancerProbes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListLoadBalancerProbes', { @_ });
   }
   sub ListLoadBalancers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListLoadBalancers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListLoadBalancers', { @_ });
   }
   sub ListLocalNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListLocalNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListLocalNetworkGateways', { @_ });
   }
   sub ListNetworkInterfaceIPConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListNetworkInterfaceIPConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListNetworkInterfaceIPConfigurations', { @_ });
   }
   sub ListNetworkInterfaceLoadBalancers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListNetworkInterfaceLoadBalancers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListNetworkInterfaceLoadBalancers', { @_ });
   }
   sub ListNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListNetworkInterfaces', { @_ });
   }
   sub ListNetworkSecurityGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListNetworkSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListNetworkSecurityGroups', { @_ });
   }
   sub ListNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListOperations {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListNetworkWatchers', { @_ });
   }
   sub ListPacketCaptures {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListPacketCaptures', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListPacketCaptures', { @_ });
   }
   sub ListPublicIPAddresses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListPublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListPublicIPAddresses', { @_ });
   }
   sub ListRouteFilters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListRouteFilters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListRouteFilters', { @_ });
   }
   sub ListRoutes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListRoutes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListRoutes', { @_ });
   }
   sub ListRoutesTableExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListRoutesTableExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListRoutesTableExpressRouteCircuits', { @_ });
   }
   sub ListRoutesTableSummaryExpressRouteCircuits {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListRoutesTableSummaryExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListRoutesTableSummaryExpressRouteCircuits', { @_ });
   }
   sub ListRouteTables {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListRouteTables', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListRouteTables', { @_ });
   }
   sub ListSecurityRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListSecurityRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListSecurityRules', { @_ });
   }
   sub ListSubnets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListSubnets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListSubnets', { @_ });
   }
   sub ListUsages {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListUsages', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListUsages', { @_ });
   }
   sub ListUsageVirtualNetworks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListUsageVirtualNetworks', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListVirtualMachineScaleSetIpConfigurationsNetworkInterfaces {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetIpConfigurationsNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListUsageVirtualNetworks', { @_ });
   }
   sub ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces', { @_ });
   }
   sub ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses', { @_ });
   }
   sub ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces', { @_ });
   }
   sub ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses', { @_ });
   }
   sub ListVirtualNetworkGatewayConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualNetworkGatewayConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListVirtualNetworkGatewayConnections', { @_ });
   }
   sub ListVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListVirtualNetworkGateways', { @_ });
   }
   sub ListVirtualNetworkPeerings {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualNetworkPeerings', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListVirtualNetworkPeerings', { @_ });
   }
   sub ListVirtualNetworks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ListVirtualNetworks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ListVirtualNetworks', { @_ });
   }
   sub ResetSharedKeyVirtualNetworkGatewayConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ResetSharedKeyVirtualNetworkGatewayConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ResetSharedKeyVirtualNetworkGatewayConnections', { @_ });
   }
   sub ResetVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::ResetVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::ResetVirtualNetworkGateways', { @_ });
   }
   sub SetFlowLogConfigurationNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::SetFlowLogConfigurationNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::SetFlowLogConfigurationNetworkWatchers', { @_ });
   }
   sub SetSharedKeyVirtualNetworkGatewayConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::SetSharedKeyVirtualNetworkGatewayConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::SetSharedKeyVirtualNetworkGatewayConnections', { @_ });
   }
   sub StartApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::StartApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::StartApplicationGateways', { @_ });
   }
   sub StopApplicationGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::StopApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::StopApplicationGateways', { @_ });
   }
   sub StopPacketCaptures {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::StopPacketCaptures', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::StopPacketCaptures', { @_ });
   }
   sub SupportedVpnDevicesVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::SupportedVpnDevicesVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::SupportedVpnDevicesVirtualNetworkGateways', { @_ });
   }
   sub UpdateRouteFilterRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateRouteFilterRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::UpdateRouteFilterRules', { @_ });
   }
   sub UpdateRouteFilters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateRouteFilters', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsApplicationGateways {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsApplicationGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsExpressRouteCircuits {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsExpressRouteCircuits', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsLoadBalancers {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsLoadBalancers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsLocalNetworkGateways {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsLocalNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsNetworkInterfaces {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsNetworkInterfaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsNetworkSecurityGroups {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsNetworkSecurityGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsNetworkWatchers {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsPublicIPAddresses {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsPublicIPAddresses', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsRouteTables {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsRouteTables', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsVirtualNetworkGatewayConnections {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsVirtualNetworkGatewayConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsVirtualNetworkGateways {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub UpdateTagsVirtualNetworks {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::UpdateTagsVirtualNetworks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::UpdateRouteFilters', { @_ });
   }
   sub VerifyIPFlowNetworkWatchers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::VerifyIPFlowNetworkWatchers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::VerifyIPFlowNetworkWatchers', { @_ });
   }
   sub VpnDeviceConfigurationScriptVirtualNetworkGateways {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::NetworkManagement::VpnDeviceConfigurationScriptVirtualNetworkGateways', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::NetworkManagement::VpnDeviceConfigurationScriptVirtualNetworkGateways', { @_ });
   }
 
-  sub operations { qw/BackendHealthApplicationGateways CheckConnectivityNetworkWatchers CheckDnsNameAvailability CheckIPAddressAvailabilityVirtualNetworks CreateOrUpdateApplicationGateways CreateOrUpdateApplicationSecurityGroups CreateOrUpdateExpressRouteCircuitAuthorizations CreateOrUpdateExpressRouteCircuitPeerings CreateOrUpdateExpressRouteCircuits CreateOrUpdateInboundNatRules CreateOrUpdateLoadBalancers CreateOrUpdateLocalNetworkGateways CreateOrUpdateNetworkInterfaces CreateOrUpdateNetworkSecurityGroups CreateOrUpdateNetworkWatchers CreateOrUpdatePublicIPAddresses CreateOrUpdateRouteFilterRules CreateOrUpdateRouteFilters CreateOrUpdateRoutes CreateOrUpdateRouteTables CreateOrUpdateSecurityRules CreateOrUpdateSubnets CreateOrUpdateVirtualNetworkGatewayConnections CreateOrUpdateVirtualNetworkGateways CreateOrUpdateVirtualNetworkPeerings CreateOrUpdateVirtualNetworks CreatePacketCaptures DeleteApplicationGateways DeleteApplicationSecurityGroups DeleteExpressRouteCircuitAuthorizations DeleteExpressRouteCircuitPeerings DeleteExpressRouteCircuits DeleteInboundNatRules DeleteLoadBalancers DeleteLocalNetworkGateways DeleteNetworkInterfaces DeleteNetworkSecurityGroups DeleteNetworkWatchers DeletePacketCaptures DeletePublicIPAddresses DeleteRouteFilterRules DeleteRouteFilters DeleteRoutes DeleteRouteTables DeleteSecurityRules DeleteSubnets DeleteVirtualNetworkGatewayConnections DeleteVirtualNetworkGateways DeleteVirtualNetworkPeerings DeleteVirtualNetworks GeneratevpnclientpackageVirtualNetworkGateways GenerateVpnProfileVirtualNetworkGateways GetAdvertisedRoutesVirtualNetworkGateways GetApplicationGateways GetApplicationSecurityGroups GetAzureReachabilityReportNetworkWatchers GetBgpPeerStatusVirtualNetworkGateways GetDefaultSecurityRules GetEffectiveRouteTableNetworkInterfaces GetExpressRouteCircuitAuthorizations GetExpressRouteCircuitPeerings GetExpressRouteCircuits GetFlowLogStatusNetworkWatchers GetInboundNatRules GetLearnedRoutesVirtualNetworkGateways GetLoadBalancerBackendAddressPools GetLoadBalancerFrontendIPConfigurations GetLoadBalancerLoadBalancingRules GetLoadBalancerProbes GetLoadBalancers GetLocalNetworkGateways GetNetworkInterfaceIPConfigurations GetNetworkInterfaces GetNetworkSecurityGroups GetNetworkWatchers GetNextHopNetworkWatchers GetPacketCaptures GetPeeringStatsExpressRouteCircuits GetPublicIPAddresses GetRouteFilterRules GetRouteFilters GetRoutes GetRouteTables GetSecurityRules GetSharedKeyVirtualNetworkGatewayConnections GetSslPredefinedPolicyApplicationGateways GetStatsExpressRouteCircuits GetStatusPacketCaptures GetSubnets GetTopologyNetworkWatchers GetTroubleshootingNetworkWatchers GetTroubleshootingResultNetworkWatchers GetVirtualMachineScaleSetIpConfigurationNetworkInterfaces GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses GetVirtualNetworkGatewayConnections GetVirtualNetworkGateways GetVirtualNetworkPeerings GetVirtualNetworks GetVMSecurityRulesNetworkWatchers GetVpnProfilePackageUrlVirtualNetworkGateways ListAllApplicationGateways ListAllApplicationSecurityGroups ListAllExpressRouteCircuits ListAllLoadBalancers ListAllNetworkInterfaces ListAllNetworkSecurityGroups ListAllNetworkWatchers ListAllPublicIPAddresses ListAllRouteTables ListAllVirtualNetworks ListApplicationGateways ListApplicationSecurityGroups ListArpTableExpressRouteCircuits ListAvailableEndpointServices ListAvailableProvidersNetworkWatchers ListAvailableSslOptionsApplicationGateways ListAvailableSslPredefinedPoliciesApplicationGateways ListAvailableWafRuleSetsApplicationGateways ListBgpServiceCommunities ListByResourceGroupRouteFilters ListByRouteFilterRouteFilterRules ListConnectionsVirtualNetworkGateways ListDefaultSecurityRules ListEffectiveNetworkSecurityGroupsNetworkInterfaces ListExpressRouteCircuitAuthorizations ListExpressRouteCircuitPeerings ListExpressRouteCircuits ListExpressRouteServiceProviders ListInboundNatRules ListLoadBalancerBackendAddressPools ListLoadBalancerFrontendIPConfigurations ListLoadBalancerLoadBalancingRules ListLoadBalancerNetworkInterfaces ListLoadBalancerProbes ListLoadBalancers ListLocalNetworkGateways ListNetworkInterfaceIPConfigurations ListNetworkInterfaceLoadBalancers ListNetworkInterfaces ListNetworkSecurityGroups ListNetworkWatchers ListOperations ListPacketCaptures ListPublicIPAddresses ListRouteFilters ListRoutes ListRoutesTableExpressRouteCircuits ListRoutesTableSummaryExpressRouteCircuits ListRouteTables ListSecurityRules ListSubnets ListUsages ListUsageVirtualNetworks ListVirtualMachineScaleSetIpConfigurationsNetworkInterfaces ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses ListVirtualNetworkGatewayConnections ListVirtualNetworkGateways ListVirtualNetworkPeerings ListVirtualNetworks ResetSharedKeyVirtualNetworkGatewayConnections ResetVirtualNetworkGateways SetFlowLogConfigurationNetworkWatchers SetSharedKeyVirtualNetworkGatewayConnections StartApplicationGateways StopApplicationGateways StopPacketCaptures SupportedVpnDevicesVirtualNetworkGateways UpdateRouteFilterRules UpdateRouteFilters UpdateTagsApplicationGateways UpdateTagsExpressRouteCircuits UpdateTagsLoadBalancers UpdateTagsLocalNetworkGateways UpdateTagsNetworkInterfaces UpdateTagsNetworkSecurityGroups UpdateTagsNetworkWatchers UpdateTagsPublicIPAddresses UpdateTagsRouteTables UpdateTagsVirtualNetworkGatewayConnections UpdateTagsVirtualNetworkGateways UpdateTagsVirtualNetworks VerifyIPFlowNetworkWatchers VpnDeviceConfigurationScriptVirtualNetworkGateways / }
+  sub operations { qw/BackendHealthApplicationGateways CheckConnectivityNetworkWatchers CheckDnsNameAvailability CheckIPAddressAvailabilityVirtualNetworks CreateOrUpdateApplicationGateways CreateOrUpdateApplicationSecurityGroups CreateOrUpdateExpressRouteCircuitAuthorizations CreateOrUpdateExpressRouteCircuitPeerings CreateOrUpdateExpressRouteCircuits CreateOrUpdateInboundNatRules CreateOrUpdateLoadBalancers CreateOrUpdateLocalNetworkGateways CreateOrUpdateNetworkInterfaces CreateOrUpdateNetworkSecurityGroups CreateOrUpdateNetworkWatchers CreateOrUpdatePublicIPAddresses CreateOrUpdateRouteFilterRules CreateOrUpdateRouteFilters CreateOrUpdateRoutes CreateOrUpdateRouteTables CreateOrUpdateSecurityRules CreateOrUpdateSubnets CreateOrUpdateVirtualNetworkGatewayConnections CreateOrUpdateVirtualNetworkGateways CreateOrUpdateVirtualNetworkPeerings CreateOrUpdateVirtualNetworks CreatePacketCaptures DeleteApplicationGateways DeleteApplicationSecurityGroups DeleteExpressRouteCircuitAuthorizations DeleteExpressRouteCircuitPeerings DeleteExpressRouteCircuits DeleteInboundNatRules DeleteLoadBalancers DeleteLocalNetworkGateways DeleteNetworkInterfaces DeleteNetworkSecurityGroups DeleteNetworkWatchers DeletePacketCaptures DeletePublicIPAddresses DeleteRouteFilterRules DeleteRouteFilters DeleteRoutes DeleteRouteTables DeleteSecurityRules DeleteSubnets DeleteVirtualNetworkGatewayConnections DeleteVirtualNetworkGateways DeleteVirtualNetworkPeerings DeleteVirtualNetworks GeneratevpnclientpackageVirtualNetworkGateways GenerateVpnProfileVirtualNetworkGateways GetAdvertisedRoutesVirtualNetworkGateways GetApplicationGateways GetApplicationSecurityGroups GetAzureReachabilityReportNetworkWatchers GetBgpPeerStatusVirtualNetworkGateways GetDefaultSecurityRules GetEffectiveRouteTableNetworkInterfaces GetExpressRouteCircuitAuthorizations GetExpressRouteCircuitPeerings GetExpressRouteCircuits GetFlowLogStatusNetworkWatchers GetInboundNatRules GetLearnedRoutesVirtualNetworkGateways GetLoadBalancerBackendAddressPools GetLoadBalancerFrontendIPConfigurations GetLoadBalancerLoadBalancingRules GetLoadBalancerProbes GetLoadBalancers GetLocalNetworkGateways GetNetworkInterfaceIPConfigurations GetNetworkInterfaces GetNetworkSecurityGroups GetNetworkWatchers GetNextHopNetworkWatchers GetPacketCaptures GetPeeringStatsExpressRouteCircuits GetPublicIPAddresses GetRouteFilterRules GetRouteFilters GetRoutes GetRouteTables GetSecurityRules GetSharedKeyVirtualNetworkGatewayConnections GetSslPredefinedPolicyApplicationGateways GetStatsExpressRouteCircuits GetStatusPacketCaptures GetSubnets GetTopologyNetworkWatchers GetTroubleshootingNetworkWatchers GetTroubleshootingResultNetworkWatchers GetVirtualMachineScaleSetNetworkInterfaceNetworkInterfaces GetVirtualMachineScaleSetPublicIPAddressPublicIPAddresses GetVirtualNetworkGatewayConnections GetVirtualNetworkGateways GetVirtualNetworkPeerings GetVirtualNetworks GetVMSecurityRulesNetworkWatchers GetVpnProfilePackageUrlVirtualNetworkGateways ListAllApplicationGateways ListAllApplicationSecurityGroups ListAllExpressRouteCircuits ListAllLoadBalancers ListAllNetworkInterfaces ListAllNetworkSecurityGroups ListAllNetworkWatchers ListAllPublicIPAddresses ListAllRouteTables ListAllVirtualNetworks ListApplicationGateways ListApplicationSecurityGroups ListArpTableExpressRouteCircuits ListAvailableEndpointServices ListAvailableProvidersNetworkWatchers ListAvailableSslOptionsApplicationGateways ListAvailableSslPredefinedPoliciesApplicationGateways ListAvailableWafRuleSetsApplicationGateways ListBgpServiceCommunities ListByResourceGroupRouteFilters ListByRouteFilterRouteFilterRules ListConnectionsVirtualNetworkGateways ListDefaultSecurityRules ListEffectiveNetworkSecurityGroupsNetworkInterfaces ListExpressRouteCircuitAuthorizations ListExpressRouteCircuitPeerings ListExpressRouteCircuits ListExpressRouteServiceProviders ListInboundNatRules ListLoadBalancerBackendAddressPools ListLoadBalancerFrontendIPConfigurations ListLoadBalancerLoadBalancingRules ListLoadBalancerNetworkInterfaces ListLoadBalancerProbes ListLoadBalancers ListLocalNetworkGateways ListNetworkInterfaceIPConfigurations ListNetworkInterfaceLoadBalancers ListNetworkInterfaces ListNetworkSecurityGroups ListNetworkWatchers ListPacketCaptures ListPublicIPAddresses ListRouteFilters ListRoutes ListRoutesTableExpressRouteCircuits ListRoutesTableSummaryExpressRouteCircuits ListRouteTables ListSecurityRules ListSubnets ListUsages ListUsageVirtualNetworks ListVirtualMachineScaleSetNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetPublicIPAddressesPublicIPAddresses ListVirtualMachineScaleSetVMNetworkInterfacesNetworkInterfaces ListVirtualMachineScaleSetVMPublicIPAddressesPublicIPAddresses ListVirtualNetworkGatewayConnections ListVirtualNetworkGateways ListVirtualNetworkPeerings ListVirtualNetworks ResetSharedKeyVirtualNetworkGatewayConnections ResetVirtualNetworkGateways SetFlowLogConfigurationNetworkWatchers SetSharedKeyVirtualNetworkGatewayConnections StartApplicationGateways StopApplicationGateways StopPacketCaptures SupportedVpnDevicesVirtualNetworkGateways UpdateRouteFilterRules UpdateRouteFilters VerifyIPFlowNetworkWatchers VpnDeviceConfigurationScriptVirtualNetworkGateways / }
 
 1;

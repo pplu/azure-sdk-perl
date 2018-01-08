@@ -34,6 +34,13 @@ package Azure::BatchService::DeleteJobSchedule;
   );
 
   class_has _api_uri => (is => 'ro', default => '/jobschedules/{jobScheduleId}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      202 => undef,
+    
+      default => 'Azure::BatchService::DeleteJobScheduleResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

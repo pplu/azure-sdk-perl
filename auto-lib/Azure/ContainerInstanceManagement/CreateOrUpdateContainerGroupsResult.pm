@@ -8,11 +8,11 @@ package Azure::ContainerInstanceManagement::CreateOrUpdateContainerGroupsResult;
   has type => (is => 'ro', isa => 'Str'  );
   has containers => (is => 'ro', isa => 'ArrayRef[Azure::ContainerInstanceManagement::Container]'  );
   has imageRegistryCredentials => (is => 'ro', isa => 'ArrayRef[Azure::ContainerInstanceManagement::ImageRegistryCredential]'  );
-  has instanceView => (is => 'ro', isa => 'Azure::ContainerInstanceManagement::CreateOrUpdateContainerGroupsResult_instanceView'  );
   has ipAddress => (is => 'ro', isa => 'Azure::ContainerInstanceManagement::IpAddress'  );
   has osType => (is => 'ro', isa => 'Str'  );
   has provisioningState => (is => 'ro', isa => 'Str'  );
   has restartPolicy => (is => 'ro', isa => 'Str'  );
+  has state => (is => 'ro', isa => 'Str'  );
   has volumes => (is => 'ro', isa => 'ArrayRef[Azure::ContainerInstanceManagement::Volume]'  );
 
 1;

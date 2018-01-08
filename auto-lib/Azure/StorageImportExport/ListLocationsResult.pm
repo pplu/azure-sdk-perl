@@ -1,6 +1,6 @@
 package Azure::StorageImportExport::ListLocationsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::StorageImportExport::Location]'  );
+  has error => (is => 'ro', isa => 'Azure::StorageImportExport::ErrorInfo'  );
 
 1;

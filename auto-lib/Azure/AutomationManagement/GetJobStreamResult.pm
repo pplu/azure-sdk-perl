@@ -1,12 +1,7 @@
 package Azure::AutomationManagement::GetJobStreamResult;
   use Moose;
 
-  has id => (is => 'ro', isa => 'Str'  );
-  has jobStreamId => (is => 'ro', isa => 'Str'  );
-  has streamText => (is => 'ro', isa => 'Str'  );
-  has streamType => (is => 'ro', isa => 'Str'  );
-  has summary => (is => 'ro', isa => 'Str'  );
-  has time => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'HashRef[HashRef]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

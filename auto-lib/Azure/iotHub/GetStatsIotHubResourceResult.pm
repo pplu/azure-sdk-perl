@@ -1,8 +1,9 @@
 package Azure::iotHub::GetStatsIotHubResourceResult;
   use Moose;
 
-  has disabledDeviceCount => (is => 'ro', isa => 'Int'  );
-  has enabledDeviceCount => (is => 'ro', isa => 'Int'  );
-  has totalDeviceCount => (is => 'ro', isa => 'Int'  );
+  has Code => (is => 'ro', isa => 'Str'  );
+  has Details => (is => 'ro', isa => 'Str'  );
+  has HttpStatusCode => (is => 'ro', isa => 'Str'  );
+  has Message => (is => 'ro', isa => 'Str'  );
 
 1;

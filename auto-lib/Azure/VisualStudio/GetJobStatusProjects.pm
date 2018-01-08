@@ -28,6 +28,13 @@ package Azure::VisualStudio::GetJobStatusProjects;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.visualstudio/account/{rootResourceName}/project/{resourceName}/subContainers/{subContainerName}/status');
-  class_has _returns => (is => 'ro', default => 'Azure::VisualStudio::GetJobStatusProjectsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::VisualStudio::GetJobStatusProjectsResult',
+    
+      202 => undef,
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

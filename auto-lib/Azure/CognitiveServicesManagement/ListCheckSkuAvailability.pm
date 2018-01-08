@@ -16,6 +16,11 @@ package Azure::CognitiveServicesManagement::ListCheckSkuAvailability;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.CognitiveServices/locations/{location}/checkSkuAvailability');
-  class_has _returns => (is => 'ro', default => 'Azure::CognitiveServicesManagement::ListCheckSkuAvailabilityResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::CognitiveServicesManagement::ListCheckSkuAvailabilityResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

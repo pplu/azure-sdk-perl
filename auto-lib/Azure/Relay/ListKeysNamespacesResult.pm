@@ -1,10 +1,7 @@
 package Azure::Relay::ListKeysNamespacesResult;
   use Moose;
 
-  has keyName => (is => 'ro', isa => 'Str'  );
-  has primaryConnectionString => (is => 'ro', isa => 'Str'  );
-  has primaryKey => (is => 'ro', isa => 'Str'  );
-  has secondaryConnectionString => (is => 'ro', isa => 'Str'  );
-  has secondaryKey => (is => 'ro', isa => 'Str'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

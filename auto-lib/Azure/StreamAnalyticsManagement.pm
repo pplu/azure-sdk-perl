@@ -1,260 +1,135 @@
 package Azure::StreamAnalyticsManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrReplaceFunctions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::CreateOrReplaceFunctions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::CreateOrReplaceFunctions', { @_ });
   }
   sub CreateOrReplaceInputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::CreateOrReplaceInputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::CreateOrReplaceInputs', { @_ });
   }
   sub CreateOrReplaceOutputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::CreateOrReplaceOutputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::CreateOrReplaceOutputs', { @_ });
   }
   sub CreateOrReplaceStreamingJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::CreateOrReplaceStreamingJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::CreateOrReplaceStreamingJobs', { @_ });
   }
   sub CreateOrReplaceTransformations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::CreateOrReplaceTransformations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::CreateOrReplaceTransformations', { @_ });
   }
   sub DeleteFunctions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::DeleteFunctions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::DeleteFunctions', { @_ });
   }
   sub DeleteInputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::DeleteInputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::DeleteInputs', { @_ });
   }
   sub DeleteOutputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::DeleteOutputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::DeleteOutputs', { @_ });
   }
   sub DeleteStreamingJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::DeleteStreamingJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::DeleteStreamingJobs', { @_ });
   }
   sub GetFunctions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::GetFunctions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::GetFunctions', { @_ });
   }
   sub GetInputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::GetInputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::GetInputs', { @_ });
   }
   sub GetOutputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::GetOutputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::GetOutputs', { @_ });
   }
   sub GetStreamingJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::GetStreamingJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::GetStreamingJobs', { @_ });
   }
   sub GetTransformations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::GetTransformations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::GetTransformations', { @_ });
   }
   sub ListByResourceGroupStreamingJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::ListByResourceGroupStreamingJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::ListByResourceGroupStreamingJobs', { @_ });
   }
   sub ListByStreamingJobFunctions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::ListByStreamingJobFunctions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::ListByStreamingJobFunctions', { @_ });
   }
   sub ListByStreamingJobInputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::ListByStreamingJobInputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::ListByStreamingJobInputs', { @_ });
   }
   sub ListByStreamingJobOutputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::ListByStreamingJobOutputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::ListByStreamingJobOutputs', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::StreamAnalyticsManagement::ListOperations', { @_ });
   }
   sub ListQuotasSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::ListQuotasSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::ListQuotasSubscriptions', { @_ });
   }
   sub ListStreamingJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::ListStreamingJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::ListStreamingJobs', { @_ });
   }
   sub RetrieveDefaultDefinitionFunctions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::RetrieveDefaultDefinitionFunctions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::RetrieveDefaultDefinitionFunctions', { @_ });
   }
   sub StartStreamingJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::StartStreamingJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::StartStreamingJobs', { @_ });
   }
   sub StopStreamingJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::StopStreamingJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::StopStreamingJobs', { @_ });
   }
   sub TestFunctions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::TestFunctions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::TestFunctions', { @_ });
   }
   sub TestInputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::TestInputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::TestInputs', { @_ });
   }
   sub TestOutputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::TestOutputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::TestOutputs', { @_ });
   }
   sub UpdateFunctions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::UpdateFunctions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::UpdateFunctions', { @_ });
   }
   sub UpdateInputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::UpdateInputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::UpdateInputs', { @_ });
   }
   sub UpdateOutputs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::UpdateOutputs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::UpdateOutputs', { @_ });
   }
   sub UpdateStreamingJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::UpdateStreamingJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::UpdateStreamingJobs', { @_ });
   }
   sub UpdateTransformations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StreamAnalyticsManagement::UpdateTransformations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StreamAnalyticsManagement::UpdateTransformations', { @_ });
   }
 
   sub operations { qw/CreateOrReplaceFunctions CreateOrReplaceInputs CreateOrReplaceOutputs CreateOrReplaceStreamingJobs CreateOrReplaceTransformations DeleteFunctions DeleteInputs DeleteOutputs DeleteStreamingJobs GetFunctions GetInputs GetOutputs GetStreamingJobs GetTransformations ListByResourceGroupStreamingJobs ListByStreamingJobFunctions ListByStreamingJobInputs ListByStreamingJobOutputs ListOperations ListQuotasSubscriptions ListStreamingJobs RetrieveDefaultDefinitionFunctions StartStreamingJobs StopStreamingJobs TestFunctions TestInputs TestOutputs UpdateFunctions UpdateInputs UpdateOutputs UpdateStreamingJobs UpdateTransformations / }

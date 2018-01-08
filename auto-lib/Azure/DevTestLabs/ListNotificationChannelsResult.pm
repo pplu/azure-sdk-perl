@@ -1,7 +1,6 @@
 package Azure::DevTestLabs::ListNotificationChannelsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLabs::NotificationChannel]'  );
+  has error => (is => 'ro', isa => 'Azure::DevTestLabs::CloudErrorBody'  );
 
 1;

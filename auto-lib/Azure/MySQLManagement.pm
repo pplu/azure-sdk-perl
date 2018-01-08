@@ -1,214 +1,97 @@
 package Azure::MySQLManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::CreateOrUpdateConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::CreateOrUpdateConfigurations', { @_ });
   }
   sub CreateOrUpdateDatabases {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::CreateOrUpdateDatabases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::CreateOrUpdateDatabases', { @_ });
   }
   sub CreateOrUpdateFirewallRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::CreateOrUpdateFirewallRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::CreateOrUpdateFirewallRules', { @_ });
   }
   sub CreateOrUpdateServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::CreateOrUpdateServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub CreateOrUpdateVirtualNetworkRules {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::CreateOrUpdateVirtualNetworkRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::CreateOrUpdateServers', { @_ });
   }
   sub DeleteDatabases {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::DeleteDatabases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::DeleteDatabases', { @_ });
   }
   sub DeleteFirewallRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::DeleteFirewallRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::DeleteFirewallRules', { @_ });
   }
   sub DeleteServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::DeleteServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DeleteVirtualNetworkRules {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::DeleteVirtualNetworkRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::DeleteServers', { @_ });
   }
   sub ExecuteCheckNameAvailability {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ExecuteCheckNameAvailability', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ExecuteCheckNameAvailability', { @_ });
   }
   sub GetConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::GetConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::GetConfigurations', { @_ });
   }
   sub GetDatabases {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::GetDatabases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::GetDatabases', { @_ });
   }
   sub GetFirewallRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::GetFirewallRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::GetFirewallRules', { @_ });
   }
   sub GetServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::GetServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetVirtualNetworkRules {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::GetVirtualNetworkRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::GetServers', { @_ });
   }
   sub ListByResourceGroupServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListByResourceGroupServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ListByResourceGroupServers', { @_ });
   }
   sub ListByServerConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListByServerConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ListByServerConfigurations', { @_ });
   }
   sub ListByServerDatabases {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListByServerDatabases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ListByServerDatabases', { @_ });
   }
   sub ListByServerFirewallRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListByServerFirewallRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ListByServerFirewallRules', { @_ });
   }
   sub ListByServerLogFiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListByServerLogFiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListByServerVirtualNetworkRules {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListByServerVirtualNetworkRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ListByServerLogFiles', { @_ });
   }
   sub ListLocationBasedPerformanceTier {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListLocationBasedPerformanceTier', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ListLocationBasedPerformanceTier', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::MySQLManagement::ListOperations', { @_ });
   }
   sub ListPerformanceTiers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListPerformanceTiers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ListPerformanceTiers', { @_ });
   }
   sub ListServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::ListServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::ListServers', { @_ });
   }
   sub UpdateServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MySQLManagement::UpdateServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MySQLManagement::UpdateServers', { @_ });
   }
 
-  sub operations { qw/CreateOrUpdateConfigurations CreateOrUpdateDatabases CreateOrUpdateFirewallRules CreateOrUpdateServers CreateOrUpdateVirtualNetworkRules DeleteDatabases DeleteFirewallRules DeleteServers DeleteVirtualNetworkRules ExecuteCheckNameAvailability GetConfigurations GetDatabases GetFirewallRules GetServers GetVirtualNetworkRules ListByResourceGroupServers ListByServerConfigurations ListByServerDatabases ListByServerFirewallRules ListByServerLogFiles ListByServerVirtualNetworkRules ListLocationBasedPerformanceTier ListOperations ListPerformanceTiers ListServers UpdateServers / }
+  sub operations { qw/CreateOrUpdateConfigurations CreateOrUpdateDatabases CreateOrUpdateFirewallRules CreateOrUpdateServers DeleteDatabases DeleteFirewallRules DeleteServers ExecuteCheckNameAvailability GetConfigurations GetDatabases GetFirewallRules GetServers ListByResourceGroupServers ListByServerConfigurations ListByServerDatabases ListByServerFirewallRules ListByServerLogFiles ListLocationBasedPerformanceTier ListOperations ListPerformanceTiers ListServers UpdateServers / }
 
 1;

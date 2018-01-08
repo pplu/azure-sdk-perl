@@ -1,412 +1,211 @@
 package Azure::ServiceBusManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub BreakPairingDisasterRecoveryConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::BreakPairingDisasterRecoveryConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::BreakPairingDisasterRecoveryConfigs', { @_ });
   }
   sub CheckNameAvailabilityNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CheckNameAvailabilityNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CheckNameAvailabilityNamespaces', { @_ });
   }
   sub CreateOrUpdateAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleNamespaces', { @_ });
   }
   sub CreateOrUpdateAuthorizationRuleQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleQueues', { @_ });
   }
   sub CreateOrUpdateAuthorizationRuleTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateAuthorizationRuleTopics', { @_ });
   }
   sub CreateOrUpdateDisasterRecoveryConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateDisasterRecoveryConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateDisasterRecoveryConfigs', { @_ });
   }
   sub CreateOrUpdateNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateNamespaces', { @_ });
   }
   sub CreateOrUpdateQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateQueues', { @_ });
   }
   sub CreateOrUpdateRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateRules', { @_ });
   }
   sub CreateOrUpdateSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateSubscriptions', { @_ });
   }
   sub CreateOrUpdateTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::CreateOrUpdateTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::CreateOrUpdateTopics', { @_ });
   }
   sub DeleteAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteAuthorizationRuleNamespaces', { @_ });
   }
   sub DeleteAuthorizationRuleQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteAuthorizationRuleQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteAuthorizationRuleQueues', { @_ });
   }
   sub DeleteAuthorizationRuleTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteAuthorizationRuleTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteAuthorizationRuleTopics', { @_ });
   }
   sub DeleteDisasterRecoveryConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteDisasterRecoveryConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteDisasterRecoveryConfigs', { @_ });
   }
   sub DeleteNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteNamespaces', { @_ });
   }
   sub DeleteQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteQueues', { @_ });
   }
   sub DeleteRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteRules', { @_ });
   }
   sub DeleteSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteSubscriptions', { @_ });
   }
   sub DeleteTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::DeleteTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::DeleteTopics', { @_ });
   }
   sub FailOverDisasterRecoveryConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::FailOverDisasterRecoveryConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::FailOverDisasterRecoveryConfigs', { @_ });
   }
   sub GetAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetAuthorizationRuleNamespaces', { @_ });
   }
   sub GetAuthorizationRuleQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetAuthorizationRuleQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetAuthorizationRuleQueues', { @_ });
   }
   sub GetAuthorizationRuleTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetAuthorizationRuleTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetAuthorizationRuleTopics', { @_ });
   }
   sub GetDisasterRecoveryConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetDisasterRecoveryConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetDisasterRecoveryConfigs', { @_ });
   }
   sub GetNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetNamespaces', { @_ });
   }
   sub GetQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetQueues', { @_ });
   }
   sub GetRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetRules', { @_ });
   }
   sub GetSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetSubscriptions', { @_ });
   }
   sub GetTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::GetTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::GetTopics', { @_ });
   }
   sub ListAuthorizationRulesNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListAuthorizationRulesNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListAuthorizationRulesNamespaces', { @_ });
   }
   sub ListAuthorizationRulesQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListAuthorizationRulesQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListAuthorizationRulesQueues', { @_ });
   }
   sub ListAuthorizationRulesTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListAuthorizationRulesTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListAuthorizationRulesTopics', { @_ });
   }
   sub ListByNamespaceEventHubs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByNamespaceEventHubs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListByNamespaceEventHubs', { @_ });
   }
   sub ListByNamespaceQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByNamespaceQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListByNamespaceQueues', { @_ });
   }
   sub ListByNamespaceTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByNamespaceTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListByNamespaceTopics', { @_ });
   }
   sub ListByResourceGroupNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByResourceGroupNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListByResourceGroupNamespaces', { @_ });
   }
   sub ListBySkuRegions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListBySkuRegions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListBySkuRegions', { @_ });
   }
   sub ListBySubscriptionsRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListBySubscriptionsRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListBySubscriptionsRules', { @_ });
   }
   sub ListByTopicSubscriptions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListByTopicSubscriptions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListByTopicSubscriptions', { @_ });
   }
   sub ListDisasterRecoveryConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListDisasterRecoveryConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListDisasterRecoveryConfigs', { @_ });
   }
   sub ListKeysNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListKeysNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListKeysNamespaces', { @_ });
   }
   sub ListKeysQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListKeysQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListKeysQueues', { @_ });
   }
   sub ListKeysTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListKeysTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListKeysTopics', { @_ });
   }
   sub ListNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListNamespaces', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ServiceBusManagement::ListOperations', { @_ });
   }
   sub ListPremiumMessagingRegions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::ListPremiumMessagingRegions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::ListPremiumMessagingRegions', { @_ });
   }
   sub RegenerateKeysNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::RegenerateKeysNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::RegenerateKeysNamespaces', { @_ });
   }
   sub RegenerateKeysQueues {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::RegenerateKeysQueues', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::RegenerateKeysQueues', { @_ });
   }
   sub RegenerateKeysTopics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::RegenerateKeysTopics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::RegenerateKeysTopics', { @_ });
   }
   sub UpdateNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceBusManagement::UpdateNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceBusManagement::UpdateNamespaces', { @_ });
   }
 
   sub operations { qw/BreakPairingDisasterRecoveryConfigs CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleQueues CreateOrUpdateAuthorizationRuleTopics CreateOrUpdateDisasterRecoveryConfigs CreateOrUpdateNamespaces CreateOrUpdateQueues CreateOrUpdateRules CreateOrUpdateSubscriptions CreateOrUpdateTopics DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleQueues DeleteAuthorizationRuleTopics DeleteDisasterRecoveryConfigs DeleteNamespaces DeleteQueues DeleteRules DeleteSubscriptions DeleteTopics FailOverDisasterRecoveryConfigs GetAuthorizationRuleNamespaces GetAuthorizationRuleQueues GetAuthorizationRuleTopics GetDisasterRecoveryConfigs GetNamespaces GetQueues GetRules GetSubscriptions GetTopics ListAuthorizationRulesNamespaces ListAuthorizationRulesQueues ListAuthorizationRulesTopics ListByNamespaceEventHubs ListByNamespaceQueues ListByNamespaceTopics ListByResourceGroupNamespaces ListBySkuRegions ListBySubscriptionsRules ListByTopicSubscriptions ListDisasterRecoveryConfigs ListKeysNamespaces ListKeysQueues ListKeysTopics ListNamespaces ListOperations ListPremiumMessagingRegions RegenerateKeysNamespaces RegenerateKeysQueues RegenerateKeysTopics UpdateNamespaces / }

@@ -10,6 +10,13 @@ package Azure::ServiceBusManagement::ListNamespaces;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.ServiceBus/namespaces');
-  class_has _returns => (is => 'ro', default => 'Azure::ServiceBusManagement::ListNamespacesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ServiceBusManagement::ListNamespacesResult',
+    
+      default => 'Azure::ServiceBusManagement::ListNamespacesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

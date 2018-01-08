@@ -1,6 +1,6 @@
 package Azure::TimeSeriesInsights::ListByEnvironmentAccessPoliciesResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::TimeSeriesInsights::AccessPolicyResource]'  );
+  has error => (is => 'ro', isa => 'Azure::TimeSeriesInsights::CloudErrorBody'  );
 
 1;

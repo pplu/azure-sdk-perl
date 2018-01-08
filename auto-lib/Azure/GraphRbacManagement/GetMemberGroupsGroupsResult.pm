@@ -1,6 +1,7 @@
 package Azure::GraphRbacManagement::GetMemberGroupsGroupsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has value => (is => 'ro', isa => 'Str'  );
 
 1;

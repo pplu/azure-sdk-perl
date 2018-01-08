@@ -1,7 +1,6 @@
 package Azure::ConsumptionManagement::ListOperationsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ConsumptionManagement::Operation]'  );
+  has error => (is => 'ro', isa => 'Azure::ConsumptionManagement::ErrorDetails'  );
 
 1;

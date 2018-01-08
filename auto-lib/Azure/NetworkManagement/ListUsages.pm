@@ -13,6 +13,11 @@ package Azure::NetworkManagement::ListUsages;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Network/locations/{location}/usages');
-  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::ListUsagesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::NetworkManagement::ListUsagesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

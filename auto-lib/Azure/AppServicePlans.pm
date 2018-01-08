@@ -1,215 +1,111 @@
 package Azure::AppServicePlans;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::CreateOrUpdateAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::CreateOrUpdateAppServicePlans', { @_ });
   }
   sub CreateOrUpdateVnetRouteAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::CreateOrUpdateVnetRouteAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::CreateOrUpdateVnetRouteAppServicePlans', { @_ });
   }
   sub DeleteAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::DeleteAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::DeleteAppServicePlans', { @_ });
   }
   sub DeleteHybridConnectionAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::DeleteHybridConnectionAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::DeleteHybridConnectionAppServicePlans', { @_ });
   }
   sub DeleteVnetRouteAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::DeleteVnetRouteAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::DeleteVnetRouteAppServicePlans', { @_ });
   }
   sub GetAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::GetAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::GetAppServicePlans', { @_ });
   }
   sub GetHybridConnectionAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::GetHybridConnectionAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::GetHybridConnectionAppServicePlans', { @_ });
   }
   sub GetHybridConnectionPlanLimitAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::GetHybridConnectionPlanLimitAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::GetHybridConnectionPlanLimitAppServicePlans', { @_ });
   }
   sub GetRouteForVnetAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::GetRouteForVnetAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::GetRouteForVnetAppServicePlans', { @_ });
   }
   sub GetVnetFromServerFarmAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::GetVnetFromServerFarmAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::GetVnetFromServerFarmAppServicePlans', { @_ });
   }
   sub GetVnetGatewayAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::GetVnetGatewayAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::GetVnetGatewayAppServicePlans', { @_ });
   }
   sub ListAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListAppServicePlans', { @_ });
   }
   sub ListByResourceGroupAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListByResourceGroupAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListByResourceGroupAppServicePlans', { @_ });
   }
   sub ListCapabilitiesAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListCapabilitiesAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListCapabilitiesAppServicePlans', { @_ });
   }
   sub ListHybridConnectionKeysAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListHybridConnectionKeysAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListHybridConnectionKeysAppServicePlans', { @_ });
   }
   sub ListHybridConnectionsAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListHybridConnectionsAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListHybridConnectionsAppServicePlans', { @_ });
   }
   sub ListMetricDefintionsAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListMetricDefintionsAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListMetricDefintionsAppServicePlans', { @_ });
   }
   sub ListMetricsAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListMetricsAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListMetricsAppServicePlans', { @_ });
   }
   sub ListRoutesForVnetAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListRoutesForVnetAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListRoutesForVnetAppServicePlans', { @_ });
   }
   sub ListVnetsAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListVnetsAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListVnetsAppServicePlans', { @_ });
   }
   sub ListWebAppsAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListWebAppsAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListWebAppsAppServicePlans', { @_ });
   }
   sub ListWebAppsByHybridConnectionAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::ListWebAppsByHybridConnectionAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::ListWebAppsByHybridConnectionAppServicePlans', { @_ });
   }
   sub RebootWorkerAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::RebootWorkerAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::RebootWorkerAppServicePlans', { @_ });
   }
   sub RestartWebAppsAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::RestartWebAppsAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::RestartWebAppsAppServicePlans', { @_ });
   }
   sub UpdateVnetGatewayAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::UpdateVnetGatewayAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::UpdateVnetGatewayAppServicePlans', { @_ });
   }
   sub UpdateVnetRouteAppServicePlans {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppServicePlans::UpdateVnetRouteAppServicePlans', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppServicePlans::UpdateVnetRouteAppServicePlans', { @_ });
   }
 
   sub operations { qw/CreateOrUpdateAppServicePlans CreateOrUpdateVnetRouteAppServicePlans DeleteAppServicePlans DeleteHybridConnectionAppServicePlans DeleteVnetRouteAppServicePlans GetAppServicePlans GetHybridConnectionAppServicePlans GetHybridConnectionPlanLimitAppServicePlans GetRouteForVnetAppServicePlans GetVnetFromServerFarmAppServicePlans GetVnetGatewayAppServicePlans ListAppServicePlans ListByResourceGroupAppServicePlans ListCapabilitiesAppServicePlans ListHybridConnectionKeysAppServicePlans ListHybridConnectionsAppServicePlans ListMetricDefintionsAppServicePlans ListMetricsAppServicePlans ListRoutesForVnetAppServicePlans ListVnetsAppServicePlans ListWebAppsAppServicePlans ListWebAppsByHybridConnectionAppServicePlans RebootWorkerAppServicePlans RestartWebAppsAppServicePlans UpdateVnetGatewayAppServicePlans UpdateVnetRouteAppServicePlans / }

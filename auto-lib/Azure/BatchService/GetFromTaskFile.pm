@@ -37,6 +37,13 @@ package Azure::BatchService::GetFromTaskFile;
   );
 
   class_has _api_uri => (is => 'ro', default => '/jobs/{jobId}/tasks/{taskId}/files/{filePath}');
-  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetFromTaskFileResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::BatchService::GetFromTaskFileResult',
+    
+      default => 'Azure::BatchService::GetFromTaskFileResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

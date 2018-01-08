@@ -7,6 +7,13 @@ package Azure::TrafficManagerManagement::GetDefaultGeographicHierarchies;
   );
 
   class_has _api_uri => (is => 'ro', default => '/providers/Microsoft.Network/trafficManagerGeographicHierarchies/default');
-  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::GetDefaultGeographicHierarchiesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::TrafficManagerManagement::GetDefaultGeographicHierarchiesResult',
+    
+      default => 'Azure::TrafficManagerManagement::GetDefaultGeographicHierarchiesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

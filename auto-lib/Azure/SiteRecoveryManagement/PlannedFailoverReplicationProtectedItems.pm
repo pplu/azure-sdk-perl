@@ -28,6 +28,13 @@ package Azure::SiteRecoveryManagement::PlannedFailoverReplicationProtectedItems;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationFabrics/{fabricName}/replicationProtectionContainers/{protectionContainerName}/replicationProtectedItems/{replicatedProtectedItemName}/plannedFailover');
-  class_has _returns => (is => 'ro', default => 'Azure::SiteRecoveryManagement::PlannedFailoverReplicationProtectedItemsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::SiteRecoveryManagement::PlannedFailoverReplicationProtectedItemsResult',
+    
+      202 => undef,
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

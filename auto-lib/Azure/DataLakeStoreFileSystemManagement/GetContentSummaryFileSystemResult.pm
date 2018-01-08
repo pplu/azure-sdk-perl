@@ -1,6 +1,6 @@
 package Azure::DataLakeStoreFileSystemManagement::GetContentSummaryFileSystemResult;
   use Moose;
 
-  has ContentSummary => (is => 'ro', isa => 'Azure::DataLakeStoreFileSystemManagement::ContentSummary'  );
+  has RemoteException => (is => 'ro', isa => 'Azure::DataLakeStoreFileSystemManagement::AdlsRemoteException'  );
 
 1;

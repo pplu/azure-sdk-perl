@@ -1,6 +1,6 @@
 package Azure::KeyVault::verifyResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'Bool'  );
+  has error => (is => 'ro', isa => 'Azure::KeyVault::Error'  );
 
 1;

@@ -1,6 +1,7 @@
 package Azure::ServiceFabricManagement::ListServiceResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricManagement::ServiceResource]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -19,6 +19,13 @@ package Azure::NetworkManagement::GetAzureReachabilityReportNetworkWatchers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/networkWatchers/{networkWatcherName}/azureReachabilityReport');
-  class_has _returns => (is => 'ro', default => 'Azure::NetworkManagement::GetAzureReachabilityReportNetworkWatchersResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::NetworkManagement::GetAzureReachabilityReportNetworkWatchersResult',
+    
+      202 => 'Azure::NetworkManagement::GetAzureReachabilityReportNetworkWatchersResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

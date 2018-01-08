@@ -1,84 +1,47 @@
 package Azure::MediaServicesManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckNameAvailabilityMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::CheckNameAvailabilityMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::CheckNameAvailabilityMediaService', { @_ });
   }
   sub CreateMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::CreateMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::CreateMediaService', { @_ });
   }
   sub DeleteMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::DeleteMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::DeleteMediaService', { @_ });
   }
   sub GetMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::GetMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::GetMediaService', { @_ });
   }
   sub ListByResourceGroupMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListByResourceGroupMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::ListByResourceGroupMediaService', { @_ });
   }
   sub ListKeysMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListKeysMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::ListKeysMediaService', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::MediaServicesManagement::ListOperations', { @_ });
   }
   sub RegenerateKeyMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::RegenerateKeyMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::RegenerateKeyMediaService', { @_ });
   }
   sub SyncStorageKeysMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::SyncStorageKeysMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::SyncStorageKeysMediaService', { @_ });
   }
   sub UpdateMediaService {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MediaServicesManagement::UpdateMediaService', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MediaServicesManagement::UpdateMediaService', { @_ });
   }
 
   sub operations { qw/CheckNameAvailabilityMediaService CreateMediaService DeleteMediaService GetMediaService ListByResourceGroupMediaService ListKeysMediaService ListOperations RegenerateKeyMediaService SyncStorageKeysMediaService UpdateMediaService / }

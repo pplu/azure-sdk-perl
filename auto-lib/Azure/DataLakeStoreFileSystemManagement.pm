@@ -1,122 +1,99 @@
 package Azure::DataLakeStoreFileSystemManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub AppendFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::AppendFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::AppendFileSystem', { @_ });
   }
   sub CheckAccessFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::CheckAccessFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::CheckAccessFileSystem', { @_ });
   }
   sub ConcatFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::ConcatFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::ConcatFileSystem', { @_ });
   }
   sub ConcurrentAppendFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::ConcurrentAppendFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::ConcurrentAppendFileSystem', { @_ });
   }
   sub CreateFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::CreateFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::CreateFileSystem', { @_ });
   }
   sub DeleteFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::DeleteFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::DeleteFileSystem', { @_ });
   }
   sub FlushFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::FlushFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::FlushFileSystem', { @_ });
   }
   sub GetAclStatusFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::GetAclStatusFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::GetAclStatusFileSystem', { @_ });
   }
   sub GetContentSummaryFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::GetContentSummaryFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::GetContentSummaryFileSystem', { @_ });
   }
   sub GetFileStatusFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::GetFileStatusFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::GetFileStatusFileSystem', { @_ });
   }
   sub ListFileStatusFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::ListFileStatusFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::ListFileStatusFileSystem', { @_ });
   }
   sub MkdirsFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::MkdirsFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::MkdirsFileSystem', { @_ });
   }
   sub ModifyAclEntriesFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::ModifyAclEntriesFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::ModifyAclEntriesFileSystem', { @_ });
   }
   sub MsConcatFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::MsConcatFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::MsConcatFileSystem', { @_ });
   }
   sub OpenFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::OpenFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::OpenFileSystem', { @_ });
   }
   sub RemoveAclEntriesFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::RemoveAclEntriesFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::RemoveAclEntriesFileSystem', { @_ });
   }
   sub RemoveAclFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::RemoveAclFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::RemoveAclFileSystem', { @_ });
   }
   sub RemoveDefaultAclFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::RemoveDefaultAclFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::RemoveDefaultAclFileSystem', { @_ });
   }
   sub RenameFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::RenameFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::RenameFileSystem', { @_ });
   }
   sub SetAclFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::SetAclFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::SetAclFileSystem', { @_ });
   }
   sub SetFileExpiryFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::SetFileExpiryFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::SetFileExpiryFileSystem', { @_ });
   }
   sub SetOwnerFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::SetOwnerFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::SetOwnerFileSystem', { @_ });
   }
   sub SetPermissionFileSystem {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeStoreFileSystemManagement::SetPermissionFileSystem', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeStoreFileSystemManagement::SetPermissionFileSystem', { @_ });
   }
 
   sub operations { qw/AppendFileSystem CheckAccessFileSystem ConcatFileSystem ConcurrentAppendFileSystem CreateFileSystem DeleteFileSystem FlushFileSystem GetAclStatusFileSystem GetContentSummaryFileSystem GetFileStatusFileSystem ListFileStatusFileSystem MkdirsFileSystem ModifyAclEntriesFileSystem MsConcatFileSystem OpenFileSystem RemoveAclEntriesFileSystem RemoveAclFileSystem RemoveDefaultAclFileSystem RenameFileSystem SetAclFileSystem SetFileExpiryFileSystem SetOwnerFileSystem SetPermissionFileSystem / }

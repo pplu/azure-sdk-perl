@@ -1,6 +1,6 @@
 package Azure::LogAnalytics::ListByResourceGroupSolutionsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::LogAnalytics::Solution]'  );
+  has error => (is => 'ro', isa => 'Azure::LogAnalytics::ListByResourceGroupSolutionsResult_error'  );
 
 1;

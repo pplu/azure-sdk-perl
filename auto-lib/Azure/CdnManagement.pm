@@ -1,270 +1,143 @@
 package Azure::CdnManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckNameAvailability {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CheckNameAvailability', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CdnManagement::CheckNameAvailability', { @_ });
   }
   sub CreateCustomDomains {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CreateCustomDomains', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::CreateCustomDomains', { @_ });
   }
   sub CreateEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CreateEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::CreateEndpoints', { @_ });
   }
   sub CreateProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::CreateProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::CreateProfiles', { @_ });
   }
   sub DeleteCustomDomains {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteCustomDomains', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::DeleteCustomDomains', { @_ });
   }
   sub DeleteEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::DeleteEndpoints', { @_ });
   }
   sub DeleteProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DeleteProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::DeleteProfiles', { @_ });
   }
   sub DisableCustomHttpsCustomDomains {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::DisableCustomHttpsCustomDomains', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::DisableCustomHttpsCustomDomains', { @_ });
   }
   sub EnableCustomHttpsCustomDomains {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::EnableCustomHttpsCustomDomains', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::EnableCustomHttpsCustomDomains', { @_ });
   }
   sub GenerateSsoUriProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::GenerateSsoUriProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::GenerateSsoUriProfiles', { @_ });
   }
   sub GetCustomDomains {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::GetCustomDomains', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::GetCustomDomains', { @_ });
   }
   sub GetEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::GetEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::GetEndpoints', { @_ });
   }
   sub GetOrigins {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::GetOrigins', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::GetOrigins', { @_ });
   }
   sub GetProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::GetProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::GetProfiles', { @_ });
   }
   sub ListByEndpointCustomDomains {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListByEndpointCustomDomains', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListByEndpointCustomDomains', { @_ });
   }
   sub ListByEndpointOrigins {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListByEndpointOrigins', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListByEndpointOrigins', { @_ });
   }
   sub ListByProfileEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListByProfileEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListByProfileEndpoints', { @_ });
   }
   sub ListByResourceGroupProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListByResourceGroupProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListByResourceGroupProfiles', { @_ });
   }
   sub ListEdgeNodes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListEdgeNodes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CdnManagement::ListEdgeNodes', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CdnManagement::ListOperations', { @_ });
   }
   sub ListProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListProfiles', { @_ });
   }
   sub ListResourceUsage {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListResourceUsage', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListResourceUsage', { @_ });
   }
   sub ListResourceUsageEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListResourceUsageEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListResourceUsageEndpoints', { @_ });
   }
   sub ListResourceUsageProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListResourceUsageProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListResourceUsageProfiles', { @_ });
   }
   sub ListSupportedOptimizationTypesProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ListSupportedOptimizationTypesProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ListSupportedOptimizationTypesProfiles', { @_ });
   }
   sub LoadContentEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::LoadContentEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::LoadContentEndpoints', { @_ });
   }
   sub PurgeContentEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::PurgeContentEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::PurgeContentEndpoints', { @_ });
   }
   sub StartEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::StartEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::StartEndpoints', { @_ });
   }
   sub StopEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::StopEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::StopEndpoints', { @_ });
   }
   sub UpdateEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::UpdateEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::UpdateEndpoints', { @_ });
   }
   sub UpdateOrigins {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::UpdateOrigins', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::UpdateOrigins', { @_ });
   }
   sub UpdateProfiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::UpdateProfiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::UpdateProfiles', { @_ });
   }
   sub ValidateCustomDomainEndpoints {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ValidateCustomDomainEndpoints', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ValidateCustomDomainEndpoints', { @_ });
   }
   sub ValidateProbe {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CdnManagement::ValidateProbe', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CdnManagement::ValidateProbe', { @_ });
   }
 
   sub operations { qw/CheckNameAvailability CreateCustomDomains CreateEndpoints CreateProfiles DeleteCustomDomains DeleteEndpoints DeleteProfiles DisableCustomHttpsCustomDomains EnableCustomHttpsCustomDomains GenerateSsoUriProfiles GetCustomDomains GetEndpoints GetOrigins GetProfiles ListByEndpointCustomDomains ListByEndpointOrigins ListByProfileEndpoints ListByResourceGroupProfiles ListEdgeNodes ListOperations ListProfiles ListResourceUsage ListResourceUsageEndpoints ListResourceUsageProfiles ListSupportedOptimizationTypesProfiles LoadContentEndpoints PurgeContentEndpoints StartEndpoints StopEndpoints UpdateEndpoints UpdateOrigins UpdateProfiles ValidateCustomDomainEndpoints ValidateProbe / }

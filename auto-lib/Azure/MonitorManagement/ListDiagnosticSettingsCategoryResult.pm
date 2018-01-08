@@ -1,6 +1,7 @@
 package Azure::MonitorManagement::ListDiagnosticSettingsCategoryResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::MonitorManagement::DiagnosticSettingsCategoryResource]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

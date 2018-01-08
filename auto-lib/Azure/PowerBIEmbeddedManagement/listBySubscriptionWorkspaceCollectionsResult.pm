@@ -1,6 +1,9 @@
 package Azure::PowerBIEmbeddedManagement::listBySubscriptionWorkspaceCollectionsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::PowerBIEmbeddedManagement::WorkspaceCollection]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has details => (is => 'ro', isa => 'ArrayRef[Azure::PowerBIEmbeddedManagement::ErrorDetail]'  );
+  has message => (is => 'ro', isa => 'Str'  );
+  has target => (is => 'ro', isa => 'Str'  );
 
 1;

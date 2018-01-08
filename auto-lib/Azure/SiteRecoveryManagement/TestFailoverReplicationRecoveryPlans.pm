@@ -22,6 +22,13 @@ package Azure::SiteRecoveryManagement::TestFailoverReplicationRecoveryPlans;
   );
 
   class_has _api_uri => (is => 'ro', default => '/Subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.RecoveryServices/vaults/{resourceName}/replicationRecoveryPlans/{recoveryPlanName}/testFailover');
-  class_has _returns => (is => 'ro', default => 'Azure::SiteRecoveryManagement::TestFailoverReplicationRecoveryPlansResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::SiteRecoveryManagement::TestFailoverReplicationRecoveryPlansResult',
+    
+      202 => undef,
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

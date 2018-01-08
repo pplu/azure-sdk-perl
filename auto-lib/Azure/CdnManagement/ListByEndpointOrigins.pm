@@ -19,6 +19,13 @@ package Azure::CdnManagement::ListByEndpointOrigins;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/endpoints/{endpointName}/origins');
-  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::ListByEndpointOriginsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::CdnManagement::ListByEndpointOriginsResult',
+    
+      default => 'Azure::CdnManagement::ListByEndpointOriginsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

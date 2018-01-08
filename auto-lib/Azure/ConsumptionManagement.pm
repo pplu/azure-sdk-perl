@@ -1,17 +1,15 @@
 package Azure::ConsumptionManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ConsumptionManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ConsumptionManagement::ListOperations', { @_ });
   }
   sub ListUsageDetails {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ConsumptionManagement::ListUsageDetails', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ConsumptionManagement::ListUsageDetails', { @_ });
   }
 
   sub operations { qw/ListOperations ListUsageDetails / }

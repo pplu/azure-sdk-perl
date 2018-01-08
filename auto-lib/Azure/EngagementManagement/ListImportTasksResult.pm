@@ -1,7 +1,6 @@
 package Azure::EngagementManagement::ListImportTasksResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::EngagementManagement::importTaskResult]'  );
+  has error => (is => 'ro', isa => 'Azure::EngagementManagement::ListImportTasksResult_error'  );
 
 1;

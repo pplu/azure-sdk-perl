@@ -10,6 +10,13 @@ package Azure::CognitiveFace::IdentifyFace;
   );
 
   class_has _api_uri => (is => 'ro', default => '/identify');
-  class_has _returns => (is => 'ro', default => 'Azure::CognitiveFace::IdentifyFaceResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::CognitiveFace::IdentifyFaceResult',
+    
+      default => 'Azure::CognitiveFace::IdentifyFaceResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

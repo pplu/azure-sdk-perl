@@ -1,6 +1,6 @@
 package Azure::CognitiveServicesManagement::ListSkusAccountsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::CognitiveServicesManagement::CognitiveServicesResourceAndSku]'  );
+  has error => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::ErrorBody'  );
 
 1;

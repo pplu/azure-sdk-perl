@@ -1,900 +1,455 @@
 package Azure::AutomationManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateDscCompilationJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateDscCompilationJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateDscCompilationJob', { @_ });
   }
   sub CreateJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateJob', { @_ });
   }
   sub CreateJobSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateJobSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateJobSchedule', { @_ });
   }
   sub CreateOrUpdateAutomationAccount {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateAutomationAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateAutomationAccount', { @_ });
   }
   sub CreateOrUpdateCertificate {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateCertificate', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateCertificate', { @_ });
   }
   sub CreateOrUpdateConnection {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateConnection', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateConnection', { @_ });
   }
   sub CreateOrUpdateConnectionType {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateConnectionType', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateConnectionType', { @_ });
   }
   sub CreateOrUpdateCredential {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateCredential', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateCredential', { @_ });
   }
   sub CreateOrUpdateDscConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateDscConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateDscConfiguration', { @_ });
   }
   sub CreateOrUpdateDscNodeConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateDscNodeConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateDscNodeConfiguration', { @_ });
   }
   sub CreateOrUpdateModule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateModule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateModule', { @_ });
   }
   sub CreateOrUpdateRunbook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateRunbook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateRunbook', { @_ });
   }
   sub CreateOrUpdateRunbookDraft {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateRunbookDraft', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateRunbookDraft', { @_ });
   }
   sub CreateOrUpdateSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateSchedule', { @_ });
   }
   sub CreateOrUpdateVariable {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateVariable', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateVariable', { @_ });
   }
   sub CreateOrUpdateWebhook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateOrUpdateWebhook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateOrUpdateWebhook', { @_ });
   }
   sub CreateTestJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::CreateTestJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::CreateTestJobs', { @_ });
   }
   sub DeleteAutomationAccount {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteAutomationAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteAutomationAccount', { @_ });
   }
   sub DeleteCertificate {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteCertificate', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteCertificate', { @_ });
   }
   sub DeleteConnection {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteConnection', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteConnection', { @_ });
   }
   sub DeleteConnectionType {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteConnectionType', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteConnectionType', { @_ });
   }
   sub DeleteCredential {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteCredential', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteCredential', { @_ });
   }
   sub DeleteDscConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteDscConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteDscConfiguration', { @_ });
   }
   sub DeleteDscNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteDscNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteDscNode', { @_ });
   }
   sub DeleteDscNodeConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteDscNodeConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteDscNodeConfiguration', { @_ });
   }
   sub DeleteHybridRunbookWorkerGroup {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteHybridRunbookWorkerGroup', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteHybridRunbookWorkerGroup', { @_ });
   }
   sub DeleteJobSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteJobSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteJobSchedule', { @_ });
   }
   sub DeleteModule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteModule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteModule', { @_ });
   }
   sub DeleteRunbook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteRunbook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteRunbook', { @_ });
   }
   sub DeleteSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteSchedule', { @_ });
   }
   sub DeleteVariable {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteVariable', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteVariable', { @_ });
   }
   sub DeleteWebhook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::DeleteWebhook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::DeleteWebhook', { @_ });
   }
   sub GenerateUriWebhook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GenerateUriWebhook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GenerateUriWebhook', { @_ });
   }
   sub GetActivity {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetActivity', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetActivity', { @_ });
   }
   sub GetAgentRegistrationInformation {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetAgentRegistrationInformation', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetAgentRegistrationInformation', { @_ });
   }
   sub GetAutomationAccount {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetAutomationAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetAutomationAccount', { @_ });
   }
   sub GetCertificate {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetCertificate', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetCertificate', { @_ });
   }
   sub GetConnection {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetConnection', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetConnection', { @_ });
   }
   sub GetConnectionType {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetConnectionType', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetConnectionType', { @_ });
   }
   sub GetContentDscConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetContentDscConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetContentDscConfiguration', { @_ });
   }
   sub GetContentNodeReports {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetContentNodeReports', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetContentNodeReports', { @_ });
   }
   sub GetContentRunbook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetContentRunbook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetContentRunbook', { @_ });
   }
   sub GetContentRunbookDraft {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetContentRunbookDraft', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetContentRunbookDraft', { @_ });
   }
   sub GetCredential {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetCredential', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetCredential', { @_ });
   }
   sub GetDscCompilationJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetDscCompilationJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetDscCompilationJob', { @_ });
   }
   sub GetDscConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetDscConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetDscConfiguration', { @_ });
   }
   sub GetDscNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetDscNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetDscNode', { @_ });
   }
   sub GetDscNodeConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetDscNodeConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetDscNodeConfiguration', { @_ });
   }
   sub GetHybridRunbookWorkerGroup {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetHybridRunbookWorkerGroup', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetHybridRunbookWorkerGroup', { @_ });
   }
   sub GetJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetJob', { @_ });
   }
   sub GetJobSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetJobSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetJobSchedule', { @_ });
   }
   sub GetJobStream {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetJobStream', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetJobStream', { @_ });
   }
   sub GetModule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetModule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetModule', { @_ });
   }
   sub GetNodeReports {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetNodeReports', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetNodeReports', { @_ });
   }
   sub GetOutputJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetOutputJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetOutputJob', { @_ });
   }
   sub GetRunbook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetRunbook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetRunbook', { @_ });
   }
   sub GetRunbookContentJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetRunbookContentJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetRunbookContentJob', { @_ });
   }
   sub GetRunbookDraft {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetRunbookDraft', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetRunbookDraft', { @_ });
   }
   sub GetSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetSchedule', { @_ });
   }
   sub GetStreamDscCompilationJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetStreamDscCompilationJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetStreamDscCompilationJob', { @_ });
   }
   sub GetTestJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetTestJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetTestJobs', { @_ });
   }
   sub GetTestJobStreams {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetTestJobStreams', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetTestJobStreams', { @_ });
   }
   sub GetVariable {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetVariable', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetVariable', { @_ });
   }
   sub GetWebhook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::GetWebhook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::GetWebhook', { @_ });
   }
   sub ListAutomationAccount {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListAutomationAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListAutomationAccount', { @_ });
   }
   sub ListByAutomationAccountCertificate {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountCertificate', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountCertificate', { @_ });
   }
   sub ListByAutomationAccountConnection {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountConnection', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountConnection', { @_ });
   }
   sub ListByAutomationAccountConnectionType {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountConnectionType', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountConnectionType', { @_ });
   }
   sub ListByAutomationAccountCredential {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountCredential', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountCredential', { @_ });
   }
   sub ListByAutomationAccountDscCompilationJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountDscCompilationJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountDscCompilationJob', { @_ });
   }
   sub ListByAutomationAccountDscConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountDscConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountDscConfiguration', { @_ });
   }
   sub ListByAutomationAccountDscNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountDscNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountDscNode', { @_ });
   }
   sub ListByAutomationAccountDscNodeConfiguration {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountDscNodeConfiguration', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountDscNodeConfiguration', { @_ });
   }
   sub ListByAutomationAccountHybridRunbookWorkerGroup {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountHybridRunbookWorkerGroup', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountHybridRunbookWorkerGroup', { @_ });
   }
   sub ListByAutomationAccountJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountJob', { @_ });
   }
   sub ListByAutomationAccountJobSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountJobSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountJobSchedule', { @_ });
   }
   sub ListByAutomationAccountModule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountModule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountModule', { @_ });
   }
   sub ListByAutomationAccountRunbook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountRunbook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountRunbook', { @_ });
   }
   sub ListByAutomationAccountSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountSchedule', { @_ });
   }
   sub ListByAutomationAccountStatistics {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountStatistics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountStatistics', { @_ });
   }
   sub ListByAutomationAccountUsages {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountUsages', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountUsages', { @_ });
   }
   sub ListByAutomationAccountVariable {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountVariable', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountVariable', { @_ });
   }
   sub ListByAutomationAccountWebhook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByAutomationAccountWebhook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByAutomationAccountWebhook', { @_ });
   }
   sub ListByJobJobStream {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByJobJobStream', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByJobJobStream', { @_ });
   }
   sub ListByModuleActivity {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByModuleActivity', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByModuleActivity', { @_ });
   }
   sub ListByNodeNodeReports {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByNodeNodeReports', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByNodeNodeReports', { @_ });
   }
   sub ListByResourceGroupAutomationAccount {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByResourceGroupAutomationAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByResourceGroupAutomationAccount', { @_ });
   }
   sub ListByTestJobTestJobStreams {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByTestJobTestJobStreams', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByTestJobTestJobStreams', { @_ });
   }
   sub ListByTypeFields {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListByTypeFields', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListByTypeFields', { @_ });
   }
   sub ListFieldsByModuleAndTypeObjectDataTypes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListFieldsByModuleAndTypeObjectDataTypes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListFieldsByModuleAndTypeObjectDataTypes', { @_ });
   }
   sub ListFieldsByTypeObjectDataTypes {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListFieldsByTypeObjectDataTypes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ListFieldsByTypeObjectDataTypes', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AutomationManagement::ListOperations', { @_ });
   }
   sub PublishRunbookDraft {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::PublishRunbookDraft', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::PublishRunbookDraft', { @_ });
   }
   sub RegenerateKeyAgentRegistrationInformation {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::RegenerateKeyAgentRegistrationInformation', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::RegenerateKeyAgentRegistrationInformation', { @_ });
   }
   sub ResumeJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ResumeJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ResumeJob', { @_ });
   }
   sub ResumeTestJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::ResumeTestJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::ResumeTestJobs', { @_ });
   }
   sub StopJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::StopJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::StopJob', { @_ });
   }
   sub StopTestJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::StopTestJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::StopTestJobs', { @_ });
   }
   sub SuspendJob {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::SuspendJob', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::SuspendJob', { @_ });
   }
   sub SuspendTestJobs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::SuspendTestJobs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::SuspendTestJobs', { @_ });
   }
   sub UndoEditRunbookDraft {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UndoEditRunbookDraft', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UndoEditRunbookDraft', { @_ });
   }
   sub UpdateAutomationAccount {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateAutomationAccount', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateAutomationAccount', { @_ });
   }
   sub UpdateCertificate {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateCertificate', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateCertificate', { @_ });
   }
   sub UpdateConnection {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateConnection', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateConnection', { @_ });
   }
   sub UpdateCredential {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateCredential', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateCredential', { @_ });
   }
   sub UpdateDscNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateDscNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateDscNode', { @_ });
   }
   sub UpdateHybridRunbookWorkerGroup {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateHybridRunbookWorkerGroup', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateHybridRunbookWorkerGroup', { @_ });
   }
   sub UpdateModule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateModule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateModule', { @_ });
   }
   sub UpdateRunbook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateRunbook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateRunbook', { @_ });
   }
   sub UpdateSchedule {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateSchedule', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateSchedule', { @_ });
   }
   sub UpdateVariable {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateVariable', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateVariable', { @_ });
   }
   sub UpdateWebhook {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AutomationManagement::UpdateWebhook', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AutomationManagement::UpdateWebhook', { @_ });
   }
 
   sub operations { qw/CreateDscCompilationJob CreateJob CreateJobSchedule CreateOrUpdateAutomationAccount CreateOrUpdateCertificate CreateOrUpdateConnection CreateOrUpdateConnectionType CreateOrUpdateCredential CreateOrUpdateDscConfiguration CreateOrUpdateDscNodeConfiguration CreateOrUpdateModule CreateOrUpdateRunbook CreateOrUpdateRunbookDraft CreateOrUpdateSchedule CreateOrUpdateVariable CreateOrUpdateWebhook CreateTestJobs DeleteAutomationAccount DeleteCertificate DeleteConnection DeleteConnectionType DeleteCredential DeleteDscConfiguration DeleteDscNode DeleteDscNodeConfiguration DeleteHybridRunbookWorkerGroup DeleteJobSchedule DeleteModule DeleteRunbook DeleteSchedule DeleteVariable DeleteWebhook GenerateUriWebhook GetActivity GetAgentRegistrationInformation GetAutomationAccount GetCertificate GetConnection GetConnectionType GetContentDscConfiguration GetContentNodeReports GetContentRunbook GetContentRunbookDraft GetCredential GetDscCompilationJob GetDscConfiguration GetDscNode GetDscNodeConfiguration GetHybridRunbookWorkerGroup GetJob GetJobSchedule GetJobStream GetModule GetNodeReports GetOutputJob GetRunbook GetRunbookContentJob GetRunbookDraft GetSchedule GetStreamDscCompilationJob GetTestJobs GetTestJobStreams GetVariable GetWebhook ListAutomationAccount ListByAutomationAccountCertificate ListByAutomationAccountConnection ListByAutomationAccountConnectionType ListByAutomationAccountCredential ListByAutomationAccountDscCompilationJob ListByAutomationAccountDscConfiguration ListByAutomationAccountDscNode ListByAutomationAccountDscNodeConfiguration ListByAutomationAccountHybridRunbookWorkerGroup ListByAutomationAccountJob ListByAutomationAccountJobSchedule ListByAutomationAccountModule ListByAutomationAccountRunbook ListByAutomationAccountSchedule ListByAutomationAccountStatistics ListByAutomationAccountUsages ListByAutomationAccountVariable ListByAutomationAccountWebhook ListByJobJobStream ListByModuleActivity ListByNodeNodeReports ListByResourceGroupAutomationAccount ListByTestJobTestJobStreams ListByTypeFields ListFieldsByModuleAndTypeObjectDataTypes ListFieldsByTypeObjectDataTypes ListOperations PublishRunbookDraft RegenerateKeyAgentRegistrationInformation ResumeJob ResumeTestJobs StopJob StopTestJobs SuspendJob SuspendTestJobs UndoEditRunbookDraft UpdateAutomationAccount UpdateCertificate UpdateConnection UpdateCredential UpdateDscNode UpdateHybridRunbookWorkerGroup UpdateModule UpdateRunbook UpdateSchedule UpdateVariable UpdateWebhook / }

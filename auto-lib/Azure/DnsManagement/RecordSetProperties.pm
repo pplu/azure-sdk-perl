@@ -11,7 +11,5 @@ package Azure::DnsManagement::RecordSetProperties;
   has 'SRVRecords' => (is => 'ro', isa => 'ArrayRef[Azure::DnsManagement::SrvRecord]'  );
   has 'TTL' => (is => 'ro', isa => 'Int'  );
   has 'TXTRecords' => (is => 'ro', isa => 'ArrayRef[Azure::DnsManagement::TxtRecord]'  );
-  has 'caaRecords' => (is => 'ro', isa => 'ArrayRef[Azure::DnsManagement::CaaRecord]'  );
-  has 'fqdn' => (is => 'ro', isa => 'Str'  );
   has 'metadata' => (is => 'ro', isa => 'HashRef[Str]'  );
 1;

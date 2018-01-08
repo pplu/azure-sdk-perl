@@ -19,6 +19,13 @@ package Azure::ComputeManagement::RunCommandVirtualMachines;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/virtualMachines/{vmName}/runCommand');
-  class_has _returns => (is => 'ro', default => 'Azure::ComputeManagement::RunCommandVirtualMachinesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ComputeManagement::RunCommandVirtualMachinesResult',
+    
+      202 => undef,
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

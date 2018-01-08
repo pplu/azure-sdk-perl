@@ -1,6 +1,7 @@
 package Azure::MediaServicesManagement::ListByResourceGroupMediaServiceResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::MediaServicesManagement::MediaService]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

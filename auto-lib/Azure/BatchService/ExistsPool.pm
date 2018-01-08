@@ -34,6 +34,15 @@ package Azure::BatchService::ExistsPool;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools/{poolId}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => undef,
+    
+      404 => undef,
+    
+      default => 'Azure::BatchService::ExistsPoolResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'HEAD');
 1;

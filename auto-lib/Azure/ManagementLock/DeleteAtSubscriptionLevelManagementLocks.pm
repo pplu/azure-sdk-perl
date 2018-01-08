@@ -13,6 +13,13 @@ package Azure::ManagementLock::DeleteAtSubscriptionLevelManagementLocks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/locks/{lockName}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => undef,
+    
+      204 => undef,
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

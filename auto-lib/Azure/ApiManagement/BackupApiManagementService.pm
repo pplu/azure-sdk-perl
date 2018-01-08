@@ -19,6 +19,13 @@ package Azure::ApiManagement::BackupApiManagementService;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/backup');
-  class_has _returns => (is => 'ro', default => 'Azure::ApiManagement::BackupApiManagementServiceResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ApiManagement::BackupApiManagementServiceResult',
+    
+      202 => undef,
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

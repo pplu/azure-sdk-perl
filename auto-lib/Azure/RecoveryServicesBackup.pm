@@ -1,39 +1,23 @@
 package Azure::RecoveryServicesBackup;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub GetBackupStorageConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServicesBackup::GetBackupStorageConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::RecoveryServicesBackup::GetBackupStorageConfigs', { @_ });
   }
   sub GetBackupVaultConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServicesBackup::GetBackupVaultConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::RecoveryServicesBackup::GetBackupVaultConfigs', { @_ });
   }
   sub UpdateBackupStorageConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServicesBackup::UpdateBackupStorageConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::RecoveryServicesBackup::UpdateBackupStorageConfigs', { @_ });
   }
   sub UpdateBackupVaultConfigs {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::RecoveryServicesBackup::UpdateBackupVaultConfigs', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::RecoveryServicesBackup::UpdateBackupVaultConfigs', { @_ });
   }
 
   sub operations { qw/GetBackupStorageConfigs GetBackupVaultConfigs UpdateBackupStorageConfigs UpdateBackupVaultConfigs / }
