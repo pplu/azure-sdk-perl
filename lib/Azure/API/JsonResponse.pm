@@ -54,7 +54,10 @@ package Azure::API::JsonResponse;
     
     return $self->error_to_exception($call_object, $response) if ( $response->status >= 300 );
 
-    die "Can't process non 201 or 202 responses" if ($response->status != 201 and $response->status != 202);
+    # We're accepting a 200 response as valid first async response, although it's not documented
+    # because CreateOrUpdateDeployments will also return 200 OK responses with all the appropiate
+    # headers
+    die "Can't process non 200, 201 or 202 responses" if ($response->status != 201 and $response->status != 202 and $response->status != 200);
 
     my $info_url = $response->header('azure-asyncoperation');
     $info_url = $response->header('location') if (not defined $info_url);

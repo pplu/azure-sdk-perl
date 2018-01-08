@@ -322,5 +322,31 @@ my $az = Azure->new(config => {
   cmp_ok($@->code, 'eq', 'InvalidThing');
 }
 
+{
+  my $stubbed_parts = StubCallerAndRequestBuilder->new;
+  my $handled = $az->service('ExampleService', request_builder => $stubbed_parts, caller => $stubbed_parts);
+
+  # Some async calls return a 200 directly. This has been observed in CreateOrUpdateDeployments
+  my $response = $handled->NoReturn(
+    responses => [ {
+      content => '',
+      status => 200,
+      headers => { 'azure-asyncoperation' => 'http://example.com/' },
+    }, {
+      content => '{"status":"Running"}',
+      status => 200,
+      headers => {},
+    }, {
+      content => '{"status":"Succeeded"}',
+      status => 200,
+      headers => {},
+    }
+    ]
+  );
+
+  cmp_ok($handled->caller->calls, '==', 3);
+
+  ok($response, 'Response is trueish if operation succeeds');
+}
 
 done_testing;
