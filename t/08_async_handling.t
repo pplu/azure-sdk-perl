@@ -235,6 +235,40 @@ my $az = Azure->new(config => {
   cmp_ok($response->name, 'eq', 'UNIQUE_ID');
 }
 
+{ 
+  #https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-manager-async-operations.md#create-storage-account-202-with-location-and-retry-after
+  my $stubbed_parts = StubCallerAndRequestBuilder->new;
+  my $handled = $az->service('ExampleService', request_builder => $stubbed_parts, caller => $stubbed_parts);
+
+  my $response = $handled->NoReturn(
+    responses => [ {
+      content => '',
+      status => 201,
+      headers => { 'retry-after' => 15, 'location' => 'https://example.com/URI?api-version=2017-05-10' },
+    },
+    {
+      content => '{ "startTime": "2018-01-03T12:13:24.4695655+00:00", "status": "InProgress", "name": "UNIQUE_ID" }',
+      status => 200,
+      headers => { },
+    },
+    {
+      content => '{"status":"Failed","error":{"code":"DeploymentFailed","message":"Something failed.","details":[{"code":"BadRequest","message":"{\\r\\n  \\"error\\": {\\r\\n    \\"code\\": \\"InvalidParameter\\",\\r\\n    \\"target\\": \\"linuxConfiguration\\",\\r\\n    \\"message\\": \\"Authentication using either SSH or by user name and password must be enabled in Linux profile.\\"\\r\\n  }\\r\\n}"}]}}',
+      status => 200,
+      headers => { },
+    },
+    ]
+  );
+
+  cmp_ok($handled->caller->calls, '==', 3);
+
+  isa_ok($response, 'Azure::API::AsyncOperationResult');
+  cmp_ok($response->status_is_final, '==', 1);
+  cmp_ok($response->has_succeeded, '==', 0);
+  cmp_ok($response->status, 'eq', 'Failed');
+  cmp_ok($response->error->{ message }, 'eq', 'Something failed.');
+  cmp_ok($response->error->{ details }->[0]->{ code }, 'eq', 'BadRequest');
+}
+
 {
   # https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/azure-resource-manager/resource-manager-async-operations.md#create-storage-account-202-with-location-and-retry-after
   my $stubbed_parts = StubCallerAndRequestBuilder->new;
