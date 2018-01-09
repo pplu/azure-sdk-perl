@@ -89,6 +89,7 @@ package Azure::SDK::Builder;
       return $id if ($id eq 'ListSupportedOperations');
       # KeyVault names don't have to be transformed
       return $id if ($self->schema->info->title eq 'KeyVaultClient');
+      return $id if ($self->schema->info->title eq 'Azure Reservation API');
 
       # Cognitive Text Analytics
       return 'KeyPhrases' if ($id eq 'Key Phrases');
@@ -287,7 +288,15 @@ package Azure::SDK::Builder;
       return 'ManagementGroups' if ($title eq 'Management Groups API');
       return 'MachineLearningCompute' if ($title eq 'Machine Learning Compute Management Client');
       return 'CognitiveEntitySearch' if ($title eq 'Entity Search API');
+      return 'Reservation' if ($title eq 'Azure Reservation API');
+      return 'LocationServices' if ($title eq 'Azure Location Based Services Resource Provider');
+      return 'DataMigration' if ($title eq 'Azure Data Migration Service Resource Provider');
+      return 'DataCatalog' if ($title eq 'Azure Data Catalog Resource Provider');
+      return 'DomainServices' if ($title eq 'Domain Services Resource Provider');
+      return 'MLTeamAccountManagement' if ($title eq 'ML Team Account Management Client');
 
+      return $title if ($title eq 'BatchAI');
+      return $title if ($title eq 'PowerBIDedicated');
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'ServerManagement');
       return $title if ($title eq 'BatchService');
