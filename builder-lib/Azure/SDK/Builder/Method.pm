@@ -5,6 +5,7 @@ package Azure::SDK::Builder::Method;
   use Azure::SDK::Builder::MethodArgument;
   use Azure::SDK::Builder::Return;
   use Azure::SDK::Builder::NoReturn;
+  use Azure::SDK::Builder::ReturnsArray;
 
   has name => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);
@@ -123,6 +124,25 @@ package Azure::SDK::Builder::Method;
         my $response = $self->responses->{ $status };
 
         if (defined $response->schema) {
+          if (not $response->schema->isa('Swagger::Schema::RefParameter') and $response->schema->type eq 'array') {
+            warn "array";
+            use Data::Printer;
+            p $response->schema;
+            p $response->schema->items;
+
+            my $list_of;
+            if (defined $response->schema->items->{ type }) {
+              $list_of = $response->schema->items->{ type };
+            } else {
+              $self->root_schema->resolve_path($response->schema->items->{ '$ref' })->object;
+            }
+
+            $responses->{ $status } = Azure::SDK::Builder::ReturnsArray->new(
+              array_of => $list_of,
+            );
+            next;
+          }
+
           my $definition;
           if ($response->schema->isa('Swagger::Schema::RefParameter')) {
             my $ref = $response->schema->ref;
