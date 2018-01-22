@@ -1,7 +1,7 @@
 package Azure::Relay;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckNameAvailabilityNamespaces {
     my $self = shift;

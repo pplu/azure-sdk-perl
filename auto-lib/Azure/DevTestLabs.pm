@@ -1,7 +1,7 @@
 package Azure::DevTestLabs;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub AddDataDiskVirtualMachines {
     my $self = shift;

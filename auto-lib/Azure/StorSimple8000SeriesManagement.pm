@@ -1,7 +1,7 @@
 package Azure::StorSimple8000SeriesManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub AuthorizeForServiceEncryptionKeyRolloverDevices {
     my $self = shift;

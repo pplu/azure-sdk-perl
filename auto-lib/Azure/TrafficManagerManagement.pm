@@ -1,7 +1,7 @@
 package Azure::TrafficManagerManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckTrafficManagerRelativeDnsNameAvailabilityProfiles {
     my $self = shift;
