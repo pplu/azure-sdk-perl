@@ -35,4 +35,25 @@ my $processor = Azure::API::JsonResponse->new;
   cmp_ok($@->code, 'eq', 'SubscriptionNotFound');
 }
 
+{
+  throws_ok(sub {
+      $processor->response_to_result(
+        StubCallObject->new,
+        Azure::Net::APIResponse->new(
+          status => 404,
+          content => '"{\\"error\\":{\\"code\\":\\"ResourceNotFound\\",\\"message\\":\\"The Resource \'Microsoft.DocumentDb/databaseAccounts/xxxx\' under resource group \'xxxxxx\' was not found.\\"}}"',
+          headers => {}
+        )
+      )
+    },
+    'Azure::Exception'
+  );
+  cmp_ok($@->message, 'eq', "The Resource 'Microsoft.DocumentDb/databaseAccounts/xxxx' under resource group 'xxxxxx' was not found.");
+  cmp_ok($@->http_status, '==', 404);
+  cmp_ok($@->code, 'eq', 'ResourceNotFound');
+}
+
+
+
+
 done_testing;
