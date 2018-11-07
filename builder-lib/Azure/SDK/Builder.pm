@@ -98,6 +98,12 @@ package Azure::SDK::Builder;
 
       return 'GetAvailableOperations' if ($id eq 'getAvailableOperations');
 
+      # Cognitive Computer Vision
+      return $id if ($self->schema->info->title eq 'Computer Vision API');
+      return $id if ($self->schema->info->title eq 'Spell Check API');
+
+      return $id if ($id eq 'PublishEvents');
+
       die "Cannot make sense out of operationId $id";
     }
   }
@@ -294,6 +300,19 @@ package Azure::SDK::Builder;
       return 'DataCatalog' if ($title eq 'Azure Data Catalog Resource Provider');
       return 'DomainServices' if ($title eq 'Domain Services Resource Provider');
       return 'MLTeamAccountManagement' if ($title eq 'ML Team Account Management Client');
+      return 'CognitiveWebSearch' if ($title eq 'Web Search API');
+      return 'CognitiveComputerVision' if ($title eq 'Computer Vision API');
+      return 'DomainServices' if ($title eq 'Domain Services Resource Provider');
+      return 'CognitiveImageSearch' if ($title eq 'Image Search API');
+      return 'CognitiveContentModerator' if ($title eq 'Content Moderator Client');
+      return 'CognitiveVideoSearch' if ($title eq 'Video Search API');
+      return 'CognitiveSpellCheck' if ($title eq 'Spell Check API');
+      return 'CognitiveNewsSearch' if ($title eq 'News Search API');
+      return 'CognitiveCustomSearch' if ($title eq 'Custom Search API');
+      return 'CognitiveLUISProgrammatic' if ($title eq 'LUIS Programmatic API');
+      return 'CognitiveLUISRuntime' if ($title eq 'Language Understanding Intelligent Service (LUIS) Endpoint API for running predictions and extracting user intentions and entities from utterances.');
+
+      return 'CommonDefinitions' if ($title eq 'Common Definitions');
 
       return $title if ($title eq 'BatchAI');
       return $title if ($title eq 'PowerBIDedicated');
@@ -305,6 +324,8 @@ package Azure::SDK::Builder;
       return $title if ($title eq 'StorageManagement');
       return $title if ($title eq 'AzureAnalysisServices');
       return $title if ($title eq 'AutomationManagement');
+      return $title if ($title eq 'PowerBIDedicated');
+      return $title if ($title eq 'BatchAI'); 
 
       die "Service '$title' has spaces in it's name. Please correct" if ($title =~ m/ /);
 
