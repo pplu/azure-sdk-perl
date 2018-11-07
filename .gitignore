@@ -1,3 +1,4 @@
 local/
+dzil-local/
 cpanfile.snapshot
 .perl-version
