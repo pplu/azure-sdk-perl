@@ -15,13 +15,15 @@ has caller => (
 );
 has credentials => (
   is => 'rw',
-  does => 'Azure::Credential',
+  isa => duck_type([ 'access_token' ]),
   lazy => 1,
   default => sub {
-    Azure->load_class('Azure::Credentials::AzureADClientCredentials');
-    Azure::Credentials::AzureADClientCredentials->new
+    Azure->load_class('Azure::AD::ClientCredentials');
+    Azure::AD::ClientCredentials->new(
+      resource_id => "https://management.core.windows.net/",
+      ua_agent => 'Azure Perl SDK ' . $Azure::VERSION
+    );
   },
-  #coerce => 1
 );
 has immutable => (
   is => 'rw',

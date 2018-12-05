@@ -8,6 +8,7 @@ requires 'URI::Template';
 requires 'Module::Runtime';
 requires 'Module::Find';
 requires 'Path::Class';
+requires 'Azure::AD::Auth';
 
 requires 'ARGV::Struct';
 requires 'Hash::Flatten';
