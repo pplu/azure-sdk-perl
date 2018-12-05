@@ -1,276 +1,143 @@
 package Azure::Relay;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckNameAvailabilityNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::CheckNameAvailabilityNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::CheckNameAvailabilityNamespaces', { @_ });
   }
   sub CreateOrUpdateAuthorizationRuleHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::CreateOrUpdateAuthorizationRuleHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::CreateOrUpdateAuthorizationRuleHybridConnections', { @_ });
   }
   sub CreateOrUpdateAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::CreateOrUpdateAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::CreateOrUpdateAuthorizationRuleNamespaces', { @_ });
   }
   sub CreateOrUpdateAuthorizationRuleWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::CreateOrUpdateAuthorizationRuleWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::CreateOrUpdateAuthorizationRuleWCFRelays', { @_ });
   }
   sub CreateOrUpdateHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::CreateOrUpdateHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::CreateOrUpdateHybridConnections', { @_ });
   }
   sub CreateOrUpdateNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::CreateOrUpdateNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::CreateOrUpdateNamespaces', { @_ });
   }
   sub CreateOrUpdateWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::CreateOrUpdateWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::CreateOrUpdateWCFRelays', { @_ });
   }
   sub DeleteAuthorizationRuleHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::DeleteAuthorizationRuleHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::DeleteAuthorizationRuleHybridConnections', { @_ });
   }
   sub DeleteAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::DeleteAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::DeleteAuthorizationRuleNamespaces', { @_ });
   }
   sub DeleteAuthorizationRuleWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::DeleteAuthorizationRuleWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::DeleteAuthorizationRuleWCFRelays', { @_ });
   }
   sub DeleteHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::DeleteHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::DeleteHybridConnections', { @_ });
   }
   sub DeleteNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::DeleteNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::DeleteNamespaces', { @_ });
   }
   sub DeleteWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::DeleteWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::DeleteWCFRelays', { @_ });
   }
   sub GetAuthorizationRuleHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::GetAuthorizationRuleHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::GetAuthorizationRuleHybridConnections', { @_ });
   }
   sub GetAuthorizationRuleNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::GetAuthorizationRuleNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::GetAuthorizationRuleNamespaces', { @_ });
   }
   sub GetAuthorizationRuleWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::GetAuthorizationRuleWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::GetAuthorizationRuleWCFRelays', { @_ });
   }
   sub GetHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::GetHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::GetHybridConnections', { @_ });
   }
   sub GetNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::GetNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::GetNamespaces', { @_ });
   }
   sub GetWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::GetWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::GetWCFRelays', { @_ });
   }
   sub ListAuthorizationRulesHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListAuthorizationRulesHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListAuthorizationRulesHybridConnections', { @_ });
   }
   sub ListAuthorizationRulesNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListAuthorizationRulesNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListAuthorizationRulesNamespaces', { @_ });
   }
   sub ListAuthorizationRulesWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListAuthorizationRulesWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListAuthorizationRulesWCFRelays', { @_ });
   }
   sub ListByNamespaceHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListByNamespaceHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListByNamespaceHybridConnections', { @_ });
   }
   sub ListByNamespaceWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListByNamespaceWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListByNamespaceWCFRelays', { @_ });
   }
   sub ListByResourceGroupNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListByResourceGroupNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListByResourceGroupNamespaces', { @_ });
   }
   sub ListKeysHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListKeysHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListKeysHybridConnections', { @_ });
   }
   sub ListKeysNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListKeysNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListKeysNamespaces', { @_ });
   }
   sub ListKeysWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListKeysWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListKeysWCFRelays', { @_ });
   }
   sub ListNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::ListNamespaces', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Relay::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Relay::ListOperations', { @_ });
   }
   sub RegenerateKeysHybridConnections {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::RegenerateKeysHybridConnections', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::RegenerateKeysHybridConnections', { @_ });
   }
   sub RegenerateKeysNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::RegenerateKeysNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::RegenerateKeysNamespaces', { @_ });
   }
   sub RegenerateKeysWCFRelays {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::RegenerateKeysWCFRelays', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::RegenerateKeysWCFRelays', { @_ });
   }
   sub UpdateNamespaces {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Relay::UpdateNamespaces', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Relay::UpdateNamespaces', { @_ });
   }
 
   sub operations { qw/CheckNameAvailabilityNamespaces CreateOrUpdateAuthorizationRuleHybridConnections CreateOrUpdateAuthorizationRuleNamespaces CreateOrUpdateAuthorizationRuleWCFRelays CreateOrUpdateHybridConnections CreateOrUpdateNamespaces CreateOrUpdateWCFRelays DeleteAuthorizationRuleHybridConnections DeleteAuthorizationRuleNamespaces DeleteAuthorizationRuleWCFRelays DeleteHybridConnections DeleteNamespaces DeleteWCFRelays GetAuthorizationRuleHybridConnections GetAuthorizationRuleNamespaces GetAuthorizationRuleWCFRelays GetHybridConnections GetNamespaces GetWCFRelays ListAuthorizationRulesHybridConnections ListAuthorizationRulesNamespaces ListAuthorizationRulesWCFRelays ListByNamespaceHybridConnections ListByNamespaceWCFRelays ListByResourceGroupNamespaces ListKeysHybridConnections ListKeysNamespaces ListKeysWCFRelays ListNamespaces ListOperations RegenerateKeysHybridConnections RegenerateKeysNamespaces RegenerateKeysWCFRelays UpdateNamespaces / }

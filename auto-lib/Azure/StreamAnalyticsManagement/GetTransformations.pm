@@ -19,6 +19,11 @@ package Azure::StreamAnalyticsManagement::GetTransformations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.StreamAnalytics/streamingjobs/{jobName}/transformations/{transformationName}');
-  class_has _returns => (is => 'ro', default => 'Azure::StreamAnalyticsManagement::GetTransformationsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::StreamAnalyticsManagement::GetTransformationsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -1,7 +1,6 @@
 package Azure::DevTestLabs::ListServiceRunnersResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLabs::ServiceRunner]'  );
+  has error => (is => 'ro', isa => 'Azure::DevTestLabs::CloudErrorBody'  );
 
 1;

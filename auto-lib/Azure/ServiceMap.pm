@@ -1,207 +1,107 @@
 package Azure::ServiceMap;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateMachineGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::CreateMachineGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::CreateMachineGroups', { @_ });
   }
   sub DeleteMachineGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::DeleteMachineGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::DeleteMachineGroups', { @_ });
   }
   sub GenerateMaps {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GenerateMaps', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GenerateMaps', { @_ });
   }
   sub GetClientGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetClientGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetClientGroups', { @_ });
   }
   sub GetLivenessMachines {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetLivenessMachines', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetLivenessMachines', { @_ });
   }
   sub GetLivenessPorts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetLivenessPorts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetLivenessPorts', { @_ });
   }
   sub GetLivenessProcesses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetLivenessProcesses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetLivenessProcesses', { @_ });
   }
   sub GetMachineGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetMachineGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetMachineGroups', { @_ });
   }
   sub GetMachines {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetMachines', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetMachines', { @_ });
   }
   sub GetMachinesSummaries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetMachinesSummaries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetMachinesSummaries', { @_ });
   }
   sub GetMembersCountClientGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetMembersCountClientGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetMembersCountClientGroups', { @_ });
   }
   sub GetPorts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetPorts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetPorts', { @_ });
   }
   sub GetProcesses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::GetProcesses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::GetProcesses', { @_ });
   }
   sub ListAcceptingPortsProcesses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListAcceptingPortsProcesses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListAcceptingPortsProcesses', { @_ });
   }
   sub ListAcceptingProcessesPorts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListAcceptingProcessesPorts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListAcceptingProcessesPorts', { @_ });
   }
   sub ListByWorkspaceMachineGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListByWorkspaceMachineGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListByWorkspaceMachineGroups', { @_ });
   }
   sub ListByWorkspaceMachines {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListByWorkspaceMachines', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListByWorkspaceMachines', { @_ });
   }
   sub ListConnectionsMachines {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListConnectionsMachines', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListConnectionsMachines', { @_ });
   }
   sub ListConnectionsPorts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListConnectionsPorts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListConnectionsPorts', { @_ });
   }
   sub ListConnectionsProcesses {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListConnectionsProcesses', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListConnectionsProcesses', { @_ });
   }
   sub ListMachineGroupMembershipMachines {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListMachineGroupMembershipMachines', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListMachineGroupMembershipMachines', { @_ });
   }
   sub ListMembersClientGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListMembersClientGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListMembersClientGroups', { @_ });
   }
   sub ListPortsMachines {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListPortsMachines', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListPortsMachines', { @_ });
   }
   sub ListProcessesMachines {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::ListProcessesMachines', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::ListProcessesMachines', { @_ });
   }
   sub UpdateMachineGroups {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServiceMap::UpdateMachineGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServiceMap::UpdateMachineGroups', { @_ });
   }
 
   sub operations { qw/CreateMachineGroups DeleteMachineGroups GenerateMaps GetClientGroups GetLivenessMachines GetLivenessPorts GetLivenessProcesses GetMachineGroups GetMachines GetMachinesSummaries GetMembersCountClientGroups GetPorts GetProcesses ListAcceptingPortsProcesses ListAcceptingProcessesPorts ListByWorkspaceMachineGroups ListByWorkspaceMachines ListConnectionsMachines ListConnectionsPorts ListConnectionsProcesses ListMachineGroupMembershipMachines ListMembersClientGroups ListPortsMachines ListProcessesMachines UpdateMachineGroups / }

@@ -2,7 +2,7 @@ package Azure::StorageImportExport::DeleteJobs;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'Accept_Language' => (is => 'ro', isa => 'Str',
+  has 'Accept_Language' => (is => 'ro', required => 1, isa => 'Str',
     traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'Accept-Language',
   );
   has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2016-11-01',
@@ -19,6 +19,13 @@ package Azure::StorageImportExport::DeleteJobs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ImportExport/jobs/{jobName}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => undef,
+    
+      default => 'Azure::StorageImportExport::DeleteJobsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

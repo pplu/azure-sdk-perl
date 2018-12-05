@@ -1,12 +1,11 @@
 package Azure::CognitiveEntitySearch;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub SearchEntities {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CognitiveEntitySearch::SearchEntities', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CognitiveEntitySearch::SearchEntities', { @_ });
   }
 
   sub operations { qw/SearchEntities / }

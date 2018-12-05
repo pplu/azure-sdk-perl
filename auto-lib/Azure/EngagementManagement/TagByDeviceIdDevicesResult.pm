@@ -1,6 +1,6 @@
 package Azure::EngagementManagement::TagByDeviceIdDevicesResult;
   use Moose;
 
-  has invalidIds => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has error => (is => 'ro', isa => 'Azure::EngagementManagement::TagByDeviceIdDevicesResult_error'  );
 
 1;

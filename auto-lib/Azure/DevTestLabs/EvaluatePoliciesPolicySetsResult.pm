@@ -1,6 +1,6 @@
 package Azure::DevTestLabs::EvaluatePoliciesPolicySetsResult;
   use Moose;
 
-  has results => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLabs::PolicySetResult]'  );
+  has error => (is => 'ro', isa => 'Azure::DevTestLabs::CloudErrorBody'  );
 
 1;

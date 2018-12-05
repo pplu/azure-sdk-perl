@@ -1,22 +1,19 @@
 package Azure::CongitiveTextAnalytics;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub DetectLanguage {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CongitiveTextAnalytics::DetectLanguage', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CongitiveTextAnalytics::DetectLanguage', { @_ });
   }
   sub KeyPhrases {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CongitiveTextAnalytics::KeyPhrases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CongitiveTextAnalytics::KeyPhrases', { @_ });
   }
   sub Sentiment {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CongitiveTextAnalytics::Sentiment', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CongitiveTextAnalytics::Sentiment', { @_ });
   }
 
   sub operations { qw/DetectLanguage KeyPhrases Sentiment / }

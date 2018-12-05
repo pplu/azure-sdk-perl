@@ -16,6 +16,13 @@ package Azure::iotHub::ListKeysIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}/listkeys');
-  class_has _returns => (is => 'ro', default => 'Azure::iotHub::ListKeysIotHubResourceResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::iotHub::ListKeysIotHubResourceResult',
+    
+      default => 'Azure::iotHub::ListKeysIotHubResourceResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

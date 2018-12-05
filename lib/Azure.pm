@@ -25,6 +25,12 @@ has credentials => (
     );
   },
 );
+has response_inflator => (
+  is => 'ro',
+);
+has request_builder => (
+  is => 'ro',
+);
 has immutable => (
   is => 'rw',
   isa => 'Bool',
@@ -33,6 +39,11 @@ has immutable => (
 has subscription_id => (
   is => 'ro',
   isa => 'Str|Undef',
+);
+has handle_async_operations => (
+  is => 'ro',
+  isa => 'Bool',
+  default => 1,
 );
 
 __PACKAGE__->meta->make_immutable;
@@ -80,9 +91,13 @@ package Azure;
     my ($self, $service_name, %constructor_params) = @_;
     $self = $self->get_self;
   
+    $constructor_params{ response_inflator } = $self->config->response_inflator if (defined $self->config->response_inflator);
+    $constructor_params{ request_builder   } = $self->config->request_builder   if (defined $self->config->request_builder);
+
     $constructor_params{ caller } = $self->config->caller if (not exists $constructor_params{ caller });
     $constructor_params{ credentials } = $self->config->credentials if (not exists $constructor_params{ credentials });
-    $constructor_params{ subscription_id } = $self->config->subscription_id if (not exists $constructor_params{ subscription_id });    
+    $constructor_params{ subscription_id } = $self->config->subscription_id if (not exists $constructor_params{ subscription_id });
+    $constructor_params{ handle_async_operations } = $self->config->handle_async_operations if (not exists $constructor_params{ handle_async_operations });
 
     my $class = $self->class_for_service($service_name);
     my $instance = $class->new(
@@ -115,6 +130,7 @@ package Azure;
     $self = $self->get_self;
   
     my $skip_list = {
+      Credential => 1,
       Exception => 1,
       API => 1,
       Net => 1,
@@ -157,7 +173,7 @@ sub _preload_operations {
     _preload_scanclass($op_params_class);
 
     # 2nd preload the classes that represent responses from the call
-    _preload_scanclass($op_params_class->_returns) if ($op_params_class->_returns);
+    _preload_scanclass($op_params_class->_returns->{ $_ }) for (keys %{ $op_params_class->_returns });
   }
 }
 

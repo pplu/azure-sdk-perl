@@ -19,6 +19,17 @@ package Azure::TimeSeriesInsights::CreateOrUpdateEnvironments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.TimeSeriesInsights/environments/{environmentName}');
-  class_has _returns => (is => 'ro', default => 'Azure::TimeSeriesInsights::CreateOrUpdateEnvironmentsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::TimeSeriesInsights::CreateOrUpdateEnvironmentsResult',
+    
+      201 => 'Azure::TimeSeriesInsights::CreateOrUpdateEnvironmentsResult',
+    
+      404 => undef,
+    
+      default => 'Azure::TimeSeriesInsights::CreateOrUpdateEnvironmentsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

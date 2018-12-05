@@ -22,6 +22,17 @@ package Azure::ServiceFabricManagement::PutApplicationType;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ServiceFabric/clusters/{clusterName}/applicationTypes/{applicationTypeName}');
-  class_has _returns => (is => 'ro', default => 'Azure::ServiceFabricManagement::PutApplicationTypeResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ServiceFabricManagement::PutApplicationTypeResult',
+    
+      201 => 'Azure::ServiceFabricManagement::PutApplicationTypeResult',
+    
+      202 => 'Azure::ServiceFabricManagement::PutApplicationTypeResult',
+    
+      default => 'Azure::ServiceFabricManagement::PutApplicationTypeResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

@@ -13,6 +13,13 @@ package Azure::KeyVault::UpdateCertificatePolicy;
   );
 
   class_has _api_uri => (is => 'ro', default => '/certificates/{certificate-name}/policy');
-  class_has _returns => (is => 'ro', default => 'Azure::KeyVault::UpdateCertificatePolicyResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::KeyVault::UpdateCertificatePolicyResult',
+    
+      default => 'Azure::KeyVault::UpdateCertificatePolicyResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

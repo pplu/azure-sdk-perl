@@ -1,17 +1,15 @@
 package Azure::Monitor;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub ListMetricDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Monitor::ListMetricDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Monitor::ListMetricDefinitions', { @_ });
   }
   sub ListMetrics {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Monitor::ListMetrics', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Monitor::ListMetrics', { @_ });
   }
 
   sub operations { qw/ListMetricDefinitions ListMetrics / }

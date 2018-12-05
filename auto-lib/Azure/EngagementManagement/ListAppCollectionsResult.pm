@@ -1,7 +1,6 @@
 package Azure::EngagementManagement::ListAppCollectionsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::EngagementManagement::AppCollection]'  );
+  has error => (is => 'ro', isa => 'Azure::EngagementManagement::ListAppCollectionsResult_error'  );
 
 1;

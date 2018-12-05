@@ -1,10 +1,8 @@
 package Azure::BatchService::GetAllLifetimeStatisticsPoolResult;
   use Moose;
 
-  has lastUpdateTime => (is => 'ro', isa => 'Str'  );
-  has resourceStats => (is => 'ro', isa => 'Azure::BatchService::ResourceStatistics'  );
-  has startTime => (is => 'ro', isa => 'Str'  );
-  has url => (is => 'ro', isa => 'Str'  );
-  has usageStats => (is => 'ro', isa => 'Azure::BatchService::UsageStatistics'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Azure::BatchService::ErrorMessage'  );
+  has values => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::BatchErrorDetail]'  );
 
 1;

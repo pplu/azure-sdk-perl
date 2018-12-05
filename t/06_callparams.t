@@ -8,22 +8,26 @@ use Test::Exception;
 use Azure;
 use Data::Dumper;
 
+use lib 't/lib';
+
+use CallerThatReturnsTheRequest;
+use StubCredentials;
+use InflatorThatJustReturnsTheResponse;
+
 #TODO: see how if we can generate ExampleService from 
 #      a swagger definition. That way it will always be in 
 #      sync with how we generate code
 package Azure::ExampleService {
   use Moose;
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub Method1 {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ExampleService::Method1', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    $self->do_call('subscriptionId', 'Azure::ExampleService::Method1', { @_ });
   }
   sub Method2 {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ExampleService::Method2', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    $self->do_call(undef, 'Azure::ExampleService::Method2', { @_ });
   }
 }
 package Azure::ExampleService::Method1 {
@@ -52,6 +56,7 @@ package Azure::ExampleService::Method1 {
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/example/{pathparam1}');
   class_has _returns => (is => 'ro');
   class_has _api_method => (is => 'ro', default => 'GET');
+  class_has _is_async => (is => 'ro', default => 0);
 }
 package Azure::ExampleService::SubObject {
   use Moose;
@@ -84,33 +89,16 @@ package Azure::ExampleService::Method2 {
   class_has _api_uri => (is => 'ro', default => '/');
   class_has _returns => (is => 'ro');
   class_has _api_method => (is => 'ro', default => 'GET');
-}
-package ReturnRequestObjCaller {
-  use Moose;
-  with 'Azure::Net::CallerRole';
-
-  sub caller_to_response {}
-
-  sub do_call {
-    my ($self, $service, $call_object) = @_;
-
-    my $requestObj = $service->prepare_request_for_call($call_object); 
-
-    return $requestObj;
-  }
-}
-package TestStubCredentials {
-  use Moose;
-  sub access_token { 'ACCESS_TOKEN' }
+  class_has _is_async => (is => 'ro', default => 0);
 }
 
-my $az = Azure->new(config => { caller => ReturnRequestObjCaller->new });
+my $az = Azure->new(config => {
+  caller => CallerThatReturnsTheRequest->new,
+  credentials => StubCredentials->new,
+  response_inflator => InflatorThatJustReturnsTheResponse->new,
+});
 
-my $svc = Azure::ExampleService->new(
-  caller => ReturnRequestObjCaller->new,
-  credentials => TestStubCredentials->new,
-);
-#my $svc = $az->service('ExampleService');
+my $svc = $az->service('ExampleService');
 
 throws_ok(
   sub {

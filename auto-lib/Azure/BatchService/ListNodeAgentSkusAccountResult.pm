@@ -1,7 +1,8 @@
 package Azure::BatchService::ListNodeAgentSkusAccountResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str', traits => [ 'Azure::LocationInResponse' ], location => 'odata.nextLink'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::NodeAgentSku]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Azure::BatchService::ErrorMessage'  );
+  has values => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::BatchErrorDetail]'  );
 
 1;

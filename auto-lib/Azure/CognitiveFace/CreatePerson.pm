@@ -13,6 +13,13 @@ package Azure::CognitiveFace::CreatePerson;
   );
 
   class_has _api_uri => (is => 'ro', default => '/persongroups/{personGroupId}/persons');
-  class_has _returns => (is => 'ro', default => 'Azure::CognitiveFace::CreatePersonResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::CognitiveFace::CreatePersonResult',
+    
+      default => 'Azure::CognitiveFace::CreatePersonResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

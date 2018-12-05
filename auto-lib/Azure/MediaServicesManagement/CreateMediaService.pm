@@ -19,6 +19,13 @@ package Azure::MediaServicesManagement::CreateMediaService;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Media/mediaservices/{mediaServiceName}');
-  class_has _returns => (is => 'ro', default => 'Azure::MediaServicesManagement::CreateMediaServiceResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      201 => 'Azure::MediaServicesManagement::CreateMediaServiceResult',
+    
+      default => 'Azure::MediaServicesManagement::CreateMediaServiceResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

@@ -1,76 +1,43 @@
 package Azure::CosmosDB;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckNameExistsDatabaseAccounts {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::CheckNameExistsDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CosmosDB::CheckNameExistsDatabaseAccounts', { @_ });
   }
   sub CreateOrUpdateDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::CreateOrUpdateDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::CreateOrUpdateDatabaseAccounts', { @_ });
   }
   sub DeleteDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::DeleteDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::DeleteDatabaseAccounts', { @_ });
   }
   sub FailoverPriorityChangeDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::FailoverPriorityChangeDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::FailoverPriorityChangeDatabaseAccounts', { @_ });
   }
   sub GetDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::GetDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::GetDatabaseAccounts', { @_ });
   }
   sub ListByResourceGroupDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListByResourceGroupDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::ListByResourceGroupDatabaseAccounts', { @_ });
   }
   sub ListConnectionStringsDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListConnectionStringsDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::ListConnectionStringsDatabaseAccounts', { @_ });
   }
   sub ListDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::ListDatabaseAccounts', { @_ });
   }
   sub ListKeysDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListKeysDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::ListKeysDatabaseAccounts', { @_ });
   }
   sub ListMetricDefinitionsCollection {
     my $self = shift;
@@ -138,16 +105,11 @@ package Azure::CosmosDB;
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::CosmosDB::ListOperations', { @_ });
   }
   sub ListReadOnlyKeysDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::ListReadOnlyKeysDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::ListReadOnlyKeysDatabaseAccounts', { @_ });
   }
   sub ListUsagesCollection {
     my $self = shift;
@@ -175,19 +137,11 @@ package Azure::CosmosDB;
   }
   sub PatchDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::PatchDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::PatchDatabaseAccounts', { @_ });
   }
   sub RegenerateKeyDatabaseAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::CosmosDB::RegenerateKeyDatabaseAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::CosmosDB::RegenerateKeyDatabaseAccounts', { @_ });
   }
 
   sub operations { qw/CheckNameExistsDatabaseAccounts CreateOrUpdateDatabaseAccounts DeleteDatabaseAccounts FailoverPriorityChangeDatabaseAccounts GetDatabaseAccounts ListByResourceGroupDatabaseAccounts ListConnectionStringsDatabaseAccounts ListDatabaseAccounts ListKeysDatabaseAccounts ListMetricDefinitionsCollection ListMetricDefinitionsDatabase ListMetricDefinitionsDatabaseAccounts ListMetricsCollection ListMetricsCollectionRegion ListMetricsDatabase ListMetricsDatabaseAccountRegion ListMetricsDatabaseAccounts ListOperations ListReadOnlyKeysDatabaseAccounts ListUsagesCollection ListUsagesDatabase ListUsagesDatabaseAccounts PatchDatabaseAccounts RegenerateKeyDatabaseAccounts / }

@@ -1,122 +1,75 @@
 package Azure::ManagedApplication;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateApplianceDefinitions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::CreateOrUpdateApplianceDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::CreateOrUpdateApplianceDefinitions', { @_ });
   }
   sub CreateOrUpdateAppliances {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::CreateOrUpdateAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::CreateOrUpdateAppliances', { @_ });
   }
   sub CreateOrUpdateByIdApplianceDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::CreateOrUpdateByIdApplianceDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagedApplication::CreateOrUpdateByIdApplianceDefinitions', { @_ });
   }
   sub CreateOrUpdateByIdAppliances {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::CreateOrUpdateByIdAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagedApplication::CreateOrUpdateByIdAppliances', { @_ });
   }
   sub DeleteApplianceDefinitions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::DeleteApplianceDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::DeleteApplianceDefinitions', { @_ });
   }
   sub DeleteAppliances {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::DeleteAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::DeleteAppliances', { @_ });
   }
   sub DeleteByIdApplianceDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::DeleteByIdApplianceDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagedApplication::DeleteByIdApplianceDefinitions', { @_ });
   }
   sub DeleteByIdAppliances {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::DeleteByIdAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagedApplication::DeleteByIdAppliances', { @_ });
   }
   sub GetApplianceDefinitions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::GetApplianceDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::GetApplianceDefinitions', { @_ });
   }
   sub GetAppliances {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::GetAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::GetAppliances', { @_ });
   }
   sub GetByIdApplianceDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::GetByIdApplianceDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagedApplication::GetByIdApplianceDefinitions', { @_ });
   }
   sub GetByIdAppliances {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::GetByIdAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagedApplication::GetByIdAppliances', { @_ });
   }
   sub ListByResourceGroupApplianceDefinitions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::ListByResourceGroupApplianceDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::ListByResourceGroupApplianceDefinitions', { @_ });
   }
   sub ListByResourceGroupAppliances {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::ListByResourceGroupAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::ListByResourceGroupAppliances', { @_ });
   }
   sub ListBySubscriptionAppliances {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::ListBySubscriptionAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::ListBySubscriptionAppliances', { @_ });
   }
   sub UpdateAppliances {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::UpdateAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ManagedApplication::UpdateAppliances', { @_ });
   }
   sub UpdateByIdAppliances {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagedApplication::UpdateByIdAppliances', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagedApplication::UpdateByIdAppliances', { @_ });
   }
 
   sub operations { qw/CreateOrUpdateApplianceDefinitions CreateOrUpdateAppliances CreateOrUpdateByIdApplianceDefinitions CreateOrUpdateByIdAppliances DeleteApplianceDefinitions DeleteAppliances DeleteByIdApplianceDefinitions DeleteByIdAppliances GetApplianceDefinitions GetAppliances GetByIdApplianceDefinitions GetByIdAppliances ListByResourceGroupApplianceDefinitions ListByResourceGroupAppliances ListBySubscriptionAppliances UpdateAppliances UpdateByIdAppliances / }

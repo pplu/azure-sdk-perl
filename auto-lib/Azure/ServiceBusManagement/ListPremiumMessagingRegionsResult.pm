@@ -1,7 +1,7 @@
 package Azure::ServiceBusManagement::ListPremiumMessagingRegionsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::ServiceBusManagement::PremiumMessagingRegions]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

@@ -1,222 +1,109 @@
 package Azure::HDInsightManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
+  sub ChangeRdpSettingsClusters {
+    my $self = shift;
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::ChangeRdpSettingsClusters', { @_ });
+  }
   sub CreateApplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::CreateApplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::CreateApplications', { @_ });
   }
   sub CreateClusters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::CreateClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::CreateClusters', { @_ });
   }
   sub CreateExtension {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::CreateExtension', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::CreateExtension', { @_ });
   }
   sub DeleteApplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::DeleteApplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::DeleteApplications', { @_ });
   }
   sub DeleteClusters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::DeleteClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::DeleteClusters', { @_ });
   }
   sub DeleteExtension {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::DeleteExtension', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::DeleteExtension', { @_ });
   }
   sub DeleteScriptActions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::DeleteScriptActions', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DisableMonitoringExtension {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::DisableMonitoringExtension', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub EnableMonitoringExtension {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::EnableMonitoringExtension', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::DeleteScriptActions', { @_ });
   }
   sub ExecuteScriptActionsClusters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ExecuteScriptActionsClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::ExecuteScriptActionsClusters', { @_ });
   }
   sub GetApplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetApplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::GetApplications', { @_ });
   }
   sub GetCapabilitiesLocation {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetCapabilitiesLocation', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::GetCapabilitiesLocation', { @_ });
   }
   sub GetClusters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::GetClusters', { @_ });
   }
   sub GetConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetExecutionDetailScriptActions {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetExecutionDetailScriptActions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::GetConfigurations', { @_ });
   }
   sub GetExtension {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetExtension', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::GetExtension', { @_ });
   }
-  sub GetMonitoringStatusExtension {
+  sub GetScriptExecutionHistory {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::GetMonitoringStatusExtension', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::GetScriptExecutionHistory', { @_ });
   }
   sub ListApplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListApplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::ListApplications', { @_ });
   }
   sub ListByResourceGroupClusters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListByResourceGroupClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::ListByResourceGroupClusters', { @_ });
   }
   sub ListClusters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::ListClusters', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::HDInsightManagement::ListOperations', { @_ });
   }
-  sub ListPersistedScriptsScriptActions {
+  sub ListScriptActions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListPersistedScriptsScriptActions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::ListScriptActions', { @_ });
   }
   sub ListScriptExecutionHistory {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ListScriptExecutionHistory', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::ListScriptExecutionHistory', { @_ });
   }
   sub PromoteScriptExecutionHistory {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::PromoteScriptExecutionHistory', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::PromoteScriptExecutionHistory', { @_ });
   }
   sub ResizeClusters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::ResizeClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::ResizeClusters', { @_ });
   }
   sub UpdateClusters {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::UpdateClusters', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::UpdateClusters', { @_ });
   }
   sub UpdateHTTPSettingsConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::HDInsightManagement::UpdateHTTPSettingsConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::HDInsightManagement::UpdateHTTPSettingsConfigurations', { @_ });
   }
 
-  sub operations { qw/CreateApplications CreateClusters CreateExtension DeleteApplications DeleteClusters DeleteExtension DeleteScriptActions DisableMonitoringExtension EnableMonitoringExtension ExecuteScriptActionsClusters GetApplications GetCapabilitiesLocation GetClusters GetConfigurations GetExecutionDetailScriptActions GetExtension GetMonitoringStatusExtension ListApplications ListByResourceGroupClusters ListClusters ListOperations ListPersistedScriptsScriptActions ListScriptExecutionHistory PromoteScriptExecutionHistory ResizeClusters UpdateClusters UpdateHTTPSettingsConfigurations / }
+  sub operations { qw/ChangeRdpSettingsClusters CreateApplications CreateClusters CreateExtension DeleteApplications DeleteClusters DeleteExtension DeleteScriptActions ExecuteScriptActionsClusters GetApplications GetCapabilitiesLocation GetClusters GetConfigurations GetExtension GetScriptExecutionHistory ListApplications ListByResourceGroupClusters ListClusters ListOperations ListScriptActions ListScriptExecutionHistory PromoteScriptExecutionHistory ResizeClusters UpdateClusters UpdateHTTPSettingsConfigurations / }
 
 1;

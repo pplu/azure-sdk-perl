@@ -19,6 +19,13 @@ package Azure::ApiManagement::GenerateSsoUrlUser;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ApiManagement/service/{serviceName}/users/{uid}/generateSsoUrl');
-  class_has _returns => (is => 'ro', default => 'Azure::ApiManagement::GenerateSsoUrlUserResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ApiManagement::GenerateSsoUrlUserResult',
+    
+      default => 'Azure::ApiManagement::GenerateSsoUrlUserResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

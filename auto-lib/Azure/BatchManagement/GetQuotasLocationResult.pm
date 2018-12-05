@@ -1,6 +1,6 @@
 package Azure::BatchManagement::GetQuotasLocationResult;
   use Moose;
 
-  has accountQuota => (is => 'ro', isa => 'Int'  );
+  has error => (is => 'ro', isa => 'Azure::BatchManagement::CloudErrorBody'  );
 
 1;

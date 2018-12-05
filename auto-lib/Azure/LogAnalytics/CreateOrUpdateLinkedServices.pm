@@ -22,6 +22,13 @@ package Azure::LogAnalytics::CreateOrUpdateLinkedServices;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/linkedServices/{linkedServiceName}');
-  class_has _returns => (is => 'ro', default => 'Azure::LogAnalytics::CreateOrUpdateLinkedServicesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::LogAnalytics::CreateOrUpdateLinkedServicesResult',
+    
+      201 => 'Azure::LogAnalytics::CreateOrUpdateLinkedServicesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

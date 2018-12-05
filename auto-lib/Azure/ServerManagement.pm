@@ -1,207 +1,107 @@
 package Azure::ServerManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CancelCommandPowerShell {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::CancelCommandPowerShell', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::CancelCommandPowerShell', { @_ });
   }
   sub CreateGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::CreateGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::CreateGateway', { @_ });
   }
   sub CreateNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::CreateNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::CreateNode', { @_ });
   }
   sub CreateSession {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::CreateSession', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::CreateSession', { @_ });
   }
   sub CreateSessionPowerShell {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::CreateSessionPowerShell', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::CreateSessionPowerShell', { @_ });
   }
   sub DeleteGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::DeleteGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::DeleteGateway', { @_ });
   }
   sub DeleteNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::DeleteNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::DeleteNode', { @_ });
   }
   sub DeleteSession {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::DeleteSession', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::DeleteSession', { @_ });
   }
   sub GetCommandStatusPowerShell {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::GetCommandStatusPowerShell', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::GetCommandStatusPowerShell', { @_ });
   }
   sub GetGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::GetGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::GetGateway', { @_ });
   }
   sub GetNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::GetNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::GetNode', { @_ });
   }
   sub GetProfileGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::GetProfileGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::GetProfileGateway', { @_ });
   }
   sub GetSession {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::GetSession', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::GetSession', { @_ });
   }
   sub InvokeCommandPowerShell {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::InvokeCommandPowerShell', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::InvokeCommandPowerShell', { @_ });
   }
   sub ListForResourceGroupGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::ListForResourceGroupGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::ListForResourceGroupGateway', { @_ });
   }
   sub ListForResourceGroupNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::ListForResourceGroupNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::ListForResourceGroupNode', { @_ });
   }
   sub ListGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::ListGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::ListGateway', { @_ });
   }
   sub ListNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::ListNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::ListNode', { @_ });
   }
   sub ListSessionPowerShell {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::ListSessionPowerShell', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::ListSessionPowerShell', { @_ });
   }
   sub RegenerateProfileGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::RegenerateProfileGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::RegenerateProfileGateway', { @_ });
   }
   sub TabCompletionPowerShell {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::TabCompletionPowerShell', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::TabCompletionPowerShell', { @_ });
   }
   sub UpdateCommandPowerShell {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::UpdateCommandPowerShell', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::UpdateCommandPowerShell', { @_ });
   }
   sub UpdateGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::UpdateGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::UpdateGateway', { @_ });
   }
   sub UpdateNode {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::UpdateNode', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::UpdateNode', { @_ });
   }
   sub UpgradeGateway {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ServerManagement::UpgradeGateway', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ServerManagement::UpgradeGateway', { @_ });
   }
 
   sub operations { qw/CancelCommandPowerShell CreateGateway CreateNode CreateSession CreateSessionPowerShell DeleteGateway DeleteNode DeleteSession GetCommandStatusPowerShell GetGateway GetNode GetProfileGateway GetSession InvokeCommandPowerShell ListForResourceGroupGateway ListForResourceGroupNode ListGateway ListNode ListSessionPowerShell RegenerateProfileGateway TabCompletionPowerShell UpdateCommandPowerShell UpdateGateway UpdateNode UpgradeGateway / }

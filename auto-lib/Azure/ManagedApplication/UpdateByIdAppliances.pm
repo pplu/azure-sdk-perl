@@ -13,6 +13,13 @@ package Azure::ManagedApplication::UpdateByIdAppliances;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{applianceId}');
-  class_has _returns => (is => 'ro', default => 'Azure::ManagedApplication::UpdateByIdAppliancesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ManagedApplication::UpdateByIdAppliancesResult',
+    
+      default => 'Azure::ManagedApplication::UpdateByIdAppliancesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

@@ -1,107 +1,87 @@
 package Azure::SearchService;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub AnalyzeIndexes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::AnalyzeIndexes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::AnalyzeIndexes', { @_ });
   }
   sub CreateDataSources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::CreateDataSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::CreateDataSources', { @_ });
   }
   sub CreateIndexers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::CreateIndexers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::CreateIndexers', { @_ });
   }
   sub CreateIndexes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::CreateIndexes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::CreateIndexes', { @_ });
   }
   sub CreateOrUpdateDataSources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::CreateOrUpdateDataSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::CreateOrUpdateDataSources', { @_ });
   }
   sub CreateOrUpdateIndexers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::CreateOrUpdateIndexers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::CreateOrUpdateIndexers', { @_ });
   }
   sub CreateOrUpdateIndexes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::CreateOrUpdateIndexes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::CreateOrUpdateIndexes', { @_ });
   }
   sub DeleteDataSources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::DeleteDataSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::DeleteDataSources', { @_ });
   }
   sub DeleteIndexers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::DeleteIndexers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::DeleteIndexers', { @_ });
   }
   sub DeleteIndexes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::DeleteIndexes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::DeleteIndexes', { @_ });
   }
   sub GetDataSources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::GetDataSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::GetDataSources', { @_ });
   }
   sub GetIndexers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::GetIndexers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::GetIndexers', { @_ });
   }
   sub GetIndexes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::GetIndexes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::GetIndexes', { @_ });
   }
   sub GetStatisticsIndexes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::GetStatisticsIndexes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::GetStatisticsIndexes', { @_ });
   }
   sub GetStatusIndexers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::GetStatusIndexers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::GetStatusIndexers', { @_ });
   }
   sub ListDataSources {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::ListDataSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::ListDataSources', { @_ });
   }
   sub ListIndexers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::ListIndexers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::ListIndexers', { @_ });
   }
   sub ListIndexes {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::ListIndexes', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::ListIndexes', { @_ });
   }
   sub ResetIndexers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::ResetIndexers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::ResetIndexers', { @_ });
   }
   sub RunIndexers {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::SearchService::RunIndexers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::SearchService::RunIndexers', { @_ });
   }
 
   sub operations { qw/AnalyzeIndexes CreateDataSources CreateIndexers CreateIndexes CreateOrUpdateDataSources CreateOrUpdateIndexers CreateOrUpdateIndexes DeleteDataSources DeleteIndexers DeleteIndexes GetDataSources GetIndexers GetIndexes GetStatisticsIndexes GetStatusIndexers ListDataSources ListIndexers ListIndexes ResetIndexers RunIndexers / }

@@ -1,6 +1,6 @@
 package Azure::TrafficManagerManagement::DeleteProfilesResult;
   use Moose;
 
-  has boolean => (is => 'ro', isa => 'Bool'  );
+  has error => (is => 'ro', isa => 'Azure::TrafficManagerManagement::CloudErrorBody'  );
 
 1;

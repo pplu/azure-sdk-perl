@@ -1,116 +1,63 @@
 package Azure::StorageManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckNameAvailabilityStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::CheckNameAvailabilityStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::CheckNameAvailabilityStorageAccounts', { @_ });
   }
   sub CreateStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::CreateStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::CreateStorageAccounts', { @_ });
   }
   sub DeleteStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::DeleteStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::DeleteStorageAccounts', { @_ });
   }
   sub GetPropertiesStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::GetPropertiesStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::GetPropertiesStorageAccounts', { @_ });
   }
   sub ListAccountSASStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListAccountSASStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::ListAccountSASStorageAccounts', { @_ });
   }
   sub ListByResourceGroupStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListByResourceGroupStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::ListByResourceGroupStorageAccounts', { @_ });
   }
   sub ListKeysStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListKeysStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::ListKeysStorageAccounts', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::StorageManagement::ListOperations', { @_ });
   }
   sub ListServiceSASStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListServiceSASStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::ListServiceSASStorageAccounts', { @_ });
   }
   sub ListSkus {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListSkus', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::ListSkus', { @_ });
   }
   sub ListStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::ListStorageAccounts', { @_ });
   }
   sub ListUsage {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::ListUsage', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::ListUsage', { @_ });
   }
   sub RegenerateKeyStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::RegenerateKeyStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::RegenerateKeyStorageAccounts', { @_ });
   }
   sub UpdateStorageAccounts {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::StorageManagement::UpdateStorageAccounts', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::StorageManagement::UpdateStorageAccounts', { @_ });
   }
 
   sub operations { qw/CheckNameAvailabilityStorageAccounts CreateStorageAccounts DeleteStorageAccounts GetPropertiesStorageAccounts ListAccountSASStorageAccounts ListByResourceGroupStorageAccounts ListKeysStorageAccounts ListOperations ListServiceSASStorageAccounts ListSkus ListStorageAccounts ListUsage RegenerateKeyStorageAccounts UpdateStorageAccounts / }

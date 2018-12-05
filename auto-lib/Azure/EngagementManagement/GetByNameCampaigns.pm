@@ -25,6 +25,13 @@ package Azure::EngagementManagement::GetByNameCampaigns;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MobileEngagement/appcollections/{appCollection}/apps/{appName}/campaignsByName/{kind}/{name}');
-  class_has _returns => (is => 'ro', default => 'Azure::EngagementManagement::GetByNameCampaignsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::EngagementManagement::GetByNameCampaignsResult',
+    
+      default => 'Azure::EngagementManagement::GetByNameCampaignsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

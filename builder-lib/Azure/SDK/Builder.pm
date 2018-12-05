@@ -138,6 +138,7 @@ package Azure::SDK::Builder;
               service => $self->service,
               name => $operationId,
               common_parameters => $common_parameters,
+              is_async => ($operation->x_ms_long_running_operation) ? 1 : 0,
             );
         }
       }
@@ -154,7 +155,11 @@ package Azure::SDK::Builder;
       my %returns = ();
       foreach my $method_name ($self->method_names){
         my $method = $self->method($method_name);
-        $returns{ $method_name } = $method->return if (defined $method->return);
+        foreach my $status (keys %{ $method->return }) {
+          next if ($method->return->{ $status }->isa('Azure::SDK::Builder::NoReturn'));
+          next if ($method->return->{ $status }->isa('Azure::SDK::Builder::ReturnsArray'));
+          $returns{ "$method_name:$status" } = $method->return->{ $status };
+        }
       }
       return \%returns;
     }

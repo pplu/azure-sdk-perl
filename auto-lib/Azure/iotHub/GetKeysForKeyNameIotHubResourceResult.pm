@@ -1,9 +1,9 @@
 package Azure::iotHub::GetKeysForKeyNameIotHubResourceResult;
   use Moose;
 
-  has keyName => (is => 'ro', isa => 'Str'  );
-  has primaryKey => (is => 'ro', isa => 'Str'  );
-  has rights => (is => 'ro', isa => 'Str'  );
-  has secondaryKey => (is => 'ro', isa => 'Str'  );
+  has Code => (is => 'ro', isa => 'Str'  );
+  has Details => (is => 'ro', isa => 'Str'  );
+  has HttpStatusCode => (is => 'ro', isa => 'Str'  );
+  has Message => (is => 'ro', isa => 'Str'  );
 
 1;

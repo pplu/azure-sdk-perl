@@ -9,17 +9,17 @@ use Azure;
 use Test::More;
 use StubCredentials;
 use CallerThatReturnsTheRequest;
+use InflatorThatJustReturnsTheResponse;
 use Test::Exception;
 
 my $caller = CallerThatReturnsTheRequest->new;
 my $creds = StubCredentials->new;
+my $inflator = InflatorThatJustReturnsTheResponse->new;
 
-my $az_unbound = Azure->new(config => { caller => $caller, credentials => $creds });
-my $az1 = Azure->new(config => { subscription_id => 'subscription1', caller => $caller, credentials => $creds });
-my $az2 = Azure->new(config => { subscription_id => 'subscription2', caller => $caller, credentials => $creds });
 
 {
-  my $logm = $az1->service('LogicManagement');
+  my $az = Azure->new(config => { subscription_id => 'subscription1', caller => $caller, credentials => $creds, response_inflator => $inflator });
+  my $logm = $az->service('LogicManagement');
   my $r = $logm->CreateOrUpdateWorkflows(
     workflowName => 'test',
     resourceGroupName => 'rg1',
@@ -33,7 +33,8 @@ my $az2 = Azure->new(config => { subscription_id => 'subscription2', caller => $
 }
 
 {
-  my $logm = $az2->service('LogicManagement');
+  my $az = Azure->new(config => { subscription_id => 'subscription2', caller => $caller, credentials => $creds, response_inflator => $inflator });
+  my $logm = $az->service('LogicManagement');
   my $r = $logm->CreateOrUpdateWorkflows(
     workflowName => 'test',
     resourceGroupName => 'rg1',
@@ -47,6 +48,7 @@ my $az2 = Azure->new(config => { subscription_id => 'subscription2', caller => $
 }
 
 {
+  my $az_unbound = Azure->new(config => { caller => $caller, credentials => $creds, response_inflator => $inflator });
   my $logm = $az_unbound->service('LogicManagement');
 
   throws_ok(sub {

@@ -13,6 +13,11 @@ package Azure::ManagementLock::ListAtSubscriptionLevelManagementLocks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Authorization/locks');
-  class_has _returns => (is => 'ro', default => 'Azure::ManagementLock::ListAtSubscriptionLevelManagementLocksResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ManagementLock::ListAtSubscriptionLevelManagementLocksResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

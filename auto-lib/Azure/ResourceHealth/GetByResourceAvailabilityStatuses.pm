@@ -16,6 +16,13 @@ package Azure::ResourceHealth::GetByResourceAvailabilityStatuses;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{resourceUri}/providers/Microsoft.ResourceHealth/availabilityStatuses/current');
-  class_has _returns => (is => 'ro', default => 'Azure::ResourceHealth::GetByResourceAvailabilityStatusesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ResourceHealth::GetByResourceAvailabilityStatusesResult',
+    
+      default => 'Azure::ResourceHealth::GetByResourceAvailabilityStatusesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -1,6 +1,6 @@
 package Azure::DataLakeStoreFileSystemManagement::MkdirsFileSystemResult;
   use Moose;
 
-  has boolean => (is => 'ro', isa => 'Bool'  );
+  has RemoteException => (is => 'ro', isa => 'Azure::DataLakeStoreFileSystemManagement::AdlsRemoteException'  );
 
 1;

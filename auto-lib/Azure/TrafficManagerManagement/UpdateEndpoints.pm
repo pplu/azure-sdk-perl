@@ -25,6 +25,13 @@ package Azure::TrafficManagerManagement::UpdateEndpoints;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficmanagerprofiles/{profileName}/{endpointType}/{endpointName}');
-  class_has _returns => (is => 'ro', default => 'Azure::TrafficManagerManagement::UpdateEndpointsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::TrafficManagerManagement::UpdateEndpointsResult',
+    
+      default => 'Azure::TrafficManagerManagement::UpdateEndpointsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

@@ -37,6 +37,13 @@ package Azure::BatchService::GetFromComputeNodeFile;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools/{poolId}/nodes/{nodeId}/files/{filePath}');
-  class_has _returns => (is => 'ro', default => 'Azure::BatchService::GetFromComputeNodeFileResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::BatchService::GetFromComputeNodeFileResult',
+    
+      default => 'Azure::BatchService::GetFromComputeNodeFileResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

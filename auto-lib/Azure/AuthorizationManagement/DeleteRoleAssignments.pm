@@ -13,6 +13,11 @@ package Azure::AuthorizationManagement::DeleteRoleAssignments;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/roleAssignments/{roleAssignmentName}');
-  class_has _returns => (is => 'ro', default => 'Azure::AuthorizationManagement::DeleteRoleAssignmentsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::AuthorizationManagement::DeleteRoleAssignmentsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

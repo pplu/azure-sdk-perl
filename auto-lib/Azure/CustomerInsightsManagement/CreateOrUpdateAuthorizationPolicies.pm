@@ -22,6 +22,13 @@ package Azure::CustomerInsightsManagement::CreateOrUpdateAuthorizationPolicies;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.CustomerInsights/hubs/{hubName}/authorizationPolicies/{authorizationPolicyName}');
-  class_has _returns => (is => 'ro', default => 'Azure::CustomerInsightsManagement::CreateOrUpdateAuthorizationPoliciesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::CustomerInsightsManagement::CreateOrUpdateAuthorizationPoliciesResult',
+    
+      201 => 'Azure::CustomerInsightsManagement::CreateOrUpdateAuthorizationPoliciesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

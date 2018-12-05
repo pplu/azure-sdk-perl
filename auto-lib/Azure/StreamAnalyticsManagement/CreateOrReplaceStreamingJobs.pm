@@ -25,6 +25,13 @@ package Azure::StreamAnalyticsManagement::CreateOrReplaceStreamingJobs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.StreamAnalytics/streamingjobs/{jobName}');
-  class_has _returns => (is => 'ro', default => 'Azure::StreamAnalyticsManagement::CreateOrReplaceStreamingJobsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::StreamAnalyticsManagement::CreateOrReplaceStreamingJobsResult',
+    
+      201 => 'Azure::StreamAnalyticsManagement::CreateOrReplaceStreamingJobsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

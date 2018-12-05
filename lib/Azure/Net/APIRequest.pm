@@ -20,7 +20,7 @@ package Azure::Net::APIRequest;
    sub header_hash {
      my $self = shift;
      my $headers = {};
-     $self->headers->scan(sub { $headers->{ $_[0] } = $_[1] });
+     $self->headers->scan(sub { $headers->{ lc $_[0] } = $_[1] });
      return $headers;
    }
 1;

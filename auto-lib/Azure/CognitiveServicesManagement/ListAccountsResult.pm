@@ -1,7 +1,6 @@
 package Azure::CognitiveServicesManagement::ListAccountsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::CognitiveServicesManagement::CognitiveServicesAccount]'  );
+  has error => (is => 'ro', isa => 'Azure::CognitiveServicesManagement::ErrorBody'  );
 
 1;

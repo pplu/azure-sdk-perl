@@ -16,6 +16,13 @@ package Azure::ManagementLock::CreateOrUpdateByScopeManagementLocks;
   );
 
   class_has _api_uri => (is => 'ro', default => '/{scope}/providers/Microsoft.Authorization/locks/{lockName}');
-  class_has _returns => (is => 'ro', default => 'Azure::ManagementLock::CreateOrUpdateByScopeManagementLocksResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ManagementLock::CreateOrUpdateByScopeManagementLocksResult',
+    
+      201 => 'Azure::ManagementLock::CreateOrUpdateByScopeManagementLocksResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

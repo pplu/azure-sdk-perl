@@ -1,7 +1,9 @@
 package Azure::iotHub::ListEventHubConsumerGroupsIotHubResourceResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has Code => (is => 'ro', isa => 'Str'  );
+  has Details => (is => 'ro', isa => 'Str'  );
+  has HttpStatusCode => (is => 'ro', isa => 'Str'  );
+  has Message => (is => 'ro', isa => 'Str'  );
 
 1;

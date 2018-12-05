@@ -1,108 +1,59 @@
 package Azure::AppInsightsManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateComponents {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::CreateOrUpdateComponents', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::CreateOrUpdateComponents', { @_ });
   }
   sub CreateOrUpdateWebTests {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::CreateOrUpdateWebTests', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::CreateOrUpdateWebTests', { @_ });
   }
   sub DeleteComponents {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::DeleteComponents', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::DeleteComponents', { @_ });
   }
   sub DeleteWebTests {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::DeleteWebTests', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::DeleteWebTests', { @_ });
   }
   sub GetComponents {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::GetComponents', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::GetComponents', { @_ });
   }
   sub GetWebTests {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::GetWebTests', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::GetWebTests', { @_ });
   }
   sub ListByResourceGroupComponents {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::ListByResourceGroupComponents', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::ListByResourceGroupComponents', { @_ });
   }
   sub ListByResourceGroupWebTests {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::ListByResourceGroupWebTests', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::ListByResourceGroupWebTests', { @_ });
   }
   sub ListComponents {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::ListComponents', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::ListComponents', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AppInsightsManagement::ListOperations', { @_ });
   }
   sub ListWebTests {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::ListWebTests', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::ListWebTests', { @_ });
   }
   sub UpdateTagsComponents {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::UpdateTagsComponents', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::UpdateTagsComponents', { @_ });
   }
   sub UpdateTagsWebTests {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AppInsightsManagement::UpdateTagsWebTests', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AppInsightsManagement::UpdateTagsWebTests', { @_ });
   }
 
   sub operations { qw/CreateOrUpdateComponents CreateOrUpdateWebTests DeleteComponents DeleteWebTests GetComponents GetWebTests ListByResourceGroupComponents ListByResourceGroupWebTests ListComponents ListOperations ListWebTests UpdateTagsComponents UpdateTagsWebTests / }

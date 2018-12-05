@@ -22,6 +22,13 @@ package Azure::SqlManagement::CancelDatabaseOperations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Sql/servers/{serverName}/databases/{databaseName}/operations/{operationId}/cancel');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => undef,
+    
+      default => undef,
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

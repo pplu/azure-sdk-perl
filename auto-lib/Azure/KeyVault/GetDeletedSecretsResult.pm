@@ -1,7 +1,6 @@
 package Azure::KeyVault::GetDeletedSecretsResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::KeyVault::DeletedSecretItem]'  );
+  has error => (is => 'ro', isa => 'Azure::KeyVault::Error'  );
 
 1;

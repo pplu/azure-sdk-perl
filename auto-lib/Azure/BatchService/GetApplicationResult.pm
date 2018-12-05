@@ -1,8 +1,8 @@
 package Azure::BatchService::GetApplicationResult;
   use Moose;
 
-  has displayName => (is => 'ro', isa => 'Str'  );
-  has id => (is => 'ro', isa => 'Str'  );
-  has versions => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Azure::BatchService::ErrorMessage'  );
+  has values => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::BatchErrorDetail]'  );
 
 1;

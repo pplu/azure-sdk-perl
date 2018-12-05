@@ -1,214 +1,89 @@
 package Azure::iotHub;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckNameAvailabilityIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::CheckNameAvailabilityIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::CheckNameAvailabilityIotHubResource', { @_ });
   }
   sub CreateEventHubConsumerGroupIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::CreateEventHubConsumerGroupIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub CreateOrUpdateCertificates {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::CreateOrUpdateCertificates', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::CreateEventHubConsumerGroupIotHubResource', { @_ });
   }
   sub CreateOrUpdateIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::CreateOrUpdateIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DeleteCertificates {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::DeleteCertificates', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::CreateOrUpdateIotHubResource', { @_ });
   }
   sub DeleteEventHubConsumerGroupIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::DeleteEventHubConsumerGroupIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::DeleteEventHubConsumerGroupIotHubResource', { @_ });
   }
   sub DeleteIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::DeleteIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::DeleteIotHubResource', { @_ });
   }
   sub ExportDevicesIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ExportDevicesIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GenerateVerificationCodeCertificates {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GenerateVerificationCodeCertificates', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetCertificates {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GetCertificates', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::ExportDevicesIotHubResource', { @_ });
   }
   sub GetEventHubConsumerGroupIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GetEventHubConsumerGroupIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::GetEventHubConsumerGroupIotHubResource', { @_ });
   }
   sub GetIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GetIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::GetIotHubResource', { @_ });
   }
   sub GetJobIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GetJobIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::GetJobIotHubResource', { @_ });
   }
   sub GetKeysForKeyNameIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GetKeysForKeyNameIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::GetKeysForKeyNameIotHubResource', { @_ });
   }
   sub GetQuotaMetricsIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GetQuotaMetricsIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::GetQuotaMetricsIotHubResource', { @_ });
   }
   sub GetStatsIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GetStatsIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::GetStatsIotHubResource', { @_ });
   }
   sub GetValidSkusIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::GetValidSkusIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::GetValidSkusIotHubResource', { @_ });
   }
   sub ImportDevicesIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ImportDevicesIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListByIotHubCertificates {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ListByIotHubCertificates', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::ImportDevicesIotHubResource', { @_ });
   }
   sub ListByResourceGroupIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ListByResourceGroupIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::ListByResourceGroupIotHubResource', { @_ });
   }
   sub ListBySubscriptionIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ListBySubscriptionIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::ListBySubscriptionIotHubResource', { @_ });
   }
   sub ListEventHubConsumerGroupsIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ListEventHubConsumerGroupsIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::ListEventHubConsumerGroupsIotHubResource', { @_ });
   }
   sub ListJobsIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ListJobsIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::ListJobsIotHubResource', { @_ });
   }
   sub ListKeysIotHubResource {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ListKeysIotHubResource', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::iotHub::ListKeysIotHubResource', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::iotHub::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub VerifyCertificates {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::iotHub::VerifyCertificates', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::iotHub::ListOperations', { @_ });
   }
 
-  sub operations { qw/CheckNameAvailabilityIotHubResource CreateEventHubConsumerGroupIotHubResource CreateOrUpdateCertificates CreateOrUpdateIotHubResource DeleteCertificates DeleteEventHubConsumerGroupIotHubResource DeleteIotHubResource ExportDevicesIotHubResource GenerateVerificationCodeCertificates GetCertificates GetEventHubConsumerGroupIotHubResource GetIotHubResource GetJobIotHubResource GetKeysForKeyNameIotHubResource GetQuotaMetricsIotHubResource GetStatsIotHubResource GetValidSkusIotHubResource ImportDevicesIotHubResource ListByIotHubCertificates ListByResourceGroupIotHubResource ListBySubscriptionIotHubResource ListEventHubConsumerGroupsIotHubResource ListJobsIotHubResource ListKeysIotHubResource ListOperations VerifyCertificates / }
+  sub operations { qw/CheckNameAvailabilityIotHubResource CreateEventHubConsumerGroupIotHubResource CreateOrUpdateIotHubResource DeleteEventHubConsumerGroupIotHubResource DeleteIotHubResource ExportDevicesIotHubResource GetEventHubConsumerGroupIotHubResource GetIotHubResource GetJobIotHubResource GetKeysForKeyNameIotHubResource GetQuotaMetricsIotHubResource GetStatsIotHubResource GetValidSkusIotHubResource ImportDevicesIotHubResource ListByResourceGroupIotHubResource ListBySubscriptionIotHubResource ListEventHubConsumerGroupsIotHubResource ListJobsIotHubResource ListKeysIotHubResource ListOperations / }
 
 1;

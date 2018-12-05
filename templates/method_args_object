@@ -15,6 +15,11 @@ package [% method.fully_namespaced %];
   [%- END %]
 
   class_has _api_uri => (is => 'ro', default => '[% method.path %]');
-  class_has _returns => (is => 'ro', default => '[% IF method.return %][% method.return.fully_namespaced %][% END %]');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    [% FOREACH return_code IN method.return.keys.sort %]
+      [% return_code %] => [% IF (method.return.$return_code.is_undef) %]undef[% ELSE %]'[% method.return.$return_code.fully_namespaced %]'[% END %],
+    [% END %]
+  } });
+  class_has _is_async => (is => 'ro', default => [% method.is_async %]);
   class_has _api_method => (is => 'ro', default => '[% method.method %]');
 1;

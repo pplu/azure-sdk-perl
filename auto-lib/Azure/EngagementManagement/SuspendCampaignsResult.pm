@@ -1,7 +1,6 @@
 package Azure::EngagementManagement::SuspendCampaignsResult;
   use Moose;
 
-  has id => (is => 'ro', isa => 'Int'  );
-  has state => (is => 'ro', isa => 'Str'  );
+  has error => (is => 'ro', isa => 'Azure::EngagementManagement::SuspendCampaignsResult_error'  );
 
 1;

@@ -28,6 +28,13 @@ package Azure::BatchService::AddUserComputeNode;
   );
 
   class_has _api_uri => (is => 'ro', default => '/pools/{poolId}/nodes/{nodeId}/users');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      201 => undef,
+    
+      default => 'Azure::BatchService::AddUserComputeNodeResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

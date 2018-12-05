@@ -1,7 +1,6 @@
 package Azure::CognitiveFace::GroupFaceResult;
   use Moose;
 
-  has groups => (is => 'ro', isa => 'ArrayRef[Any]'  );
-  has messyGroup => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has error => (is => 'ro', isa => 'Azure::CognitiveFace::Error'  );
 
 1;

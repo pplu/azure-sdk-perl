@@ -10,6 +10,13 @@ package Azure::KeyVault::DeleteCertificate;
   );
 
   class_has _api_uri => (is => 'ro', default => '/certificates/{certificate-name}');
-  class_has _returns => (is => 'ro', default => 'Azure::KeyVault::DeleteCertificateResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::KeyVault::DeleteCertificateResult',
+    
+      default => 'Azure::KeyVault::DeleteCertificateResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'DELETE');
 1;

@@ -19,6 +19,11 @@ package Azure::AppInsightsManagement::CreateOrUpdateComponents;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}');
-  class_has _returns => (is => 'ro', default => 'Azure::AppInsightsManagement::CreateOrUpdateComponentsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::AppInsightsManagement::CreateOrUpdateComponentsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

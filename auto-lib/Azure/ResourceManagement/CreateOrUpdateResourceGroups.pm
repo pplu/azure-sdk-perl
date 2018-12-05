@@ -16,6 +16,13 @@ package Azure::ResourceManagement::CreateOrUpdateResourceGroups;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}');
-  class_has _returns => (is => 'ro', default => 'Azure::ResourceManagement::CreateOrUpdateResourceGroupsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::ResourceManagement::CreateOrUpdateResourceGroupsResult',
+    
+      201 => 'Azure::ResourceManagement::CreateOrUpdateResourceGroupsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

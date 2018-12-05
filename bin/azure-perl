@@ -21,7 +21,9 @@ my @args = @ARGV;
 
 my $subs = $ENV{AZURE_SUBSCRIPTION_ID} or die "Please define env AZURE_SUBSCRIPTION_ID";
 
-my $azure = Azure->new();
+my $azure = Azure->new(config => {
+  handle_async_operations => 0,  
+});
 
 my $service_name = shift @args;
 if (not defined $service_name) {
@@ -114,6 +116,13 @@ if ($@) {
 
 if (ref($result)) {
   my $h = $service->to_hash($result);
+  if (ref($h) eq 'ARRAY') {
+    # Some calls return an array. Hash::Flatten::flatten doesn't like arrayrefs,
+    # so we convert the array into a hash with indexes as the keys, as it will
+    # visualize in the same manner as a hashref
+    my $i = 0;
+    $h = { map { ($i++ => $_)  } @$h };
+  }
   $h = Hash::Flatten::flatten($h, { HashDelimiter => '.', ArrayDelimiter => '.' });
 
   my $max_chars = reduce { length($a) > length($b) ? $a : $b } keys %$h;

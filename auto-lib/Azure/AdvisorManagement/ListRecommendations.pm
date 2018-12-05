@@ -19,6 +19,11 @@ package Azure::AdvisorManagement::ListRecommendations;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.Advisor/recommendations');
-  class_has _returns => (is => 'ro', default => 'Azure::AdvisorManagement::ListRecommendationsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::AdvisorManagement::ListRecommendationsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

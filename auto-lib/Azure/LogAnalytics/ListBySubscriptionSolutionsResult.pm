@@ -1,6 +1,6 @@
 package Azure::LogAnalytics::ListBySubscriptionSolutionsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::LogAnalytics::Solution]'  );
+  has error => (is => 'ro', isa => 'Azure::LogAnalytics::ListBySubscriptionSolutionsResult_error'  );
 
 1;

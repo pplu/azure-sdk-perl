@@ -1,8 +1,8 @@
 package Azure::BatchService::EvaluateAutoScalePoolResult;
   use Moose;
 
-  has error => (is => 'ro', isa => 'Azure::BatchService::AutoScaleRunError'  );
-  has results => (is => 'ro', isa => 'Str'  );
-  has timestamp => (is => 'ro', isa => 'Str'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Azure::BatchService::ErrorMessage'  );
+  has values => (is => 'ro', isa => 'ArrayRef[Azure::BatchService::BatchErrorDetail]'  );
 
 1;

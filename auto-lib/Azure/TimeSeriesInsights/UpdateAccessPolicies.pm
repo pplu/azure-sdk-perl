@@ -22,6 +22,13 @@ package Azure::TimeSeriesInsights::UpdateAccessPolicies;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.TimeSeriesInsights/environments/{environmentName}/accessPolicies/{accessPolicyName}');
-  class_has _returns => (is => 'ro', default => 'Azure::TimeSeriesInsights::UpdateAccessPoliciesResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::TimeSeriesInsights::UpdateAccessPoliciesResult',
+    
+      default => 'Azure::TimeSeriesInsights::UpdateAccessPoliciesResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PATCH');
 1;

@@ -22,6 +22,13 @@ package Azure::LogicManagement::CreateOrUpdateMaps;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Logic/integrationAccounts/{integrationAccountName}/maps/{mapName}');
-  class_has _returns => (is => 'ro', default => 'Azure::LogicManagement::CreateOrUpdateMapsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::LogicManagement::CreateOrUpdateMapsResult',
+    
+      201 => 'Azure::LogicManagement::CreateOrUpdateMapsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

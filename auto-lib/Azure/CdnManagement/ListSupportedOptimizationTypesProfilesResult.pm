@@ -1,6 +1,7 @@
 package Azure::CdnManagement::ListSupportedOptimizationTypesProfilesResult;
   use Moose;
 
-  has supportedOptimizationTypes => (is => 'ro', isa => 'ArrayRef[Azure::CdnManagement::OptimizationType]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has message => (is => 'ro', isa => 'Str'  );
 
 1;

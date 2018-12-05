@@ -1,125 +1,87 @@
 package Azure::AuthorizationManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateByIdRoleAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::CreateByIdRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::CreateByIdRoleAssignments', { @_ });
   }
   sub CreateOrUpdateRoleDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::CreateOrUpdateRoleDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::CreateOrUpdateRoleDefinitions', { @_ });
   }
   sub CreateRoleAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::CreateRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::CreateRoleAssignments', { @_ });
   }
   sub DeleteByIdRoleAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::DeleteByIdRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::DeleteByIdRoleAssignments', { @_ });
   }
   sub DeleteRoleAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::DeleteRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::DeleteRoleAssignments', { @_ });
   }
   sub DeleteRoleDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::DeleteRoleDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::DeleteRoleDefinitions', { @_ });
   }
   sub GetByIdRoleAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::GetByIdRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::GetByIdRoleAssignments', { @_ });
   }
   sub GetByIdRoleDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::GetByIdRoleDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::GetByIdRoleDefinitions', { @_ });
   }
   sub GetProviderOperationsMetadata {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::GetProviderOperationsMetadata', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::GetProviderOperationsMetadata', { @_ });
   }
   sub GetRoleAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::GetRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::GetRoleAssignments', { @_ });
   }
   sub GetRoleDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::GetRoleDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::GetRoleDefinitions', { @_ });
   }
   sub ListClassicAdministrators {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListClassicAdministrators', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AuthorizationManagement::ListClassicAdministrators', { @_ });
   }
   sub ListForResourceGroupPermissions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListForResourceGroupPermissions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AuthorizationManagement::ListForResourceGroupPermissions', { @_ });
   }
   sub ListForResourceGroupRoleAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListForResourceGroupRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AuthorizationManagement::ListForResourceGroupRoleAssignments', { @_ });
   }
   sub ListForResourcePermissions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListForResourcePermissions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AuthorizationManagement::ListForResourcePermissions', { @_ });
   }
   sub ListForResourceRoleAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListForResourceRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AuthorizationManagement::ListForResourceRoleAssignments', { @_ });
   }
   sub ListForScopeRoleAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListForScopeRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::ListForScopeRoleAssignments', { @_ });
   }
   sub ListProviderOperationsMetadata {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListProviderOperationsMetadata', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::ListProviderOperationsMetadata', { @_ });
   }
   sub ListRoleAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListRoleAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::AuthorizationManagement::ListRoleAssignments', { @_ });
   }
   sub ListRoleDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::AuthorizationManagement::ListRoleDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::AuthorizationManagement::ListRoleDefinitions', { @_ });
   }
 
   sub operations { qw/CreateByIdRoleAssignments CreateOrUpdateRoleDefinitions CreateRoleAssignments DeleteByIdRoleAssignments DeleteRoleAssignments DeleteRoleDefinitions GetByIdRoleAssignments GetByIdRoleDefinitions GetProviderOperationsMetadata GetRoleAssignments GetRoleDefinitions ListClassicAdministrators ListForResourceGroupPermissions ListForResourceGroupRoleAssignments ListForResourcePermissions ListForResourceRoleAssignments ListForScopeRoleAssignments ListProviderOperationsMetadata ListRoleAssignments ListRoleDefinitions / }

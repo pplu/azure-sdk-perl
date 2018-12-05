@@ -13,6 +13,13 @@ package Azure::DataLakeStoreFileSystemManagement::RemoveAclFileSystem;
   );
 
   class_has _api_uri => (is => 'ro', default => '/webhdfs/v1/{aclFilePath}');
-  class_has _returns => (is => 'ro', default => '');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => undef,
+    
+      default => 'Azure::DataLakeStoreFileSystemManagement::RemoveAclFileSystemResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

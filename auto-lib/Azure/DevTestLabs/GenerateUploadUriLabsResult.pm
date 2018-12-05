@@ -1,6 +1,6 @@
 package Azure::DevTestLabs::GenerateUploadUriLabsResult;
   use Moose;
 
-  has uploadUri => (is => 'ro', isa => 'Str'  );
+  has error => (is => 'ro', isa => 'Azure::DevTestLabs::CloudErrorBody'  );
 
 1;

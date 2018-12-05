@@ -1,102 +1,83 @@
 package Azure::DataLakeAnalyticsCatalogManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateCredentialCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::CreateCredentialCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::CreateCredentialCatalog', { @_ });
   }
   sub CreateSecretCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::CreateSecretCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::CreateSecretCatalog', { @_ });
   }
   sub DeleteAllSecretsCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::DeleteAllSecretsCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::DeleteAllSecretsCatalog', { @_ });
   }
   sub DeleteCredentialCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::DeleteCredentialCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::DeleteCredentialCatalog', { @_ });
   }
   sub DeleteSecretCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::DeleteSecretCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::DeleteSecretCatalog', { @_ });
   }
   sub GetAssemblyCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetAssemblyCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetAssemblyCatalog', { @_ });
   }
   sub GetCredentialCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetCredentialCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetCredentialCatalog', { @_ });
   }
   sub GetDatabaseCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetDatabaseCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetDatabaseCatalog', { @_ });
   }
   sub GetExternalDataSourceCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetExternalDataSourceCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetExternalDataSourceCatalog', { @_ });
   }
   sub GetPackageCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetPackageCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetPackageCatalog', { @_ });
   }
   sub GetProcedureCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetProcedureCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetProcedureCatalog', { @_ });
   }
   sub GetSchemaCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetSchemaCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetSchemaCatalog', { @_ });
   }
   sub GetSecretCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetSecretCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetSecretCatalog', { @_ });
   }
   sub GetTableCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetTableCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetTableCatalog', { @_ });
   }
   sub GetTablePartitionCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetTablePartitionCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetTablePartitionCatalog', { @_ });
   }
   sub GetTableStatisticCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetTableStatisticCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetTableStatisticCatalog', { @_ });
   }
   sub GetTableTypeCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetTableTypeCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetTableTypeCatalog', { @_ });
   }
   sub GetTableValuedFunctionCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetTableValuedFunctionCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetTableValuedFunctionCatalog', { @_ });
   }
   sub GetViewCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::GetViewCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::GetViewCatalog', { @_ });
   }
   sub ListAclsByDatabaseCatalog {
     my $self = shift;
@@ -110,108 +91,87 @@ package Azure::DataLakeAnalyticsCatalogManagement;
   }
   sub ListAssembliesCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListAssembliesCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListAssembliesCatalog', { @_ });
   }
   sub ListCredentialsCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListCredentialsCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListCredentialsCatalog', { @_ });
   }
   sub ListDatabasesCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListDatabasesCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListDatabasesCatalog', { @_ });
   }
   sub ListExternalDataSourcesCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListExternalDataSourcesCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListExternalDataSourcesCatalog', { @_ });
   }
   sub ListPackagesCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListPackagesCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListPackagesCatalog', { @_ });
   }
   sub ListProceduresCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListProceduresCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListProceduresCatalog', { @_ });
   }
   sub ListSchemasCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListSchemasCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListSchemasCatalog', { @_ });
   }
   sub ListTablePartitionsCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTablePartitionsCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTablePartitionsCatalog', { @_ });
   }
   sub ListTablesByDatabaseCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTablesByDatabaseCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTablesByDatabaseCatalog', { @_ });
   }
   sub ListTablesCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTablesCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTablesCatalog', { @_ });
   }
   sub ListTableStatisticsByDatabaseAndSchemaCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsByDatabaseAndSchemaCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsByDatabaseAndSchemaCatalog', { @_ });
   }
   sub ListTableStatisticsByDatabaseCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsByDatabaseCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsByDatabaseCatalog', { @_ });
   }
   sub ListTableStatisticsCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTableStatisticsCatalog', { @_ });
   }
   sub ListTableTypesCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableTypesCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTableTypesCatalog', { @_ });
   }
   sub ListTableValuedFunctionsByDatabaseCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsByDatabaseCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsByDatabaseCatalog', { @_ });
   }
   sub ListTableValuedFunctionsCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTableValuedFunctionsCatalog', { @_ });
   }
   sub ListTypesCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListTypesCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListTypesCatalog', { @_ });
   }
   sub ListViewsByDatabaseCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListViewsByDatabaseCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListViewsByDatabaseCatalog', { @_ });
   }
   sub ListViewsCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::ListViewsCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::ListViewsCatalog', { @_ });
   }
   sub UpdateCredentialCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::UpdateCredentialCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::UpdateCredentialCatalog', { @_ });
   }
   sub UpdateSecretCatalog {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::DataLakeAnalyticsCatalogManagement::UpdateSecretCatalog', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::DataLakeAnalyticsCatalogManagement::UpdateSecretCatalog', { @_ });
   }
 
   sub operations { qw/CreateCredentialCatalog CreateSecretCatalog DeleteAllSecretsCatalog DeleteCredentialCatalog DeleteSecretCatalog GetAssemblyCatalog GetCredentialCatalog GetDatabaseCatalog GetExternalDataSourceCatalog GetPackageCatalog GetProcedureCatalog GetSchemaCatalog GetSecretCatalog GetTableCatalog GetTablePartitionCatalog GetTableStatisticCatalog GetTableTypeCatalog GetTableValuedFunctionCatalog GetViewCatalog ListAclsByDatabaseCatalog ListAclsCatalog ListAssembliesCatalog ListCredentialsCatalog ListDatabasesCatalog ListExternalDataSourcesCatalog ListPackagesCatalog ListProceduresCatalog ListSchemasCatalog ListTablePartitionsCatalog ListTablesByDatabaseCatalog ListTablesCatalog ListTableStatisticsByDatabaseAndSchemaCatalog ListTableStatisticsByDatabaseCatalog ListTableStatisticsCatalog ListTableTypesCatalog ListTableValuedFunctionsByDatabaseCatalog ListTableValuedFunctionsCatalog ListTypesCatalog ListViewsByDatabaseCatalog ListViewsCatalog UpdateCredentialCatalog UpdateSecretCatalog / }

@@ -9,11 +9,13 @@ use Azure;
 use Test::More;
 use StubCredentials;
 use CallerThatReturnsTheRequest;
+use InflatorThatJustReturnsTheResponse;
 
 my $caller = CallerThatReturnsTheRequest->new;
 my $creds = StubCredentials->new;
+my $inflator = InflatorThatJustReturnsTheResponse->new;
 
-my $az1 = Azure->new(config => { subscription_id => 'subscription1', caller => $caller, credentials => $creds });
+my $az1 = Azure->new(config => { subscription_id => 'subscription1', caller => $caller, credentials => $creds, response_inflator => $inflator });
 
 {
   my $logm = $az1->service('LogicManagement');

@@ -4,6 +4,8 @@ package Azure::SDK::Builder::Method;
 
   use Azure::SDK::Builder::MethodArgument;
   use Azure::SDK::Builder::Return;
+  use Azure::SDK::Builder::NoReturn;
+  use Azure::SDK::Builder::ReturnsArray;
 
   has name => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);
@@ -103,52 +105,74 @@ package Azure::SDK::Builder::Method;
     } @$list ];
   }
 
+  has is_async => (
+    is => 'ro',
+    isa => 'Int',
+    required => 1,
+  );
+
   has return => (
     is => 'ro',
-    isa => 'Azure::SDK::Builder::Return|Undef',
+    isa => 'HashRef[Azure::SDK::Builder::ReturnBase]',
     lazy => 1,
     default => sub {
       my $self = shift;
-      if (   defined $self->responses->{200}
-          or defined $self->responses->{201}
-          or defined $self->responses->{204} 
-          or defined $self->responses->{202}
-         ) {
-        my $response = $self->responses->{200} 
-                    || $self->responses->{201} 
-                    || $self->responses->{204} 
-                    || $self->responses->{202};
 
-        die "Error finding the 20X response" if (not defined $response);
+      my $responses = {};
 
-        return undef if (not defined $response->schema);
+      foreach my $status (keys %{ $self->responses }) {
+        my $response = $self->responses->{ $status };
 
-        my $root_schema = $self->root_schema;
-        my $definition;
-        if ($response->schema->isa('Swagger::Schema::RefParameter')) {
-          my $ref = $response->schema->ref;
-          my $path = $self->root_schema->resolve_path($ref);
-          $definition = $path->object;
-          $root_schema = $path->schema;
+        if (defined $response->schema) {
+          if (not $response->schema->isa('Swagger::Schema::RefParameter') and $response->schema->type eq 'array') {
+            warn "array";
+            use Data::Printer;
+            p $response->schema;
+            p $response->schema->items;
+
+            my $list_of;
+            if (defined $response->schema->items->{ type }) {
+              $list_of = $response->schema->items->{ type };
+            } else {
+              $self->root_schema->resolve_path($response->schema->items->{ '$ref' })->object;
+            }
+
+            $responses->{ $status } = Azure::SDK::Builder::ReturnsArray->new(
+              array_of => $list_of,
+            );
+            next;
+          }
+
+          my $definition;
+          if ($response->schema->isa('Swagger::Schema::RefParameter')) {
+            my $ref = $response->schema->ref;
+            $definition = $self->root_schema->resolve_path($ref)->object;
+          } else {
+            $definition = $response->schema;
+          }
+
+          my $return = Azure::SDK::Builder::Return->new(
+            %$definition,
+            name => $self->name . 'Result',
+            service => $self->service,
+            root_schema => $self->root_schema,
+          );
+          $responses->{ $status } = $return;
         } else {
-          $definition = $response->schema;
-        }
-
-        my $return = Azure::SDK::Builder::Return->new(
-          %$definition,
-          name => $self->name . 'Result',
-          root_schema => $root_schema,
-          service => $self->service,
-        );
-        return $return;
-      } else {
-        # some APIs have just a default response that resolves to an error object
-        if (scalar(keys %{ $self->responses }) == 1 and defined $self->responses->{ default }) {
-          return undef;
-        } else {
-          die 'Can\'t find a valid response for ' . $self->method . ' on ' . $self->path;
+          my $return = Azure::SDK::Builder::NoReturn->new();
+          $responses->{ $status } = $return;
         }
       }
+
+      #} else {
+      #  # some APIs have just a default response that resolves to an error object
+      #  if (scalar(keys %{ $self->responses }) == 1 and defined $self->responses->{ default }) {
+      #    return undef;
+      #  } else {
+      #    die 'Can\'t find a valid response for ' . $self->method . ' on ' . $self->path;
+      #  }
+      #}
+      return $responses;
     }
   );
 

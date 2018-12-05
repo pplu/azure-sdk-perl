@@ -10,6 +10,11 @@ package Azure::MySQLManagement::ListServers;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/servers');
-  class_has _returns => (is => 'ro', default => 'Azure::MySQLManagement::ListServersResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::MySQLManagement::ListServersResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

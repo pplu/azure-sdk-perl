@@ -1,71 +1,39 @@
 package Azure::KeyVaultManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateVaults {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::CreateOrUpdateVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::KeyVaultManagement::CreateOrUpdateVaults', { @_ });
   }
   sub DeleteVaults {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::DeleteVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::KeyVaultManagement::DeleteVaults', { @_ });
   }
   sub GetDeletedVaults {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::GetDeletedVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::KeyVaultManagement::GetDeletedVaults', { @_ });
   }
   sub GetVaults {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::GetVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::KeyVaultManagement::GetVaults', { @_ });
   }
   sub ListByResourceGroupVaults {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListByResourceGroupVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::KeyVaultManagement::ListByResourceGroupVaults', { @_ });
   }
   sub ListDeletedVaults {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListDeletedVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::KeyVaultManagement::ListDeletedVaults', { @_ });
   }
   sub ListVaults {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::ListVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::KeyVaultManagement::ListVaults', { @_ });
   }
   sub PurgeDeletedVaults {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::KeyVaultManagement::PurgeDeletedVaults', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::KeyVaultManagement::PurgeDeletedVaults', { @_ });
   }
 
   sub operations { qw/CreateOrUpdateVaults DeleteVaults GetDeletedVaults GetVaults ListByResourceGroupVaults ListDeletedVaults ListVaults PurgeDeletedVaults / }

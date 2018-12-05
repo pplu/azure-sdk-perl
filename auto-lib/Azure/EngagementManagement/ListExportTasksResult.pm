@@ -1,7 +1,6 @@
 package Azure::EngagementManagement::ListExportTasksResult;
   use Moose;
 
-  has nextLink => (is => 'ro', isa => 'Str'  );
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::EngagementManagement::exportTaskResult]'  );
+  has error => (is => 'ro', isa => 'Azure::EngagementManagement::ListExportTasksResult_error'  );
 
 1;

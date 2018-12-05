@@ -1,22 +1,19 @@
 package Azure::ManagementGroups;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub GetManagementGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagementGroups::GetManagementGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagementGroups::GetManagementGroups', { @_ });
   }
   sub ListManagementGroups {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagementGroups::ListManagementGroups', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagementGroups::ListManagementGroups', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ManagementGroups::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ManagementGroups::ListOperations', { @_ });
   }
 
   sub operations { qw/GetManagementGroups ListManagementGroups ListOperations / }

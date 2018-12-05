@@ -1,196 +1,103 @@
 package Azure::ContainerRegistryManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CheckNameAvailabilityRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::CheckNameAvailabilityRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::CheckNameAvailabilityRegistries', { @_ });
   }
   sub CreateRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::CreateRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::CreateRegistries', { @_ });
   }
   sub CreateReplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::CreateReplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::CreateReplications', { @_ });
   }
   sub CreateWebhooks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::CreateWebhooks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::CreateWebhooks', { @_ });
   }
   sub DeleteRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::DeleteRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::DeleteRegistries', { @_ });
   }
   sub DeleteReplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::DeleteReplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::DeleteReplications', { @_ });
   }
   sub DeleteWebhooks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::DeleteWebhooks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::DeleteWebhooks', { @_ });
   }
   sub GetCallbackConfigWebhooks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::GetCallbackConfigWebhooks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::GetCallbackConfigWebhooks', { @_ });
   }
   sub GetRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::GetRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::GetRegistries', { @_ });
   }
   sub GetReplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::GetReplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::GetReplications', { @_ });
   }
   sub GetWebhooks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::GetWebhooks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::GetWebhooks', { @_ });
   }
   sub ListByResourceGroupRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListByResourceGroupRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::ListByResourceGroupRegistries', { @_ });
   }
   sub ListCredentialsRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListCredentialsRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::ListCredentialsRegistries', { @_ });
   }
   sub ListEventsWebhooks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListEventsWebhooks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::ListEventsWebhooks', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::ContainerRegistryManagement::ListOperations', { @_ });
   }
   sub ListRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::ListRegistries', { @_ });
   }
   sub ListReplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListReplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::ListReplications', { @_ });
   }
   sub ListUsagesRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListUsagesRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::ListUsagesRegistries', { @_ });
   }
   sub ListWebhooks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::ListWebhooks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::ListWebhooks', { @_ });
   }
   sub PingWebhooks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::PingWebhooks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::PingWebhooks', { @_ });
   }
   sub RegenerateCredentialRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::RegenerateCredentialRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::RegenerateCredentialRegistries', { @_ });
   }
   sub UpdateRegistries {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::UpdateRegistries', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::UpdateRegistries', { @_ });
   }
   sub UpdateReplications {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::UpdateReplications', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::UpdateReplications', { @_ });
   }
   sub UpdateWebhooks {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::ContainerRegistryManagement::UpdateWebhooks', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::ContainerRegistryManagement::UpdateWebhooks', { @_ });
   }
 
   sub operations { qw/CheckNameAvailabilityRegistries CreateRegistries CreateReplications CreateWebhooks DeleteRegistries DeleteReplications DeleteWebhooks GetCallbackConfigWebhooks GetRegistries GetReplications GetWebhooks ListByResourceGroupRegistries ListCredentialsRegistries ListEventsWebhooks ListOperations ListRegistries ListReplications ListUsagesRegistries ListWebhooks PingWebhooks RegenerateCredentialRegistries UpdateRegistries UpdateReplications UpdateWebhooks / }

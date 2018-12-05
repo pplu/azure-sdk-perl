@@ -1,125 +1,61 @@
 package Azure::Policy;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateByIdPolicyAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::CreateByIdPolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Policy::CreateByIdPolicyAssignments', { @_ });
   }
-  sub CreateOrUpdateAtManagementGroupPolicySetDefinitions {
+  sub CreateOrUpdatePolicyDefinitions {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::CreateOrUpdateAtManagementGroupPolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub CreateOrUpdatePolicySetDefinitions {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Policy::CreateOrUpdatePolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Policy::CreateOrUpdatePolicyDefinitions', { @_ });
   }
   sub CreatePolicyAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::CreatePolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DeleteAtManagementGroupPolicySetDefinitions {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::DeleteAtManagementGroupPolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Policy::CreatePolicyAssignments', { @_ });
   }
   sub DeleteByIdPolicyAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::DeleteByIdPolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Policy::DeleteByIdPolicyAssignments', { @_ });
   }
   sub DeletePolicyAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::DeletePolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Policy::DeletePolicyAssignments', { @_ });
   }
-  sub DeletePolicySetDefinitions {
+  sub DeletePolicyDefinitions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Policy::DeletePolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetAtManagementGroupPolicySetDefinitions {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::GetAtManagementGroupPolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetBuiltInPolicySetDefinitions {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::GetBuiltInPolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Policy::DeletePolicyDefinitions', { @_ });
   }
   sub GetByIdPolicyAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::GetByIdPolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Policy::GetByIdPolicyAssignments', { @_ });
   }
   sub GetPolicyAssignments {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::GetPolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::Policy::GetPolicyAssignments', { @_ });
   }
-  sub GetPolicySetDefinitions {
+  sub GetPolicyDefinitions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Policy::GetPolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListBuiltInPolicySetDefinitions {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::ListBuiltInPolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListByManagementGroupPolicySetDefinitions {
-    my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::Policy::ListByManagementGroupPolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Policy::GetPolicyDefinitions', { @_ });
   }
   sub ListForResourceGroupPolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Policy::ListForResourceGroupPolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Policy::ListForResourceGroupPolicyAssignments', { @_ });
   }
   sub ListForResourcePolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Policy::ListForResourcePolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Policy::ListForResourcePolicyAssignments', { @_ });
   }
   sub ListPolicyAssignments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Policy::ListPolicyAssignments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Policy::ListPolicyAssignments', { @_ });
   }
-  sub ListPolicySetDefinitions {
+  sub ListPolicyDefinitions {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::Policy::ListPolicySetDefinitions', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::Policy::ListPolicyDefinitions', { @_ });
   }
 
-  sub operations { qw/CreateByIdPolicyAssignments CreateOrUpdateAtManagementGroupPolicySetDefinitions CreateOrUpdatePolicySetDefinitions CreatePolicyAssignments DeleteAtManagementGroupPolicySetDefinitions DeleteByIdPolicyAssignments DeletePolicyAssignments DeletePolicySetDefinitions GetAtManagementGroupPolicySetDefinitions GetBuiltInPolicySetDefinitions GetByIdPolicyAssignments GetPolicyAssignments GetPolicySetDefinitions ListBuiltInPolicySetDefinitions ListByManagementGroupPolicySetDefinitions ListForResourceGroupPolicyAssignments ListForResourcePolicyAssignments ListPolicyAssignments ListPolicySetDefinitions / }
+  sub operations { qw/CreateByIdPolicyAssignments CreateOrUpdatePolicyDefinitions CreatePolicyAssignments DeleteByIdPolicyAssignments DeletePolicyAssignments DeletePolicyDefinitions GetByIdPolicyAssignments GetPolicyAssignments GetPolicyDefinitions ListForResourceGroupPolicyAssignments ListForResourcePolicyAssignments ListPolicyAssignments ListPolicyDefinitions / }
 
 1;

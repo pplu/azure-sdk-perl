@@ -1,7 +1,9 @@
 package Azure::PowerBIEmbeddedManagement::regenerateKeyWorkspaceCollectionsResult;
   use Moose;
 
-  has key1 => (is => 'ro', isa => 'Str'  );
-  has key2 => (is => 'ro', isa => 'Str'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has details => (is => 'ro', isa => 'ArrayRef[Azure::PowerBIEmbeddedManagement::ErrorDetail]'  );
+  has message => (is => 'ro', isa => 'Str'  );
+  has target => (is => 'ro', isa => 'Str'  );
 
 1;

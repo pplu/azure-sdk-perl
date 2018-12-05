@@ -1,71 +1,39 @@
 package Azure::MLWebServicesManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateWebServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::CreateOrUpdateWebServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MLWebServicesManagement::CreateOrUpdateWebServices', { @_ });
   }
   sub CreateRegionalPropertiesWebServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::CreateRegionalPropertiesWebServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MLWebServicesManagement::CreateRegionalPropertiesWebServices', { @_ });
   }
   sub GetWebServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::GetWebServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MLWebServicesManagement::GetWebServices', { @_ });
   }
   sub ListByResourceGroupWebServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListByResourceGroupWebServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MLWebServicesManagement::ListByResourceGroupWebServices', { @_ });
   }
   sub ListBySubscriptionIdWebServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListBySubscriptionIdWebServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MLWebServicesManagement::ListBySubscriptionIdWebServices', { @_ });
   }
   sub ListKeysWebServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::ListKeysWebServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MLWebServicesManagement::ListKeysWebServices', { @_ });
   }
   sub PatchWebServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::PatchWebServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MLWebServicesManagement::PatchWebServices', { @_ });
   }
   sub RemoveWebServices {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::MLWebServicesManagement::RemoveWebServices', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::MLWebServicesManagement::RemoveWebServices', { @_ });
   }
 
   sub operations { qw/CreateOrUpdateWebServices CreateRegionalPropertiesWebServices GetWebServices ListByResourceGroupWebServices ListBySubscriptionIdWebServices ListKeysWebServices PatchWebServices RemoveWebServices / }

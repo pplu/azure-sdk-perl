@@ -1,175 +1,91 @@
 package Azure::TimeSeriesInsights;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateAccessPolicies {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::CreateOrUpdateAccessPolicies', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::CreateOrUpdateAccessPolicies', { @_ });
   }
   sub CreateOrUpdateEnvironments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::CreateOrUpdateEnvironments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::CreateOrUpdateEnvironments', { @_ });
   }
   sub CreateOrUpdateEventSources {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::CreateOrUpdateEventSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::CreateOrUpdateEventSources', { @_ });
   }
   sub CreateOrUpdateReferenceDataSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::CreateOrUpdateReferenceDataSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::CreateOrUpdateReferenceDataSets', { @_ });
   }
   sub DeleteAccessPolicies {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::DeleteAccessPolicies', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::DeleteAccessPolicies', { @_ });
   }
   sub DeleteEnvironments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::DeleteEnvironments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::DeleteEnvironments', { @_ });
   }
   sub DeleteEventSources {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::DeleteEventSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::DeleteEventSources', { @_ });
   }
   sub DeleteReferenceDataSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::DeleteReferenceDataSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::DeleteReferenceDataSets', { @_ });
   }
   sub GetAccessPolicies {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::GetAccessPolicies', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::GetAccessPolicies', { @_ });
   }
   sub GetEnvironments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::GetEnvironments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::GetEnvironments', { @_ });
   }
   sub GetEventSources {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::GetEventSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::GetEventSources', { @_ });
   }
   sub GetReferenceDataSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::GetReferenceDataSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::GetReferenceDataSets', { @_ });
   }
   sub ListByEnvironmentAccessPolicies {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::ListByEnvironmentAccessPolicies', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::ListByEnvironmentAccessPolicies', { @_ });
   }
   sub ListByEnvironmentEventSources {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::ListByEnvironmentEventSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::ListByEnvironmentEventSources', { @_ });
   }
   sub ListByEnvironmentReferenceDataSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::ListByEnvironmentReferenceDataSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::ListByEnvironmentReferenceDataSets', { @_ });
   }
   sub ListByResourceGroupEnvironments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::ListByResourceGroupEnvironments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::ListByResourceGroupEnvironments', { @_ });
   }
   sub ListBySubscriptionEnvironments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::ListBySubscriptionEnvironments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::ListBySubscriptionEnvironments', { @_ });
   }
   sub UpdateAccessPolicies {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::UpdateAccessPolicies', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::UpdateAccessPolicies', { @_ });
   }
   sub UpdateEnvironments {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::UpdateEnvironments', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::UpdateEnvironments', { @_ });
   }
   sub UpdateEventSources {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::UpdateEventSources', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::UpdateEventSources', { @_ });
   }
   sub UpdateReferenceDataSets {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::TimeSeriesInsights::UpdateReferenceDataSets', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::UpdateReferenceDataSets', { @_ });
   }
 
   sub operations { qw/CreateOrUpdateAccessPolicies CreateOrUpdateEnvironments CreateOrUpdateEventSources CreateOrUpdateReferenceDataSets DeleteAccessPolicies DeleteEnvironments DeleteEventSources DeleteReferenceDataSets GetAccessPolicies GetEnvironments GetEventSources GetReferenceDataSets ListByEnvironmentAccessPolicies ListByEnvironmentEventSources ListByEnvironmentReferenceDataSets ListByResourceGroupEnvironments ListBySubscriptionEnvironments UpdateAccessPolicies UpdateEnvironments UpdateEventSources UpdateReferenceDataSets / }

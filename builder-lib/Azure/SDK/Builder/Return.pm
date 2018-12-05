@@ -1,6 +1,6 @@
 package Azure::SDK::Builder::Return;
   use Moose;
-  extends 'Swagger::Schema::Schema';
+  extends 'Swagger::Schema::Schema', 'Azure::SDK::Builder::ReturnBase';
 
   has name => (is => 'ro', isa => 'Str', required => 1);
   has service => (is => 'ro', isa => 'Str', required => 1);

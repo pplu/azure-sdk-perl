@@ -25,6 +25,13 @@ package Azure::DevTestLabs::ListServiceRunners;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DevTestLab/labs/{labName}/servicerunners');
-  class_has _returns => (is => 'ro', default => 'Azure::DevTestLabs::ListServiceRunnersResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::DevTestLabs::ListServiceRunnersResult',
+    
+      default => 'Azure::DevTestLabs::ListServiceRunnersResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

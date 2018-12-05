@@ -19,6 +19,13 @@ package Azure::CdnManagement::StartEndpoints;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Cdn/profiles/{profileName}/endpoints/{endpointName}/start');
-  class_has _returns => (is => 'ro', default => 'Azure::CdnManagement::StartEndpointsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      202 => 'Azure::CdnManagement::StartEndpointsResult',
+    
+      default => 'Azure::CdnManagement::StartEndpointsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'POST');
 1;

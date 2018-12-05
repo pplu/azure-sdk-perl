@@ -13,6 +13,11 @@ package Azure::MySQLManagement::ListLocationBasedPerformanceTier;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/providers/Microsoft.DBforMySQL/locations/{locationName}/performanceTiers');
-  class_has _returns => (is => 'ro', default => 'Azure::MySQLManagement::ListLocationBasedPerformanceTierResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::MySQLManagement::ListLocationBasedPerformanceTierResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

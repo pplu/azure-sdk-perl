@@ -1,10 +1,6 @@
 package Azure::BatchManagement::GetApplicationResult;
   use Moose;
 
-  has allowUpdates => (is => 'ro', isa => 'Bool'  );
-  has defaultVersion => (is => 'ro', isa => 'Str'  );
-  has displayName => (is => 'ro', isa => 'Str'  );
-  has id => (is => 'ro', isa => 'Str'  );
-  has packages => (is => 'ro', isa => 'ArrayRef[Azure::BatchManagement::ApplicationPackage]'  );
+  has error => (is => 'ro', isa => 'Azure::BatchManagement::CloudErrorBody'  );
 
 1;

@@ -22,6 +22,13 @@ package Azure::EventHubManagement::GetAuthorizationRuleEventHubs;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventHub/namespaces/{namespaceName}/eventhubs/{eventHubName}/authorizationRules/{authorizationRuleName}');
-  class_has _returns => (is => 'ro', default => 'Azure::EventHubManagement::GetAuthorizationRuleEventHubsResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::EventHubManagement::GetAuthorizationRuleEventHubsResult',
+    
+      default => 'Azure::EventHubManagement::GetAuthorizationRuleEventHubsResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 0);
   class_has _api_method => (is => 'ro', default => 'GET');
 1;

@@ -1,214 +1,97 @@
 package Azure::PostgreSQLManagement;
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   sub CreateOrUpdateConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::CreateOrUpdateConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::CreateOrUpdateConfigurations', { @_ });
   }
   sub CreateOrUpdateDatabases {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::CreateOrUpdateDatabases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::CreateOrUpdateDatabases', { @_ });
   }
   sub CreateOrUpdateFirewallRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::CreateOrUpdateFirewallRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub CreateOrUpdateVirtualNetworkRules {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::CreateOrUpdateVirtualNetworkRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::CreateOrUpdateFirewallRules', { @_ });
   }
   sub CreateServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::CreateServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::CreateServers', { @_ });
   }
   sub DeleteDatabases {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::DeleteDatabases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::DeleteDatabases', { @_ });
   }
   sub DeleteFirewallRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::DeleteFirewallRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::DeleteFirewallRules', { @_ });
   }
   sub DeleteServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::DeleteServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub DeleteVirtualNetworkRules {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::DeleteVirtualNetworkRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::DeleteServers', { @_ });
   }
   sub ExecuteCheckNameAvailability {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ExecuteCheckNameAvailability', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ExecuteCheckNameAvailability', { @_ });
   }
   sub GetConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::GetConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::GetConfigurations', { @_ });
   }
   sub GetDatabases {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::GetDatabases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::GetDatabases', { @_ });
   }
   sub GetFirewallRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::GetFirewallRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::GetFirewallRules', { @_ });
   }
   sub GetServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::GetServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub GetVirtualNetworkRules {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::GetVirtualNetworkRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::GetServers', { @_ });
   }
   sub ListByResourceGroupServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListByResourceGroupServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ListByResourceGroupServers', { @_ });
   }
   sub ListByServerConfigurations {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListByServerConfigurations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ListByServerConfigurations', { @_ });
   }
   sub ListByServerDatabases {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListByServerDatabases', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ListByServerDatabases', { @_ });
   }
   sub ListByServerFirewallRules {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListByServerFirewallRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ListByServerFirewallRules', { @_ });
   }
   sub ListByServerLogFiles {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListByServerLogFiles', { @_ });
-    return $self->caller->do_call($self, $call_object);
-  }
-  sub ListByServerVirtualNetworkRules {
-    my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListByServerVirtualNetworkRules', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ListByServerLogFiles', { @_ });
   }
   sub ListLocationBasedPerformanceTier {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListLocationBasedPerformanceTier', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ListLocationBasedPerformanceTier', { @_ });
   }
   sub ListOperations {
     my $self = shift;
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListOperations', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call(undef,'Azure::PostgreSQLManagement::ListOperations', { @_ });
   }
   sub ListPerformanceTiers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListPerformanceTiers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ListPerformanceTiers', { @_ });
   }
   sub ListServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::ListServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::ListServers', { @_ });
   }
   sub UpdateServers {
     my $self = shift;
-    if (defined $self->subscription_id) {
-      push @_, 'subscriptionId' => $self->subscription_id;
-    }
-    my $call_object = $self->new_with_coercions('Azure::PostgreSQLManagement::UpdateServers', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call('subscriptionId','Azure::PostgreSQLManagement::UpdateServers', { @_ });
   }
 
-  sub operations { qw/CreateOrUpdateConfigurations CreateOrUpdateDatabases CreateOrUpdateFirewallRules CreateOrUpdateVirtualNetworkRules CreateServers DeleteDatabases DeleteFirewallRules DeleteServers DeleteVirtualNetworkRules ExecuteCheckNameAvailability GetConfigurations GetDatabases GetFirewallRules GetServers GetVirtualNetworkRules ListByResourceGroupServers ListByServerConfigurations ListByServerDatabases ListByServerFirewallRules ListByServerLogFiles ListByServerVirtualNetworkRules ListLocationBasedPerformanceTier ListOperations ListPerformanceTiers ListServers UpdateServers / }
+  sub operations { qw/CreateOrUpdateConfigurations CreateOrUpdateDatabases CreateOrUpdateFirewallRules CreateServers DeleteDatabases DeleteFirewallRules DeleteServers ExecuteCheckNameAvailability GetConfigurations GetDatabases GetFirewallRules GetServers ListByResourceGroupServers ListByServerConfigurations ListByServerDatabases ListByServerFirewallRules ListByServerLogFiles ListLocationBasedPerformanceTier ListOperations ListPerformanceTiers ListServers UpdateServers / }
 
 1;

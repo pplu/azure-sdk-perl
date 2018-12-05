@@ -1,6 +1,7 @@
 package Azure::GraphRbacManagement::ListPasswordCredentialsServicePrincipalsResult;
   use Moose;
 
-  has value => (is => 'ro', isa => 'ArrayRef[Azure::GraphRbacManagement::PasswordCredential]'  );
+  has code => (is => 'ro', isa => 'Str'  );
+  has value => (is => 'ro', isa => 'Str'  );
 
 1;

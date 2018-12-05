@@ -2,9 +2,6 @@ package Azure::iotHub::CreateOrUpdateIotHubResource;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'If_Match' => (is => 'ro', isa => 'Str',
-    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'If-Match',
-  );
   has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-07-01',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
@@ -22,6 +19,15 @@ package Azure::iotHub::CreateOrUpdateIotHubResource;
   );
 
   class_has _api_uri => (is => 'ro', default => '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IotHubs/{resourceName}');
-  class_has _returns => (is => 'ro', default => 'Azure::iotHub::CreateOrUpdateIotHubResourceResult');
+  class_has _returns => (is => 'ro', isa => 'HashRef', default => sub { {
+    
+      200 => 'Azure::iotHub::CreateOrUpdateIotHubResourceResult',
+    
+      201 => 'Azure::iotHub::CreateOrUpdateIotHubResourceResult',
+    
+      default => 'Azure::iotHub::CreateOrUpdateIotHubResourceResult',
+    
+  } });
+  class_has _is_async => (is => 'ro', default => 1);
   class_has _api_method => (is => 'ro', default => 'PUT');
 1;

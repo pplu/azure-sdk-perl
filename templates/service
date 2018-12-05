@@ -1,18 +1,12 @@
 package [% c.sdk_namespace %]::[% c.service %];
   use Moose;
 
-  with 'Azure::API::Caller', 'Azure::API::JsonCaller', 'Azure::API::BearerAuth';
+  with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   [%- FOREACH method_name = c.methods.keys.sort %]
   sub [% method_name %] {
     my $self = shift;
-    [%- IF (c.methods.$method_name.subscription_argument) %]
-    if (defined $self->subscription_id) {
-      push @_, '[% c.methods.$method_name.subscription_argument.name %]' => $self->subscription_id;
-    }
-    [%- END %]
-    my $call_object = $self->new_with_coercions('Azure::[% c.service %]::[% method_name %]', { @_ });
-    return $self->caller->do_call($self, $call_object);
+    return $self->do_call([%- IF (c.methods.$method_name.subscription_argument) %]'[% c.methods.$method_name.subscription_argument.name %]'[% ELSE; 'undef'; END %],'Azure::[% c.service %]::[% method_name %]', { @_ });
   }
   [%- END %]
 
