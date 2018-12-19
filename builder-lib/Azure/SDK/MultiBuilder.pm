@@ -42,8 +42,19 @@ package Azure::SDK::MultiBuilder;
 
   sub service {
     my $self = shift;
-    my ($api) = ($self->api_dir =~ m|resource-manager/(.*?)/|);
-    die "Can't deduce service from " . $self->api_dir if (not defined $api);
+    my $api;
+    if (($api) = ($self->api_dir =~ m|/resource-manager/(.*?)/|)) {
+
+    } elsif ($self->api_dir =~ m|/specification/graphrbac/data-plane/|) {
+      return 'GraphRBAC';
+    } elsif (($api) = ($self->api_dir =~ m|cognitiveservices/data-plane/(.*?)/|)) {
+      return "Cognitive$api";
+    } elsif (($api) = ($self->api_dir =~ m|/data-plane/(.*?)/|)) {
+      $api = "${api}Data";
+    } elsif (($api) = ($self->api_dir =~ m|/control-plane/(.*?)/|)) {
+    } else {
+      die "Can't deduce service from " . $self->api_dir;
+    }
 
     if ($api =~ m/^Microsoft\./) {
       $api =~ s/^Microsoft\.//;

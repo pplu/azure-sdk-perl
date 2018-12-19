@@ -102,6 +102,10 @@ package Azure::SDK::Builder;
       # Cognitive Computer Vision
       return $id if ($self->schema->info->title eq 'Computer Vision API');
       return $id if ($self->schema->info->title eq 'Spell Check API');
+      return $id if ($self->schema->info->title eq 'Custom Vision Training Client');
+      return $id if ($self->schema->info->title eq 'AutoSuggest Search API');
+      return $id if ($self->schema->info->title eq 'Spell Check Client');
+      return $id if ($self->schema->info->title eq 'Text Analytics Client');
 
       return $id if ($id eq 'PublishEvents');
 

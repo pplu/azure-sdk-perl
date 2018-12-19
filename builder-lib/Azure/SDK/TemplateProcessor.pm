@@ -44,6 +44,12 @@ package Azure::SDK::TemplateProcessor;
     $self->log->info("Naming it $outfile");
     my $f = file($self->output_dir, $outfile);
 
+    #if (-e $f) {
+    #  my $current_content = read_file($f);
+    #  die "$f already exists and we wanted to generate a different file" 
+    #    if ($current_content ne $output);
+    #}
+
     $f->parent->mkpath;
 
     #TODO: ensure that the dir of the file exists
