@@ -4,6 +4,8 @@ gen-classes:
 	rm -rf auto-lib/
 	# find all APIs for generation. exclude "web" api
 	find -type d -name resource-manager | xargs -I{} find {} -type d -name stable | xargs -I{} echo "find {} -maxdepth 1 -mindepth 1 | sort -r | head -n1" | bash | xargs -I {} carton exec ./builder-bin/azure-sdk-gen {}
+	find -type d -name data-plane | xargs -I{} find {} -type d -name stable | xargs -I{} echo "find {} -maxdepth 1 -mindepth 1 | sort -r | head -n1" | bash | xargs -I {} carton exec ./builder-bin/azure-sdk-gen {}
+	find -type d -name control-plane | xargs -I{} find {} -type d -name preview | xargs -I{} echo "find {} -maxdepth 1 -mindepth 1 | sort -r | head -n1" | bash | xargs -I {} carton exec ./builder-bin/azure-sdk-gen {}
 
 reset-autolib:
 	rm -rf auto-lib
