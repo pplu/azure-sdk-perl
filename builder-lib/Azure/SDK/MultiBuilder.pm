@@ -5,10 +5,21 @@ package Azure::SDK::MultiBuilder;
   use Path::Class;
   with 'Azure::SDK::TemplateProcessor';
 
+  has api_dir => (
+    is => 'ro',
+    isa => 'Str',
+    required => 1,
+  );
+
   has files => (
     is => 'ro',
     isa => 'ArrayRef[Str]',
-    required => 1
+    lazy => 1,
+    default => sub {
+      my $self = shift;
+      my @dir_children = dir($self->api_dir)->children;
+      [ map { $_->stringify } grep { $_->basename =~ m/\.json$/ } grep { not $_->is_dir } @dir_children ]
+    }
   );
 
   has log => (
@@ -20,26 +31,42 @@ package Azure::SDK::MultiBuilder;
     },
   );
 
+  has service_mapping => (
+    is => 'ro',
+    isa => 'HashRef',
+    default => sub { {
+      'microsoft.insights' => 'Monitor',
+      'backup' => 'Backup',
+    } },
+  );
+
   sub service {
     my $self = shift;
-    my $svc = $self->_swags->[0]->service;
-    my @non_matching = grep { $_->service ne $svc } @{ $self->_swags };
-    die "There are non-matching service names in the multibuilder" if (@non_matching);
-    return $svc;
+    my ($api) = ($self->api_dir =~ m|resource-manager/(.*?)/|);
+    die "Can't deduce service from " . $self->api_dir if (not defined $api);
+
+    if ($api =~ m/^Microsoft\./) {
+      $api =~ s/^Microsoft\.//;
+      return $api;
+    } else {
+      my $svc = $self->service_mapping->{ $api };
+      die "Can't deduce service from " . $api if (not defined $svc);
+      return $svc;
+    }
   }
 
   sub sdk_namespace {
     my $self = shift;
-    $self->_swags->[0]->sdk_namespace;
+    $self->swags->[0]->sdk_namespace;
   }
 
-  has _swags => (
+  has swags => (
     is => 'ro',
     isa => 'ArrayRef[Azure::SDK::Builder]',
     lazy => 1,
     default => sub {
       my $self = shift;
-      [ map { Azure::SDK::Builder->new(schema_file => $_) } @{ $self->files } ]
+      [ map { Azure::SDK::Builder->new(schema_file => $_, service => $self->service) } @{ $self->files } ]
     },
   ); 
 
@@ -49,7 +76,7 @@ package Azure::SDK::MultiBuilder;
     isa => 'HashRef',
     default => sub {
       my $self = shift;
-      { map { each %{ $_->objects } } @{ $self->_swags } }
+      { map { each %{ $_->objects } } @{ $self->swags } }
     },
   );
 
@@ -60,26 +87,10 @@ package Azure::SDK::MultiBuilder;
     default => sub {
       my $self = shift;
       my %methods = ();
-      %methods = (%methods, %{ $_->methods }) for (@{ $self->_swags });
-      #{ map { %{ $_->methods } } @{ $self->_swags } }
+      %methods = (%methods, %{ $_->methods }) for (@{ $self->swags });
+      #{ map { %{ $_->methods } } @{ $self->swags } }
       return \%methods;
     },
   );
-
-  sub build {
-    my $self = shift;
-
-    $self->log->info("Processing files");
-    $self->log->info("  $_") for (@{ $self->files });
-    $self->log->info("Generating for service " . $self->service);
-
-    foreach my $file (@{ $self->_swags }) {
-      $file->build;
-    }
-
-    $self->process_template(
-      'service',
-    );
-  }
 
 1;

@@ -90,6 +90,7 @@ package Azure::SDK::Builder;
       # KeyVault names don't have to be transformed
       return $id if ($self->schema->info->title eq 'KeyVaultClient');
       return $id if ($self->schema->info->title eq 'Azure Reservation API');
+      return $id if ($id eq 'CheckNameAvailabilityWithSubscription');
 
       # Cognitive Text Analytics
       return 'KeyPhrases' if ($id eq 'Key Phrases');
@@ -103,6 +104,8 @@ package Azure::SDK::Builder;
       return $id if ($self->schema->info->title eq 'Spell Check API');
 
       return $id if ($id eq 'PublishEvents');
+
+      return $id if ($id eq 'SupportedSecurityProviders');
 
       die "Cannot make sense out of operationId $id";
     }
@@ -259,84 +262,7 @@ package Azure::SDK::Builder;
   has service => (
     is => 'ro', 
     isa => 'Str',
-    lazy => 1,
-    default => sub {
-      my $self = shift;
-      my $title = $self->schema->info->title;
-      # ./src/ResourceManagement/Compute/ComputeManagement/ComputeManagementClient.json
-      my ($service) = ($title =~ m/^(.*)Client$/);
-
-      return 'ComputeManagement' if ($title eq 'ComputeManagementClient');
-      return 'ComputeManagement' if ($title eq 'DiskResourceProviderClient');
-      return 'ComputeManagement' if ($title eq 'RunCommandsClient');
-      return 'EngagementManagement' if ($title eq 'Engagement.ManagementClient'); 
-      return 'MLWebServicesManagement' if ($title eq 'Azure ML Web Services Management Client');
-      return 'MLCommitmentPlansManagement' if ($title eq 'Azure ML Commitment Plans Management Client');
-      return 'PowerBIEmbeddedManagement' if ($title eq 'Power BI Embedded Management Client');
-      return 'ServerFirewall' if ($title eq 'Server Firewall Rule APIs');
-      return 'AzureSQLReplicationLink' if ($title eq 'Azure SQL Replication Link API spec');
-      return 'AzureSQLDatabase' if ($title eq 'Azure SQL Database API spec');
-      return 'SQLReplicationLink' if ($title eq 'Azure SQL Replication Link API spec');
-      return 'SQLDatabase' if ($title eq 'Azure SQL Database API spec');
-      return 'LogAnalytics' if ($title eq 'Azure Log Analytics');
-      return 'AppServicePlans' if ($title eq 'AppServicePlans API Client');
-      return 'AppServiceEnvironments' if ($title eq 'AppServiceEnvironments API Client');
-      return 'CosmosDB' if ($title eq 'Cosmos DB');
-      return 'AzureSQLDatabaseBackupLongRetentionPolicy' if ($title eq 'Azure SQL Database Backup Long Term Retention Policy');
-      return 'AzureSQLDatabaseBackupLongRetentionVault' if ($title eq 'Azure SQL Server Backup Long Term Retention Vault');
-      return 'AzureSQLDatabaseBackup' if ($title eq 'Azure SQL Database Backup');
-      return 'ResourceHealth' if ($title eq 'Microsoft.ResourceHealth');
-      return 'Monitor' if ($title eq 'Azure Action Groups API');
-      return 'Monitor' if ($title eq 'Azure Activity Log Alerts API');
-      return 'ServiceMap' if ($title eq 'Service Map');
-      return 'VisualStudio' if ($title eq 'Visual Studio Resource Provider Client');
-      return 'Relay' if ($title eq 'Relay API');
-      return 'CognitiveFace' if ($title eq 'Face API');
-      return 'CongitiveTextAnalytics' if ($title eq 'Text Analytics API');
-      return 'MarketplaceOrdering' if ($title eq 'MarketplaceOrdering.Agreements');
-      return 'LogAnalytics' if ($title eq 'Azure Log Analytics - Operations Management');
-      return 'DomainServices' if ($title eq 'DomainServices');
-      return 'ManagementGroups' if ($title eq 'Management Groups API');
-      return 'MachineLearningCompute' if ($title eq 'Machine Learning Compute Management Client');
-      return 'CognitiveEntitySearch' if ($title eq 'Entity Search API');
-      return 'Reservation' if ($title eq 'Azure Reservation API');
-      return 'LocationServices' if ($title eq 'Azure Location Based Services Resource Provider');
-      return 'DataMigration' if ($title eq 'Azure Data Migration Service Resource Provider');
-      return 'DataCatalog' if ($title eq 'Azure Data Catalog Resource Provider');
-      return 'DomainServices' if ($title eq 'Domain Services Resource Provider');
-      return 'MLTeamAccountManagement' if ($title eq 'ML Team Account Management Client');
-      return 'CognitiveWebSearch' if ($title eq 'Web Search API');
-      return 'CognitiveComputerVision' if ($title eq 'Computer Vision API');
-      return 'DomainServices' if ($title eq 'Domain Services Resource Provider');
-      return 'CognitiveImageSearch' if ($title eq 'Image Search API');
-      return 'CognitiveContentModerator' if ($title eq 'Content Moderator Client');
-      return 'CognitiveVideoSearch' if ($title eq 'Video Search API');
-      return 'CognitiveSpellCheck' if ($title eq 'Spell Check API');
-      return 'CognitiveNewsSearch' if ($title eq 'News Search API');
-      return 'CognitiveCustomSearch' if ($title eq 'Custom Search API');
-      return 'CognitiveLUISProgrammatic' if ($title eq 'LUIS Programmatic API');
-      return 'CognitiveLUISRuntime' if ($title eq 'Language Understanding Intelligent Service (LUIS) Endpoint API for running predictions and extracting user intentions and entities from utterances.');
-
-      return 'CommonDefinitions' if ($title eq 'Common Definitions');
-
-      return $title if ($title eq 'BatchAI');
-      return $title if ($title eq 'PowerBIDedicated');
-      return $title if ($title eq 'AzureAnalysisServices');
-      return $title if ($title eq 'ServerManagement');
-      return $title if ($title eq 'BatchService');
-      return $title if ($title eq 'BatchManagement');
-      return $title if ($title eq 'StorageImportExport');
-      return $title if ($title eq 'StorageManagement');
-      return $title if ($title eq 'AzureAnalysisServices');
-      return $title if ($title eq 'AutomationManagement');
-      return $title if ($title eq 'PowerBIDedicated');
-      return $title if ($title eq 'BatchAI'); 
-
-      die "Service '$title' has spaces in it's name. Please correct" if ($title =~ m/ /);
-
-      die "Can't derive service from $title" if (not defined $service);
-      return $service;
-    }
+    required => 1,
   );
 
   sub path_parts {
@@ -389,7 +315,7 @@ package Azure::SDK::Builder;
         $def_file = $def_file->dir;
         $def_file .= "/$find_path_in_file";
 
-        $final_schema = Azure::SDK::Builder->new(schema_file => $def_file);
+        $final_schema = Azure::SDK::Builder->new(schema_file => $def_file, service => $self->service);
 
         $self->_file_refs_cache->{ $find_path_in_file } = $final_schema;
       }
@@ -405,52 +331,6 @@ package Azure::SDK::Builder;
       schema => $final_schema,
       path => $final_path,
     );
-  }
-
-  sub build {
-    my $self = shift;
-
-    eval {
-      $self->log->info('Generating service class ' . $self->service);
-      $self->process_template(
-        'service',
-      );
-
-      foreach my $object_name (sort keys %{ $self->objects }){
-        $self->log->info("Generating object class $object_name");
-        $self->process_template(
-          'object',
-          { object => $self->objects->{ $object_name } },
-        );
-      }
-      foreach my $object_name (sort keys %{ $self->inline_objects }){
-        $self->log->info("Generating object class $object_name");
-        $self->process_template(
-          'object',
-          { object => $self->inline_objects->{ $object_name } },
-        );
-      }
-  
-      foreach my $method_name (sort keys %{ $self->methods }){
-        $self->log->info("Generating method class $method_name");
-        my $method = $self->methods->{ $method_name };
-        $self->process_template(
-          'method_args_object',
-          { method => $method },
-        );
-      }
-      foreach my $return_name (sort keys %{ $self->method_returns }){
-        $self->log->info("Generating return class $return_name");
-        my $return = $self->method_returns->{ $return_name };
-        $self->process_template(
-          'method_return_object',
-          { return => $return },
-        );
-      }
-    };
-    if ($@){
-      $self->log->error("Failed building " . $self->service . ": $@");
-    }
   }
 
 1;

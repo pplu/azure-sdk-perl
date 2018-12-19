@@ -11,10 +11,59 @@ use Azure::SDK::MultiBuilder;
 
 $|=1;
 
-my @files = @ARGV;
+my $dir = $ARGV[0];
+die "Usage: $0 dir" if (not defined $dir);
 
-die "Usage: $0 file1 [file2 file3]" if (not @files);
 my $builder = Azure::SDK::MultiBuilder->new(
-  files => \@files,
+  api_dir => $dir,
 );
-$builder->build;
+
+$builder->log->info("Processing files");
+$builder->log->info("  $_") for (@{ $builder->files });
+$builder->log->info("Generating for service " . $builder->service);
+
+eval {
+  foreach my $file (@{ $builder->swags }) {
+    foreach my $object_name (sort keys %{ $file->objects }){
+       $file->log->info("Generating object class $object_name");
+       $file->process_template(
+         'object',
+         { object => $file->objects->{ $object_name } },
+       );
+    }
+    foreach my $object_name (sort keys %{ $file->inline_objects }){
+      $file->log->info("Generating object class $object_name");
+      $file->process_template(
+        'object',
+        { object => $file->inline_objects->{ $object_name } },
+      );
+    }
+  
+    foreach my $method_name (sort keys %{ $file->methods }){
+      $file->log->info("Generating method class $method_name");
+      my $method = $file->methods->{ $method_name };
+      $file->process_template(
+        'method_args_object',
+        { method => $method },
+      );
+    }
+    foreach my $return_name (sort keys %{ $file->method_returns }){
+      $file->log->info("Generating return class $return_name");
+      my $return = $file->method_returns->{ $return_name };
+      $file->process_template(
+        'method_return_object',
+        { return => $return },
+      );
+    }
+  }
+  
+  $builder->process_template(
+    'service',
+  );
+};
+if ($@) {
+  $builder->log->error("Error");
+  $builder->log->error($@);
+  exit 0;
+}
+
