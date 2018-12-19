@@ -1,0 +1,22 @@
+package Azure::RecoveryServices::MasterTargetServer;
+  use Moose;
+
+  has 'agentExpiryDate' => (is => 'ro', isa => 'Str'  );
+  has 'agentVersion' => (is => 'ro', isa => 'Str'  );
+  has 'agentVersionDetails' => (is => 'ro', isa => 'Azure::RecoveryServices::VersionDetails'  );
+  has 'dataStores' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServices::DataStore]'  );
+  has 'diskCount' => (is => 'ro', isa => 'Int'  );
+  has 'healthErrors' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServices::HealthError]'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'ipAddress' => (is => 'ro', isa => 'Str'  );
+  has 'lastHeartbeat' => (is => 'ro', isa => 'Str'  );
+  has 'marsAgentExpiryDate' => (is => 'ro', isa => 'Str'  );
+  has 'marsAgentVersion' => (is => 'ro', isa => 'Str'  );
+  has 'marsAgentVersionDetails' => (is => 'ro', isa => 'Azure::RecoveryServices::VersionDetails'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'osType' => (is => 'ro', isa => 'Str'  );
+  has 'osVersion' => (is => 'ro', isa => 'Str'  );
+  has 'retentionVolumes' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServices::RetentionVolume]'  );
+  has 'validationErrors' => (is => 'ro', isa => 'ArrayRef[Azure::RecoveryServices::HealthError]'  );
+  has 'versionStatus' => (is => 'ro', isa => 'Str'  );
+1;

@@ -1,0 +1,20 @@
+package Azure::CognitiveImageSearch::ImageInsights;
+  use Moose;
+
+  has 'bestRepresentativeQuery' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::Query'  );
+  has 'imageCaption' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::ImageInsightsImageCaption'  );
+  has 'imageInsightsToken' => (is => 'ro', isa => 'Str'  );
+  has 'imageTags' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::ImageTagsModule'  );
+  has 'pagesIncluding' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::ImagesModule'  );
+  has 'recipes' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::RecipesModule'  );
+  has 'recognizedEntityGroups' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::RecognizedEntitiesModule'  );
+  has 'relatedCollections' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::RelatedCollectionsModule'  );
+  has 'relatedSearches' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::RelatedSearchesModule'  );
+  has 'shoppingSources' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::AggregateOffer'  );
+  has 'visuallySimilarImages' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::ImagesModule'  );
+  has 'visuallySimilarProducts' => (is => 'ro', isa => 'Azure::CognitiveImageSearch::ImagesModule'  );
+  has 'readLink' => (is => 'ro', isa => 'Str'  );
+  has 'webSearchUrl' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has '_type' => (is => 'ro', isa => 'Str'  );
+1;

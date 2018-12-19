@@ -1,0 +1,28 @@
+package Azure::Batch::PoolProperties;
+  use Moose;
+
+  has 'allocationState' => (is => 'ro', isa => 'Str'  );
+  has 'allocationStateTransitionTime' => (is => 'ro', isa => 'Str'  );
+  has 'applicationLicenses' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'applicationPackages' => (is => 'ro', isa => 'ArrayRef[Azure::Batch::ApplicationPackageReference]'  );
+  has 'autoScaleRun' => (is => 'ro', isa => 'Azure::Batch::AutoScaleRun'  );
+  has 'certificates' => (is => 'ro', isa => 'ArrayRef[Azure::Batch::CertificateReference]'  );
+  has 'creationTime' => (is => 'ro', isa => 'Str'  );
+  has 'currentDedicatedNodes' => (is => 'ro', isa => 'Int'  );
+  has 'currentLowPriorityNodes' => (is => 'ro', isa => 'Int'  );
+  has 'deploymentConfiguration' => (is => 'ro', isa => 'Azure::Batch::DeploymentConfiguration'  );
+  has 'displayName' => (is => 'ro', isa => 'Str'  );
+  has 'interNodeCommunication' => (is => 'ro', isa => 'Str'  );
+  has 'lastModified' => (is => 'ro', isa => 'Str'  );
+  has 'maxTasksPerNode' => (is => 'ro', isa => 'Int'  );
+  has 'metadata' => (is => 'ro', isa => 'ArrayRef[Azure::Batch::MetadataItem]'  );
+  has 'networkConfiguration' => (is => 'ro', isa => 'Azure::Batch::NetworkConfiguration'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'provisioningStateTransitionTime' => (is => 'ro', isa => 'Str'  );
+  has 'resizeOperationStatus' => (is => 'ro', isa => 'Azure::Batch::ResizeOperationStatus'  );
+  has 'scaleSettings' => (is => 'ro', isa => 'Azure::Batch::ScaleSettings'  );
+  has 'startTask' => (is => 'ro', isa => 'Azure::Batch::StartTask'  );
+  has 'taskSchedulingPolicy' => (is => 'ro', isa => 'Azure::Batch::TaskSchedulingPolicy'  );
+  has 'userAccounts' => (is => 'ro', isa => 'ArrayRef[Azure::Batch::UserAccount]'  );
+  has 'vmSize' => (is => 'ro', isa => 'Str'  );
+1;

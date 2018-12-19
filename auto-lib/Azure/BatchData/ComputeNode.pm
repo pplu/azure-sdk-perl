@@ -1,0 +1,25 @@
+package Azure::BatchData::ComputeNode;
+  use Moose;
+
+  has 'affinityId' => (is => 'ro', isa => 'Str'  );
+  has 'allocationTime' => (is => 'ro', isa => 'Str'  );
+  has 'certificateReferences' => (is => 'ro', isa => 'ArrayRef[Azure::BatchData::CertificateReference]'  );
+  has 'endpointConfiguration' => (is => 'ro', isa => 'Azure::BatchData::ComputeNodeEndpointConfiguration'  );
+  has 'errors' => (is => 'ro', isa => 'ArrayRef[Azure::BatchData::ComputeNodeError]'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'ipAddress' => (is => 'ro', isa => 'Str'  );
+  has 'isDedicated' => (is => 'ro', isa => 'Bool'  );
+  has 'lastBootTime' => (is => 'ro', isa => 'Str'  );
+  has 'nodeAgentInfo' => (is => 'ro', isa => 'Azure::BatchData::NodeAgentInformation'  );
+  has 'recentTasks' => (is => 'ro', isa => 'ArrayRef[Azure::BatchData::TaskInformation]'  );
+  has 'runningTasksCount' => (is => 'ro', isa => 'Int'  );
+  has 'schedulingState' => (is => 'ro', isa => 'Str'  );
+  has 'startTask' => (is => 'ro', isa => 'Azure::BatchData::StartTask'  );
+  has 'startTaskInfo' => (is => 'ro', isa => 'Azure::BatchData::StartTaskInformation'  );
+  has 'state' => (is => 'ro', isa => 'Str'  );
+  has 'stateTransitionTime' => (is => 'ro', isa => 'Str'  );
+  has 'totalTasksRun' => (is => 'ro', isa => 'Int'  );
+  has 'totalTasksSucceeded' => (is => 'ro', isa => 'Int'  );
+  has 'url' => (is => 'ro', isa => 'Str'  );
+  has 'vmSize' => (is => 'ro', isa => 'Str'  );
+1;

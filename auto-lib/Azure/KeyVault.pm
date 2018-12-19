@@ -3,275 +3,75 @@ package Azure::KeyVault;
 
   with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
-  sub BackupKey {
+  sub CheckNameAvailabilityVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::BackupKey', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::CheckNameAvailabilityVaults', { @_ });
   }
-  sub BackupSecret {
+  sub CreateOrUpdateSecrets {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::BackupSecret', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::CreateOrUpdateSecrets', { @_ });
   }
-  sub CreateCertificate {
+  sub CreateOrUpdateVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::CreateCertificate', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::CreateOrUpdateVaults', { @_ });
   }
-  sub CreateKey {
+  sub DeleteVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::CreateKey', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::DeleteVaults', { @_ });
   }
-  sub decrypt {
+  sub GetDeletedVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::decrypt', { @_ });
-  }
-  sub DeleteCertificate {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::DeleteCertificate', { @_ });
-  }
-  sub DeleteCertificateContacts {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::DeleteCertificateContacts', { @_ });
-  }
-  sub DeleteCertificateIssuer {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::DeleteCertificateIssuer', { @_ });
-  }
-  sub DeleteCertificateOperation {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::DeleteCertificateOperation', { @_ });
-  }
-  sub DeleteKey {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::DeleteKey', { @_ });
-  }
-  sub DeleteSasDefinition {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::DeleteSasDefinition', { @_ });
-  }
-  sub DeleteSecret {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::DeleteSecret', { @_ });
-  }
-  sub DeleteStorageAccount {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::DeleteStorageAccount', { @_ });
-  }
-  sub encrypt {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::encrypt', { @_ });
-  }
-  sub GetCertificate {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetCertificate', { @_ });
-  }
-  sub GetCertificateContacts {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetCertificateContacts', { @_ });
-  }
-  sub GetCertificateIssuer {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetCertificateIssuer', { @_ });
-  }
-  sub GetCertificateIssuers {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetCertificateIssuers', { @_ });
-  }
-  sub GetCertificateOperation {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetCertificateOperation', { @_ });
-  }
-  sub GetCertificatePolicy {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetCertificatePolicy', { @_ });
-  }
-  sub GetCertificates {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetCertificates', { @_ });
-  }
-  sub GetCertificateVersions {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetCertificateVersions', { @_ });
-  }
-  sub GetDeletedCertificate {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetDeletedCertificate', { @_ });
-  }
-  sub GetDeletedCertificates {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetDeletedCertificates', { @_ });
-  }
-  sub GetDeletedKey {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetDeletedKey', { @_ });
-  }
-  sub GetDeletedKeys {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetDeletedKeys', { @_ });
-  }
-  sub GetDeletedSecret {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetDeletedSecret', { @_ });
-  }
-  sub GetDeletedSecrets {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetDeletedSecrets', { @_ });
-  }
-  sub GetKey {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetKey', { @_ });
-  }
-  sub GetKeys {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetKeys', { @_ });
-  }
-  sub GetKeyVersions {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetKeyVersions', { @_ });
-  }
-  sub GetSasDefinition {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetSasDefinition', { @_ });
-  }
-  sub GetSasDefinitions {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetSasDefinitions', { @_ });
-  }
-  sub GetSecret {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetSecret', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::GetDeletedVaults', { @_ });
   }
   sub GetSecrets {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetSecrets', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::GetSecrets', { @_ });
   }
-  sub GetSecretVersions {
+  sub GetVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetSecretVersions', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::GetVaults', { @_ });
   }
-  sub GetStorageAccount {
+  sub ListByResourceGroupVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetStorageAccount', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::ListByResourceGroupVaults', { @_ });
   }
-  sub GetStorageAccounts {
+  sub ListBySubscriptionVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::GetStorageAccounts', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::ListBySubscriptionVaults', { @_ });
   }
-  sub ImportCertificate {
+  sub ListDeletedVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::ImportCertificate', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::ListDeletedVaults', { @_ });
   }
-  sub ImportKey {
+  sub ListOperations {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::ImportKey', { @_ });
+    return $self->do_call(undef,'Azure::KeyVault::ListOperations', { @_ });
   }
-  sub MergeCertificate {
+  sub ListSecrets {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::MergeCertificate', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::ListSecrets', { @_ });
   }
-  sub PurgeDeletedCertificate {
+  sub ListVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::PurgeDeletedCertificate', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::ListVaults', { @_ });
   }
-  sub PurgeDeletedKey {
+  sub PurgeDeletedVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::PurgeDeletedKey', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::PurgeDeletedVaults', { @_ });
   }
-  sub PurgeDeletedSecret {
+  sub UpdateAccessPolicyVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::PurgeDeletedSecret', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::UpdateAccessPolicyVaults', { @_ });
   }
-  sub RecoverDeletedCertificate {
+  sub UpdateSecrets {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::RecoverDeletedCertificate', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::UpdateSecrets', { @_ });
   }
-  sub RecoverDeletedKey {
+  sub UpdateVaults {
     my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::RecoverDeletedKey', { @_ });
-  }
-  sub RecoverDeletedSecret {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::RecoverDeletedSecret', { @_ });
-  }
-  sub RegenerateStorageAccountKey {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::RegenerateStorageAccountKey', { @_ });
-  }
-  sub RestoreKey {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::RestoreKey', { @_ });
-  }
-  sub RestoreSecret {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::RestoreSecret', { @_ });
-  }
-  sub SetCertificateContacts {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::SetCertificateContacts', { @_ });
-  }
-  sub SetCertificateIssuer {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::SetCertificateIssuer', { @_ });
-  }
-  sub SetSasDefinition {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::SetSasDefinition', { @_ });
-  }
-  sub SetSecret {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::SetSecret', { @_ });
-  }
-  sub SetStorageAccount {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::SetStorageAccount', { @_ });
-  }
-  sub sign {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::sign', { @_ });
-  }
-  sub unwrapKey {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::unwrapKey', { @_ });
-  }
-  sub UpdateCertificate {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::UpdateCertificate', { @_ });
-  }
-  sub UpdateCertificateIssuer {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::UpdateCertificateIssuer', { @_ });
-  }
-  sub UpdateCertificateOperation {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::UpdateCertificateOperation', { @_ });
-  }
-  sub UpdateCertificatePolicy {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::UpdateCertificatePolicy', { @_ });
-  }
-  sub UpdateKey {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::UpdateKey', { @_ });
-  }
-  sub UpdateSasDefinition {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::UpdateSasDefinition', { @_ });
-  }
-  sub UpdateSecret {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::UpdateSecret', { @_ });
-  }
-  sub UpdateStorageAccount {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::UpdateStorageAccount', { @_ });
-  }
-  sub verify {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::verify', { @_ });
-  }
-  sub wrapKey {
-    my $self = shift;
-    return $self->do_call(undef,'Azure::KeyVault::wrapKey', { @_ });
+    return $self->do_call('subscriptionId','Azure::KeyVault::UpdateVaults', { @_ });
   }
 
-  sub operations { qw/BackupKey BackupSecret CreateCertificate CreateKey decrypt DeleteCertificate DeleteCertificateContacts DeleteCertificateIssuer DeleteCertificateOperation DeleteKey DeleteSasDefinition DeleteSecret DeleteStorageAccount encrypt GetCertificate GetCertificateContacts GetCertificateIssuer GetCertificateIssuers GetCertificateOperation GetCertificatePolicy GetCertificates GetCertificateVersions GetDeletedCertificate GetDeletedCertificates GetDeletedKey GetDeletedKeys GetDeletedSecret GetDeletedSecrets GetKey GetKeys GetKeyVersions GetSasDefinition GetSasDefinitions GetSecret GetSecrets GetSecretVersions GetStorageAccount GetStorageAccounts ImportCertificate ImportKey MergeCertificate PurgeDeletedCertificate PurgeDeletedKey PurgeDeletedSecret RecoverDeletedCertificate RecoverDeletedKey RecoverDeletedSecret RegenerateStorageAccountKey RestoreKey RestoreSecret SetCertificateContacts SetCertificateIssuer SetSasDefinition SetSecret SetStorageAccount sign unwrapKey UpdateCertificate UpdateCertificateIssuer UpdateCertificateOperation UpdateCertificatePolicy UpdateKey UpdateSasDefinition UpdateSecret UpdateStorageAccount verify wrapKey / }
+  sub operations { qw/CheckNameAvailabilityVaults CreateOrUpdateSecrets CreateOrUpdateVaults DeleteVaults GetDeletedVaults GetSecrets GetVaults ListByResourceGroupVaults ListBySubscriptionVaults ListDeletedVaults ListOperations ListSecrets ListVaults PurgeDeletedVaults UpdateAccessPolicyVaults UpdateSecrets UpdateVaults / }
 
 1;

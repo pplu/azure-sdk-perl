@@ -1,0 +1,21 @@
+package Azure::Web::RecommendationRule;
+  use Moose;
+
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'kind' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'actionName' => (is => 'ro', isa => 'Str'  );
+  has 'bladeName' => (is => 'ro', isa => 'Str'  );
+  has 'categoryTags' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'channels' => (is => 'ro', isa => 'Str'  );
+  has 'description' => (is => 'ro', isa => 'Str'  );
+  has 'displayName' => (is => 'ro', isa => 'Str'  );
+  has 'extensionName' => (is => 'ro', isa => 'Str'  );
+  has 'forwardLink' => (is => 'ro', isa => 'Str'  );
+  has 'isDynamic' => (is => 'ro', isa => 'Bool'  );
+  has 'level' => (is => 'ro', isa => 'Str'  );
+  has 'message' => (is => 'ro', isa => 'Str'  );
+  has 'recommendationId' => (is => 'ro', isa => 'Str'  );
+  has 'recommendationName' => (is => 'ro', isa => 'Str'  );
+1;

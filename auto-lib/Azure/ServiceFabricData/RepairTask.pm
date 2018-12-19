@@ -1,0 +1,22 @@
+package Azure::ServiceFabricData::RepairTask;
+  use Moose;
+
+  has 'Action' => (is => 'ro', isa => 'Str'  );
+  has 'Description' => (is => 'ro', isa => 'Str'  );
+  has 'Executor' => (is => 'ro', isa => 'Str'  );
+  has 'ExecutorData' => (is => 'ro', isa => 'Str'  );
+  has 'Flags' => (is => 'ro', isa => 'Int'  );
+  has 'History' => (is => 'ro', isa => 'Azure::ServiceFabricData::RepairTaskHistory'  );
+  has 'Impact' => (is => 'ro', isa => 'Azure::ServiceFabricData::RepairImpactDescriptionBase'  );
+  has 'PerformPreparingHealthCheck' => (is => 'ro', isa => 'Bool'  );
+  has 'PerformRestoringHealthCheck' => (is => 'ro', isa => 'Bool'  );
+  has 'PreparingHealthCheckState' => (is => 'ro', isa => 'Str'  );
+  has 'RestoringHealthCheckState' => (is => 'ro', isa => 'Str'  );
+  has 'ResultCode' => (is => 'ro', isa => 'Int'  );
+  has 'ResultDetails' => (is => 'ro', isa => 'Str'  );
+  has 'ResultStatus' => (is => 'ro', isa => 'Str'  );
+  has 'State' => (is => 'ro', isa => 'Str'  );
+  has 'Target' => (is => 'ro', isa => 'Azure::ServiceFabricData::RepairTargetDescriptionBase'  );
+  has 'TaskId' => (is => 'ro', isa => 'Str'  );
+  has 'Version' => (is => 'ro', isa => 'Str'  );
+1;

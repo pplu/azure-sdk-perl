@@ -1,0 +1,22 @@
+package Azure::Migrate::Project;
+  use Moose;
+
+  has 'eTag' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'createdTimestamp' => (is => 'ro', isa => 'Str'  );
+  has 'customerWorkspaceId' => (is => 'ro', isa => 'Str'  );
+  has 'customerWorkspaceLocation' => (is => 'ro', isa => 'Str'  );
+  has 'discoveryStatus' => (is => 'ro', isa => 'Str'  );
+  has 'lastAssessmentTimestamp' => (is => 'ro', isa => 'Str'  );
+  has 'lastDiscoverySessionId' => (is => 'ro', isa => 'Str'  );
+  has 'lastDiscoveryTimestamp' => (is => 'ro', isa => 'Str'  );
+  has 'numberOfAssessments' => (is => 'ro', isa => 'Int'  );
+  has 'numberOfGroups' => (is => 'ro', isa => 'Int'  );
+  has 'numberOfMachines' => (is => 'ro', isa => 'Int'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'updatedTimestamp' => (is => 'ro', isa => 'Str'  );
+1;

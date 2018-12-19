@@ -2,7 +2,7 @@ package Azure::TimeSeriesInsights::UpdateEventSources;
   use Moose;
   use MooseX::ClassAttribute;
 
-  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-02-28-preview',
+  has 'api_version' => (is => 'ro', required => 1, isa => 'Str', default => '2017-11-15',
     traits => [ 'Azure::ParamInQuery', 'Azure::LocationInResponse' ], location => 'api-version',
   );
   has 'environmentName' => (is => 'ro', required => 1, isa => 'Str',

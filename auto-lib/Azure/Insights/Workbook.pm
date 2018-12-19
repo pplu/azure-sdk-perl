@@ -1,0 +1,20 @@
+package Azure::Insights::Workbook;
+  use Moose;
+
+  has 'kind' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'Any'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'category' => (is => 'ro', isa => 'Str'  );
+  has 'kind' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'serializedData' => (is => 'ro', isa => 'Str'  );
+  has 'sourceResourceId' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'timeModified' => (is => 'ro', isa => 'Str'  );
+  has 'userId' => (is => 'ro', isa => 'Str'  );
+  has 'version' => (is => 'ro', isa => 'Str'  );
+  has 'workbookId' => (is => 'ro', isa => 'Str'  );
+1;

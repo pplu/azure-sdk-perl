@@ -1,0 +1,8 @@
+package Azure::ServiceFabricData::StatefulServiceReplicaHealthState;
+  use Moose;
+
+  has 'AggregatedHealthState' => (is => 'ro', isa => 'Str'  );
+  has 'PartitionId' => (is => 'ro', isa => 'Str'  );
+  has 'ServiceKind' => (is => 'ro', isa => 'Str'  );
+  has 'ReplicaId' => (is => 'ro', isa => 'Str'  );
+1;

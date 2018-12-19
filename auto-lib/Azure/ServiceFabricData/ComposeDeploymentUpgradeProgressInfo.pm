@@ -1,0 +1,24 @@
+package Azure::ServiceFabricData::ComposeDeploymentUpgradeProgressInfo;
+  use Moose;
+
+  has 'ApplicationHealthPolicy' => (is => 'ro', isa => 'Azure::ServiceFabricData::ApplicationHealthPolicy'  );
+  has 'ApplicationName' => (is => 'ro', isa => 'Str'  );
+  has 'ApplicationUnhealthyEvaluations' => (is => 'ro', isa => 'ArrayRef[Azure::ServiceFabricData::HealthEvaluationWrapper]'  );
+  has 'ApplicationUpgradeStatusDetails' => (is => 'ro', isa => 'Str'  );
+  has 'CurrentUpgradeDomainDuration' => (is => 'ro', isa => 'Str'  );
+  has 'CurrentUpgradeDomainProgress' => (is => 'ro', isa => 'Azure::ServiceFabricData::CurrentUpgradeDomainProgressInfo'  );
+  has 'DeploymentName' => (is => 'ro', isa => 'Str'  );
+  has 'FailureReason' => (is => 'ro', isa => 'Str'  );
+  has 'FailureTimestampUtc' => (is => 'ro', isa => 'Str'  );
+  has 'ForceRestart' => (is => 'ro', isa => 'Bool'  );
+  has 'MonitoringPolicy' => (is => 'ro', isa => 'Azure::ServiceFabricData::MonitoringPolicyDescription'  );
+  has 'RollingUpgradeMode' => (is => 'ro', isa => 'Str'  );
+  has 'StartTimestampUtc' => (is => 'ro', isa => 'Str'  );
+  has 'TargetApplicationTypeVersion' => (is => 'ro', isa => 'Str'  );
+  has 'UpgradeDomainProgressAtFailure' => (is => 'ro', isa => 'Azure::ServiceFabricData::FailureUpgradeDomainProgressInfo'  );
+  has 'UpgradeDuration' => (is => 'ro', isa => 'Str'  );
+  has 'UpgradeKind' => (is => 'ro', isa => 'Str'  );
+  has 'UpgradeReplicaSetCheckTimeoutInSeconds' => (is => 'ro', isa => 'Int'  );
+  has 'UpgradeState' => (is => 'ro', isa => 'Str'  );
+  has 'UpgradeStatusDetails' => (is => 'ro', isa => 'Str'  );
+1;

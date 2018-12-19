@@ -3,15 +3,23 @@ package Azure::Monitor;
 
   with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
-  sub ListMetricDefinitions {
+  sub DeleteAnalyticsItems {
     my $self = shift;
-    return $self->do_call(undef,'Azure::Monitor::ListMetricDefinitions', { @_ });
+    return $self->do_call('subscriptionId','Azure::Monitor::DeleteAnalyticsItems', { @_ });
   }
-  sub ListMetrics {
+  sub GetAnalyticsItems {
     my $self = shift;
-    return $self->do_call(undef,'Azure::Monitor::ListMetrics', { @_ });
+    return $self->do_call('subscriptionId','Azure::Monitor::GetAnalyticsItems', { @_ });
+  }
+  sub ListAnalyticsItems {
+    my $self = shift;
+    return $self->do_call('subscriptionId','Azure::Monitor::ListAnalyticsItems', { @_ });
+  }
+  sub PutAnalyticsItems {
+    my $self = shift;
+    return $self->do_call('subscriptionId','Azure::Monitor::PutAnalyticsItems', { @_ });
   }
 
-  sub operations { qw/ListMetricDefinitions ListMetrics / }
+  sub operations { qw/DeleteAnalyticsItems GetAnalyticsItems ListAnalyticsItems PutAnalyticsItems / }
 
 1;

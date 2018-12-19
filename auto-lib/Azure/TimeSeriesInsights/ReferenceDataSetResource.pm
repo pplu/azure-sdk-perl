@@ -6,6 +6,7 @@ package Azure::TimeSeriesInsights::ReferenceDataSetResource;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'dataStringComparisonBehavior' => (is => 'ro', isa => 'Str'  );
   has 'keyProperties' => (is => 'ro', isa => 'ArrayRef[Azure::TimeSeriesInsights::ReferenceDataSetKeyProperty]'  );
   has 'creationTime' => (is => 'ro', isa => 'Str'  );
   has 'provisioningState' => (is => 'ro', isa => 'Str'  );

@@ -71,6 +71,10 @@ package Azure::TimeSeriesInsights;
     my $self = shift;
     return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::ListBySubscriptionEnvironments', { @_ });
   }
+  sub ListOperations {
+    my $self = shift;
+    return $self->do_call(undef,'Azure::TimeSeriesInsights::ListOperations', { @_ });
+  }
   sub UpdateAccessPolicies {
     my $self = shift;
     return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::UpdateAccessPolicies', { @_ });
@@ -88,6 +92,6 @@ package Azure::TimeSeriesInsights;
     return $self->do_call('subscriptionId','Azure::TimeSeriesInsights::UpdateReferenceDataSets', { @_ });
   }
 
-  sub operations { qw/CreateOrUpdateAccessPolicies CreateOrUpdateEnvironments CreateOrUpdateEventSources CreateOrUpdateReferenceDataSets DeleteAccessPolicies DeleteEnvironments DeleteEventSources DeleteReferenceDataSets GetAccessPolicies GetEnvironments GetEventSources GetReferenceDataSets ListByEnvironmentAccessPolicies ListByEnvironmentEventSources ListByEnvironmentReferenceDataSets ListByResourceGroupEnvironments ListBySubscriptionEnvironments UpdateAccessPolicies UpdateEnvironments UpdateEventSources UpdateReferenceDataSets / }
+  sub operations { qw/CreateOrUpdateAccessPolicies CreateOrUpdateEnvironments CreateOrUpdateEventSources CreateOrUpdateReferenceDataSets DeleteAccessPolicies DeleteEnvironments DeleteEventSources DeleteReferenceDataSets GetAccessPolicies GetEnvironments GetEventSources GetReferenceDataSets ListByEnvironmentAccessPolicies ListByEnvironmentEventSources ListByEnvironmentReferenceDataSets ListByResourceGroupEnvironments ListBySubscriptionEnvironments ListOperations UpdateAccessPolicies UpdateEnvironments UpdateEventSources UpdateReferenceDataSets / }
 
 1;

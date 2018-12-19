@@ -26,6 +26,9 @@ package Azure::CognitiveEntitySearch::SearchEntities;
   has 'User_Agent' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'User-Agent',
   );
+  has 'X_BingApis_SDK' => (is => 'ro', required => 1, isa => 'Str',
+    traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'X-BingApis-SDK',
+  );
   has 'X_MSEdge_ClientID' => (is => 'ro', isa => 'Str',
     traits => [ 'Azure::ParamInHeader', 'Azure::LocationInResponse' ], location => 'X-MSEdge-ClientID',
   );

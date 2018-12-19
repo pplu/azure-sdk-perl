@@ -7,5 +7,4 @@ package Azure::TimeSeriesInsights::EventSourceResource;
   has 'id' => (is => 'ro', isa => 'Str'  );
   has 'name' => (is => 'ro', isa => 'Str'  );
   has 'type' => (is => 'ro', isa => 'Str'  );
-  has 'timestampPropertyName' => (is => 'ro', isa => 'Str'  );
 1;

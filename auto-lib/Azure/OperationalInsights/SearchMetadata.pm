@@ -1,0 +1,21 @@
+package Azure::OperationalInsights::SearchMetadata;
+  use Moose;
+
+  has 'aggregatedGroupingFields' => (is => 'ro', isa => 'Str'  );
+  has 'aggregatedValueField' => (is => 'ro', isa => 'Str'  );
+  has 'coreSummaries' => (is => 'ro', isa => 'ArrayRef[Azure::OperationalInsights::CoreSummary]'  );
+  has 'eTag' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'lastUpdated' => (is => 'ro', isa => 'Str'  );
+  has 'max' => (is => 'ro', isa => 'Int'  );
+  has 'requestId' => (is => 'ro', isa => 'Str'  );
+  has 'requestTime' => (is => 'ro', isa => 'Int'  );
+  has 'resultType' => (is => 'ro', isa => 'Str'  );
+  has 'schema' => (is => 'ro', isa => 'Azure::OperationalInsights::SearchMetadataSchema'  );
+  has 'sort' => (is => 'ro', isa => 'ArrayRef[Azure::OperationalInsights::SearchSort]'  );
+  has 'startTime' => (is => 'ro', isa => 'Str'  );
+  has 'status' => (is => 'ro', isa => 'Str'  );
+  has 'sum' => (is => 'ro', isa => 'Int'  );
+  has 'top' => (is => 'ro', isa => 'Int'  );
+  has 'total' => (is => 'ro', isa => 'Int'  );
+1;

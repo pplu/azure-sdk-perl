@@ -1,0 +1,24 @@
+package Azure::DevTestLab::LabProperties;
+  use Moose;
+
+  has 'announcement' => (is => 'ro', isa => 'Azure::DevTestLab::LabAnnouncementProperties'  );
+  has 'artifactsStorageAccount' => (is => 'ro', isa => 'Str'  );
+  has 'createdDate' => (is => 'ro', isa => 'Str'  );
+  has 'defaultPremiumStorageAccount' => (is => 'ro', isa => 'Str'  );
+  has 'defaultStorageAccount' => (is => 'ro', isa => 'Str'  );
+  has 'environmentPermission' => (is => 'ro', isa => 'Str'  );
+  has 'extendedProperties' => (is => 'ro', isa => 'HashRef[Str]'  );
+  has 'labStorageType' => (is => 'ro', isa => 'Str'  );
+  has 'loadBalancerId' => (is => 'ro', isa => 'Str'  );
+  has 'mandatoryArtifactsResourceIdsLinux' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'mandatoryArtifactsResourceIdsWindows' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'networkSecurityGroupId' => (is => 'ro', isa => 'Str'  );
+  has 'premiumDataDiskStorageAccount' => (is => 'ro', isa => 'Str'  );
+  has 'premiumDataDisks' => (is => 'ro', isa => 'Str'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'publicIpId' => (is => 'ro', isa => 'Str'  );
+  has 'support' => (is => 'ro', isa => 'Azure::DevTestLab::LabSupportProperties'  );
+  has 'uniqueIdentifier' => (is => 'ro', isa => 'Str'  );
+  has 'vaultName' => (is => 'ro', isa => 'Str'  );
+  has 'vmCreationResourceGroup' => (is => 'ro', isa => 'Str'  );
+1;

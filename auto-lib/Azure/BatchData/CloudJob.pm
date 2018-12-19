@@ -1,0 +1,27 @@
+package Azure::BatchData::CloudJob;
+  use Moose;
+
+  has 'commonEnvironmentSettings' => (is => 'ro', isa => 'ArrayRef[Azure::BatchData::EnvironmentSetting]'  );
+  has 'constraints' => (is => 'ro', isa => 'Azure::BatchData::JobConstraints'  );
+  has 'creationTime' => (is => 'ro', isa => 'Str'  );
+  has 'displayName' => (is => 'ro', isa => 'Str'  );
+  has 'eTag' => (is => 'ro', isa => 'Str'  );
+  has 'executionInfo' => (is => 'ro', isa => 'Azure::BatchData::JobExecutionInformation'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'jobManagerTask' => (is => 'ro', isa => 'Azure::BatchData::JobManagerTask'  );
+  has 'jobPreparationTask' => (is => 'ro', isa => 'Azure::BatchData::JobPreparationTask'  );
+  has 'jobReleaseTask' => (is => 'ro', isa => 'Azure::BatchData::JobReleaseTask'  );
+  has 'lastModified' => (is => 'ro', isa => 'Str'  );
+  has 'metadata' => (is => 'ro', isa => 'ArrayRef[Azure::BatchData::MetadataItem]'  );
+  has 'onAllTasksComplete' => (is => 'ro', isa => 'Str'  );
+  has 'onTaskFailure' => (is => 'ro', isa => 'Str'  );
+  has 'poolInfo' => (is => 'ro', isa => 'Azure::BatchData::PoolInformation'  );
+  has 'previousState' => (is => 'ro', isa => 'Str'  );
+  has 'previousStateTransitionTime' => (is => 'ro', isa => 'Str'  );
+  has 'priority' => (is => 'ro', isa => 'Int'  );
+  has 'state' => (is => 'ro', isa => 'Str'  );
+  has 'stateTransitionTime' => (is => 'ro', isa => 'Str'  );
+  has 'stats' => (is => 'ro', isa => 'Azure::BatchData::JobStatistics'  );
+  has 'url' => (is => 'ro', isa => 'Str'  );
+  has 'usesTaskDependencies' => (is => 'ro', isa => 'Bool'  );
+1;

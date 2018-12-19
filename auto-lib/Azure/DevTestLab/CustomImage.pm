@@ -1,0 +1,21 @@
+package Azure::DevTestLab::CustomImage;
+  use Moose;
+
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'location' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'tags' => (is => 'ro', isa => 'HashRef[Str]'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'author' => (is => 'ro', isa => 'Str'  );
+  has 'creationDate' => (is => 'ro', isa => 'Str'  );
+  has 'customImagePlan' => (is => 'ro', isa => 'Azure::DevTestLab::CustomImagePropertiesFromPlan'  );
+  has 'dataDiskStorageInfo' => (is => 'ro', isa => 'ArrayRef[Azure::DevTestLab::DataDiskStorageTypeInfo]'  );
+  has 'description' => (is => 'ro', isa => 'Str'  );
+  has 'isPlanAuthorized' => (is => 'ro', isa => 'Bool'  );
+  has 'managedImageId' => (is => 'ro', isa => 'Str'  );
+  has 'managedSnapshotId' => (is => 'ro', isa => 'Str'  );
+  has 'provisioningState' => (is => 'ro', isa => 'Str'  );
+  has 'uniqueIdentifier' => (is => 'ro', isa => 'Str'  );
+  has 'vhd' => (is => 'ro', isa => 'Azure::DevTestLab::CustomImagePropertiesCustom'  );
+  has 'vm' => (is => 'ro', isa => 'Azure::DevTestLab::CustomImagePropertiesFromVm'  );
+1;

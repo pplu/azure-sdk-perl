@@ -1,0 +1,26 @@
+package Azure::ADHybridHealthService::MergedExportError;
+  use Moose;
+
+  has 'attributeName' => (is => 'ro', isa => 'Str'  );
+  has 'attributeValue' => (is => 'ro', isa => 'Str'  );
+  has 'createdDate' => (is => 'ro', isa => 'Str'  );
+  has 'csObjectId' => (is => 'ro', isa => 'Str'  );
+  has 'dn' => (is => 'ro', isa => 'Str'  );
+  has 'existingObject' => (is => 'ro', isa => 'Azure::ADHybridHealthService::AssociatedObject'  );
+  has 'exportErrorStatus' => (is => 'ro', isa => 'Int'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'incomingObject' => (is => 'ro', isa => 'Azure::ADHybridHealthService::AssociatedObject'  );
+  has 'incomingObjectDisplayName' => (is => 'ro', isa => 'Str'  );
+  has 'incomingObjectType' => (is => 'ro', isa => 'Str'  );
+  has 'mergedEntityId' => (is => 'ro', isa => 'Str'  );
+  has 'modifiedOrRemovedAttributeValue' => (is => 'ro', isa => 'Str'  );
+  has 'runStepResultId' => (is => 'ro', isa => 'Str'  );
+  has 'samAccountName' => (is => 'ro', isa => 'Str'  );
+  has 'serverErrorDetail' => (is => 'ro', isa => 'Str'  );
+  has 'serviceId' => (is => 'ro', isa => 'Str'  );
+  has 'serviceMemberId' => (is => 'ro', isa => 'Str'  );
+  has 'timeFirstOccurred' => (is => 'ro', isa => 'Str'  );
+  has 'timeOccurred' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'userPrincipalName' => (is => 'ro', isa => 'Str'  );
+1;

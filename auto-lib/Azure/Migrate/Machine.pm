@@ -1,0 +1,24 @@
+package Azure::Migrate::Machine;
+  use Moose;
+
+  has 'eTag' => (is => 'ro', isa => 'Str'  );
+  has 'id' => (is => 'ro', isa => 'Str'  );
+  has 'name' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+  has 'bootType' => (is => 'ro', isa => 'Str'  );
+  has 'createdTimestamp' => (is => 'ro', isa => 'Str'  );
+  has 'datacenterContainer' => (is => 'ro', isa => 'Str'  );
+  has 'datacenterMachineId' => (is => 'ro', isa => 'Str'  );
+  has 'datacenterManagementServer' => (is => 'ro', isa => 'Str'  );
+  has 'datacenterManagementServerId' => (is => 'ro', isa => 'Str'  );
+  has 'description' => (is => 'ro', isa => 'Str'  );
+  has 'discoveredTimestamp' => (is => 'ro', isa => 'Str'  );
+  has 'disks' => (is => 'ro', isa => 'HashRef[Azure::Migrate::Disk]'  );
+  has 'displayName' => (is => 'ro', isa => 'Str'  );
+  has 'groups' => (is => 'ro', isa => 'ArrayRef[Str]'  );
+  has 'megabytesOfMemory' => (is => 'ro', isa => 'Num'  );
+  has 'networkAdapters' => (is => 'ro', isa => 'HashRef[Azure::Migrate::NetworkAdapter]'  );
+  has 'numberOfCores' => (is => 'ro', isa => 'Int'  );
+  has 'operatingSystem' => (is => 'ro', isa => 'Str'  );
+  has 'updatedTimestamp' => (is => 'ro', isa => 'Str'  );
+1;

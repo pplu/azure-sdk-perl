@@ -1,0 +1,20 @@
+package Azure::DataLakeAnalyticsData::USqlJobProperties;
+  use Moose;
+
+  has 'algebraFilePath' => (is => 'ro', isa => 'Str'  );
+  has 'compileMode' => (is => 'ro', isa => 'Str'  );
+  has 'debugData' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsData::JobDataPath'  );
+  has 'diagnostics' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsData::Diagnostics]'  );
+  has 'resources' => (is => 'ro', isa => 'ArrayRef[Azure::DataLakeAnalyticsData::JobResource]'  );
+  has 'rootProcessNodeId' => (is => 'ro', isa => 'Str'  );
+  has 'statistics' => (is => 'ro', isa => 'Azure::DataLakeAnalyticsData::JobStatistics'  );
+  has 'totalCompilationTime' => (is => 'ro', isa => 'Str'  );
+  has 'totalPauseTime' => (is => 'ro', isa => 'Str'  );
+  has 'totalQueuedTime' => (is => 'ro', isa => 'Str'  );
+  has 'totalRunningTime' => (is => 'ro', isa => 'Str'  );
+  has 'yarnApplicationId' => (is => 'ro', isa => 'Str'  );
+  has 'yarnApplicationTimeStamp' => (is => 'ro', isa => 'Int'  );
+  has 'runtimeVersion' => (is => 'ro', isa => 'Str'  );
+  has 'script' => (is => 'ro', isa => 'Str'  );
+  has 'type' => (is => 'ro', isa => 'Str'  );
+1;

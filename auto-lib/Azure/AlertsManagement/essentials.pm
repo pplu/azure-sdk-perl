@@ -1,0 +1,21 @@
+package Azure::AlertsManagement::essentials;
+  use Moose;
+
+  has 'alertRule' => (is => 'ro', isa => 'Str'  );
+  has 'alertState' => (is => 'ro', isa => 'Str'  );
+  has 'lastModifiedDateTime' => (is => 'ro', isa => 'Str'  );
+  has 'lastModifiedUserName' => (is => 'ro', isa => 'Str'  );
+  has 'monitorCondition' => (is => 'ro', isa => 'Str'  );
+  has 'monitorConditionResolvedDateTime' => (is => 'ro', isa => 'Str'  );
+  has 'monitorService' => (is => 'ro', isa => 'Str'  );
+  has 'severity' => (is => 'ro', isa => 'Str'  );
+  has 'signalType' => (is => 'ro', isa => 'Str'  );
+  has 'smartGroupId' => (is => 'ro', isa => 'Str'  );
+  has 'smartGroupingReason' => (is => 'ro', isa => 'Str'  );
+  has 'sourceCreatedId' => (is => 'ro', isa => 'Str'  );
+  has 'startDateTime' => (is => 'ro', isa => 'Str'  );
+  has 'targetResource' => (is => 'ro', isa => 'Str'  );
+  has 'targetResourceGroup' => (is => 'ro', isa => 'Str'  );
+  has 'targetResourceName' => (is => 'ro', isa => 'Str'  );
+  has 'targetResourceType' => (is => 'ro', isa => 'Str'  );
+1;

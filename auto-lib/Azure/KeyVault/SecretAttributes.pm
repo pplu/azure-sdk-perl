@@ -1,7 +1,6 @@
 package Azure::KeyVault::SecretAttributes;
   use Moose;
 
-  has 'recoveryLevel' => (is => 'ro', isa => 'Str'  );
   has 'created' => (is => 'ro', isa => 'Int'  );
   has 'enabled' => (is => 'ro', isa => 'Bool'  );
   has 'exp' => (is => 'ro', isa => 'Int'  );
