@@ -106,6 +106,7 @@ package Azure::SDK::Builder;
       return $id if ($self->schema->info->title eq 'AutoSuggest Search API');
       return $id if ($self->schema->info->title eq 'Spell Check Client');
       return $id if ($self->schema->info->title eq 'Text Analytics Client');
+      return $id if ($self->schema->info->title eq 'FrontDoorManagementClient');
 
       return $id if ($id eq 'PublishEvents');
 

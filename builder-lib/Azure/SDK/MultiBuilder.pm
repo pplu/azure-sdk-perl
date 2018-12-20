@@ -43,12 +43,19 @@ package Azure::SDK::MultiBuilder;
   sub service {
     my $self = shift;
     my $api;
-    if (($api) = ($self->api_dir =~ m|/resource-manager/(.*?)/|)) {
 
+    if ($self->api_dir =~ m|/specification/dns/resource-manager/|) {
+      return 'DNS';
+    } elsif ($self->api_dir =~ m|/specification/trafficmanager/resource-manager/|) {
+      return 'TrafficManager';
+    } elsif ($self->api_dir =~ m|/specification/frontdoor/resource-manager/|) {
+      return 'FrontDoor';
     } elsif ($self->api_dir =~ m|/specification/graphrbac/data-plane/|) {
       return 'GraphRBAC';
     } elsif (($api) = ($self->api_dir =~ m|cognitiveservices/data-plane/(.*?)/|)) {
       return "Cognitive$api";
+    } elsif (($api) = ($self->api_dir =~ m|/resource-manager/(.*?)/|)) {
+
     } elsif (($api) = ($self->api_dir =~ m|/data-plane/(.*?)/|)) {
       $api = "${api}Data";
     } elsif (($api) = ($self->api_dir =~ m|/control-plane/(.*?)/|)) {

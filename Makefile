@@ -6,6 +6,7 @@ gen-classes:
 	find -type d -name resource-manager | xargs -I{} find {} -type d -name stable | xargs -I{} echo "find {} -maxdepth 1 -mindepth 1 | sort -r | head -n1" | bash | xargs -I {} carton exec ./builder-bin/azure-sdk-gen {}
 	find -type d -name data-plane | xargs -I{} find {} -type d -name stable | xargs -I{} echo "find {} -maxdepth 1 -mindepth 1 | sort -r | head -n1" | bash | xargs -I {} carton exec ./builder-bin/azure-sdk-gen {}
 	find -type d -name control-plane | xargs -I{} find {} -type d -name preview | xargs -I{} echo "find {} -maxdepth 1 -mindepth 1 | sort -r | head -n1" | bash | xargs -I {} carton exec ./builder-bin/azure-sdk-gen {}
+	carton exec builder-bin/azure-sdk-gen ./azure-rest-api-specs/specification/frontdoor/resource-manager/Microsoft.Network/preview/2018-08-01-preview/
 
 reset-autolib:
 	rm -rf auto-lib
