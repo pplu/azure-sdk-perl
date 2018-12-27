@@ -19,7 +19,7 @@ my $az1 = Azure->new(config => { subscription_id => 'subscription1', caller => $
 my $az2 = Azure->new(config => { subscription_id => 'subscription2', caller => $caller, credentials => $creds, response_inflator => $inflator });
 
 {
-  my $logm = $az1->service('LogicManagement');
+  my $logm = $az1->service('Logic');
   my $r = $logm->CreateOrUpdateWorkflows(
     workflowName => 'test',
     resourceGroupName => 'rg1',
@@ -36,7 +36,7 @@ my $az2 = Azure->new(config => { subscription_id => 'subscription2', caller => $
 }
 
 {
-  my $logm = $az2->service('LogicManagement');
+  my $logm = $az2->service('Logic');
   my $r = $logm->CreateOrUpdateWorkflows(
     workflowName => 'test',
     resourceGroupName => 'rg1',

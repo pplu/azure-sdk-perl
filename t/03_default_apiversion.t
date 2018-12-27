@@ -18,7 +18,7 @@ my $inflator = InflatorThatJustReturnsTheResponse->new;
 my $az1 = Azure->new(config => { subscription_id => 'subscription1', caller => $caller, credentials => $creds, response_inflator => $inflator });
 
 {
-  my $logm = $az1->service('LogicManagement');
+  my $logm = $az1->service('Logic');
   my $r = $logm->CreateOrUpdateWorkflows(
     workflowName => 'test',
     resourceGroupName => 'rg1',

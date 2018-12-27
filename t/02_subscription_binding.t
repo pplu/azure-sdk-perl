@@ -19,7 +19,7 @@ my $inflator = InflatorThatJustReturnsTheResponse->new;
 
 {
   my $az = Azure->new(config => { subscription_id => 'subscription1', caller => $caller, credentials => $creds, response_inflator => $inflator });
-  my $logm = $az->service('LogicManagement');
+  my $logm = $az->service('Logic');
   my $r = $logm->CreateOrUpdateWorkflows(
     workflowName => 'test',
     resourceGroupName => 'rg1',
@@ -34,7 +34,7 @@ my $inflator = InflatorThatJustReturnsTheResponse->new;
 
 {
   my $az = Azure->new(config => { subscription_id => 'subscription2', caller => $caller, credentials => $creds, response_inflator => $inflator });
-  my $logm = $az->service('LogicManagement');
+  my $logm = $az->service('Logic');
   my $r = $logm->CreateOrUpdateWorkflows(
     workflowName => 'test',
     resourceGroupName => 'rg1',
@@ -49,7 +49,7 @@ my $inflator = InflatorThatJustReturnsTheResponse->new;
 
 {
   my $az_unbound = Azure->new(config => { caller => $caller, credentials => $creds, response_inflator => $inflator });
-  my $logm = $az_unbound->service('LogicManagement');
+  my $logm = $az_unbound->service('Logic');
 
   throws_ok(sub {
     $logm->CreateOrUpdateWorkflows(
