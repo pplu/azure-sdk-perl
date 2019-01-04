@@ -61,6 +61,7 @@ package Azure;
   our $VERSION = '0.02';
 
   has _class_prefix => (is => 'ro', default => 'Azure::');
+  has _service_class_prefix => (is => 'ro', default => 'Azure::Service');
 
   coerce 'Azure::SDK::Config',
     from 'HashRef',
@@ -82,7 +83,11 @@ package Azure;
     my ($self, $service_name) = @_;
     $self = $self->get_self;
   
-    my $class = $self->_class_prefix . $service_name;
+    my $class = $self->_service_class_prefix . $service_name;
+
+use Data::Dumper;
+print Dumper($class);
+
     $self->load_class($class);
     return $class;
   }
@@ -129,15 +134,8 @@ package Azure;
     my ($self) = @_;
     $self = $self->get_self;
   
-    my $skip_list = {
-      Credential => 1,
-      Exception => 1,
-      API => 1,
-      Net => 1,
-    };
     require Module::Find;
-    my $class_prefix = $self->_class_prefix;
-    return grep { not $skip_list->{ $_ } } map { $_ =~ s/^$class_prefix//; $_ } Module::Find::findsubmod Azure;
+    return Module::Find::findsubmod $self->_service_class_prefix;
   }
   
 sub preload_service {

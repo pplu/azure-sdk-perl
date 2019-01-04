@@ -40,6 +40,11 @@ package Azure::SDK::MultiBuilder;
     } },
   );
 
+  has fully_namespaced => (is => 'ro', lazy => 1, isa => 'Str', default => sub {
+    my $self = shift;
+    return $self->swags->[0]->fully_namespaced;
+  });
+
   sub service {
     my $self = shift;
     my $api;

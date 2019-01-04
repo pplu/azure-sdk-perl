@@ -1,12 +1,13 @@
-package [% c.sdk_namespace %]::[% c.service %];
+package [% c.fully_namespaced %];
   use Moose;
 
   with 'Azure::API::Service', 'Azure::API::Caller', 'Azure::API::BearerAuth';
 
   [%- FOREACH method_name = c.methods.keys.sort %]
-  sub [% method_name %] {
+  [%- m = c.methods.$method_name -%]
+  sub [% m.name %] {
     my $self = shift;
-    return $self->do_call([%- IF (c.methods.$method_name.subscription_argument) %]'[% c.methods.$method_name.subscription_argument.name %]'[% ELSE; 'undef'; END %],'Azure::[% c.service %]::[% method_name %]', { @_ });
+    return $self->do_call([%- IF (c.methods.$method_name.subscription_argument) %]'[% m.subscription_argument.name %]'[% ELSE; 'undef'; END %],'[% m.fully_qualified %]', { @_ });
   }
   [%- END %]
 

@@ -49,6 +49,14 @@ package Azure::SDK::Builder;
     }
   );
 
+  has fully_namespaced => (is => 'ro', lazy => 1, isa => 'Str', default => sub {
+    my $self = shift;
+    sprintf '%s::%s::%s',
+      $self->sdk_namespace,
+      'Service',
+      $self->service,
+  });
+
   sub definitionname_to_objectname {
     my ($self, $name) = @_;
     
