@@ -39,9 +39,6 @@ package Azure::Net::Caller;
       }
     );
 
-    use Data::Dumper;
-    print Dumper($response);
-
     if ($response->{status} == 599) {
       Azure::Exception::ClientException->throw(
         message => $response->{content},
