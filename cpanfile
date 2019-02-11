@@ -11,7 +11,7 @@ requires 'Path::Class';
 requires 'Azure::AD::Auth';
 
 requires 'ARGV::Struct';
-requires 'Hash::Flatten';
+requires 'DataStruct::Flat';
 
 on develop => sub {
   requires 'MooseX::StrictConstructor';
